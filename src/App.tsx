@@ -1,4 +1,5 @@
 
+import React, { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -32,7 +33,7 @@ const preloadRoutes = () => {
 
 const App = () => {
   // Preload routes after initial render
-  React.useEffect(() => {
+  useEffect(() => {
     preloadRoutes();
   }, []);
 
@@ -40,8 +41,8 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         {/* Enhanced toasters with better positioning */}
-        <Toaster position="top-center" />
-        <Sonner position="top-right" expand={true} closeButton richColors />
+        <Toaster />
+        <Sonner expand={true} closeButton richColors />
         
         <BrowserRouter>
           <Routes>

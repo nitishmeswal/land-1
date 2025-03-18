@@ -1,7 +1,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { SectionContainer } from '@/components/ui/Container';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/Button';
 import { ArrowRight, Sparkles, Coins, TrendingUp } from 'lucide-react';
 
 // Enhanced TokenChart component with animations and interactions
