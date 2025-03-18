@@ -1,4 +1,5 @@
 
 // Re-export from lowercase button.tsx to maintain compatibility
-import { Button, buttonVariants } from './button';
+// Use relative import to avoid circular reference
+import { Button, buttonVariants } from "./button";
 export { Button, buttonVariants };
