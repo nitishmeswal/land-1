@@ -7,6 +7,13 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import ProductsPage from "./pages/Products";
+import TokenPage from "./pages/Token";
+import EcosystemPage from "./pages/Ecosystem";
+import ResourcesPage from "./pages/Resources";
+import AboutPage from "./pages/About";
+import WhitepaperPage from "./pages/Whitepaper";
+import PitchDeckPage from "./pages/PitchDeck";
 
 // Create a client with enhanced configuration for better UX
 const queryClient = new QueryClient({
@@ -47,14 +54,13 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            {/* These routes will be implemented later */}
-            <Route path="/products" element={<Index />} />
-            <Route path="/token" element={<Index />} />
-            <Route path="/ecosystem" element={<Index />} />
-            <Route path="/resources" element={<Index />} />
-            <Route path="/about" element={<Index />} />
-            <Route path="/whitepaper" element={<Index />} />
-            <Route path="/pitch-deck" element={<Index />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/token" element={<TokenPage />} />
+            <Route path="/ecosystem" element={<EcosystemPage />} />
+            <Route path="/resources" element={<ResourcesPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/whitepaper" element={<WhitepaperPage />} />
+            <Route path="/pitch-deck" element={<PitchDeckPage />} />
             {/* Catch-all route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
