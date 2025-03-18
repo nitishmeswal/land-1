@@ -100,6 +100,11 @@
   h1, h2, h3, h4 {
     @apply tracking-tight font-medium;
   }
+  
+  /* Gradient text selection */
+  ::selection {
+    @apply bg-neuro-500/20 text-foreground;
+  }
 }
 
 @layer components {
@@ -120,7 +125,7 @@
   }
 
   .hero-text-gradient {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-neuro-400 to-blue-500;
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-neuro-500 to-blue-500;
   }
   
   .navbar-blur {
@@ -136,11 +141,34 @@
   }
   
   .nav-link {
-    @apply inline-flex items-center gap-1 py-2 text-sm font-medium text-muted-foreground hover:text-foreground subtle-animate;
+    @apply inline-flex items-center gap-1 py-2 text-sm font-medium text-muted-foreground hover:text-foreground subtle-animate relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-neuro-500 after:transition-all after:duration-300 hover:after:w-full;
   }
   
   .dropdown-link {
     @apply flex w-full items-center rounded-md p-2 text-sm font-medium hover:bg-accent subtle-animate;
+  }
+  
+  /* Gradient card */
+  .gradient-card {
+    @apply bg-gradient-to-br from-background to-white/80 border border-white/40 shadow-lg backdrop-blur-sm;
+  }
+  
+  /* Animated button */
+  .btn-animated {
+    @apply relative overflow-hidden transition-all duration-500 ease-in-out;
+  }
+  
+  .btn-animated::before {
+    @apply content-[''] absolute top-0 left-0 w-full h-full bg-white/20 transform -translate-x-full skew-x-12 transition-transform duration-700;
+  }
+  
+  .btn-animated:hover::before {
+    @apply transform translate-x-full;
+  }
+  
+  /* Background patterns */
+  .bg-grid-white {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.05)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
   }
 }
 
@@ -172,6 +200,10 @@
   transition-delay: 0.4s;
 }
 
+.reveal-delay-5 {
+  transition-delay: 0.5s;
+}
+
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
@@ -186,4 +218,124 @@ html {
 .no-scrollbar {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+
+/* Enhanced animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px);
+  }
+  50% {
+    transform: translateY(0px) translateX(10px);
+  }
+  75% {
+    transform: translateY(10px) translateX(5px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.05);
+  }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+.animation-delay-500 {
+  animation-delay: 0.5s;
+}
+
+.animation-delay-700 {
+  animation-delay: 0.7s;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+.animation-delay-1500 {
+  animation-delay: 1.5s;
+}
+
+/* Gradient borders */
+.gradient-border {
+  position: relative;
+  border-radius: 0.5rem;
+  background-clip: padding-box;
+  padding: 1px;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: inherit;
+  margin: -2px;
+  background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary)/0.5));
+  z-index: -1;
+}
+
+/* Shadow effects */
+.shadow-neon {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+}
+
+.shadow-glass {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-card {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-dropdown {
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Gradient text animations */
+.animated-gradient-text {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Button pressed effect */
+.btn-press {
+  transform: translateY(0);
+  transition: transform 0.1s;
+}
+
+.btn-press:active {
+  transform: translateY(2px);
 }

@@ -123,6 +123,41 @@ export default {
 					'0%, 100%': { opacity: '1' },
 					'50%': { opacity: '0.8' }
 				},
+				'shimmer': {
+					'0%': { backgroundPosition: '-200% 0' },
+					'100%': { backgroundPosition: '200% 0' }
+				},
+				'bounce-sm': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-4px)' }
+				},
+				'spin-slow': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
+				},
+				'ripple': {
+					'0%': { transform: 'scale(0)', opacity: '1' },
+					'100%': { transform: 'scale(4)', opacity: '0' }
+				},
+				'ping-slow': {
+					'75%, 100%': { transform: 'scale(2)', opacity: '0' }
+				},
+				'slide-in-left': {
+					'0%': { transform: 'translateX(-100%)', opacity: '0' },
+					'100%': { transform: 'translateX(0)', opacity: '1' }
+				},
+				'slide-in-right': {
+					'0%': { transform: 'translateX(100%)', opacity: '0' },
+					'100%': { transform: 'translateX(0)', opacity: '1' }
+				},
+				'slide-in-bottom': {
+					'0%': { transform: 'translateY(100%)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' }
+				},
+				'slide-in-top': {
+					'0%': { transform: 'translateY(-100%)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' }
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -133,6 +168,15 @@ export default {
 				'scale-out': 'scale-out 0.2s ease-out',
 				'float': 'float 6s ease-in-out infinite',
 				'pulse-slow': 'pulse-slow 4s ease-in-out infinite',
+				'shimmer': 'shimmer 2s linear infinite',
+				'bounce-sm': 'bounce-sm 2s ease-in-out infinite',
+				'spin-slow': 'spin-slow 8s linear infinite',
+				'ripple': 'ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite',
+				'ping-slow': 'ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite',
+				'slide-in-left': 'slide-in-left 0.5s ease-out',
+				'slide-in-right': 'slide-in-right 0.5s ease-out',
+				'slide-in-bottom': 'slide-in-bottom 0.5s ease-out',
+				'slide-in-top': 'slide-in-top 0.5s ease-out',
 			},
 			backdropBlur: {
 				xs: '2px',
@@ -140,7 +184,12 @@ export default {
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+				'gradient-shine': 'linear-gradient(45deg, transparent 25%, rgba(255, 255, 255, 0.3) 50%, transparent 75%)',
 				'hero-pattern': 'linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url("/images/hero-bg.jpg")',
+				'grid-white': "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.05)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e\")",
+				'grid-black': "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(0 0 0 / 0.05)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e\")",
+				'dots-light': "radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px)",
+				'dots-dark': "radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px)",
 			},
 			boxShadow: {
 				'subtle': '0 1px 2px rgba(0, 0, 0, 0.04)',
@@ -149,6 +198,32 @@ export default {
 				'button': '0 1px 2px rgba(0, 0, 0, 0.05)',
 				'card': '0 8px 24px rgba(0, 0, 0, 0.08)',
 				'dropdown': '0 10px 25px -3px rgba(0, 0, 0, 0.1)',
+				'glow': '0 0 10px rgba(99, 102, 241, 0.5), 0 0 20px rgba(99, 102, 241, 0.3)',
+				'neon-sm': '0 0 5px rgba(99, 102, 241, 0.3)',
+				'neon-lg': '0 0 30px rgba(99, 102, 241, 0.6)',
+				'inner-glow': 'inset 0 0 10px rgba(99, 102, 241, 0.3)',
+			},
+			backgroundSize: {
+				'200%': '200% 200%',
+				'400%': '400% 400%',
+			},
+			transitionDuration: {
+				'2000': '2000ms',
+				'3000': '3000ms',
+			},
+			typography: {
+				DEFAULT: {
+					css: {
+						maxWidth: '65ch',
+						a: {
+							fontWeight: '500',
+							textDecoration: 'none',
+							'&:hover': {
+								opacity: '0.8',
+							},
+						},
+					},
+				},
 			},
 		}
 	},
