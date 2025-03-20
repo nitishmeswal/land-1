@@ -1,6 +1,5 @@
-
 import { useEffect, useRef } from 'react';
-import { SectionContainer } from '@/components/ui/Container';
+import { SectionContainer } from '@/components/ui/container';
 
 export default function Partners() {
   const observerRef = useRef<IntersectionObserver | null>(null);

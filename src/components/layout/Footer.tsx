@@ -1,7 +1,6 @@
-
-import { Container } from '@/components/ui/Container';
-import { Button } from '@/components/ui/Button';
-import { Input } from "@/components/ui/input";
+import { Container } from '@/components/ui/container';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { 
   Twitter, 
   MessageSquare, 
@@ -144,7 +143,7 @@ export default function Footer() {
         </div>
         
         <div className="mt-16 border-t border-border pt-8 text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Neurolov.ai. All rights reserved.</p>
+          <p> {new Date().getFullYear()} Neurolov.ai. All rights reserved.</p>
         </div>
       </Container>
     </footer>

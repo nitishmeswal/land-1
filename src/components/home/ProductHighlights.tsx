@@ -1,10 +1,9 @@
-
 import { useRef, useEffect, useState } from 'react';
-import { Container } from '@/components/ui/Container';
-import { SectionContainer } from '@/components/ui/Container';
+import { Container } from '@/components/ui/container';
+import { SectionContainer } from '@/components/ui/container';
 import { Cpu, Code, Network, Bot, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/components/ui/button';
 
 type ProductCardProps = {
   title: string;

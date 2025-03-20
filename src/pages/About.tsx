@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { SectionContainer } from '@/components/ui/Container';
+import { SectionContainer } from '@/components/ui/container';
 import PageLayout from '@/components/layout/PageLayout';
 import { Button } from '@/components/ui/button';
 import SectionHeading from '@/components/common/SectionHeading';
@@ -80,7 +79,7 @@ const advisors = [
     name: "Dr. Michael Reynolds",
     role: "Technical Advisor",
     bio: "Professor of Computer Science at MIT specializing in distributed systems and blockchain technology. Published over 100 research papers.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
+    image: "https://images.unsplash.com/photo-1472099645785-b5658abf4ff4e"
   },
   {
     name: "Sarah Johnson",

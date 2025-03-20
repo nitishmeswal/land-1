@@ -1,9 +1,13 @@
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Container } from '@/components/ui/Container';
-import { Button } from '@/components/ui/Button';
-import { CustomDropdown, DropdownItem } from '@/components/ui/DropdownMenu';
+import { Container } from '@/components/ui/container';
+import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from '@/components/ui/dropdown-menu';
 import { cn } from '@/lib/utils';
 import { 
   Menu, 
@@ -133,22 +137,21 @@ export default function Navbar() {
             {navItems.map((item, index) => (
               <div key={index}>
                 {item.dropdownItems ? (
-                  <CustomDropdown 
-                    trigger={
-                      <span className="nav-link">
-                        {item.name}
-                      </span>
-                    }
-                  >
-                    {item.dropdownItems.map((dropdownItem, idx) => (
-                      <DropdownItem key={idx}>
-                        <Link to={dropdownItem.path} className="flex items-center space-x-2">
-                          {dropdownItem.icon}
-                          <span>{dropdownItem.name}</span>
-                        </Link>
-                      </DropdownItem>
-                    ))}
-                  </CustomDropdown>
+                  <DropdownMenu>
+                    <DropdownMenuTrigger className="nav-link">
+                      {item.name}
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                      {item.dropdownItems.map((dropdownItem, idx) => (
+                        <DropdownMenuItem key={idx} asChild>
+                          <Link to={dropdownItem.path} className="flex items-center space-x-2">
+                            {dropdownItem.icon}
+                            <span>{dropdownItem.name}</span>
+                          </Link>
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
                 ) : (
                   <Link to={item.path || "#"} className="nav-link">
                     {item.name}

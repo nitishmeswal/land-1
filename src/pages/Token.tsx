@@ -1,12 +1,10 @@
-
 import React, { useState } from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { SectionContainer } from '@/components/ui/Container';
+import { SectionContainer } from '@/components/ui/container';
 import PageLayout from '@/components/layout/PageLayout';
 import { Button } from '@/components/ui/button';
 import SectionHeading from '@/components/common/SectionHeading';
 import FeatureCard from '@/components/common/FeatureCard';
-import { Coins, BarChart3, Share2, HelpCircle, Users, CheckCircle2, Clock, Database, ArrowUpRight, BadgeDollarSign } from 'lucide-react';
 import { 
   Card, 
   CardHeader, 
@@ -16,6 +14,7 @@ import {
   CardFooter 
 } from "@/components/ui/card";
 import { PieChart, Pie, Cell, BarChart as RechartBarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
+import { Coins, BarChart3, Share2, HelpCircle, Users, CheckCircle2, Clock, Database, ArrowUpRight, BadgeDollarSign } from 'lucide-react';
 
 // Tokenomics data
 const tokenDistributionData = [

@@ -1,7 +1,6 @@
-
 import { useEffect, useRef, useState } from 'react';
-import { SectionContainer } from '@/components/ui/Container';
-import { Button } from '@/components/ui/Button';
+import { SectionContainer } from '@/components/ui/container';
+import { Button } from '@/components/ui/button';
 import { Wallet, Cpu, Coins, Rocket } from 'lucide-react';
 
 type StepProps = {

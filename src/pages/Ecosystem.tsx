@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { SectionContainer } from '@/components/ui/Container';
+import { SectionContainer } from '@/components/ui/container';
 import PageLayout from '@/components/layout/PageLayout';
 import { Button } from '@/components/ui/button';
 import SectionHeading from '@/components/common/SectionHeading';

@@ -1,7 +1,6 @@
-
 import { useEffect, useRef, useState } from 'react';
-import { Container } from '@/components/ui/Container';
-import { Button } from '@/components/ui/Button';
+import { Container } from '@/components/ui/container';
+import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles, Rocket } from 'lucide-react';
 
 export default function Hero() {
