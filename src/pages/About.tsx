@@ -9,7 +9,7 @@ import { Users, BookOpen, Github, Linkedin, Twitter, Globe, Mail, ArrowUpRight }
 // Team data
 const teamMembers = [
   {
-    name: "Dr. Elena Zhang",
+    name: "Dhruv Panchal",
     role: "CEO & Co-Founder",
     bio: "Former research lead at OpenAI with 15+ years of experience in AI and distributed systems. PhD in Computer Science from Stanford University.",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
@@ -20,8 +20,8 @@ const teamMembers = [
     }
   },
   {
-    name: "Alexander Morgan",
-    role: "CTO & Co-Founder",
+    name: "AAdhik Joshi",
+    role: " Co-Founder",
     bio: "Previously led engineering at NVIDIA's AI research division. Expert in GPU optimization and high-performance computing. MIT Computer Science graduate.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
     social: {
@@ -31,18 +31,19 @@ const teamMembers = [
     }
   },
   {
-    name: "Sophia Chen",
-    role: "Chief Product Officer",
+    name: "Gokul Ravindran",
+    role: "Chief Technology Officer",
     bio: "Former product lead at Google AI and Meta Reality Labs. Specializes in AI product development and user experience. MBA from Harvard Business School.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956",
+    image: "https://images.unsplash.com/photo-1580489944761-b5658abf4ff4e",
     social: {
       twitter: "#",
-      linkedin: "#"
+      linkedin: "#",
+      github: "#"
     }
   },
   {
-    name: "Daniel Williams",
-    role: "Head of Blockchain",
+    name: "Ruzaliya Gubaidullina",
+    role: "Chief Operating Officer",
     bio: "Blockchain architect with experience at Solana Foundation and Ethereum. Expert in token economics and decentralized governance systems.",
     image: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79",
     social: {
@@ -52,8 +53,8 @@ const teamMembers = [
     }
   },
   {
-    name: "Olivia Rodriguez",
-    role: "Chief Research Officer",
+    name: "Sparsh ",
+    role: "Chief Marketing Officer",
     bio: "Leading AI researcher with focus on multi-modal models and distributed learning. Previously at DeepMind. PhD in Machine Learning from UC Berkeley.",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb",
     social: {
@@ -62,8 +63,38 @@ const teamMembers = [
     }
   },
   {
-    name: "James Kim",
-    role: "VP of Business Development",
+    name: "Nithish Meswal ",
+    role: "Software Engineer",
+    bio: "Former partnership lead at NVIDIA and AWS. Expert in strategic alliances and enterprise sales. MBA from Wharton School of Business.",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+    social: {
+      twitter: "#",
+      linkedin: "#"
+    }
+  },
+  {
+    name: "Rakesh Sharma ",
+    role: "Business Analyst ",
+    bio: "Former partnership lead at NVIDIA and AWS. Expert in strategic alliances and enterprise sales. MBA from Wharton School of Business.",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+    social: {
+      twitter: "#",
+      linkedin: "#"
+    }
+  },
+  {
+    name: "Drhuvanshi ",
+    role: "HR",
+    bio: "Former partnership lead at NVIDIA and AWS. Expert in strategic alliances and enterprise sales. MBA from Wharton School of Business.",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+    social: {
+      twitter: "#",
+      linkedin: "#"
+    }
+  },
+  {
+    name: "Sanskar ",
+    role: "Software Engineer",
     bio: "Former partnership lead at NVIDIA and AWS. Expert in strategic alliances and enterprise sales. MBA from Wharton School of Business.",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
     social: {
@@ -71,28 +102,42 @@ const teamMembers = [
       linkedin: "#"
     }
   }
+  
 ];
 
 // Advisor data
 const advisors = [
   {
-    name: "Dr. Michael Reynolds",
+    name: "Chandra S Katta",
     role: "Technical Advisor",
     bio: "Professor of Computer Science at MIT specializing in distributed systems and blockchain technology. Published over 100 research papers.",
     image: "https://images.unsplash.com/photo-1472099645785-b5658abf4ff4e"
   },
   {
-    name: "Sarah Johnson",
-    role: "AI Ethics Advisor",
+    name: "Umar Mizra ",
+    role: "Growth Advisor ",
     bio: "Leading expert on AI ethics and policy. Former advisor to UN AI initiatives and technology policy consultant for multiple governments.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2"
+    image: "https://images.unsplash.com/photo-1573496359142-b5658abf4ff4e"
   },
   {
-    name: "Richard Chan",
-    role: "Business Advisor",
+    name: "Claire Cawthon",
+    role: "Marketing Advisor ",
     bio: "Seasoned venture capitalist with over 20 years of experience. Partner at Sequoia Capital with focus on AI and blockchain investments.",
     image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7"
-  }
+  },
+  {
+    name: "Jesse Guglielmo ",
+    role: "Strategy  Advisor ",
+    bio: "Seasoned venture capitalist with over 20 years of experience. Partner at Sequoia Capital with focus on AI and blockchain investments.",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7"
+  },
+  {
+    name: "Peter Yeo",
+    role: " Business  Advisor ",
+    bio: "Seasoned venture capitalist with over 20 years of experience. Partner at Sequoia Capital with focus on AI and blockchain investments.",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7"
+  },
+  
 ];
 
 // Company milestones
@@ -166,19 +211,20 @@ export default function AboutPage() {
           onValueChange={setActiveTab}
           className="w-full"
         >
-          <div className="flex justify-center mb-12">
-            <TabsList className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-              <TabsTrigger value="team" className="px-6">
-                <Users className="mr-2 h-4 w-4" /> Team
-              </TabsTrigger>
-              <TabsTrigger value="mission" className="px-6">
-                <BookOpen className="mr-2 h-4 w-4" /> Mission
-              </TabsTrigger>
-              <TabsTrigger value="vision" className="px-6">
-                <Globe className="mr-2 h-4 w-4" /> Vision
-              </TabsTrigger>
-            </TabsList>
-          </div>
+          <TabsList className="w-full max-w-2xl mx-auto mb-16">
+            <TabsTrigger value="team" className="w-1/3">
+              <Users className="mr-2 h-4 w-4" />
+              Team
+            </TabsTrigger>
+            <TabsTrigger value="mission" className="w-1/3">
+              <BookOpen className="mr-2 h-4 w-4" />
+              Mission
+            </TabsTrigger>
+            <TabsTrigger value="values" className="w-1/3">
+              <Globe className="mr-2 h-4 w-4" />
+              Values
+            </TabsTrigger>
+          </TabsList>
 
           {/* Team Tab */}
           <TabsContent value="team" className="space-y-16">
@@ -193,17 +239,12 @@ export default function AboutPage() {
                 {teamMembers.map((member, index) => (
                   <div key={index} className="glass-card p-6 rounded-xl border border-neuro-500/10 hover:border-neuro-500/30 transition-all duration-300 hover:shadow-lg group">
                     <div className="mb-4 flex items-center space-x-4">
-                      <div className="relative">
-                        <div className="w-20 h-20 rounded-full overflow-hidden">
-                          <img 
-                            src={member.image} 
-                            alt={member.name} 
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" 
-                          />
-                        </div>
-                        <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-neuro-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
-                          {index + 1}
-                        </div>
+                      <div className="w-16 h-16 rounded-full overflow-hidden">
+                        <img 
+                          src={member.image} 
+                          alt={member.name} 
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" 
+                        />
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold">{member.name}</h3>
@@ -262,100 +303,6 @@ export default function AboutPage() {
                     <p className="text-sm text-muted-foreground">{advisor.bio}</p>
                   </div>
                 ))}
-              </div>
-            </div>
-            
-            <div className="glass-card p-8 rounded-xl border border-neuro-500/10 relative overflow-hidden">
-              <div className="absolute -top-16 -right-16 w-32 h-32 bg-neuro-500/30 rounded-full blur-3xl opacity-40"></div>
-              <div className="absolute -bottom-16 -left-16 w-32 h-32 bg-blue-500/30 rounded-full blur-3xl opacity-40"></div>
-              
-              <div className="relative z-10">
-                <SectionHeading
-                  title="Join Our Team"
-                  subtitle="Build the future of decentralized AI with us"
-                />
-                
-                <div className="max-w-3xl mx-auto text-center">
-                  <p className="text-muted-foreground mb-6">
-                    We're looking for passionate people who want to help us build the infrastructure 
-                    for the next generation of AI applications. If you're excited about AI, blockchain, 
-                    and decentralized systems, we'd love to hear from you.
-                  </p>
-                  
-                  <div className="flex flex-wrap justify-center gap-6 mb-8">
-                    <div className="glass-card p-5 rounded-lg border border-neuro-500/10 w-64">
-                      <h4 className="font-bold mb-2">Engineering</h4>
-                      <ul className="text-sm text-muted-foreground text-left space-y-1">
-                        <li>• Senior Blockchain Engineer</li>
-                        <li>• AI Infrastructure Lead</li>
-                        <li>• Full-Stack Developer</li>
-                        <li>• DevOps Engineer</li>
-                      </ul>
-                    </div>
-                    <div className="glass-card p-5 rounded-lg border border-neuro-500/10 w-64">
-                      <h4 className="font-bold mb-2">Product & Design</h4>
-                      <ul className="text-sm text-muted-foreground text-left space-y-1">
-                        <li>• Product Manager</li>
-                        <li>• UX/UI Designer</li>
-                        <li>• Technical Writer</li>
-                      </ul>
-                    </div>
-                    <div className="glass-card p-5 rounded-lg border border-neuro-500/10 w-64">
-                      <h4 className="font-bold mb-2">Business & Operations</h4>
-                      <ul className="text-sm text-muted-foreground text-left space-y-1">
-                        <li>• Business Development</li>
-                        <li>• Community Manager</li>
-                        <li>• Marketing Specialist</li>
-                      </ul>
-                    </div>
-                  </div>
-                  
-                  <div className="flex flex-wrap justify-center gap-4">
-                    <Button variant="neon">
-                      View Open Positions
-                      <ArrowUpRight className="ml-2 h-4 w-4" />
-                    </Button>
-                    <Button variant="outline">
-                      <Mail className="mr-2 h-4 w-4" />
-                      careers@neurolov.ai
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <SectionHeading
-                title="Our Journey"
-                subtitle="Key milestones in the Neurolov story"
-                badge="Timeline"
-              />
-              
-              <div className="relative">
-                {/* Timeline line */}
-                <div className="absolute left-[26px] top-0 bottom-0 w-px bg-neuro-500/20 md:hidden"></div>
-                <div className="hidden md:block absolute left-0 top-1/2 w-full h-px bg-neuro-500/20"></div>
-                
-                <div className="md:grid md:grid-cols-5 gap-8">
-                  {milestones.map((milestone, index) => (
-                    <div key={index} className="relative mb-12 md:mb-0">
-                      {/* Mobile timeline node */}
-                      <div className="md:hidden absolute left-0 top-0 w-12 h-12 rounded-full bg-neuro-500/10 flex items-center justify-center border-4 border-background z-10">
-                        <span className="font-bold">{milestone.year}</span>
-                      </div>
-                      
-                      {/* Desktop timeline node */}
-                      <div className="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-neuro-500/10 flex items-center justify-center border-4 border-background z-10">
-                        <span className="font-bold">{milestone.year}</span>
-                      </div>
-                      
-                      <div className="pl-20 md:pl-0 md:mt-8">
-                        <h3 className="text-lg font-bold mb-1">{milestone.title}</h3>
-                        <p className="text-sm text-muted-foreground">{milestone.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
               </div>
             </div>
           </TabsContent>
@@ -419,8 +366,8 @@ export default function AboutPage() {
               
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {coreValues.map((value, index) => (
-                  <div key={index} className="glass-card p-6 rounded-xl border border-neuro-500/10 hover:border-neuro-500/30 transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px]">
-                    <div className="inline-flex items-center justify-center p-3 rounded-lg bg-gradient-to-br from-neuro-500/20 to-blue-500/10 text-neuro-500 mb-4">
+                  <div key={index} className="glass-card p-6 rounded-xl border border-neuro-500/10 hover:border-neuro-500/30 transition-all duration-300 hover:shadow-lg">
+                    <div className="inline-flex items-center justify-center p-3 rounded-full bg-neuro-500/10 text-neuro-500 text-sm font-medium mb-4">
                       <div className="w-8 h-8 flex items-center justify-center font-bold text-lg">
                         {index + 1}
                       </div>
@@ -527,8 +474,8 @@ export default function AboutPage() {
             </div>
           </TabsContent>
 
-          {/* Vision Tab */}
-          <TabsContent value="vision" className="space-y-16">
+          {/* Values Tab */}
+          <TabsContent value="values" className="space-y-16">
             <div className="glass-card p-8 rounded-xl border border-neuro-500/10 bg-gradient-to-br from-neuro-500/5 to-blue-500/5 relative overflow-hidden">
               <div className="absolute -top-20 -right-20 w-40 h-40 bg-neuro-500/30 rounded-full blur-3xl opacity-40"></div>
               <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-blue-500/30 rounded-full blur-3xl opacity-40"></div>

@@ -57,7 +57,7 @@ export default function Hero() {
           {/* Subtitle tag */}
           <div className="inline-flex items-center rounded-full border border-neuro-500/30 bg-neuro-500/5 px-3 py-1 text-sm font-medium mb-6 reveal reveal-delay-1 shadow-sm">
             <span className="flex h-2 w-2 rounded-full bg-neuro-500 mr-2 animate-pulse"></span>
-            <span className="text-neuro-500">Presale Live Now — Limited Allocation</span>
+            <span className="text-neuro-500">Presale Coming Soon - Limited Allocation</span>
           </div>
           
           {/* Main headline */}
@@ -72,12 +72,22 @@ export default function Hero() {
           
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16 reveal reveal-delay-4">
-            <Button variant="neon" size="xl" className="px-8 shadow-neon group">
+            <Button 
+              variant="neon" 
+              size="xl" 
+              className="px-8 shadow-neon group"
+              onClick={() => window.open('https://t.me/neurolov', '_blank')}
+            >
               <Rocket className="mr-2 h-5 w-5 group-hover:animate-bounce" />
-              Join Presale
+              Join Waitlist
             </Button>
-            <Button variant="outline" size="xl" className="group border-neuro-400/30 hover:border-neuro-500/50 hover:bg-neuro-500/5">
-              Explore Platform
+            <Button 
+              variant="outline" 
+              size="xl" 
+              className="group border-neuro-400/30 hover:border-neuro-500/50 hover:bg-neuro-500/5"
+              onClick={() => window.open('/token#tokenomics', '_self')}
+            >
+              Learn More
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>
@@ -85,16 +95,16 @@ export default function Hero() {
           {/* Stats bar */}
           <div className="flex flex-wrap justify-center gap-6 md:gap-12 reveal reveal-delay-5 mb-12">
             <div className="glass-card px-6 py-3 rounded-xl shadow-glass">
-              <p className="text-2xl font-bold hero-text-gradient">$3.5M</p>
-              <p className="text-xs text-muted-foreground">Raised in Presale</p>
+              <p className="text-2xl font-bold hero-text-gradient">200+</p>
+              <p className="text-xs text-muted-foreground">GPUs</p>
             </div>
             <div className="glass-card px-6 py-3 rounded-xl shadow-glass">
-              <p className="text-2xl font-bold hero-text-gradient">7,000+</p>
+              <p className="text-2xl font-bold hero-text-gradient">100K</p>
+              <p className="text-xs text-muted-foreground">AI Contents Made</p>
+            </div>
+            <div className="glass-card px-6 py-3 rounded-xl shadow-glass">
+              <p className="text-2xl font-bold hero-text-gradient">35,000+</p>
               <p className="text-xs text-muted-foreground">Community Members</p>
-            </div>
-            <div className="glass-card px-6 py-3 rounded-xl shadow-glass">
-              <p className="text-2xl font-bold hero-text-gradient">78%</p>
-              <p className="text-xs text-muted-foreground">Allocation Filled</p>
             </div>
           </div>
           
@@ -125,9 +135,9 @@ export default function Hero() {
                   <p className="text-xs text-white/80 mb-3">$NLOV launching on Solana in Q2 2025. Join the presale for early access.</p>
                   <div className="flex gap-2 items-center">
                     <div className="bg-black/40 h-2 flex-1 rounded-full overflow-hidden">
-                      <div className="h-full w-[78%] bg-gradient-to-r from-neuro-500 to-blue-500 rounded-full"></div>
+                      <div className="h-full w-[0%] bg-gradient-to-r from-neuro-500 to-blue-500 rounded-full"></div>
                     </div>
-                    <span className="text-xs text-white/80">78%</span>
+                    <span className="text-xs text-white/80">0%</span>
                   </div>
                 </div>
               </div>

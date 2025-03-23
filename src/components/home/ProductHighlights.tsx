@@ -15,18 +15,13 @@ type ProductCardProps = {
 };
 
 const ProductCard = ({ title, description, icon, className, delay, index }: ProductCardProps) => {
-  const [isHovered, setIsHovered] = useState(false);
-  
   return (
     <div 
       className={cn(
-        "glass-card p-7 rounded-xl transition-all duration-500 group hover:shadow-neon border border-neuro-500/10 hover:border-neuro-500/30 reveal",
-        isHovered ? "translate-y-[-8px]" : "translate-y-0",
+        "glass-card p-7 rounded-xl transition-all duration-500 group hover:shadow-neon border border-neuro-500/10 hover:border-neuro-500/30 reveal hover:-translate-y-2",
         delay,
         className
       )}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       <div className="inline-flex items-center justify-center p-3 rounded-lg bg-gradient-to-br from-neuro-500/20 to-blue-500/10 text-neuro-500 mb-4 group-hover:scale-110 transition-transform duration-500">
         {icon}
@@ -34,7 +29,7 @@ const ProductCard = ({ title, description, icon, className, delay, index }: Prod
       <h3 className="text-lg font-semibold mb-2 group-hover:text-neuro-500 transition-colors duration-300">{title}</h3>
       <p className="text-muted-foreground text-sm mb-4">{description}</p>
       
-      <div className="flex items-center text-sm font-medium text-neuro-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+      <div className="flex items-center text-sm font-medium text-neuro-500 opacity-0 group-hover:opacity-100 transition-all duration-500">
         <span>Learn more</span>
         <ArrowRight className="ml-1 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
       </div>
@@ -109,19 +104,25 @@ export default function ProductHighlights() {
       </div>
       
       <div className="text-center mb-16">
-        <div className="inline-flex items-center px-3 py-1 rounded-full bg-neuro-500/10 text-neuro-500 text-sm font-medium mb-4 reveal reveal-delay-1">
-          <span className="mr-1">✨</span>
-          <span>Neurolov Ecosystem</span>
+        <div className="mb-8">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-neuro-500/10 text-neuro-500 text-sm font-medium reveal reveal-delay-1">
+            <span className="mr-1">✨</span>
+            <span>Ecosystem</span>
+          </div>
         </div>
         
-        <h2 className="text-3xl font-bold mb-4 reveal reveal-delay-1 relative inline-block">
-          Discover the Neurolov Advantage
-          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-neuro-500 to-blue-500 rounded-full"></div>
-        </h2>
+        <div>
+          <h2 className="text-4xl font-bold mb-6 reveal reveal-delay-1 relative inline-block">
+            Discover the Neurolov Advantage
+            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-neuro-500 to-blue-500 rounded-full"></div>
+          </h2>
+        </div>
         
-        <p className="text-muted-foreground max-w-2xl mx-auto reveal reveal-delay-2">
-          A comprehensive ecosystem combining AI, decentralized computing, and blockchain rewards.
-        </p>
+        <div>
+          <p className="text-muted-foreground max-w-2xl mx-auto reveal reveal-delay-2">
+            A comprehensive ecosystem combining AI, decentralized computing, and blockchain rewards.
+          </p>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">

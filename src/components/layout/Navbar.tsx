@@ -29,9 +29,7 @@ import {
 
 const Logo = () => (
   <Link to="/" className="flex items-center space-x-2 text-xl font-bold">
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-primary">
-      <path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2zm0 5c1.105 0 2 .895 2 2s-.895 2-2 2-2-.895-2-2 .895-2 2-2zm6 14H10v-2h4v-6h-2v-2h4v8h4v2z" fill="currentColor"/>
-    </svg>
+    <img src="/og-image.png" alt="Neurolov" className="h-8 w-auto" />
     <span className="hero-text-gradient">Neurolov</span>
   </Link>
 );

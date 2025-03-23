@@ -113,19 +113,25 @@ export default function HowItWorks() {
       </div>
 
       <div className="text-center mb-16">
-        <div className="inline-flex items-center px-3 py-1 rounded-full bg-neuro-500/10 text-neuro-500 text-sm font-medium mb-4 reveal reveal-delay-1">
-          <span className="mr-1">🚀</span>
-          <span>Getting Started</span>
+        <div className="mb-8">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-neuro-500/10 text-neuro-500 text-sm font-medium reveal reveal-delay-1">
+            <span className="mr-1">🚀</span>
+            <span>Getting Started</span>
+          </div>
         </div>
         
-        <h2 className="text-3xl font-bold mb-4 reveal reveal-delay-1 relative inline-block">
-          Begin Your Journey in Three Simple Steps
-          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-neuro-500 to-blue-500 rounded-full"></div>
-        </h2>
+        <div>
+          <h2 className="text-4xl font-bold mb-6 reveal reveal-delay-1 relative inline-block">
+            Begin Your Journey in Three Simple Steps
+            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-neuro-500 to-blue-500 rounded-full"></div>
+          </h2>
+        </div>
         
-        <p className="text-muted-foreground max-w-2xl mx-auto reveal reveal-delay-2">
-          Joining the Neurolov ecosystem is simple and straightforward. Follow these steps to begin your journey.
-        </p>
+        <div>
+          <p className="text-muted-foreground max-w-2xl mx-auto reveal reveal-delay-2">
+            Joining the Neurolov ecosystem is simple and straightforward. Follow these steps to begin your journey.
+          </p>
+        </div>
       </div>
 
       <div className="relative">

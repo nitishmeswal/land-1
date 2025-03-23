@@ -96,51 +96,37 @@ export default function CallToAction() {
             Be part of the revolution in AI, compute, and blockchain. Limited allocation available for early supporters.
           </p>
           
-          {/* Countdown timer */}
-          <div className="mb-10 reveal reveal-delay-3">
-            <p className="text-sm text-muted-foreground mb-3">TGE Countdown:</p>
-            <div className="flex justify-center gap-4">
-              <div className="glass-card-dark p-3 w-20 rounded-lg shadow-card border border-neuro-500/20 bg-gradient-to-b from-neuro-500/10 to-transparent">
-                <div className="text-2xl font-bold text-neuro-400">{formatNumber(countdown.days)}</div>
-                <div className="text-xs text-muted-foreground">Days</div>
-              </div>
-              <div className="glass-card-dark p-3 w-20 rounded-lg shadow-card border border-neuro-500/20 bg-gradient-to-b from-neuro-500/10 to-transparent">
-                <div className="text-2xl font-bold text-neuro-400">{formatNumber(countdown.hours)}</div>
-                <div className="text-xs text-muted-foreground">Hours</div>
-              </div>
-              <div className="glass-card-dark p-3 w-20 rounded-lg shadow-card border border-neuro-500/20 bg-gradient-to-b from-neuro-500/10 to-transparent">
-                <div className="text-2xl font-bold text-neuro-400">{formatNumber(countdown.minutes)}</div>
-                <div className="text-xs text-muted-foreground">Minutes</div>
-              </div>
-              <div className="glass-card-dark p-3 w-20 rounded-lg shadow-card border border-neuro-500/20 bg-gradient-to-b from-neuro-500/10 to-transparent">
-                <div className="text-2xl font-bold text-neuro-400">{formatNumber(countdown.seconds)}</div>
-                <div className="text-xs text-muted-foreground">Seconds</div>
-              </div>
-            </div>
-          </div>
-          
           {/* Progress bar */}
           <div className="max-w-md mx-auto mb-8 reveal reveal-delay-3">
             <div className="flex justify-between text-sm mb-2">
-              <span>Progress: 78% Filled</span>
-              <span>7.8M / 10M $NLOV</span>
+              <span>Progress: 0% Filled</span>
+              <span>0M / 10M $NLOV</span>
             </div>
             <div className="h-3 bg-background/50 rounded-full overflow-hidden border border-neuro-500/20">
-              <div className="h-full w-[78%] bg-gradient-to-r from-neuro-500 to-blue-500 rounded-full"></div>
+              <div className="h-full w-[0%] bg-gradient-to-r from-neuro-500 to-blue-500 rounded-full"></div>
+            </div>
+            <div className="mt-4 text-sm text-muted-foreground">
+              <p>Presale Start: April 7, 2025 11:00 PM IST</p>
+              <p>Presale End: April 15, 2025 11:00 AM IST</p>
             </div>
           </div>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4 reveal reveal-delay-4">
-            <Button variant="outline" size="lg" className="border-neuro-400/20 hover:bg-neuro-500/5 group">
+            <Button variant="outline" size="lg" className="border-neuro-400/20 hover:bg-neuro-500/5 group" onClick={() => window.open('/token#tokenomics', '_self')}>
               <span className="relative flex items-center">
-                View Products
+                Learn More
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>
             </Button>
-            <Button variant="neon" size="lg" className="group relative overflow-hidden">
+            <Button 
+              variant="neon" 
+              size="lg" 
+              className="group relative overflow-hidden"
+              onClick={() => window.open('https://t.me/neurolov', '_blank')}
+            >
               <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               <Sparkles className="mr-2 h-5 w-5 transition-all group-hover:rotate-12" />
-              <span className="relative">Join Presale</span>
+              <span className="relative">Join Waitlist</span>
             </Button>
           </div>
           
