@@ -11,30 +11,27 @@ const teamMembers = [
   {
     name: "Dhruv Panchal",
     role: "CEO & Co-Founder",
-    bio: "Former research lead at OpenAI with 15+ years of experience in AI and distributed systems. PhD in Computer Science from Stanford University.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+    bio: "Visionary CEO of Neurolov, leading AI for global brands . Impacted 50K+ lives in 40+ countries. Signed $13M AI MOU with Govt. of Gujarat. UN-recognized humanitarian and innovation leader",
+    image: "/ceo.png",
     social: {
-      twitter: "#",
-      linkedin: "#",
-      github: "#"
+      twitter: "https://x.com/Dhruv4Ai",
+      linkedin: "https://www.linkedin.com/in/dhruv-panchal-48617a1ba/"
     }
   },
   {
     name: "AAdhik Joshi",
     role: " Co-Founder",
-    bio: "Previously led engineering at NVIDIA's AI research division. Expert in GPU optimization and high-performance computing. MIT Computer Science graduate.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+    bio: "Founder of ModelsLab & Stable Diffusion API, generating 800M+ images with 350K users and $1.2M ARR. 5+ years in AI/ML product development, full-stack engineering, and scalable API integrations",
+    image: "/co-founder.png",
     social: {
-      twitter: "#",
-      linkedin: "#",
-      github: "#"
+      linkedin: "https://www.linkedin.com/in/adhikjoshi/"
     }
   },
   {
     name: "Gokul Ravindran",
     role: "Chief Technology Officer",
-    bio: "Former product lead at Google AI and Meta Reality Labs. Specializes in AI product development and user experience. MBA from Harvard Business School.",
-    image: "https://images.unsplash.com/photo-1580489944761-b5658abf4ff4e",
+    bio: "With 9+ years in blockchain and cryptography, I’ve built smart contracts, exchange engines, and authored key whitepapers.Expert in zk-proofs, Layer 2, and privacy tech, with on-chain analysis for 10+ major projects",
+    image: "/cto.png",
     social: {
       twitter: "#",
       linkedin: "#",
@@ -44,62 +41,71 @@ const teamMembers = [
   {
     name: "Ruzaliya Gubaidullina",
     role: "Chief Operating Officer",
-    bio: "Blockchain architect with experience at Solana Foundation and Ethereum. Expert in token economics and decentralized governance systems.",
-    image: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79",
+    bio: "Ruzaliya Gubaidullina is a business strategist with deep expertise in growth, partnerships, and go-to-market execution.Before co-founding Neurolov, she led initiatives that drove revenue and scaled market reach",
+    image: "/coo.png",
     social: {
-      twitter: "#",
-      linkedin: "#",
-      github: "#"
+      twitter: "https://x.com/ruzaliya__",
+      linkedin: "http://linkedin.com/in/ruzaliya-g-45331220b"
     }
   },
   {
     name: "Sparsh ",
     role: "Chief Marketing Officer",
-    bio: "Leading AI researcher with focus on multi-modal models and distributed learning. Previously at DeepMind. PhD in Machine Learning from UC Berkeley.",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb",
+    bio: "Founder of Hangout Corporations, 100k+ discord community. Web3 builder and AI/ML enthusiast, Sparsh brings a sharp focus on strategic partnerships, fundraising, and ecosystem growth. With a strong background in digital innovation, he helps position Neurolov at the forefront of decentralized AI and Web3 collaboration",
+    image: "/kol.png",
     social: {
-      linkedin: "#",
-      github: "#"
+      linkedin: "https://www.linkedin.com/in/sparsh-gupta-72306b22b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+      github: "https://x.com/hangoutcodex?s=21"
     }
   },
   {
     name: "Nithish Meswal ",
     role: "Software Engineer",
-    bio: "Former partnership lead at NVIDIA and AWS. Expert in strategic alliances and enterprise sales. MBA from Wharton School of Business.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+    bio: "Web3 Tech Lead at Neurolov with 3+ years of experience in full-stack development, blockchain, MCP AI protocols, and dApps. Expert in MERN, AI automation, cybersecurity, and scalable Web3 solutions",
+    image: "/lead-dev.png",
     social: {
-      twitter: "#",
-      linkedin: "#"
+      twitter: "https://www.twitter.com/NMeswal",
+      linkedin: "https://www.linkedin.com/in/nitish-meswal-a33365249"
     }
   },
   {
     name: "Rakesh Sharma ",
     role: "Business Analyst ",
-    bio: "Former partnership lead at NVIDIA and AWS. Expert in strategic alliances and enterprise sales. MBA from Wharton School of Business.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+    bio: "Leads Neurolov’s business growth, strategic roadmap, and ecosystem expansion. With deep expertise in AI, Web3, and DePIN markets, RK oversees token strategy, User and market research, and go-to-market execution",
+    image: "/rk.png",
     social: {
-      twitter: "#",
-      linkedin: "#"
+      twitter: "https://x.com/Rameshkuma1761?t=k9FNxMa0zEFDwZNezp0Frg&s=09",
+      linkedin: "https://www.linkedin.com/in/rk-sharma-2b9385285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
     }
   },
   {
-    name: "Drhuvanshi ",
-    role: "HR",
-    bio: "Former partnership lead at NVIDIA and AWS. Expert in strategic alliances and enterprise sales. MBA from Wharton School of Business.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+    name: "Dhruvanshi ",
+    role: "Design Lead",
+    bio: "Creative lead driving Neurolov’s brand identity and digital presence across Web3 and AI ecosystems. Manages visual branding, social media execution, and community engagement to amplify growth and global visibility",
+    image: "/d-lead.png",
     social: {
-      twitter: "#",
-      linkedin: "#"
+      
+      linkedin: "https://www.linkedin.com/in/dhruvanshi-vyas-631154299"
     }
   },
   {
     name: "Sanskar ",
-    role: "Software Engineer",
-    bio: "Former partnership lead at NVIDIA and AWS. Expert in strategic alliances and enterprise sales. MBA from Wharton School of Business.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+    role: "Marketing Manager",
+    bio: "As a founding team member, Sanskar has built Neurolov’s brand from the ground up, combining strategic marketing with deep platform knowledge",
+    image: "/m-lead.png",
     social: {
-      twitter: "#",
-      linkedin: "#"
+      twitter: "https://x.com/SanskarLunawat2?t=mPmhc4Bt8kkM-zLINUSDPw&s=08",
+      linkedin: "https://www.linkedin.com/in/sanskar-lunavat?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    }
+  },
+  {
+    name: "Charu Keswani  ",
+    role: "Discord Community Manager",
+    bio: "Charu fosters a vibrant and engaging community at Neurolov, ensuring seamless communication between users and the team. With a keen understanding of Web3 dynamics, she moderates discussions, organizes events, and enhances user experience.",
+    image: "/kc.png",
+    social: {
+      twitter: "https://x.com/CharuKeswani",
+      linkedin: "https://in.linkedin.com/in/charu-keswani-a86506188"
     }
   }
   
@@ -108,34 +114,49 @@ const teamMembers = [
 // Advisor data
 const advisors = [
   {
-    name: "Chandra S Katta",
-    role: "Technical Advisor",
-    bio: "Professor of Computer Science at MIT specializing in distributed systems and blockchain technology. Published over 100 research papers.",
-    image: "https://images.unsplash.com/photo-1472099645785-b5658abf4ff4e"
-  },
-  {
-    name: "Umar Mizra ",
-    role: "Growth Advisor ",
-    bio: "Leading expert on AI ethics and policy. Former advisor to UN AI initiatives and technology policy consultant for multiple governments.",
-    image: "https://images.unsplash.com/photo-1573496359142-b5658abf4ff4e"
+    name: "Umair Mirza",
+    role: "Growth Advisor",
+    bio: "Head of Marketing at TorusChain & Neoma Ventures Web3 marketing expert with global experience across the USA, UAE, Singapore & Malaysia.Founder of Omimiz.eth, with a track record in crypto, NFTs, and metaverse projects.Former CMO for Cloud City Metaverse & Narsun Studios.Specializes in community building, brand growth, and blockchain development",
+    image: "/growth.png",
+    social: {
+      linkedin: "https://www.linkedin.com/in/umer-mirza-0a8487a0/"
+    }
   },
   {
     name: "Claire Cawthon",
     role: "Marketing Advisor ",
-    bio: "Seasoned venture capitalist with over 20 years of experience. Partner at Sequoia Capital with focus on AI and blockchain investments.",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7"
+    bio: "CMO at ForceField & Advisor at Kinetic Capital (280+ Web3 investments incl. Ethereum, Solana).Manages $145M+ in annual marketing budgets. 12+ years in tech, 6+ in Web3, advising top 100 blockchain projects. Award-winning strategist, expert in GTM and scaling past $5M+.",
+    image: "/marketing.png",
+    social: {
+      linkedin: "https://www.linkedin.com/in/claire-cawthorn-bounaga-5a303753/"
+    }
+  },
+  {
+    name: "Chandra S Katta",
+    role: "Technical Advisor ",
+    bio: "COO of stealth AI/HPC startup | Ex-CTO at Bitfury 27+ years in tech leadership at Intel, Bitfury & emerging tech firms.Led $1B+ product innovations, holds multiple patents in AI/Blockchain efficiency.Awarded Intel’s Gordy Award for blockchain excellence.Cornell EMBA & Stanford GSB Executive Program graduate.Expert in Web3, tokenization, and sustainable tech strategy",
+    image: "/technical.png",
+    social: {
+      linkedin: "https://www.linkedin.com/in/chandra-s-k-46b0a33?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+    }
   },
   {
     name: "Jesse Guglielmo ",
     role: "Strategy  Advisor ",
-    bio: "Seasoned venture capitalist with over 20 years of experience. Partner at Sequoia Capital with focus on AI and blockchain investments.",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7"
+    bio: "CMO at Bracket (Binance Labs-backed) with 20+ years in marketing and $50M+ GTM revenue driven across fintech, consumer, entertainment & Web3. Ex-NYSE trader & former CEO of a top NYC creative agency.",
+    image: "/strategy.png",
+    social: {
+      linkedin: "https://www.linkedin.com/in/jesseguglielmo/"
+    }
   },
   {
     name: "Peter Yeo",
     role: " Business  Advisor ",
     bio: "Seasoned venture capitalist with over 20 years of experience. Partner at Sequoia Capital with focus on AI and blockchain investments.",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7"
+    image: "/business.png",
+    social: {
+      linkedin: "https://www.linkedin.com/in/peteryeo/"
+    }
   },
   
 ];

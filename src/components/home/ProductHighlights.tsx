@@ -143,13 +143,18 @@ export default function ProductHighlights() {
       
       {/* Call to action */}
       <div className="mt-16 text-center reveal reveal-delay-5">
-        <Button variant="glassDark" className="group relative overflow-hidden border border-neuro-500/20">
-          <span className="absolute inset-0 bg-gradient-to-r from-neuro-500/10 to-blue-500/10 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500"></span>
-          <span className="relative flex items-center">
-            Explore All Products
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </span>
-        </Button>
+        <a href="https://app.neurolov.ai" target="_blank" rel="noopener noreferrer">
+          <Button
+            variant="glassDark"
+            className="group relative overflow-hidden border border-neuro-500/20"
+          >
+            <span className="absolute inset-0 bg-gradient-to-r from-neuro-500/10 to-blue-500/10 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500"></span>
+            <span className="relative flex items-center">
+              Explore All Products
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </span>
+          </Button>
+        </a>
       </div>
     </SectionContainer>
   );

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { SectionContainer } from '@/components/ui/container';
 import { Button } from '@/components/ui/button';
 import { Wallet, Cpu, Coins, Rocket } from 'lucide-react';
+import { toast } from 'sonner';
 
 type StepProps = {
   number: number;
@@ -41,9 +42,60 @@ const Step = ({ number, title, description, icon, delay }: StepProps) => {
   );
 };
 
+// Add wallet detection helpers
+const isPhantomInstalled = () => window.solana && window.solana.isPhantom;
+const isMetaMaskInstalled = () => window.ethereum && window.ethereum.isMetaMask;
+
 export default function HowItWorks() {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [activeLine, setActiveLine] = useState(0);
+  const [walletAddress, setWalletAddress] = useState<string | null>(null);
+
+  // Wallet connection handlers
+  const connectPhantom = async () => {
+    try {
+      if (!isPhantomInstalled()) {
+        window.open('https://phantom.app/', '_blank');
+        return;
+      }
+
+      const response = await window.solana.connect();
+      setWalletAddress(response.publicKey.toString());
+      toast.success('Phantom wallet connected!');
+    } catch (error) {
+      toast.error('Failed to connect Phantom wallet');
+      console.error(error);
+    }
+  };
+
+  const connectMetaMask = async () => {
+    try {
+      if (!isMetaMaskInstalled()) {
+        window.open('https://metamask.io/download/', '_blank');
+        return;
+      }
+
+      const accounts = await window.ethereum.request({ 
+        method: 'eth_requestAccounts' 
+      });
+      setWalletAddress(accounts[0]);
+      toast.success('MetaMask wallet connected!');
+    } catch (error) {
+      toast.error('Failed to connect MetaMask');
+      console.error(error);
+    }
+  };
+
+  const handleWalletConnect = async () => {
+    if (isPhantomInstalled()) {
+      await connectPhantom();
+    } else if (isMetaMaskInstalled()) {
+      await connectMetaMask();
+    } else {
+      // Show wallet options modal or redirect to wallet downloads
+      toast.info('Please install Phantom or MetaMask wallet');
+    }
+  };
 
   useEffect(() => {
     // Initialize the intersection observer
@@ -161,13 +213,51 @@ export default function HowItWorks() {
         </div>
       </div>
 
-      <div className="flex justify-center mt-16">
-        <Button variant="neon" size="lg" className="group relative overflow-hidden reveal reveal-delay-4">
-          <span className="absolute inset-0 w-full h-full bg-white/10 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500"></span>
-          <Rocket className="mr-2 h-5 w-5 transition-all group-hover:rotate-12" />
-          <span className="relative">Start Now</span>
-        </Button>
+      <div className="flex flex-col items-center justify-center gap-4 mt-16">
+        {walletAddress ? (
+          <div className="flex items-center gap-2 text-neuro-500">
+            <Wallet className="h-5 w-5" />
+            <span className="font-medium">
+              {walletAddress.slice(0, 6)}...{walletAddress.slice(-4)}
+            </span>
+          </div>
+        ) : (
+          <>
+            <Button 
+              variant="neon" 
+              size="lg" 
+              className="group relative overflow-hidden reveal reveal-delay-4"
+              onClick={handleWalletConnect}
+            >
+              <span className="absolute inset-0 w-full h-full bg-white/10 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500"></span>
+              <Rocket className="mr-2 h-5 w-5 transition-all group-hover:rotate-12" />
+              <span className="relative">Connect Wallet</span>
+            </Button>
+            
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <span>Supported wallets:</span>
+              <div className="flex items-center gap-1">
+                <img src="/phantom.png" alt="Phantom" className="h-4 w-4" />
+                <img src="/metamask.png" alt="MetaMask" className="h-4 w-4" />
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </SectionContainer>
   );
+}
+
+// Add TypeScript declarations for wallet providers
+declare global {
+  interface Window {
+    solana?: {
+      isPhantom?: boolean;
+      connect(): Promise<{ publicKey: { toString(): string } }>;
+    };
+    ethereum?: {
+      isMetaMask?: boolean;
+      request(args: { method: string }): Promise<string[]>;
+    };
+  }
 }
