@@ -4,14 +4,14 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/index";
+import Index from "./pages/Index";
 import NotFound from "./pages/not-found";
-import ProductsPage from "./pages/products";
-import TokenPage from "./pages/token";
-import EcosystemPage from "./pages/ecosystem";
-import ResourcesPage from "./pages/resources";
-import AboutPage from "./pages/about";
-import WhitepaperPage from "./pages/whitepaper";
+import ProductsPage from "./pages/Products";
+import TokenPage from "./pages/Token";
+import EcosystemPage from "./pages/Ecosystem";
+import ResourcesPage from "./pages/Resources";
+import AboutPage from "./pages/About";
+import WhitepaperPage from "./pages/Whitepaper";
 import PitchDeckPage from "./pages/pitch-deck";
 
 // Create a client with enhanced configuration for better UX
