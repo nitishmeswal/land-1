@@ -9,8 +9,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build || exit 0",
-    "build:dev": "vite build --mode development || exit 0",
+    "build": "rimraf dist && tsc --noEmit && vite build",
+    "build:dev": "rimraf dist && vite build --mode development",
     "lint": "eslint . --max-warnings 0",
     "preview": "vite preview"
   },
@@ -80,6 +80,7 @@
     "globals": "^15.9.0",
     "lovable-tagger": "^1.1.7",
     "postcss": "^8.4.47",
+    "rimraf": "^5.0.10",
     "tailwindcss": "^3.4.11",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
