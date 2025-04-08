@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
+import react from "@vitejs/plugin-react";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
@@ -8,18 +8,25 @@ export default defineConfig(({ mode }) => ({
   base: '/',
   server: {
     host: "::",
-    port: 8080,
+    port: 3000,
+    open: true,
   },
   build: {
     outDir: 'dist',
+    assetsDir: 'assets',
     sourcemap: true,
-    minify: mode === 'production',
+    minify: 'terser',
     emptyOutDir: true,
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
+          'vendor-react': ['react', 'react-dom'],
+          'vendor-chart': ['chart.js', 'react-chartjs-2']
         },
+        format: 'es',
+        entryFileNames: 'assets/js/[name]-[hash].js',
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        assetFileNames: 'assets/[ext]/[name]-[hash].[ext]'
       },
       onwarn(warning, warn) {
         if (warning.code === 'MODULE_LEVEL_DIRECTIVE' || 
@@ -32,7 +39,14 @@ export default defineConfig(({ mode }) => ({
     },
   },
   plugins: [
-    react(),
+    react({
+      babel: {
+        plugins: [
+          ['@babel/plugin-proposal-decorators', { legacy: true }],
+          ['@babel/plugin-proposal-class-properties', { loose: true }]
+        ]
+      }
+    }),
     mode === 'development' &&
     componentTagger(),
   ].filter(Boolean),
@@ -49,4 +63,8 @@ export default defineConfig(({ mode }) => ({
       'missing-module': 'silent'
     }
   },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom', 'chart.js', 'react-chartjs-2'],
+    exclude: []
+  }
 }));
