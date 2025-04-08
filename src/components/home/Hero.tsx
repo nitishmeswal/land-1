@@ -11,7 +11,7 @@ export default function Hero() {
   useEffect(() => {
     // Set loaded state after a short delay for entrance animation
     const timer = setTimeout(() => setIsLoaded(true), 300);
-    
+
     // Initialize the intersection observer
     observerRef.current = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -53,7 +53,7 @@ export default function Hero() {
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-background/50 via-background/30 to-background/20"></div>
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-neuro-500/10 via-neuro-500/5 to-transparent rounded-full blur-3xl opacity-60 animate-pulse-slow"></div>
         <div className="absolute bottom-1/3 right-1/3 w-[600px] h-[600px] bg-gradient-radial from-blue-500/10 via-blue-400/5 to-transparent rounded-full blur-3xl opacity-50 animate-pulse-slow animation-delay-1000"></div>
-        
+
         {/* Animated particles */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-neuro-400/20 rounded-full animate-float"></div>
@@ -70,7 +70,7 @@ export default function Hero() {
             <span className="flex h-2 w-2 rounded-full bg-neuro-500 mr-2 animate-pulse"></span>
             <span className="text-neuro-500 font-semibold">Presale Coming Soon - Limited Allocation</span>
           </div>
-          
+
           {/* Main headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight mb-6 reveal reveal-delay-2 text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-200 to-white">
             Neurolov{' '}
@@ -78,18 +78,18 @@ export default function Hero() {
               .ai
             </span>{' '}
           </h1>
-          
-          
+
+
           {/* Subheadline */}
           <p className="text-lg sm:text-xl text-blue-100 mb-10 max-w-2xl mx-auto reveal reveal-delay-3 drop-shadow-glow">
             Join the revolution: Rent GPUs, generate AI content, and earn $NLOV tokens on Solana.
           </p>
-          
+
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16 reveal reveal-delay-4">
-            <Button 
-              variant="neon" 
-              size="xl" 
+            <Button
+              variant="neon"
+              size="xl"
               className="px-8 shadow-neon group relative overflow-hidden bg-gradient-to-r from-neuro-500 to-blue-500 hover:from-blue-500 hover:to-neuro-500 transition-all duration-500 animate-pulse-subtle"
               onClick={() => window.open('app.neurolov.ai', '_blank')}
             >
@@ -97,9 +97,9 @@ export default function Hero() {
               <Rocket className="mr-2 h-5 w-5 group-hover:animate-bounce" />
               <span className="relative z-10">Launch App</span>
             </Button>
-            <Button 
-              variant="outline" 
-              size="xl" 
+            <Button
+              variant="outline"
+              size="xl"
               className="group relative overflow-hidden border-2 border-neuro-500/50 hover:border-neuro-500 bg-gradient-to-r from-neuro-500/10 to-blue-500/10 hover:from-neuro-500/20 hover:to-blue-500/20 transition-all duration-500"
               onClick={() => window.open('/token#tokenomics', '_self')}
             >
@@ -110,7 +110,7 @@ export default function Hero() {
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1 text-neuro-500" />
             </Button>
           </div>
-          
+
           {/* Stats bar */}
           <div className="flex flex-wrap justify-center gap-6 md:gap-12 reveal reveal-delay-5 mb-12">
             <div className="glass-card px-6 py-3 rounded-xl shadow-neon border border-neuro-500/30 hover:border-neuro-500/50 transition-all duration-300">
@@ -126,42 +126,8 @@ export default function Hero() {
               <p className="text-xs text-blue-200">Community Members</p>
             </div>
           </div>
-          
-          {/* Hero image/graphic */}
-          <div className="relative mt-12 px-4 sm:mt-16 lg:mt-20 reveal reveal-delay-5">
-            <div className="glass-card overflow-hidden rounded-xl shadow-neon border border-neuro-500/20">
-              <div className="relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-[5/2]">
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-black/80 via-black/40 to-transparent z-10"></div>
-                
-                {/* Background image */}
-                <img
-                  src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=1600&q=80"
-                  alt="AI computing visualization"
-                  className="h-full w-full object-cover"
-                />
-                
-                {/* Floating elements */}
-                <div className="absolute top-1/4 left-1/4 w-20 h-20 bg-neuro-500/20 rounded-xl backdrop-blur-sm border border-white/20 animate-float z-20 rotate-6 shadow-neon"></div>
-                <div className="absolute bottom-1/3 right-1/4 w-24 h-24 bg-blue-500/20 rounded-xl backdrop-blur-sm border border-white/20 animate-float animation-delay-1000 z-20 -rotate-6 shadow-glass"></div>
-                
-                {/* TGE callout */}
-                <div className="absolute bottom-6 left-6 right-6 md:right-auto md:w-80 glass-card-dark p-4 rounded-lg z-20 shadow-neon border border-neuro-500/30">
-                  <div className="flex items-center gap-3 mb-2">
-                    <Sparkles className="h-5 w-5 text-neuro-400" />
-                    <h3 className="text-sm font-medium text-white">Token Generation Event</h3>
-                  </div>
-                  <p className="text-xs text-white/80 mb-3">$NLOV launching on Solana in Q2 2025. Join the presale for early access.</p>
-                  <div className="flex gap-2 items-center">
-                    <div className="bg-black/40 h-2 flex-1 rounded-full overflow-hidden">
-                      <div className="h-full w-[0%] bg-gradient-to-r from-neuro-500 to-blue-500 rounded-full"></div>
-                    </div>
-                    <span className="text-xs text-white/80">0%</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
+         
         </div>
       </Container>
     </div>

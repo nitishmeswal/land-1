@@ -19,10 +19,10 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
+        <Partners />
         <ProductHighlights />
         <HowItWorks />
         <Tokenomics />
-        <Partners />
         <CallToAction />
       </main>
       <Footer />

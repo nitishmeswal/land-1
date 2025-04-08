@@ -35,7 +35,7 @@ export default function CallToAction() {
     const countdownTimer = setInterval(() => {
       const now = new Date();
       const difference = tgeDate.getTime() - now.getTime();
-      
+
       if (difference <= 0) {
         clearInterval(countdownTimer);
         setCountdown({
@@ -46,12 +46,12 @@ export default function CallToAction() {
         });
         return;
       }
-      
+
       const days = Math.floor(difference / (1000 * 60 * 60 * 24));
       const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-      
+
       setCountdown({ days, hours, minutes, seconds });
     }, 1000);
 
@@ -73,7 +73,7 @@ export default function CallToAction() {
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-radial from-neuro-500/20 to-transparent opacity-60"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-primary/10 to-transparent rounded-full blur-3xl"></div>
-        
+
         {/* Animated particles */}
         <div className="absolute top-20 left-1/4 w-4 h-4 bg-neuro-400/30 rounded-full animate-float"></div>
         <div className="absolute top-40 right-1/4 w-3 h-3 bg-blue-400/30 rounded-full animate-float animation-delay-700"></div>
@@ -84,18 +84,18 @@ export default function CallToAction() {
         <div className="glass-card max-w-4xl mx-auto p-10 text-center rounded-2xl shadow-neon border border-neuro-500/20 backdrop-blur-md bg-gradient-to-b from-background/90 to-background/70 relative overflow-hidden">
           {/* Background grid */}
           <div className="absolute inset-0 -z-10 bg-grid-white/5 [mask-image:radial-gradient(ellipse_at_center,white,transparent)] opacity-20"></div>
-          
+
           <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-neuro-500/10 text-neuro-500 text-sm font-medium mb-4 reveal reveal-delay-1">
             <Rocket className="h-4 w-4 animate-pulse" />
             <span>Token Generation Event</span>
           </div>
-          
+
           <h2 className="text-3xl font-bold mb-4 reveal reveal-delay-1">Join the $NLOV Presale Now</h2>
-          
+
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto reveal reveal-delay-2">
             Be part of the revolution in AI, compute, and blockchain. Limited allocation available for early supporters.
           </p>
-          
+
           {/* Progress bar */}
           <div className="max-w-md mx-auto mb-8 reveal reveal-delay-3">
             <div className="flex justify-between text-sm mb-2">
@@ -110,7 +110,7 @@ export default function CallToAction() {
               <p>Presale End: April 15, 2025 11:00 AM IST</p>
             </div>
           </div>
-          
+
           <div className="flex flex-col sm:flex-row justify-center gap-4 reveal reveal-delay-4">
             <Button variant="outline" size="lg" className="border-neuro-400/20 hover:bg-neuro-500/5 group" onClick={() => window.open('/token#tokenomics', '_self')}>
               <span className="relative flex items-center">
@@ -118,9 +118,9 @@ export default function CallToAction() {
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>
             </Button>
-            <Button 
-              variant="neon" 
-              size="lg" 
+            <Button
+              variant="neon"
+              size="lg"
               className="group relative overflow-hidden"
               onClick={() => window.open('https://t.me/neurolov', '_blank')}
             >
@@ -129,7 +129,7 @@ export default function CallToAction() {
               <span className="relative">Join Waitlist</span>
             </Button>
           </div>
-          
+
           {/* Social proof */}
           <div className="mt-8 pt-6 border-t border-neuro-500/10 reveal reveal-delay-5">
             <p className="text-xs text-muted-foreground mb-3">As Featured In</p>

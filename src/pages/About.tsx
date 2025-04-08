@@ -50,7 +50,7 @@ const teamMembers = [
   },
   {
     name: "Sparsh ",
-    role: "Chief Marketing Officer",
+    role: "Investor and Partner Relations",
     bio: "Founder of Hangout Corporations, 100k+ discord community. Web3 builder and AI/ML enthusiast, Sparsh brings a sharp focus on strategic partnerships, fundraising, and ecosystem growth. With a strong background in digital innovation, he helps position Neurolov at the forefront of decentralized AI and Web3 collaboration",
     image: "/kol.png",
     social: {
@@ -59,7 +59,7 @@ const teamMembers = [
     }
   },
   {
-    name: "Nithish Meswal ",
+    name: "Nitish Meswal",
     role: "Software Engineer",
     bio: "Web3 Tech Lead at Neurolov with 3+ years of experience in full-stack development, blockchain, MCP AI protocols, and dApps. Expert in MERN, AI automation, cybersecurity, and scalable Web3 solutions",
     image: "/lead-dev.png",
@@ -685,7 +685,7 @@ export default function AboutPage() {
                 
                 <div className="flex justify-center space-x-6 text-muted-foreground">
                   <a href="#" className="hover:text-foreground transition-colors">
-                    <Twitter className="h-6 w-6" />
+                    <Twitter className="h-6 w-6"  />
                   </a>
                   <a href="#" className="hover:text-foreground transition-colors">
                     <Github className="h-6 w-6" />
