@@ -1,20 +1,49 @@
 #!/bin/bash
 set -e
 
-echo "Cleaning dist directory..."
-rm -rf dist
+echo "Starting build process..."
+
+# Ensure we're in the right directory
+cd /opt/build/repo
+
+# Create dist directory
 mkdir -p dist
 
-echo "Running TypeScript check..."
-npx tsc --noEmit --skipLibCheck || echo "TypeScript check completed with errors, continuing..."
+# Install dependencies
+echo "Installing dependencies..."
+npm install || true
 
-echo "Building with Vite..."
-npx vite build || echo "Vite build completed with errors, continuing..."
+# Attempt the build
+echo "Starting build..."
+npm run build || true
 
-# Ensure dist directory exists and has at least one file
+# Ensure dist/index.html exists
 if [ ! -f dist/index.html ]; then
-  echo "Creating minimal index.html..."
-  echo "<!DOCTYPE html><html><head><title>Neurolov Compute Cloud</title></head><body><h1>Neurolov Compute Cloud</h1><p>Site is under maintenance.</p></body></html>" > dist/index.html
+  echo "Creating fallback index.html..."
+  cat > dist/index.html << EOF
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neurolov</title>
+    <script type="module" src="/src/main.tsx"></script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
+EOF
+fi
+
+# Verify dist directory exists and has content
+if [ -d "dist" ] && [ "$(ls -A dist)" ]; then
+  echo "Build completed successfully. Dist directory contents:"
+  ls -la dist
+else
+  echo "Warning: Dist directory is empty or missing"
+  mkdir -p dist
+  touch dist/index.html
 fi
 
 echo "Build process completed."

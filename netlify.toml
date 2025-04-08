@@ -1,5 +1,5 @@
 [build]
-  command = "chmod +x build.sh && ./build.sh"
+  command = "npm run build"
   publish = "dist"
 
 [build.environment]
@@ -9,11 +9,11 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https:; connect-src 'self' https: wss:; img-src 'self' data: https:; frame-src 'self' https:;"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https:; connect-src 'self' https: wss:; img-src 'self' data: https:; frame-src 'self' https:;"
 
 [[headers]]
   for = "/*.js"
