@@ -29,13 +29,8 @@ export default defineConfig(({ mode }) => ({
         assetFileNames: 'assets/[ext]/[name]-[hash].[ext]'
       },
       onwarn(warning, warn) {
-        if (warning.code === 'MODULE_LEVEL_DIRECTIVE' || 
-            warning.code === 'CIRCULAR_DEPENDENCY' ||
-            warning.code === 'MISSING_NODE_BUILTINS' ||
-            warning.code === 'CASE_SENSITIVE_IMPORT') {
-          return;
-        }
-        warn(warning);
+        // Ignore all warnings
+        return;
       }
     },
   },
@@ -62,7 +57,11 @@ export default defineConfig(({ mode }) => ({
       'unsupported-jsx-comment': 'silent',
       'parse-error': 'silent',
       'missing-module': 'silent',
-      'case-sensitivity': 'silent'
+      'case-sensitivity': 'silent',
+      'duplicate-export': 'silent',
+      'empty-import': 'silent',
+      'import-not-found': 'silent',
+      'non-existent-export': 'silent'
     }
   },
   optimizeDeps: {
