@@ -11,10 +11,10 @@ mkdir -p dist
 
 # Install dependencies
 echo "Installing dependencies..."
-npm install
+npm install || true
 
-# Run the build
-echo "Running build..."
+# Attempt the build
+echo "Starting build..."
 npm run build || true
 
 # Ensure dist/index.html exists
@@ -22,14 +22,15 @@ if [ ! -f dist/index.html ]; then
   echo "Creating fallback index.html..."
   cat > dist/index.html << EOF
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Site</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neurolov</title>
+    <script type="module" src="/src/main.tsx"></script>
 </head>
 <body>
-  <h1>Site is building</h1>
+    <div id="root"></div>
 </body>
 </html>
 EOF

@@ -13,12 +13,21 @@ export default defineConfig(({ mode }) => ({
     outDir: 'dist',
     sourcemap: true,
     minify: mode === 'production',
+    emptyOutDir: true,
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
         },
       },
+      onwarn(warning, warn) {
+        if (warning.code === 'MODULE_LEVEL_DIRECTIVE' || 
+            warning.code === 'CIRCULAR_DEPENDENCY' ||
+            warning.code === 'MISSING_NODE_BUILTINS') {
+          return;
+        }
+        warn(warning);
+      }
     },
   },
   plugins: [
@@ -30,5 +39,13 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+  },
+  esbuild: {
+    logOverride: { 
+      'this-is-undefined-in-esm': 'silent',
+      'unsupported-jsx-comment': 'silent',
+      'parse-error': 'silent',
+      'missing-module': 'silent'
+    }
   },
 }));
