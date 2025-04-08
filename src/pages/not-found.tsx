@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import { Container } from '@/components/ui/container';
+import { Container } from '@/components/ui/Container';
 import { ArrowLeft } from "lucide-react";
 
 const NotFound = () => {

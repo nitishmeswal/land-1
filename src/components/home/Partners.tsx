@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { SectionContainer } from '@/components/ui/container';
+import { SectionContainer } from '@/components/ui/Container';
 
 export default function Partners() {
   const [currentIndex, setCurrentIndex] = useState(0);

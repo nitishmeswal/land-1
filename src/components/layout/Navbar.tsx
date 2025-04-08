@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Container } from '@/components/ui/container';
+import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { SectionContainer } from '@/components/ui/container';
+import { SectionContainer } from '@/components/ui/container'; // Fixing case sensitivity in Container import
 import PageLayout from '@/components/layout/PageLayout';
 import { Button } from '@/components/ui/button';
 import SectionHeading from '@/components/common/SectionHeading';

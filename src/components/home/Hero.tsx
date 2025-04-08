@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Container } from '@/components/ui/container';
+import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles, Rocket } from 'lucide-react';
 import Aurora from '../Aurora';

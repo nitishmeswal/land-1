@@ -1,5 +1,5 @@
 import React from 'react';
-import { SectionContainer } from '@/components/ui/container';
+import { SectionContainer } from '@/components/ui/Container';
 import PageLayout from '@/components/layout/PageLayout';
 import { Button } from '@/components/ui/button';
 import SectionHeading from '@/components/common/SectionHeading';

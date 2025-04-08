@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { SectionContainer } from '@/components/ui/container';
+import { SectionContainer } from '@/components/ui/Container';
 import PageLayout from '@/components/layout/PageLayout';
 import { Button } from '@/components/ui/button';
 import SectionHeading from '@/components/common/SectionHeading';
@@ -308,7 +308,7 @@ export default function AboutPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {advisors.map((advisor, index) => (
-                  <div key={index} className="glass-card p-6 rounded-xl border border-neuro-500/10 hover:border-neuro-500/30 transition-all duration-300 hover:shadow-lg group">
+                  <div key={index} className="glass-card p-6 rounded-xl border border-neuro-500/10 hover:border-neuro-500/30 transition-all duration-300 hover:shadow-lg">
                     <div className="mb-4 flex items-center space-x-4">
                       <div className="w-16 h-16 rounded-full overflow-hidden">
                         <img 

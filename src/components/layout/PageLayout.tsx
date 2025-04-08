@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import { SectionContainer } from '@/components/ui/container';
+import { SectionContainer } from '@/components/ui/Container';
 
 interface PageLayoutProps {
   children: React.ReactNode;
