@@ -31,7 +31,8 @@ export default defineConfig(({ mode }) => ({
       onwarn(warning, warn) {
         if (warning.code === 'MODULE_LEVEL_DIRECTIVE' || 
             warning.code === 'CIRCULAR_DEPENDENCY' ||
-            warning.code === 'MISSING_NODE_BUILTINS') {
+            warning.code === 'MISSING_NODE_BUILTINS' ||
+            warning.code === 'CASE_SENSITIVE_IMPORT') {
           return;
         }
         warn(warning);
@@ -60,7 +61,8 @@ export default defineConfig(({ mode }) => ({
       'this-is-undefined-in-esm': 'silent',
       'unsupported-jsx-comment': 'silent',
       'parse-error': 'silent',
-      'missing-module': 'silent'
+      'missing-module': 'silent',
+      'case-sensitivity': 'silent'
     }
   },
   optimizeDeps: {
