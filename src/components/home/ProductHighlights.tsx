@@ -12,32 +12,34 @@ type ProductCardProps = {
   className?: string;
   delay?: string;
   index: number;
+  url: string;
 };
 
-const ProductCard = ({ title, description, icon, className, delay, index }: ProductCardProps) => {
+const ProductCard = ({ title, description, icon, className, delay, index, url }: ProductCardProps) => {
   return (
     <div 
       className={cn(
-        "glass-card p-7 rounded-xl transition-all duration-500 group hover:shadow-neon border border-neuro-500/10 hover:border-neuro-500/30 reveal hover:-translate-y-2",
+        "glass-card p-7 rounded-xl transition-all duration-500 relative border border-neuro-500/10 reveal",
         delay,
         className
       )}
     >
-      <div className="inline-flex items-center justify-center p-3 rounded-lg bg-gradient-to-br from-neuro-500/20 to-blue-500/10 text-neuro-500 mb-4 group-hover:scale-110 transition-transform duration-500">
+      <div className="inline-flex items-center justify-center p-3 rounded-lg bg-gradient-to-br from-neuro-500/20 to-blue-500/10 text-neuro-500 mb-4">
         {icon}
       </div>
-      <h3 className="text-lg font-semibold mb-2 group-hover:text-neuro-500 transition-colors duration-300">{title}</h3>
+      <h3 className="text-lg font-semibold mb-2">{title}</h3>
       <p className="text-muted-foreground text-sm mb-4">{description}</p>
       
-      <div className="flex items-center text-sm font-medium text-neuro-500 opacity-0 group-hover:opacity-100 transition-all duration-500">
-        <span>Learn more</span>
-        <ArrowRight className="ml-1 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-      </div>
-      
-      {/* Card number */}
-      <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-gradient-to-r from-neuro-500 to-neuro-400 text-white text-xs flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform -rotate-12 group-hover:rotate-0">
-        {index + 1}
-      </div>
+      <Button
+        variant="ghost"
+        className="group p-0 h-auto hover:bg-transparent"
+        onClick={() => window.location.href = url}
+      >
+        <span className="flex items-center text-sm font-medium text-neuro-500">
+          Learn more
+          <ArrowRight className="ml-1 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+        </span>
+      </Button>
     </div>
   );
 };
@@ -46,7 +48,6 @@ export default function ProductHighlights() {
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    // Initialize the intersection observer
     observerRef.current = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -55,7 +56,6 @@ export default function ProductHighlights() {
       });
     }, { threshold: 0.1 });
 
-    // Observe all elements with the reveal class
     const elements = document.querySelectorAll('.reveal');
     elements.forEach((el) => {
       observerRef.current?.observe(el);
@@ -73,26 +73,30 @@ export default function ProductHighlights() {
       title: "GPU Compute",
       description: "Rent GPUs for AI training and inference. Affordable, scalable compute power for all.",
       icon: <Cpu className="h-6 w-6" />,
-      delay: "reveal-delay-1"
+      delay: "reveal-delay-1",
+      url: "/products"
     },
     {
       title: "AI Models",
-      description: "Generate images, text, audio, code, and video with ease. Unleash creativity with cutting-edge AI.",
+      description: "Generate images, text, audio, code, and video with ease. Unleash creativity with Neurolov.",
       icon: <Code className="h-6 w-6" />,
-      delay: "reveal-delay-2"
+      delay: "reveal-delay-2",
+      url: "/products"
     },
     {
       title: "Swarm Network",
       description: "Connect devices, solve compute tasks, and earn NLOV. Turn idle hardware into income.",
       icon: <Network className="h-6 w-6" />,
-      delay: "reveal-delay-3"
+      delay: "reveal-delay-3",
+      url: "/products"
     },
     {
       title: "AI Agents",
       description: "Autonomous AI solutions for decentralized apps. The future of blockchain automation.",
       icon: <Bot className="h-6 w-6" />,
-      delay: "reveal-delay-4"
-    },
+      delay: "reveal-delay-4",
+      url: "/products"
+    }
   ];
 
   return (
@@ -130,6 +134,7 @@ export default function ProductHighlights() {
             description={product.description}
             icon={product.icon}
             delay={product.delay}
+            url={product.url}
           />
         ))}
       </div>

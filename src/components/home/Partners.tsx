@@ -70,12 +70,12 @@ export default function Partners() {
             {visiblePartners.map((partner, index) => (
               <div
                 key={`${partner.name}-${index}`}
-                className="flex-shrink-0 w-48 h-32 bg-white/80 dark:bg-white/10 rounded-lg p-4 flex items-center justify-center hover:scale-105 transition-transform"
+                className="flex-shrink-0 w-48 h-32 bg-blue-500/10 backdrop-blur-sm rounded-lg p-6 border border-blue-500/20 hover:border-blue-500/30 transition-all duration-300 flex items-center justify-center"
               >
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="max-h-full max-w-full object-contain filter dark:brightness-110"
+                  className="max-h-full max-w-full object-contain opacity-70 hover:opacity-100 transition-opacity"
                 />
               </div>
             ))}

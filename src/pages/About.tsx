@@ -92,7 +92,7 @@ const teamMembers = [
   },
   {
     name: "Sanskar Lunawat",
-    role: "Marketing Manager",
+    role: "Marketing Head",
     bio: "As a founding team member, Sanskar has built Neurolov’s brand from the ground up, combining strategic marketing with deep platform knowledge",
     image: "/m-lead.png",
     social: {
@@ -102,7 +102,7 @@ const teamMembers = [
   },
   {
     name: "Charu Keswani  ",
-    role: "Discord Community Manager",
+    role: "Community Manager",
     bio: "Charu fosters a vibrant and engaging community at Neurolov, ensuring seamless communication between users and the team. With a keen understanding of Web3 dynamics, she moderates discussions, organizes events, and enhances user experience.",
     image: "/kc.png",
     social: {

@@ -63,7 +63,7 @@ const NavItem = ({ label, items }: { label: string; items: { label: string; href
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setIsOpen(false);
-    }, 150); // Small delay before closing
+    }, 50); // Reduced from 150ms to 50ms for faster response
   };
 
   return (

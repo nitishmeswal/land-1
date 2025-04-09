@@ -56,7 +56,7 @@ export default function Hero() {
           </p>
 
           {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16 reveal reveal-delay-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-20 reveal reveal-delay-4">
             <Button
               size="lg"
               onClick={() => window.open('app.neurolov.ai', '_blank')}
@@ -66,23 +66,24 @@ export default function Hero() {
             </Button>
           </div>
 
-          {/* Stats bar */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-12 reveal reveal-delay-5 mb-8">
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
-              <p className="text-2xl font-bold text-neuro-500">200+</p>
-              <p className="text-sm text-muted-foreground">GPUs</p>
+          {/* Stats Section */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 reveal reveal-delay-5">
+            <div className="glass-card p-8 rounded-xl border border-neuro-500/10 bg-blue-500/10 backdrop-blur-sm hover:border-neuro-500/30 transition-all duration-300 hover:-translate-y-1">
+              <div className="text-5xl font-bold text-neuro-500 mb-3">200+</div>
+              <div className="text-muted-foreground text-sm">GPUs</div>
             </div>
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
-              <p className="text-2xl font-bold text-neuro-500">100K</p>
-              <p className="text-sm text-muted-foreground">AI Content Made</p>
+            
+            <div className="glass-card p-8 rounded-xl border border-neuro-500/10 bg-blue-500/10 backdrop-blur-sm hover:border-neuro-500/30 transition-all duration-300 hover:-translate-y-1">
+              <div className="text-5xl font-bold text-neuro-500 mb-3">100K</div>
+              <div className="text-muted-foreground text-sm">AI Content Made</div>
             </div>
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
-              <p className="text-2xl font-bold text-neuro-500">35,000+</p>
-              <p className="text-sm text-muted-foreground">Community Members</p>
+            
+            <div className="glass-card p-8 rounded-xl border border-neuro-500/10 bg-blue-500/10 backdrop-blur-sm hover:border-neuro-500/30 transition-all duration-300 hover:-translate-y-1">
+              <div className="text-5xl font-bold text-neuro-500 mb-3">35,000+</div>
+              <div className="text-muted-foreground text-sm">Community Members</div>
             </div>
           </div>
 
-          
         </div>
       </Container>
     </div>
