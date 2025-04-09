@@ -52,7 +52,7 @@ export default function Partners() {
   ].slice(0, 5);
 
   return (
-    <div className="w-full bg-gradient-to-b from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-900/10">
+    <div>
       <SectionContainer className="py-20">
         <div className="text-center mb-12">
           <h2 className="text-2xl font-bold mb-4">Building with the Best</h2>
@@ -70,12 +70,12 @@ export default function Partners() {
             {visiblePartners.map((partner, index) => (
               <div
                 key={`${partner.name}-${index}`}
-                className="flex-shrink-0 w-40 h-24 bg-white/80 dark:bg-white/10 rounded-lg p-4 flex items-center justify-center"
+                className="flex-shrink-0 w-48 h-32 bg-white/80 dark:bg-white/10 rounded-lg p-4 flex items-center justify-center hover:scale-105 transition-transform"
               >
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="h-full w-auto object-contain"
+                  className="max-h-full max-w-full object-contain filter dark:brightness-110"
                 />
               </div>
             ))}

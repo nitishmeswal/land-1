@@ -138,9 +138,6 @@ export default function TokenPage() {
               <TabsTrigger value="overview" className="px-4">
                 <Coins className="mr-2 h-4 w-4" /> Overview
               </TabsTrigger>
-              <TabsTrigger value="presale" className="px-4">
-                <BarChart3 className="mr-2 h-4 w-4" /> Presale
-              </TabsTrigger>
               <TabsTrigger value="tokenomics" className="px-4">
                 <BarChart3 className="mr-2 h-4 w-4" /> Tokenomics
               </TabsTrigger>
@@ -149,9 +146,6 @@ export default function TokenPage() {
               </TabsTrigger>
               <TabsTrigger value="faq" className="px-4">
                 <HelpCircle className="mr-2 h-4 w-4" /> FAQ
-              </TabsTrigger>
-              <TabsTrigger value="governance" className="px-4">
-                <Users className="mr-2 h-4 w-4" /> Governance
               </TabsTrigger>
             </TabsList>
           </div>
@@ -201,67 +195,16 @@ export default function TokenPage() {
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-4">
-                  <Button variant="neon">Join Presale</Button>
-                  <Button variant="outline">Read Whitepaper</Button>
+                  <Button variant="neon">Pre Sale Coming Soon</Button>
                 </div>
               </div>
-              <div className="md:w-1/2">
-                <div className="glass-card p-8 rounded-xl border border-neuro-500/20 bg-gradient-to-br from-neuro-500/5 to-blue-500/5 relative">
-                  <div className="absolute -top-8 -right-8 w-16 h-16 bg-gradient-to-br from-neuro-500 to-blue-500 rounded-full opacity-20 blur-xl"></div>
-                  <div className="absolute -bottom-8 -left-8 w-16 h-16 bg-gradient-to-br from-neuro-500 to-blue-500 rounded-full opacity-20 blur-xl"></div>
-                  
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
-                      <div className="text-sm text-muted-foreground mb-1">Token Name</div>
-                      <div className="font-medium">Neurolov (NLOV)</div>
-                    </div>
-                    <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
-                      <div className="text-sm text-muted-foreground mb-1">Token Type</div>
-                      <div className="font-medium">Solana SPL</div>
-                    </div>
-                    <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
-                      <div className="text-sm text-muted-foreground mb-1">Total Supply</div>
-                      <div className="font-medium">1,000,000,000</div>
-                    </div>
-                    <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
-                      <div className="text-sm text-muted-foreground mb-1">Initial Price</div>
-                      <div className="font-medium">$0.10</div>
-                    </div>
-                  </div>
-                  
-                  <div className="mb-6">
-                    <div className="text-sm font-medium mb-2">Token Distribution</div>
-                    <div className="aspect-[16/9] w-full">
-                      <ResponsiveContainer width="100%" height="100%">
-                        <PieChart>
-                          <Pie
-                            data={tokenDistributionData}
-                            cx="50%"
-                            cy="50%"
-                            labelLine={false}
-                            outerRadius={80}
-                            fill="#8884d8"
-                            dataKey="value"
-                            label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-                          >
-                            {tokenDistributionData.map((entry, index) => (
-                              <Cell key={`cell-${index}`} fill={entry.color} />
-                            ))}
-                          </Pie>
-                          <Tooltip formatter={(value) => `${value}%`} />
-                        </PieChart>
-                      </ResponsiveContainer>
-                    </div>
-                  </div>
-                  
-                  <div className="text-center">
-                    <Button variant="outline" className="w-full" asChild>
-                      <a href="/token#tokenomics">
-                        View Detailed Tokenomics <ArrowUpRight className="ml-2 h-4 w-4" />
-                      </a>
-                    </Button>
-                  </div>
-                </div>
+              <div className="md:w-1/2 flex justify-center relative">
+                <div className="absolute inset-0 bg-blue-500/10 blur-3xl rounded-full transform scale-90"></div>
+                <img 
+                  src="/coin.png" 
+                  alt="NLOV Token" 
+                  className="w-[24rem] h-[24rem] object-contain relative z-10" 
+                />
               </div>
             </div>
             
@@ -386,207 +329,6 @@ export default function TokenPage() {
             </div>
           </TabsContent>
 
-          {/* Presale Tab */}
-          <TabsContent value="presale" className="space-y-16">
-            <div className="flex flex-col md:flex-row gap-12">
-              <div className="md:w-1/2">
-                <SectionHeading
-                  title="Join the NLOV Presale"
-                  subtitle="Secure your tokens early at the best possible price"
-                  badge="Limited Time"
-                  align="left"
-                />
-                
-                <div className="space-y-6 mb-8">
-                  <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
-                    <div>
-                      <h4 className="font-medium">Presale Price: $0.10</h4>
-                      <p className="text-sm text-muted-foreground">Expected listing price: $0.20 (100% potential upside)</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
-                    <div>
-                      <h4 className="font-medium">Presale Allocation: 200,000,000 NLOV</h4>
-                      <p className="text-sm text-muted-foreground">20% of total token supply</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
-                    <div>
-                      <h4 className="font-medium">Presale Goal: $20,000,000</h4>
-                      <p className="text-sm text-muted-foreground">Funds will be used for development, marketing, and infrastructure</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
-                    <div>
-                      <h4 className="font-medium">Accepted Payment Methods</h4>
-                      <p className="text-sm text-muted-foreground">USDT, USDC, ETH, SOL, BTC</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="glass-card p-6 rounded-xl border border-neuro-500/10 mb-8">
-                  <h3 className="text-lg font-bold mb-4">Presale Bonus Structure</h3>
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center pb-2 border-b border-neuro-500/10">
-                      <div className="font-medium">Investment Amount</div>
-                      <div className="font-medium">Bonus</div>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <div>$100 - $999</div>
-                      <div className="text-neuro-500">5%</div>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <div>$1,000 - $4,999</div>
-                      <div className="text-neuro-500">10%</div>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <div>$5,000 - $9,999</div>
-                      <div className="text-neuro-500">15%</div>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <div>$10,000+</div>
-                      <div className="text-neuro-500">25%</div>
-                    </div>
-                  </div>
-                </div>
-                
-                <Button variant="neon" size="lg" className="w-full">Connect Wallet to Participate</Button>
-              </div>
-              
-              <div className="md:w-1/2">
-                <div className="glass-card p-8 rounded-xl border border-neuro-500/20 bg-gradient-to-br from-neuro-500/5 to-blue-500/5 mb-8">
-                  <h3 className="text-2xl font-bold mb-6 text-center">Presale Ends In</h3>
-                  
-                  <div className="grid grid-cols-4 gap-4 mb-8">
-                    <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 text-center">
-                      <div className="text-3xl font-bold text-neuro-500 mb-1">{daysLeft}</div>
-                      <div className="text-xs text-muted-foreground">Days</div>
-                    </div>
-                    <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 text-center">
-                      <div className="text-3xl font-bold text-neuro-500 mb-1">{hoursLeft}</div>
-                      <div className="text-xs text-muted-foreground">Hours</div>
-                    </div>
-                    <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 text-center">
-                      <div className="text-3xl font-bold text-neuro-500 mb-1">{minutesLeft}</div>
-                      <div className="text-xs text-muted-foreground">Minutes</div>
-                    </div>
-                    <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 text-center">
-                      <div className="text-3xl font-bold text-neuro-500 mb-1">{secondsLeft}</div>
-                      <div className="text-xs text-muted-foreground">Seconds</div>
-                    </div>
-                  </div>
-                  
-                  <div className="mb-6">
-                    <div className="flex justify-between text-sm mb-1">
-                      <span>Progress</span>
-                      <span className="font-medium">{presaleProgress}%</span>
-                    </div>
-                    <div className="w-full h-3 bg-white/10 rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-gradient-to-r from-neuro-500 to-blue-500 rounded-full"
-                        style={{ width: `${presaleProgress}%` }}
-                      ></div>
-                    </div>
-                    <div className="flex justify-between text-sm mt-1">
-                      <span>${new Intl.NumberFormat().format(presaleRaised)} raised</span>
-                      <span>${new Intl.NumberFormat().format(presaleGoal)} goal</span>
-                    </div>
-                  </div>
-                  
-                  <div className="mb-8">
-                    <h4 className="font-medium mb-4">Calculate Your Investment</h4>
-                    <div className="space-y-4">
-                      <div>
-                        <label className="text-sm mb-1 block">Amount to Invest (USD)</label>
-                        <input
-                          type="number"
-                          value={amountToInvest}
-                          onChange={handleAmountChange}
-                          className="w-full p-3 rounded-lg bg-white/5 border border-white/10 focus:outline-none focus:ring-2 focus:ring-neuro-500"
-                        />
-                      </div>
-                      <div>
-                        <label className="text-sm mb-1 block">Estimated NLOV Tokens</label>
-                        <div className="w-full p-3 rounded-lg bg-white/5 border border-white/10 font-medium text-neuro-500">
-                          {new Intl.NumberFormat().format(estimatedTokens)}
-                        </div>
-                      </div>
-                      <div>
-                        <label className="text-sm mb-1 block">Potential Bonus Tokens</label>
-                        <div className="w-full p-3 rounded-lg bg-white/5 border border-white/10 font-medium text-neuro-500">
-                          {amountToInvest >= 10000 ? "+ " + new Intl.NumberFormat().format(estimatedTokens * 0.25) : 
-                           amountToInvest >= 5000 ? "+ " + new Intl.NumberFormat().format(estimatedTokens * 0.15) :
-                           amountToInvest >= 1000 ? "+ " + new Intl.NumberFormat().format(estimatedTokens * 0.10) :
-                           amountToInvest >= 100 ? "+ " + new Intl.NumberFormat().format(estimatedTokens * 0.05) : "0"}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="text-center space-y-4">
-                    <Button variant="outline" className="w-full">View Presale Contract</Button>
-                    <div className="text-xs text-muted-foreground">
-                      Presale Contract Address: 0x8e7A5E8F...[verified on Solscan]
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-neuro-500/5 border border-neuro-500/10 rounded-xl p-6">
-                  <h4 className="font-bold flex items-center mb-2">
-                    <HelpCircle className="h-4 w-4 mr-2" />
-                    Need Help?
-                  </h4>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    If you're experiencing any issues with the presale process, please contact our support team via any of these channels:
-                  </p>
-                  <div className="space-y-2 text-sm">
-                    <div>📧 Email: presale@neurolov.ai</div>
-                    <div>💬 Telegram: @NeurolovSupport</div>
-                    <div>🌐 Discord: discord.gg/neurolov</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="glass-card p-8 rounded-xl border border-neuro-500/10">
-              <SectionHeading
-                title="Frequently Asked Questions"
-                subtitle="Common questions about the NLOV presale"
-              />
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="font-bold mb-2">When will tokens be distributed?</h4>
-                  <p className="text-muted-foreground">
-                    Tokens will be distributed to presale participants within 48 hours after the presale ends. You'll be able to claim them by connecting your wallet to our platform.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-bold mb-2">Is there a minimum or maximum investment?</h4>
-                  <p className="text-muted-foreground">
-                    The minimum investment is $100 equivalent in any accepted cryptocurrency. There is no maximum limit per individual, but large investments may require KYC verification.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-bold mb-2">Is there a vesting period?</h4>
-                  <p className="text-muted-foreground">
-                    Presale participants will receive 25% of their tokens immediately after distribution, with the remaining 75% vested linearly over 6 months to ensure market stability.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-bold mb-2">What happens if the presale doesn't reach its goal?</h4>
-                  <p className="text-muted-foreground">
-                    If the presale doesn't reach its full target, we'll still proceed with the token launch and adjust our development timeline accordingly. There's no scenario where funds will be returned.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-
           {/* Tokenomics Tab */}
           <TabsContent value="tokenomics" className="space-y-16">
             <div className="flex flex-col md:flex-row gap-12 items-center">
@@ -594,7 +336,6 @@ export default function TokenPage() {
                 <SectionHeading
                   title="NLOV Tokenomics"
                   subtitle="A sustainable and fair token economy designed for long-term growth"
-                  badge="Tokenomics"
                   align="left"
                 />
                 
@@ -829,7 +570,6 @@ export default function TokenPage() {
               <SectionHeading
                 title="NLOV Token Utility"
                 subtitle="A multi-purpose utility token powering the entire Neurolov ecosystem"
-                badge="Token Utility"
               />
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -1106,7 +846,6 @@ export default function TokenPage() {
               <SectionHeading
                 title="Frequently Asked Questions"
                 subtitle="Answers to common questions about the NLOV token"
-                badge="FAQ"
               />
               
               <div className="grid grid-cols-1 gap-6 max-w-3xl mx-auto">
@@ -1160,312 +899,6 @@ export default function TokenPage() {
                 <a href="mailto:support@neurolov.ai" className="text-neuro-500 font-medium">
                   support@neurolov.ai
                 </a>
-              </div>
-            </div>
-          </TabsContent>
-
-          {/* Governance Tab */}
-          <TabsContent value="governance" className="space-y-16">
-            <div className="flex flex-col md:flex-row gap-12 items-center">
-              <div className="md:w-1/2">
-                <SectionHeading
-                  title="NLOV Governance"
-                  subtitle="Community-driven decision making through the NLOV DAO"
-                  badge="Governance"
-                  align="left"
-                />
-                
-                <p className="text-muted-foreground mb-6">
-                  The Neurolov DAO enables token holders to participate in platform governance, 
-                  voting on key decisions that shape the future of the ecosystem. By staking NLOV 
-                  tokens, you gain voting rights proportional to your holdings.
-                </p>
-                
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
-                    <div>
-                      <h4 className="font-medium">Protocol Upgrades</h4>
-                      <p className="text-sm text-muted-foreground">Vote on technical improvements and new features</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
-                    <div>
-                      <h4 className="font-medium">Fee Structures</h4>
-                      <p className="text-sm text-muted-foreground">Determine platform fee levels and token burn rates</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
-                    <div>
-                      <h4 className="font-medium">Treasury Allocation</h4>
-                      <p className="text-sm text-muted-foreground">Decide how community funds are spent</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
-                    <div>
-                      <h4 className="font-medium">Grants and Partnerships</h4>
-                      <p className="text-sm text-muted-foreground">Approve funding for ecosystem growth initiatives</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <Button variant="neon">Enter DAO Portal</Button>
-              </div>
-              
-              <div className="md:w-1/2">
-                <div className="glass-card p-8 rounded-xl border border-neuro-500/10 bg-gradient-to-br from-neuro-500/5 to-blue-500/5">
-                  <h3 className="text-xl font-bold mb-6">Active Proposals</h3>
-                  
-                  <div className="space-y-4">
-                    <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
-                      <div className="flex justify-between items-start mb-2">
-                        <h4 className="font-medium">NIP-23: Add New GPU Types</h4>
-                        <div className="inline-flex items-center px-2 py-1 rounded-full bg-green-500/10 text-green-500 text-xs font-medium">
-                          <span>Voting Active</span>
-                        </div>
-                      </div>
-                      <p className="text-sm text-muted-foreground mb-3">Proposal to add support for AMD MI300 and NVIDIA H200 GPUs to the network.</p>
-                      <div className="flex justify-between text-sm">
-                        <span>57% Yes / 23% No</span>
-                        <span>Ends in 3 days</span>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
-                      <div className="flex justify-between items-start mb-2">
-                        <h4 className="font-medium">NIP-24: Reduce Staking Minimum</h4>
-                        <div className="inline-flex items-center px-2 py-1 rounded-full bg-green-500/10 text-green-500 text-xs font-medium">
-                          <span>Voting Active</span>
-                        </div>
-                      </div>
-                      <p className="text-sm text-muted-foreground mb-3">Reduce minimum staking requirement from 1,000 NLOV to 500 NLOV.</p>
-                      <div className="flex justify-between text-sm">
-                        <span>78% Yes / 12% No</span>
-                        <span>Ends in 5 days</span>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
-                      <div className="flex justify-between items-start mb-2">
-                        <h4 className="font-medium">NIP-22: Community Fund</h4>
-                        <div className="inline-flex items-center px-2 py-1 rounded-full bg-blue-500/10 text-blue-500 text-xs font-medium">
-                          <span>Passed</span>
-                        </div>
-                      </div>
-                      <p className="text-sm text-muted-foreground mb-3">Allocate 500,000 NLOV to community education and developer grants.</p>
-                      <div className="flex justify-between text-sm">
-                        <span>82% Yes / 18% No</span>
-                        <span>Implemented</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <SectionHeading
-                title="Governance Process"
-                subtitle="How the Neurolov DAO makes decisions"
-              />
-              
-              <div className="relative">
-                {/* Process steps */}
-                <div className="absolute left-[26px] md:left-1/2 top-0 bottom-0 w-px bg-neuro-500/20 md:-translate-x-1/2"></div>
-                
-                <div className="space-y-16">
-                  <div className="flex flex-col md:flex-row items-start">
-                    <div className="flex md:w-1/2 md:justify-end md:pr-12 mb-6 md:mb-0">
-                      <div className="relative z-10 flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center bg-neuro-500/10 text-neuro-500 border-4 border-background mr-4 md:mr-0">
-                        <span className="text-xl font-bold">1</span>
-                      </div>
-                      <div className="pt-2 md:hidden">
-                        <h3 className="text-xl font-bold mb-2">Proposal Creation</h3>
-                        <p className="text-muted-foreground">
-                          Any community member holding at least 100,000 NLOV tokens can submit a proposal. 
-                          Proposals must include a detailed description, rationale, and implementation plan.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="md:w-1/2 md:pl-12 hidden md:block">
-                      <h3 className="text-xl font-bold mb-2">Proposal Creation</h3>
-                      <p className="text-muted-foreground">
-                        Any community member holding at least 100,000 NLOV tokens can submit a proposal. 
-                        Proposals must include a detailed description, rationale, and implementation plan.
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex flex-col md:flex-row items-start">
-                    <div className="flex md:w-1/2 md:justify-end md:pr-12 mb-6 md:mb-0 md:order-last">
-                      <div className="relative z-10 flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center bg-neuro-500/10 text-neuro-500 border-4 border-background mr-4 md:ml-4 md:mr-0">
-                        <span className="text-xl font-bold">2</span>
-                      </div>
-                      <div className="pt-2 md:hidden">
-                        <h3 className="text-xl font-bold mb-2">Discussion Period</h3>
-                        <p className="text-muted-foreground">
-                          Proposals undergo a 7-day discussion period where community members can ask questions, 
-                          suggest improvements, and debate the merits of the proposal.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="md:w-1/2 md:pr-12 hidden md:block">
-                      <h3 className="text-xl font-bold mb-2">Discussion Period</h3>
-                      <p className="text-muted-foreground">
-                        Proposals undergo a 7-day discussion period where community members can ask questions, 
-                        suggest improvements, and debate the merits of the proposal.
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex flex-col md:flex-row items-start">
-                    <div className="flex md:w-1/2 md:justify-end md:pr-12 mb-6 md:mb-0">
-                      <div className="relative z-10 flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center bg-neuro-500/10 text-neuro-500 border-4 border-background mr-4 md:mr-0">
-                        <span className="text-xl font-bold">3</span>
-                      </div>
-                      <div className="pt-2 md:hidden">
-                        <h3 className="text-xl font-bold mb-2">Voting Period</h3>
-                        <p className="text-muted-foreground">
-                          After the discussion period, proposals move to a 5-day voting period. 
-                          Staked NLOV tokens serve as voting power, with 1 NLOV = 1 vote.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="md:w-1/2 md:pl-12 hidden md:block">
-                      <h3 className="text-xl font-bold mb-2">Voting Period</h3>
-                      <p className="text-muted-foreground">
-                        After the discussion period, proposals move to a 5-day voting period. 
-                        Staked NLOV tokens serve as voting power, with 1 NLOV = 1 vote.
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex flex-col md:flex-row items-start">
-                    <div className="flex md:w-1/2 md:justify-end md:pr-12 mb-6 md:mb-0 md:order-last">
-                      <div className="relative z-10 flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center bg-neuro-500/10 text-neuro-500 border-4 border-background mr-4 md:ml-4 md:mr-0">
-                        <span className="text-xl font-bold">4</span>
-                      </div>
-                      <div className="pt-2 md:hidden">
-                        <h3 className="text-xl font-bold mb-2">Implementation</h3>
-                        <p className="text-muted-foreground">
-                          If a proposal receives majority approval ({'>'}50% of votes) with a quorum of at least 10% of 
-                          staked tokens participating, it moves to implementation by the core team.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="md:w-1/2 md:pr-12 hidden md:block">
-                      <h3 className="text-xl font-bold mb-2">Implementation</h3>
-                      <p className="text-muted-foreground">
-                        If a proposal receives majority approval ({'>'}50% of votes) with a quorum of at least 10% of 
-                        staked tokens participating, it moves to implementation by the core team.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="glass-card p-8 rounded-xl border border-neuro-500/10">
-              <div className="flex flex-col md:flex-row gap-12">
-                <div className="md:w-1/2">
-                  <h3 className="text-2xl font-bold mb-4">Governance Parameters</h3>
-                  <p className="text-muted-foreground mb-6">
-                    Current governance parameters, which can themselves be modified through governance proposals.
-                  </p>
-                  
-                  <div className="space-y-4 mb-8">
-                    <div className="flex justify-between pb-2 border-b border-neuro-500/10">
-                      <div className="font-medium">Parameter</div>
-                      <div className="font-medium">Value</div>
-                    </div>
-                    <div className="flex justify-between">
-                      <div>Proposal Threshold</div>
-                      <div>100,000 NLOV</div>
-                    </div>
-                    <div className="flex justify-between">
-                      <div>Discussion Period</div>
-                      <div>7 days</div>
-                    </div>
-                    <div className="flex justify-between">
-                      <div>Voting Period</div>
-                      <div>5 days</div>
-                    </div>
-                    <div className="flex justify-between">
-                      <div>Approval Threshold</div>
-                      <div>{'>'}50% Yes</div>
-                    </div>
-                    <div className="flex justify-between">
-                      <div>Quorum Requirement</div>
-                      <div>10% of staked tokens</div>
-                    </div>
-                    <div className="flex justify-between">
-                      <div>Implementation Delay</div>
-                      <div>48 hours</div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="md:w-1/2">
-                  <h3 className="text-2xl font-bold mb-4">DAO Treasury</h3>
-                  <p className="text-muted-foreground mb-6">
-                    The DAO treasury is funded by network fees and is used to support ecosystem development.
-                  </p>
-                  
-                  <div className="space-y-6 mb-8">
-                    <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
-                      <div className="text-sm text-muted-foreground mb-1">Current Treasury Balance</div>
-                      <div className="text-2xl font-bold text-neuro-500">12,450,000 NLOV</div>
-                      <div className="text-sm text-muted-foreground">≈ $1,245,000 USD</div>
-                    </div>
-                    
-                    <div>
-                      <div className="text-lg font-medium mb-3">Allocation Breakdown</div>
-                      <div className="space-y-3">
-                        <div>
-                          <div className="flex justify-between text-sm mb-1">
-                            <span>Development Grants</span>
-                            <span>40%</span>
-                          </div>
-                          <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
-                            <div className="h-full bg-neuro-500/60 rounded-full" style={{ width: '40%' }}></div>
-                          </div>
-                        </div>
-                        <div>
-                          <div className="flex justify-between text-sm mb-1">
-                            <span>Marketing & Growth</span>
-                            <span>30%</span>
-                          </div>
-                          <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
-                            <div className="h-full bg-neuro-500/60 rounded-full" style={{ width: '30%' }}></div>
-                          </div>
-                        </div>
-                        <div>
-                          <div className="flex justify-between text-sm mb-1">
-                            <span>Community Incentives</span>
-                            <span>20%</span>
-                          </div>
-                          <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
-                            <div className="h-full bg-neuro-500/60 rounded-full" style={{ width: '20%' }}></div>
-                          </div>
-                        </div>
-                        <div>
-                          <div className="flex justify-between text-sm mb-1">
-                            <span>Emergency Reserve</span>
-                            <span>10%</span>
-                          </div>
-                          <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
-                            <div className="h-full bg-neuro-500/60 rounded-full" style={{ width: '10%' }}></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <Button variant="outline">View Treasury Dashboard</Button>
-                </div>
               </div>
             </div>
           </TabsContent>

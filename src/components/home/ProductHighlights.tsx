@@ -103,14 +103,7 @@ export default function ProductHighlights() {
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neuro-500/20 to-transparent"></div>
       </div>
       
-      <div className="text-center mb-16">
-        <div className="mb-8">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-neuro-500/10 text-neuro-500 text-sm font-medium reveal reveal-delay-1">
-            <span className="mr-1">✨</span>
-            <span>Ecosystem</span>
-          </div>
-        </div>
-        
+      <div className="text-center mb-16">        
         <div>
           <h2 className="text-4xl font-bold mb-6 reveal reveal-delay-1 relative inline-block">
             Discover the Neurolov Advantage

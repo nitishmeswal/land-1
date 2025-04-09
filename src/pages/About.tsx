@@ -63,7 +63,7 @@ const teamMembers = [
   {
     name: "Nitish Meswal",
     role: "Software Engineer",
-    bio: "Web3 Tech Lead at Neurolov with 3+ years of experience in full-stack development, blockchain, MCP AI protocols, and dApps. Expert in MERN, AI automation, cybersecurity, and scalable Web3 solutions",
+    bio: "3+ years of experience in full-stack development, blockchain, MCP AI protocols, and dApps. Expert in MERN, AI automation, cybersecurity, and scalable Web3 solutions.Web3 Tech Lead at Neurolov",
     image: "/lead-dev.png",
     social: {
       twitter: "https://www.twitter.com/NMeswal",
@@ -91,7 +91,7 @@ const teamMembers = [
     }
   },
   {
-    name: "Sanskar ",
+    name: "Sanskar Lunawat",
     role: "Marketing Manager",
     bio: "As a founding team member, Sanskar has built Neurolov’s brand from the ground up, combining strategic marketing with deep platform knowledge",
     image: "/m-lead.png",
@@ -115,24 +115,6 @@ const teamMembers = [
 
 // Advisor data
 const advisors = [
-  {
-    name: "Umair Mirza",
-    role: "Growth Advisor",
-    bio: "Head of Marketing at TorusChain & Neoma Ventures Web3 marketing expert with global experience across the USA, UAE, Singapore & Malaysia.Founder of Omimiz.eth, with a track record in crypto, NFTs, and metaverse projects.Former CMO for Cloud City Metaverse & Narsun Studios.Specializes in community building, brand growth, and blockchain development",
-    image: "/growth.png",
-    social: {
-      linkedin: "https://www.linkedin.com/in/umer-mirza-0a8487a0/"
-    }
-  },
-  {
-    name: "Claire Cawthon",
-    role: "Marketing Advisor ",
-    bio: "CMO at ForceField & Advisor at Kinetic Capital (280+ Web3 investments incl. Ethereum, Solana).Manages $145M+ in annual marketing budgets. 12+ years in tech, 6+ in Web3, advising top 100 blockchain projects. Award-winning strategist, expert in GTM and scaling past $5M+.",
-    image: "/marketing.png",
-    social: {
-      linkedin: "https://www.linkedin.com/in/claire-cawthorn-bounaga-5a303753/"
-    }
-  },
   {
     name: "Chandra S Katta",
     role: "Technical Advisor ",
@@ -158,6 +140,24 @@ const advisors = [
     image: "/business.png",
     social: {
       linkedin: "https://www.linkedin.com/in/peteryeo/"
+    }
+  },
+  {
+    name: "Claire Cawthon",
+    role: "Marketing Advisor ",
+    bio: "CMO at ForceField & Advisor at Kinetic Capital (280+ Web3 investments incl. Ethereum, Solana).Manages $145M+ in annual marketing budgets. 12+ years in tech, 6+ in Web3, advising top 100 blockchain projects. Award-winning strategist, expert in GTM and scaling past $5M+.",
+    image: "/marketing.png",
+    social: {
+      linkedin: "https://www.linkedin.com/in/claire-cawthorn-bounaga-5a303753/"
+    }
+  },
+  {
+    name: "Umair Mirza",
+    role: "Growth Advisor",
+    bio: "Head of Marketing at TorusChain & Neoma Ventures Web3 marketing expert with global experience across the USA, UAE, Singapore & Malaysia.Founder of Omimiz.eth, with a track record in crypto, NFTs, and metaverse projects.Former CMO for Cloud City Metaverse & Narsun Studios.Specializes in community building, brand growth, and blockchain development",
+    image: "/growth.png",
+    social: {
+      linkedin: "https://www.linkedin.com/in/umer-mirza-0a8487a0/"
     }
   },
   
@@ -243,10 +243,6 @@ export default function AboutPage() {
               <BookOpen className="mr-2 h-4 w-4" />
               Mission
             </TabsTrigger>
-            <TabsTrigger value="values" className="w-1/3">
-              <Globe className="mr-2 h-4 w-4" />
-              Values
-            </TabsTrigger>
           </TabsList>
 
           {/* Team Tab */}
@@ -255,7 +251,6 @@ export default function AboutPage() {
               <SectionHeading
                 title="Our Leadership Team"
                 subtitle="Meet the experts building the future of decentralized AI"
-                badge="Core Team"
               />
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -303,7 +298,6 @@ export default function AboutPage() {
               <SectionHeading
                 title="Our Advisors"
                 subtitle="Industry experts guiding our strategic direction"
-                badge="Advisors"
               />
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -337,7 +331,6 @@ export default function AboutPage() {
                 <SectionHeading
                   title="Our Mission"
                   subtitle="Democratizing access to AI compute and capabilities"
-                  badge="Mission"
                   align="left"
                 />
                 
@@ -493,212 +486,6 @@ export default function AboutPage() {
                 <Button variant="outline" size="sm" className="w-full">
                   Ethics Framework
                 </Button>
-              </div>
-            </div>
-          </TabsContent>
-
-          {/* Values Tab */}
-          <TabsContent value="values" className="space-y-16">
-            <div className="glass-card p-8 rounded-xl border border-neuro-500/10 bg-gradient-to-br from-neuro-500/5 to-blue-500/5 relative overflow-hidden">
-              <div className="absolute -top-20 -right-20 w-40 h-40 bg-neuro-500/30 rounded-full blur-3xl opacity-40"></div>
-              <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-blue-500/30 rounded-full blur-3xl opacity-40"></div>
-              
-              <div className="relative z-10 text-center max-w-4xl mx-auto">
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-neuro-500/10 text-neuro-500 text-sm font-medium mb-4">
-                  <span>Our Vision</span>
-                </div>
-                
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                  A World Where AI Compute is as <span className="hero-text-gradient">Accessible as Electricity</span>
-                </h2>
-                
-                <p className="text-xl text-muted-foreground mb-8">
-                  We envision a future where anyone with an idea can access the computing 
-                  power needed to build advanced AI solutions, creating a more innovative, 
-                  equitable, and prosperous world.
-                </p>
-                
-                <Button variant="neon" size="lg">
-                  Join Our Mission
-                  <ArrowUpRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
-            </div>
-            
-            <div className="flex flex-col md:flex-row gap-12 items-center">
-              <div className="md:w-1/2">
-                <SectionHeading
-                  title="The Future We're Building"
-                  subtitle="Our long-term vision for Neurolov and the AI ecosystem"
-                  badge="Long-term Vision"
-                  align="left"
-                />
-                
-                <p className="text-muted-foreground mb-6">
-                  We believe that the current centralized model of AI compute is holding back 
-                  innovation and limiting the benefits of AI to a select few organizations with 
-                  massive resources. Our vision is to fundamentally transform this paradigm.
-                </p>
-                
-                <div className="space-y-6 mb-8">
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 w-10 h-10 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500 mr-4 font-bold">1</div>
-                    <div>
-                      <h4 className="font-medium text-lg mb-1">Ubiquitous AI Compute</h4>
-                      <p className="text-muted-foreground">
-                        A world where AI compute is available everywhere, on demand, at competitive prices, 
-                        enabling innovation from individuals and organizations of all sizes.
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 w-10 h-10 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500 mr-4 font-bold">2</div>
-                    <div>
-                      <h4 className="font-medium text-lg mb-1">Community Ownership</h4>
-                      <p className="text-muted-foreground">
-                        A platform truly owned by its users, with decisions made through transparent 
-                        governance and benefits distributed fairly to all contributors.
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 w-10 h-10 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500 mr-4 font-bold">3</div>
-                    <div>
-                      <h4 className="font-medium text-lg mb-1">Global Resource Optimization</h4>
-                      <p className="text-muted-foreground">
-                        Maximizing the utility of computing resources worldwide by creating a marketplace 
-                        where idle capacity can be shared and utilized efficiently.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="md:w-1/2">
-                <div className="relative">
-                  <img 
-                    src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485" 
-                    alt="AI Future Vision" 
-                    className="rounded-xl shadow-xl" 
-                  />
-                  
-                  <div className="absolute top-4 right-4 bg-background/80 backdrop-blur-sm p-4 rounded-lg max-w-xs">
-                    <div className="text-lg font-bold mb-1">By 2030</div>
-                    <p className="text-sm text-muted-foreground">
-                      We aim to power over 50% of the world's AI workloads through our decentralized network.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <SectionHeading
-                title="The Impact We Envision"
-                subtitle="How Neurolov will transform the AI landscape"
-              />
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="glass-card p-6 rounded-xl border border-neuro-500/10">
-                  <h3 className="text-xl font-bold mb-3">Economic Empowerment</h3>
-                  <p className="text-muted-foreground mb-4">
-                    By allowing anyone to contribute computing resources to the network, 
-                    we're creating new income streams for individuals and organizations 
-                    worldwide. Hardware that would otherwise sit idle can now generate revenue.
-                  </p>
-                  <p className="text-muted-foreground mb-4">
-                    We estimate that by 2025, our network will have distributed over $500 million 
-                    worth of NLOV tokens to resource providers across the globe.
-                  </p>
-                  <div className="w-full h-1 bg-gradient-to-r from-neuro-500/30 to-blue-500/30 rounded-full"></div>
-                </div>
-                
-                <div className="glass-card p-6 rounded-xl border border-neuro-500/10">
-                  <h3 className="text-xl font-bold mb-3">Innovation Acceleration</h3>
-                  <p className="text-muted-foreground mb-4">
-                    By dramatically reducing the cost barrier to AI development, we'll 
-                    enable a new wave of innovation from startups, researchers, and independent 
-                    developers who previously couldn't afford the necessary computing resources.
-                  </p>
-                  <p className="text-muted-foreground mb-4">
-                    We project that by 2026, over 10,000 AI startups will be built on top of the 
-                    Neurolov infrastructure, creating solutions we haven't even imagined yet.
-                  </p>
-                  <div className="w-full h-1 bg-gradient-to-r from-neuro-500/30 to-blue-500/30 rounded-full"></div>
-                </div>
-                
-                <div className="glass-card p-6 rounded-xl border border-neuro-500/10">
-                  <h3 className="text-xl font-bold mb-3">Environmental Benefits</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Optimizing the use of existing hardware reduces the need for building new data 
-                    centers. Our intelligent workload distribution system also routes jobs to locations 
-                    with renewable energy when possible.
-                  </p>
-                  <p className="text-muted-foreground mb-4">
-                    We aim to reduce the carbon footprint of AI computing by 35% compared to 
-                    traditional centralized models by 2027.
-                  </p>
-                  <div className="w-full h-1 bg-gradient-to-r from-neuro-500/30 to-blue-500/30 rounded-full"></div>
-                </div>
-                
-                <div className="glass-card p-6 rounded-xl border border-neuro-500/10">
-                  <h3 className="text-xl font-bold mb-3">Democratized AI Governance</h3>
-                  <p className="text-muted-foreground mb-4">
-                    By shifting control from central corporations to a distributed community, 
-                    we're ensuring that the future of AI is shaped by diverse voices representing 
-                    global interests, not just commercial priorities.
-                  </p>
-                  <p className="text-muted-foreground mb-4">
-                    Our goal is to have the most diverse DAO in tech, with representation from 
-                    over 100 countries actively participating in governance by 2028.
-                  </p>
-                  <div className="w-full h-1 bg-gradient-to-r from-neuro-500/30 to-blue-500/30 rounded-full"></div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="glass-card p-8 rounded-xl border border-neuro-500/10 text-center">
-              <SectionHeading
-                title="Join Us in Shaping the Future"
-                subtitle="Be part of the decentralized AI revolution"
-              />
-              
-              <div className="max-w-3xl mx-auto">
-                <p className="text-muted-foreground mb-8">
-                  Our vision is ambitious, but achievable with the support of a global community 
-                  of developers, compute providers, users, and investors who share our belief in 
-                  the transformative potential of decentralized AI infrastructure.
-                </p>
-                
-                <div className="flex flex-wrap justify-center gap-4 mb-8">
-                  <Button variant="neon">
-                    Join Our Community
-                    <ArrowUpRight className="ml-2 h-4 w-4" />
-                  </Button>
-                  <Button variant="outline">
-                    Become a Node Provider
-                  </Button>
-                  <Button variant="outline">
-                    Explore Developer Docs
-                  </Button>
-                </div>
-                
-                <div className="flex justify-center space-x-6 text-muted-foreground">
-                  <a href="#" className="hover:text-foreground transition-colors">
-                    <Twitter className="h-6 w-6"  />
-                  </a>
-                  <a href="#" className="hover:text-foreground transition-colors">
-                    <Github className="h-6 w-6" />
-                  </a>
-                  <a href="#" className="hover:text-foreground transition-colors">
-                    <Linkedin className="h-6 w-6" />
-                  </a>
-                  <a href="#" className="hover:text-foreground transition-colors">
-                    <Mail className="h-6 w-6" />
-                  </a>
-                </div>
               </div>
             </div>
           </TabsContent>

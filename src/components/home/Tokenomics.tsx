@@ -34,7 +34,7 @@ const TokenChart = () => {
   });
 
   useEffect(() => {
-    setTimeout(() => setIsLoaded(true), 300);
+    setIsLoaded(true);
   }, []);
 
   return (

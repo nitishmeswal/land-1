@@ -1,4 +1,3 @@
-
 import { cn } from "@/lib/utils";
 
 type ContainerProps = {
@@ -30,7 +29,7 @@ export function SectionContainer({
   as: Component = "section",
 }: ContainerProps) {
   return (
-    <Component className={cn("section-spacing", className)}>
+    <Component className={cn("w-full bg-blue-900/5 dark:bg-blue-950/20", "section-spacing", className)}>
       <Container>{children}</Container>
     </Component>
   );

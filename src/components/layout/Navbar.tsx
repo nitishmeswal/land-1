@@ -1,249 +1,195 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/button';
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
-} from '@/components/ui/dropdown-menu';
-import { cn } from '@/lib/utils';
-import { 
-  Menu, 
-  X, 
-  ChevronDown,
-  Globe,
-  BarChart3,
-  Code,
-  Cpu,
-  Network,
-  Bot,
-  Coins,
-  HelpCircle,
-  FileText,
-  Users,
-  BookOpen,
-  Share2 
-} from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Menu, ChevronDown } from 'lucide-react';
+import { useState, useRef } from 'react';
 
-const Logo = () => (
-  <Link to="/" className="flex items-center space-x-2 text-xl font-bold">
-    <img src="/og-image.png" alt="Neurolov" className="h-8 w-auto" />
-    <span className="hero-text-gradient">Neurolov</span>
-  </Link>
-);
-
-interface NavItem {
-  name: string;
-  path?: string;
-  icon?: React.ReactNode;
-  dropdownItems?: { name: string; path: string; icon?: React.ReactNode }[];
-}
-
-const navItems: NavItem[] = [
-  { 
-    name: 'Home', 
-    path: '/',
-  },
-  { 
-    name: 'Products', 
-    icon: <Cpu className="h-4 w-4" />,
-    dropdownItems: [
-      { name: 'Compute', path: '/products#compute', icon: <Cpu className="h-4 w-4" /> },
-      { name: 'AI Models', path: '/products#ai-models', icon: <Code className="h-4 w-4" /> },
-      { name: 'Swarm Network', path: '/products#swarm', icon: <Network className="h-4 w-4" /> },
-      { name: 'AI Agents', path: '/products#agents', icon: <Bot className="h-4 w-4" /> },
+const navItems = {
+  products: {
+    label: 'Products',
+    items: [
+      { label: 'Compute', href: '/products#compute' },
+      { label: 'AI Models', href: '/products#ai-models' },
+      { label: 'AI Agents', href: '/products#ai-agents' },
+      { label: 'Neuro Swarm', href: '/products#swarm-network' }
     ]
   },
-  { 
-    name: 'Token', 
-    icon: <Coins className="h-4 w-4" />,
-    dropdownItems: [
-      { name: 'NLOV', path: '/token#overview', icon: <Coins className="h-4 w-4" /> },
-      { name: 'Presale', path: '/token#presale', icon: <BarChart3 className="h-4 w-4" /> },
-      { name: 'Tokenomics', path: '/token#tokenomics', icon: <BarChart3 className="h-4 w-4" /> },
-      { name: 'Utility', path: '/token#utility', icon: <Share2 className="h-4 w-4" /> },
-      { name: 'FAQ', path: '/token#faq', icon: <HelpCircle className="h-4 w-4" /> },
-      { name: 'Governance', path: '/token#governance', icon: <Users className="h-4 w-4" /> },
+  token: {
+    label: 'Token',
+    items: [
+      { label: '$NLOV', href: '/token' },
+      { label: 'Tokenomics', href: '/token#tokenomics' },
+      { label: 'Utility', href: '/token#utility' },
+      { label: 'FAQ', href: '/token#faq' }
     ]
   },
-  { 
-    name: 'Ecosystem', 
-    icon: <Globe className="h-4 w-4" />,
-    dropdownItems: [
-      { name: 'Roadmap', path: '/ecosystem#roadmap', icon: <BookOpen className="h-4 w-4" /> },
-      { name: 'Partners', path: '/ecosystem#partners', icon: <Users className="h-4 w-4" /> },
-      { name: 'Integrations', path: '/ecosystem#integrations', icon: <Code className="h-4 w-4" /> },
+  ecosystem: {
+    label: 'Ecosystem',
+    items: [
+      { label: 'Roadmap', href: '/ecosystem#roadmap' },
+      { label: 'Partners', href: '/ecosystem#partners' },
     ]
   },
-  { 
-    name: 'Resources', 
-    icon: <FileText className="h-4 w-4" />,
-    dropdownItems: [
-      { name: 'How to Use', path: '/resources#how-to-use', icon: <BookOpen className="h-4 w-4" /> },
-      { name: 'Docs', path: '/resources#docs', icon: <FileText className="h-4 w-4" /> },
-      { name: 'FAQ', path: '/resources#faq', icon: <HelpCircle className="h-4 w-4" /> },
-      { name: 'Support', path: '/resources#support', icon: <HelpCircle className="h-4 w-4" /> },
-      { name: 'Whitepaper', path: '/whitepaper', icon: <FileText className="h-4 w-4" /> },
-      { name: 'Pitch Deck', path: '/pitch-deck', icon: <FileText className="h-4 w-4" /> },
+  resources: {
+    label: 'Resources',
+    items: [
+      { label: 'Overview', href: '/resources' },
+      { label: 'Documentation', href: '/resources#docs' },
+      { label: 'Whitepaper', href: '/whitepaper' },
+      { label: 'Pitch Deck', href: '/pitch-deck' }
     ]
   },
-  { 
-    name: 'About', 
-    icon: <Users className="h-4 w-4" />,
-    dropdownItems: [
-      { name: 'Team', path: '/about#team', icon: <Users className="h-4 w-4" /> },
-      { name: 'Mission', path: '/about#mission', icon: <BookOpen className="h-4 w-4" /> },
-      { name: 'Vision', path: '/about#vision', icon: <BookOpen className="h-4 w-4" /> },
+  about: {
+    label: 'About',
+    items: [
+      { label: 'Team', href: '/about#team' },
+      { label: 'Mission', href: '/about#mission' },
+      
     ]
-  },
-  { 
-    name: 'App', 
-    path: 'https://app.neurolov.ai',
-  },
-];
+  }
+};
 
-export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+const NavItem = ({ label, items }: { label: string; items: { label: string; href: string }[] }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout>();
 
-  // Detect scroll position for navbar styling
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsOpen(false);
+    }, 150); // Small delay before closing
+  };
 
   return (
-    <header 
-      className={cn(
-        "fixed top-0 left-0 right-0 z-40 transition-all duration-300",
-        isScrolled ? "navbar-blur py-3" : "bg-transparent py-5"
-      )}
+    <div
+      className="relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
-      <Container>
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Logo />
-          
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
-            {navItems.map((item, index) => (
-              <div key={index}>
-                {item.dropdownItems ? (
-                  <DropdownMenu>
-                    <DropdownMenuTrigger className="nav-link">
-                      {item.name}
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent>
-                      {item.dropdownItems.map((dropdownItem, idx) => (
-                        <DropdownMenuItem key={idx} asChild>
-                          <Link to={dropdownItem.path} className="flex items-center space-x-2">
-                            {dropdownItem.icon}
-                            <span>{dropdownItem.name}</span>
-                          </Link>
-                        </DropdownMenuItem>
-                      ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                ) : (
-                  <Link to={item.path || "#"} className="nav-link">
-                    {item.name}
-                  </Link>
-                )}
-              </div>
+      <div className="flex items-center space-x-1 rounded-full px-4 py-2 bg-white/5 hover:bg-white/10 transition-all duration-300">
+        <span className="text-sm text-white/90 hover:text-white">{label}</span>
+        <ChevronDown className={`h-4 w-4 text-white/70 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+      </div>
+      
+      {/* Add a transparent bridge to prevent gap */}
+      <div className="absolute -bottom-2 left-0 right-0 h-2" />
+      
+      {isOpen && (
+        <div 
+          className="absolute left-0 mt-2 w-48 rounded-xl bg-[#06115D] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+          onMouseEnter={() => setIsOpen(true)}
+          onMouseLeave={() => setIsOpen(false)}
+        >
+          <div className="py-2">
+            {items.map((item, index) => (
+              <Link
+                key={index}
+                to={item.href}
+                className="block px-4 py-2 text-sm text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300"
+              >
+                {item.label}
+              </Link>
             ))}
-          </nav>
-          
-          {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-3">
-            <Button variant="outline" size="sm">
-              Connect Wallet
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <nav className="fixed top-0 z-50 w-full bg-[#06115D]">
+      <Container>
+        <div className="flex h-16 items-center justify-between">
+          {/* Logo */}
+          <Link to="/" className="flex items-center space-x-2">
+            <img src="/og-image.png" alt="Neurolov" className="h-8 w-auto" />
+            <span className="text-xl font-bold text-white">Neurolov</span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-1">
+            {Object.entries(navItems).map(([key, { label, items }]) => (
+              <NavItem key={key} label={label} items={items} />
+            ))}
+            <a 
+              href="https://app.neurolov.ai" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="rounded-full px-4 py-2 bg-white/5 hover:bg-white/10 text-sm text-white/90 hover:text-white transition-all duration-300"
+            >
+              App
+            </a>
+          </div>
+
+          {/* Action Buttons */}
+          <div className="hidden md:flex items-center space-x-4">
+            <Button variant="ghost" className="rounded-full text-white/90 hover:text-white hover:bg-white/10">
+              Contact Us
             </Button>
-            <Button variant="neon" size="sm">
-              Join Presale
+            <Button className="rounded-full bg-neuro-500 hover:bg-neuro-600 text-white">
+              Try Testnet
             </Button>
           </div>
-          
-          {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden flex items-center p-2 text-foreground"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 text-white hover:text-white hover:bg-white/10 rounded-lg"
           >
-            {isMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
+            <Menu className="h-6 w-6" />
           </button>
         </div>
-      </Container>
-      
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-background h-[calc(100vh-4rem)] overflow-y-auto animate-slide-in">
-          <Container className="py-4">
-            <nav className="flex flex-col space-y-4">
-              {navItems.map((item, index) => (
-                <div key={index} className="py-2 border-b border-border/40">
-                  {item.dropdownItems ? (
-                    <div>
-                      <button
-                        className="w-full flex items-center justify-between py-2"
-                        onClick={() => {
-                          // Toggle this specific dropdown
-                          const el = document.getElementById(`mobile-dropdown-${index}`);
-                          if (el) {
-                            el.classList.toggle('hidden');
-                          }
-                        }}
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="md:hidden py-4 bg-black/20 backdrop-blur-sm">
+            <div className="flex flex-col space-y-3">
+              {Object.entries(navItems).map(([key, { label, items }]) => (
+                <div key={key} className="px-4">
+                  <div className="text-sm font-medium text-white mb-2">{label}</div>
+                  <div className="ml-4 flex flex-col space-y-2">
+                    {items.map((item, index) => (
+                      <Link
+                        key={index}
+                        to={item.href}
+                        className="text-sm text-white/90 hover:text-white transition-all duration-300"
                       >
-                        <span className="font-medium">{item.name}</span>
-                        <ChevronDown className="h-4 w-4" />
-                      </button>
-                      
-                      <div id={`mobile-dropdown-${index}`} className="hidden pl-4 mt-2 space-y-2 border-l border-border/40">
-                        {item.dropdownItems.map((dropdownItem, idx) => (
-                          <Link 
-                            key={idx} 
-                            to={dropdownItem.path}
-                            className="flex items-center space-x-2 py-2 text-sm"
-                            onClick={() => setIsMenuOpen(false)}
-                          >
-                            {dropdownItem.icon}
-                            <span>{dropdownItem.name}</span>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  ) : (
-                    <Link 
-                      to={item.path || "#"} 
-                      className="block py-2 font-medium"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  )}
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               ))}
-              
-              <div className="pt-4 flex flex-col space-y-3">
-                <Button variant="outline" className="w-full justify-center">
-                  Connect Wallet
+              <a 
+                href="https://app.neurolov.ai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="px-4 py-2 text-sm text-white/90 hover:text-white transition-all duration-300"
+              >
+                App
+              </a>
+              <div className="pt-4 space-y-3 px-4">
+                <Button variant="ghost" className="w-full rounded-full text-white/90 hover:text-white hover:bg-white/10">
+                  Contact Us
                 </Button>
-                <Button variant="neon" className="w-full justify-center">
-                  Join Presale
+                <Button className="w-full rounded-full bg-neuro-500 hover:bg-neuro-600 text-white">
+                  Try Testnet
                 </Button>
               </div>
-            </nav>
-          </Container>
-        </div>
-      )}
-    </header>
+            </div>
+          </div>
+        )}
+      </Container>
+    </nav>
   );
 }

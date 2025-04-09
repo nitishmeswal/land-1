@@ -1,12 +1,6 @@
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { 
-  Twitter, 
-  MessageSquare, 
-  Send, 
-  Linkedin 
-} from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const footerLinks = [
@@ -62,38 +56,76 @@ export default function Footer() {
               Empower your AI journey with decentralized computing, content generation, and blockchain rewards.
             </p>
             
-            <div className="mt-6 flex space-x-4">
+            <div className="mt-6 flex flex-wrap gap-4 justify-center">
               <a 
-                href="https://twitter.com" 
+                href="https://twitter.com/neurolov" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground subtle-animate"
+                className="text-muted-foreground hover:text-white transition-colors"
               >
-                <Twitter className="h-5 w-5" />
+                <img src="/icons/twitter.svg" alt="Twitter" className="h-5 w-5" />
               </a>
               <a 
-                href="https://discord.com" 
+                href="https://discord.gg/neurolov" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground subtle-animate"
+                className="text-muted-foreground hover:text-white transition-colors"
               >
-                <MessageSquare className="h-5 w-5" />
+                <img src="/icons/discord.svg" alt="Discord" className="h-5 w-5" />
               </a>
               <a 
-                href="https://t.me" 
+                href="https://t.me/neurolov" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground subtle-animate"
+                className="text-muted-foreground hover:text-white transition-colors"
               >
-                <Send className="h-5 w-5" />
+                <img src="/icons/telegram.svg" alt="Telegram" className="h-5 w-5" />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://reddit.com/r/neurolov" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground subtle-animate"
+                className="text-muted-foreground hover:text-white transition-colors"
               >
-                <Linkedin className="h-5 w-5" />
+                <img src="/icons/reddit.svg" alt="Reddit" className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://instagram.com/neurolov" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-white transition-colors"
+              >
+                <img src="/icons/instagram.svg" alt="Instagram" className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://medium.com/@neurolov" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-white transition-colors"
+              >
+                <img src="/icons/medium.svg" alt="Medium" className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://dev.neurolov.ai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-white transition-colors"
+              >
+                <img src="/icons/devdigest.svg" alt="Dev Digest" className="h-5 w-5" />
+              </a>
+              <a 
+                href="mailto:contact@neurolov.ai" 
+                className="text-muted-foreground hover:text-white transition-colors"
+              >
+                <img src="/icons/mail.svg" alt="Email" className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://wiki.neurolov.ai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-white transition-colors"
+              >
+                <img src="/icons/wiki.svg" alt="Wiki" className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -116,28 +148,6 @@ export default function Footer() {
               </ul>
             </div>
           ))}
-          
-          {/* Newsletter */}
-          <div className="lg:col-span-2">
-            <h3 className="text-sm font-medium">Stay Updated</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Subscribe to our newsletter for the latest updates.
-            </p>
-            <form className="mt-4 sm:flex max-w-md">
-              <div className="w-full min-w-0 flex-1">
-                <Input 
-                  type="email" 
-                  placeholder="Enter your email" 
-                  className="w-full rounded-lg border-border px-3.5 py-2" 
-                />
-              </div>
-              <div className="mt-3 sm:ml-3 sm:mt-0">
-                <Button type="submit">
-                  Subscribe
-                </Button>
-              </div>
-            </form>
-          </div>
         </div>
         
         <div className="mt-16 border-t border-border pt-8 text-center text-sm text-muted-foreground">

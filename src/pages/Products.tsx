@@ -6,7 +6,7 @@ import PageLayout from '@/components/layout/PageLayout';
 import { Button } from '@/components/ui/button';
 import SectionHeading from '@/components/common/SectionHeading';
 import FeatureCard from '@/components/common/FeatureCard';
-import { Cpu, Code, Network, Bot, Server, Braces, Database, Terminal, Shield, Zap } from 'lucide-react';
+import { Cpu, Code, Network, Bot, Server, Braces, Database, Terminal, Shield, Zap, Image, Music, Video, Box, UserSquare2 } from 'lucide-react';
 
 export default function ProductsPage() {
   const [activeTab, setActiveTab] = useState("compute");
@@ -45,7 +45,6 @@ export default function ProductsPage() {
               <SectionHeading
                 title="Decentralized Compute Infrastructure"
                 subtitle="Access powerful GPU resources on demand for AI training, inference, and compute-intensive tasks"
-                badge="GPU Compute"
               />
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <FeatureCard
@@ -53,18 +52,21 @@ export default function ProductsPage() {
                   description="Rent GPUs from a global network of providers at competitive rates. Pay only for what you use with flexible pricing options."
                   icon={<Server className="h-6 w-6" />}
                   index={1}
+                  alwaysActive={true}
                 />
                 <FeatureCard
                   title="Distributed Training"
                   description="Scale your AI model training across multiple nodes for faster results. Supports popular frameworks like PyTorch and TensorFlow."
                   icon={<Database className="h-6 w-6" />}
                   index={2}
+                  alwaysActive={true}
                 />
                 <FeatureCard
-                  title="Secure Containers"
-                  description="Run your workloads in isolated, secure containers. Full control over your environment with custom dependencies."
+                  title="Models Bag"
+                  description="Run your Models in isolated, secure containers. Full control over your environment with custom dependencies."
                   icon={<Shield className="h-6 w-6" />}
                   index={3}
+                  alwaysActive={true}
                 />
               </div>
             </div>
@@ -78,13 +80,14 @@ export default function ProductsPage() {
                     Our platform makes it easy to monetize your idle hardware.
                   </p>
                   <div className="flex flex-wrap gap-4">
-                    <Button variant="neon">Join Provider Network</Button>
-                    <Button variant="outline">Learn More</Button>
+                    <Button variant="neon" onClick={() => window.open('https://app.neurolov.ai/gpu-marketplace', '_blank')}>
+                      Join Compute Network
+                    </Button>
                   </div>
                 </div>
                 <div className="md:w-1/2">
                   <img 
-                    src="https://images.unsplash.com/photo-1518770660439-4636190af475" 
+                    src="/compute.png" 
                     alt="GPU Hardware" 
                     className="rounded-lg w-full h-64 object-cover shadow-lg" 
                   />
@@ -92,52 +95,61 @@ export default function ProductsPage() {
               </div>
             </div>
 
-            <div>
-              <SectionHeading
-                title="Technical Specifications"
-                subtitle="Our compute platform supports a wide range of hardware configurations to meet your needs"
-              />
-              
+            <div className="glass-card p-8 rounded-xl border border-neuro-500/10">
+              <h3 className="text-2xl font-bold mb-6">Available GPU Specifications</h3>
               <div className="overflow-x-auto">
-                <table className="w-full border-collapse">
+                <table className="w-full">
                   <thead>
                     <tr className="border-b">
-                      <th className="py-4 px-6 text-left">GPU Type</th>
-                      <th className="py-4 px-6 text-left">VRAM</th>
-                      <th className="py-4 px-6 text-left">Performance</th>
-                      <th className="py-4 px-6 text-left">Cost (NLOV/hr)</th>
+                      <th className="py-4 px-6 text-left">GPU Model</th>
+                      <th className="py-4 px-6 text-left">Memory</th>
+                      <th className="py-4 px-6 text-left">CUDA Cores</th>
+                      <th className="py-4 px-6 text-left">Tensor Cores</th>
+                      <th className="py-4 px-6 text-left">Price (NLOV/hr)</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="border-b hover:bg-muted/50">
-                      <td className="py-4 px-6">NVIDIA A100</td>
-                      <td className="py-4 px-6">80GB</td>
-                      <td className="py-4 px-6">High</td>
-                      <td className="py-4 px-6">25 NLOV</td>
-                    </tr>
-                    <tr className="border-b hover:bg-muted/50">
+                    <tr className="border-b">
                       <td className="py-4 px-6">NVIDIA H100</td>
-                      <td className="py-4 px-6">80GB</td>
-                      <td className="py-4 px-6">Ultra</td>
+                      <td className="py-4 px-6">80GB HBM3</td>
+                      <td className="py-4 px-6">18,432</td>
+                      <td className="py-4 px-6">576</td>
                       <td className="py-4 px-6">50 NLOV</td>
                     </tr>
-                    <tr className="border-b hover:bg-muted/50">
-                      <td className="py-4 px-6">NVIDIA L40</td>
-                      <td className="py-4 px-6">48GB</td>
-                      <td className="py-4 px-6">High</td>
+                    <tr className="border-b">
+                      <td className="py-4 px-6">NVIDIA GeForce RTX 4090</td>
+                      <td className="py-4 px-6">24GB GDDR6X</td>
+                      <td className="py-4 px-6">16,384</td>
+                      <td className="py-4 px-6">512</td>
                       <td className="py-4 px-6">20 NLOV</td>
                     </tr>
-                    <tr className="border-b hover:bg-muted/50">
-                      <td className="py-4 px-6">NVIDIA RTX 4090</td>
-                      <td className="py-4 px-6">24GB</td>
-                      <td className="py-4 px-6">Medium</td>
+                    <tr className="border-b">
+                      <td className="py-4 px-6">NVIDIA RTX 3090 Ti</td>
+                      <td className="py-4 px-6">24GB GDDR6X</td>
+                      <td className="py-4 px-6">10,752</td>
+                      <td className="py-4 px-6">336</td>
                       <td className="py-4 px-6">10 NLOV</td>
                     </tr>
-                    <tr className="hover:bg-muted/50">
-                      <td className="py-4 px-6">AMD MI250</td>
-                      <td className="py-4 px-6">128GB</td>
-                      <td className="py-4 px-6">High</td>
+                    <tr className="border-b">
+                      <td className="py-4 px-6">NVIDIA A6000</td>
+                      <td className="py-4 px-6">48GB GDDR6</td>
+                      <td className="py-4 px-6">10,752</td>
+                      <td className="py-4 px-6">336</td>
                       <td className="py-4 px-6">30 NLOV</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-4 px-6">NVIDIA A5000</td>
+                      <td className="py-4 px-6">24GB GDDR6</td>
+                      <td className="py-4 px-6">8,192</td>
+                      <td className="py-4 px-6">256</td>
+                      <td className="py-4 px-6">25 NLOV</td>
+                    </tr>
+                    <tr>
+                      <td className="py-4 px-6">NVIDIA A4000</td>
+                      <td className="py-4 px-6">16GB GDDR6</td>
+                      <td className="py-4 px-6">6,144</td>
+                      <td className="py-4 px-6">192</td>
+                      <td className="py-4 px-6">15 NLOV</td>
                     </tr>
                   </tbody>
                 </table>
@@ -149,145 +161,117 @@ export default function ProductsPage() {
           <TabsContent value="ai-models" className="space-y-16">
             <div>
               <SectionHeading
-                title="AI Models as a Service"
-                subtitle="Access and deploy state-of-the-art AI models through our API and platform"
-                badge="AI Solutions"
+                title="AI Model Categories"
+                subtitle="Explore our comprehensive suite of AI models for various creative and technical applications"
               />
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <FeatureCard
-                  title="Text Generation"
-                  description="Create content, answer questions, and have natural conversations with our advanced language models."
-                  icon={<Braces className="h-6 w-6" />}
+                  title="Text & Code"
+                  description="Advanced language models for text generation, code completion, and natural language processing tasks."
+                  icon={<Code className="h-6 w-6" />}
                   index={1}
+                  alwaysActive={true}
                 />
                 <FeatureCard
-                  title="Image Generation"
-                  description="Generate stunning visuals, artwork, and graphics from text descriptions using diffusion models."
-                  icon={<Terminal className="h-6 w-6" />}
+                  title="Image & Vision"
+                  description="State-of-the-art models for image generation, editing, upscaling, and visual analysis."
+                  icon={<Image className="h-6 w-6" />}
                   index={2}
+                  alwaysActive={true}
                 />
                 <FeatureCard
-                  title="Audio & Video"
-                  description="Create voiceovers, music, video clips, and animations with our multimodal AI systems."
-                  icon={<Zap className="h-6 w-6" />}
+                  title="Audio & Speech"
+                  description="High-quality voice synthesis, music generation, and audio processing models."
+                  icon={<Music className="h-6 w-6" />}
                   index={3}
+                  alwaysActive={true}
+                />
+                <FeatureCard
+                  title="Video & Animation"
+                  description="Create and edit videos, generate animations, and process video content intelligently."
+                  icon={<Video className="h-6 w-6" />}
+                  index={4}
+                  alwaysActive={true}
+                />
+                <FeatureCard
+                  title="3D & XR"
+                  description="Generate and manipulate 3D models, textures, and environments for XR applications."
+                  icon={<Box className="h-6 w-6" />}
+                  index={5}
+                  alwaysActive={true}
+                />
+                <FeatureCard
+                  title="Synthetic Media"
+                  description="Create realistic synthetic media with advanced deepfake and face synthesis technology."
+                  icon={<UserSquare2 className="h-6 w-6" />}
+                  index={6}
+                  alwaysActive={true}
                 />
               </div>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass-card p-8 rounded-xl border border-neuro-500/10">
-                <h3 className="text-xl font-bold mb-4">Model Fine-tuning</h3>
-                <p className="text-muted-foreground mb-6">
-                  Customize our models to your specific domain or use case. Our fine-tuning service lets you create specialized AI models with your own data.
-                </p>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start">
-                    <div className="flex-shrink-0 bg-neuro-500/10 rounded-full p-1 mr-3 mt-1">
-                      <svg className="h-3 w-3 text-neuro-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span className="text-sm">Upload your training data securely</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="flex-shrink-0 bg-neuro-500/10 rounded-full p-1 mr-3 mt-1">
-                      <svg className="h-3 w-3 text-neuro-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span className="text-sm">Choose parameters and training settings</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="flex-shrink-0 bg-neuro-500/10 rounded-full p-1 mr-3 mt-1">
-                      <svg className="h-3 w-3 text-neuro-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span className="text-sm">Deploy and integrate with your systems</span>
-                  </li>
-                </ul>
-                <Button variant="outline" className="w-full">Start Fine-tuning</Button>
-              </div>
-              
-              <div className="glass-card p-8 rounded-xl border border-neuro-500/10">
-                <h3 className="text-xl font-bold mb-4">API Integration</h3>
-                <p className="text-muted-foreground mb-6">
-                  Seamlessly integrate our AI models into your applications with our developer-friendly API. Simple, powerful, and scalable.
-                </p>
-                <div className="bg-black/90 text-green-400 p-4 rounded-md text-sm font-mono mb-6 overflow-x-auto">
-                  <pre>
-{`// Sample API call
-const response = await fetch('https://api.neurolov.ai/v1/generate', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer YOUR_API_KEY'
-  },
-  body: JSON.stringify({
-    model: 'neuro-text-v2',
-    prompt: 'Write a creative story about AI',
-    max_tokens: 500
-  })
-});`}
-                  </pre>
-                </div>
-                <Button variant="outline" className="w-full">Get API Access</Button>
-              </div>
-            </div>
-            
-            <div>
-              <SectionHeading
-                title="Available Models"
-                subtitle="Choose from our growing library of AI models for different use cases"
-              />
-              
+
+            <div className="glass-card p-8 rounded-xl border border-neuro-500/10">
+              <h3 className="text-2xl font-bold mb-6">Model Specifications</h3>
               <div className="overflow-x-auto">
-                <table className="w-full border-collapse">
+                <table className="w-full">
                   <thead>
                     <tr className="border-b">
                       <th className="py-4 px-6 text-left">Model Name</th>
-                      <th className="py-4 px-6 text-left">Type</th>
-                      <th className="py-4 px-6 text-left">Size</th>
-                      <th className="py-4 px-6 text-left">Use Case</th>
-                      <th className="py-4 px-6 text-left">Cost (NLOV/1K tokens)</th>
+                      <th className="py-4 px-6 text-left">Category</th>
+                      <th className="py-4 px-6 text-left">Parameters</th>
+                      <th className="py-4 px-6 text-left">Context Window</th>
+                      <th className="py-4 px-6 text-left">Use Cases</th>
+                      <th className="py-4 px-6 text-left">Cost (NLOV)</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="border-b hover:bg-muted/50">
-                      <td className="py-4 px-6">Neuro-Text-S</td>
-                      <td className="py-4 px-6">Language</td>
-                      <td className="py-4 px-6">7B</td>
-                      <td className="py-4 px-6">General text, chat</td>
-                      <td className="py-4 px-6">0.1 NLOV</td>
-                    </tr>
-                    <tr className="border-b hover:bg-muted/50">
-                      <td className="py-4 px-6">Neuro-Text-L</td>
-                      <td className="py-4 px-6">Language</td>
+                    <tr className="border-b">
+                      <td className="py-4 px-6">NeuralText-70B</td>
+                      <td className="py-4 px-6">Text/Code</td>
                       <td className="py-4 px-6">70B</td>
-                      <td className="py-4 px-6">Complex reasoning</td>
-                      <td className="py-4 px-6">0.5 NLOV</td>
+                      <td className="py-4 px-6">128K</td>
+                      <td className="py-4 px-6">Text, Code, Analysis</td>
+                      <td className="py-4 px-6">0.5/1K tokens</td>
                     </tr>
-                    <tr className="border-b hover:bg-muted/50">
-                      <td className="py-4 px-6">Neuro-Image-2</td>
-                      <td className="py-4 px-6">Diffusion</td>
-                      <td className="py-4 px-6">2B</td>
-                      <td className="py-4 px-6">Image generation</td>
-                      <td className="py-4 px-6">2 NLOV</td>
+                    <tr className="border-b">
+                      <td className="py-4 px-6">NeuroVision-XL</td>
+                      <td className="py-4 px-6">Image</td>
+                      <td className="py-4 px-6">3.5B</td>
+                      <td className="py-4 px-6">2048x2048</td>
+                      <td className="py-4 px-6">Generation, Editing</td>
+                      <td className="py-4 px-6">2.0/image</td>
                     </tr>
-                    <tr className="border-b hover:bg-muted/50">
-                      <td className="py-4 px-6">Neuro-Audio</td>
+                    <tr className="border-b">
+                      <td className="py-4 px-6">NeuroVoice-Pro</td>
                       <td className="py-4 px-6">Audio</td>
-                      <td className="py-4 px-6">1.5B</td>
-                      <td className="py-4 px-6">Speech, music</td>
-                      <td className="py-4 px-6">3 NLOV</td>
+                      <td className="py-4 px-6">1.2B</td>
+                      <td className="py-4 px-6">30s clips</td>
+                      <td className="py-4 px-6">TTS, Music</td>
+                      <td className="py-4 px-6">1.0/minute</td>
                     </tr>
-                    <tr className="hover:bg-muted/50">
-                      <td className="py-4 px-6">Neuro-Video</td>
-                      <td className="py-4 px-6">Multi-modal</td>
-                      <td className="py-4 px-6">5B</td>
-                      <td className="py-4 px-6">Video generation</td>
-                      <td className="py-4 px-6">10 NLOV</td>
+                    <tr className="border-b">
+                      <td className="py-4 px-6">NeuroMotion-4K</td>
+                      <td className="py-4 px-6">Video</td>
+                      <td className="py-4 px-6">5.5B</td>
+                      <td className="py-4 px-6">4K/60fps</td>
+                      <td className="py-4 px-6">Animation, Effects</td>
+                      <td className="py-4 px-6">5.0/minute</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-4 px-6">NeuroAvatar-HD</td>
+                      <td className="py-4 px-6">Synthetic</td>
+                      <td className="py-4 px-6">2.8B</td>
+                      <td className="py-4 px-6">1080p</td>
+                      <td className="py-4 px-6">Face Synthesis</td>
+                      <td className="py-4 px-6">3.0/render</td>
+                    </tr>
+                    <tr>
+                      <td className="py-4 px-6">Neuro3D-Pro</td>
+                      <td className="py-4 px-6">3D/XR</td>
+                      <td className="py-4 px-6">2.1B</td>
+                      <td className="py-4 px-6">High-poly</td>
+                      <td className="py-4 px-6">3D Generation</td>
+                      <td className="py-4 px-6">4.0/model</td>
                     </tr>
                   </tbody>
                 </table>
@@ -301,7 +285,6 @@ const response = await fetch('https://api.neurolov.ai/v1/generate', {
               <SectionHeading
                 title="Decentralized Swarm Network"
                 subtitle="Join our peer-to-peer network of compute providers and users"
-                badge="Network Infrastructure"
               />
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <FeatureCard
@@ -309,22 +292,25 @@ const response = await fetch('https://api.neurolov.ai/v1/generate', {
                   description="Break complex tasks into smaller units for parallel processing across the network, reducing time and cost."
                   icon={<Server className="h-6 w-6" />}
                   index={1}
+                  alwaysActive={true}
                 />
                 <FeatureCard
                   title="Fault Tolerance"
                   description="Automatic node failover and task reassignment ensures your jobs complete even if individual nodes go offline."
                   icon={<Shield className="h-6 w-6" />}
                   index={2}
+                  alwaysActive={true}
                 />
                 <FeatureCard
                   title="Resource Optimization"
                   description="Intelligent scheduling allocates tasks to the most suitable nodes based on hardware capabilities and load."
                   icon={<Zap className="h-6 w-6" />}
                   index={3}
+                  alwaysActive={true}
                 />
               </div>
             </div>
-            
+
             <div className="relative py-16">
               <div className="absolute inset-0 flex items-center justify-center z-0">
                 <div className="w-full max-w-4xl h-[500px] opacity-10">
@@ -411,7 +397,6 @@ const response = await fetch('https://api.neurolov.ai/v1/generate', {
               <SectionHeading
                 title="Autonomous AI Agents"
                 subtitle="Deploy intelligent agents to automate tasks and workflows"
-                badge="Automation"
               />
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <FeatureCard
@@ -419,18 +404,21 @@ const response = await fetch('https://api.neurolov.ai/v1/generate', {
                   description="Build end-to-end process automation with AI agents that can handle complex decision trees and business logic."
                   icon={<Bot className="h-6 w-6" />}
                   index={1}
+                  alwaysActive={true}
                 />
                 <FeatureCard
                   title="Data Analysis"
                   description="Deploy agents that continuously monitor data sources, generate insights, and alert you to important trends."
                   icon={<Database className="h-6 w-6" />}
                   index={2}
+                  alwaysActive={true}
                 />
                 <FeatureCard
                   title="Smart Contracts"
                   description="Create AI-powered smart contracts that can make decisions based on real-world data and complex conditions."
                   icon={<Code className="h-6 w-6" />}
                   index={3}
+                  alwaysActive={true}
                 />
               </div>
             </div>
