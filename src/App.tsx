@@ -1,9 +1,16 @@
 import React, { useEffect } from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// Page routes
 import Index from "./pages/Index";
 import NotFound from "./pages/not-found";
 import ProductsPage from "./pages/Products";
@@ -14,55 +21,102 @@ import AboutPage from "./pages/About";
 import WhitepaperPage from "./pages/Whitepaper";
 import PitchDeckPage from "./pages/pitch-deck";
 
-// Create a client with enhanced configuration for better UX
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false, // Better UX by not refetching on window focus
-      retry: 1, // Limit retries for better user experience
-      staleTime: 5 * 60 * 1000, // 5 minutes
-    },
-  },
-});
+// GA4 ID
+const GA_ID = "G-FQDR1HDD3K";
 
-// Add preloading for common routes
+// Declare gtag on window
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
+// GA Setup + Route tracking
+const useGoogleAnalytics = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const loadGtag = () => {
+      const script = document.createElement("script");
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+      script.async = true;
+      document.head.appendChild(script);
+
+      const inlineScript = document.createElement("script");
+      inlineScript.innerHTML = `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${GA_ID}');
+      `;
+      document.head.appendChild(inlineScript);
+    };
+
+    loadGtag();
+  }, []);
+
+  useEffect(() => {
+    if (typeof window.gtag === "function") {
+      window.gtag("config", GA_ID, {
+        page_path: location.pathname + location.search,
+      });
+    }
+  }, [location]);
+};
+
+// Prefetch common routes for speed
 const preloadRoutes = () => {
-  // Preload important routes for faster navigation
-  const routes = ['/products', '/token', '/ecosystem'];
-  routes.forEach(route => {
-    const link = document.createElement('link');
-    link.rel = 'prefetch';
+  ["/products", "/token", "/ecosystem"].forEach((route) => {
+    const link = document.createElement("link");
+    link.rel = "prefetch";
     link.href = route;
     document.head.appendChild(link);
   });
 };
 
-const App = () => {
-  // Preload routes after initial render
+// Query client setup
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: 1,
+      staleTime: 5 * 60 * 1000,
+    },
+  },
+});
+
+// App Routes + GA + preload logic
+const AppRoutes = () => {
+  useGoogleAnalytics();
+
   useEffect(() => {
     preloadRoutes();
   }, []);
 
   return (
+    <Routes>
+      <Route path="/" element={<Index />} />
+      <Route path="/products" element={<ProductsPage />} />
+      <Route path="/token" element={<TokenPage />} />
+      <Route path="/ecosystem" element={<EcosystemPage />} />
+      <Route path="/resources" element={<ResourcesPage />} />
+      <Route path="/about" element={<AboutPage />} />
+      <Route path="/whitepaper" element={<WhitepaperPage />} />
+      <Route path="/pitch-deck" element={<PitchDeckPage />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
+};
+
+// Main App
+const App = () => {
+  return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        {/* Enhanced toasters with better positioning */}
         <Toaster />
         <Sonner expand={true} closeButton richColors />
-        
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/products" element={<ProductsPage />} />
-            <Route path="/token" element={<TokenPage />} />
-            <Route path="/ecosystem" element={<EcosystemPage />} />
-            <Route path="/resources" element={<ResourcesPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/whitepaper" element={<WhitepaperPage />} />
-            <Route path="/pitch-deck" element={<PitchDeckPage />} />
-            {/* Catch-all route */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <AppRoutes />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
