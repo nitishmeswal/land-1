@@ -21,7 +21,7 @@ const teamMembers = [
     }
   },
   {
-    name: "AAdhik Joshi",
+    name: "Adhik Joshi",
     role: " Co-Founder",
     bio: "Founder of ModelsLab & Stable Diffusion API, generating 800M+ images with 350K users and $1.2M ARR. 5+ years in AI/ML product development, full-stack engineering, and scalable API integrations",
     image: "/co-founder.png",
@@ -228,22 +228,28 @@ export default function AboutPage() {
       title="About Neurolov" 
       subtitle="Our team, mission, and vision for the future of AI computing"
     >
-      <SectionContainer className="pb-16">
+      <SectionContainer className="pb-8">
         <Tabs 
           value={activeTab} 
           onValueChange={setActiveTab}
           className="w-full"
         >
-          <TabsList className="w-full max-w-2xl mx-auto mb-16">
-            <TabsTrigger value="team" className="w-1/3">
-              <Users className="mr-2 h-4 w-4" />
-              Team
-            </TabsTrigger>
-            <TabsTrigger value="mission" className="w-1/3">
-              <BookOpen className="mr-2 h-4 w-4" />
-              Mission
-            </TabsTrigger>
-          </TabsList>
+          <div className="flex justify-center mb-2">
+            <TabsList className="inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground">
+              <TabsTrigger
+                value="team"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+              >
+                <Users className="mr-2 h-4 w-4" /> Team
+              </TabsTrigger>
+              <TabsTrigger
+                value="mission"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+              >
+                <BookOpen className="mr-2 h-4 w-4" /> Mission
+              </TabsTrigger>
+            </TabsList>
+          </div>
 
           {/* Team Tab */}
           <TabsContent value="team" className="space-y-16">

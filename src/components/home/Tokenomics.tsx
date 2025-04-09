@@ -271,7 +271,11 @@ export default function Tokenomics() {
           </div>
 
           <div className="mt-10 reveal reveal-delay-3">
-            <Button variant="neon" className="group relative overflow-hidden border border-neuro-500/20 hover:shadow-neon-lg">
+            <Button 
+              variant="neon" 
+              className="group relative overflow-hidden border border-neuro-500/20 hover:shadow-neon-lg"
+              onClick={() => window.location.href = '/token'}
+            >
               <span className="absolute inset-0 bg-gradient-to-r from-neuro-500/10 to-blue-500/10 group-hover:opacity-100 opacity-0 transition-opacity duration-300"></span>
               <span className="absolute inset-0 w-1/3 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform -translate-x-full group-hover:translate-x-[400%] transition-all duration-1000 ease-out"></span>
               <span className="relative flex items-center">

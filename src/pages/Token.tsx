@@ -75,7 +75,7 @@ const pricePredictionData = [
 const faqData = [
   {
     question: "What is the NLOV token?",
-    answer: "NLOV is the native utility token of the Neurolov ecosystem. It's used for paying for services, governance voting, staking, and earning rewards from contributing resources to the network."
+    answer: "NLOV is the native utility token that powers the entire Neurolov ecosystem. It's used for paying for services, governance voting, staking, and earning rewards from contributing resources to the network."
   },
   {
     question: "How can I purchase NLOV tokens?",
@@ -124,27 +124,39 @@ export default function TokenPage() {
   
   return (
     <PageLayout 
-      title="NLOV Token" 
+      title="$NLOV Token" 
       subtitle="The utility token powering the Neurolov ecosystem"
     >
-      <SectionContainer className="pb-16">
+      <SectionContainer className="pb-8">
         <Tabs 
           value={activeTab} 
           onValueChange={setActiveTab}
           className="w-full"
         >
-          <div className="flex justify-center mb-12">
-            <TabsList className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2">
-              <TabsTrigger value="overview" className="px-4">
-                <Coins className="mr-2 h-4 w-4" /> Overview
+          <div className="flex justify-center mb-2">
+            <TabsList className="inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground">
+              <TabsTrigger
+                value="overview"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+              >
+                <BarChart3 className="mr-2 h-4 w-4" /> Overview
               </TabsTrigger>
-              <TabsTrigger value="tokenomics" className="px-4">
-                <BarChart3 className="mr-2 h-4 w-4" /> Tokenomics
+              <TabsTrigger
+                value="tokenomics"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+              >
+                <Coins className="mr-2 h-4 w-4" /> Tokenomics
               </TabsTrigger>
-              <TabsTrigger value="utility" className="px-4">
+              <TabsTrigger
+                value="utility"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+              >
                 <Share2 className="mr-2 h-4 w-4" /> Utility
               </TabsTrigger>
-              <TabsTrigger value="faq" className="px-4">
+              <TabsTrigger
+                value="faq"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+              >
                 <HelpCircle className="mr-2 h-4 w-4" /> FAQ
               </TabsTrigger>
             </TabsList>
@@ -228,7 +240,7 @@ export default function TokenPage() {
                       </div>
                       <h3 className="text-xl font-bold mb-2">Seed Round</h3>
                       <p className="text-muted-foreground">
-                        Initial funding round with strategic investors to support early development
+                        Initial funding round with strategic partners and early supporters
                       </p>
                     </div>
                     <div className="relative md:w-0 flex justify-center order-1 md:order-2">
@@ -237,40 +249,61 @@ export default function TokenPage() {
                       </div>
                     </div>
                     <div className="md:w-1/2 order-3">
-                      <div className="text-xl font-bold text-neuro-500">Q2 2023</div>
+                      <div className="text-xl font-bold text-neuro-500">Q4 2023</div>
                     </div>
                   </div>
-                  
+
                   <div className="flex flex-col md:flex-row items-center gap-8">
-                    <div className="md:w-1/2 order-2 md:order-1">
-                      <div className="text-xl font-bold text-neuro-500">Q4 2023</div>
+                    <div className="md:w-1/2 md:text-right order-2 md:order-1">
+                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-500/10 text-green-500 text-sm font-medium mb-2">
+                        <CheckCircle2 className="mr-2 h-4 w-4" />
+                        <span>Completed</span>
+                      </div>
+                      <h3 className="text-xl font-bold mb-2">Testnet Launch</h3>
+                      <p className="text-muted-foreground">
+                        Public testnet deployment with initial network features
+                      </p>
                     </div>
                     <div className="relative md:w-0 flex justify-center order-1 md:order-2">
                       <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center border-4 border-background z-10">
                         <CheckCircle2 className="h-6 w-6 text-green-500" />
                       </div>
                     </div>
-                    <div className="md:w-1/2 md:text-left order-3">
-                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-500/10 text-green-500 text-sm font-medium mb-2">
-                        <CheckCircle2 className="mr-2 h-4 w-4" />
-                        <span>Completed</span>
-                      </div>
-                      <h3 className="text-xl font-bold mb-2">Private Sale</h3>
-                      <p className="text-muted-foreground">
-                        Private token sale to accredited investors and partners
-                      </p>
+                    <div className="md:w-1/2 order-3">
+                      <div className="text-xl font-bold text-neuro-500">Q1 2024</div>
                     </div>
                   </div>
-                  
+
                   <div className="flex flex-col md:flex-row items-center gap-8">
-                    <div className="md:w-1/2 md:text-right order-2 md:order-1">
+                    <div className="md:w-1/2 order-2 md:order-1">
+                      <div className="text-xl font-bold text-neuro-500">Q1 2024</div>
+                    </div>
+                    <div className="relative md:w-0 flex justify-center order-1 md:order-2">
+                      <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center border-4 border-background z-10">
+                        <Clock className="h-6 w-6 text-amber-500" />
+                      </div>
+                    </div>
+                    <div className="md:w-1/2 md:text-left order-3">
                       <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-sm font-medium mb-2">
                         <Clock className="mr-2 h-4 w-4" />
                         <span>In Progress</span>
                       </div>
                       <h3 className="text-xl font-bold mb-2">Public Presale</h3>
                       <p className="text-muted-foreground">
-                        Community token sale with tiered structure and bonuses
+                        Community token sale with tiered allocation system
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col md:flex-row items-center gap-8">
+                    <div className="md:w-1/2 md:text-right order-2 md:order-1">
+                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-sm font-medium mb-2">
+                        <Clock className="mr-2 h-4 w-4" />
+                        <span>Coming Soon</span>
+                      </div>
+                      <h3 className="text-xl font-bold mb-2">Token Generation Event</h3>
+                      <p className="text-muted-foreground">
+                        Official $NLOV token launch and distribution to participants
                       </p>
                     </div>
                     <div className="relative md:w-0 flex justify-center order-1 md:order-2">
@@ -279,49 +312,70 @@ export default function TokenPage() {
                       </div>
                     </div>
                     <div className="md:w-1/2 order-3">
-                      <div className="text-xl font-bold text-neuro-500">Q1 2024</div>
+                      <div className="text-xl font-bold text-neuro-500">Q2 2024</div>
                     </div>
                   </div>
-                  
+
                   <div className="flex flex-col md:flex-row items-center gap-8">
                     <div className="md:w-1/2 order-2 md:order-1">
                       <div className="text-xl font-bold text-neuro-500">Q2 2024</div>
                     </div>
                     <div className="relative md:w-0 flex justify-center order-1 md:order-2">
-                      <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center border-4 border-background z-10">
-                        <ArrowUpRight className="h-6 w-6 text-blue-500" />
+                      <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center border-4 border-background z-10">
+                        <Clock className="h-6 w-6 text-amber-500" />
                       </div>
                     </div>
                     <div className="md:w-1/2 md:text-left order-3">
-                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-500/10 text-blue-500 text-sm font-medium mb-2">
-                        <ArrowUpRight className="mr-2 h-4 w-4" />
-                        <span>Upcoming</span>
-                      </div>
-                      <h3 className="text-xl font-bold mb-2">Exchange Listing</h3>
-                      <p className="text-muted-foreground">
-                        NLOV listed on major centralized and decentralized exchanges
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex flex-col md:flex-row items-center gap-8">
-                    <div className="md:w-1/2 md:text-right order-2 md:order-1">
-                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-500/10 text-blue-500 text-sm font-medium mb-2">
-                        <ArrowUpRight className="mr-2 h-4 w-4" />
-                        <span>Upcoming</span>
+                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-sm font-medium mb-2">
+                        <Clock className="mr-2 h-4 w-4" />
+                        <span>Coming Soon</span>
                       </div>
                       <h3 className="text-xl font-bold mb-2">Staking Launch</h3>
                       <p className="text-muted-foreground">
-                        NLOV staking program begins with annual rewards
+                        Staking program activation with rewards distribution
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col md:flex-row items-center gap-8">
+                    <div className="md:w-1/2 md:text-right order-2 md:order-1">
+                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-sm font-medium mb-2">
+                        <Clock className="mr-2 h-4 w-4" />
+                        <span>Coming Soon</span>
+                      </div>
+                      <h3 className="text-xl font-bold mb-2">DEX Liquidity</h3>
+                      <p className="text-muted-foreground">
+                        Liquidity provision on major decentralized exchanges
                       </p>
                     </div>
                     <div className="relative md:w-0 flex justify-center order-1 md:order-2">
-                      <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center border-4 border-background z-10">
-                        <ArrowUpRight className="h-6 w-6 text-blue-500" />
+                      <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center border-4 border-background z-10">
+                        <Clock className="h-6 w-6 text-amber-500" />
                       </div>
                     </div>
                     <div className="md:w-1/2 order-3">
+                      <div className="text-xl font-bold text-neuro-500">Q2 2024</div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col md:flex-row items-center gap-8">
+                    <div className="md:w-1/2 order-2 md:order-1">
                       <div className="text-xl font-bold text-neuro-500">Q3 2024</div>
+                    </div>
+                    <div className="relative md:w-0 flex justify-center order-1 md:order-2">
+                      <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center border-4 border-background z-10">
+                        <Clock className="h-6 w-6 text-amber-500" />
+                      </div>
+                    </div>
+                    <div className="md:w-1/2 md:text-left order-3">
+                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-sm font-medium mb-2">
+                        <Clock className="mr-2 h-4 w-4" />
+                        <span>Coming Soon</span>
+                      </div>
+                      <h3 className="text-xl font-bold mb-2">Governance Launch</h3>
+                      <p className="text-muted-foreground">
+                        Community governance system activation with proposal voting
+                      </p>
                     </div>
                   </div>
                 </div>

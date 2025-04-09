@@ -59,7 +59,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-20 reveal reveal-delay-4">
             <Button
               size="lg"
-              onClick={() => window.open('app.neurolov.ai', '_blank')}
+              onClick={() => window.open('https://app.neurolov.ai/', '_blank')}
               className="bg-neuro-500 hover:bg-neuro-600 text-white"
             >
               Launch App

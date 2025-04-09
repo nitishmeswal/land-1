@@ -186,19 +186,27 @@ export default function EcosystemPage() {
     <PageLayout 
       title="Ecosystem" 
       subtitle="The growing Neurolov network of partners, integrations, and development milestones"
+      
     >
       <SectionContainer className="pb-8">
+        
         <Tabs 
           value={activeTab} 
           onValueChange={setActiveTab}
           className="w-full"
         >
-          <div className="flex justify-center mb-8">
-            <TabsList className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
-              <TabsTrigger value="roadmap" className="px-6">
-                <BookOpen className="mr-2 h-4 w-4" /> Roadmap
+          <div className="flex justify-center mb-2">
+            <TabsList className="inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground">
+              <TabsTrigger
+                value="roadmap"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+              >
+                <Code className="mr-2 h-4 w-4" /> Roadmap
               </TabsTrigger>
-              <TabsTrigger value="partners" className="px-6">
+              <TabsTrigger
+                value="partners"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+              >
                 <Users className="mr-2 h-4 w-4" /> Partners
               </TabsTrigger>
             </TabsList>
