@@ -261,8 +261,8 @@ export default function AboutPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {teamMembers.map((member, index) => (
-                  <div key={index} className="glass-card p-6 rounded-xl border border-neuro-500/10 hover:border-neuro-500/30 transition-all duration-300 hover:shadow-lg group">
-                    <div className="mb-4 flex items-center space-x-4">
+                  <div key={index} className="glass-card p-6 rounded-xl border border-neuro-500/10 hover:border-neuro-500/30 transition-all duration-300 relative min-h-[320px]">
+                    <div className="flex items-center space-x-4 mb-4">
                       <div className="w-16 h-16 rounded-full overflow-hidden">
                         <img 
                           src={member.image} 
@@ -272,26 +272,41 @@ export default function AboutPage() {
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold">{member.name}</h3>
-                        <p className="text-neuro-500 text-sm">{member.role}</p>
+                        <p className="text-sm text-blue-400">{member.role}</p>
                       </div>
                     </div>
                     
-                    <p className="text-sm text-muted-foreground mb-4">{member.bio}</p>
+                    <p className="text-sm text-muted-foreground mb-12">{member.bio}</p>
                     
-                    <div className="flex space-x-2">
+                    <div className="absolute bottom-6 left-6 flex items-center space-x-3">
                       {member.social.twitter && (
-                        <a href={member.social.twitter} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">
-                          <Twitter className="h-4 w-4" />
+                        <a 
+                          href={member.social.twitter} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-blue-400 transition-colors"
+                        >
+                          <Twitter className="h-5 w-5" />
                         </a>
                       )}
                       {member.social.linkedin && (
-                        <a href={member.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">
-                          <Linkedin className="h-4 w-4" />
+                        <a 
+                          href={member.social.linkedin} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-blue-400 transition-colors"
+                        >
+                          <Linkedin className="h-5 w-5" />
                         </a>
                       )}
                       {member.social.github && (
-                        <a href={member.social.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">
-                          <Github className="h-4 w-4" />
+                        <a 
+                          href={member.social.github} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-blue-400 transition-colors"
+                        >
+                          <Github className="h-5 w-5" />
                         </a>
                       )}
                     </div>
@@ -308,8 +323,8 @@ export default function AboutPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {advisors.map((advisor, index) => (
-                  <div key={index} className="glass-card p-6 rounded-xl border border-neuro-500/10 hover:border-neuro-500/30 transition-all duration-300 hover:shadow-lg">
-                    <div className="mb-4 flex items-center space-x-4">
+                  <div key={index} className="glass-card p-6 rounded-xl border border-white/10 hover:border-neuro-500/20 transition-all duration-300 relative min-h-[320px]">
+                    <div className="flex items-center space-x-4 mb-4">
                       <div className="w-16 h-16 rounded-full overflow-hidden">
                         <img 
                           src={advisor.image} 
@@ -317,13 +332,24 @@ export default function AboutPage() {
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" 
                         />
                       </div>
-                      <div>
-                        <h3 className="text-lg font-semibold">{advisor.name}</h3>
-                        <p className="text-neuro-500 text-sm">{advisor.role}</p>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-medium">{advisor.name}</h3>
+                        <p className="text-sm text-blue-400">{advisor.role}</p>
                       </div>
                     </div>
-                    
-                    <p className="text-sm text-muted-foreground">{advisor.bio}</p>
+                    <p className="text-sm text-muted-foreground mb-12">{advisor.bio}</p>
+                    <div className="absolute bottom-6 left-6 flex items-center space-x-3">
+                      {advisor.social.linkedin && (
+                        <a 
+                          href={advisor.social.linkedin} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-blue-400 transition-colors"
+                        >
+                          <Linkedin className="h-5 w-5" />
+                        </a>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>

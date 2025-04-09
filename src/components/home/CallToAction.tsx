@@ -120,7 +120,7 @@ export default function CallToAction() {
           <div className="flex flex-wrap justify-center items-center gap-6 text-sm text-muted-foreground reveal reveal-delay-4">
             <div className="flex items-center gap-2">
               <Users className="h-4 w-4" />
-              <span>2.5k+ Waitlist Members</span>
+              <span>3k+ Waitlist Members</span>
             </div>
             <div className="flex items-center gap-2">
               <Zap className="h-4 w-4" />
