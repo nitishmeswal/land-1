@@ -1,28 +1,41 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { SectionContainer } from '@/components/ui/Container';
-import PageLayout from '@/components/layout/PageLayout';
-import { Button } from '@/components/ui/button';
-import SectionHeading from '@/components/common/SectionHeading';
-import FeatureCard from '@/components/common/FeatureCard';
-import { Cpu, Code, Network, Bot, Server, Braces, Database, Terminal, Shield, Zap, Image, Music, Video, Box, UserSquare2 } from 'lucide-react';
+import { SectionContainer } from "@/components/ui/Container";
+import PageLayout from "@/components/layout/PageLayout";
+import { Button } from "@/components/ui/button";
+import SectionHeading from "@/components/common/SectionHeading";
+import FeatureCard from "@/components/common/FeatureCard";
+import {
+  Cpu,
+  Code,
+  Network,
+  Bot,
+  Server,
+  Braces,
+  Database,
+  Terminal,
+  Shield,
+  Zap,
+  Image,
+  Music,
+  Video,
+  Box,
+  UserSquare2,
+} from "lucide-react";
+import { useParams, useRoutes } from "react-router-dom";
 
 export default function ProductsPage() {
   const [activeTab, setActiveTab] = useState("compute");
-  
+
   return (
-    <PageLayout 
-      title="Products & Services" 
+    <PageLayout
+      title="Products & Services"
       subtitle="Explore our suite of AI and compute solutions powering the decentralized future"
     >
       <SectionContainer className="pb-16">
-        <Tabs 
-          value={activeTab} 
-          onValueChange={setActiveTab}
-          className="w-full"
-        >
-          <div className="flex justify-center mb-12">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <div className="flex justify-center mb-16 md:mb-8">
             <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2">
               <TabsTrigger value="compute" className="px-6">
                 <Cpu className="mr-2 h-4 w-4" /> Compute
@@ -70,33 +83,44 @@ export default function ProductsPage() {
                 />
               </div>
             </div>
-            
+
             <div className="glass-card p-8 rounded-xl border border-neuro-500/10">
               <div className="flex flex-col md:flex-row gap-8 items-center">
                 <div className="md:w-1/2">
                   <h3 className="text-2xl font-bold mb-4">Become a Provider</h3>
                   <p className="text-muted-foreground mb-6">
-                    Join our network of GPU providers and earn NLOV tokens for sharing your compute resources. 
-                    Our platform makes it easy to monetize your idle hardware.
+                    Join our network of GPU providers and earn NLOV tokens for
+                    sharing your compute resources. Our platform makes it easy
+                    to monetize your idle hardware.
                   </p>
                   <div className="flex flex-wrap gap-4">
-                    <Button variant="neon" onClick={() => window.open('https://app.neurolov.ai/gpu-marketplace', '_blank')}>
+                    <Button
+                      variant="neon"
+                      onClick={() =>
+                        window.open(
+                          "https://app.neurolov.ai/gpu-marketplace",
+                          "_blank"
+                        )
+                      }
+                    >
                       Join Compute Network
                     </Button>
                   </div>
                 </div>
                 <div className="md:w-1/2">
-                  <img 
-                    src="/compute.png" 
-                    alt="GPU Hardware" 
-                    className="rounded-lg w-full h-64 object-cover shadow-lg" 
+                  <img
+                    src="/compute.png"
+                    alt="GPU Hardware"
+                    className="rounded-lg w-full h-64 object-cover shadow-lg"
                   />
                 </div>
               </div>
             </div>
 
             <div className="glass-card p-8 rounded-xl border border-neuro-500/10">
-              <h3 className="text-2xl font-bold mb-6">Available GPU Specifications</h3>
+              <h3 className="text-2xl font-bold mb-6">
+                Available GPU Specifications
+              </h3>
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
@@ -280,7 +304,7 @@ export default function ProductsPage() {
           </TabsContent>
 
           {/* Swarm Network Tab */}
-          <TabsContent value="swarm" className="space-y-16">
+          <TabsContent value="swarm" className="space-y-4">
             <div>
               <SectionHeading
                 title="Decentralized Swarm Network"
@@ -331,49 +355,69 @@ export default function ProductsPage() {
                   </svg>
                 </div>
               </div>
-              
+
               <div className="relative z-10 glass-card p-8 rounded-xl border border-neuro-500/10 max-w-lg mx-auto">
-                <h3 className="text-2xl font-bold mb-4">Monetize Your Hardware</h3>
+                <h3 className="text-2xl font-bold mb-4">
+                  Monetize Your Hardware
+                </h3>
                 <p className="text-muted-foreground mb-6">
-                  Turn your idle computing resources into a passive income stream. Join our swarm network as a provider and earn NLOV tokens.
+                  Turn your idle computing resources into a passive income
+                  stream. Join our swarm network as a provider and earn NLOV
+                  tokens.
                 </p>
                 <div className="space-y-4 mb-6">
                   <div className="flex items-center gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500">1</div>
+                    <div className="flex-shrink-0 w-12 h-12 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500">
+                      1
+                    </div>
                     <div>
                       <h4 className="font-medium">Install Node Software</h4>
-                      <p className="text-sm text-muted-foreground">Simple setup on Windows, Mac, or Linux</p>
+                      <p className="text-sm text-muted-foreground">
+                        Simple setup on Windows, Mac, or Linux
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500">2</div>
+                    <div className="flex-shrink-0 w-12 h-12 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500">
+                      2
+                    </div>
                     <div>
                       <h4 className="font-medium">Configure Resources</h4>
-                      <p className="text-sm text-muted-foreground">Choose what to share and when</p>
+                      <p className="text-sm text-muted-foreground">
+                        Choose what to share and when
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500">3</div>
+                    <div className="flex-shrink-0 w-12 h-12 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500">
+                      3
+                    </div>
                     <div>
                       <h4 className="font-medium">Earn NLOV Tokens</h4>
-                      <p className="text-sm text-muted-foreground">Get paid automatically as you contribute</p>
+                      <p className="text-sm text-muted-foreground">
+                        Get paid automatically as you contribute
+                      </p>
                     </div>
                   </div>
                 </div>
-                <Button variant="neon" className="w-full">Join the Swarm</Button>
+                <Button variant="neon" className="w-full">
+                  Join the Swarm
+                </Button>
               </div>
             </div>
-            
+
             <div>
               <SectionHeading
                 title="Network Statistics"
                 subtitle="Live insights into our growing decentralized infrastructure"
               />
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
                 <div className="glass-card p-6 rounded-xl border border-neuro-500/10 text-center">
                   <h4 className="text-muted-foreground mb-2">Active Nodes</h4>
-                  <div className="text-4xl font-bold text-neuro-500">14,738</div>
+                  <div className="text-4xl font-bold text-neuro-500">
+                    14,738
+                  </div>
                 </div>
                 <div className="glass-card p-6 rounded-xl border border-neuro-500/10 text-center">
                   <h4 className="text-muted-foreground mb-2">Countries</h4>
@@ -381,10 +425,14 @@ export default function ProductsPage() {
                 </div>
                 <div className="glass-card p-6 rounded-xl border border-neuro-500/10 text-center">
                   <h4 className="text-muted-foreground mb-2">Total GPUs</h4>
-                  <div className="text-4xl font-bold text-neuro-500">35,412</div>
+                  <div className="text-4xl font-bold text-neuro-500">
+                    35,412
+                  </div>
                 </div>
                 <div className="glass-card p-6 rounded-xl border border-neuro-500/10 text-center">
-                  <h4 className="text-muted-foreground mb-2">NLOV Distributed</h4>
+                  <h4 className="text-muted-foreground mb-2">
+                    NLOV Distributed
+                  </h4>
                   <div className="text-4xl font-bold text-neuro-500">3.4M</div>
                 </div>
               </div>
@@ -422,45 +470,77 @@ export default function ProductsPage() {
                 />
               </div>
             </div>
-            
+
             <div className="glass-card p-8 rounded-xl border border-neuro-500/10">
               <div className="flex flex-col md:flex-row gap-8 items-center">
                 <div className="md:w-1/2">
-                  <img 
-                    src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e" 
-                    alt="AI Robot" 
-                    className="rounded-lg w-full h-64 object-cover shadow-lg" 
+                  <img
+                    src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e"
+                    alt="AI Robot"
+                    className="rounded-lg w-full h-64 object-cover shadow-lg"
                   />
                 </div>
                 <div className="md:w-1/2">
-                  <h3 className="text-2xl font-bold mb-4">No-Code Agent Builder</h3>
+                  <h3 className="text-2xl font-bold mb-4">
+                    No-Code Agent Builder
+                  </h3>
                   <p className="text-muted-foreground mb-6">
-                    Create sophisticated AI agents without writing a single line of code. Our visual builder lets you design, test, and deploy agents in minutes.
+                    Create sophisticated AI agents without writing a single line
+                    of code. Our visual builder lets you design, test, and
+                    deploy agents in minutes.
                   </p>
                   <ul className="space-y-3 mb-6">
                     <li className="flex items-start">
                       <div className="flex-shrink-0 bg-neuro-500/10 rounded-full p-1 mr-3 mt-1">
-                        <svg className="h-3 w-3 text-neuro-500" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        <svg
+                          className="h-3 w-3 text-neuro-500"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clipRule="evenodd"
+                          />
                         </svg>
                       </div>
                       <span className="text-sm">Drag-and-drop interface</span>
                     </li>
                     <li className="flex items-start">
                       <div className="flex-shrink-0 bg-neuro-500/10 rounded-full p-1 mr-3 mt-1">
-                        <svg className="h-3 w-3 text-neuro-500" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        <svg
+                          className="h-3 w-3 text-neuro-500"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clipRule="evenodd"
+                          />
                         </svg>
                       </div>
-                      <span className="text-sm">Pre-built templates for common use cases</span>
+                      <span className="text-sm">
+                        Pre-built templates for common use cases
+                      </span>
                     </li>
                     <li className="flex items-start">
                       <div className="flex-shrink-0 bg-neuro-500/10 rounded-full p-1 mr-3 mt-1">
-                        <svg className="h-3 w-3 text-neuro-500" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        <svg
+                          className="h-3 w-3 text-neuro-500"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clipRule="evenodd"
+                          />
                         </svg>
                       </div>
-                      <span className="text-sm">Easy integration with APIs and data sources</span>
+                      <span className="text-sm">
+                        Easy integration with APIs and data sources
+                      </span>
                     </li>
                   </ul>
                   <div className="flex flex-wrap gap-4">
@@ -470,137 +550,218 @@ export default function ProductsPage() {
                 </div>
               </div>
             </div>
-            
+
             <div>
               <SectionHeading
                 title="Use Cases"
                 subtitle="Discover how organizations are leveraging our AI agents"
               />
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="glass-card p-6 rounded-xl border border-neuro-500/10">
                   <h4 className="font-bold text-lg mb-3">Financial Services</h4>
                   <p className="text-muted-foreground mb-4">
-                    AI agents continuously monitoring market conditions and executing trades based on predefined strategies. 
-                    Algorithmic trading with the flexibility to adapt to changing conditions.
+                    AI agents continuously monitoring market conditions and
+                    executing trades based on predefined strategies. Algorithmic
+                    trading with the flexibility to adapt to changing
+                    conditions.
                   </p>
-                  <Button variant="outline" size="sm">Read Case Study</Button>
+                  <Button variant="outline" size="sm">
+                    Read Case Study
+                  </Button>
                 </div>
                 <div className="glass-card p-6 rounded-xl border border-neuro-500/10">
                   <h4 className="font-bold text-lg mb-3">Healthcare</h4>
                   <p className="text-muted-foreground mb-4">
-                    Agents processing medical data and generating preliminary analyses to assist doctors. 
-                    Automated scheduling and patient follow-up to improve care coordination.
+                    Agents processing medical data and generating preliminary
+                    analyses to assist doctors. Automated scheduling and patient
+                    follow-up to improve care coordination.
                   </p>
-                  <Button variant="outline" size="sm">Read Case Study</Button>
+                  <Button variant="outline" size="sm">
+                    Read Case Study
+                  </Button>
                 </div>
                 <div className="glass-card p-6 rounded-xl border border-neuro-500/10">
                   <h4 className="font-bold text-lg mb-3">Supply Chain</h4>
                   <p className="text-muted-foreground mb-4">
-                    Agents optimizing inventory management and logistics in real-time. 
-                    Predictive maintenance scheduling to prevent equipment failures and downtime.
+                    Agents optimizing inventory management and logistics in
+                    real-time. Predictive maintenance scheduling to prevent
+                    equipment failures and downtime.
                   </p>
-                  <Button variant="outline" size="sm">Read Case Study</Button>
+                  <Button variant="outline" size="sm">
+                    Read Case Study
+                  </Button>
                 </div>
                 <div className="glass-card p-6 rounded-xl border border-neuro-500/10">
                   <h4 className="font-bold text-lg mb-3">Customer Service</h4>
                   <p className="text-muted-foreground mb-4">
-                    Intelligent agents handling customer inquiries and routing complex cases to human agents.
-                    Personalized recommendations and proactive support.
+                    Intelligent agents handling customer inquiries and routing
+                    complex cases to human agents. Personalized recommendations
+                    and proactive support.
                   </p>
-                  <Button variant="outline" size="sm">Read Case Study</Button>
+                  <Button variant="outline" size="sm">
+                    Read Case Study
+                  </Button>
                 </div>
               </div>
             </div>
           </TabsContent>
         </Tabs>
       </SectionContainer>
-      
+
       <SectionContainer className="py-16 bg-gradient-to-b from-background to-muted/30 relative">
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-dots-light bg-[size:20px_20px] opacity-20"></div>
         </div>
-        
+
         <div className="text-center mb-12">
           <SectionHeading
             title="Ready to Get Started?"
             subtitle="Choose the plan that's right for you and start building with Neurolov"
           />
-          
+
           <div className="flex flex-col sm:flex-row justify-center gap-8 max-w-4xl mx-auto">
             <div className="flex-1 glass-card p-8 rounded-xl border border-neuro-500/10 text-center">
               <h3 className="text-xl font-bold mb-2">Developer</h3>
               <div className="text-4xl font-bold mb-2">Free</div>
-              <p className="text-muted-foreground mb-6">Perfect for exploration and small projects</p>
+              <p className="text-muted-foreground mb-6">
+                Perfect for exploration and small projects
+              </p>
               <ul className="space-y-3 mb-8 text-left">
                 <li className="flex items-start">
                   <div className="flex-shrink-0 bg-neuro-500/10 rounded-full p-1 mr-3 mt-1">
-                    <svg className="h-3 w-3 text-neuro-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="h-3 w-3 text-neuro-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                   </div>
                   <span className="text-sm">100 NLOV tokens monthly</span>
                 </li>
                 <li className="flex items-start">
                   <div className="flex-shrink-0 bg-neuro-500/10 rounded-full p-1 mr-3 mt-1">
-                    <svg className="h-3 w-3 text-neuro-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="h-3 w-3 text-neuro-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                   </div>
                   <span className="text-sm">Access to basic models</span>
                 </li>
                 <li className="flex items-start">
                   <div className="flex-shrink-0 bg-neuro-500/10 rounded-full p-1 mr-3 mt-1">
-                    <svg className="h-3 w-3 text-neuro-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="h-3 w-3 text-neuro-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                   </div>
                   <span className="text-sm">Community support</span>
                 </li>
               </ul>
-              <Button variant="outline" className="w-full">Sign Up Free</Button>
+              <Button variant="outline" className="w-full">
+                Sign Up Free
+              </Button>
             </div>
-            
+
             <div className="flex-1 glass-card p-8 rounded-xl border border-neuro-500/20 bg-gradient-to-br from-neuro-500/5 to-blue-500/5 text-center relative overflow-hidden shadow-lg">
-              <div className="absolute top-0 right-0 bg-neuro-500 text-white text-xs font-bold px-4 py-1">POPULAR</div>
+              <div className="absolute top-0 right-0 bg-neuro-500 text-white text-xs font-bold px-4 py-1">
+                POPULAR
+              </div>
               <h3 className="text-xl font-bold mb-2">Business</h3>
-              <div className="text-4xl font-bold mb-2">$99<span className="text-lg">/mo</span></div>
-              <p className="text-muted-foreground mb-6">For teams and professional applications</p>
+              <div className="text-4xl font-bold mb-2">
+                $99<span className="text-lg">/mo</span>
+              </div>
+              <p className="text-muted-foreground mb-6">
+                For teams and professional applications
+              </p>
               <ul className="space-y-3 mb-8 text-left">
                 <li className="flex items-start">
                   <div className="flex-shrink-0 bg-neuro-500/20 rounded-full p-1 mr-3 mt-1">
-                    <svg className="h-3 w-3 text-neuro-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="h-3 w-3 text-neuro-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                   </div>
                   <span className="text-sm">5,000 NLOV tokens monthly</span>
                 </li>
                 <li className="flex items-start">
                   <div className="flex-shrink-0 bg-neuro-500/20 rounded-full p-1 mr-3 mt-1">
-                    <svg className="h-3 w-3 text-neuro-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="h-3 w-3 text-neuro-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                   </div>
                   <span className="text-sm">Access to all models</span>
                 </li>
                 <li className="flex items-start">
                   <div className="flex-shrink-0 bg-neuro-500/20 rounded-full p-1 mr-3 mt-1">
-                    <svg className="h-3 w-3 text-neuro-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="h-3 w-3 text-neuro-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                   </div>
                   <span className="text-sm">Dedicated support</span>
                 </li>
                 <li className="flex items-start">
                   <div className="flex-shrink-0 bg-neuro-500/20 rounded-full p-1 mr-3 mt-1">
-                    <svg className="h-3 w-3 text-neuro-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="h-3 w-3 text-neuro-500"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                   </div>
                   <span className="text-sm">Advanced agent features</span>
                 </li>
               </ul>
-              <Button variant="neon" className="w-full">Get Started</Button>
+              <Button variant="neon" className="w-full">
+                Get Started
+              </Button>
             </div>
           </div>
         </div>

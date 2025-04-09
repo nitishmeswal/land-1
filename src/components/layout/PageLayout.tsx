@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
-import { SectionContainer } from '@/components/ui/Container';
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import { SectionContainer } from "@/components/ui/Container";
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -10,7 +10,12 @@ interface PageLayoutProps {
   className?: string;
 }
 
-export default function PageLayout({ children, title, subtitle, className = "" }: PageLayoutProps) {
+export default function PageLayout({
+  children,
+  title,
+  subtitle,
+  className = "",
+}: PageLayoutProps) {
   useEffect(() => {
     // Scroll to top on page load
     window.scrollTo(0, 0);
@@ -30,19 +35,19 @@ export default function PageLayout({ children, title, subtitle, className = "" }
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neuro-500/20 to-transparent"></div>
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neuro-500/20 to-transparent"></div>
           </div>
-          
+
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 hero-text-gradient">{title}</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 hero-text-gradient">
+              {title}
+            </h1>
             {subtitle && (
               <p className="text-xl text-muted-foreground">{subtitle}</p>
             )}
           </div>
         </SectionContainer>
-        
+
         {/* Page content */}
-        <div className={className}>
-          {children}
-        </div>
+        <div className={className}>{children}</div>
       </main>
       <Footer />
     </>
