@@ -1,57 +1,57 @@
-import { Container } from '@/components/ui/Container';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
-import { Menu, ChevronDown } from 'lucide-react';
-import { useState, useRef } from 'react';
+import { Container } from "@/components/ui/Container";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 
 const navItems = {
   products: {
-    label: 'Products',
+    label: "Products",
     items: [
-      { label: 'Compute', href: '/products#compute' },
-      { label: 'AI Models', href: '/products#ai-models' },
-      { label: 'AI Agents', href: '/products#ai-agents' },
-      { label: 'Neuro Swarm', href: '/products#swarm-network' }
-    ]
+      { label: "Compute", href: "/products#compute" },
+      { label: "AI Models", href: "/products#ai-models" },
+      { label: "AI Agents", href: "/products#ai-agents" },
+      { label: "Neuro Swarm", href: "/products#swarm-network" },
+    ],
   },
   token: {
-    label: 'Token',
+    label: "Token",
     items: [
-      { label: '$NLOV', href: '/token' },
-      { label: 'Tokenomics', href: '/token#tokenomics' },
-      { label: 'Utility', href: '/token#utility' },
-      { label: 'FAQ', href: '/token#faq' }
-    ]
+      { label: "$NLOV", href: "/token" },
+      { label: "Tokenomics", href: "/token#tokenomics" },
+      { label: "Utility", href: "/token#utility" },
+      { label: "FAQ", href: "/token#faq" },
+    ],
   },
   ecosystem: {
-    label: 'Ecosystem',
+    label: "Ecosystem",
     items: [
-      { label: 'Roadmap', href: '/ecosystem#roadmap' },
-      { label: 'Partners', href: '/ecosystem#partners' },
-    ]
+      { label: "Roadmap", href: "/ecosystem#roadmap" },
+      { label: "Partners", href: "/ecosystem#partners" },
+    ],
   },
   resources: {
-    label: 'Resources',
+    label: "Resources",
     items: [
-      { label: 'Overview', href: '/resources' },
-      { label: 'Documentation', href: '/resources#docs' },
-      { label: 'Whitepaper', href: '/whitepaper' },
-      { label: 'Pitch Deck', href: '/pitch-deck' }
-    ]
+      { label: "Overview", href: "/resources" },
+      { label: "Documentation", href: "/resources#docs" },
+      { label: "Whitepaper", href: "/whitepaper" },
+      { label: "Pitch Deck", href: "/pitch-deck" },
+    ],
   },
   about: {
-    label: 'About',
+    label: "About",
     items: [
-      { label: 'Team', href: '/about#team' },
-      { label: 'Mission', href: '/about#mission' },
-      
-    ]
-  }
+      { label: "Team", href: "/about#team" },
+      { label: "Mission", href: "/about#mission" },
+    ],
+  },
 };
 
-const NavItem = ({ label, items }: { label: string; items: { label: string; href: string }[] }) => {
+// Desktop navigation item with dropdown
+const NavItem = ({ label, items }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef(null);
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) {
@@ -63,7 +63,7 @@ const NavItem = ({ label, items }: { label: string; items: { label: string; href
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setIsOpen(false);
-    }, 50); // Reduced from 150ms to 50ms for faster response
+    }, 50);
   };
 
   return (
@@ -74,18 +74,17 @@ const NavItem = ({ label, items }: { label: string; items: { label: string; href
     >
       <div className="flex items-center space-x-1 rounded-full px-4 py-2 bg-white/5 hover:bg-white/10 transition-all duration-300">
         <span className="text-sm text-white/90 hover:text-white">{label}</span>
-        <ChevronDown className={`h-4 w-4 text-white/70 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+        <ChevronDown
+          className={`h-4 w-4 text-white/70 transition-transform duration-300 ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        />
       </div>
-      
-      {/* Add a transparent bridge to prevent gap */}
+
       <div className="absolute -bottom-2 left-0 right-0 h-2" />
-      
+
       {isOpen && (
-        <div 
-          className="absolute left-0 mt-2 w-48 rounded-xl bg-[#06115D] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-          onMouseEnter={() => setIsOpen(true)}
-          onMouseLeave={() => setIsOpen(false)}
-        >
+        <div className="absolute left-0 mt-2 w-48 rounded-xl bg-[#0361DA] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-2">
             {items.map((item, index) => (
               <Link
@@ -103,93 +102,285 @@ const NavItem = ({ label, items }: { label: string; items: { label: string; href
   );
 };
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+// Mobile navigation category with collapsible submenu and animations
+const MobileNavCategory = ({
+  label,
+  items,
+  closeMenu,
+  isExpanded,
+  onClick,
+}) => {
+  const contentRef = useRef(null);
 
   return (
-    <nav className="fixed top-0 z-50 w-full bg-[#06115D]">
-      <Container>
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <img src="/og-image.png" alt="Neurolov" className="h-8 w-auto" />
-            <span className="text-xl font-bold text-white">Neurolov</span>
-          </Link>
+    <div className="border-b border-white/10">
+      <button
+        onClick={onClick}
+        className="flex w-full justify-between items-center py-3 px-4"
+      >
+        <span className="text-base font-medium text-white">{label}</span>
+        <ChevronDown
+          className={`h-5 w-5 text-white/70 transition-transform duration-300 ${
+            isExpanded ? "rotate-180" : ""
+          }`}
+        />
+      </button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
-            {Object.entries(navItems).map(([key, { label, items }]) => (
-              <NavItem key={key} label={label} items={items} />
-            ))}
-            <a 
-              href="https://app.neurolov.ai" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="rounded-full px-4 py-2 bg-white/5 hover:bg-white/10 text-sm text-white/90 hover:text-white transition-all duration-300"
+      <div
+        ref={contentRef}
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+          isExpanded ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        }`}
+        style={{
+          transitionProperty: "max-height, opacity",
+        }}
+      >
+        <div className="bg-white/5 rounded-md mx-2 mb-2">
+          {items.map((item, index) => (
+            <Link
+              key={index}
+              to={item.href}
+              onClick={closeMenu}
+              className="flex items-center space-x-2 px-6 py-3 text-sm text-white/80 hover:text-white transition-all duration-200"
             >
-              App
-            </a>
-          </div>
-
-          {/* Action Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" className="rounded-full text-white/90 hover:text-white hover:bg-white/10">
-              Contact Us
-            </Button>
-            <Button className="rounded-full bg-neuro-500 hover:bg-neuro-600 text-white">
-              Try Testnet
-            </Button>
-          </div>
-
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-white hover:text-white hover:bg-white/10 rounded-lg"
-          >
-            <Menu className="h-6 w-6" />
-          </button>
+              <ChevronRight className="h-3 w-3" />
+              <span>{item.label}</span>
+            </Link>
+          ))}
         </div>
+      </div>
+    </div>
+  );
+};
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden py-4 bg-black/20 backdrop-blur-sm">
-            <div className="flex flex-col space-y-3">
+export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [expandedCategory, setExpandedCategory] = useState(null);
+  const menuRef = useRef(null);
+  const menuButtonRef = useRef(null);
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    // Enable scrolling when menu closes
+    document.body.style.overflow = "";
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleCategoryClick = (categoryKey) => {
+    setExpandedCategory(expandedCategory === categoryKey ? null : categoryKey);
+  };
+
+  // Handle scroll effects
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Disable body scrolling when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
+
+  // Fix for mobile menu z-index and positioning
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isMenuOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        menuButtonRef.current &&
+        !menuButtonRef.current.contains(event.target)
+      ) {
+        closeMenu();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
+  return (
+    <>
+      <nav
+        className={`fixed top-0 z-[50] w-full transition-all duration-300
+        ${
+          isScrolled
+            ? "bg-[#0361DA]/95 backdrop-blur-sm shadow-md"
+            : "bg-[#0361DA]"
+        }`}
+      >
+        <Container>
+          <div className="flex h-16 items-center justify-between">
+            {/* Logo */}
+            <Link to="/" className="flex items-center space-x-2 z-20">
+              <img src="/og-image.png" alt="Neurolov" className="h-10 w-auto" />
+              <span className="text-xl font-bold text-white">Neurolov</span>
+            </Link>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-1">
               {Object.entries(navItems).map(([key, { label, items }]) => (
-                <div key={key} className="px-4">
-                  <div className="text-sm font-medium text-white mb-2">{label}</div>
-                  <div className="ml-4 flex flex-col space-y-2">
-                    {items.map((item, index) => (
-                      <Link
-                        key={index}
-                        to={item.href}
-                        className="text-sm text-white/90 hover:text-white transition-all duration-300"
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
+                <NavItem key={key} label={label} items={items} />
               ))}
-              <a 
-                href="https://app.neurolov.ai" 
-                target="_blank" 
+              <a
+                href="https://app.neurolov.ai"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 text-sm text-white/90 hover:text-white transition-all duration-300"
+                className="rounded-full px-4 py-2 bg-white/5 hover:bg-white/10 text-sm text-white/90 hover:text-white transition-all duration-300"
               >
                 App
               </a>
-              <div className="pt-4 space-y-3 px-4">
-                <Button variant="ghost" className="w-full rounded-full text-white/90 hover:text-white hover:bg-white/10">
-                  Contact Us
-                </Button>
-                <Button className="w-full rounded-full bg-neuro-500 hover:bg-neuro-600 text-white">
-                  Try Testnet
-                </Button>
+            </div>
+
+            {/* Desktop Action Buttons */}
+            <div className="hidden md:flex items-center space-x-4">
+              <Button
+                variant="ghost"
+                className="rounded-full text-white/90 hover:text-white hover:bg-white/10"
+              >
+                Contact Us
+              </Button>
+              <Button className="rounded-full bg-neuro-500 hover:bg-neuro-600 text-white">
+                Try Testnet
+              </Button>
+            </div>
+
+            {/* Mobile menu button */}
+            <button
+              ref={menuButtonRef}
+              onClick={toggleMenu}
+              className="md:hidden p-2 text-white hover:text-white hover:bg-white/10 rounded-full z-20"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+          </div>
+
+          {/* Mobile Navigation - Fixed to top of viewport regardless of scroll position */}
+        </Container>
+
+        {/* Global animation styles */}
+        <style jsx global>{`
+          @keyframes fadeSlideIn {
+            from {
+              opacity: 0;
+              transform: translateY(8px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        `}</style>
+      </nav>
+      <div
+        ref={menuRef}
+        className={`md:hidden fixed inset-x-0 top-0 bottom-0 bg-[#0361DA] pt-16 z-[49] overflow-y-auto transition-all duration-500 ease ${
+          isMenuOpen
+            ? "translate-y-0 opacity-100"
+            : "translate-y-4 opacity-0 pointer-events-none"
+        }`}
+      >
+        <div className="flex flex-col h-full pt-2">
+          {/* Navigation Categories */}
+          <div className="py-4">
+            {Object.entries(navItems).map(([key, { label, items }], index) => (
+              <div
+                key={key}
+                className="animate-slide-in"
+                style={{
+                  animationDelay: `${index * 50}ms`,
+                  opacity: 0,
+                  animation: isMenuOpen
+                    ? `fadeSlideIn 0.5s ease forwards ${index * 50}ms`
+                    : "none",
+                }}
+              >
+                <MobileNavCategory
+                  label={label}
+                  items={items}
+                  closeMenu={closeMenu}
+                  isExpanded={expandedCategory === key}
+                  onClick={() => handleCategoryClick(key)}
+                />
               </div>
+            ))}
+
+            {/* App Link */}
+            <div
+              className="px-4 py-3 animate-slide-in"
+              style={{
+                animationDelay: `${Object.keys(navItems).length * 50}ms`,
+                opacity: 0,
+                animation: isMenuOpen
+                  ? `fadeSlideIn 0.5s ease forwards ${
+                      Object.keys(navItems).length * 50
+                    }ms`
+                  : "none",
+              }}
+            >
+              <a
+                href="https://app.neurolov.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeMenu}
+                className="flex items-center space-x-2 text-base font-medium text-white"
+              >
+                <span>App</span>
+              </a>
+            </div>
+
+            {/* Action Buttons */}
+            <div
+              className="px-4 py-6 space-y-3 mt-4"
+              style={{
+                opacity: 0,
+                animation: isMenuOpen
+                  ? `fadeSlideIn 0.5s ease forwards ${
+                      (Object.keys(navItems).length + 1) * 50
+                    }ms`
+                  : "none",
+              }}
+            >
+              <Button
+                variant="ghost"
+                className="w-full rounded-full text-white/90 hover:text-white hover:bg-white/10"
+                onClick={closeMenu}
+              >
+                Contact Us
+              </Button>
+              <Button
+                className="w-full rounded-full bg-neuro-500 hover:bg-neuro-600 text-white"
+                onClick={closeMenu}
+              >
+                Try Testnet
+              </Button>
             </div>
           </div>
-        )}
-      </Container>
-    </nav>
+        </div>
+      </div>
+    </>
   );
 }

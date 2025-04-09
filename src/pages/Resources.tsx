@@ -1,10 +1,25 @@
-import React from 'react';
-import { SectionContainer } from '@/components/ui/Container';
-import PageLayout from '@/components/layout/PageLayout';
-import { Button } from '@/components/ui/button';
-import SectionHeading from '@/components/common/SectionHeading';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { FileText, Book, Video, MessageSquare, ArrowUpRight, Newspaper, GraduationCap, Github } from 'lucide-react';
+import React from "react";
+import { SectionContainer } from "@/components/ui/Container";
+import PageLayout from "@/components/layout/PageLayout";
+import { Button } from "@/components/ui/button";
+import SectionHeading from "@/components/common/SectionHeading";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "@/components/ui/card";
+import {
+  FileText,
+  Book,
+  Video,
+  MessageSquare,
+  ArrowUpRight,
+  Newspaper,
+  GraduationCap,
+  Github,
+} from "lucide-react";
 
 const resources = [
   {
@@ -15,7 +30,7 @@ const resources = [
       { text: "Getting Started Guide", url: "/docs/getting-started" },
       { text: "API Reference", url: "/docs/api" },
       { text: "SDK Documentation", url: "/docs/sdk" },
-    ]
+    ],
   },
   {
     title: "Technical Papers",
@@ -25,7 +40,7 @@ const resources = [
       { text: "Whitepaper", url: "/whitepaper" },
       { text: "Technical Architecture", url: "/docs/architecture" },
       { text: "Research Publications", url: "/research" },
-    ]
+    ],
   },
   {
     title: "Video Tutorials",
@@ -35,7 +50,7 @@ const resources = [
       { text: "Platform Overview", url: "/tutorials/overview" },
       { text: "Developer Tutorials", url: "/tutorials/dev" },
       { text: "Use Case Examples", url: "/tutorials/examples" },
-    ]
+    ],
   },
   {
     title: "Community",
@@ -44,8 +59,11 @@ const resources = [
     links: [
       { text: "Discord Community", url: "https://discord.gg/neurolov" },
       { text: "Developer Forum", url: "/forum" },
-      { text: "GitHub Discussions", url: "https://github.com/neurolov/discussions" },
-    ]
+      {
+        text: "GitHub Discussions",
+        url: "https://github.com/neurolov/discussions",
+      },
+    ],
   },
   {
     title: "Blog & Updates",
@@ -55,7 +73,7 @@ const resources = [
       { text: "Technical Blog", url: "/blog" },
       { text: "Release Notes", url: "/releases" },
       { text: "Ecosystem Updates", url: "/updates" },
-    ]
+    ],
   },
   {
     title: "Learning Hub",
@@ -65,28 +83,32 @@ const resources = [
       { text: "Learning Paths", url: "/learn" },
       { text: "Certification Program", url: "/certification" },
       { text: "Best Practices", url: "/best-practices" },
-    ]
-  }
+    ],
+  },
 ];
 
 export default function ResourcesPage() {
   return (
-    <PageLayout 
-      title="Resources" 
+    <PageLayout
+      title="Resources"
       subtitle="Everything you need to build on Neurolov"
     >
       <SectionContainer className="pb-16">
         {/* Featured Resources */}
         <div className="mb-16">
           <SectionHeading
+            className="md:flex md:flex-col md:items-center md:justify-center"
             title="Developer Resources"
             subtitle="Access comprehensive documentation, tutorials, and support to help you build on Neurolov"
             badge="Resources"
           />
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {resources.map((resource, index) => (
-              <Card key={index} className="group hover:border-neuro-500/50 transition-colors">
+              <Card
+                key={index}
+                className="group hover:border-neuro-500/50 transition-colors"
+              >
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
                     <div className="p-2 rounded-lg bg-neuro-500/10 text-neuro-500">
@@ -100,12 +122,16 @@ export default function ResourcesPage() {
                   <ul className="space-y-2">
                     {resource.links.map((link, linkIndex) => (
                       <li key={linkIndex}>
-                        <Button 
-                          variant="ghost" 
+                        <Button
+                          variant="ghost"
                           className="w-full justify-between group/link"
                           asChild
                         >
-                          <a href={link.url} target="_blank" rel="noopener noreferrer">
+                          <a
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
                             {link.text}
                             <ArrowUpRight className="h-4 w-4 opacity-0 group-hover/link:opacity-100 transition-opacity" />
                           </a>
@@ -128,17 +154,26 @@ export default function ResourcesPage() {
                 <h3 className="text-2xl font-bold">Open Source</h3>
               </div>
               <p className="text-muted-foreground mb-6">
-                Our core infrastructure is open source. Contribute to our repositories, 
-                submit issues, and help us build the future of decentralized AI computing.
+                Our core infrastructure is open source. Contribute to our
+                repositories, submit issues, and help us build the future of
+                decentralized AI computing.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button variant="neon" asChild>
-                  <a href="https://github.com/neurolov" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://github.com/neurolov"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     View on GitHub <ArrowUpRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
                 <Button variant="outline" asChild>
-                  <a href="https://github.com/neurolov/contribute" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://github.com/neurolov/contribute"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Contribution Guide
                   </a>
                 </Button>
@@ -146,7 +181,7 @@ export default function ResourcesPage() {
             </div>
             <div className="md:w-1/2 relative">
               <div className="absolute inset-0 bg-gradient-to-tr from-background via-transparent to-transparent z-10"></div>
-              <img 
+              <img
                 src="https://images.unsplash.com/photo-1556075798-4825dfaaf498"
                 alt="Open Source Collaboration"
                 className="rounded-lg w-full object-cover shadow-lg"

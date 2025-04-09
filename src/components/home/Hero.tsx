@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
-import { Container } from '@/components/ui/Container';
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { useEffect, useRef, useState } from "react";
+import { Container } from "@/components/ui/Container";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -9,17 +9,20 @@ export default function Hero() {
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoaded(true), 300);
-    
-    observerRef.current = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('reveal-visible');
-          observerRef.current?.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
 
-    const elements = document.querySelectorAll('.reveal');
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-visible");
+            observerRef.current?.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll(".reveal");
     elements.forEach((el) => {
       observerRef.current?.observe(el);
     });
@@ -37,11 +40,17 @@ export default function Hero() {
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background/95"></div>
 
-      <Container className={`relative pb-20 transition-all duration-1000 ${isLoaded ? 'opacity-100 transform-none' : 'opacity-0 translate-y-12'}`}>
+      <Container
+        className={`relative pb-20 transition-all duration-1000 ${
+          isLoaded ? "opacity-100 transform-none" : "opacity-0 translate-y-12"
+        }`}
+      >
         <div className="max-w-3xl mx-auto text-center">
           {/* Subtitle tag */}
           <div className="inline-flex items-center rounded-full bg-neuro-500/10 px-3 py-1 text-sm font-medium mb-6 reveal reveal-delay-1">
-            <span className="text-neuro-500">Presale Coming Soon • Limited Allocation</span>
+            <span className="text-neuro-500">
+              Presale Coming Soon • Limited Allocation
+            </span>
           </div>
 
           {/* Main headline */}
@@ -52,14 +61,15 @@ export default function Hero() {
 
           {/* Subheadline */}
           <p className="text-lg sm:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto reveal reveal-delay-3">
-            Join the revolution: Rent GPUs, generate AI content, and earn $NLOV tokens on Solana.
+            Join the revolution: Rent GPUs, generate AI content, and earn $NLOV
+            tokens on Solana.
           </p>
 
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-20 reveal reveal-delay-4">
             <Button
               size="lg"
-              onClick={() => window.open('https://app.neurolov.ai/', '_blank')}
+              onClick={() => window.open("https://app.neurolov.ai/", "_blank")}
               className="bg-neuro-500 hover:bg-neuro-600 text-white"
             >
               Launch App
@@ -72,18 +82,23 @@ export default function Hero() {
               <div className="text-5xl font-bold text-neuro-500 mb-3">200+</div>
               <div className="text-muted-foreground text-sm">GPUs</div>
             </div>
-            
+
             <div className="glass-card p-8 rounded-xl border border-neuro-500/10 bg-blue-500/10 backdrop-blur-sm hover:border-neuro-500/30 transition-all duration-300 hover:-translate-y-1">
               <div className="text-5xl font-bold text-neuro-500 mb-3">100K</div>
-              <div className="text-muted-foreground text-sm">AI Content Made</div>
+              <div className="text-muted-foreground text-sm">
+                AI Content Made
+              </div>
             </div>
-            
+
             <div className="glass-card p-8 rounded-xl border border-neuro-500/10 bg-blue-500/10 backdrop-blur-sm hover:border-neuro-500/30 transition-all duration-300 hover:-translate-y-1">
-              <div className="text-5xl font-bold text-neuro-500 mb-3">35,000+</div>
-              <div className="text-muted-foreground text-sm">Community Members</div>
+              <div className="text-5xl font-bold text-neuro-500 mb-3">
+                35,000+
+              </div>
+              <div className="text-muted-foreground text-sm">
+                Community Members
+              </div>
             </div>
           </div>
-
         </div>
       </Container>
     </div>
