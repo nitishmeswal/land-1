@@ -44,7 +44,7 @@ export default function ProductsPage() {
                 <Code className="mr-2 h-4 w-4" /> AI Models
               </TabsTrigger>
               <TabsTrigger value="swarm" className="px-6">
-                <Network className="mr-2 h-4 w-4" /> Swarm Network
+                <Network className="mr-2 h-4 w-4" /> Neuro Swarm
               </TabsTrigger>
               <TabsTrigger value="agents" className="px-6">
                 <Bot className="mr-2 h-4 w-4" /> AI Agents
@@ -307,7 +307,7 @@ export default function ProductsPage() {
           <TabsContent value="swarm" className="space-y-4">
             <div>
               <SectionHeading
-                title="Decentralized Swarm Network"
+                title="Decentralized Neuro Swarm"
                 subtitle="Join our peer-to-peer network of compute providers and users"
               />
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -405,38 +405,6 @@ export default function ProductsPage() {
                 </Button>
               </div>
             </div>
-
-            <div>
-              <SectionHeading
-                title="Network Statistics"
-                subtitle="Live insights into our growing decentralized infrastructure"
-              />
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-                <div className="glass-card p-6 rounded-xl border border-neuro-500/10 text-center">
-                  <h4 className="text-muted-foreground mb-2">Active Nodes</h4>
-                  <div className="text-4xl font-bold text-neuro-500">
-                    14,738
-                  </div>
-                </div>
-                <div className="glass-card p-6 rounded-xl border border-neuro-500/10 text-center">
-                  <h4 className="text-muted-foreground mb-2">Countries</h4>
-                  <div className="text-4xl font-bold text-neuro-500">97</div>
-                </div>
-                <div className="glass-card p-6 rounded-xl border border-neuro-500/10 text-center">
-                  <h4 className="text-muted-foreground mb-2">Total GPUs</h4>
-                  <div className="text-4xl font-bold text-neuro-500">
-                    35,412
-                  </div>
-                </div>
-                <div className="glass-card p-6 rounded-xl border border-neuro-500/10 text-center">
-                  <h4 className="text-muted-foreground mb-2">
-                    NLOV Distributed
-                  </h4>
-                  <div className="text-4xl font-bold text-neuro-500">3.4M</div>
-                </div>
-              </div>
-            </div>
           </TabsContent>
 
           {/* AI Agents Tab */}
@@ -504,7 +472,7 @@ export default function ProductsPage() {
                           />
                         </svg>
                       </div>
-                      <span className="text-sm">Drag-and-drop interface</span>
+                      <span className="text-sm">User Friendly</span>
                     </li>
                     <li className="flex items-start">
                       <div className="flex-shrink-0 bg-neuro-500/10 rounded-full p-1 mr-3 mt-1">
@@ -539,72 +507,18 @@ export default function ProductsPage() {
                         </svg>
                       </div>
                       <span className="text-sm">
-                        Easy integration with APIs and data sources
+                        Easy integration
                       </span>
                     </li>
                   </ul>
                   <div className="flex flex-wrap gap-4">
-                    <Button variant="neon">Try Agent Builder</Button>
-                    <Button variant="outline">View Demo</Button>
+                    <Button variant="neon">AI-Agents coming soon</Button>
+
                   </div>
                 </div>
               </div>
             </div>
 
-            <div>
-              <SectionHeading
-                title="Use Cases"
-                subtitle="Discover how organizations are leveraging our AI agents"
-              />
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="glass-card p-6 rounded-xl border border-neuro-500/10">
-                  <h4 className="font-bold text-lg mb-3">Financial Services</h4>
-                  <p className="text-muted-foreground mb-4">
-                    AI agents continuously monitoring market conditions and
-                    executing trades based on predefined strategies. Algorithmic
-                    trading with the flexibility to adapt to changing
-                    conditions.
-                  </p>
-                  <Button variant="outline" size="sm">
-                    Read Case Study
-                  </Button>
-                </div>
-                <div className="glass-card p-6 rounded-xl border border-neuro-500/10">
-                  <h4 className="font-bold text-lg mb-3">Healthcare</h4>
-                  <p className="text-muted-foreground mb-4">
-                    Agents processing medical data and generating preliminary
-                    analyses to assist doctors. Automated scheduling and patient
-                    follow-up to improve care coordination.
-                  </p>
-                  <Button variant="outline" size="sm">
-                    Read Case Study
-                  </Button>
-                </div>
-                <div className="glass-card p-6 rounded-xl border border-neuro-500/10">
-                  <h4 className="font-bold text-lg mb-3">Supply Chain</h4>
-                  <p className="text-muted-foreground mb-4">
-                    Agents optimizing inventory management and logistics in
-                    real-time. Predictive maintenance scheduling to prevent
-                    equipment failures and downtime.
-                  </p>
-                  <Button variant="outline" size="sm">
-                    Read Case Study
-                  </Button>
-                </div>
-                <div className="glass-card p-6 rounded-xl border border-neuro-500/10">
-                  <h4 className="font-bold text-lg mb-3">Customer Service</h4>
-                  <p className="text-muted-foreground mb-4">
-                    Intelligent agents handling customer inquiries and routing
-                    complex cases to human agents. Personalized recommendations
-                    and proactive support.
-                  </p>
-                  <Button variant="outline" size="sm">
-                    Read Case Study
-                  </Button>
-                </div>
-              </div>
-            </div>
           </TabsContent>
         </Tabs>
       </SectionContainer>

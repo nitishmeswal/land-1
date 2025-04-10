@@ -70,9 +70,9 @@ export default function Hero() {
             <Button
               size="lg"
               onClick={() => window.open("https://app.neurolov.ai/", "_blank")}
-              className="bg-neuro-500 hover:bg-neuro-600 text-white"
+              className="bg-[#0361DA] hover:bg-[#0361DA]/80 text-white"
             >
-              Launch App
+              Start Earning
             </Button>
           </div>
 

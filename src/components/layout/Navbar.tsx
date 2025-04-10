@@ -10,8 +10,8 @@ const navItems = {
     items: [
       { label: "Compute", href: "/products#compute" },
       { label: "AI Models", href: "/products#ai-models" },
-      { label: "AI Agents", href: "/products#ai-agents" },
       { label: "Neuro Swarm", href: "/products#swarm-network" },
+      { label: "AI Agents", href: "/products#ai-agents" },
     ],
   },
   token: {
@@ -27,7 +27,7 @@ const navItems = {
     label: "Ecosystem",
     items: [
       { label: "Roadmap", href: "/ecosystem#roadmap" },
-      { label: "Partners", href: "/ecosystem#partners" },
+      { label: "Partner", href: "/ecosystem#partners" },
     ],
   },
   resources: {
@@ -254,8 +254,9 @@ export default function Navbar() {
               <Button
                 variant="ghost"
                 className="rounded-full text-white/90 hover:text-white hover:bg-white/10"
+                asChild
               >
-                Contact Us
+                <a href="mailto:support@neurolov.ai">Contact Us</a>
               </Button>
               <Button className="rounded-full bg-neuro-500 hover:bg-neuro-600 text-white">
                 Try Testnet
@@ -366,9 +367,10 @@ export default function Navbar() {
               <Button
                 variant="ghost"
                 className="w-full rounded-full text-white/90 hover:text-white hover:bg-white/10"
+                asChild
                 onClick={closeMenu}
               >
-                Contact Us
+                <a href="mailto:support@neurolov.ai">Contact Us</a>
               </Button>
               <Button
                 className="w-full rounded-full bg-neuro-500 hover:bg-neuro-600 text-white"

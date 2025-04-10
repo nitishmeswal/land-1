@@ -160,10 +160,10 @@ export default function EcosystemPage() {
                 <Code className="mr-2 h-4 w-4" /> Roadmap
               </TabsTrigger>
               <TabsTrigger
-                value="partners"
+                value="partner"
                 className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
               >
-                <Users className="mr-2 h-4 w-4" /> Partners
+                <Users className="mr-2 h-4 w-4" /> Partner
               </TabsTrigger>
             </TabsList>
           </div>
@@ -260,8 +260,8 @@ export default function EcosystemPage() {
           </TabsContent>
 
           {/* Partners Tab */}
-          <TabsContent value="partners" className="space-y-8">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 place-items-center">
+          <TabsContent value="partner" className="space-y-8">
+           { /* <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 place-items-center">
               {filteredPartners.map((partner, index) => (
                 <div
                   key={`${partner.name}-${index}`}
@@ -285,7 +285,7 @@ export default function EcosystemPage() {
                   Next could be you
                 </p>
               </div>
-            </div>
+            </div> */}
 
             <SectionContainer className="py-16 bg-gradient-to-b from-background to-muted/30 relative">
               <div className="absolute inset-0 -z-10">
@@ -328,23 +328,10 @@ export default function EcosystemPage() {
                           Get NLOV tokens at the best possible price
                         </p>
                       </div>
-                    </div>
+                    </div>                   
                     <div className="flex items-start">
                       <div className="flex-shrink-0 w-8 h-8 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500 mr-3">
                         3
-                      </div>
-                      <div>
-                        <h4 className="font-medium">
-                          Build your first application
-                        </h4>
-                        <p className="text-sm text-muted-foreground">
-                          Use our SDKs to integrate with your projects
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="flex-shrink-0 w-8 h-8 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500 mr-3">
-                        4
                       </div>
                       <div>
                         <h4 className="font-medium">
@@ -373,7 +360,7 @@ export default function EcosystemPage() {
                     <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/30 rounded-full blur-3xl opacity-40"></div>
 
                     <img
-                      src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+                      src="/partner.png"
                       alt="Neurolov Community"
                       className="rounded-xl shadow-xl"
                     />

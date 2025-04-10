@@ -6,7 +6,6 @@ import Hero from "@/components/home/Hero";
 import ProductHighlights from "@/components/home/ProductHighlights";
 import HowItWorks from "@/components/home/HowItWorks";
 import Tokenomics from "@/components/home/Tokenomics";
-import Partners from "@/components/home/Partners";
 import CallToAction from "@/components/home/CallToAction";
 
 const Index = () => {
@@ -20,7 +19,6 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
-        <Partners />
         <ProductHighlights />
         <HowItWorks />
         <Tokenomics />
