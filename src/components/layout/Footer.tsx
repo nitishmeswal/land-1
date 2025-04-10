@@ -50,9 +50,9 @@ export default function Footer() {
   return (
     <footer className="bg-secondary/50 py-12 border-t border-border/60">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-2">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-8 sm:gap-4">
           {/* Logo and description */}
-          <div className="lg:col-span-2 lg:pr-8">
+          <div className="col-span-2 sm:col-span-3 lg:col-span-2 lg:pr-8 mb-6 lg:mb-0">
             <Link to="/" className="flex items-center space-x-2 text-lg font-bold">
               <img src="/og-image.png" alt="Neurolov" className="h-7 w-auto" />
               <span className="hero-text-gradient">Neurolov</span>
@@ -61,7 +61,7 @@ export default function Footer() {
               Empower your AI journey with decentralized computing, content generation, and blockchain rewards.
             </p>
             
-            <div className="mt-4 flex items-center gap-6">
+            <div className="mt-6 flex items-center gap-6">
               <a 
                 href="https://twitter.com/neurolov" 
                 target="_blank" 
@@ -106,13 +106,13 @@ export default function Footer() {
           {/* Footer links */}
           {footerLinks.map((group, idx) => (
             <div key={idx} className="px-2">
-              <h3 className="text-sm font-medium mb-3">{group.title}</h3>
-              <ul className="space-y-1">
+              <h3 className="text-sm font-semibold mb-3">{group.title}</h3>
+              <ul className="space-y-2.5">
                 {group.links.map((link, linkIdx) => (
                   <li key={linkIdx}>
                     <Link 
                       to={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors block"
                     >
                       {link.label}
                     </Link>
