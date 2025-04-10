@@ -33,10 +33,9 @@ const navItems = {
   resources: {
     label: "Resources",
     items: [
-      { label: "Overview", href: "/resources" },
-      { label: "Documentation", href: "/resources#docs" },
-      { label: "Whitepaper", href: "/whitepaper" },
-      { label: "Pitch Deck", href: "/pitch-deck" },
+      { label: "Technical Papers", href: "/resources" },
+      { label: "Community", href: "/resources#docs" },
+      { label: "Blog & Updates", href: "/whitepaper" },
     ],
   },
   about: {

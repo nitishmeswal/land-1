@@ -26,7 +26,6 @@ const teamMembers = [
     bio: "Visionary CEO of Neurolov, leading AI for global brands . Impacted 50K+ lives in 40+ countries. Signed $13M AI MOU with Govt. of Gujarat. UN-recognized humanitarian and innovation leader",
     image: "/ceo.png",
     social: {
-      twitter: "https://x.com/Dhruv4Ai",
       linkedin: "https://www.linkedin.com/in/dhruv-panchal-48617a1ba/",
     },
   },
@@ -45,7 +44,6 @@ const teamMembers = [
     bio: "With 9+ years in blockchain and cryptography, I’ve built smart contracts, exchange engines, and authored key whitepapers.Expert in zk-proofs, Layer 2, and privacy tech, with on-chain analysis for 10+ major projects",
     image: "/cto.png",
     social: {
-      twitter: "#",
       linkedin: "#",
       github: "#",
     },
@@ -56,7 +54,6 @@ const teamMembers = [
     bio: "Ruzaliya Gubaidullina is a business strategist with deep expertise in growth, partnerships, and go-to-market execution.Before co-founding Neurolov, she led initiatives that drove revenue and scaled market reach",
     image: "/coo.png",
     social: {
-      twitter: "https://x.com/ruzaliya__",
       linkedin: "http://linkedin.com/in/ruzaliya-g-45331220b",
     },
   },
@@ -68,7 +65,6 @@ const teamMembers = [
     social: {
       linkedin:
         "https://www.linkedin.com/in/sparsh-gupta-72306b22b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-      github: "https://x.com/hangoutcodex?s=21",
     },
   },
   {
@@ -77,17 +73,16 @@ const teamMembers = [
     bio: "3+ years of experience in full-stack development, blockchain, MCP AI protocols, and dApps. Expert in MERN, AI automation, cybersecurity, and scalable Web3 solutions.Web3 Tech Lead at Neurolov",
     image: "/lead-dev.png",
     social: {
-      twitter: "https://www.twitter.com/NMeswal",
+      github: "https://github.com/nitishmeswal",
       linkedin: "https://www.linkedin.com/in/nitish-meswal-a33365249",
     },
   },
   {
-    name: "Rakesh Sharma ",
+    name: "Ramesh Sharma ",
     role: "Business Analyst ",
     bio: "Leads Neurolov’s business growth, strategic roadmap, and ecosystem expansion. With deep expertise in AI, Web3, and DePIN markets, RK oversees token strategy, User and market research, and go-to-market execution",
     image: "/rk.png",
     social: {
-      twitter: "https://x.com/Rameshkuma1761?t=k9FNxMa0zEFDwZNezp0Frg&s=09",
       linkedin:
         "https://www.linkedin.com/in/rk-sharma-2b9385285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     },
@@ -107,7 +102,6 @@ const teamMembers = [
     bio: "As a founding team member, Sanskar has built Neurolov’s brand from the ground up, combining strategic marketing with deep platform knowledge",
     image: "/m-lead.png",
     social: {
-      twitter: "https://x.com/SanskarLunawat2?t=mPmhc4Bt8kkM-zLINUSDPw&s=08",
       linkedin:
         "https://www.linkedin.com/in/sanskar-lunavat?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     },
@@ -118,7 +112,6 @@ const teamMembers = [
     bio: "Charu fosters a vibrant and engaging community at Neurolov, ensuring seamless communication between users and the team. With a keen understanding of Web3 dynamics, she moderates discussions, organizes events, and enhances user experience.",
     image: "/kc.png",
     social: {
-      twitter: "https://x.com/CharuKeswani",
       linkedin: "https://in.linkedin.com/in/charu-keswani-a86506188",
     },
   },

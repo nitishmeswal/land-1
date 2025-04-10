@@ -3,281 +3,64 @@ import { SectionContainer } from "@/components/ui/Container";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Coins, TrendingUp } from "lucide-react";
 
-// Enhanced TokenChart component with 3D pie chart
-const TokenChart = () => {
-  const [hoverSection, setHoverSection] = useState<string | null>(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const chartRef = useRef<HTMLDivElement>(null);
-
-  const sections = [
-    {
-      id: "seed",
-      name: "Seed Investors",
-      percent: 2,
-      color: "from-blue-600 to-blue-400",
-      bgColor: "bg-blue-500",
-    },
-    {
-      id: "presale",
-      name: "Presale Investors",
-      percent: 2.25,
-      color: "from-indigo-600 to-indigo-400",
-      bgColor: "bg-indigo-500",
-    },
-    {
-      id: "liquidity",
-      name: "Liquidity Pool (DEX)",
-      percent: 35,
-      color: "from-violet-600 to-violet-400",
-      bgColor: "bg-violet-500",
-    },
-    {
-      id: "team",
-      name: "Team and Development",
-      percent: 12,
-      color: "from-blue-700 to-blue-500",
-      bgColor: "bg-blue-600",
-    },
-    {
-      id: "ecosystem",
-      name: "Ecosystem and Rewards",
-      percent: 18,
-      color: "from-indigo-700 to-indigo-500",
-      bgColor: "bg-indigo-600",
-    },
-    {
-      id: "community",
-      name: "Community and Marketing",
-      percent: 8,
-      color: "from-violet-700 to-violet-500",
-      bgColor: "bg-violet-600",
-    },
-    {
-      id: "buyback",
-      name: "Buyback and Burn Reserve",
-      percent: 13.75,
-      color: "from-blue-800 to-blue-600",
-      bgColor: "bg-blue-700",
-    },
-    {
-      id: "strategic",
-      name: "Strategic Reserve",
-      percent: 5,
-      color: "from-indigo-800 to-indigo-600",
-      bgColor: "bg-indigo-700",
-    },
-    {
-      id: "dao",
-      name: "DAO Treasury",
-      percent: 4,
-      color: "from-violet-800 to-violet-600",
-      bgColor: "bg-violet-700",
-    },
-    {
-      id: "foundation",
-      name: "Foundation",
-      percent: 5,
-      color: "from-blue-900 to-blue-700",
-      bgColor: "bg-blue-800",
-    },
-  ].map((section, index, array) => {
-    // Calculate the starting angle based on the sum of all previous percentages
-    const startAngle = array
-      .slice(0, index)
-      .reduce((sum, s) => sum + (s.percent / 100) * 360, 0);
-
-    return {
-      ...section,
-      startAngle,
-      endAngle: startAngle + (section.percent / 100) * 360,
-    };
-  });
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
+const TokenAllocation = () => {
+  const allocations = [
+    { name: "Ecosystem & Rewards", percentage: 18.45, angle: -90, radius: 180 },
+    { name: "Community & Marketing", percentage: 8.45, angle: -135, radius: 180 },
+    { name: "Seed Investors", percentage: 2.95, angle: -45, radius: 180 },
+    { name: "Presale Investors", percentage: 2.95, angle: -15, radius: 220 },
+    { name: "Liquidity Pool (DEX)", percentage: 30.45, angle: 15, radius: 220 },
+    { name: "Buyback & Burn Reserve", percentage: 8.85, angle: 180, radius: 220 },
+    { name: "Strategic Reserve", percentage: 5.45, angle: 135, radius: 180 },
+    { name: "Foundation", percentage: 5.45, angle: 45, radius: 180 },
+    { name: "Team & Development", percentage: 12.45, angle: 90, radius: 220 },
+    { name: "DAO Treasury", percentage: 4.45, angle: 120, radius: 180 }
+  ];
 
   return (
-    <div
-      className={`glass-card p-8 rounded-xl shadow-xl border border-white/10 reveal reveal-delay-2 relative overflow-hidden bg-gradient-to-b from-background/95 to-background/80 backdrop-blur-md transition-all duration-500 hover:shadow-neon ${
-        isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
-      }`}
-    >
-      <div className="mb-8 text-center">
-        <div className="inline-flex items-center gap-2 mb-2 bg-blue-500/10 px-3 py-1 rounded-full">
-          <Coins className="h-5 w-5 text-blue-500" />
-          <h3 className="text-lg font-medium bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-indigo-500">
-            $NLOV Token Allocation
-          </h3>
-        </div>
-        <p className="text-sm text-muted-foreground">
-          Total Supply: 500,000,000 $NLOV
-        </p>
+    <div className="relative w-full aspect-square max-w-[800px] mx-auto">
+      {/* Center coin */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 md:w-56 md:h-56">
+        <div className="absolute inset-0 rounded-full bg-blue-500/20 animate-pulse-slow filter blur-xl"></div>
+        <img
+          src="/nlov-coin.png"
+          alt="NLOV Token"
+          className="w-full h-full object-contain animate-float"
+        />
       </div>
 
-      <div
-        className="relative w-full aspect-square max-w-md mx-auto"
-        ref={chartRef}
-      >
-        {/* Chart Container */}
-        <div
-          className={`absolute inset-0 flex items-center justify-center transition-all duration-1000 ${
-            isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-90"
-          }`}
-        >
-          <div className="relative w-full h-full p-4">
-            {/* Main Chart */}
-            <div className="absolute inset-0 w-full h-full">
-              <svg
-                viewBox="-10 -10 120 120"
-                className="w-full h-full transform transition-transform duration-500 hover:scale-105"
-              >
-                <defs>
-                  <filter id="glow">
-                    <feGaussianBlur stdDeviation="2" result="coloredBlur" />
-                    <feMerge>
-                      <feMergeNode in="coloredBlur" />
-                      <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                  </filter>
-                </defs>
-                {sections.map((section, index) => {
-                  const startAngleRad =
-                    (section.startAngle - 90) * (Math.PI / 180);
-                  const endAngleRad = (section.endAngle - 90) * (Math.PI / 180);
-                  const midAngleRad = (startAngleRad + endAngleRad) / 2;
-                  const radius = 50;
-                  const x1 = 50 + radius * Math.cos(startAngleRad);
-                  const y1 = 50 + radius * Math.sin(startAngleRad);
-                  const x2 = 50 + radius * Math.cos(endAngleRad);
-                  const y2 = 50 + radius * Math.sin(endAngleRad);
-                  const largeArcFlag =
-                    section.endAngle - section.startAngle <= 180 ? "0" : "1";
+      {/* Allocation lines and labels */}
+      {allocations.map((item, index) => {
+        const angleInRadians = (item.angle * Math.PI) / 180;
+        const x = Math.cos(angleInRadians) * item.radius;
+        const y = Math.sin(angleInRadians) * item.radius;
 
-                  // Calculate label position (in the middle of the section)
-                  const labelRadius = radius * 0.65; // Position labels at 65% of the radius
-                  const labelX = 50 + labelRadius * Math.cos(midAngleRad);
-                  const labelY = 50 + labelRadius * Math.sin(midAngleRad);
-
-                  return (
-                    <g
-                      key={section.id}
-                      className="transition-transform duration-300 cursor-pointer"
-                      onMouseEnter={() => setHoverSection(section.id)}
-                      onMouseLeave={() => setHoverSection(null)}
-                      style={{
-                        filter:
-                          hoverSection === section.id ? "url(#glow)" : "none",
-                      }}
-                    >
-                      <defs>
-                        <linearGradient
-                          id={`gradient-${section.id}`}
-                          x1="0%"
-                          y1="0%"
-                          x2="100%"
-                          y2="100%"
-                        >
-                          <stop
-                            offset="0%"
-                            className={`${section.bgColor} stop-opacity-1`}
-                          />
-                          <stop
-                            offset="100%"
-                            className={`${section.bgColor} stop-opacity-0.8`}
-                          />
-                        </linearGradient>
-                      </defs>
-                      <path
-                        d={`M 50 50 L ${x1} ${y1} A ${radius} ${radius} 0 ${largeArcFlag} 1 ${x2} ${y2} Z`}
-                        fill={`url(#gradient-${section.id})`}
-                        className={`transition-all duration-300 ${
-                          hoverSection === section.id
-                            ? "opacity-90"
-                            : "opacity-80"
-                        }`}
-                        style={{
-                          transform: `scale(${
-                            hoverSection === section.id ? 1.02 : 1
-                          })`,
-                          transformOrigin: "50% 50%",
-                        }}
-                      />
-                      {/* Section Labels */}
-                      <g
-                        transform={`translate(${labelX}, ${labelY})`}
-                        className={`transition-opacity duration-300 ${
-                          isLoaded ? "opacity-100" : "opacity-0"
-                        }`}
-                        style={{ transitionDelay: `${index * 100}ms` }}
-                      >
-                        <text
-                          textAnchor="middle"
-                          dominantBaseline="middle"
-                          className="fill-white text-[3px] font-medium"
-                          transform={`rotate(0)`}
-                        >
-                          {section.name}
-                        </text>
-                        <text
-                          textAnchor="middle"
-                          dominantBaseline="middle"
-                          className="fill-white/70 text-[2.5px] font-medium"
-                          transform={`translate(0, 3)`}
-                        >
-                          {section.percent}%
-                        </text>
-                      </g>
-                    </g>
-                  );
-                })}
-                {/* Center Circle */}
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="15"
-                  className="fill-blue-900/90 backdrop-blur-sm stroke-blue-400/20"
-                  strokeWidth="1"
-                />
-              </svg>
-            </div>
-
-            {/* Center Content */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="text-center">
-                <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400">
-                  500M
-                </span>
-                <span className="block text-xs text-blue-200/70">$NLOV</span>
+        return (
+          <div
+            key={item.name}
+            className="absolute top-1/2 left-1/2"
+            style={{
+              transform: `translate(calc(${x}px - 50%), calc(${y}px - 50%))`,
+              zIndex: index
+            }}
+          >
+            <div className="relative">
+              <div 
+                className="absolute top-1/2 left-0 h-[1px] bg-gradient-to-r from-neuro-500/30 to-transparent"
+                style={{
+                  width: '24px',
+                  transform: `rotate(${item.angle}deg)`,
+                  transformOrigin: 'left center'
+                }}
+              ></div>
+              <div className="glass-card px-4 py-2 rounded-full border border-[#0361DA]/20 bg-[#0361DA]/5 backdrop-blur-sm shadow-lg flex items-center gap-3 whitespace-nowrap">
+                <span className="font-medium text-sm text-white/90">{item.name}</span>
+                <span className="text-sm text-[#0361DA]">{item.percentage}%</span>
               </div>
             </div>
-
-            {/* Glow Effects */}
-            <div className="absolute inset-0 pointer-events-none">
-              {sections.map((section) => {
-                const midAngle =
-                  (section.startAngle + section.endAngle) / 2 - 90;
-                const radius = 60;
-                const x = Math.cos((midAngle * Math.PI) / 180) * radius;
-                const y = Math.sin((midAngle * Math.PI) / 180) * radius;
-
-                return (
-                  <div
-                    key={`glow-${section.id}`}
-                    className={`absolute left-1/2 top-1/2 w-32 h-32 rounded-full transition-all duration-500 ${section.bgColor}/10 blur-xl`}
-                    style={{
-                      transform: `translate(-50%, -50%) translate(${x}px, ${y}px) scale(${
-                        hoverSection === section.id ? "1.2" : "0"
-                      })`,
-                      opacity: hoverSection === section.id ? 1 : 0,
-                    }}
-                  />
-                );
-              })}
-            </div>
           </div>
-        </div>
-      </div>
+        );
+      })}
     </div>
   );
 };
@@ -286,7 +69,6 @@ export default function Tokenomics() {
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    // Initialize the intersection observer with enhanced animation timing
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -298,7 +80,6 @@ export default function Tokenomics() {
       { threshold: 0.15, rootMargin: "0px 0px -100px 0px" }
     );
 
-    // Observe all elements with the reveal class
     const elements = document.querySelectorAll(".reveal");
     elements.forEach((el) => {
       observerRef.current?.observe(el);
@@ -313,12 +94,10 @@ export default function Tokenomics() {
 
   return (
     <SectionContainer className="py-24 relative overflow-hidden">
-      {/* Enhanced background decorations with parallax effect */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <div className="absolute top-0 w-full h-40 bg-gradient-to-b from-neuro-500/5 to-transparent opacity-60"></div>
         <div className="absolute bottom-0 w-full h-40 bg-gradient-to-t from-blue-500/5 to-transparent opacity-60"></div>
 
-        {/* Animated background particles */}
         <div className="absolute inset-0 overflow-hidden">
           {Array.from({ length: 20 }).map((_, i) => (
             <div
@@ -429,8 +208,9 @@ export default function Tokenomics() {
             </Button>
           </div>
         </div>
-
-        <TokenChart />
+        <div className="flex flex-col md:flex-row items-center gap-8">
+          <TokenAllocation />
+        </div>
       </div>
     </SectionContainer>
   );

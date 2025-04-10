@@ -109,19 +109,6 @@ const roadmapData = [
   },
 ];
 
-// Growth data for chart
-const growthData = [
-  { month: "Jan", nodes: 1000, users: 5000, compute: 2500 },
-  { month: "Feb", nodes: 1800, users: 7500, compute: 4000 },
-  { month: "Mar", nodes: 3000, users: 12000, compute: 7500 },
-  { month: "Apr", nodes: 4200, users: 18000, compute: 12000 },
-  { month: "May", nodes: 6000, users: 25000, compute: 18000 },
-  { month: "Jun", nodes: 8500, users: 35000, compute: 27000 },
-  { month: "Jul", nodes: 12000, users: 48000, compute: 40000 },
-  { month: "Aug", nodes: 14000, users: 60000, compute: 55000 },
-  { month: "Sep", nodes: 16000, users: 75000, compute: 68000 },
-];
-
 // Partner data
 const partners = [
   { name: "Trade Flow", logo: "/partner/Trade Flow Logo Set-03.png" },
@@ -150,53 +137,6 @@ const partners = [
   { name: "Bitgertbrise", logo: "/partner/Bitgertbrise.jpg" },
   { name: "Fomoin", logo: "/partner/Fomoin.jpg" },
   { name: "CESS", logo: "/partner/CESS LOGO.png" },
-];
-
-// Events data
-const events = [
-  {
-    name: "Neurolov Developer Conference",
-    date: "June 15-17, 2024",
-    location: "San Francisco, CA",
-    description: "Our annual flagship conference for developers and partners",
-    url: "#",
-  },
-  {
-    name: "AI Summit London",
-    date: "July 5-6, 2024",
-    location: "London, UK",
-    description: "Exhibiting our latest AI capabilities and network features",
-    url: "#",
-  },
-  {
-    name: "Solana Breakpoint",
-    date: "August 12-14, 2024",
-    location: "Singapore",
-    description:
-      "Presenting Neurolov's blockchain integration and token ecosystem",
-    url: "#",
-  },
-  {
-    name: "GPU Technology Conference",
-    date: "September 22-24, 2024",
-    location: "Tokyo, Japan",
-    description: "Showcasing our distributed compute infrastructure",
-    url: "#",
-  },
-  {
-    name: "Web3 Innovation Summit",
-    date: "October 10-11, 2024",
-    location: "Berlin, Germany",
-    description: "Panel discussions on decentralized AI infrastructure",
-    url: "#",
-  },
-  {
-    name: "Global AI Hackathon",
-    date: "November 18-20, 2024",
-    location: "Virtual Event",
-    description: "Build applications on the Neurolov platform and win prizes",
-    url: "#",
-  },
 ];
 
 export default function EcosystemPage() {
@@ -317,222 +257,143 @@ export default function EcosystemPage() {
                 </div>
               </div>
             </div>
-
-            <div className="glass-card p-8 rounded-xl border border-neuro-500/10">
-              <SectionHeading
-                title="Network Growth"
-                subtitle="The Neurolov ecosystem is expanding rapidly across all metrics"
-              />
-
-              <div className="aspect-[21/9] w-full mb-8">
-                <ResponsiveContainer width="100%" height="100%">
-                  <LineChart
-                    data={growthData}
-                    margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-                  >
-                    <CartesianGrid strokeDasharray="3 3" opacity={0.1} />
-                    <XAxis dataKey="month" />
-                    <YAxis />
-                    <Tooltip />
-                    <Line
-                      type="monotone"
-                      dataKey="nodes"
-                      name="Active Nodes"
-                      stroke="#6366f1"
-                      strokeWidth={2}
-                      activeDot={{ r: 8 }}
-                    />
-                    <Line
-                      type="monotone"
-                      dataKey="users"
-                      name="Platform Users"
-                      stroke="#10b981"
-                      strokeWidth={2}
-                      activeDot={{ r: 8 }}
-                    />
-                    <Line
-                      type="monotone"
-                      dataKey="compute"
-                      name="Compute Hours (K)"
-                      stroke="#f59e0b"
-                      strokeWidth={2}
-                      activeDot={{ r: 8 }}
-                    />
-                  </LineChart>
-                </ResponsiveContainer>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-neuro-500 mb-2">
-                    16,000+
-                  </div>
-                  <div className="text-lg font-medium mb-1">Active Nodes</div>
-                  <div className="text-sm text-muted-foreground">
-                    Across 92 countries worldwide
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-neuro-500 mb-2">
-                    75,000+
-                  </div>
-                  <div className="text-lg font-medium mb-1">Platform Users</div>
-                  <div className="text-sm text-muted-foreground">
-                    Building with Neurolov
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-neuro-500 mb-2">
-                    68,000+
-                  </div>
-                  <div className="text-lg font-medium mb-1">Compute Hours</div>
-                  <div className="text-sm text-muted-foreground">
-                    Thousands of GPUs contributing
-                  </div>
-                </div>
-              </div>
-            </div>
           </TabsContent>
 
           {/* Partners Tab */}
           <TabsContent value="partners" className="space-y-8">
-            <div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                {filteredPartners.map((partner, index) => (
-                  <div
-                    key={partner.name}
-                    className="glass-card p-4 rounded-xl border border-neuro-500/10 flex flex-col items-center gap-4 hover:scale-105 transition-transform bg-blue-500/5"
-                  >
-                    <div className="h-16 flex items-center justify-center">
-                      <img
-                        src={partner.logo}
-                        alt={partner.name}
-                        className="max-h-full max-w-full object-contain filter dark:brightness-110"
-                      />
-                    </div>
-                    <p className="text-sm font-medium text-center">
-                      {partner.name}
-                    </p>
-                  </div>
-                ))}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+              {filteredPartners.map((partner, index) => (
                 <div
-                  className="glass-card p-4 rounded-xl border border-dashed border-neuro-500/40 flex flex-col items-center justify-center gap-4 hover:scale-105 transition-transform bg-blue-500/5 cursor-pointer group"
-                  onClick={() =>
-                    window.open("https://app.neurolov.ai/partner", "_blank")
-                  }
+                  key={partner.name}
+                  className="glass-card p-4 rounded-xl border border-neuro-500/10 hover:border-neuro-500/30 transition-all duration-300"
                 >
                   <div className="h-16 flex items-center justify-center">
-                    <Plus className="w-8 h-8 text-neuro-500/50 group-hover:text-neuro-500" />
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      className="max-h-full max-w-full object-contain"
+                    />
                   </div>
-                  <p className="text-sm font-medium text-center text-neuro-500/70 group-hover:text-neuro-500">
-                    Next could be you
+                  <p className="text-sm font-medium text-center mt-2">
+                    {partner.name}
                   </p>
                 </div>
+              ))}
+              <div
+                className="glass-card p-4 rounded-xl border border-neuro-500/10 hover:border-neuro-500/30 transition-all duration-300 cursor-pointer group"
+                onClick={() =>
+                  window.open("https://app.neurolov.ai/partner", "_blank")
+                }
+              >
+                <div className="h-16 flex items-center justify-center">
+                  <Plus className="w-8 h-8 text-neuro-500/50 group-hover:text-neuro-500" />
+                </div>
+                <p className="text-sm font-medium text-center text-neuro-500/70 group-hover:text-neuro-500">
+                  Next could be you
+                </p>
               </div>
             </div>
+
+            <SectionContainer className="py-16 bg-gradient-to-b from-background to-muted/30 relative">
+              <div className="absolute inset-0 -z-10">
+                <div className="absolute inset-0 bg-dots-light bg-[size:20px_20px] opacity-20"></div>
+              </div>
+
+              <div className="flex flex-col md:flex-row gap-12 items-center">
+                <div className="md:w-1/2 flex flex-col">
+                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-neuro-500/10 text-neuro-500 text-sm font-medium mb-4 md:self-start self-center">
+                    <span>Join the Revolution</span>
+                  </div>
+
+                  <SectionHeading
+                    title=" Become Part of the Neurolov Ecosystem"
+                    subtitle="Whether you're a developer looking to build on our platform, a GPU owner wanting to earn tokens, or an investor interested in the future of decentralized AI compute, there's a place for you in the Neurolov ecosystem."
+                    align={useIsMobile() ? "center" : "left"}
+                  />
+
+                  <div className="space-y-4 mb-8 md:ml-0 ml-5">
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 w-8 h-8 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500 mr-3">
+                        1
+                      </div>
+                      <div>
+                        <h4 className="font-medium">Join our community</h4>
+                        <p className="text-sm text-muted-foreground">
+                          Connect with like-minded developers and enthusiasts
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 w-8 h-8 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500 mr-3">
+                        2
+                      </div>
+                      <div>
+                        <h4 className="font-medium">Participate in token presale</h4>
+                        <p className="text-sm text-muted-foreground">
+                          Get NLOV tokens at the best possible price
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 w-8 h-8 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500 mr-3">
+                        3
+                      </div>
+                      <div>
+                        <h4 className="font-medium">Build your first application</h4>
+                        <p className="text-sm text-muted-foreground">
+                          Use our SDKs to integrate with your projects
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 w-8 h-8 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500 mr-3">
+                        4
+                      </div>
+                      <div>
+                        <h4 className="font-medium">Share your compute resources</h4>
+                        <p className="text-sm text-muted-foreground">
+                          Earn NLOV by contributing to the network
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <Button
+                    variant="neon"
+                    className="self-center md:self-start"
+                    size="lg"
+                  >
+                    Get Started
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </div>
+
+                <div className="md:w-1/2">
+                  <div className="relative">
+                    <div className="absolute -top-10 -right-10 w-40 h-40 bg-neuro-500/30 rounded-full blur-3xl opacity-40"></div>
+                    <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/30 rounded-full blur-3xl opacity-40"></div>
+
+                    <img
+                      src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+                      alt="Neurolov Community"
+                      className="rounded-xl shadow-xl"
+                    />
+
+                    <div className="absolute bottom-4 right-4 bg-background/80 backdrop-blur-sm p-4 rounded-lg max-w-xs">
+                      <div className="text-lg font-bold mb-1">Global Community</div>
+                      <p className="text-sm text-muted-foreground">
+                        Join thousands of developers, researchers, and enthusiasts
+                        building the future of AI.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </SectionContainer>
           </TabsContent>
         </Tabs>
       </SectionContainer>
 
-      <SectionContainer className="py-16 bg-gradient-to-b from-background to-muted/30 relative">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-dots-light bg-[size:20px_20px] opacity-20"></div>
-        </div>
-
-        <div className="flex flex-col md:flex-row gap-12 items-center">
-          <div className="md:w-1/2 flex flex-col">
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-neuro-500/10 text-neuro-500 text-sm font-medium mb-4 md:self-start self-center">
-              <span>Join the Revolution</span>
-            </div>
-
-            <SectionHeading
-              title=" Become Part of the Neurolov Ecosystem"
-              subtitle="Whether you're a developer looking to build on our platform, a GPU
-              owner wanting to earn tokens, or an investor interested in the
-              future of decentralized AI compute, there's a place for you in the
-              Neurolov ecosystem."
-              align={useIsMobile() ? "center" : "left"}
-            />
-
-            <div className="space-y-4 mb-8 md:ml-0 ml-5">
-              <div className="flex items-start">
-                <div className="flex-shrink-0 w-8 h-8 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500 mr-3">
-                  1
-                </div>
-                <div>
-                  <h4 className="font-medium">Join our community</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Connect with like-minded developers and enthusiasts
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start">
-                <div className="flex-shrink-0 w-8 h-8 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500 mr-3">
-                  2
-                </div>
-                <div>
-                  <h4 className="font-medium">Participate in token presale</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Get NLOV tokens at the best possible price
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start">
-                <div className="flex-shrink-0 w-8 h-8 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500 mr-3">
-                  3
-                </div>
-                <div>
-                  <h4 className="font-medium">Build your first application</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Use our SDKs to integrate with your projects
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start">
-                <div className="flex-shrink-0 w-8 h-8 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500 mr-3">
-                  4
-                </div>
-                <div>
-                  <h4 className="font-medium">Share your compute resources</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Earn NLOV by contributing to the network
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <Button
-              variant="neon"
-              className="self-center md:self-start"
-              size="lg"
-            >
-              Get Started
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </div>
-
-          <div className="md:w-1/2">
-            <div className="relative">
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-neuro-500/30 rounded-full blur-3xl opacity-40"></div>
-              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/30 rounded-full blur-3xl opacity-40"></div>
-
-              <img
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
-                alt="Neurolov Community"
-                className="rounded-xl shadow-xl"
-              />
-
-              <div className="absolute bottom-4 right-4 bg-background/80 backdrop-blur-sm p-4 rounded-lg max-w-xs">
-                <div className="text-lg font-bold mb-1">Global Community</div>
-                <p className="text-sm text-muted-foreground">
-                  Join thousands of developers, researchers, and enthusiasts
-                  building the future of AI.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </SectionContainer>
     </PageLayout>
   );
 }
