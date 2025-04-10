@@ -2,14 +2,18 @@ import { useEffect, useRef, useState } from "react";
 import { SectionContainer } from "@/components/ui/Container";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Coins, TrendingUp } from "lucide-react";
+import ResponsiveImage from "@/components/common/ResponsiveImage";
 
 const TokenAllocation = () => {
   return (
     <div className="relative w-full max-w-[600px] mx-auto">
-      <img
+      <ResponsiveImage
         src="/nlov-chart.png"
         alt="NLOV Token Allocation Chart"
-        className="w-full h-auto rounded-2xl"
+        desktopSize={{ width: 600, height: 450 }}
+        tabletRatio={0.75}
+        mobileRatio={0.5}
+        className="rounded-2xl"
       />
     </div>
   );

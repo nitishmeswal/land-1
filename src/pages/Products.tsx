@@ -6,6 +6,7 @@ import PageLayout from "@/components/layout/PageLayout";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/common/SectionHeading";
 import FeatureCard from "@/components/common/FeatureCard";
+import ResponsiveImage from "@/components/common/ResponsiveImage";
 import {
   Cpu,
   Code,
@@ -108,10 +109,13 @@ export default function ProductsPage() {
                   </div>
                 </div>
                 <div className="md:w-1/2">
-                  <img
+                  <ResponsiveImage
                     src="/compute.png"
-                    alt="GPU Hardware"
-                    className="rounded-lg w-full h-64 object-cover shadow-lg"
+                    alt="GPU Computing Infrastructure"
+                    desktopSize={{ width: 600, height: 400 }}
+                    tabletRatio={0.75}
+                    mobileRatio={0.5}
+                    className="rounded-lg shadow-lg"
                   />
                 </div>
               </div>

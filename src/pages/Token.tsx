@@ -6,6 +6,7 @@ import PageLayout from "@/components/layout/PageLayout";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/common/SectionHeading";
 import FeatureCard from "@/components/common/FeatureCard";
+import ResponsiveImage from "@/components/common/ResponsiveImage";
 import {
   Card,
   CardHeader,
@@ -465,10 +466,13 @@ export default function TokenPage() {
               </div>
               <div className="md:w-1/2 flex justify-center relative">
                 <div className="absolute inset-0 bg-blue-500/10 blur-3xl rounded-full transform scale-90"></div>
-                <img
+                <ResponsiveImage
                   src="/nlov-coin.png"
                   alt="NLOV Token"
-                  className="w-[32rem] h-[32rem] object-cover relative z-10"
+                  desktopSize={{ width: 500, height: 500 }}
+                  tabletRatio={0.75}
+                  mobileRatio={0.5}
+                  className="rounded-xl shadow-xl"
                 />
               </div>
             </div>
