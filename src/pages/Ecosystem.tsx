@@ -261,33 +261,26 @@ export default function EcosystemPage() {
 
           {/* Partners Tab */}
           <TabsContent value="partners" className="space-y-8">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 place-items-center">
               {filteredPartners.map((partner, index) => (
                 <div
-                  key={partner.name}
-                  className="glass-card p-4 rounded-xl border border-neuro-500/10 hover:border-neuro-500/30 transition-all duration-300"
+                  key={`${partner.name}-${index}`}
+                  className="flex-shrink-0 w-full max-w-36 md:max-w-44 mt-10 aspect-square bg-blue-500/10 backdrop-blur-sm rounded-lg p-4 border border-blue-500/20 hover:border-blue-500/30 transition-all duration-300 flex items-center justify-center"
                 >
-                  <div className="h-16 flex items-center justify-center">
-                    <img
-                      src={partner.logo}
-                      alt={partner.name}
-                      className="max-h-full max-w-full object-contain"
-                    />
-                  </div>
-                  <p className="text-sm font-medium text-center mt-2">
-                    {partner.name}
-                  </p>
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className=" max-h-[70%] max-w-[70%] md:max-h-[80%] md:max-w-[80%] object-contain opacity-70 hover:opacity-100 transition-opacity"
+                  />
                 </div>
               ))}
               <div
-                className="glass-card p-4 rounded-xl border border-neuro-500/10 hover:border-neuro-500/30 transition-all duration-300 cursor-pointer group"
+                className="flex-shrink-0 w-full max-w-36 md:max-w-44 mt-10 aspect-square bg-blue-500/10 backdrop-blur-sm rounded-lg p-4 border border-blue-500/20 hover:border-blue-500/30 transition-all duration-300 flex flex-col items-center justify-center cursor-pointer group"
                 onClick={() =>
                   window.open("https://app.neurolov.ai/partner", "_blank")
                 }
               >
-                <div className="h-16 flex items-center justify-center">
-                  <Plus className="w-8 h-8 text-neuro-500/50 group-hover:text-neuro-500" />
-                </div>
+                <Plus className="w-10 h-10 text-neuro-500/50 group-hover:text-neuro-500 mb-3" />
                 <p className="text-sm font-medium text-center text-neuro-500/70 group-hover:text-neuro-500">
                   Next could be you
                 </p>
@@ -328,7 +321,9 @@ export default function EcosystemPage() {
                         2
                       </div>
                       <div>
-                        <h4 className="font-medium">Participate in token presale</h4>
+                        <h4 className="font-medium">
+                          Participate in token presale
+                        </h4>
                         <p className="text-sm text-muted-foreground">
                           Get NLOV tokens at the best possible price
                         </p>
@@ -339,7 +334,9 @@ export default function EcosystemPage() {
                         3
                       </div>
                       <div>
-                        <h4 className="font-medium">Build your first application</h4>
+                        <h4 className="font-medium">
+                          Build your first application
+                        </h4>
                         <p className="text-sm text-muted-foreground">
                           Use our SDKs to integrate with your projects
                         </p>
@@ -350,7 +347,9 @@ export default function EcosystemPage() {
                         4
                       </div>
                       <div>
-                        <h4 className="font-medium">Share your compute resources</h4>
+                        <h4 className="font-medium">
+                          Share your compute resources
+                        </h4>
                         <p className="text-sm text-muted-foreground">
                           Earn NLOV by contributing to the network
                         </p>
@@ -380,10 +379,12 @@ export default function EcosystemPage() {
                     />
 
                     <div className="absolute bottom-4 right-4 bg-background/80 backdrop-blur-sm p-4 rounded-lg max-w-xs">
-                      <div className="text-lg font-bold mb-1">Global Community</div>
+                      <div className="text-lg font-bold mb-1">
+                        Global Community
+                      </div>
                       <p className="text-sm text-muted-foreground">
-                        Join thousands of developers, researchers, and enthusiasts
-                        building the future of AI.
+                        Join thousands of developers, researchers, and
+                        enthusiasts building the future of AI.
                       </p>
                     </div>
                   </div>
@@ -393,7 +394,6 @@ export default function EcosystemPage() {
           </TabsContent>
         </Tabs>
       </SectionContainer>
-
     </PageLayout>
   );
 }

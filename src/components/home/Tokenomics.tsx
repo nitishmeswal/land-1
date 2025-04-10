@@ -4,23 +4,59 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Coins, TrendingUp } from "lucide-react";
 
 const TokenAllocation = () => {
+  const [isMobile, setIsMobile] = useState(false);
   const allocations = [
-    { name: "Ecosystem & Rewards", percentage: 18.45, angle: -90, radius: 180 },
-    { name: "Community & Marketing", percentage: 8.45, angle: -135, radius: 180 },
-    { name: "Seed Investors", percentage: 2.95, angle: -45, radius: 180 },
-    { name: "Presale Investors", percentage: 2.95, angle: -15, radius: 220 },
-    { name: "Liquidity Pool (DEX)", percentage: 30.45, angle: 15, radius: 220 },
-    { name: "Buyback & Burn Reserve", percentage: 8.85, angle: 180, radius: 220 },
-    { name: "Strategic Reserve", percentage: 5.45, angle: 135, radius: 180 },
-    { name: "Foundation", percentage: 5.45, angle: 45, radius: 180 },
-    { name: "Team & Development", percentage: 12.45, angle: 90, radius: 220 },
-    { name: "DAO Treasury", percentage: 4.45, angle: 120, radius: 180 }
+    {
+      name: "Ecosystem & Rewards",
+      percentage: 18.45,
+      angle: -90,
+      radius: isMobile ? 195 : 180,
+    },
+    {
+      name: "Community & Marketing",
+      percentage: 8.45,
+      angle: -145,
+      radius: 180,
+    },
+    {
+      name: "Buyback & Burn Reserve",
+      percentage: 8.85,
+      angle: -35,
+      radius: 190,
+    },
+    { name: "Presale Investors", percentage: 2.95, angle: -5, radius: 220 },
+    { name: "Liquidity Pool (DEX)", percentage: 30.45, angle: 17, radius: 220 },
+    {
+      name: "Seed Investors",
+      percentage: 2.95,
+      angle: 185,
+      radius: 220,
+    },
+    { name: "Strategic Reserve", percentage: 5.45, angle: 160, radius: 180 },
+    { name: "Foundation", percentage: 5.45, angle: 45, radius: 220 },
+    {
+      name: "Team & Development",
+      percentage: 12.45,
+      angle: 90,
+      radius: isMobile ? 240 : 220,
+    },
+    { name: "DAO Treasury", percentage: 4.45, angle: 130, radius: 200 },
   ];
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <div className="relative w-full aspect-square max-w-[800px] mx-auto">
+    <div className="relative w-full aspect-square max-w-[320px] md:max-w-[600px] mx-auto">
       {/* Center coin */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 md:w-56 md:h-56">
+      <div className="absolute top-[52%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-36 h-36 md:w-56 md:h-56">
         <div className="absolute inset-0 rounded-full bg-blue-500/20 animate-pulse-slow filter blur-xl"></div>
         <img
           src="/nlov-coin.png"
@@ -29,33 +65,29 @@ const TokenAllocation = () => {
         />
       </div>
 
-      {/* Allocation lines and labels */}
-      {allocations.map((item, index) => {
+      {/* Allocation labels */}
+      {allocations.map((item) => {
         const angleInRadians = (item.angle * Math.PI) / 180;
-        const x = Math.cos(angleInRadians) * item.radius;
-        const y = Math.sin(angleInRadians) * item.radius;
+        const radius = isMobile ? item.radius * 0.6 : item.radius;
+        const x = Math.cos(angleInRadians) * radius;
+        const y = Math.sin(angleInRadians) * radius;
 
         return (
           <div
             key={item.name}
-            className="absolute top-1/2 left-1/2"
+            className="absolute top-1/2 left-1/2 transition-all duration-300"
             style={{
               transform: `translate(calc(${x}px - 50%), calc(${y}px - 50%))`,
-              zIndex: index
             }}
           >
             <div className="relative">
-              <div 
-                className="absolute top-1/2 left-0 h-[1px] bg-gradient-to-r from-neuro-500/30 to-transparent"
-                style={{
-                  width: '24px',
-                  transform: `rotate(${item.angle}deg)`,
-                  transformOrigin: 'left center'
-                }}
-              ></div>
-              <div className="glass-card px-4 py-2 rounded-full border border-[#0361DA]/20 bg-[#0361DA]/5 backdrop-blur-sm shadow-lg flex items-center gap-3 whitespace-nowrap">
-                <span className="font-medium text-sm text-white/90">{item.name}</span>
-                <span className="text-sm text-[#0361DA]">{item.percentage}%</span>
+              <div className="glass-card px-2 py-[3px] md:px-4 md:py-2 rounded-full border border-[#0361DA]/20 bg-[#0361DA]/5 backdrop-blur-sm shadow-lg flex flex-col items-center text-center whitespace-normal min-w-[100px] md:min-w-[120px]">
+                <span className="font-medium text-xs md:text-sm text-[#646e83]/80 leading-tight">
+                  {item.name}
+                </span>
+                <span className="text-xs md:text-sm text-[#0361DA] mt-1">
+                  {item.percentage}%
+                </span>
               </div>
             </div>
           </div>
