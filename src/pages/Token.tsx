@@ -48,157 +48,137 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 // Tokenomics data
 const tokenDistributionData = [
-  { name: "Liquidity Pool (DEX)", value: 35, color: "#6366f1" },
-  { name: "Buyback and Burn Reserve", value: 15, color: "#f43f5e" },
-  { name: "Team & Advisors", value: 12, color: "#10b981" },
-  { name: "Ecosystem & Rewards", value: 18, color: "#8b5cf6" },
-  { name: "Marketing", value: 8, color: "#f59e0b" },
-  { name: "Foundation", value: 5, color: "#3b82f6" },
-  { name: "Strategic Reserve", value: 5, color: "#3b82f6" },
-  { name: "DAO Treasury", value: 4, color: "#3b82f6" },
+  { name: "Seed Investors", value: 2.95, color: "#6366f1" },
+  { name: "Private Investors", value: 2.95, color: "#f43f5e" },
+  { name: "Liquidity Pool (DEX)", value: 30.45, color: "#10b981" },
+  { name: "Team and Development", value: 12.45, color: "#8b5cf6" },
+  { name: "Ecosystem and Rewards", value: 18.45, color: "#f59e0b" },
+  { name: "Community and Marketing", value: 8.45, color: "#3b82f6" },
+  { name: "Buyback and Burn Reserve", value: 8.95, color: "#3b82f6" },
+  { name: "Strategic Reserve", value: 5.45, color: "#3b82f6" },
+  { name: "DAO Treasury", value: 4.45, color: "#6366f1" },
+  { name: "Foundation", value: 5.45, color: "#f43f5e" },
 ];
 
 const tokenReleaseData = [
   {
     month: "TGE (May 2025)",
-    "Liquidity Pool": 5,
-    "Team & Advisors": 0,
-    "Ecosystem & Rewards": 4.5,
-    Marketing: 2,
-    Foundation: 0,
+    "Seed Investors": 368.75,
+    "Private Investors": 737.5,
+    "Liquidity Pool": 5073.062,
+    "Team and Development": 0,
+    "Ecosystem and Rewards": 4612.5,
+    "Community and Marketing": 2112,
+    "Buyback and Burn": 0,
     "Strategic Reserve": 0,
-    "DAO Treasury": 1,
-    "Buyback & Burn": 0,
+    "DAO Treasury": 1112.5,
+    "Foundation": 0
   },
   {
     month: "Jun 2025",
-    "Liquidity Pool": 0,
-    "Team & Advisors": 0,
-    "Ecosystem & Rewards": 2.375,
-    Marketing: 1.583,
-    Foundation: 0,
+    "Seed Investors": 14381.25,
+    "Private Investors": 14612.5,
+    "Liquidity Pool": 147178.937,
+    "Team and Development": 1779.47,
+    "Ecosystem and Rewards": 87637.5,
+    "Community and Marketing": 40137.5,
+    "Buyback and Burn": "Dynamic",
     "Strategic Reserve": 0,
-    "DAO Treasury": 0.528,
-    "Buyback & Burn": 0,
-  },
-  {
-    month: "Dec 2025",
-    "Liquidity Pool": 0,
-    "Team & Advisors": 0,
-    "Ecosystem & Rewards": 2.375,
-    Marketing: 1.583,
-    Foundation: 0,
-    "Strategic Reserve": 0,
-    "DAO Treasury": 0.528,
-    "Buyback & Burn": 0,
-  },
-  {
-    month: "Jun 2026",
-    "Liquidity Pool": 7.083,
-    "Team & Advisors": 0,
-    "Ecosystem & Rewards": 2.375,
-    Marketing: 1.583,
-    Foundation: 0.694,
-    "Strategic Reserve": 0,
-    "DAO Treasury": 0.528,
-    "Buyback & Burn": 0,
-  },
-  {
-    month: "Dec 2026",
-    "Liquidity Pool": 7.083,
-    "Team & Advisors": 1.667,
-    "Ecosystem & Rewards": 2.375,
-    Marketing: 1.583,
-    Foundation: 0.694,
-    "Strategic Reserve": 0,
-    "DAO Treasury": 0.528,
-    "Buyback & Burn": 0,
-  },
-  {
-    month: "May 2027",
-    "Liquidity Pool": 7.083,
-    "Team & Advisors": 1.667,
-    "Ecosystem & Rewards": 2.375,
-    Marketing: 1.583,
-    Foundation: 0.694,
-    "Strategic Reserve": "Dynamic",
-    "DAO Treasury": 0.528,
-    "Buyback & Burn": "Dynamic",
-  },
+    "DAO Treasury": 21137.5,
+    "Foundation": 757.639
+  }
 ];
 
 const vestingScheduleData = [
   {
-    category: "Liquidity Pool (DEX)",
-    allocation: "175M NLOV (35%)",
-    tgeUnlock: "5M NLOV",
-    lockPeriod: "12 months",
-    vestingStart: "June 20, 2026",
-    monthlyVesting: "7.083M NLOV",
-    details: "Trading liquidity on DEXs",
+    category: "Seed Investors",
+    allocation: "14,750,000 NLOV (2.95%)",
+    tgeUnlock: "368,750 (2.5%)",
+    lockPeriod: "24 months",
+    vestingStart: "June 20, 2025",
+    monthlyVesting: "598,485/month",
+    details: "Rewards early backers",
   },
   {
-    category: "Team & Advisors",
-    allocation: "60M NLOV (12%)",
-    tgeUnlock: "0 NLOV",
+    category: "Private Investors",
+    allocation: "14,750,000 NLOV (2.95%)",
+    tgeUnlock: "737,500 (5%)",
     lockPeriod: "18 months",
-    vestingStart: "Dec 20, 2026",
-    monthlyVesting: "1.667M NLOV",
-    details: "Development and strategic guidance",
-  },
-  {
-    category: "Ecosystem & Rewards",
-    allocation: "90M NLOV (18%)",
-    tgeUnlock: "4.5M NLOV",
-    lockPeriod: "None",
     vestingStart: "June 20, 2025",
-    monthlyVesting: "2.375M NLOV",
-    details: "Airdrops (2,250 NLOV/user), Connect to Earn",
+    monthlyVesting: "778,472/month",
+    details: "Soft/hard cap range",
   },
   {
-    category: "Marketing",
-    allocation: "40M NLOV (8%)",
-    tgeUnlock: "2M NLOV",
-    lockPeriod: "None",
-    vestingStart: "June 20, 2025",
-    monthlyVesting: "1.583M NLOV",
-    details: "User growth, campaigns, KOLs/Influencers",
-  },
-  {
-    category: "Foundation",
-    allocation: "25M NLOV (5%)",
-    tgeUnlock: "0 NLOV",
+    category: "Liquidity Pool (DEX)",
+    allocation: "152,250,000 NLOV (30.45%)",
+    tgeUnlock: "5,071,062.5 (3.33%)",
     lockPeriod: "12 months",
-    vestingStart: "June 20, 2026",
-    monthlyVesting: "0.694M NLOV",
-    details: "Strategic support, backup for unsold presale",
+    vestingStart: "June 20, 2025",
+    monthlyVesting: "6,132,456/month",
+    details: "DEX liquidity",
+  },
+  {
+    category: "Team and Development",
+    allocation: "62,250,000 NLOV (12.45%)",
+    tgeUnlock: "0 NLOV",
+    lockPeriod: "18 months cliff, 36 months vesting",
+    vestingStart: "Dec 20, 2026",
+    monthlyVesting: "1,779,470/month",
+    details: "Long-term alignment",
+  },
+  {
+    category: "Ecosystem and Rewards",
+    allocation: "92,250,000 NLOV (18.45%)",
+    tgeUnlock: "4,612,500 (5%)",
+    lockPeriod: "36 months",
+    vestingStart: "June 20, 2025",
+    monthlyVesting: "2,434,375/month",
+    details: "Connect to Earn, airdrops, rewards",
+  },
+  {
+    category: "Community and Marketing",
+    allocation: "42,250,000 NLOV (8.45%)",
+    tgeUnlock: "2,112,500 (5%)",
+    lockPeriod: "24 months",
+    vestingStart: "June 20, 2025",
+    monthlyVesting: "1,672,396/month",
+    details: "Airdrops, partnerships, web growth",
+  },
+  {
+    category: "Buyback and Burn Reserve",
+    allocation: "44,750,000 NLOV (8.95%)",
+    tgeUnlock: "0 NLOV",
+    lockPeriod: "Dynamic",
+    vestingStart: "Post-TGE",
+    monthlyVesting: "Dynamic buyback (0-25% revenue)",
+    details: "Reduces supply to enhance value",
   },
   {
     category: "Strategic Reserve",
-    allocation: "25M NLOV (5%)",
+    allocation: "27,250,000 NLOV (5.45%)",
     tgeUnlock: "0 NLOV",
-    lockPeriod: "24 months",
+    lockPeriod: "24-month lock, released for stabilization",
     vestingStart: "May 20, 2027",
     monthlyVesting: "Dynamic",
     details: "Market volatility buffer",
   },
   {
     category: "DAO Treasury",
-    allocation: "20M NLOV (4%)",
-    tgeUnlock: "1M NLOV",
-    lockPeriod: "None",
+    allocation: "22,250,000 NLOV (4.45%)",
+    tgeUnlock: "1,112,500 (5%)",
+    lockPeriod: "36 months",
     vestingStart: "June 20, 2025",
-    monthlyVesting: "0.528M NLOV",
-    details: "Community development, governance",
+    monthlyVesting: "587,153/month",
+    details: "Community-driven development, governance",
   },
   {
-    category: "Buyback and Burn",
-    allocation: "75M NLOV (15%)",
+    category: "Foundation",
+    allocation: "27,250,000 NLOV (5.45%)",
     tgeUnlock: "0 NLOV",
-    lockPeriod: "None",
-    vestingStart: "Post-TGE",
-    monthlyVesting: "Dynamic",
-    details: "Revenue-based buybacks to reduce supply",
+    lockPeriod: "12-month cliff, 36-month vesting",
+    vestingStart: "June 20, 2026",
+    monthlyVesting: "757,639/month",
+    details: "Backup for unsold presale, strategic support",
   },
 ];
 
@@ -277,70 +257,82 @@ const faqData = [
 const cumulativeVestingData = [
   {
     month: "May '25 (TGE)",
-    "Liquidity Pool": 2.86, // 5M of 175M
-    "Team & Advisors": 0, // 18-month cliff
-    Airdrops: 5, // 4.5M of 90M
-    "Marketing & KOLs": 5, // 2M of 40M
-    Foundation: 0, // 12-month cliff
-    "Strategic Reserve": 0, // 24-month cliff
-    "DAO Treasury": 5, // 1M of 20M
-    "Buyback & Burn": 0, // Dynamic based on revenue
+    "Liquidity Pool (DEX)": 5.07,
+    "Team & Advisors": 0,
+    "Airdrops & Rewards": 4.61,
+    "Marketing & KOLs": 2.11,
+    "Foundation": 0,
+    "Strategic Reserve": 0,
+    "DAO Treasury": 1.11,
+    "Buyback & Burn": 0,
+    "Seed Investors": 0.37,
+    "Private Investors": 0.74
   },
   {
     month: "Jun '25",
-    "Liquidity Pool": 2.86,
+    "Liquidity Pool (DEX)": 60.9,
     "Team & Advisors": 0,
-    Airdrops: 7.64,
-    "Marketing & KOLs": 8.96,
-    Foundation: 0,
+    "Airdrops & Rewards": 32.29,
+    "Marketing & KOLs": 14.79,
+    "Foundation": 0,
     "Strategic Reserve": 0,
-    "DAO Treasury": 7.64,
-    "Buyback & Burn": 1,
+    "DAO Treasury": 7.78,
+    "Buyback & Burn": 4.47,
+    "Seed Investors": 5.9,
+    "Private Investors": 5.9
   },
   {
     month: "Dec '25",
-    "Liquidity Pool": 2.86,
+    "Liquidity Pool (DEX)": 106.58,
     "Team & Advisors": 0,
-    Airdrops: 23.57,
-    "Marketing & KOLs": 27.74,
-    Foundation: 0,
+    "Airdrops & Rewards": 59.96,
+    "Marketing & KOLs": 27.46,
+    "Foundation": 0,
     "Strategic Reserve": 0,
-    "DAO Treasury": 25.57,
-    "Buyback & Burn": 5,
+    "DAO Treasury": 14.46,
+    "Buyback & Burn": 11.19,
+    "Seed Investors": 10.33,
+    "Private Investors": 10.33
   },
   {
     month: "Jun '26",
-    "Liquidity Pool": 6.91,
-    "Team & Advisors": 0,
-    Airdrops: 39.5,
-    "Marketing & KOLs": 46.52,
-    Foundation: 2.78,
+    "Liquidity Pool (DEX)": 152.25,
+    "Team & Advisors": 18.68,
+    "Airdrops & Rewards": 78.41,
+    "Marketing & KOLs": 35.91,
+    "Foundation": 8.18,
     "Strategic Reserve": 0,
-    "DAO Treasury": 43.5,
-    "Buyback & Burn": 10,
+    "DAO Treasury": 18.91,
+    "Buyback & Burn": 22.38,
+    "Seed Investors": 14.75,
+    "Private Investors": 14.75
   },
   {
     month: "Dec '26",
-    "Liquidity Pool": 31.19,
-    "Team & Advisors": 2.78,
-    Airdrops: 55.43,
-    "Marketing & KOLs": 65.3,
-    Foundation: 19.45,
+    "Liquidity Pool (DEX)": 152.25,
+    "Team & Advisors": 40.46,
+    "Airdrops & Rewards": 92.25,
+    "Marketing & KOLs": 42.25,
+    "Foundation": 17.71,
     "Strategic Reserve": 0,
-    "DAO Treasury": 61.43,
-    "Buyback & Burn": 20,
+    "DAO Treasury": 22.25,
+    "Buyback & Burn": 33.56,
+    "Seed Investors": 14.75,
+    "Private Investors": 14.75
   },
   {
     month: "May '27",
-    "Liquidity Pool": 100,
-    "Team & Advisors": 100,
-    Airdrops: 100,
-    "Marketing & KOLs": 100,
-    Foundation: 100,
-    "Strategic Reserve": 100,
-    "DAO Treasury": 100,
-    "Buyback & Burn": 100,
-  },
+    "Liquidity Pool (DEX)": 152.25,
+    "Team & Advisors": 62.25,
+    "Airdrops & Rewards": 92.25,
+    "Marketing & KOLs": 42.25,
+    "Foundation": 27.25,
+    "Strategic Reserve": 27.25,
+    "DAO Treasury": 22.25,
+    "Buyback & Burn": 44.75,
+    "Seed Investors": 14.75,
+    "Private Investors": 14.75
+  }
 ];
 
 export default function TokenPage() {
@@ -509,7 +501,7 @@ export default function TokenPage() {
                     </div>
                     <div className="md:w-1/2 md:pl-16">
                       <div className="text-xl font-bold text-neuro-500">
-                        Q4 2023
+                        Q4 2024
                       </div>
                     </div>
                   </div>
@@ -532,7 +524,7 @@ export default function TokenPage() {
                     </div>
                     <div className="md:w-1/2 md:pl-16">
                       <div className="text-xl font-bold text-neuro-500">
-                        Q1 2024
+                        Q1 2025
                       </div>
                     </div>
                   </div>
@@ -555,7 +547,7 @@ export default function TokenPage() {
                     </div>
                     <div className="md:w-1/2 md:pl-16">
                       <div className="text-xl font-bold text-neuro-500">
-                        Q1 2024
+                        Q1 2025
                       </div>
                     </div>
                   </div>
@@ -581,7 +573,7 @@ export default function TokenPage() {
                     </div>
                     <div className="md:w-1/2 md:pl-16">
                       <div className="text-xl font-bold text-neuro-500">
-                        Q2 2024
+                        Q2 2025
                       </div>
                     </div>
                   </div>
@@ -604,7 +596,7 @@ export default function TokenPage() {
                     </div>
                     <div className="md:w-1/2 md:pl-16">
                       <div className="text-xl font-bold text-neuro-500">
-                        Q2 2024
+                        Q2 2025
                       </div>
                     </div>
                   </div>
@@ -627,7 +619,7 @@ export default function TokenPage() {
                     </div>
                     <div className="md:w-1/2 md:pl-16">
                       <div className="text-xl font-bold text-neuro-500">
-                        Q2 2024
+                        Q2 2025
                       </div>
                     </div>
                   </div>
@@ -653,7 +645,7 @@ export default function TokenPage() {
                     </div>
                     <div className="md:w-1/2 md:pl-16">
                       <div className="text-xl font-bold text-neuro-500">
-                        Q3 2024
+                        Q3 2025
                       </div>
                     </div>
                   </div>
@@ -720,20 +712,6 @@ export default function TokenPage() {
                       </PieChart>
                     </ResponsiveContainer>
                   </div>
-
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                    {tokenDistributionData.map((item, index) => (
-                      <div key={index} className="flex items-center text-sm">
-                        <div
-                          className="w-3 h-3 rounded-sm mr-2"
-                          style={{ backgroundColor: item.color }}
-                        ></div>
-                        <span className="text-xs md:text-sm">
-                          {item.name}: {item.value}%
-                        </span>
-                      </div>
-                    ))}
-                  </div>
                 </div>
               </div>
             </div>
@@ -762,16 +740,20 @@ export default function TokenPage() {
                           }}
                         >
                           <XAxis dataKey="month" />
-                          <YAxis />
-                          <Tooltip />
+                          <YAxis
+                            tickFormatter={(value) => `${value}M`}
+                            domain={[0, 500]}
+                            ticks={[0, 100, 200, 300, 400, 500]}
+                          />
+                          <Tooltip formatter={(value, name) => [`${value}M`, name]} />
                           <Legend />
                           <Area
                             type="monotone"
-                            dataKey="Liquidity Pool"
+                            dataKey="Liquidity Pool (DEX)"
                             stackId="1"
                             stroke="#6366f1"
                             fill="#6366f1"
-                            name="Liquidity Pool (DEX) - 170M"
+                            name="Liquidity Pool (DEX) - 152.25M"
                           />
                           <Area
                             type="monotone"
@@ -779,15 +761,15 @@ export default function TokenPage() {
                             stackId="1"
                             stroke="#10b981"
                             fill="#10b981"
-                            name="Team & Advisors - 60M"
+                            name="Team & Advisors - 62.25M"
                           />
                           <Area
                             type="monotone"
-                            dataKey="Airdrops"
+                            dataKey="Airdrops & Rewards"
                             stackId="1"
                             stroke="#8b5cf6"
                             fill="#8b5cf6"
-                            name="Airdrops & Rewards - 90M"
+                            name="Airdrops & Rewards - 92.25M"
                           />
                           <Area
                             type="monotone"
@@ -795,7 +777,7 @@ export default function TokenPage() {
                             stackId="1"
                             stroke="#f59e0b"
                             fill="#f59e0b"
-                            name="Marketing & KOLs - 40M"
+                            name="Marketing & KOLs - 42.25M"
                           />
                           <Area
                             type="monotone"
@@ -803,15 +785,15 @@ export default function TokenPage() {
                             stackId="1"
                             stroke="#3b82f6"
                             fill="#3b82f6"
-                            name="Foundation - 25M"
+                            name="Foundation - 27.25M"
                           />
                           <Area
                             type="monotone"
                             dataKey="Strategic Reserve"
                             stackId="1"
-                            stroke="#0ea5e9"
-                            fill="#0ea5e9"
-                            name="Strategic Reserve - 25M"
+                            stroke="#3b82f6"
+                            fill="#3b82f6"
+                            name="Strategic Reserve - 27.25M"
                           />
                           <Area
                             type="monotone"
@@ -819,7 +801,7 @@ export default function TokenPage() {
                             stackId="1"
                             stroke="#6366f1"
                             fill="#6366f1"
-                            name="DAO Treasury - 20M"
+                            name="DAO Treasury - 22.25M"
                           />
                           <Area
                             type="monotone"
@@ -827,90 +809,27 @@ export default function TokenPage() {
                             stackId="1"
                             stroke="#f43f5e"
                             fill="#f43f5e"
-                            name="Buyback & Burn - 75M"
+                            name="Buyback & Burn - 44.75M"
+                          />
+                          <Area
+                            type="monotone"
+                            dataKey="Seed Investors"
+                            stackId="1"
+                            stroke="#f43f5e"
+                            fill="#f43f5e"
+                            name="Seed Investors - 14.75M"
+                          />
+                          <Area
+                            type="monotone"
+                            dataKey="Private Investors"
+                            stackId="1"
+                            stroke="#f43f5e"
+                            fill="#f43f5e"
+                            name="Private Investors - 14.75M"
                           />
                         </AreaChart>
                       </ResponsiveContainer>
                     </div>
-                  </div>
-                </div>
-
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="font-bold mb-2">
-                      Liquidity Pool (DEX) (35%)
-                    </h4>
-                    <p className="text-muted-foreground">
-                      5M NLOV unlocked at TGE, remaining 170M NLOV vested
-                      linearly over 12 months.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-bold mb-2">
-                      Buyback and Burn Reserve (15%)
-                    </h4>
-                    <p className="text-muted-foreground">
-                      0 NLOV unlocked at TGE, remaining 75M NLOV vested
-                      dynamically based on revenue.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-bold mb-2">Team & Advisors (12%)</h4>
-                    <p className="text-muted-foreground">
-                      0 NLOV unlocked at TGE, remaining 60M NLOV vested linearly
-                      over 18 months.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-bold mb-2">
-                      Ecosystem & Rewards (18%)
-                    </h4>
-                    <p className="text-muted-foreground">
-                      4.5M NLOV unlocked at TGE, remaining 85.5M NLOV vested
-                      linearly over 12 months.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-bold mb-2">Marketing (8%)</h4>
-                    <p className="text-muted-foreground">
-                      2M NLOV unlocked at TGE, remaining 38M NLOV vested
-                      linearly over 12 months.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-bold mb-2">Foundation (5%)</h4>
-                    <p className="text-muted-foreground">
-                      0 NLOV unlocked at TGE, remaining 25M NLOV vested linearly
-                      over 12 months.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-bold mb-2">Strategic Reserve (5%)</h4>
-                    <p className="text-muted-foreground">
-                      0 NLOV unlocked at TGE, remaining 25M NLOV vested
-                      dynamically based on market conditions.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-bold mb-2">DAO Treasury (4%)</h4>
-                    <p className="text-muted-foreground">
-                      1M NLOV unlocked at TGE, remaining 19M NLOV vested
-                      linearly over 12 months.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-bold mb-2">KOLs/Influencers (1%)</h4>
-                    <p className="text-muted-foreground">
-                      0.5M NLOV unlocked at TGE, remaining 4.5M NLOV vested
-                      linearly over 12 months.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-bold mb-2">Airdrops (9%)</h4>
-                    <p className="text-muted-foreground">
-                      4.5M NLOV unlocked at TGE, remaining 45.5M NLOV vested
-                      linearly over 12 months.
-                    </p>
                   </div>
                 </div>
               </div>
