@@ -404,9 +404,17 @@ export default function ProductsPage() {
                     </div>
                   </div>
                 </div>
-                <Button variant="neon" className="w-full">
-                  Join the Swarm
-                </Button>
+                <div className="mt-8 text-center">
+                  <Button 
+                    variant="neon" 
+                    size="lg" 
+                    onClick={() => {
+                      window.open('http://swarm.neurolov.ai', '_blank', 'noopener,noreferrer');
+                    }}
+                  >
+                    Join the Swarm
+                  </Button>
+                </div>
               </div>
             </div>
           </TabsContent>

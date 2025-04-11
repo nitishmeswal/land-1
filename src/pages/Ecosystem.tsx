@@ -261,7 +261,7 @@ export default function EcosystemPage() {
 
           {/* Partners Tab */}
           <TabsContent value="partner" className="space-y-8">
-           { /* <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 place-items-center">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 place-items-center">
               {filteredPartners.map((partner, index) => (
                 <div
                   key={`${partner.name}-${index}`}
@@ -285,7 +285,7 @@ export default function EcosystemPage() {
                   Next could be you
                 </p>
               </div>
-            </div> */}
+            </div>
 
             <SectionContainer className="py-16 bg-gradient-to-b from-background to-muted/30 relative">
               <div className="absolute inset-0 -z-10">

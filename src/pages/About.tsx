@@ -70,7 +70,7 @@ const teamMembers = [
   {
     name: "Nitish Meswal",
     role: "Software Engineer",
-    bio: "3+ years of experience in full-stack development, blockchain, MCP AI protocols, and dApps. Expert in MERN, AI automation, cybersecurity, and scalable Web3 solutions.Web3 Tech Lead at Neurolov",
+    bio: "3+ years of experience in blockchain, MCP AI protocols,dApps and full-stack development. Expert in MERN, AI automation, cybersecurity, and scalable Web3 solutions.Web3 Tech Lead at Neurolov",
     image: "/lead-dev.png",
     social: {
       github: "https://github.com/nitishmeswal",
@@ -98,8 +98,8 @@ const teamMembers = [
   },
   {
     name: "Sanskar Lunawat",
-    role: "Marketing Head",
-    bio: "As a founding team member, Sanskar has built Neurolov’s brand from the ground up, combining strategic marketing with deep platform knowledge",
+    role: "Marketing & Community Lead",
+    bio: "With 4 years in the Web3 space, Sanskar has played a key role in Neurolov’s growth by leading community initiatives, influencer marketing, and strategic partnerships. He successfully grew Neurolov’s Telegram community to 10K+ members and onboarded 40+ crucial crypto ambassadors. Additionally, he has driven high-impact Twitter collaborations and hosted major crypto spaces, expanding Neurolov’s presence in AI and blockchain.",
     image: "/m-lead.png",
     social: {
       linkedin:

@@ -71,7 +71,7 @@ export default function Footer() {
                 <img src="/icons/twitter.svg" alt="Twitter" className="h-5 w-5" />
               </a>
               <a 
-                href="https://discord.gg/neurolov" 
+                href="https://discord.gg/Bu7BnZ85kb" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-white transition-colors"
@@ -79,20 +79,12 @@ export default function Footer() {
                 <img src="/icons/discord.svg" alt="Discord" className="h-5 w-5" />
               </a>
               <a 
-                href="https://t.me/neurolov" 
+                href="https://t.me/neurolovcommunity" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-white transition-colors"
               >
                 <img src="/icons/telegram.svg" alt="Telegram" className="h-5 w-5" />
-              </a>
-              <a 
-                href="https://reddit.com/r/neurolov" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-white transition-colors"
-              >
-                <img src="/icons/reddit.svg" alt="Reddit" className="h-5 w-5" />
               </a>
               <a 
                 href="mailto:support@neurolov.ai" 

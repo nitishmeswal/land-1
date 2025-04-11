@@ -28,9 +28,21 @@ const resources = [
     description: "Research papers and technical specifications",
     icon: <Book className="h-6 w-6" />,
     links: [
-      { text: "Whitepaper", url: "/whitepaper" },
-      { text: "Tokenomics", url: "/docs/architecture" },
-      { text: "Pitchdeck", url: "/research" },
+      { 
+        text: "Whitepaper", 
+        url: "/resources/whitepaper.pdf",
+        icon: <FileText className="h-4 w-4" />
+      },
+      { 
+        text: "Tokenomics", 
+        url: "/resources/tokenomics.pdf",
+        icon: <FileText className="h-4 w-4" />
+      },
+      { 
+        text: "Pitch Deck", 
+        url: "/resources/pitchdeck.pdf",
+        icon: <FileText className="h-4 w-4" />
+      },
     ],
   },
   
