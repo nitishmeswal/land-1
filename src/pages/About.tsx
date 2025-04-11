@@ -275,11 +275,16 @@ export default function AboutPage() {
                     className="glass-card p-6 rounded-xl border border-#0361DA/10 hover:border-#0361DA/30 transition-all duration-300 relative min-h-[320px]"
                   >
                     <div className="flex items-center space-x-4 mb-4">
-                      <div className="w-24 h-24 rounded-full overflow-hidden">
+                      <div className="w-24 h-24 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center">
                         <img
                           src={member.image}
                           alt={member.name}
-                          className="w-full h-full object-cover object-center"
+                          className={`w-full h-full object-cover object-top ${
+                            ['Sparsh', 'Nitish Meswal', 'Ramesh Sharma', 'Charu Keswani', 'Dhruvanshi', 'Sanskar Lunawat']
+                              .some(name => member.name.trim() === name.trim())
+                            ? 'grayscale'
+                            : ''
+                          }`}
                         />
                       </div>
                       <div>
@@ -332,11 +337,11 @@ export default function AboutPage() {
                     className="glass-card p-6 rounded-xl border border-white/10 hover:border-#0361DA/20 transition-all duration-300 relative min-h-[320px]"
                   >
                     <div className="flex items-center space-x-4 mb-4">
-                      <div className="w-24 h-24 rounded-full overflow-hidden">
+                      <div className="w-24 h-24 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center">
                         <img
                           src={advisor.image}
                           alt={advisor.name}
-                          className="w-full h-full object-cover object-center"
+                          className="w-full h-full object-cover object-top"
                         />
                       </div>
                       <div>

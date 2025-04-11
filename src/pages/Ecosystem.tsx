@@ -64,6 +64,8 @@ const roadmapData = [
     title: "Q1 2025 - Extended AI Model Ecosystem",
     status: "in-progress",
     items: [
+      "$NLOV Token Presale",
+      "Token Generation Event (TGE)",
       "New models: text-to-video, 3D, music generation",
       "Enhanced app performance and stability",
       "Swarm Network Testnet launch",
@@ -74,8 +76,8 @@ const roadmapData = [
     title: "Q2 2025 - Token Launch",
     status: "upcoming",
     items: [
-      "NLov Token Presale",
-      "Token Generation Event (TGE)",
+      "Migration from testnet to mainnet",
+      "Production-level infrastructure",
       "DEX listings and liquidity pool setup",
       "Token allocation and vesting begins",
       "Strategic marketing campaign",
@@ -85,8 +87,6 @@ const roadmapData = [
     title: "Q3 2025 - Mainnet & Governance",
     status: "upcoming",
     items: [
-      "Migration from testnet to mainnet",
-      "Production-level infrastructure",
       "Governance system launch for NLov holders",
       "On-chain forum proposals",
       "Core feature voting system",
@@ -119,7 +119,7 @@ const roadmapData = [
       "Autonomous trading bots and AI workers",
       "Revenue-based token buyback & burn",
       "Decentralized community treasury",
-      "NLov DAO ecosystem grants program",
+      "$NLOV DAO ecosystem grants program",
     ],
   },
 ];

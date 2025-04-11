@@ -50,7 +50,7 @@ import { useParams, useNavigate } from "react-router-dom";
 // Tokenomics data
 const tokenDistributionData = [
   { name: "Seed Investors", value: 2.95, color: "#6366f1" },
-  { name: "Private Investors", value: 2.95, color: "#f43f5e" },
+  { name: "Pre-sale Investors", value: 2.95, color: "#f43f5e" },
   { name: "Liquidity Pool (DEX)", value: 30.45, color: "#10b981" },
   { name: "Team and Development", value: 12.45, color: "#8b5cf6" },
   { name: "Ecosystem and Rewards", value: 18.45, color: "#f59e0b" },
@@ -65,7 +65,7 @@ const tokenReleaseData = [
   {
     month: "TGE (May 2025)",
     "Seed Investors": 368.75,
-    "Private Investors": 737.5,
+    "Pre-sale Investors": 737.5,
     "Liquidity Pool": 5073.062,
     "Team and Development": 0,
     "Ecosystem and Rewards": 4612.5,
@@ -73,12 +73,12 @@ const tokenReleaseData = [
     "Buyback and Burn": 0,
     "Strategic Reserve": 0,
     "DAO Treasury": 1112.5,
-    Foundation: 0,
+    "Foundation": 0
   },
   {
     month: "Jun 2025",
     "Seed Investors": 14381.25,
-    "Private Investors": 14612.5,
+    "Pre-sale Investors": 14612.5,
     "Liquidity Pool": 147178.937,
     "Team and Development": 1779.47,
     "Ecosystem and Rewards": 87637.5,
@@ -86,8 +86,8 @@ const tokenReleaseData = [
     "Buyback and Burn": "Dynamic",
     "Strategic Reserve": 0,
     "DAO Treasury": 21137.5,
-    Foundation: 757.639,
-  },
+    "Foundation": 757.639
+  }
 ];
 
 const vestingScheduleData = [
@@ -101,7 +101,7 @@ const vestingScheduleData = [
     details: "Rewards early backers",
   },
   {
-    category: "Private Investors",
+    category: "Pre-sale Investors",
     allocation: "14,750,000 NLOV (2.95%)",
     tgeUnlock: "737,500 (5%)",
     lockPeriod: "18 months",
@@ -185,27 +185,27 @@ const vestingScheduleData = [
 
 const utilityData = [
   {
-    title: "Network Usage",
+    title: "Platform Fee Utility",
     description:
-      "Pay for compute resources, AI model inference, and other network services using NLOV tokens.",
+      "NLOV tokens serve as the primary medium of exchange for all platform services, including GPU compute, AI model inference, and network resources. Users must hold and spend NLOV to access platform features.",
     icon: <Database className="h-6 w-6" />,
   },
   {
-    title: "Node Operation",
+    title: "Staking Utility",
     description:
-      "Stake NLOV tokens to operate network nodes and earn rewards for supporting the infrastructure.",
+      "Stake NLOV tokens to earn passive rewards, secure network operations, and unlock premium platform features. Higher staking tiers provide increased benefits and voting power.",
     icon: <Coins className="h-6 w-6" />,
   },
   {
-    title: "Governance",
+    title: "Governance Utility",
     description:
-      "Participate in network governance decisions by voting with your NLOV tokens.",
+      "NLOV holders can participate in platform governance through proposal creation and voting. Shape the future of Neurolov by influencing key decisions and protocol upgrades.",
     icon: <Users className="h-6 w-6" />,
   },
   {
-    title: "Fee Discounts",
+    title: "Reward Utility",
     description:
-      "Hold NLOV tokens to receive discounts on platform fees and premium features.",
+      "Earn NLOV rewards for contributing compute resources, participating in network validation, and engaging in ecosystem activities. Dynamic reward mechanisms ensure sustainable token economics.",
     icon: <BadgeDollarSign className="h-6 w-6" />,
   },
 ];
@@ -236,7 +236,7 @@ const faqData = [
   {
     question: "What is the total supply of NLOV?",
     answer:
-      "The total supply of NLOV is capped at 500 Million tokens. No additional tokens will be minted after reaching this cap, making NLOV a deflationary asset over time.",
+      "The total supply of NLOV is capped at 1 billion tokens. No additional tokens will be minted after reaching this cap, making NLOV a deflationary asset over time.",
   },
   {
     question: "Is NLOV compatible with existing wallets?",
@@ -262,12 +262,12 @@ const cumulativeVestingData = [
     "Team & Advisors": 0,
     "Airdrops & Rewards": 4.61,
     "Marketing & KOLs": 2.11,
-    Foundation: 0,
+    "Foundation": 0,
     "Strategic Reserve": 0,
     "DAO Treasury": 1.11,
     "Buyback & Burn": 0,
     "Seed Investors": 0.37,
-    "Private Investors": 0.74,
+    "Pre-sale Investors": 0.74
   },
   {
     month: "Jun '25",
@@ -275,12 +275,12 @@ const cumulativeVestingData = [
     "Team & Advisors": 0,
     "Airdrops & Rewards": 32.29,
     "Marketing & KOLs": 14.79,
-    Foundation: 0,
+    "Foundation": 0,
     "Strategic Reserve": 0,
     "DAO Treasury": 7.78,
     "Buyback & Burn": 4.47,
     "Seed Investors": 5.9,
-    "Private Investors": 5.9,
+    "Pre-sale Investors": 5.9
   },
   {
     month: "Dec '25",
@@ -288,12 +288,12 @@ const cumulativeVestingData = [
     "Team & Advisors": 0,
     "Airdrops & Rewards": 59.96,
     "Marketing & KOLs": 27.46,
-    Foundation: 0,
+    "Foundation": 0,
     "Strategic Reserve": 0,
     "DAO Treasury": 14.46,
     "Buyback & Burn": 11.19,
     "Seed Investors": 10.33,
-    "Private Investors": 10.33,
+    "Pre-sale Investors": 10.33
   },
   {
     month: "Jun '26",
@@ -301,12 +301,12 @@ const cumulativeVestingData = [
     "Team & Advisors": 18.68,
     "Airdrops & Rewards": 78.41,
     "Marketing & KOLs": 35.91,
-    Foundation: 8.18,
+    "Foundation": 8.18,
     "Strategic Reserve": 0,
     "DAO Treasury": 18.91,
     "Buyback & Burn": 22.38,
     "Seed Investors": 14.75,
-    "Private Investors": 14.75,
+    "Pre-sale Investors": 14.75
   },
   {
     month: "Dec '26",
@@ -314,12 +314,12 @@ const cumulativeVestingData = [
     "Team & Advisors": 40.46,
     "Airdrops & Rewards": 92.25,
     "Marketing & KOLs": 42.25,
-    Foundation: 17.71,
+    "Foundation": 17.71,
     "Strategic Reserve": 0,
     "DAO Treasury": 22.25,
     "Buyback & Burn": 33.56,
     "Seed Investors": 14.75,
-    "Private Investors": 14.75,
+    "Pre-sale Investors": 14.75
   },
   {
     month: "May '27",
@@ -327,13 +327,13 @@ const cumulativeVestingData = [
     "Team & Advisors": 62.25,
     "Airdrops & Rewards": 92.25,
     "Marketing & KOLs": 42.25,
-    Foundation: 27.25,
+    "Foundation": 27.25,
     "Strategic Reserve": 27.25,
     "DAO Treasury": 22.25,
     "Buyback & Burn": 44.75,
     "Seed Investors": 14.75,
-    "Private Investors": 14.75,
-  },
+    "Pre-sale Investors": 14.75
+  }
 ];
 
 export default function TokenPage() {
@@ -375,16 +375,28 @@ export default function TokenPage() {
         <Tabs value={tab} onValueChange={handleTabChange} className="w-full">
           <div className="flex justify-center mb-16 md:mb-8">
             <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              <TabsTrigger value="overview" className="px-6">
+              <TabsTrigger
+                value="overview"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+              >
                 <BarChart3 className="mr-2 h-4 w-4" /> Overview
               </TabsTrigger>
-              <TabsTrigger value="tokenomics" className="px-6">
+              <TabsTrigger
+                value="tokenomics"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+              >
                 <Coins className="mr-2 h-4 w-4" /> Tokenomics
               </TabsTrigger>
-              <TabsTrigger value="utility" className="px-6">
+              <TabsTrigger
+                value="utility"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+              >
                 <Share2 className="mr-2 h-4 w-4" /> Utility
               </TabsTrigger>
-              <TabsTrigger value="faq" className="px-6">
+              <TabsTrigger
+                value="faq"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+              >
                 <HelpCircle className="mr-2 h-4 w-4" /> FAQ
               </TabsTrigger>
             </TabsList>
@@ -394,7 +406,7 @@ export default function TokenPage() {
           <TabsContent value="overview" className="space-y-20">
             <div className="flex flex-col md:flex-row gap-16 items-center  my-12">
               <div className="md:w-1/2 flex flex-col items-center justify-center">
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-#0361DA/10 text-#0361DA text-sm font-medium mb-4">
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-neuro-500/10 text-neuro-500 text-sm font-medium mb-4">
                   <Coins className="mr-2 h-4 w-4" />
                   <span>NLOV Token</span>
                 </div>
@@ -408,7 +420,7 @@ export default function TokenPage() {
 
                 <div className="space-y-4 mb-8 ml-4">
                   <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-#0361DA mr-3 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
                     <div>
                       <h4 className="font-medium">Network Access</h4>
                       <p className="text-sm text-muted-foreground">
@@ -418,7 +430,7 @@ export default function TokenPage() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-#0361DA mr-3 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
                     <div>
                       <h4 className="font-medium">Provider Rewards</h4>
                       <p className="text-sm text-muted-foreground">
@@ -428,7 +440,7 @@ export default function TokenPage() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-#0361DA mr-3 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
                     <div>
                       <h4 className="font-medium">Governance Rights</h4>
                       <p className="text-sm text-muted-foreground">
@@ -437,7 +449,7 @@ export default function TokenPage() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-#0361DA mr-3 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
                     <div>
                       <h4 className="font-medium">Staking Benefits</h4>
                       <p className="text-sm text-muted-foreground">
@@ -452,15 +464,24 @@ export default function TokenPage() {
                 </div>
               </div>
               <div className="md:w-1/2 flex justify-center relative">
-                <div className="absolute inset-0 bg-blue-500/10 blur-3xl rounded-full transform scale-90"></div>
-                <ResponsiveImage
-                  src="/nlov-coin.png"
-                  alt="NLOV Token"
-                  desktopSize={{ width: 500, height: 500 }}
-                  tabletRatio={0.75}
-                  mobileRatio={0.5}
-                  className="rounded-xl shadow-xl"
-                />
+                {/* Floating coin with shadow and glow */}
+                <div className="animate-float-coin relative">
+                  {/* Shadow - moves with the coin */}
+                  <div className="absolute left-1/2 -translate-x-1/2 bottom-[-35px] w-64 h-20 bg-black/60 rounded-full blur-3xl animate-shadow-stretch"></div>
+                  
+                  {/* Tight golden glow around coin */}
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(250,204,21,0.3)_30%,transparent_70%)] rounded-full blur-md"></div>
+                  
+                  {/* Coin image */}
+                  <ResponsiveImage
+                    src="/nlov-coin.png"
+                    alt="NLOV Token"
+                    desktopSize={{ width: 500, height: 500 }}
+                    tabletRatio={0.75}
+                    mobileRatio={0.5}
+                    className="relative z-10"
+                  />
+                </div>
               </div>
             </div>
 
@@ -473,7 +494,7 @@ export default function TokenPage() {
 
               <div className="relative">
                 {/* Timeline line */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-#0361DA/20"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-neuro-500/20"></div>
 
                 {/* Timeline items */}
                 <div className="space-y-16">
@@ -495,8 +516,8 @@ export default function TokenPage() {
                       </div>
                     </div>
                     <div className="md:w-1/2 md:pl-16">
-                      <div className="text-xl font-bold text-#0361DA">
-                        Q4 2023
+                      <div className="text-xl font-bold text-neuro-500">
+                        Q4 2024
                       </div>
                     </div>
                   </div>
@@ -518,8 +539,8 @@ export default function TokenPage() {
                       </div>
                     </div>
                     <div className="md:w-1/2 md:pl-16">
-                      <div className="text-xl font-bold text-#0361DA">
-                        Q1 2024
+                      <div className="text-xl font-bold text-neuro-500">
+                        Q1 2025
                       </div>
                     </div>
                   </div>
@@ -541,8 +562,8 @@ export default function TokenPage() {
                       </div>
                     </div>
                     <div className="md:w-1/2 md:pl-16">
-                      <div className="text-xl font-bold text-#0361DA">
-                        Q1 2024
+                      <div className="text-xl font-bold text-neuro-500">
+                        Q1 2025
                       </div>
                     </div>
                   </div>
@@ -567,8 +588,8 @@ export default function TokenPage() {
                       </div>
                     </div>
                     <div className="md:w-1/2 md:pl-16">
-                      <div className="text-xl font-bold text-#0361DA">
-                        Q2 2024
+                      <div className="text-xl font-bold text-neuro-500">
+                        Q2 2025
                       </div>
                     </div>
                   </div>
@@ -590,8 +611,8 @@ export default function TokenPage() {
                       </div>
                     </div>
                     <div className="md:w-1/2 md:pl-16">
-                      <div className="text-xl font-bold text-#0361DA">
-                        Q2 2024
+                      <div className="text-xl font-bold text-neuro-500">
+                        Q2 2025
                       </div>
                     </div>
                   </div>
@@ -613,8 +634,8 @@ export default function TokenPage() {
                       </div>
                     </div>
                     <div className="md:w-1/2 md:pl-16">
-                      <div className="text-xl font-bold text-#0361DA">
-                        Q2 2024
+                      <div className="text-xl font-bold text-neuro-500">
+                        Q2 2025
                       </div>
                     </div>
                   </div>
@@ -639,8 +660,8 @@ export default function TokenPage() {
                       </div>
                     </div>
                     <div className="md:w-1/2 md:pl-16">
-                      <div className="text-xl font-bold text-#0361DA">
-                        Q3 2024
+                      <div className="text-xl font-bold text-neuro-500">
+                        Q3 2025
                       </div>
                     </div>
                   </div>
@@ -660,7 +681,7 @@ export default function TokenPage() {
                 />
                 <div className="space-y-6 mb-8">
                   <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-#0361DA mr-3 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
                     <div>
                       <h4 className="font-medium">
                         Total Supply: 500,000,000 NLOV
@@ -668,7 +689,7 @@ export default function TokenPage() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-#0361DA mr-3 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
                     <div>
                       <h4 className="font-medium">
                         Token Standard: Solana SPL
@@ -682,7 +703,7 @@ export default function TokenPage() {
               </div>
 
               <div className="md:w-[60%] w-full">
-                <div className="glass-card p-5 md:p- md:flex-none flex flex-col items-center justify-center rounded-xl border border-#0361DA/10 bg-gradient-to-br from-#0361DA/5 to-blue-500/5">
+                <div className="glass-card p-5 md:p- md:flex-none flex flex-col items-center justify-center rounded-xl border border-neuro-500/10 bg-gradient-to-br from-neuro-500/5 to-blue-500/5">
                   <h3 className="text-xl font-bold mb-3">Token Distribution</h3>
                   <div className="aspect-square md:aspect-video flex md:w-full w-[105%] justify-center mx-auto mb-3 md:mb-5">
                     <ResponsiveContainer width={"100%"} height="100%">
@@ -697,7 +718,15 @@ export default function TokenPage() {
                           paddingAngle={2}
                           fontSize={useIsMobile() ? 7 : 14}
                           dataKey="value"
-                          label={({ name, value }) => `${name}: ${value}%`}
+                          label={({ name, value }) => {
+                            if (name === "Team and Development") {
+                              return `Team\n&\nDev: ${value}%`;
+                            }
+                            if (name === "Ecosystem and Rewards") {
+                              return `Eco\n&\nRewards: ${value}%`;
+                            }
+                            return `${name}: ${value}%`;
+                          }}
                         >
                           {tokenDistributionData.map((entry, index) => (
                             <Cell key={`cell-${index}`} fill={entry.color} />
@@ -717,115 +746,139 @@ export default function TokenPage() {
                 subtitle="Structured vesting ensures market stability and long-term alignment"
                 className="mb-12"
               />
-              <div className="glass-card p-5 md:p-12 rounded-xl border border-#0361DA/10 bg-gradient-to-br from-#0361DA/5 to-blue-500/5">
-                <div className="w-full">
-                  <div className="glass-card p-5 md:p-8 rounded-xl border border-#0361DA/10 bg-gradient-to-br from-#0361DA/5 to-blue-500/5">
-                    <h3 className="text-xl font-bold mb-3">
-                      Cumulative Vesting Schedule
-                    </h3>
-                    <div className="w-full h-[400px]">
-                      <ResponsiveContainer width="100%" height="100%">
-                        <AreaChart
-                          data={cumulativeVestingData}
-                          margin={{
-                            top: 10,
-                            right: 30,
-                            left: 0,
-                            bottom: 0,
-                          }}
-                        >
-                          <XAxis dataKey="month" />
-                          <YAxis
-                            tickFormatter={(value) => `${value}M`}
-                            domain={[0, 500]}
-                            ticks={[0, 100, 200, 300, 400, 500]}
-                          />
-                          <Tooltip
-                            formatter={(value, name) => [`${value}M`, name]}
-                          />
-                          <Legend />
-                          <Area
-                            type="monotone"
-                            dataKey="Liquidity Pool (DEX)"
-                            stackId="1"
-                            stroke="#6366f1"
-                            fill="#6366f1"
-                            name="Liquidity Pool (DEX) - 152.25M"
-                          />
-                          <Area
-                            type="monotone"
-                            dataKey="Team & Advisors"
-                            stackId="1"
-                            stroke="#10b981"
-                            fill="#10b981"
-                            name="Team & Advisors - 62.25M"
-                          />
-                          <Area
-                            type="monotone"
-                            dataKey="Airdrops & Rewards"
-                            stackId="1"
-                            stroke="#8b5cf6"
-                            fill="#8b5cf6"
-                            name="Airdrops & Rewards - 92.25M"
-                          />
-                          <Area
-                            type="monotone"
-                            dataKey="Marketing & KOLs"
-                            stackId="1"
-                            stroke="#f59e0b"
-                            fill="#f59e0b"
-                            name="Marketing & KOLs - 42.25M"
-                          />
-                          <Area
-                            type="monotone"
-                            dataKey="Foundation"
-                            stackId="1"
-                            stroke="#3b82f6"
-                            fill="#3b82f6"
-                            name="Foundation - 27.25M"
-                          />
-                          <Area
-                            type="monotone"
-                            dataKey="Strategic Reserve"
-                            stackId="1"
-                            stroke="#3b82f6"
-                            fill="#3b82f6"
-                            name="Strategic Reserve - 27.25M"
-                          />
-                          <Area
-                            type="monotone"
-                            dataKey="DAO Treasury"
-                            stackId="1"
-                            stroke="#6366f1"
-                            fill="#6366f1"
-                            name="DAO Treasury - 22.25M"
-                          />
-                          <Area
-                            type="monotone"
-                            dataKey="Buyback & Burn"
-                            stackId="1"
-                            stroke="#f43f5e"
-                            fill="#f43f5e"
-                            name="Buyback & Burn - 44.75M"
-                          />
-                          <Area
-                            type="monotone"
-                            dataKey="Seed Investors"
-                            stackId="1"
-                            stroke="#f43f5e"
-                            fill="#f43f5e"
-                            name="Seed Investors - 14.75M"
-                          />
-                          <Area
-                            type="monotone"
-                            dataKey="Private Investors"
-                            stackId="1"
-                            stroke="#f43f5e"
-                            fill="#f43f5e"
-                            name="Private Investors - 14.75M"
-                          />
-                        </AreaChart>
-                      </ResponsiveContainer>
+              
+              <div className="glass-card p-8 rounded-xl border border-#0361DA/10 mt-16">
+                <h3 className="text-2xl font-bold mb-8">Token Distribution & Vesting Schedule</h3>
+                <div className="relative">
+                  {/* Graph Container */}
+                  <div className="w-full h-[400px] mb-8">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <AreaChart
+                        data={cumulativeVestingData}
+                        margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+                      >
+                        <XAxis dataKey="month" />
+                        <YAxis 
+                          domain={[0, 500]}
+                          ticks={[0, 100, 200, 300, 400, 500]}
+                          tickFormatter={(value) => `${value}M`}
+                        />
+                        <Tooltip formatter={(value, name) => [`${value}M`, name]} />
+                        <Area
+                          type="monotone"
+                          dataKey="Liquidity Pool (DEX)"
+                          stackId="1"
+                          stroke="#4F46E5"
+                          fill="#4F46E5"
+                        />
+                        <Area
+                          type="monotone"
+                          dataKey="Team & Advisors"
+                          stackId="1"
+                          stroke="#10B981"
+                          fill="#10B981"
+                        />
+                        <Area
+                          type="monotone"
+                          dataKey="Airdrops & Rewards"
+                          stackId="1"
+                          stroke="#8B5CF6"
+                          fill="#8B5CF6"
+                        />
+                        <Area
+                          type="monotone"
+                          dataKey="Marketing & KOLs"
+                          stackId="1"
+                          stroke="#F59E0B"
+                          fill="#F59E0B"
+                        />
+                        <Area
+                          type="monotone"
+                          dataKey="Foundation"
+                          stackId="1"
+                          stroke="#3B82F6"
+                          fill="#3B82F6"
+                        />
+                        <Area
+                          type="monotone"
+                          dataKey="Strategic Reserve"
+                          stackId="1"
+                          stroke="#60A5FA"
+                          fill="#60A5FA"
+                        />
+                        <Area
+                          type="monotone"
+                          dataKey="DAO Treasury"
+                          stackId="1"
+                          stroke="#93C5FD"
+                          fill="#93C5FD"
+                        />
+                        <Area
+                          type="monotone"
+                          dataKey="Buyback & Burn"
+                          stackId="1"
+                          stroke="#EF4444"
+                          fill="#EF4444"
+                        />
+                        <Area
+                          type="monotone"
+                          dataKey="Seed Investors"
+                          stackId="1"
+                          stroke="#F87171"
+                          fill="#F87171"
+                        />
+                        <Area
+                          type="monotone"
+                          dataKey="Pre-sale Investors"
+                          stackId="1"
+                          stroke="#FCA5A5"
+                          fill="#FCA5A5"
+                        />
+                      </AreaChart>
+                    </ResponsiveContainer>
+                  </div>
+                  
+                  {/* Legends Container */}
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-[#4F46E5] rounded-sm"></div>
+                      <span className="text-sm">Liquidity Pool (DEX) - 152.25M</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-[#10B981] rounded-sm"></div>
+                      <span className="text-sm">Team & Advisors - 62.25M</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-[#8B5CF6] rounded-sm"></div>
+                      <span className="text-sm">Airdrops & Rewards - 92.25M</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-[#F59E0B] rounded-sm"></div>
+                      <span className="text-sm">Marketing & KOLs - 42.25M</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-[#3B82F6] rounded-sm"></div>
+                      <span className="text-sm">Foundation - 27.25M</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-[#60A5FA] rounded-sm"></div>
+                      <span className="text-sm">Strategic Reserve - 27.25M</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-[#93C5FD] rounded-sm"></div>
+                      <span className="text-sm">DAO Treasury - 22.25M</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-[#EF4444] rounded-sm"></div>
+                      <span className="text-sm">Buyback & Burn - 44.75M</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-[#F87171] rounded-sm"></div>
+                      <span className="text-sm">Seed Investors - 14.75M</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-[#FCA5A5] rounded-sm"></div>
+                      <span className="text-sm">Pre-sale Investors - 14.75M</span>
                     </div>
                   </div>
                 </div>
@@ -849,7 +902,7 @@ export default function TokenPage() {
                     title={item.title}
                     description={item.description}
                     icon={item.icon}
-                    index={index + 1}
+                    hideLearnMore={true}
                   />
                 ))}
               </div>
@@ -879,7 +932,7 @@ export default function TokenPage() {
                 </p>
 
                 <div className="space-y-4 mb-8">
-                  <div className="flex justify-between pb-2 border-b border-#0361DA/10">
+                  <div className="flex justify-between pb-2 border-b border-neuro-500/10">
                     <div className="font-medium">Service</div>
                     <div className="font-medium">Fee (NLOV)</div>
                   </div>
@@ -921,11 +974,11 @@ export default function TokenPage() {
                 {faqData.map((item, index) => (
                   <Card
                     key={index}
-                    className="glass-card border border-#0361DA/10"
+                    className="glass-card border border-neuro-500/10"
                   >
                     <CardHeader>
                       <CardTitle className="flex items-start">
-                        <HelpCircle className="h-5 w-5 text-#0361DA mr-3 mt-0.5 flex-shrink-0" />
+                        <HelpCircle className="h-5 w-5 text-neuro-500 mr-3 mt-0.5 flex-shrink-0" />
                         <span>{item.question}</span>
                       </CardTitle>
                     </CardHeader>
@@ -937,7 +990,7 @@ export default function TokenPage() {
               </div>
             </div>
 
-            <div className="glass-card p-12 rounded-xl border border-#0361DA/10 max-w-3xl mx-auto">
+            <div className="glass-card p-12 rounded-xl border border-neuro-500/10 max-w-3xl mx-auto">
               <SectionHeading
                 title="Still Have Questions?"
                 subtitle="Our support team is here to help Or send an email to our dedicated support team:"
@@ -945,7 +998,7 @@ export default function TokenPage() {
               <div className="mt-8 text-center">
                 <a
                   href="mailto:support@neurolov.ai"
-                  className="text-#0361DA font-medium"
+                  className="text-neuro-500 font-medium"
                 >
                   support@neurolov.ai
                 </a>

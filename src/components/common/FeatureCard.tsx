@@ -11,6 +11,7 @@ interface FeatureCardProps {
   index?: number;
   onLearnMoreClick?: () => void;
   alwaysActive?: boolean;
+  hideLearnMore?: boolean;
 }
 
 export default function FeatureCard({
@@ -22,6 +23,7 @@ export default function FeatureCard({
   index = 0,
   alwaysActive = false,
   onLearnMoreClick,
+  hideLearnMore = false,
 }: FeatureCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -71,16 +73,18 @@ export default function FeatureCard({
       </h3>
       <p className="text-muted-foreground text-sm mb-4">{description}</p>
 
-      <div
-        onClick={onLearnMoreClick}
-        className={cn(
-          "flex items-center text-sm font-medium text-[#0361DA] cursor-pointer transition-opacity duration-500",
-          isHovered || alwaysActive ? "opacity-100" : "opacity-0"
-        )}
-      >
-        <span>Learn more</span>
-        <ArrowRight className="ml-1 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-      </div>
+      {!hideLearnMore && onLearnMoreClick && (
+        <div
+          onClick={onLearnMoreClick}
+          className={cn(
+            "flex items-center text-sm font-medium text-[#0361DA] cursor-pointer transition-opacity duration-500",
+            isHovered || alwaysActive ? "opacity-100" : "opacity-0"
+          )}
+        >
+          <span>Learn more</span>
+          <ArrowRight className="ml-1 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+        </div>
+      )}
 
       {/* Card number */}
       {index > 0 && (

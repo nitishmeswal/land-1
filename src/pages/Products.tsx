@@ -66,7 +66,7 @@ export default function ProductsPage() {
                 title="Decentralized Compute Infrastructure"
                 subtitle="Access powerful GPU resources on demand for AI training, inference, and compute-intensive tasks"
               />
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <FeatureCard
                   onLearnMoreClick={() => {
                     window.open(
@@ -76,22 +76,15 @@ export default function ProductsPage() {
                   title="GPU Marketplace"
                   description="Rent GPUs from a global network of providers at competitive rates. Pay only for what you use with flexible pricing options."
                   icon={<Server className="h-6 w-6" />}
-                  index={1}
                   alwaysActive={true}
+                  className="h-full"
                 />
                 <FeatureCard
                   title="Distributed Training"
                   description="Scale your AI model training across multiple nodes for faster results. Supports popular frameworks like PyTorch and TensorFlow."
                   icon={<Database className="h-6 w-6" />}
-                  index={2}
                   alwaysActive={true}
-                />
-                <FeatureCard
-                  title="Models Bag"
-                  description="Run your Models in isolated, secure containers. Full control over your environment with custom dependencies."
-                  icon={<Shield className="h-6 w-6" />}
-                  index={3}
-                  alwaysActive={true}
+                  className="h-full"
                 />
               </div>
             </div>
@@ -244,6 +237,7 @@ export default function ProductsPage() {
                   ]}
                   isNew
                   isBeta
+                  isComingSoon
                   redirectedPage="ai-models/text-to-3d"
                 />
                 <AIModelCard
@@ -258,6 +252,7 @@ export default function ProductsPage() {
                   ]}
                   isNew
                   isBeta
+                  isComingSoon
                   redirectedPage="ai-models/video"
                 />
                 <AIModelCard
@@ -272,6 +267,7 @@ export default function ProductsPage() {
                   ]}
                   isNew
                   isBeta
+                  isComingSoon
                   redirectedPage="ai-models/music-ai"
                 />
                 <AIModelCard
@@ -286,6 +282,7 @@ export default function ProductsPage() {
                   ]}
                   isNew
                   isBeta
+                  isComingSoon
                   redirectedPage="ai-models/deepfake"
                 />
               </div>
@@ -372,21 +369,18 @@ export default function ProductsPage() {
                   title="Distributed Processing"
                   description="Break complex tasks into smaller units for parallel processing across the network, reducing time and cost."
                   icon={<Server className="h-6 w-6" />}
-                  index={1}
                   alwaysActive={true}
                 />
                 <FeatureCard
                   title="Fault Tolerance"
                   description="Automatic node failover and task reassignment ensures your jobs complete even if individual nodes go offline."
                   icon={<Shield className="h-6 w-6" />}
-                  index={2}
                   alwaysActive={true}
                 />
                 <FeatureCard
                   title="Resource Optimization"
                   description="Intelligent scheduling allocates tasks to the most suitable nodes based on hardware capabilities and load."
                   icon={<Zap className="h-6 w-6" />}
-                  index={3}
                   alwaysActive={true}
                 />
               </div>
@@ -488,21 +482,18 @@ export default function ProductsPage() {
                   title="Workflow Automation"
                   description="Build end-to-end process automation with AI agents that can handle complex decision trees and business logic."
                   icon={<Bot className="h-6 w-6" />}
-                  index={1}
                   alwaysActive={true}
                 />
                 <FeatureCard
                   title="Data Analysis"
                   description="Deploy agents that continuously monitor data sources, generate insights, and alert you to important trends."
                   icon={<Database className="h-6 w-6" />}
-                  index={2}
                   alwaysActive={true}
                 />
                 <FeatureCard
                   title="Smart Contracts"
                   description="Create AI-powered smart contracts that can make decisions based on real-world data and complex conditions."
                   icon={<Code className="h-6 w-6" />}
-                  index={3}
                   alwaysActive={true}
                 />
               </div>

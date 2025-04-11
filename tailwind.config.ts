@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -158,6 +157,50 @@ export default {
 					'0%': { transform: 'translateY(-100%)', opacity: '0' },
 					'100%': { transform: 'translateY(0)', opacity: '1' }
 				},
+				"gradient-shift": {
+					"0%, 100%": { backgroundPosition: "0% 50%" },
+					"50%": { backgroundPosition: "100% 50%" },
+				},
+				"float-coin": {
+					"0%, 100%": { transform: "translateY(0px)" },
+					"50%": { transform: "translateY(-20px)" },
+				},
+				"float-slow": {
+					"0%, 100%": { transform: "translate(0, 0)" },
+					"50%": { transform: "translate(10px, -10px)" },
+				},
+				"float-medium": {
+					"0%, 100%": { transform: "translate(0, 0)" },
+					"50%": { transform: "translate(-15px, -15px)" },
+				},
+				"float-fast": {
+					"0%, 100%": { transform: "translate(0, 0)" },
+					"50%": { transform: "translate(20px, -5px)" },
+				},
+				"float-diagonal": {
+					"0%, 100%": { transform: "translate(0, 0)" },
+					"50%": { transform: "translate(15px, 15px)" },
+				},
+				"shadow-pulse": {
+					"0%, 100%": { 
+						transform: "translate(-50%, 50%) scale(0.9)",
+						opacity: "0.6"
+					},
+					"50%": { 
+						transform: "translate(-50%, 50%) scale(1.1)",
+						opacity: "0.3"
+					},
+				},
+				"shadow-stretch": {
+					"0%, 100%": { 
+						transform: "translateX(-50%) scaleX(1)",
+						opacity: "0.5"
+					},
+					"50%": { 
+						transform: "translateX(-50%) scaleX(0.8)",
+						opacity: "0.3"
+					},
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -177,6 +220,14 @@ export default {
 				'slide-in-right': 'slide-in-right 0.5s ease-out',
 				'slide-in-bottom': 'slide-in-bottom 0.5s ease-out',
 				'slide-in-top': 'slide-in-top 0.5s ease-out',
+				"gradient-shift": "gradient-shift 8s ease infinite",
+				"float-coin": "float-coin 3s ease-in-out infinite",
+				"float-slow": "float-slow 7s ease-in-out infinite",
+				"float-medium": "float-medium 5s ease-in-out infinite",
+				"float-fast": "float-fast 4s ease-in-out infinite",
+				"float-diagonal": "float-diagonal 6s ease-in-out infinite",
+				"shadow-pulse": "shadow-pulse 3s ease-in-out infinite",
+				"shadow-stretch": "shadow-stretch 3s ease-in-out infinite",
 			},
 			backdropBlur: {
 				xs: '2px',
