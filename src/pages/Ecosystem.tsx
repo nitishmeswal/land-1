@@ -158,18 +158,12 @@ export default function EcosystemPage() {
     >
       <SectionContainer className="pb-8">
         <Tabs value={tab} onValueChange={handleTabChange} className="w-full">
-          <div className="flex justify-center mb-2">
-            <TabsList className="inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground">
-              <TabsTrigger
-                value="roadmap"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
-              >
-                <Code className="mr-2 h-4 w-4" /> Roadmap
+          <div className="flex justify-center mb-16 md:mb-8">
+            <TabsList className="grid grid-cols-2 md:grid-cols-2 gap-10">
+              <TabsTrigger value="roadmap" className="px-6">
+                <Calendar className="mr-2 h-4 w-4" /> Roadmap
               </TabsTrigger>
-              <TabsTrigger
-                value="partners"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
-              >
+              <TabsTrigger value="partners" className="px-6">
                 <Users className="mr-2 h-4 w-4" /> Partners
               </TabsTrigger>
             </TabsList>

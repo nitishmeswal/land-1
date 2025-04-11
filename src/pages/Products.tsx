@@ -43,7 +43,7 @@ export default function ProductsPage() {
       <SectionContainer className="pb-16">
         <Tabs value={tab} onValueChange={handleTabChange} className="w-full">
           <div className="flex justify-center mb-16 md:mb-8">
-            <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2">
+            <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-3">
               <TabsTrigger value="compute" className="px-6">
                 <Cpu className="mr-2 h-4 w-4" /> Compute
               </TabsTrigger>

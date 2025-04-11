@@ -383,28 +383,16 @@ export default function TokenPage() {
         <Tabs value={tab} onValueChange={handleTabChange} className="w-full">
           <div className="flex justify-center mb-16 md:mb-8">
             <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              <TabsTrigger
-                value="overview"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
-              >
+              <TabsTrigger value="overview" className="px-6">
                 <BarChart3 className="mr-2 h-4 w-4" /> Overview
               </TabsTrigger>
-              <TabsTrigger
-                value="tokenomics"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
-              >
+              <TabsTrigger value="tokenomics" className="px-6">
                 <Coins className="mr-2 h-4 w-4" /> Tokenomics
               </TabsTrigger>
-              <TabsTrigger
-                value="utility"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
-              >
+              <TabsTrigger value="utility" className="px-6">
                 <Share2 className="mr-2 h-4 w-4" /> Utility
               </TabsTrigger>
-              <TabsTrigger
-                value="faq"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
-              >
+              <TabsTrigger value="faq" className="px-6">
                 <HelpCircle className="mr-2 h-4 w-4" /> FAQ
               </TabsTrigger>
             </TabsList>
