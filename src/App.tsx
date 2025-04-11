@@ -17,7 +17,7 @@ import WhitepaperPage from "./pages/Whitepaper";
 import PitchDeckPage from "./pages/pitch-deck";
 
 // GA4 ID
-const GA_ID = "G-FQDR1HDD3K";
+const GA_ID = "G-K7EZKD532N";
 
 // Declare gtag on window
 declare global {
