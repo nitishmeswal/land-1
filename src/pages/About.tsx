@@ -44,8 +44,7 @@ const teamMembers = [
     bio: "With 9+ years in blockchain and cryptography, I’ve built smart contracts, exchange engines, and authored key whitepapers.Expert in zk-proofs, Layer 2, and privacy tech, with on-chain analysis for 10+ major projects",
     image: "/cto.png",
     social: {
-      linkedin: "#",
-      github: "#",
+      github: "https://github.com/0xneox",
     },
   },
   {
