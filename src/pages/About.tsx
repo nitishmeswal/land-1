@@ -249,18 +249,12 @@ export default function AboutPage() {
     >
       <SectionContainer className="pb-8">
         <Tabs value={tab} onValueChange={handleTabChange} className="w-full">
-          <div className="flex justify-center mb-12 md:mb-8">
-            <TabsList className="inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground">
-              <TabsTrigger
-                value="team"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
-              >
+          <div className="flex justify-center mb-16 md:mb-8">
+            <TabsList className="grid grid-cols-2 md:grid-cols-2 gap-10">
+              <TabsTrigger value="team" className="px-6">
                 <Users className="mr-2 h-4 w-4" /> Team
               </TabsTrigger>
-              <TabsTrigger
-                value="mission"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
-              >
+              <TabsTrigger value="mission" className="px-6">
                 <BookOpen className="mr-2 h-4 w-4" /> Mission
               </TabsTrigger>
             </TabsList>
@@ -278,7 +272,7 @@ export default function AboutPage() {
                 {teamMembers.map((member, index) => (
                   <div
                     key={index}
-                    className="glass-card p-6 rounded-xl border border-neuro-500/10 hover:border-neuro-500/30 transition-all duration-300 relative min-h-[320px]"
+                    className="glass-card p-6 rounded-xl border border-#0361DA/10 hover:border-#0361DA/30 transition-all duration-300 relative min-h-[320px]"
                   >
                     <div className="flex items-center space-x-4 mb-4">
                       <div className="w-24 h-24 rounded-full overflow-hidden">
@@ -299,16 +293,6 @@ export default function AboutPage() {
                     </p>
 
                     <div className="absolute bottom-6 left-6 flex items-center space-x-3">
-                      {member.social.twitter && (
-                        <a
-                          href={member.social.twitter}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-muted-foreground hover:text-blue-400 transition-colors"
-                        >
-                          <Twitter className="h-5 w-5" />
-                        </a>
-                      )}
                       {member.social.linkedin && (
                         <a
                           href={member.social.linkedin}
@@ -345,7 +329,7 @@ export default function AboutPage() {
                 {advisors.map((advisor, index) => (
                   <div
                     key={index}
-                    className="glass-card p-6 rounded-xl border border-neuro-500/10 hover:border-neuro-500/30 transition-all duration-300 relative min-h-[320px]"
+                    className="glass-card p-6 rounded-xl border border-white/10 hover:border-#0361DA/20 transition-all duration-300 relative min-h-[320px]"
                   >
                     <div className="flex items-center space-x-4 mb-4">
                       <div className="w-24 h-24 rounded-full overflow-hidden">
@@ -356,7 +340,9 @@ export default function AboutPage() {
                         />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold">{advisor.name}</h3>
+                        <h3 className="text-lg font-semibold">
+                          {advisor.name}
+                        </h3>
                         <p className="text-sm text-blue-400">{advisor.role}</p>
                       </div>
                     </div>
@@ -391,7 +377,7 @@ export default function AboutPage() {
                   align={useIsMobile() ? "center" : "left"}
                 />
 
-                <div className="glass-card p-6 rounded-xl border border-neuro-500/10 bg-gradient-to-br from-neuro-500/5 to-blue-500/5 mb-6">
+                <div className="glass-card p-6 rounded-xl border border-#0361DA/10 bg-gradient-to-br from-#0361DA/5 to-blue-500/5 mb-6">
                   <p className="text-xl italic text-center">
                     "To create a decentralized network that makes AI computing
                     accessible to everyone, empowering innovation while
@@ -408,7 +394,7 @@ export default function AboutPage() {
                   sizes, not just large corporations.
                 </p>
                 {useIsMobile() && (
-                  <div className="h-px w-full bg-gradient-to-r from-transparent via-neuro-500/20 to-transparent my-5"></div>
+                  <div className="h-px w-full bg-gradient-to-r from-transparent via-#0361DA/20 to-transparent my-5"></div>
                 )}
 
                 <p className="text-muted-foreground mb-6 text-center md:text-left px-2 md:px-0">
@@ -419,7 +405,7 @@ export default function AboutPage() {
                   democratizing access.
                 </p>
                 {useIsMobile() && (
-                  <div className="h-px w-full bg-gradient-to-r from-transparent via-neuro-500/20 to-transparent my-5"></div>
+                  <div className="h-px w-full bg-gradient-to-r from-transparent via-#0361DA/20 to-transparent my-5"></div>
                 )}
                 <p className="text-muted-foreground text-center md:text-left px-2 md:px-0">
                   We're committed to an open, transparent approach to
@@ -431,7 +417,7 @@ export default function AboutPage() {
 
               <div className="md:w-1/2">
                 <div className="relative">
-                  <div className="absolute -top-10 -right-10 w-40 h-40 bg-neuro-500/30 rounded-full blur-3xl opacity-40"></div>
+                  <div className="absolute -top-10 -right-10 w-40 h-40 bg-#0361DA/30 rounded-full blur-3xl opacity-40"></div>
                   <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/30 rounded-full blur-3xl opacity-40"></div>
 
                   <img

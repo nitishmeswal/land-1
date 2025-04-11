@@ -73,7 +73,7 @@ const tokenReleaseData = [
     "Buyback and Burn": 0,
     "Strategic Reserve": 0,
     "DAO Treasury": 1112.5,
-    "Foundation": 0
+    Foundation: 0,
   },
   {
     month: "Jun 2025",
@@ -86,8 +86,8 @@ const tokenReleaseData = [
     "Buyback and Burn": "Dynamic",
     "Strategic Reserve": 0,
     "DAO Treasury": 21137.5,
-    "Foundation": 757.639
-  }
+    Foundation: 757.639,
+  },
 ];
 
 const vestingScheduleData = [
@@ -262,12 +262,12 @@ const cumulativeVestingData = [
     "Team & Advisors": 0,
     "Airdrops & Rewards": 4.61,
     "Marketing & KOLs": 2.11,
-    "Foundation": 0,
+    Foundation: 0,
     "Strategic Reserve": 0,
     "DAO Treasury": 1.11,
     "Buyback & Burn": 0,
     "Seed Investors": 0.37,
-    "Private Investors": 0.74
+    "Private Investors": 0.74,
   },
   {
     month: "Jun '25",
@@ -275,12 +275,12 @@ const cumulativeVestingData = [
     "Team & Advisors": 0,
     "Airdrops & Rewards": 32.29,
     "Marketing & KOLs": 14.79,
-    "Foundation": 0,
+    Foundation: 0,
     "Strategic Reserve": 0,
     "DAO Treasury": 7.78,
     "Buyback & Burn": 4.47,
     "Seed Investors": 5.9,
-    "Private Investors": 5.9
+    "Private Investors": 5.9,
   },
   {
     month: "Dec '25",
@@ -288,12 +288,12 @@ const cumulativeVestingData = [
     "Team & Advisors": 0,
     "Airdrops & Rewards": 59.96,
     "Marketing & KOLs": 27.46,
-    "Foundation": 0,
+    Foundation: 0,
     "Strategic Reserve": 0,
     "DAO Treasury": 14.46,
     "Buyback & Burn": 11.19,
     "Seed Investors": 10.33,
-    "Private Investors": 10.33
+    "Private Investors": 10.33,
   },
   {
     month: "Jun '26",
@@ -301,12 +301,12 @@ const cumulativeVestingData = [
     "Team & Advisors": 18.68,
     "Airdrops & Rewards": 78.41,
     "Marketing & KOLs": 35.91,
-    "Foundation": 8.18,
+    Foundation: 8.18,
     "Strategic Reserve": 0,
     "DAO Treasury": 18.91,
     "Buyback & Burn": 22.38,
     "Seed Investors": 14.75,
-    "Private Investors": 14.75
+    "Private Investors": 14.75,
   },
   {
     month: "Dec '26",
@@ -314,12 +314,12 @@ const cumulativeVestingData = [
     "Team & Advisors": 40.46,
     "Airdrops & Rewards": 92.25,
     "Marketing & KOLs": 42.25,
-    "Foundation": 17.71,
+    Foundation: 17.71,
     "Strategic Reserve": 0,
     "DAO Treasury": 22.25,
     "Buyback & Burn": 33.56,
     "Seed Investors": 14.75,
-    "Private Investors": 14.75
+    "Private Investors": 14.75,
   },
   {
     month: "May '27",
@@ -327,13 +327,13 @@ const cumulativeVestingData = [
     "Team & Advisors": 62.25,
     "Airdrops & Rewards": 92.25,
     "Marketing & KOLs": 42.25,
-    "Foundation": 27.25,
+    Foundation: 27.25,
     "Strategic Reserve": 27.25,
     "DAO Treasury": 22.25,
     "Buyback & Burn": 44.75,
     "Seed Investors": 14.75,
-    "Private Investors": 14.75
-  }
+    "Private Investors": 14.75,
+  },
 ];
 
 export default function TokenPage() {
@@ -375,28 +375,16 @@ export default function TokenPage() {
         <Tabs value={tab} onValueChange={handleTabChange} className="w-full">
           <div className="flex justify-center mb-16 md:mb-8">
             <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              <TabsTrigger
-                value="overview"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
-              >
+              <TabsTrigger value="overview" className="px-6">
                 <BarChart3 className="mr-2 h-4 w-4" /> Overview
               </TabsTrigger>
-              <TabsTrigger
-                value="tokenomics"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
-              >
+              <TabsTrigger value="tokenomics" className="px-6">
                 <Coins className="mr-2 h-4 w-4" /> Tokenomics
               </TabsTrigger>
-              <TabsTrigger
-                value="utility"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
-              >
+              <TabsTrigger value="utility" className="px-6">
                 <Share2 className="mr-2 h-4 w-4" /> Utility
               </TabsTrigger>
-              <TabsTrigger
-                value="faq"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
-              >
+              <TabsTrigger value="faq" className="px-6">
                 <HelpCircle className="mr-2 h-4 w-4" /> FAQ
               </TabsTrigger>
             </TabsList>
@@ -406,7 +394,7 @@ export default function TokenPage() {
           <TabsContent value="overview" className="space-y-20">
             <div className="flex flex-col md:flex-row gap-16 items-center  my-12">
               <div className="md:w-1/2 flex flex-col items-center justify-center">
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-neuro-500/10 text-neuro-500 text-sm font-medium mb-4">
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-#0361DA/10 text-#0361DA text-sm font-medium mb-4">
                   <Coins className="mr-2 h-4 w-4" />
                   <span>NLOV Token</span>
                 </div>
@@ -420,7 +408,7 @@ export default function TokenPage() {
 
                 <div className="space-y-4 mb-8 ml-4">
                   <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-#0361DA mr-3 mt-0.5" />
                     <div>
                       <h4 className="font-medium">Network Access</h4>
                       <p className="text-sm text-muted-foreground">
@@ -430,7 +418,7 @@ export default function TokenPage() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-#0361DA mr-3 mt-0.5" />
                     <div>
                       <h4 className="font-medium">Provider Rewards</h4>
                       <p className="text-sm text-muted-foreground">
@@ -440,7 +428,7 @@ export default function TokenPage() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-#0361DA mr-3 mt-0.5" />
                     <div>
                       <h4 className="font-medium">Governance Rights</h4>
                       <p className="text-sm text-muted-foreground">
@@ -449,7 +437,7 @@ export default function TokenPage() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-#0361DA mr-3 mt-0.5" />
                     <div>
                       <h4 className="font-medium">Staking Benefits</h4>
                       <p className="text-sm text-muted-foreground">
@@ -485,7 +473,7 @@ export default function TokenPage() {
 
               <div className="relative">
                 {/* Timeline line */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-neuro-500/20"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-#0361DA/20"></div>
 
                 {/* Timeline items */}
                 <div className="space-y-16">
@@ -507,8 +495,8 @@ export default function TokenPage() {
                       </div>
                     </div>
                     <div className="md:w-1/2 md:pl-16">
-                      <div className="text-xl font-bold text-neuro-500">
-                        Q4 2024
+                      <div className="text-xl font-bold text-#0361DA">
+                        Q4 2023
                       </div>
                     </div>
                   </div>
@@ -530,8 +518,8 @@ export default function TokenPage() {
                       </div>
                     </div>
                     <div className="md:w-1/2 md:pl-16">
-                      <div className="text-xl font-bold text-neuro-500">
-                        Q1 2025
+                      <div className="text-xl font-bold text-#0361DA">
+                        Q1 2024
                       </div>
                     </div>
                   </div>
@@ -553,8 +541,8 @@ export default function TokenPage() {
                       </div>
                     </div>
                     <div className="md:w-1/2 md:pl-16">
-                      <div className="text-xl font-bold text-neuro-500">
-                        Q1 2025
+                      <div className="text-xl font-bold text-#0361DA">
+                        Q1 2024
                       </div>
                     </div>
                   </div>
@@ -579,8 +567,8 @@ export default function TokenPage() {
                       </div>
                     </div>
                     <div className="md:w-1/2 md:pl-16">
-                      <div className="text-xl font-bold text-neuro-500">
-                        Q2 2025
+                      <div className="text-xl font-bold text-#0361DA">
+                        Q2 2024
                       </div>
                     </div>
                   </div>
@@ -602,8 +590,8 @@ export default function TokenPage() {
                       </div>
                     </div>
                     <div className="md:w-1/2 md:pl-16">
-                      <div className="text-xl font-bold text-neuro-500">
-                        Q2 2025
+                      <div className="text-xl font-bold text-#0361DA">
+                        Q2 2024
                       </div>
                     </div>
                   </div>
@@ -625,8 +613,8 @@ export default function TokenPage() {
                       </div>
                     </div>
                     <div className="md:w-1/2 md:pl-16">
-                      <div className="text-xl font-bold text-neuro-500">
-                        Q2 2025
+                      <div className="text-xl font-bold text-#0361DA">
+                        Q2 2024
                       </div>
                     </div>
                   </div>
@@ -651,8 +639,8 @@ export default function TokenPage() {
                       </div>
                     </div>
                     <div className="md:w-1/2 md:pl-16">
-                      <div className="text-xl font-bold text-neuro-500">
-                        Q3 2025
+                      <div className="text-xl font-bold text-#0361DA">
+                        Q3 2024
                       </div>
                     </div>
                   </div>
@@ -672,7 +660,7 @@ export default function TokenPage() {
                 />
                 <div className="space-y-6 mb-8">
                   <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-#0361DA mr-3 mt-0.5" />
                     <div>
                       <h4 className="font-medium">
                         Total Supply: 500,000,000 NLOV
@@ -680,7 +668,7 @@ export default function TokenPage() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-#0361DA mr-3 mt-0.5" />
                     <div>
                       <h4 className="font-medium">
                         Token Standard: Solana SPL
@@ -694,7 +682,7 @@ export default function TokenPage() {
               </div>
 
               <div className="md:w-[60%] w-full">
-                <div className="glass-card p-5 md:p- md:flex-none flex flex-col items-center justify-center rounded-xl border border-neuro-500/10 bg-gradient-to-br from-neuro-500/5 to-blue-500/5">
+                <div className="glass-card p-5 md:p- md:flex-none flex flex-col items-center justify-center rounded-xl border border-#0361DA/10 bg-gradient-to-br from-#0361DA/5 to-blue-500/5">
                   <h3 className="text-xl font-bold mb-3">Token Distribution</h3>
                   <div className="aspect-square md:aspect-video flex md:w-full w-[105%] justify-center mx-auto mb-3 md:mb-5">
                     <ResponsiveContainer width={"100%"} height="100%">
@@ -729,9 +717,9 @@ export default function TokenPage() {
                 subtitle="Structured vesting ensures market stability and long-term alignment"
                 className="mb-12"
               />
-              <div className="glass-card p-5 md:p-12 rounded-xl border border-neuro-500/10 bg-gradient-to-br from-neuro-500/5 to-blue-500/5">
+              <div className="glass-card p-5 md:p-12 rounded-xl border border-#0361DA/10 bg-gradient-to-br from-#0361DA/5 to-blue-500/5">
                 <div className="w-full">
-                  <div className="glass-card p-5 md:p-8 rounded-xl border border-neuro-500/10 bg-gradient-to-br from-neuro-500/5 to-blue-500/5">
+                  <div className="glass-card p-5 md:p-8 rounded-xl border border-#0361DA/10 bg-gradient-to-br from-#0361DA/5 to-blue-500/5">
                     <h3 className="text-xl font-bold mb-3">
                       Cumulative Vesting Schedule
                     </h3>
@@ -752,7 +740,9 @@ export default function TokenPage() {
                             domain={[0, 500]}
                             ticks={[0, 100, 200, 300, 400, 500]}
                           />
-                          <Tooltip formatter={(value, name) => [`${value}M`, name]} />
+                          <Tooltip
+                            formatter={(value, name) => [`${value}M`, name]}
+                          />
                           <Legend />
                           <Area
                             type="monotone"
@@ -889,7 +879,7 @@ export default function TokenPage() {
                 </p>
 
                 <div className="space-y-4 mb-8">
-                  <div className="flex justify-between pb-2 border-b border-neuro-500/10">
+                  <div className="flex justify-between pb-2 border-b border-#0361DA/10">
                     <div className="font-medium">Service</div>
                     <div className="font-medium">Fee (NLOV)</div>
                   </div>
@@ -931,11 +921,11 @@ export default function TokenPage() {
                 {faqData.map((item, index) => (
                   <Card
                     key={index}
-                    className="glass-card border border-neuro-500/10"
+                    className="glass-card border border-#0361DA/10"
                   >
                     <CardHeader>
                       <CardTitle className="flex items-start">
-                        <HelpCircle className="h-5 w-5 text-neuro-500 mr-3 mt-0.5 flex-shrink-0" />
+                        <HelpCircle className="h-5 w-5 text-#0361DA mr-3 mt-0.5 flex-shrink-0" />
                         <span>{item.question}</span>
                       </CardTitle>
                     </CardHeader>
@@ -947,7 +937,7 @@ export default function TokenPage() {
               </div>
             </div>
 
-            <div className="glass-card p-12 rounded-xl border border-neuro-500/10 max-w-3xl mx-auto">
+            <div className="glass-card p-12 rounded-xl border border-#0361DA/10 max-w-3xl mx-auto">
               <SectionHeading
                 title="Still Have Questions?"
                 subtitle="Our support team is here to help Or send an email to our dedicated support team:"
@@ -955,7 +945,7 @@ export default function TokenPage() {
               <div className="mt-8 text-center">
                 <a
                   href="mailto:support@neurolov.ai"
-                  className="text-neuro-500 font-medium"
+                  className="text-#0361DA font-medium"
                 >
                   support@neurolov.ai
                 </a>

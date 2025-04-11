@@ -158,18 +158,12 @@ export default function EcosystemPage() {
     >
       <SectionContainer className="pb-8">
         <Tabs value={tab} onValueChange={handleTabChange} className="w-full">
-          <div className="flex justify-center mb-2">
-            <TabsList className="inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground">
-              <TabsTrigger
-                value="roadmap"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
-              >
-                <Code className="mr-2 h-4 w-4" /> Roadmap
+          <div className="flex justify-center mb-16 md:mb-8">
+            <TabsList className="grid grid-cols-2 md:grid-cols-2 gap-10">
+              <TabsTrigger value="roadmap" className="px-6">
+                <Calendar className="mr-2 h-4 w-4" /> Roadmap
               </TabsTrigger>
-              <TabsTrigger
-                value="partners"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
-              >
+              <TabsTrigger value="partners" className="px-6">
                 <Users className="mr-2 h-4 w-4" /> Partners
               </TabsTrigger>
             </TabsList>
@@ -185,13 +179,13 @@ export default function EcosystemPage() {
 
               <div className="relative">
                 {/* Timeline line */}
-                <div className="absolute left-[26px] top-0 bottom-0 w-px bg-neuro-500/20 md:hidden"></div>
+                <div className="absolute left-[26px] top-0 bottom-0 w-px bg-[#0361DA]/20 md:hidden"></div>
 
                 <div className="space-y-8">
                   {roadmapData.map((phase, index) => (
                     <div
                       key={index}
-                      className="glass-card rounded-xl border border-neuro-500/10 overflow-hidden"
+                      className="glass-card rounded-xl border border-[#0361DA]/10 overflow-hidden"
                     >
                       <div
                         className={`py-4 px-6 ${
@@ -287,8 +281,8 @@ export default function EcosystemPage() {
                   window.open("https://app.neurolov.ai/partner", "_blank")
                 }
               >
-                <Plus className="w-10 h-10 text-neuro-500/50 group-hover:text-neuro-500 mb-3" />
-                <p className="text-sm font-medium text-center text-neuro-500/70 group-hover:text-neuro-500">
+                <Plus className="w-10 h-10 text-[#0361DA]/50 group-hover:text-[#0361DA] mb-3" />
+                <p className="text-sm font-medium text-center text-[#0361DA]/70 group-hover:text-[#0361DA]">
                   Next could be you
                 </p>
               </div>
@@ -301,7 +295,7 @@ export default function EcosystemPage() {
 
               <div className="flex flex-col md:flex-row gap-12 items-center">
                 <div className="md:w-1/2 flex flex-col">
-                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-neuro-500/10 text-neuro-500 text-sm font-medium mb-4 md:self-start self-center">
+                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#0361DA]/10 text-[#0361DA] text-sm font-medium mb-4 md:self-start self-center">
                     <span>Join the Revolution</span>
                   </div>
 
@@ -313,7 +307,7 @@ export default function EcosystemPage() {
 
                   <div className="space-y-4 mb-8 md:ml-0 ml-5">
                     <div className="flex items-start">
-                      <div className="flex-shrink-0 w-8 h-8 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500 mr-3">
+                      <div className="flex-shrink-0 w-8 h-8 bg-[#0361DA]/10 rounded-full flex items-center justify-center text-[#0361DA] mr-3">
                         1
                       </div>
                       <div>
@@ -324,7 +318,7 @@ export default function EcosystemPage() {
                       </div>
                     </div>
                     <div className="flex items-start">
-                      <div className="flex-shrink-0 w-8 h-8 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500 mr-3">
+                      <div className="flex-shrink-0 w-8 h-8 bg-[#0361DA]/10 rounded-full flex items-center justify-center text-[#0361DA] mr-3">
                         2
                       </div>
                       <div>
@@ -337,7 +331,7 @@ export default function EcosystemPage() {
                       </div>
                     </div>
                     <div className="flex items-start">
-                      <div className="flex-shrink-0 w-8 h-8 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500 mr-3">
+                      <div className="flex-shrink-0 w-8 h-8 bg-[#0361DA]/10 rounded-full flex items-center justify-center text-[#0361DA] mr-3">
                         3
                       </div>
                       <div>
@@ -363,7 +357,7 @@ export default function EcosystemPage() {
 
                 <div className="md:w-1/2">
                   <div className="relative">
-                    <div className="absolute -top-10 -right-10 w-40 h-40 bg-neuro-500/30 rounded-full blur-3xl opacity-40"></div>
+                    <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#0361DA]/30 rounded-full blur-3xl opacity-40"></div>
                     <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/30 rounded-full blur-3xl opacity-40"></div>
 
                     <img

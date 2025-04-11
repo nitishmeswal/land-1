@@ -28,9 +28,9 @@ export default function FeatureCard({
   return (
     <div
       className={cn(
-        "glass-card p-7 rounded-xl transition-all duration-500 group border border-neuro-500/10",
+        "glass-card p-7 rounded-xl transition-all duration-500 group border border-[#0361DA]/10",
         isHovered || alwaysActive
-          ? "translate-y-[-8px] shadow-neon border-neuro-500/30"
+          ? "translate-y-[-8px] shadow-neon border-[#0361DA]/30"
           : "translate-y-0",
         className
       )}
@@ -40,7 +40,7 @@ export default function FeatureCard({
       {icon && (
         <div
           className={cn(
-            "inline-flex items-center justify-center p-3 rounded-lg bg-gradient-to-br from-neuro-500/20 to-blue-500/10 text-neuro-500 mb-4 transition-transform duration-500",
+            "inline-flex items-center justify-center p-3 rounded-lg bg-gradient-to-br from-[#0361DA]/20 to-blue-500/10 text-[#0361DA] mb-4 transition-transform duration-500",
             isHovered || alwaysActive ? "scale-110" : ""
           )}
         >
@@ -64,7 +64,7 @@ export default function FeatureCard({
       <h3
         className={cn(
           "text-lg font-semibold mb-2 transition-colors duration-300",
-          isHovered || alwaysActive ? "text-neuro-500" : ""
+          isHovered || alwaysActive ? "text-[#0361DA]" : ""
         )}
       >
         {title}
@@ -74,7 +74,7 @@ export default function FeatureCard({
       <div
         onClick={onLearnMoreClick}
         className={cn(
-          "flex items-center text-sm font-medium text-neuro-500 cursor-pointer transition-opacity duration-500",
+          "flex items-center text-sm font-medium text-[#0361DA] cursor-pointer transition-opacity duration-500",
           isHovered || alwaysActive ? "opacity-100" : "opacity-0"
         )}
       >
@@ -86,7 +86,7 @@ export default function FeatureCard({
       {index > 0 && (
         <div
           className={cn(
-            "absolute -top-2 -right-2 w-6 h-6 rounded-full bg-gradient-to-r from-neuro-500 to-neuro-400 text-white text-xs flex items-center justify-center transition-all duration-500 transform",
+            "absolute -top-2 -right-2 w-6 h-6 rounded-full bg-gradient-to-r from-[#0361DA] to-[#0361DA] text-white text-xs flex items-center justify-center transition-all duration-500 transform",
             isHovered || alwaysActive
               ? "opacity-100 rotate-0"
               : "opacity-0 -rotate-12"

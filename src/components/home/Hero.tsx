@@ -47,8 +47,8 @@ export default function Hero() {
       >
         <div className="max-w-3xl mx-auto text-center">
           {/* Subtitle tag */}
-          <div className="inline-flex items-center rounded-full bg-neuro-500/10 px-3 py-1 text-sm font-medium mb-6 reveal reveal-delay-1">
-            <span className="text-neuro-500">
+          <div className="inline-flex items-center rounded-full bg-[#0361DA]/10 px-3 py-1 text-sm font-medium mb-6 reveal reveal-delay-1">
+            <span className="text-[#0361DA]">
               Presale Coming Soon • Limited Allocation
             </span>
           </div>
@@ -56,7 +56,7 @@ export default function Hero() {
           {/* Main headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight mb-6 reveal reveal-delay-2">
             Neurolov
-            <span className="text-neuro-500">.ai</span>
+            <span className="text-[#0361DA]">.ai</span>
           </h1>
 
           {/* Subheadline */}
@@ -78,20 +78,20 @@ export default function Hero() {
 
           {/* Stats Section */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 reveal reveal-delay-5">
-            <div className="glass-card p-8 rounded-xl border border-neuro-500/10 bg-blue-500/10 backdrop-blur-sm hover:border-neuro-500/30 transition-all duration-300 hover:-translate-y-1">
-              <div className="text-5xl font-bold text-neuro-500 mb-3">200+</div>
+            <div className="glass-card p-8 rounded-xl border border-[#0361DA]/10 bg-blue-500/10 backdrop-blur-sm hover:border-[#0361DA]/30 transition-all duration-300 hover:-translate-y-1">
+              <div className="text-5xl font-bold text-[#0361DA] mb-3">200+</div>
               <div className="text-muted-foreground text-sm">GPUs</div>
             </div>
 
-            <div className="glass-card p-8 rounded-xl border border-neuro-500/10 bg-blue-500/10 backdrop-blur-sm hover:border-neuro-500/30 transition-all duration-300 hover:-translate-y-1">
-              <div className="text-5xl font-bold text-neuro-500 mb-3">100K</div>
+            <div className="glass-card p-8 rounded-xl border border-[#0361DA]/10 bg-blue-500/10 backdrop-blur-sm hover:border-[#0361DA]/30 transition-all duration-300 hover:-translate-y-1">
+              <div className="text-5xl font-bold text-[#0361DA] mb-3">100K</div>
               <div className="text-muted-foreground text-sm">
                 AI Content Made
               </div>
             </div>
 
-            <div className="glass-card p-8 rounded-xl border border-neuro-500/10 bg-blue-500/10 backdrop-blur-sm hover:border-neuro-500/30 transition-all duration-300 hover:-translate-y-1">
-              <div className="text-5xl font-bold text-neuro-500 mb-3">
+            <div className="glass-card p-8 rounded-xl border border-[#0361DA]/10 bg-blue-500/10 backdrop-blur-sm hover:border-[#0361DA]/30 transition-all duration-300 hover:-translate-y-1">
+              <div className="text-5xl font-bold text-[#0361DA] mb-3">
                 35,000+
               </div>
               <div className="text-muted-foreground text-sm">
