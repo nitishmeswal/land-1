@@ -266,23 +266,23 @@ export default function EcosystemPage() {
               {filteredPartners.map((partner, index) => (
                 <div
                   key={`${partner.name}-${index}`}
-                  className="flex-shrink-0 w-full max-w-36 md:max-w-44 mt-10 aspect-square bg-blue-500/10 backdrop-blur-sm rounded-lg p-4 border border-blue-500/20 hover:border-blue-500/30 transition-all duration-300 flex items-center justify-center"
+                  className="flex-shrink-0 w-full max-w-36 md:max-w-44 mt-10 aspect-square bg-[#0361DA]/90  rounded-lg p-4 border border-[#0361DA]/60 hover:border-[#0361DA]/70 transition-all duration-300 flex items-center justify-center"
                 >
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className=" max-h-[70%] max-w-[70%] md:max-h-[80%] md:max-w-[80%] object-contain opacity-70 hover:opacity-100 transition-opacity"
+                    className=" max-h-[70%] max-w-[70%] md:max-h-[80%] md:max-w-[80%] object-contain opacity-100  transition-all hover:scale-105 "
                   />
                 </div>
               ))}
               <div
-                className="flex-shrink-0 w-full max-w-36 md:max-w-44 mt-10 aspect-square bg-blue-500/10 backdrop-blur-sm rounded-lg p-4 border border-blue-500/20 hover:border-blue-500/30 transition-all duration-300 flex flex-col items-center justify-center cursor-pointer group"
+                className="flex-shrink-0 w-full max-w-36 md:max-w-44 mt-10 aspect-square bg-[#0361DA]/90 rounded-lg p-4 border border-[#0361DA]/60 hover:border-[#0361DA]/70 transition-all duration-300 flex flex-col items-center justify-center cursor-pointer group"
                 onClick={() =>
                   window.open("https://app.neurolov.ai/partner", "_blank")
                 }
               >
-                <Plus className="w-10 h-10 text-[#0361DA]/50 group-hover:text-[#0361DA] mb-3" />
-                <p className="text-sm font-medium text-center text-[#0361DA]/70 group-hover:text-[#0361DA]">
+                <Plus className="w-10 h-10 group-hover:text-white/75 text-white mb-3" />
+                <p className="text-sm font-medium text-center group-hover:text-white/75 text-white ">
                   Next could be you
                 </p>
               </div>

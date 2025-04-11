@@ -56,7 +56,7 @@ export default function AIModelCard({
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
 
         {/* Badges */}
-        <div className="absolute top-4 left-4 flex gap-2">
+        {/* <div className="absolute top-4 left-4 flex gap-2">
           {isNew && (
             <Badge variant="default" className="bg-blue-500 hover:bg-blue-600">
               NEW
@@ -70,7 +70,7 @@ export default function AIModelCard({
               BETA
             </Badge>
           )}
-        </div>
+        </div> */}
       </div>
 
       {/* Content */}
@@ -103,7 +103,7 @@ export default function AIModelCard({
         {/* Launch button */}
         <div className="absolute bottom-6 left-6">
           <Button
-            className="w-fit px-6 bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white transition-all duration-300 ease-in-out"
+            className="w-fit px-6 bg-gradient-to-r from-[#0361DA] to-blue-600 hover:from-blue-700 hover:to-blue-900 text-white transition-all duration-300 ease-in-out"
             onClick={() =>
               window.open(`https://app.neurolov.ai/${redirectedPage}`, "_blank")
             }
