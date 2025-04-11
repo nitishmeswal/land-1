@@ -128,18 +128,13 @@ const roadmapData = [
 const partners = [
   { name: "Trade Flow", logo: "/partner/Trade Flow Logo Set-03.png" },
   { name: "Solpen", logo: "/partner/solpen_logo (1).jpg" },
-  { name: "Linklayer AI", logo: "/partner/Linklayer AI logo.jpeg" },
-  { name: "Pars Network", logo: "/partner/Pars Network.jpg" },
   { name: "PropBlocc", logo: "/partner/PropBlocc New Logo FIX-04.png" },
   { name: "POPP", logo: "/partner/POPP LOGO.png" },
   { name: "Victus Global", logo: "/partner/Victus global LOGO.jpeg" },
-  { name: "Supersol", logo: "/partner/Supersol LOGO.jpeg" },
   { name: "SoluAI", logo: "/partner/SoluAI logo.png" },
   { name: "PowerAI", logo: "/partner/PowerAI.jpg" },
   { name: "Rivalz Network", logo: "/partner/Rivalz Network.png" },
-  { name: "REI Network", logo: "/partner/REI Network.jpg" },
   { name: "Life's Meta", logo: "/partner/Life_s Meta.jpeg" },
-  { name: "CRTAI Network", logo: "/partner/CRTAI NETWORK.png" },
   { name: "Orbler", logo: "/partner/Orbler.AVIF" },
   { name: "Kalp", logo: "/partner/Kalp.png" },
   { name: "Coin Avatar", logo: "/partner/Coin Avatar.JPG" },
@@ -150,7 +145,6 @@ const partners = [
   { name: "DMail.io", logo: "/partner/DMail.io.JPG" },
   { name: "Intract", logo: "/partner/Intract.JPG" },
   { name: "Bitgertbrise", logo: "/partner/Bitgertbrise.jpg" },
-  { name: "Fomoin", logo: "/partner/Fomoin.jpg" },
   { name: "CESS", logo: "/partner/CESS LOGO.png" },
 ];
 
