@@ -96,7 +96,7 @@ export default function ProductsPage() {
               </div>
             </div>
 
-            <div className="glass-card p-8 rounded-xl border border-neuro-500/10">
+            <div className="glass-card p-8 rounded-xl border border-#0361DA/10">
               <div className="flex flex-col md:flex-row gap-8 items-center">
                 <div className="md:w-1/2">
                   <h3 className="text-2xl font-bold mb-4">Become a Provider</h3>
@@ -132,7 +132,7 @@ export default function ProductsPage() {
               </div>
             </div>
 
-            <div className="glass-card p-8 rounded-xl border border-neuro-500/10">
+            <div className="glass-card p-8 rounded-xl border border-#0361DA/10">
               <h3 className="text-2xl font-bold mb-6">
                 Available GPU Specifications
               </h3>
@@ -291,7 +291,7 @@ export default function ProductsPage() {
               </div>
             </div>
 
-            <div className="glass-card p-8 rounded-xl border border-neuro-500/10">
+            <div className="glass-card p-8 rounded-xl border border-#0361DA/10">
               <h3 className="text-2xl font-bold mb-6">Model Specifications</h3>
               <div className="overflow-x-auto">
                 <table className="w-full">
@@ -413,7 +413,7 @@ export default function ProductsPage() {
                 </div>
               </div>
 
-              <div className="relative z-10 glass-card p-8 rounded-xl border border-neuro-500/10 max-w-lg mx-auto">
+              <div className="relative z-10 glass-card p-8 rounded-xl border border-#0361DA/10 max-w-lg mx-auto">
                 <h3 className="text-2xl font-bold mb-4">
                   Monetize Your Hardware
                 </h3>
@@ -424,7 +424,7 @@ export default function ProductsPage() {
                 </p>
                 <div className="space-y-4 mb-6">
                   <div className="flex items-center gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500">
+                    <div className="flex-shrink-0 w-12 h-12 bg-#0361DA/10 rounded-full flex items-center justify-center text-#0361DA">
                       1
                     </div>
                     <div>
@@ -435,7 +435,7 @@ export default function ProductsPage() {
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500">
+                    <div className="flex-shrink-0 w-12 h-12 bg-#0361DA/10 rounded-full flex items-center justify-center text-#0361DA">
                       2
                     </div>
                     <div>
@@ -446,7 +446,7 @@ export default function ProductsPage() {
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500">
+                    <div className="flex-shrink-0 w-12 h-12 bg-#0361DA/10 rounded-full flex items-center justify-center text-#0361DA">
                       3
                     </div>
                     <div>
@@ -508,7 +508,7 @@ export default function ProductsPage() {
               </div>
             </div>
 
-            <div className="glass-card p-8 rounded-xl border border-neuro-500/10">
+            <div className="glass-card p-8 rounded-xl border border-#0361DA/10">
               <div className="flex flex-col md:flex-row gap-8 items-center">
                 <div className="md:w-1/2">
                   <img
@@ -528,9 +528,9 @@ export default function ProductsPage() {
                   </p>
                   <ul className="space-y-3 mb-6">
                     <li className="flex items-start">
-                      <div className="flex-shrink-0 bg-neuro-500/10 rounded-full p-1 mr-3 mt-1">
+                      <div className="flex-shrink-0 bg-#0361DA/10 rounded-full p-1 mr-3 mt-1">
                         <svg
-                          className="h-3 w-3 text-neuro-500"
+                          className="h-3 w-3 text-#0361DA"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
@@ -544,9 +544,9 @@ export default function ProductsPage() {
                       <span className="text-sm">User Friendly</span>
                     </li>
                     <li className="flex items-start">
-                      <div className="flex-shrink-0 bg-neuro-500/10 rounded-full p-1 mr-3 mt-1">
+                      <div className="flex-shrink-0 bg-#0361DA/10 rounded-full p-1 mr-3 mt-1">
                         <svg
-                          className="h-3 w-3 text-neuro-500"
+                          className="h-3 w-3 text-#0361DA"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
@@ -562,9 +562,9 @@ export default function ProductsPage() {
                       </span>
                     </li>
                     <li className="flex items-start">
-                      <div className="flex-shrink-0 bg-neuro-500/10 rounded-full p-1 mr-3 mt-1">
+                      <div className="flex-shrink-0 bg-#0361DA/10 rounded-full p-1 mr-3 mt-1">
                         <svg
-                          className="h-3 w-3 text-neuro-500"
+                          className="h-3 w-3 text-#0361DA"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >

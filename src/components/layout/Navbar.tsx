@@ -258,7 +258,7 @@ export default function Navbar() {
               >
                 <a href="mailto:support@neurolov.ai">Contact Us</a>
               </Button>
-              <Button className="rounded-full bg-neuro-500 hover:bg-neuro-600 text-white">
+              <Button className="rounded-full bg-[#0361DA] hover:bg-[#0255c1] text-white">
                 Try Testnet
               </Button>
             </div>
@@ -282,7 +282,8 @@ export default function Navbar() {
         </Container>
 
         {/* Global animation styles */}
-        <style jsx global>{`
+        <style>
+          {`
           @keyframes fadeSlideIn {
             from {
               opacity: 0;
@@ -293,7 +294,8 @@ export default function Navbar() {
               transform: translateY(0);
             }
           }
-        `}</style>
+        `}
+        </style>
       </nav>
       <div
         ref={menuRef}
@@ -373,7 +375,7 @@ export default function Navbar() {
                 <a href="mailto:support@neurolov.ai">Contact Us</a>
               </Button>
               <Button
-                className="w-full rounded-full bg-neuro-500 hover:bg-neuro-600 text-white"
+                className="w-full rounded-full bg-[#0361DA] hover:bg-[#0255c1] text-white"
                 onClick={closeMenu}
               >
                 Try Testnet

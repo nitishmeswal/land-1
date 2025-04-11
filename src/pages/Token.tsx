@@ -402,7 +402,7 @@ export default function TokenPage() {
           <TabsContent value="overview" className="space-y-20">
             <div className="flex flex-col md:flex-row gap-16 items-center  my-12">
               <div className="md:w-1/2 flex flex-col items-center justify-center">
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-neuro-500/10 text-neuro-500 text-sm font-medium mb-4">
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-#0361DA/10 text-#0361DA text-sm font-medium mb-4">
                   <Coins className="mr-2 h-4 w-4" />
                   <span>NLOV Token</span>
                 </div>
@@ -416,7 +416,7 @@ export default function TokenPage() {
 
                 <div className="space-y-4 mb-8 ml-4">
                   <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-#0361DA mr-3 mt-0.5" />
                     <div>
                       <h4 className="font-medium">Network Access</h4>
                       <p className="text-sm text-muted-foreground">
@@ -426,7 +426,7 @@ export default function TokenPage() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-#0361DA mr-3 mt-0.5" />
                     <div>
                       <h4 className="font-medium">Provider Rewards</h4>
                       <p className="text-sm text-muted-foreground">
@@ -436,7 +436,7 @@ export default function TokenPage() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-#0361DA mr-3 mt-0.5" />
                     <div>
                       <h4 className="font-medium">Governance Rights</h4>
                       <p className="text-sm text-muted-foreground">
@@ -445,7 +445,7 @@ export default function TokenPage() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-#0361DA mr-3 mt-0.5" />
                     <div>
                       <h4 className="font-medium">Staking Benefits</h4>
                       <p className="text-sm text-muted-foreground">
@@ -481,7 +481,7 @@ export default function TokenPage() {
 
               <div className="relative">
                 {/* Timeline line */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-neuro-500/20"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-#0361DA/20"></div>
 
                 {/* Timeline items */}
                 <div className="space-y-16">
@@ -503,7 +503,7 @@ export default function TokenPage() {
                       </div>
                     </div>
                     <div className="md:w-1/2 md:pl-16">
-                      <div className="text-xl font-bold text-neuro-500">
+                      <div className="text-xl font-bold text-#0361DA">
                         Q4 2023
                       </div>
                     </div>
@@ -526,7 +526,7 @@ export default function TokenPage() {
                       </div>
                     </div>
                     <div className="md:w-1/2 md:pl-16">
-                      <div className="text-xl font-bold text-neuro-500">
+                      <div className="text-xl font-bold text-#0361DA">
                         Q1 2024
                       </div>
                     </div>
@@ -549,7 +549,7 @@ export default function TokenPage() {
                       </div>
                     </div>
                     <div className="md:w-1/2 md:pl-16">
-                      <div className="text-xl font-bold text-neuro-500">
+                      <div className="text-xl font-bold text-#0361DA">
                         Q1 2024
                       </div>
                     </div>
@@ -575,7 +575,7 @@ export default function TokenPage() {
                       </div>
                     </div>
                     <div className="md:w-1/2 md:pl-16">
-                      <div className="text-xl font-bold text-neuro-500">
+                      <div className="text-xl font-bold text-#0361DA">
                         Q2 2024
                       </div>
                     </div>
@@ -598,7 +598,7 @@ export default function TokenPage() {
                       </div>
                     </div>
                     <div className="md:w-1/2 md:pl-16">
-                      <div className="text-xl font-bold text-neuro-500">
+                      <div className="text-xl font-bold text-#0361DA">
                         Q2 2024
                       </div>
                     </div>
@@ -621,7 +621,7 @@ export default function TokenPage() {
                       </div>
                     </div>
                     <div className="md:w-1/2 md:pl-16">
-                      <div className="text-xl font-bold text-neuro-500">
+                      <div className="text-xl font-bold text-#0361DA">
                         Q2 2024
                       </div>
                     </div>
@@ -647,7 +647,7 @@ export default function TokenPage() {
                       </div>
                     </div>
                     <div className="md:w-1/2 md:pl-16">
-                      <div className="text-xl font-bold text-neuro-500">
+                      <div className="text-xl font-bold text-#0361DA">
                         Q3 2024
                       </div>
                     </div>
@@ -668,7 +668,7 @@ export default function TokenPage() {
                 />
                 <div className="space-y-6 mb-8">
                   <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-#0361DA mr-3 mt-0.5" />
                     <div>
                       <h4 className="font-medium">
                         Total Supply: 500,000,000 NLOV
@@ -676,7 +676,7 @@ export default function TokenPage() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-#0361DA mr-3 mt-0.5" />
                     <div>
                       <h4 className="font-medium">
                         Token Standard: Solana SPL
@@ -690,7 +690,7 @@ export default function TokenPage() {
               </div>
 
               <div className="md:w-[60%] w-full">
-                <div className="glass-card p-5 md:p- md:flex-none flex flex-col items-center justify-center rounded-xl border border-neuro-500/10 bg-gradient-to-br from-neuro-500/5 to-blue-500/5">
+                <div className="glass-card p-5 md:p- md:flex-none flex flex-col items-center justify-center rounded-xl border border-#0361DA/10 bg-gradient-to-br from-#0361DA/5 to-blue-500/5">
                   <h3 className="text-xl font-bold mb-3">Token Distribution</h3>
                   <div className="aspect-square md:aspect-video flex md:w-full w-[105%] justify-center mx-auto mb-3 md:mb-5">
                     <ResponsiveContainer width={"100%"} height="100%">
@@ -739,9 +739,9 @@ export default function TokenPage() {
                 subtitle="Structured vesting ensures market stability and long-term alignment"
                 className="mb-12"
               />
-              <div className="glass-card p-5 md:p-12 rounded-xl border border-neuro-500/10 bg-gradient-to-br from-neuro-500/5 to-blue-500/5">
+              <div className="glass-card p-5 md:p-12 rounded-xl border border-#0361DA/10 bg-gradient-to-br from-#0361DA/5 to-blue-500/5">
                 <div className="w-full">
-                  <div className="glass-card p-5 md:p-8 rounded-xl border border-neuro-500/10 bg-gradient-to-br from-neuro-500/5 to-blue-500/5">
+                  <div className="glass-card p-5 md:p-8 rounded-xl border border-#0361DA/10 bg-gradient-to-br from-#0361DA/5 to-blue-500/5">
                     <h3 className="text-xl font-bold mb-3">
                       Cumulative Vesting Schedule
                     </h3>
@@ -958,7 +958,7 @@ export default function TokenPage() {
                 </p>
 
                 <div className="space-y-4 mb-8">
-                  <div className="flex justify-between pb-2 border-b border-neuro-500/10">
+                  <div className="flex justify-between pb-2 border-b border-#0361DA/10">
                     <div className="font-medium">Service</div>
                     <div className="font-medium">Fee (NLOV)</div>
                   </div>
@@ -1000,11 +1000,11 @@ export default function TokenPage() {
                 {faqData.map((item, index) => (
                   <Card
                     key={index}
-                    className="glass-card border border-neuro-500/10"
+                    className="glass-card border border-#0361DA/10"
                   >
                     <CardHeader>
                       <CardTitle className="flex items-start">
-                        <HelpCircle className="h-5 w-5 text-neuro-500 mr-3 mt-0.5 flex-shrink-0" />
+                        <HelpCircle className="h-5 w-5 text-#0361DA mr-3 mt-0.5 flex-shrink-0" />
                         <span>{item.question}</span>
                       </CardTitle>
                     </CardHeader>
@@ -1016,7 +1016,7 @@ export default function TokenPage() {
               </div>
             </div>
 
-            <div className="glass-card p-12 rounded-xl border border-neuro-500/10 max-w-3xl mx-auto">
+            <div className="glass-card p-12 rounded-xl border border-#0361DA/10 max-w-3xl mx-auto">
               <SectionHeading
                 title="Still Have Questions?"
                 subtitle="Our support team is here to help Or send an email to our dedicated support team:"
@@ -1024,7 +1024,7 @@ export default function TokenPage() {
               <div className="mt-8 text-center">
                 <a
                   href="mailto:support@neurolov.ai"
-                  className="text-neuro-500 font-medium"
+                  className="text-#0361DA font-medium"
                 >
                   support@neurolov.ai
                 </a>

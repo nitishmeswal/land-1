@@ -111,11 +111,11 @@ export default function ResourcesPage() {
             {resources.map((resource, index) => (
               <Card
                 key={index}
-                className="group hover:border-neuro-500/50 transition-colors"
+                className="group hover:border-[#0361DA]/50 transition-colors"
               >
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="p-2 rounded-lg bg-neuro-500/10 text-neuro-500">
+                    <div className="p-2 rounded-lg bg-[#0361DA]/10 text-[#0361DA]">
                       {resource.icon}
                     </div>
                     <CardTitle>{resource.title}</CardTitle>

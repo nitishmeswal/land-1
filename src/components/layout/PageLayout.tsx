@@ -32,8 +32,8 @@ export default function PageLayout({
           {/* Background elements */}
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-dots-light bg-[size:20px_20px] opacity-20"></div>
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neuro-500/20 to-transparent"></div>
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neuro-500/20 to-transparent"></div>
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0361DA]/20 to-transparent"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0361DA]/20 to-transparent"></div>
           </div>
 
           <div className="text-center max-w-3xl mx-auto">

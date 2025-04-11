@@ -27,12 +27,12 @@ const ProductCard = ({
   return (
     <div
       className={cn(
-        "glass-card p-7 rounded-xl transition-all duration-500 relative border border-neuro-500/10 reveal",
+        "glass-card p-7 rounded-xl transition-all duration-500 relative border border-[#0361DA]/10 reveal",
         delay,
         className
       )}
     >
-      <div className="inline-flex items-center justify-center p-3 rounded-lg bg-gradient-to-br from-neuro-500/20 to-blue-500/10 text-neuro-500 mb-4">
+      <div className="inline-flex items-center justify-center p-3 rounded-lg bg-gradient-to-br from-[#0361DA]/20 to-blue-500/10 text-[#0361DA] mb-4">
         {icon}
       </div>
       <h3 className="text-lg font-semibold mb-2">{title}</h3>
@@ -43,7 +43,7 @@ const ProductCard = ({
         className="group p-0 h-auto hover:bg-transparent"
         onClick={() => (window.location.href = url)}
       >
-        <span className="flex items-center text-sm font-medium text-neuro-500">
+        <span className="flex items-center text-sm font-medium text-[#0361DA]">
           Learn more
           <ArrowRight className="ml-1 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
         </span>
@@ -119,14 +119,14 @@ export default function ProductHighlights() {
       {/* Background patterns */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-dots-light bg-[size:20px_20px] opacity-20"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neuro-500/20 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0361DA]/20 to-transparent"></div>
       </div>
 
       <div className="text-center mb-16">
         <div>
           <h2 className="text-4xl font-bold mb-6 reveal reveal-delay-1 relative inline-block">
             Discover the Neurolov Advantage
-            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-neuro-500 to-blue-500 rounded-full"></div>
+            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-[#0361DA] to-blue-500 rounded-full"></div>
           </h2>
         </div>
 
@@ -140,7 +140,7 @@ export default function ProductHighlights() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
         {/* Connecting lines between cards (desktop only) */}
-        <div className="absolute top-1/2 left-0 right-0 h-px bg-neuro-500/10 hidden lg:block"></div>
+        <div className="absolute top-1/2 left-0 right-0 h-px bg-[#0361DA]/10 hidden lg:block"></div>
 
         {products.map((product, index) => (
           <ProductCard
@@ -162,9 +162,7 @@ export default function ProductHighlights() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button
-            className="bg-[#0361DA] hover:bg-[#0361DA]/80 text-white group"
-          >
+          <Button className="bg-[#0361DA] hover:bg-[#0361DA]/80 text-white group">
             <span className="flex items-center">
               Explore All Products
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
