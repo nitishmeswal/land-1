@@ -3,6 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import ContactForm, { ContactFormData } from "@/components/common/ContactForm";
 
 const navItems = {
   products: {
@@ -251,13 +257,35 @@ export default function Navbar() {
 
             {/* Desktop Action Buttons */}
             <div className="hidden md:flex items-center space-x-4">
-              <Button
-                variant="ghost"
-                className="rounded-full text-white/90 hover:text-white hover:bg-white/10"
-                asChild
-              >
-                <a href="mailto:support@neurolov.ai">Contact Us</a>
-              </Button>
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    className="rounded-full text-white/90 hover:text-white hover:bg-white/10"
+                  >
+                    Contact Us
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent
+                  className="w-80 bg-[#0361DA] border-white/10 p-4 z-[100]"
+                  side="bottom"
+                  align="end"
+                >
+                  <div className="text-lg font-semibold text-white mb-4">
+                    Contact Us
+                  </div>
+                  <ContactForm
+                    onSubmit={async (data: ContactFormData) => {
+                      // Here you can handle the form submission
+                      console.log("Form submitted:", data);
+                      // You can add your email sending logic here
+                      alert(
+                        "Thank you for your message. We'll get back to you soon!"
+                      );
+                    }}
+                  />
+                </PopoverContent>
+              </Popover>
               <Button className="rounded-full bg-[#0361DA] hover:bg-[#0255c1] text-white">
                 Try Testnet
               </Button>
@@ -366,14 +394,36 @@ export default function Navbar() {
                   : "none",
               }}
             >
-              <Button
-                variant="ghost"
-                className="w-full rounded-full text-white/90 hover:text-white hover:bg-white/10"
-                asChild
-                onClick={closeMenu}
-              >
-                <a href="mailto:support@neurolov.ai">Contact Us</a>
-              </Button>
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    className="w-full rounded-full text-white/90 hover:text-white hover:bg-white/10"
+                  >
+                    Contact Us
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent
+                  className="w-80 bg-[#0361DA] border-white/10 p-4 z-[100]"
+                  side="top"
+                  align="center"
+                >
+                  <div className="text-lg font-semibold text-white mb-4">
+                    Contact Us
+                  </div>
+                  <ContactForm
+                    onSubmit={async (data: ContactFormData) => {
+                      // Here you can handle the form submission
+                      console.log("Form submitted:", data);
+                      // You can add your email sending logic here
+                      alert(
+                        "Thank you for your message. We'll get back to you soon!"
+                      );
+                      closeMenu();
+                    }}
+                  />
+                </PopoverContent>
+              </Popover>
               <Button
                 className="w-full rounded-full bg-[#0361DA] hover:bg-[#0255c1] text-white"
                 onClick={closeMenu}
