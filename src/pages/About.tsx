@@ -275,11 +275,11 @@ export default function AboutPage() {
                     className="glass-card p-6 rounded-xl border border-#0361DA/10 hover:border-#0361DA/30 transition-all duration-300 relative min-h-[320px]"
                   >
                     <div className="flex items-center space-x-4 mb-4">
-                      <div className="w-16 h-16 rounded-full overflow-hidden">
+                      <div className="w-24 h-24 rounded-full overflow-hidden">
                         <img
                           src={member.image}
                           alt={member.name}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                          className="w-full h-full object-cover object-center"
                         />
                       </div>
                       <div>
@@ -325,22 +325,24 @@ export default function AboutPage() {
                 subtitle="Industry experts guiding our strategic direction"
               />
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
                 {advisors.map((advisor, index) => (
                   <div
                     key={index}
                     className="glass-card p-6 rounded-xl border border-white/10 hover:border-#0361DA/20 transition-all duration-300 relative min-h-[320px]"
                   >
                     <div className="flex items-center space-x-4 mb-4">
-                      <div className="w-16 h-16 rounded-full overflow-hidden">
+                      <div className="w-24 h-24 rounded-full overflow-hidden">
                         <img
                           src={advisor.image}
                           alt={advisor.name}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                          className="w-full h-full object-cover object-center"
                         />
                       </div>
-                      <div className="flex-1">
-                        <h3 className="text-lg font-medium">{advisor.name}</h3>
+                      <div>
+                        <h3 className="text-lg font-semibold">
+                          {advisor.name}
+                        </h3>
                         <p className="text-sm text-blue-400">{advisor.role}</p>
                       </div>
                     </div>

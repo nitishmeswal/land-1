@@ -86,7 +86,7 @@ export default function ProductHighlights() {
         "Rent GPUs for AI training and inference. Affordable, scalable compute power for all.",
       icon: <Cpu className="h-6 w-6" />,
       delay: "reveal-delay-1",
-      url: "/products",
+      url: "/products/compute",
     },
     {
       title: "AI Models",
@@ -94,7 +94,7 @@ export default function ProductHighlights() {
         "Generate images, text, audio, code, and video with ease. Unleash creativity with Neurolov.",
       icon: <Code className="h-6 w-6" />,
       delay: "reveal-delay-2",
-      url: "/products",
+      url: "/products/ai-models",
     },
     {
       title: "Swarm Network",
@@ -102,7 +102,7 @@ export default function ProductHighlights() {
         "Connect devices, solve compute tasks, and earn NLOV. Turn idle hardware into income.",
       icon: <Network className="h-6 w-6" />,
       delay: "reveal-delay-3",
-      url: "/products",
+      url: "/products/swarm",
     },
     {
       title: "AI Agents",
@@ -110,7 +110,7 @@ export default function ProductHighlights() {
         "Autonomous AI solutions for decentralized apps. The future of blockchain automation.",
       icon: <Bot className="h-6 w-6" />,
       delay: "reveal-delay-4",
-      url: "/products",
+      url: "/products/agents",
     },
   ];
 
