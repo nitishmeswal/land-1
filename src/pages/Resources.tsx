@@ -20,7 +20,13 @@ import {
   GraduationCap,
   Github,
 } from "lucide-react";
-import { DiscordIcon, TelegramIcon, DevToIcon, MediumIcon, IndieHackersIcon } from "@/components/icons/social-icons";
+import {
+  DiscordIcon,
+  TelegramIcon,
+  DevToIcon,
+  MediumIcon,
+  IndieHackersIcon,
+} from "@/components/icons/social-icons";
 
 const resources = [
   {
@@ -28,43 +34,43 @@ const resources = [
     description: "Research papers and technical specifications",
     icon: <Book className="h-6 w-6" />,
     links: [
-      { 
-        text: "Whitepaper", 
-        url: "/resources/whitepaper.pdf",
-        icon: <FileText className="h-4 w-4" />
+      {
+        text: "Whitepaper",
+        url: "/resources/White Paper.pdf",
+        icon: <FileText className="h-4 w-4" />,
       },
-      { 
-        text: "Tokenomics", 
-        url: "/resources/tokenomics.pdf",
-        icon: <FileText className="h-4 w-4" />
+      {
+        text: "Tokenomics",
+        url: "/resources/Tokonomics.pdf",
+        icon: <FileText className="h-4 w-4" />,
       },
-      { 
-        text: "Pitch Deck", 
-        url: "/resources/pitchdeck.pdf",
-        icon: <FileText className="h-4 w-4" />
-      },
+      // {
+      //   text: "Pitch Deck",
+      //   url: "/resources/pitchdeck.pdf",
+      //   icon: <FileText className="h-4 w-4" />
+      // },
     ],
   },
-  
+
   {
     title: "Community",
     description: "Join our community and get support",
     icon: <MessageSquare className="h-6 w-6" />,
     links: [
-      { 
-        text: "Discord Community", 
+      {
+        text: "Discord Community",
         url: "https://discord.gg/neurolov",
-        icon: <DiscordIcon className="text-[#5865F2]" />
+        icon: <DiscordIcon className="text-[#5865F2]" />,
       },
-      { 
-        text: "Developer's Community", 
+      {
+        text: "Developer's Community",
         url: "https://dev.to/neurolov_ai_",
-        icon: <DevToIcon className="text-black dark:text-white" />
+        icon: <DevToIcon className="text-black dark:text-white" />,
       },
-      { 
-        text: "Telegram Community", 
+      {
+        text: "Telegram Community",
         url: "https://t.me/neurolovcommunity",
-        icon: <TelegramIcon className="text-[#26A5E4]" />
+        icon: <TelegramIcon className="text-[#26A5E4]" />,
       },
     ],
   },
@@ -73,24 +79,23 @@ const resources = [
     description: "Latest news, updates, and technical articles",
     icon: <Newspaper className="h-6 w-6" />,
     links: [
-      { 
-        text: "Medium", 
+      {
+        text: "Medium",
         url: "https://neurolov.medium.com/",
-        icon: <MediumIcon className="text-black dark:text-white" />
+        icon: <MediumIcon className="text-black dark:text-white" />,
       },
-      { 
-        text: "Indie Hacker", 
+      {
+        text: "Indie Hacker",
         url: "https://www.indiehackers.com/Neurolovai",
-        icon: <IndieHackersIcon className="text-[#0E2439]" />
+        icon: <IndieHackersIcon className="text-[#0E2439]" />,
       },
-      { 
-        text: "Dev.to", 
-        url: "https://dev.to/neurolov_ai_",
-        icon: <DevToIcon className="text-black dark:text-white" />
-      },
+      // {
+      //   text: "Dev.to",
+      //   url: "https://dev.to/neurolov_ai_",
+      //   icon: <DevToIcon className="text-black dark:text-white" />,
+      // },
     ],
   },
-  
 ];
 
 export default function ResourcesPage() {
