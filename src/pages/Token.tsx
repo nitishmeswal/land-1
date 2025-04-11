@@ -236,7 +236,7 @@ const faqData = [
   {
     question: "What is the total supply of NLOV?",
     answer:
-      "The total supply of NLOV is capped at 1 billion tokens. No additional tokens will be minted after reaching this cap, making NLOV a deflationary asset over time.",
+      "The total supply of NLOV is capped at 500 Million tokens. No additional tokens will be minted after reaching this cap, making NLOV a deflationary asset over time.",
   },
   {
     question: "Is NLOV compatible with existing wallets?",
