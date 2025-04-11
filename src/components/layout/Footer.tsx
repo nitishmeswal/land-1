@@ -1,47 +1,47 @@
-import { Container } from '@/components/ui/Container';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Link } from 'react-router-dom';
+import { Container } from "@/components/ui/Container";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Link } from "react-router-dom";
 
 const footerLinks = [
   {
-    title: 'Products',
+    title: "Products",
     links: [
-      { label: 'Compute', href: '/products#compute' },
-      { label: 'AI Models', href: '/products#ai-models' },
-      { label: 'Neuro Swarm', href: '/products#swarm' },
-      { label: 'AI Agents', href: '/products#agents' },
+      { label: "Compute", href: "/products/compute" },
+      { label: "AI Models", href: "/products/ai-models" },
+      { label: "Neuro Swarm", href: "/products/swarm" },
+      { label: "AI Agents", href: "/products/agents" },
     ],
   },
   {
-    title: 'Token',
+    title: "Token",
     links: [
-      { label: '$NLOV', href: '/token' },
-      { label: 'Tokenomics', href: '/token#tokenomics' },
-      { label: 'Utility', href: '/token#utility' },
-      { label: 'FAQ', href: '/token#faq' },
+      { label: "$NLOV", href: "/token/overview" },
+      { label: "Tokenomics", href: "/token/tokenomics" },
+      { label: "Utility", href: "/token/utility" },
+      { label: "FAQ", href: "/token/faq" },
     ],
   },
   {
-    title: 'Ecosystem',
+    title: "Ecosystem",
     links: [
-      { label: 'Roadmap', href: '/ecosystem#roadmap' },
-      { label: 'Partner', href: '/ecosystem#partners' },
+      { label: "Roadmap", href: "/ecosystem/roadmap" },
+      { label: "Partners", href: "/ecosystem/partners" },
     ],
   },
   {
-    title: 'Resources',
+    title: "Resources",
     links: [
-      { label: 'Technical Papers', href: '/resources' },
-      { label: 'Community', href: '/resources#docs' },
-      { label: 'Blog & Updates', href: '/whitepaper' },
+      { label: "Technical Papers", href: "/resources" },
+      { label: "Community", href: "/resources/docs" },
+      { label: "Blog & Updates", href: "/whitepaper" },
     ],
   },
   {
-    title: 'About',
+    title: "About",
     links: [
-      { label: 'Team', href: '/about#team' },
-      { label: 'Mission', href: '/about#mission' },
+      { label: "Team", href: "/about/team" },
+      { label: "Mission", href: "/about/mission" },
     ],
   },
 ];
@@ -53,48 +53,64 @@ export default function Footer() {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-8 sm:gap-4">
           {/* Logo and description */}
           <div className="col-span-2 sm:col-span-3 lg:col-span-2 lg:pr-8 mb-6 lg:mb-0">
-            <Link to="/" className="flex items-center space-x-2 text-lg font-bold">
+            <Link
+              to="/"
+              className="flex items-center space-x-2 text-lg font-bold"
+            >
               <img src="/og-image.png" alt="Neurolov" className="h-7 w-auto" />
               <span className="hero-text-gradient">Neurolov</span>
             </Link>
             <p className="mt-3 text-sm text-muted-foreground max-w-xs">
-              Empower your AI journey with decentralized computing, content generation, and blockchain rewards.
+              Empower your AI journey with decentralized computing, content
+              generation, and blockchain rewards.
             </p>
-            
+
             <div className="mt-6 flex items-center gap-6">
-              <a 
-                href="https://twitter.com/neurolov" 
-                target="_blank" 
+              <a
+                href="https://twitter.com/neurolov"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-white transition-colors"
               >
-                <img src="/icons/twitter.svg" alt="Twitter" className="h-5 w-5" />
+                <img
+                  src="/icons/twitter.svg"
+                  alt="Twitter"
+                  className="h-5 w-5"
+                />
               </a>
-              <a 
-                href="https://discord.gg/Bu7BnZ85kb" 
-                target="_blank" 
+              <a
+                href="https://discord.gg/Bu7BnZ85kb"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-white transition-colors"
               >
-                <img src="/icons/discord.svg" alt="Discord" className="h-5 w-5" />
+                <img
+                  src="/icons/discord.svg"
+                  alt="Discord"
+                  className="h-5 w-5"
+                />
               </a>
-              <a 
-                href="https://t.me/neurolovcommunity" 
-                target="_blank" 
+              <a
+                href="https://t.me/neurolovcommunity"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-white transition-colors"
               >
-                <img src="/icons/telegram.svg" alt="Telegram" className="h-5 w-5" />
+                <img
+                  src="/icons/telegram.svg"
+                  alt="Telegram"
+                  className="h-5 w-5"
+                />
               </a>
-              <a 
-                href="mailto:support@neurolov.ai" 
+              <a
+                href="mailto:support@neurolov.ai"
                 className="text-muted-foreground hover:text-white transition-colors"
               >
                 <img src="/icons/mail.svg" alt="Email" className="h-5 w-5" />
               </a>
             </div>
           </div>
-          
+
           {/* Footer links */}
           {footerLinks.map((group, idx) => (
             <div key={idx} className="px-2">
@@ -102,7 +118,7 @@ export default function Footer() {
               <ul className="space-y-2.5">
                 {group.links.map((link, linkIdx) => (
                   <li key={linkIdx}>
-                    <Link 
+                    <Link
                       to={link.href}
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors block"
                     >
@@ -114,7 +130,7 @@ export default function Footer() {
             </div>
           ))}
         </div>
-        
+
         <div className="mt-12 border-t border-border pt-6 text-center text-sm text-muted-foreground">
           <p> {new Date().getFullYear()} Neurolov.ai. All rights reserved.</p>
         </div>

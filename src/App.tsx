@@ -92,10 +92,14 @@ const AppRoutes = () => {
     <Routes>
       <Route path="/" element={<Index />} />
       <Route path="/products" element={<ProductsPage />} />
+      <Route path="/products/:tab" element={<ProductsPage />} />
       <Route path="/token" element={<TokenPage />} />
+      <Route path="/token/:tab" element={<TokenPage />} />
       <Route path="/ecosystem" element={<EcosystemPage />} />
+      <Route path="/ecosystem/:tab" element={<EcosystemPage />} />
       <Route path="/resources" element={<ResourcesPage />} />
       <Route path="/about" element={<AboutPage />} />
+      <Route path="/about/:tab" element={<AboutPage />} />
       <Route path="/whitepaper" element={<WhitepaperPage />} />
       <Route path="/pitch-deck" element={<PitchDeckPage />} />
       <Route path="*" element={<NotFound />} />

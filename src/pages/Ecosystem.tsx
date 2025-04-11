@@ -31,6 +31,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useParams, useNavigate } from "react-router-dom";
 
 // Roadmap data
 const roadmapData = [
@@ -140,9 +141,15 @@ const partners = [
 ];
 
 export default function EcosystemPage() {
+  const { tab = "roadmap" } = useParams();
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("roadmap");
   const [partnerFilter, setPartnerFilter] = useState("all");
   const filteredPartners = partners;
+
+  const handleTabChange = (value: string) => {
+    navigate(`/ecosystem/${value}`);
+  };
 
   return (
     <PageLayout
@@ -150,7 +157,7 @@ export default function EcosystemPage() {
       subtitle="The growing Neurolov network of partners, integrations, and development milestones"
     >
       <SectionContainer className="pb-8">
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+        <Tabs value={tab} onValueChange={handleTabChange} className="w-full">
           <div className="flex justify-center mb-2">
             <TabsList className="inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground">
               <TabsTrigger
@@ -160,10 +167,10 @@ export default function EcosystemPage() {
                 <Code className="mr-2 h-4 w-4" /> Roadmap
               </TabsTrigger>
               <TabsTrigger
-                value="partner"
+                value="partners"
                 className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
               >
-                <Users className="mr-2 h-4 w-4" /> Partner
+                <Users className="mr-2 h-4 w-4" /> Partners
               </TabsTrigger>
             </TabsList>
           </div>
@@ -260,7 +267,7 @@ export default function EcosystemPage() {
           </TabsContent>
 
           {/* Partners Tab */}
-          <TabsContent value="partner" className="space-y-8">
+          <TabsContent value="partners" className="space-y-8">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 place-items-center">
               {filteredPartners.map((partner, index) => (
                 <div
@@ -328,7 +335,7 @@ export default function EcosystemPage() {
                           Get NLOV tokens at the best possible price
                         </p>
                       </div>
-                    </div>                   
+                    </div>
                     <div className="flex items-start">
                       <div className="flex-shrink-0 w-8 h-8 bg-neuro-500/10 rounded-full flex items-center justify-center text-neuro-500 mr-3">
                         3
