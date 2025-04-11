@@ -45,6 +45,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useParams, useNavigate } from "react-router-dom";
 
 // Tokenomics data
 const tokenDistributionData = [
@@ -336,6 +337,8 @@ const cumulativeVestingData = [
 ];
 
 export default function TokenPage() {
+  const { tab = "" } = useParams();
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("overview");
   const [daysLeft, setDaysLeft] = useState(14);
   const [hoursLeft, setHoursLeft] = useState(22);
@@ -359,13 +362,17 @@ export default function TokenPage() {
     setEstimatedTokens(amount / presalePrice);
   };
 
+  const handleTabChange = (value: string) => {
+    navigate(`/token/${value}`);
+  };
+
   return (
     <PageLayout
       title="$NLOV Token"
       subtitle="The utility token powering the Neurolov ecosystem"
     >
       <SectionContainer className="pb-8">
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+        <Tabs value={tab} onValueChange={handleTabChange} className="w-full">
           <div className="flex justify-center mb-16 md:mb-8">
             <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-3">
               <TabsTrigger

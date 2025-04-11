@@ -8,41 +8,41 @@ const navItems = {
   products: {
     label: "Products",
     items: [
-      { label: "Compute", href: "/products#compute" },
-      { label: "AI Models", href: "/products#ai-models" },
-      { label: "Neuro Swarm", href: "/products#swarm-network" },
-      { label: "AI Agents", href: "/products#ai-agents" },
+      { label: "Compute", href: "/products/compute" },
+      { label: "AI Models", href: "/products/ai-models" },
+      { label: "Neuro Swarm", href: "/products/swarm" },
+      { label: "AI Agents", href: "/products/agents" },
     ],
   },
   token: {
     label: "Token",
     items: [
-      { label: "$NLOV", href: "/token" },
-      { label: "Tokenomics", href: "/token#tokenomics" },
-      { label: "Utility", href: "/token#utility" },
-      { label: "FAQ", href: "/token#faq" },
+      { label: "$NLOV", href: "/token/overview" },
+      { label: "Tokenomics", href: "/token/tokenomics" },
+      { label: "Utility", href: "/token/utility" },
+      { label: "FAQ", href: "/token/faq" },
     ],
   },
   ecosystem: {
     label: "Ecosystem",
     items: [
-      { label: "Roadmap", href: "/ecosystem#roadmap" },
-      { label: "Partner", href: "/ecosystem#partners" },
+      { label: "Roadmap", href: "/ecosystem/roadmap" },
+      { label: "Partner", href: "/ecosystem/partners" },
     ],
   },
   resources: {
     label: "Resources",
     items: [
       { label: "Technical Papers", href: "/resources" },
-      { label: "Community", href: "/resources#docs" },
+      { label: "Community", href: "/resources/docs" },
       { label: "Blog & Updates", href: "/whitepaper" },
     ],
   },
   about: {
     label: "About",
     items: [
-      { label: "Team", href: "/about#team" },
-      { label: "Mission", href: "/about#mission" },
+      { label: "Team", href: "/about/team" },
+      { label: "Mission", href: "/about/mission" },
     ],
   },
 };

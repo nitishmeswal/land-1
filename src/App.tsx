@@ -17,7 +17,7 @@ import WhitepaperPage from "./pages/Whitepaper";
 import PitchDeckPage from "./pages/pitch-deck";
 
 // GA4 ID
-const GA_ID = "G-FQDR1HDD3K";
+const GA_ID = "G-K7EZKD532N";
 
 // Declare gtag on window
 declare global {
@@ -92,10 +92,14 @@ const AppRoutes = () => {
     <Routes>
       <Route path="/" element={<Index />} />
       <Route path="/products" element={<ProductsPage />} />
+      <Route path="/products/:tab" element={<ProductsPage />} />
       <Route path="/token" element={<TokenPage />} />
+      <Route path="/token/:tab" element={<TokenPage />} />
       <Route path="/ecosystem" element={<EcosystemPage />} />
+      <Route path="/ecosystem/:tab" element={<EcosystemPage />} />
       <Route path="/resources" element={<ResourcesPage />} />
       <Route path="/about" element={<AboutPage />} />
+      <Route path="/about/:tab" element={<AboutPage />} />
       <Route path="/whitepaper" element={<WhitepaperPage />} />
       <Route path="/pitch-deck" element={<PitchDeckPage />} />
       <Route path="*" element={<NotFound />} />

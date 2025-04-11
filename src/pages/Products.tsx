@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { SectionContainer } from "@/components/ui/Container";
 import PageLayout from "@/components/layout/PageLayout";
@@ -24,10 +24,15 @@ import {
   Box,
   UserSquare2,
 } from "lucide-react";
-import { useParams, useRoutes } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 export default function ProductsPage() {
-  const [activeTab, setActiveTab] = useState("compute");
+  const { tab = "compute" } = useParams();
+  const navigate = useNavigate();
+
+  const handleTabChange = (value: string) => {
+    navigate(`/products/${value}`);
+  };
 
   return (
     <PageLayout
@@ -35,7 +40,7 @@ export default function ProductsPage() {
       subtitle="Explore our suite of AI and compute solutions powering the decentralized future"
     >
       <SectionContainer className="pb-16">
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+        <Tabs value={tab} onValueChange={handleTabChange} className="w-full">
           <div className="flex justify-center mb-16 md:mb-8">
             <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2">
               <TabsTrigger value="compute" className="px-6">
@@ -405,11 +410,15 @@ export default function ProductsPage() {
                   </div>
                 </div>
                 <div className="mt-8 text-center">
-                  <Button 
-                    variant="neon" 
-                    size="lg" 
+                  <Button
+                    variant="neon"
+                    size="lg"
                     onClick={() => {
-                      window.open('http://swarm.neurolov.ai', '_blank', 'noopener,noreferrer');
+                      window.open(
+                        "http://swarm.neurolov.ai",
+                        "_blank",
+                        "noopener,noreferrer"
+                      );
                     }}
                   >
                     Join the Swarm
@@ -518,24 +527,18 @@ export default function ProductsPage() {
                           />
                         </svg>
                       </div>
-                      <span className="text-sm">
-                        Easy integration
-                      </span>
+                      <span className="text-sm">Easy integration</span>
                     </li>
                   </ul>
                   <div className="flex flex-wrap gap-4">
                     <Button variant="neon">AI-Agents coming soon</Button>
-
                   </div>
                 </div>
               </div>
             </div>
-
           </TabsContent>
         </Tabs>
       </SectionContainer>
-
-      
     </PageLayout>
   );
 }

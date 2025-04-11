@@ -17,6 +17,7 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useParams, useNavigate } from "react-router-dom";
 
 // Team data
 const teamMembers = [
@@ -41,7 +42,7 @@ const teamMembers = [
   {
     name: "Gokul Ravindran",
     role: "Chief Technology Officer",
-    bio: "With 9+ years in blockchain and cryptography, I’ve built smart contracts, exchange engines, and authored key whitepapers.Expert in zk-proofs, Layer 2, and privacy tech, with on-chain analysis for 10+ major projects",
+    bio: "With 9+ years in blockchain and cryptography, I've built smart contracts, exchange engines, and authored key whitepapers.Expert in zk-proofs, Layer 2, and privacy tech, with on-chain analysis for 10+ major projects",
     image: "/cto.png",
     social: {
       github: "https://github.com/0xneox",
@@ -79,7 +80,7 @@ const teamMembers = [
   {
     name: "Ramesh Sharma ",
     role: "Business Analyst ",
-    bio: "Leads Neurolov’s business growth, strategic roadmap, and ecosystem expansion. With deep expertise in AI, Web3, and DePIN markets, RK oversees token strategy, User and market research, and go-to-market execution",
+    bio: "Leads Neurolov's business growth, strategic roadmap, and ecosystem expansion. With deep expertise in AI, Web3, and DePIN markets, RK oversees token strategy, User and market research, and go-to-market execution",
     image: "/rk.png",
     social: {
       linkedin:
@@ -89,7 +90,7 @@ const teamMembers = [
   {
     name: "Dhruvanshi ",
     role: "Design Lead",
-    bio: "Creative lead driving Neurolov’s brand identity and digital presence across Web3 and AI ecosystems. Manages visual branding, social media execution, and community engagement to amplify growth and global visibility",
+    bio: "Creative lead driving Neurolov's brand identity and digital presence across Web3 and AI ecosystems. Manages visual branding, social media execution, and community engagement to amplify growth and global visibility",
     image: "/d-lead.png",
     social: {
       linkedin: "https://www.linkedin.com/in/dhruvanshi-vyas-631154299",
@@ -98,7 +99,7 @@ const teamMembers = [
   {
     name: "Sanskar Lunawat",
     role: "Marketing & Community Lead",
-    bio: "With 4 years in the Web3 space, Sanskar has played a key role in Neurolov’s growth by leading community initiatives, influencer marketing, and strategic partnerships. He successfully grew Neurolov’s Telegram community to 10K+ members and onboarded 40+ crucial crypto ambassadors. Additionally, he has driven high-impact Twitter collaborations and hosted major crypto spaces, expanding Neurolov’s presence in AI and blockchain.",
+    bio: "With 4 years in the Web3 space, Sanskar has played a key role in Neurolov's growth by leading community initiatives, influencer marketing, and strategic partnerships. He successfully grew Neurolov's Telegram community to 10K+ members and onboarded 40+ crucial crypto ambassadors. Additionally, he has driven high-impact Twitter collaborations and hosted major crypto spaces, expanding Neurolov's presence in AI and blockchain.",
     image: "/m-lead.png",
     social: {
       linkedin:
@@ -108,7 +109,7 @@ const teamMembers = [
   {
     name: "Charu Keswani  ",
     role: "Community Manager",
-    bio: "Charu fosters a vibrant and engaging community at Neurolov, ensuring seamless communication between users and the team. With a keen understanding of Web3 dynamics, she moderates discussions, organizes events, and enhances user experience.",
+    bio: "Charu fosters a vibrant and engaging community at Neurolov, ensuring seamless communication between users and the team. With a keen understanding of Web3 dynamics, she moderates discussions, organizes events, and enhances user experience.",
     image: "/kc.png",
     social: {
       linkedin: "https://in.linkedin.com/in/charu-keswani-a86506188",
@@ -121,7 +122,7 @@ const advisors = [
   {
     name: "Chandra S Katta",
     role: "Technical Advisor ",
-    bio: "COO of stealth AI/HPC startup | Ex-CTO at Bitfury 27+ years in tech leadership at Intel, Bitfury & emerging tech firms.Led $1B+ product innovations, holds multiple patents in AI/Blockchain efficiency.Awarded Intel’s Gordy Award for blockchain excellence.Cornell EMBA & Stanford GSB Executive Program graduate.Expert in Web3, tokenization, and sustainable tech strategy",
+    bio: "COO of stealth AI/HPC startup | Ex-CTO at Bitfury 27+ years in tech leadership at Intel, Bitfury & emerging tech firms.Led $1B+ product innovations, holds multiple patents in AI/Blockchain efficiency.Awarded Intel's Gordy Award for blockchain excellence.Cornell EMBA & Stanford GSB Executive Program graduate.Expert in Web3, tokenization, and sustainable tech strategy",
     image: "/technical.png",
     social: {
       linkedin:
@@ -234,7 +235,12 @@ const coreValues = [
 ];
 
 export default function AboutPage() {
-  const [activeTab, setActiveTab] = useState("team");
+  const { tab = "team" } = useParams();
+  const navigate = useNavigate();
+
+  const handleTabChange = (value: string) => {
+    navigate(`/about/${value}`);
+  };
 
   return (
     <PageLayout
@@ -242,7 +248,7 @@ export default function AboutPage() {
       subtitle="Our team, mission, and vision for the future of AI computing"
     >
       <SectionContainer className="pb-8">
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+        <Tabs value={tab} onValueChange={handleTabChange} className="w-full">
           <div className="flex justify-center mb-12 md:mb-8">
             <TabsList className="inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground">
               <TabsTrigger
