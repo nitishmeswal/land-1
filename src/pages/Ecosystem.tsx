@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { SectionContainer } from "@/components/ui/Container";
 import PageLayout from "@/components/layout/PageLayout";
@@ -31,7 +31,21 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import PartnerForm, { PartnerFormData } from "@/components/common/PartnerForm";
 
 // Roadmap data
 const roadmapData = [
@@ -145,10 +159,25 @@ export default function EcosystemPage() {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("roadmap");
   const [partnerFilter, setPartnerFilter] = useState("all");
+  const [highlightGetStarted, setHighlightGetStarted] = useState(false);
   const filteredPartners = partners;
+  const getStartedButtonRef = useRef(null);
 
   const handleTabChange = (value: string) => {
     navigate(`/ecosystem/${value}`);
+  };
+
+  const scrollToGetStarted = () => {
+    setHighlightGetStarted(true);
+    // Scroll to the Get Started section if in partners tab
+    if (getStartedButtonRef.current) {
+      getStartedButtonRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+    // Reset highlight after animation
+    setTimeout(() => setHighlightGetStarted(false), 2000);
   };
 
   return (
@@ -277,9 +306,7 @@ export default function EcosystemPage() {
               ))}
               <div
                 className="flex-shrink-0 w-full max-w-36 md:max-w-44 mt-10 aspect-square bg-[#0361DA]/90 rounded-lg p-4 border border-[#0361DA]/60 hover:border-[#0361DA]/70 transition-all duration-300 flex flex-col items-center justify-center cursor-pointer group"
-                onClick={() =>
-                  window.open("https://app.neurolov.ai/partner", "_blank")
-                }
+                onClick={scrollToGetStarted}
               >
                 <Plus className="w-10 h-10 group-hover:text-white/75 text-white mb-3" />
                 <p className="text-sm font-medium text-center group-hover:text-white/75 text-white ">
@@ -345,14 +372,46 @@ export default function EcosystemPage() {
                     </div>
                   </div>
 
-                  <Button
-                    variant="neon"
-                    className="self-center md:self-start"
-                    size="lg"
-                  >
-                    Get Started
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button
+                        variant="neon"
+                        className={`self-center md:self-start transition-all duration-500 ${
+                          highlightGetStarted
+                            ? "animate-pulse shadow-lg shadow-[#0361DA]/50 scale-105"
+                            : ""
+                        }`}
+                        size="lg"
+                        ref={getStartedButtonRef}
+                      >
+                        Get Started
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="bg-[#0361DA] border-white/10 md:max-w-[400px] p-6 [&>button]:text-white [&>button]:hover:bg-white/10">
+                      <DialogHeader>
+                        <DialogTitle className="text-xl text-white">
+                          Become a Partner
+                        </DialogTitle>
+                        <DialogDescription className="text-white/80">
+                          Fill out the form below to join the Neurolov
+                          ecosystem.
+                        </DialogDescription>
+                      </DialogHeader>
+                      <div className="mt-4">
+                        <PartnerForm
+                          onSubmit={async (data: PartnerFormData) => {
+                            // Here you can handle the form submission
+                            console.log("Partnership form submitted:", data);
+                            // You can add your email sending logic here
+                            alert(
+                              "Thank you for your partnership request. Our team will review your application and get back to you soon!"
+                            );
+                          }}
+                        />
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 </div>
 
                 <div className="md:w-1/2">
