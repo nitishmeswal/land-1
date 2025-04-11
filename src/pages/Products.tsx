@@ -25,6 +25,7 @@ import {
   UserSquare2,
 } from "lucide-react";
 import { useParams, useNavigate } from "react-router-dom";
+import AIModelCard from "@/components/common/AIModelCard";
 
 export default function ProductsPage() {
   const { tab = "compute" } = useParams();
@@ -67,6 +68,11 @@ export default function ProductsPage() {
               />
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <FeatureCard
+                  onLearnMoreClick={() => {
+                    window.open(
+                      "https://neurolov.medium.com/neurolov-gpu-compute-platform-beta-launch-powering-the-future-of-ai-with-scalable-gpu-compute-cef5bf5193b0"
+                    );
+                  }}
                   title="GPU Marketplace"
                   description="Rent GPUs from a global network of providers at competitive rates. Pay only for what you use with flexible pricing options."
                   icon={<Server className="h-6 w-6" />}
@@ -197,48 +203,90 @@ export default function ProductsPage() {
                 title="AI Model Categories"
                 subtitle="Explore our comprehensive suite of AI models for various creative and technical applications"
               />
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <FeatureCard
-                  title="Text & Code"
-                  description="Advanced language models for text generation, code completion, and natural language processing tasks."
-                  icon={<Code className="h-6 w-6" />}
-                  index={1}
-                  alwaysActive={true}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <AIModelCard
+                  id="neurolov-image"
+                  name="Neuro Image Gen"
+                  description="Advanced AI image generation. Create stunning visuals with our cutting-edge technology. Faster, Smarter and Limitless"
+                  features={[
+                    "Hyper-realistic Quality",
+                    "Stunning HD Quality",
+                    "Unlimited & Free",
+                    "100% Ad-Free",
+                  ]}
+                  isNew
+                  isBeta
+                  redirectedPage="neurolov-image"
                 />
-                <FeatureCard
-                  title="Image & Vision"
-                  description="State-of-the-art models for image generation, editing, upscaling, and visual analysis."
-                  icon={<Image className="h-6 w-6" />}
-                  index={2}
-                  alwaysActive={true}
+                <AIModelCard
+                  id="freedom-ai"
+                  name="Freedom-AI"
+                  description="Engage in unrestricted conversations without any censorship or limitations. Dive in with your thoughts. Ask anything and get unfiltered responses."
+                  features={[
+                    "Unrestricted conversations",
+                    "No topic limitations",
+                    "Unfiltered responses",
+                    "Advanced context understanding",
+                  ]}
+                  isNew
+                  isBeta
+                  redirectedPage="ai-models/freedom-ai"
                 />
-                <FeatureCard
-                  title="Audio & Speech"
-                  description="High-quality voice synthesis, music generation, and audio processing models."
-                  icon={<Music className="h-6 w-6" />}
-                  index={3}
-                  alwaysActive={true}
+                <AIModelCard
+                  id="text-to-3d"
+                  name="3D Creator Pro"
+                  description="Transform text descriptions into stunning 3D models. Create detailed meshes, sculptures, and objects using advanced AI technology."
+                  features={[
+                    "Text to 3D model generation",
+                    "Multiple output formats",
+                    "NeRF video rendering",
+                    "Advanced mesh controls",
+                  ]}
+                  isNew
+                  isBeta
+                  redirectedPage="ai-models/text-to-3d"
                 />
-                <FeatureCard
-                  title="Video & Animation"
-                  description="Create and edit videos, generate animations, and process video content intelligently."
-                  icon={<Video className="h-6 w-6" />}
-                  index={4}
-                  alwaysActive={true}
+                <AIModelCard
+                  id="text-to-video"
+                  name="AI Video Generator"
+                  description="Create stunning videos from text descriptions or transform existing videos with AI-powered effects and enhancements."
+                  features={[
+                    "Text to video generation",
+                    "Video enhancement & upscaling",
+                    "Style transfer & effects",
+                    "Multiple output formats",
+                  ]}
+                  isNew
+                  isBeta
+                  redirectedPage="ai-models/video"
                 />
-                <FeatureCard
-                  title="3D & XR"
-                  description="Generate and manipulate 3D models, textures, and environments for XR applications."
-                  icon={<Box className="h-6 w-6" />}
-                  index={5}
-                  alwaysActive={true}
+                <AIModelCard
+                  id="music-ai"
+                  name="AI Music Studio"
+                  description="Create original music, generate melodies, and produce professional-grade audio with our AI-powered music studio."
+                  features={[
+                    "Text to music generation",
+                    "Music style transfer",
+                    "Multi-instrument composition",
+                    "Professional audio quality",
+                  ]}
+                  isNew
+                  isBeta
+                  redirectedPage="ai-models/music-ai"
                 />
-                <FeatureCard
-                  title="Synthetic Media"
-                  description="Create realistic synthetic media with advanced deepfake and face synthesis technology."
-                  icon={<UserSquare2 className="h-6 w-6" />}
-                  index={6}
-                  alwaysActive={true}
+                <AIModelCard
+                  id="deepfake"
+                  name="AI Deepfake Studio"
+                  description="Create stunning face swaps in images and videos using advanced AI technology."
+                  features={[
+                    "Single face swap in images",
+                    "Multiple face swap in images",
+                    "Face swap in videos",
+                    "High-quality results",
+                  ]}
+                  isNew
+                  isBeta
+                  redirectedPage="ai-models/deepfake"
                 />
               </div>
             </div>

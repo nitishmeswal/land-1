@@ -1,0 +1,118 @@
+import React from "react";
+import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+
+interface AIModelCardProps {
+  id: string;
+  name: string;
+  description: string;
+  features: string[];
+  isNew?: boolean;
+  isBeta?: boolean;
+  className?: string;
+  redirectedPage?: string;
+}
+
+export default function AIModelCard({
+  id,
+  name,
+  description,
+  features,
+  isNew = false,
+  isBeta = false,
+  className,
+  redirectedPage,
+}: AIModelCardProps) {
+  return (
+    <div
+      className={cn(
+        "group relative overflow-hidden rounded-xl bg-white border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-xl pb-8 ",
+        className
+      )}
+    >
+      {/* Image container with gradient overlay */}
+      <div className="relative h-48 overflow-hidden">
+        <img
+          src={`/ai-models/${
+            id === "neurolov-image"
+              ? "neuro image"
+              : id === "text-to-video" || id === "video"
+              ? "text to video"
+              : id === "music-ai"
+              ? "text to music"
+              : id === "freedom-ai"
+              ? "freedom ai"
+              : id === "text-to-3d"
+              ? "text to 3d"
+              : id === "deepfake"
+              ? "deepfake"
+              : "neuro image"
+          }.png`}
+          alt={name}
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+
+        {/* Badges */}
+        <div className="absolute top-4 left-4 flex gap-2">
+          {isNew && (
+            <Badge variant="default" className="bg-blue-500 hover:bg-blue-600">
+              NEW
+            </Badge>
+          )}
+          {isBeta && (
+            <Badge
+              variant="default"
+              className="bg-purple-500 hover:bg-purple-600"
+            >
+              BETA
+            </Badge>
+          )}
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="p-6">
+        <h3 className="text-xl font-semibold text-gray-900 mb-2">{name}</h3>
+        <p className="text-gray-600 text-sm mb-4">{description}</p>
+
+        {/* Features */}
+        <ul className="space-y-2 mb-6">
+          {features.map((feature, index) => (
+            <li key={index} className="flex items-center text-gray-600 text-sm">
+              <svg
+                className="w-4 h-4 mr-2 text-green-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              {feature}
+            </li>
+          ))}
+        </ul>
+
+        {/* Launch button */}
+        <div className="absolute bottom-6 left-6">
+          <Button
+            className="w-fit px-6 bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white transition-all duration-300 ease-in-out"
+            onClick={() =>
+              window.open(`https://app.neurolov.ai/${redirectedPage}`, "_blank")
+            }
+          >
+            Launch App
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+}
