@@ -30,7 +30,6 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
       console.error("Submission failed:", error.message);
       alert("Something went wrong.");
     } else {
-      alert("Message sent!");
       setFormData({ email: "", concern: "" });
     }
 

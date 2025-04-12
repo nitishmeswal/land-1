@@ -27,6 +27,7 @@ import {
   MediumIcon,
   IndieHackersIcon,
 } from "@/components/icons/social-icons";
+import { PatternBackground } from "@/components/common/Highlight";
 
 const resources = [
   {
@@ -100,59 +101,61 @@ const resources = [
 
 export default function ResourcesPage() {
   return (
-    <PageLayout
-      title="Resources"
-      subtitle="Everything you need to build on Neurolov"
-    >
-      <SectionContainer className="pb-16">
-        {/* Featured Resources */}
-        <div className="mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {resources.map((resource, index) => (
-              <Card
-                key={index}
-                className="group hover:border-[#0361DA]/50 transition-colors"
-              >
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="p-2 rounded-lg bg-[#0361DA]/10 text-[#0361DA]">
-                      {resource.icon}
+    <PatternBackground>
+      <PageLayout
+        title="Resources"
+        subtitle="Everything you need to build on Neurolov"
+      >
+        <SectionContainer className="pb-16">
+          {/* Featured Resources */}
+          <div className="mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 z-[100]">
+              {resources.map((resource, index) => (
+                <Card
+                  key={index}
+                  className="group hover:border-[#0361DA]/50 transition-colors"
+                >
+                  <CardHeader>
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="p-2 rounded-lg bg-[#0361DA]/10 text-[#0361DA]">
+                        {resource.icon}
+                      </div>
+                      <CardTitle>{resource.title}</CardTitle>
                     </div>
-                    <CardTitle>{resource.title}</CardTitle>
-                  </div>
-                  <CardDescription>{resource.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {resource.links.map((link, linkIndex) => (
-                      <li key={linkIndex}>
-                        <Button
-                          variant="ghost"
-                          className="w-full justify-between group/link"
-                          asChild
-                        >
-                          <a
-                            href={link.url}
-                            className="group/link flex items-center gap-2"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                    <CardDescription>{resource.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2">
+                      {resource.links.map((link, linkIndex) => (
+                        <li key={linkIndex}>
+                          <Button
+                            variant="ghost"
+                            className="w-full justify-between group/link"
+                            asChild
                           >
-                            <div className="flex items-center gap-2">
-                              {link.icon}
-                              {link.text}
-                            </div>
-                            <ArrowUpRight className="h-4 w-4 opacity-0 group-hover/link:opacity-100 transition-opacity" />
-                          </a>
-                        </Button>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
+                            <a
+                              href={link.url}
+                              className="group/link flex items-center gap-2"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <div className="flex items-center gap-2">
+                                {link.icon}
+                                {link.text}
+                              </div>
+                              <ArrowUpRight className="h-4 w-4 opacity-0 group-hover/link:opacity-100 transition-opacity" />
+                            </a>
+                          </Button>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
-      </SectionContainer>
-    </PageLayout>
+        </SectionContainer>
+      </PageLayout>
+    </PatternBackground>
   );
 }

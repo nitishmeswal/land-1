@@ -8,14 +8,15 @@ import HowItWorks from "@/components/home/HowItWorks";
 import Tokenomics from "@/components/home/Tokenomics";
 import CallToAction from "@/components/home/CallToAction";
 
+import { PatternBackground } from "@/components/common/Highlight";
+
 const Index = () => {
   useEffect(() => {
-    // Scroll to top on page load
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <>
+    <PatternBackground>
       <Navbar />
       <main>
         <Hero />
@@ -25,7 +26,7 @@ const Index = () => {
         <CallToAction />
       </main>
       <Footer />
-    </>
+    </PatternBackground>
   );
 };
 
