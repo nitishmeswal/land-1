@@ -371,7 +371,7 @@ export default function TokenPage() {
         <SectionContainer className="pb-8">
           <Tabs value={tab} onValueChange={handleTabChange} className="w-full">
             <div className="flex justify-center mb-20 md:mb-10">
-              <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-5 border border-[#0361DA] hover:border-[#0361DA]/50 shadow-md transition-all duration-300  hover:shadow-lg">
+              <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-5 h-auto p-3 md:p-0 border border-[#0361DA] hover:border-[#0361DA]/50 shadow-md transition-all duration-300  hover:shadow-lg">
                 <TabsTrigger
                   value="overview"
                   className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
