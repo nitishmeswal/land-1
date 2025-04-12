@@ -248,11 +248,6 @@ const faqData = [
     answer:
       "You can stake your NLOV tokens through our platform to earn rewards, contribute to network security, and participate in governance. Stakers receive additional benefits like fee discounts and premium features.",
   },
-  {
-    question: "When will NLOV be listed on exchanges?",
-    answer:
-      "NLOV will be listed on exchanges approximately 2-4 weeks after the conclusion of our presale events. We'll announce specific exchange listings through our official channels.",
-  },
 ];
 
 const cumulativeVestingData = [
