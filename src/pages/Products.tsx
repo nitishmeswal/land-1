@@ -66,7 +66,7 @@ export default function ProductsPage() {
                 title="Decentralized Compute Infrastructure"
                 subtitle="Access powerful GPU resources on demand for AI training, inference, and compute-intensive tasks"
               />
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <FeatureCard
                   onLearnMoreClick={() => {
                     window.open(
@@ -76,22 +76,15 @@ export default function ProductsPage() {
                   title="GPU Marketplace"
                   description="Rent GPUs from a global network of providers at competitive rates. Pay only for what you use with flexible pricing options."
                   icon={<Server className="h-6 w-6" />}
-                  index={1}
                   alwaysActive={true}
+                  className="h-full"
                 />
                 <FeatureCard
                   title="Distributed Training"
                   description="Scale your AI model training across multiple nodes for faster results. Supports popular frameworks like PyTorch and TensorFlow."
                   icon={<Database className="h-6 w-6" />}
-                  index={2}
                   alwaysActive={true}
-                />
-                <FeatureCard
-                  title="Models Bag"
-                  description="Run your Models in isolated, secure containers. Full control over your environment with custom dependencies."
-                  icon={<Shield className="h-6 w-6" />}
-                  index={3}
-                  alwaysActive={true}
+                  className="h-full"
                 />
               </div>
             </div>
@@ -144,7 +137,7 @@ export default function ProductsPage() {
                       <th className="py-4 px-6 text-left">Memory</th>
                       <th className="py-4 px-6 text-left">CUDA Cores</th>
                       <th className="py-4 px-6 text-left">Tensor Cores</th>
-                      <th className="py-4 px-6 text-left">Price (NLOV/hr)</th>
+                      <th className="py-4 px-6 text-left">Price ($NLOV/Hr)</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -153,42 +146,42 @@ export default function ProductsPage() {
                       <td className="py-4 px-6">80GB HBM3</td>
                       <td className="py-4 px-6">18,432</td>
                       <td className="py-4 px-6">576</td>
-                      <td className="py-4 px-6">50 NLOV</td>
+                      <td className="py-4 px-6">21 $NLOV</td>
                     </tr>
                     <tr className="border-b">
                       <td className="py-4 px-6">NVIDIA GeForce RTX 4090</td>
                       <td className="py-4 px-6">24GB GDDR6X</td>
                       <td className="py-4 px-6">16,384</td>
                       <td className="py-4 px-6">512</td>
-                      <td className="py-4 px-6">20 NLOV</td>
+                      <td className="py-4 px-6">5 $NLOV</td>
                     </tr>
                     <tr className="border-b">
                       <td className="py-4 px-6">NVIDIA RTX 3090 Ti</td>
                       <td className="py-4 px-6">24GB GDDR6X</td>
                       <td className="py-4 px-6">10,752</td>
                       <td className="py-4 px-6">336</td>
-                      <td className="py-4 px-6">10 NLOV</td>
+                      <td className="py-4 px-6">2 $NLOV</td>
                     </tr>
                     <tr className="border-b">
                       <td className="py-4 px-6">NVIDIA A6000</td>
                       <td className="py-4 px-6">48GB GDDR6</td>
                       <td className="py-4 px-6">10,752</td>
                       <td className="py-4 px-6">336</td>
-                      <td className="py-4 px-6">30 NLOV</td>
+                      <td className="py-4 px-6">6 $NLOV</td>
                     </tr>
                     <tr className="border-b">
                       <td className="py-4 px-6">NVIDIA A5000</td>
                       <td className="py-4 px-6">24GB GDDR6</td>
                       <td className="py-4 px-6">8,192</td>
                       <td className="py-4 px-6">256</td>
-                      <td className="py-4 px-6">25 NLOV</td>
+                      <td className="py-4 px-6">3 $NLOV</td>
                     </tr>
                     <tr>
                       <td className="py-4 px-6">NVIDIA A4000</td>
                       <td className="py-4 px-6">16GB GDDR6</td>
                       <td className="py-4 px-6">6,144</td>
                       <td className="py-4 px-6">192</td>
-                      <td className="py-4 px-6">15 NLOV</td>
+                      <td className="py-4 px-6">2 $NLOV</td>
                     </tr>
                   </tbody>
                 </table>
@@ -244,6 +237,7 @@ export default function ProductsPage() {
                   ]}
                   isNew
                   isBeta
+                  isComingSoon
                   redirectedPage="ai-models/text-to-3d"
                 />
                 <AIModelCard
@@ -258,6 +252,7 @@ export default function ProductsPage() {
                   ]}
                   isNew
                   isBeta
+                  isComingSoon
                   redirectedPage="ai-models/video"
                 />
                 <AIModelCard
@@ -272,6 +267,7 @@ export default function ProductsPage() {
                   ]}
                   isNew
                   isBeta
+                  isComingSoon
                   redirectedPage="ai-models/music-ai"
                 />
                 <AIModelCard
@@ -286,6 +282,7 @@ export default function ProductsPage() {
                   ]}
                   isNew
                   isBeta
+                  isComingSoon
                   redirectedPage="ai-models/deepfake"
                 />
               </div>
@@ -299,60 +296,39 @@ export default function ProductsPage() {
                     <tr className="border-b">
                       <th className="py-4 px-6 text-left">Model Name</th>
                       <th className="py-4 px-6 text-left">Category</th>
-                      <th className="py-4 px-6 text-left">Parameters</th>
-                      <th className="py-4 px-6 text-left">Context Window</th>
-                      <th className="py-4 px-6 text-left">Use Cases</th>
-                      <th className="py-4 px-6 text-left">Cost (NLOV)</th>
+                      <th className="py-4 px-6 text-left">Cost ($NLOV)</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="border-b">
-                      <td className="py-4 px-6">NeuralText-70B</td>
-                      <td className="py-4 px-6">Text/Code</td>
-                      <td className="py-4 px-6">70B</td>
-                      <td className="py-4 px-6">128K</td>
-                      <td className="py-4 px-6">Text, Code, Analysis</td>
-                      <td className="py-4 px-6">0.5/1K tokens</td>
+                      <td className="py-4 px-6">Neuro-Image Gen</td>
+                      <td className="py-4 px-6">Text to Image</td>
+                      <td className="py-4 px-6">0.125 - 1.25 $NLOV</td>
                     </tr>
                     <tr className="border-b">
-                      <td className="py-4 px-6">NeuroVision-XL</td>
-                      <td className="py-4 px-6">Image</td>
-                      <td className="py-4 px-6">3.5B</td>
-                      <td className="py-4 px-6">2048x2048</td>
-                      <td className="py-4 px-6">Generation, Editing</td>
-                      <td className="py-4 px-6">2.0/image</td>
+                      <td className="py-4 px-6">Freedom AI</td>
+                      <td className="py-4 px-6">Uncensored Chat</td>
+                      <td className="py-4 px-6">0.025 - 0.125 $NLOV</td>
                     </tr>
                     <tr className="border-b">
-                      <td className="py-4 px-6">NeuroVoice-Pro</td>
-                      <td className="py-4 px-6">Audio</td>
-                      <td className="py-4 px-6">1.2B</td>
-                      <td className="py-4 px-6">30s clips</td>
-                      <td className="py-4 px-6">TTS, Music</td>
-                      <td className="py-4 px-6">1.0/minute</td>
+                      <td className="py-4 px-6">Coming Soon</td>
+                      <td className="py-4 px-6"> Text to Music Generation</td>
+                      <td className="py-4 px-6">-</td>
                     </tr>
                     <tr className="border-b">
-                      <td className="py-4 px-6">NeuroMotion-4K</td>
-                      <td className="py-4 px-6">Video</td>
-                      <td className="py-4 px-6">5.5B</td>
-                      <td className="py-4 px-6">4K/60fps</td>
-                      <td className="py-4 px-6">Animation, Effects</td>
-                      <td className="py-4 px-6">5.0/minute</td>
+                      <td className="py-4 px-6">Coming soon</td>
+                      <td className="py-4 px-6">Text to Video Generation</td>
+                      <td className="py-4 px-6">-</td>
                     </tr>
                     <tr className="border-b">
-                      <td className="py-4 px-6">NeuroAvatar-HD</td>
-                      <td className="py-4 px-6">Synthetic</td>
-                      <td className="py-4 px-6">2.8B</td>
-                      <td className="py-4 px-6">1080p</td>
-                      <td className="py-4 px-6">Face Synthesis</td>
-                      <td className="py-4 px-6">3.0/render</td>
+                      <td className="py-4 px-6">Coming Soon</td>
+                      <td className="py-4 px-6">Text to 3D Model Generation</td>
+                      <td className="py-4 px-6">-</td>
                     </tr>
                     <tr>
-                      <td className="py-4 px-6">Neuro3D-Pro</td>
-                      <td className="py-4 px-6">3D/XR</td>
-                      <td className="py-4 px-6">2.1B</td>
-                      <td className="py-4 px-6">High-poly</td>
-                      <td className="py-4 px-6">3D Generation</td>
-                      <td className="py-4 px-6">4.0/model</td>
+                      <td className="py-4 px-6">Coming soon</td>
+                      <td className="py-4 px-6">Deepfake</td>
+                      <td className="py-4 px-6">-</td>
                     </tr>
                   </tbody>
                 </table>
@@ -372,21 +348,18 @@ export default function ProductsPage() {
                   title="Distributed Processing"
                   description="Break complex tasks into smaller units for parallel processing across the network, reducing time and cost."
                   icon={<Server className="h-6 w-6" />}
-                  index={1}
                   alwaysActive={true}
                 />
                 <FeatureCard
                   title="Fault Tolerance"
                   description="Automatic node failover and task reassignment ensures your jobs complete even if individual nodes go offline."
                   icon={<Shield className="h-6 w-6" />}
-                  index={2}
                   alwaysActive={true}
                 />
                 <FeatureCard
                   title="Resource Optimization"
                   description="Intelligent scheduling allocates tasks to the most suitable nodes based on hardware capabilities and load."
                   icon={<Zap className="h-6 w-6" />}
-                  index={3}
                   alwaysActive={true}
                 />
               </div>
@@ -488,21 +461,18 @@ export default function ProductsPage() {
                   title="Workflow Automation"
                   description="Build end-to-end process automation with AI agents that can handle complex decision trees and business logic."
                   icon={<Bot className="h-6 w-6" />}
-                  index={1}
                   alwaysActive={true}
                 />
                 <FeatureCard
                   title="Data Analysis"
                   description="Deploy agents that continuously monitor data sources, generate insights, and alert you to important trends."
                   icon={<Database className="h-6 w-6" />}
-                  index={2}
                   alwaysActive={true}
                 />
                 <FeatureCard
                   title="Smart Contracts"
                   description="Create AI-powered smart contracts that can make decisions based on real-world data and complex conditions."
                   icon={<Code className="h-6 w-6" />}
-                  index={3}
                   alwaysActive={true}
                 />
               </div>

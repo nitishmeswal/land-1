@@ -13,10 +13,11 @@ export default defineConfig(({ mode }) => ({
     cors: true,
     allowedHosts: [
       'localhost',
-      '508c-106-219-152-118.ngrok-free.app'
+      '127.0.0.1',
+      'fd3a-152-59-68-236.ngrok-free.app'
     ],
     hmr: {
-      host: '508c-106-219-152-118.ngrok-free.app'
+      host: 'fd3a-152-59-68-236.ngrok-free.app'
     }
   },
   build: {

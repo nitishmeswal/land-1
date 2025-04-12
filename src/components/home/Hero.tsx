@@ -77,22 +77,24 @@ export default function Hero() {
           </div>
 
           {/* Stats Section */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 reveal reveal-delay-5">
-            <div className="glass-card p-8 rounded-xl border border-[#0361DA]/10 bg-blue-500/10 backdrop-blur-sm hover:border-[#0361DA]/30 transition-all duration-300 hover:-translate-y-1">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 reveal reveal-delay-5">
+            <div className="glass-card p-6 rounded-xl border border-[#0361DA]/10 bg-blue-500/10 backdrop-blur-sm hover:border-[#0361DA]/30 transition-all duration-300 hover:-translate-y-1">
               <div className="text-5xl font-bold text-[#0361DA] mb-3">200+</div>
               <div className="text-muted-foreground text-sm">GPUs</div>
             </div>
 
-            <div className="glass-card p-8 rounded-xl border border-[#0361DA]/10 bg-blue-500/10 backdrop-blur-sm hover:border-[#0361DA]/30 transition-all duration-300 hover:-translate-y-1">
+            <div className="glass-card p-6 rounded-xl border border-[#0361DA]/10 bg-blue-500/10 backdrop-blur-sm hover:border-[#0361DA]/30 transition-all duration-300 hover:-translate-y-1">
               <div className="text-5xl font-bold text-[#0361DA] mb-3">100K</div>
               <div className="text-muted-foreground text-sm">
                 AI Content Made
               </div>
             </div>
 
-            <div className="glass-card p-8 rounded-xl border border-[#0361DA]/10 bg-blue-500/10 backdrop-blur-sm hover:border-[#0361DA]/30 transition-all duration-300 hover:-translate-y-1">
-              <div className="text-5xl font-bold text-[#0361DA] mb-3">
-                35,000+
+            <div className="glass-card p-6 rounded-xl border border-[#0361DA]/10 bg-blue-500/10 backdrop-blur-sm hover:border-[#0361DA]/30 transition-all duration-300 hover:-translate-y-1">
+              <div className="flex justify-center">
+                <div className="text-5xl font-bold text-[#0361DA] mb-3 whitespace-nowrap overflow-visible">
+                  35,000+ 
+                </div>
               </div>
               <div className="text-muted-foreground text-sm">
                 Community Members

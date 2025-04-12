@@ -59,7 +59,7 @@ const resources = [
     links: [
       {
         text: "Discord Community",
-        url: "https://discord.gg/neurolov",
+        url: "https://discord.gg/Bu7BnZ85kb",
         icon: <DiscordIcon className="text-[#5865F2]" />,
       },
       {

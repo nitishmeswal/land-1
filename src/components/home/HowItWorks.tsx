@@ -257,14 +257,6 @@ export default function HowItWorks() {
               <Rocket className="mr-2 h-5 w-5 transition-all group-hover:rotate-12" />
               <span className="relative">Connect Wallet</span>
             </Button>
-
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span>Supported wallets:</span>
-              <div className="flex items-center gap-1">
-                <img src="/phantom.png" alt="Phantom" className="h-4 w-4" />
-                <img src="/metamask.png" alt="MetaMask" className="h-4 w-4" />
-              </div>
-            </div>
           </>
         )}
       </div>
