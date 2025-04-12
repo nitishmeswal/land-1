@@ -117,7 +117,12 @@ export default function CallToAction() {
           {/* Newsletter form */}
           <div className="max-w-md mx-auto mb-8 reveal reveal-delay-3">
             <form
-              onSubmit={(e) => e.preventDefault()}
+              action="https://neurolov.us3.list-manage.com/subscribe?u=d616969fe32a1a9127d19f814&id=a16e1d6051"
+              method="post"
+              id="mc-embedded-subscribe-form"
+              name="mc-embedded-subscribe-form"
+              target="_blank"
+              noValidate
               className="flex flex-col sm:flex-row gap-3"
             >
               <input

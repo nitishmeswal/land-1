@@ -21,6 +21,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
+import { supabase } from "@/lib/supabase-client";
 
 const formSchema = z.object({
   // Step 1: Basic Info
@@ -78,8 +79,10 @@ const StepIndicator = ({ currentStep, totalSteps }: StepProps) => (
 
 export default function PartnerForm({
   onSubmit,
+  setIsDialogOpen,
 }: {
   onSubmit: (data: PartnerFormData) => void;
+  setIsDialogOpen: (open: boolean) => void;
 }) {
   const [step, setStep] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -116,11 +119,28 @@ export default function PartnerForm({
   const handleSubmit = async (data: PartnerFormData) => {
     setIsSubmitting(true);
     try {
-      await onSubmit(data);
+      const { error } = await supabase.from("partner_requests").insert([
+        {
+          name: data.name,
+          company_name: data.companyName,
+          email: data.email,
+          partnership_type: data.partnershipType,
+          description: data.description,
+        },
+      ]);
+
+      if (error) {
+        console.error("Submission failed:", error.message);
+        alert("Failed to submit. Try again.");
+        return;
+      }
+
+      alert("Submitted successfully!");
       form.reset();
       setStep(0);
-    } catch (error) {
-      console.error("Error submitting form:", error);
+      setIsDialogOpen(false);
+    } catch (err) {
+      console.error("Unexpected error:", err);
     } finally {
       setIsSubmitting(false);
     }
