@@ -38,9 +38,8 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="relative min-h-screen pt-20 flex items-center bg-[url('/grid.png')] bg-repeat">
+    <div className="relative min-h-screen pt-20 flex items-center ">
       {/* Background effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background/95"></div>
 
       <Container
         className={`relative pb-20 transition-all duration-1000 ${
@@ -94,7 +93,7 @@ export default function Hero() {
             <div className="glass-card p-6 rounded-xl border border-[#0361DA]/10 bg-blue-500/10 backdrop-blur-sm hover:border-[#0361DA]/30 transition-all duration-300 hover:-translate-y-1">
               <div className="flex justify-center">
                 <div className="text-5xl font-bold text-[#0361DA] mb-3 whitespace-nowrap overflow-visible">
-                  35,000+ 
+                  35,000+
                 </div>
               </div>
               <div className="text-muted-foreground text-sm">

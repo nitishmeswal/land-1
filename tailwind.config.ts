@@ -64,7 +64,7 @@ export default {
 				},
 				neuro: {
 					50: '#eef2ff',
-					100: '#e0e7ff', 
+					100: '#e0e7ff',
 					200: '#c7d2fe',
 					300: '#a5b4fc',
 					400: '#818cf8',
@@ -82,7 +82,8 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			fontFamily: {
-				sans: ['Inter', 'system-ui', 'sans-serif'],
+				sans: ['"Open Sans"', 'sans-serif'],
+				inter: ['"Inter"', 'sans-serif'],
 			},
 			keyframes: {
 				'accordion-down': {
@@ -182,21 +183,21 @@ export default {
 					"50%": { transform: "translate(15px, 15px)" },
 				},
 				"shadow-pulse": {
-					"0%, 100%": { 
+					"0%, 100%": {
 						transform: "translate(-50%, 50%) scale(0.9)",
 						opacity: "0.6"
 					},
-					"50%": { 
+					"50%": {
 						transform: "translate(-50%, 50%) scale(1.1)",
 						opacity: "0.3"
 					},
 				},
 				"shadow-stretch": {
-					"0%, 100%": { 
+					"0%, 100%": {
 						transform: "translateX(-50%) scaleX(1)",
 						opacity: "0.5"
 					},
-					"50%": { 
+					"50%": {
 						transform: "translateX(-50%) scaleX(0.8)",
 						opacity: "0.3"
 					},

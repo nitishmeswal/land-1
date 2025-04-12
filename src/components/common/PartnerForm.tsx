@@ -135,7 +135,6 @@ export default function PartnerForm({
         return;
       }
 
-      alert("Submitted successfully!");
       form.reset();
       setStep(0);
       setIsDialogOpen(false);
