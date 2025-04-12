@@ -236,7 +236,7 @@ const faqData = [
   {
     question: "What is the total supply of NLOV?",
     answer:
-      "The total supply of NLOV is capped at 1 billion tokens. No additional tokens will be minted after reaching this cap, making NLOV a deflationary asset over time.",
+      "The total supply of NLOV is capped at 500 million tokens. No additional tokens will be minted after reaching this cap, making NLOV a deflationary asset over time.",
   },
   {
     question: "Is NLOV compatible with existing wallets?",
@@ -917,11 +917,6 @@ export default function TokenPage() {
 
             <div className="flex flex-col md:flex-row gap-12 items-center">
               <div className="md:w-1/2">
-                {/* <img
-                  src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81"
-                  alt="Token Utility Visualization"
-                  className="rounded-xl shadow-xl"
-                /> */}
                 <img
                   src="/ai-bg.jpg"
                   alt="Token Utility Visualization"
@@ -929,7 +924,7 @@ export default function TokenPage() {
                 />
               </div>
 
-              <div className="md:w-1/2">
+              <div className="md:w-1/2 w-full">
                 <h3 className="text-2xl font-bold mb-4">
                   Platform Fee Structure
                 </h3>
@@ -938,30 +933,50 @@ export default function TokenPage() {
                   platform, creating consistent utility and demand.
                 </p>
 
-                <div className="space-y-4 mb-8">
-                  <div className="flex justify-between pb-2 border-b border-neuro-500/10">
-                    <div className="font-medium">Service</div>
-                    <div className="font-medium">Fee (NLOV)</div>
+                <div className="space-y-4 mb-8 w-full overflow-x-auto">
+                  <div className="flex justify-between pb-2 border-b border-neuro-500/10 min-w-[300px]">
+                    <div className="font-medium text-sm md:text-base">
+                      Service
+                    </div>
+                    <div className="font-medium text-sm md:text-base">
+                      Fee (NLOV)
+                    </div>
                   </div>
-                  <div className="flex justify-between">
-                    <div>GPU Compute (per hour)</div>
-                    <div>3.13 - 10 $NLOV</div>
+                  <div className="flex justify-between min-w-[300px]">
+                    <div className="text-sm md:text-base">
+                      GPU Compute (per hour)
+                    </div>
+                    <div className="text-sm md:text-base">3.13 - 10 $NLOV</div>
                   </div>
-                  <div className="flex justify-between">
-                    <div>Text Generation (1K tokens)</div>
-                    <div>0.025 - 0.125 $NLOV</div>
+                  <div className="flex justify-between min-w-[300px]">
+                    <div className="text-sm md:text-base">
+                      Text Generation (1K tokens)
+                    </div>
+                    <div className="text-sm md:text-base">
+                      0.025 - 0.125 $NLOV
+                    </div>
                   </div>
-                  <div className="flex justify-between">
-                    <div>Image Generation (per image)</div>
-                    <div>0.125 - 1.25 $NLOV</div>
+                  <div className="flex justify-between min-w-[300px]">
+                    <div className="text-sm md:text-base">
+                      Image Generation (per image)
+                    </div>
+                    <div className="text-sm md:text-base">
+                      0.125 - 1.25 $NLOV
+                    </div>
                   </div>
-                  <div className="flex justify-between">
-                    <div>Video Generation (per second)</div>
-                    <div>0.25 - 1.25 $NLOV</div>
+                  <div className="flex justify-between min-w-[300px]">
+                    <div className="text-sm md:text-base">
+                      Video Generation (per second)
+                    </div>
+                    <div className="text-sm md:text-base">
+                      0.25 - 1.25 $NLOV
+                    </div>
                   </div>
-                  <div className="flex justify-between">
-                    <div>Agent Deployment (monthly)</div>
-                    <div>125 - 1238 $NLOV</div>
+                  <div className="flex justify-between min-w-[300px]">
+                    <div className="text-sm md:text-base">
+                      Agent Deployment (monthly)
+                    </div>
+                    <div className="text-sm md:text-base">125 - 1238 $NLOV</div>
                   </div>
                 </div>
               </div>
