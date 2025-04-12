@@ -296,60 +296,39 @@ export default function ProductsPage() {
                     <tr className="border-b">
                       <th className="py-4 px-6 text-left">Model Name</th>
                       <th className="py-4 px-6 text-left">Category</th>
-                      <th className="py-4 px-6 text-left">Parameters</th>
-                      <th className="py-4 px-6 text-left">Context Window</th>
-                      <th className="py-4 px-6 text-left">Use Cases</th>
                       <th className="py-4 px-6 text-left">Cost (NLOV)</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="border-b">
-                      <td className="py-4 px-6">NeuralText-70B</td>
-                      <td className="py-4 px-6">Text/Code</td>
-                      <td className="py-4 px-6">70B</td>
-                      <td className="py-4 px-6">128K</td>
-                      <td className="py-4 px-6">Text, Code, Analysis</td>
+                      <td className="py-4 px-6">Neuro-Image Gen</td>
+                      <td className="py-4 px-6">Text to Image</td>
                       <td className="py-4 px-6">0.5/1K tokens</td>
                     </tr>
                     <tr className="border-b">
-                      <td className="py-4 px-6">NeuroVision-XL</td>
-                      <td className="py-4 px-6">Image</td>
-                      <td className="py-4 px-6">3.5B</td>
-                      <td className="py-4 px-6">2048x2048</td>
-                      <td className="py-4 px-6">Generation, Editing</td>
-                      <td className="py-4 px-6">2.0/image</td>
+                      <td className="py-4 px-6">Freedom AI</td>
+                      <td className="py-4 px-6">Uncensored Chat</td>
+                      <td className="py-4 px-6">1/chat</td>
                     </tr>
                     <tr className="border-b">
-                      <td className="py-4 px-6">NeuroVoice-Pro</td>
-                      <td className="py-4 px-6">Audio</td>
-                      <td className="py-4 px-6">1.2B</td>
-                      <td className="py-4 px-6">30s clips</td>
-                      <td className="py-4 px-6">TTS, Music</td>
+                      <td className="py-4 px-6">Coming Soon</td>
+                      <td className="py-4 px-6"> Text to Music Generation</td>
                       <td className="py-4 px-6">1.0/minute</td>
                     </tr>
                     <tr className="border-b">
-                      <td className="py-4 px-6">NeuroMotion-4K</td>
-                      <td className="py-4 px-6">Video</td>
-                      <td className="py-4 px-6">5.5B</td>
-                      <td className="py-4 px-6">4K/60fps</td>
-                      <td className="py-4 px-6">Animation, Effects</td>
+                      <td className="py-4 px-6">Coming soon</td>
+                      <td className="py-4 px-6">Text to Video Generation</td>
                       <td className="py-4 px-6">5.0/minute</td>
                     </tr>
                     <tr className="border-b">
-                      <td className="py-4 px-6">NeuroAvatar-HD</td>
-                      <td className="py-4 px-6">Synthetic</td>
-                      <td className="py-4 px-6">2.8B</td>
-                      <td className="py-4 px-6">1080p</td>
-                      <td className="py-4 px-6">Face Synthesis</td>
+                      <td className="py-4 px-6">Coming Soon</td>
+                      <td className="py-4 px-6">Text to3D Model Generation</td>
                       <td className="py-4 px-6">3.0/render</td>
                     </tr>
                     <tr>
-                      <td className="py-4 px-6">Neuro3D-Pro</td>
-                      <td className="py-4 px-6">3D/XR</td>
-                      <td className="py-4 px-6">2.1B</td>
-                      <td className="py-4 px-6">High-poly</td>
-                      <td className="py-4 px-6">3D Generation</td>
-                      <td className="py-4 px-6">4.0/model</td>
+                      <td className="py-4 px-6">Coming soon</td>
+                      <td className="py-4 px-6">Deepfake</td>
+                      <td className="py-4 px-6">4.0/image</td>
                     </tr>
                   </tbody>
                 </table>

@@ -92,7 +92,7 @@ export default function Hero() {
 
             <div className="glass-card p-8 rounded-xl border border-[#0361DA]/10 bg-blue-500/10 backdrop-blur-sm hover:border-[#0361DA]/30 transition-all duration-300 hover:-translate-y-1">
               <div className="text-5xl font-bold text-[#0361DA] mb-3">
-                35,000+
+                35,000+ 
               </div>
               <div className="text-muted-foreground text-sm">
                 Community Members

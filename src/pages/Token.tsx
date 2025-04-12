@@ -248,11 +248,6 @@ const faqData = [
     answer:
       "You can stake your NLOV tokens through our platform to earn rewards, contribute to network security, and participate in governance. Stakers receive additional benefits like fee discounts and premium features.",
   },
-  {
-    question: "When will NLOV be listed on exchanges?",
-    answer:
-      "NLOV will be listed on exchanges approximately 2-4 weeks after the conclusion of our presale events. We'll announce specific exchange listings through our official channels.",
-  },
 ];
 
 const cumulativeVestingData = [
@@ -996,12 +991,13 @@ export default function TokenPage() {
                 subtitle="Our support team is here to help Or send an email to our dedicated support team:"
               />
               <div className="mt-8 text-center">
-                <a
-                  href="mailto:support@neurolov.ai"
-                  className="text-neuro-500 font-medium"
+                <Button
+                  variant="outline"
+                  className="bg-[#0361DA] hover:bg-[#0361DA]/80 text-white hover:text-white"
+                  onClick={() => window.open("mailto:support@neurolov.ai")}
                 >
                   support@neurolov.ai
-                </a>
+                </Button>
               </div>
             </div>
           </TabsContent>
