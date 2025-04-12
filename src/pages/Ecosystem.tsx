@@ -181,8 +181,8 @@ export default function EcosystemPage() {
     >
       <SectionContainer className="pb-8">
         <Tabs value={tab} onValueChange={handleTabChange} className="w-full">
-          <div className="flex justify-center mb-16 md:mb-8">
-            <TabsList className="grid grid-cols-2 md:grid-cols-2 gap-10">
+          <div className="flex justify-center mb-20 md:mb-10">
+            <TabsList className="grid grid-cols-2 md:grid-cols-2 gap-5">
               <TabsTrigger value="roadmap" className="px-6">
                 <Calendar className="mr-2 h-4 w-4" /> Roadmap
               </TabsTrigger>

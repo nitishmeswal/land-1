@@ -2,10 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function Hero() {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoaded(true), 300);
@@ -66,11 +68,10 @@ export default function Hero() {
           </p>
 
           {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-20 reveal reveal-delay-4">
+          <div className="flex flex-row justify-center gap-4 mb-20 reveal reveal-delay-4 w-full mx-auto">
             <Button
-              size="lg"
               onClick={() => window.open("https://app.neurolov.ai/", "_blank")}
-              className="bg-[#0361DA] hover:bg-[#0361DA]/80 text-white"
+              className="bg-[#0361DA] hover:bg-[#0361DA]/80 text-white w-[50%] md:w-[25%]"
             >
               Start Earning
             </Button>
