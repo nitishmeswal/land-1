@@ -933,23 +933,23 @@ export default function TokenPage() {
                   </div>
                   <div className="flex justify-between">
                     <div>GPU Compute (per hour)</div>
-                    <div>10-50 NLOV</div>
+                    <div>3.13 - 10 $NLOV</div>
                   </div>
                   <div className="flex justify-between">
                     <div>Text Generation (1K tokens)</div>
-                    <div>0.1-0.5 NLOV</div>
+                    <div>0.025 - 0.125 $NLOV</div>
                   </div>
                   <div className="flex justify-between">
                     <div>Image Generation (per image)</div>
-                    <div>2-5 NLOV</div>
+                    <div>0.125 - 1.25 $NLOV</div>
                   </div>
                   <div className="flex justify-between">
                     <div>Video Generation (per second)</div>
-                    <div>10-20 NLOV</div>
+                    <div>0.25 - 1.25 $NLOV</div>
                   </div>
                   <div className="flex justify-between">
                     <div>Agent Deployment (monthly)</div>
-                    <div>100-500 NLOV</div>
+                    <div>125 - 1238 $NLOV</div>
                   </div>
                 </div>
               </div>

@@ -18,6 +18,8 @@ import {
 } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useParams, useNavigate } from "react-router-dom";
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import ContactForm, { ContactFormData } from "@/components/common/ContactForm";
 
 // Team data
 const teamMembers = [
@@ -250,12 +252,15 @@ export default function AboutPage() {
       <SectionContainer className="pb-8">
         <Tabs value={tab} onValueChange={handleTabChange} className="w-full">
           <div className="flex justify-center mb-16 md:mb-8">
-            <TabsList className="grid grid-cols-2 md:grid-cols-2 gap-10">
+            <TabsList className="grid grid-cols-2 md:grid-cols-3 gap-10">
               <TabsTrigger value="team" className="px-6">
                 <Users className="mr-2 h-4 w-4" /> Team
               </TabsTrigger>
               <TabsTrigger value="mission" className="px-6">
                 <BookOpen className="mr-2 h-4 w-4" /> Mission
+              </TabsTrigger>
+              <TabsTrigger value="contact" className="px-6">
+                <Mail className="mr-2 h-4 w-4" /> Contact Us
               </TabsTrigger>
             </TabsList>
           </div>
@@ -280,8 +285,8 @@ export default function AboutPage() {
                           src={member.image}
                           alt={member.name}
                           className={`w-full h-full object-cover object-top ${
-                            ['Sparsh', 'Nitish Meswal', 'Ramesh Sharma', 'Charu Keswani', 'Dhruvanshi', 'Sanskar Lunawat']
-                              .some(name => member.name.trim() === name.trim())
+                            ['Sparsh', 'Nitish Meswal', 'Ramesh Sharma', 'Charu Keswani', 'Dhruvanshi', 'Sanskar Lunawat','Ruzaliya Gubaidullina','Dhruv Panchal','Adhik Joshi','Gokul Ravindran','Chandra S Katta','Jesse Guglielmo','Peter Yeo','Umair Mirza']
+                            .some(name => member.name.trim() === name.trim())
                             ? 'grayscale'
                             : ''
                           }`}
@@ -341,7 +346,12 @@ export default function AboutPage() {
                         <img
                           src={advisor.image}
                           alt={advisor.name}
-                          className="w-full h-full object-cover object-top"
+                          className={`w-full h-full object-cover object-top ${
+                            ['Chandra S Katta','Jesse Guglielmo','Peter Yeo','Umair Mirza']
+                            .some(name => advisor.name.trim() === name.trim())
+                            ? 'grayscale'
+                            : ''
+                          }`}
                         />
                       </div>
                       <div>
@@ -382,7 +392,7 @@ export default function AboutPage() {
                   align={useIsMobile() ? "center" : "left"}
                 />
 
-                <div className="glass-card p-6 rounded-xl border border-#0361DA/10 bg-gradient-to-br from-#0361DA/5 to-blue-500/5 mb-6">
+                <div className="glass-card p-6 rounded-xl border border-[#0361DA]/10 bg-gradient-to-br from-[#0361DA]/5 to-blue-500/5 mb-6">
                   <p className="text-xl italic text-center">
                     "To create a decentralized network that makes AI computing
                     accessible to everyone, empowering innovation while
@@ -431,6 +441,23 @@ export default function AboutPage() {
                     className="rounded-xl shadow-xl"
                   />
                 </div>
+              </div>
+            </div>
+          </TabsContent>
+
+          {/* Contact Tab */}
+          <TabsContent value="contact" className="space-y-16">
+            <div className="max-w-md mx-auto">
+              <div className="bg-[#0361DA] p-8 rounded-xl">
+                <h2 className="text-2xl font-semibold text-white mb-2">Contact Us</h2>
+                <p className="text-white/80 mb-6">Send us a message and we'll get back to you soon.</p>
+                
+                <ContactForm
+                  onSubmit={async (data: ContactFormData) => {
+                    console.log("Form submitted:", data);
+                    alert("Thank you for your message. We'll get back to you soon!");
+                  }}
+                />
               </div>
             </div>
           </TabsContent>

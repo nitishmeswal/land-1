@@ -52,6 +52,7 @@ const navItems = {
     items: [
       { label: "Team", href: "/about/team" },
       { label: "Mission", href: "/about/mission" },
+      { label: "Contact Us", href: "/about/contact"},
     ],
   },
 };
@@ -260,35 +261,7 @@ export default function Navbar() {
 
             {/* Desktop Action Buttons */}
             <div className="hidden md:flex items-center space-x-4">
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    className="rounded-full text-white/90 hover:text-white hover:bg-white/10"
-                  >
-                    Contact Us
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="bg-[#0361DA] border-white/10 md:max-w-[400px] p-6 [&>button]:text-white [&>button]:hover:bg-white/10">
-                  <DialogHeader>
-                    <DialogTitle className="text-xl text-white">
-                      Contact Us
-                    </DialogTitle>
-                    <DialogDescription className="text-white/80">
-                      Send us a message and we'll get back to you soon.
-                    </DialogDescription>
-                  </DialogHeader>
-                  <div className="mt-4">
-                    <ContactForm
-                      onSubmit={async (data: ContactFormData) => {
-                        console.log("Form submitted:", data);
-                        alert("Thank you for your message. We'll get back to you soon!");
-                        // You can add your email sending logic here
-                      }}
-                    />
-                  </div>
-                </DialogContent>
-              </Dialog>
+              
               <Button className="rounded-full bg-[#0361DA] hover:bg-[#0255c1] text-white">
                 Try Testnet
               </Button>

@@ -137,7 +137,7 @@ export default function ProductsPage() {
                       <th className="py-4 px-6 text-left">Memory</th>
                       <th className="py-4 px-6 text-left">CUDA Cores</th>
                       <th className="py-4 px-6 text-left">Tensor Cores</th>
-                      <th className="py-4 px-6 text-left">Price (NLOV/hr)</th>
+                      <th className="py-4 px-6 text-left">Price ($NLOV/Hr)</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -146,42 +146,42 @@ export default function ProductsPage() {
                       <td className="py-4 px-6">80GB HBM3</td>
                       <td className="py-4 px-6">18,432</td>
                       <td className="py-4 px-6">576</td>
-                      <td className="py-4 px-6">50 NLOV</td>
+                      <td className="py-4 px-6">21 $NLOV</td>
                     </tr>
                     <tr className="border-b">
                       <td className="py-4 px-6">NVIDIA GeForce RTX 4090</td>
                       <td className="py-4 px-6">24GB GDDR6X</td>
                       <td className="py-4 px-6">16,384</td>
                       <td className="py-4 px-6">512</td>
-                      <td className="py-4 px-6">20 NLOV</td>
+                      <td className="py-4 px-6">5 $NLOV</td>
                     </tr>
                     <tr className="border-b">
                       <td className="py-4 px-6">NVIDIA RTX 3090 Ti</td>
                       <td className="py-4 px-6">24GB GDDR6X</td>
                       <td className="py-4 px-6">10,752</td>
                       <td className="py-4 px-6">336</td>
-                      <td className="py-4 px-6">10 NLOV</td>
+                      <td className="py-4 px-6">2 $NLOV</td>
                     </tr>
                     <tr className="border-b">
                       <td className="py-4 px-6">NVIDIA A6000</td>
                       <td className="py-4 px-6">48GB GDDR6</td>
                       <td className="py-4 px-6">10,752</td>
                       <td className="py-4 px-6">336</td>
-                      <td className="py-4 px-6">30 NLOV</td>
+                      <td className="py-4 px-6">6 $NLOV</td>
                     </tr>
                     <tr className="border-b">
                       <td className="py-4 px-6">NVIDIA A5000</td>
                       <td className="py-4 px-6">24GB GDDR6</td>
                       <td className="py-4 px-6">8,192</td>
                       <td className="py-4 px-6">256</td>
-                      <td className="py-4 px-6">25 NLOV</td>
+                      <td className="py-4 px-6">3 $NLOV</td>
                     </tr>
                     <tr>
                       <td className="py-4 px-6">NVIDIA A4000</td>
                       <td className="py-4 px-6">16GB GDDR6</td>
                       <td className="py-4 px-6">6,144</td>
                       <td className="py-4 px-6">192</td>
-                      <td className="py-4 px-6">15 NLOV</td>
+                      <td className="py-4 px-6">2 $NLOV</td>
                     </tr>
                   </tbody>
                 </table>
@@ -296,39 +296,39 @@ export default function ProductsPage() {
                     <tr className="border-b">
                       <th className="py-4 px-6 text-left">Model Name</th>
                       <th className="py-4 px-6 text-left">Category</th>
-                      <th className="py-4 px-6 text-left">Cost (NLOV)</th>
+                      <th className="py-4 px-6 text-left">Cost ($NLOV)</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="border-b">
                       <td className="py-4 px-6">Neuro-Image Gen</td>
                       <td className="py-4 px-6">Text to Image</td>
-                      <td className="py-4 px-6">0.5/1K tokens</td>
+                      <td className="py-4 px-6">0.125 - 1.25 $NLOV</td>
                     </tr>
                     <tr className="border-b">
                       <td className="py-4 px-6">Freedom AI</td>
                       <td className="py-4 px-6">Uncensored Chat</td>
-                      <td className="py-4 px-6">1/chat</td>
+                      <td className="py-4 px-6">0.025 - 0.125 $NLOV</td>
                     </tr>
                     <tr className="border-b">
                       <td className="py-4 px-6">Coming Soon</td>
                       <td className="py-4 px-6"> Text to Music Generation</td>
-                      <td className="py-4 px-6">1.0/minute</td>
+                      <td className="py-4 px-6">-</td>
                     </tr>
                     <tr className="border-b">
                       <td className="py-4 px-6">Coming soon</td>
                       <td className="py-4 px-6">Text to Video Generation</td>
-                      <td className="py-4 px-6">5.0/minute</td>
+                      <td className="py-4 px-6">-</td>
                     </tr>
                     <tr className="border-b">
                       <td className="py-4 px-6">Coming Soon</td>
-                      <td className="py-4 px-6">Text to3D Model Generation</td>
-                      <td className="py-4 px-6">3.0/render</td>
+                      <td className="py-4 px-6">Text to 3D Model Generation</td>
+                      <td className="py-4 px-6">-</td>
                     </tr>
                     <tr>
                       <td className="py-4 px-6">Coming soon</td>
                       <td className="py-4 px-6">Deepfake</td>
-                      <td className="py-4 px-6">4.0/image</td>
+                      <td className="py-4 px-6">-</td>
                     </tr>
                   </tbody>
                 </table>
