@@ -156,6 +156,7 @@ export default function EcosystemPage() {
   const [highlightGetStarted, setHighlightGetStarted] = useState(false);
   const filteredPartners = partners;
   const getStartedButtonRef = useRef(null);
+  const [isPartnerFormOpen, setIsPartnerFormOpen] = useState(false);
 
   const handleTabChange = (value: string) => {
     navigate(`/ecosystem/${value}`);
@@ -366,7 +367,10 @@ export default function EcosystemPage() {
                     </div>
                   </div>
 
-                  <Dialog>
+                  <Dialog
+                    open={isPartnerFormOpen}
+                    onOpenChange={setIsPartnerFormOpen}
+                  >
                     <DialogTrigger asChild>
                       <Button
                         variant="neon"
@@ -394,6 +398,7 @@ export default function EcosystemPage() {
                       </DialogHeader>
                       <div className="mt-4">
                         <PartnerForm
+                          setIsDialogOpen={setIsPartnerFormOpen}
                           onSubmit={async (data: PartnerFormData) => {
                             // Here you can handle the form submission
                             console.log("Partnership form submitted:", data);

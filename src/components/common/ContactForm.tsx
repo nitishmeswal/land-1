@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/lib/supabase-client";
 
 export interface ContactFormData {
   email: string;
@@ -20,12 +21,20 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    try {
-      await onSubmit(formData);
+
+    const { error } = await supabase
+      .from("contact_requests")
+      .insert([formData]);
+
+    if (error) {
+      console.error("Submission failed:", error.message);
+      alert("Something went wrong.");
+    } else {
+      alert("Message sent!");
       setFormData({ email: "", concern: "" });
-    } finally {
-      setIsSubmitting(false);
     }
+
+    setIsSubmitting(false);
   };
 
   return (
