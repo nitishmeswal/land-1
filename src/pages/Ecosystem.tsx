@@ -185,7 +185,7 @@ export default function EcosystemPage() {
         <SectionContainer className="pb-8">
           <Tabs value={tab} onValueChange={handleTabChange} className="w-full">
             <div className="flex justify-center mb-20 md:mb-10">
-              <TabsList className="grid grid-cols-2 md:grid-cols-2 gap-5 border border-[#0361DA] hover:border-[#0361DA]/50 shadow-md transition-all duration-300  hover:shadow-lg">
+              <TabsList className="grid grid-cols-2 md:grid-cols-2 gap-5 border p-3 md:p-0 border-[#0361DA] hover:border-[#0361DA]/50 shadow-md transition-all duration-300  hover:shadow-lg">
                 <TabsTrigger value="roadmap" className="px-6">
                   <Calendar className="mr-2 h-4 w-4" /> Roadmap
                 </TabsTrigger>
