@@ -41,15 +41,6 @@ const teamMembers = [
     },
   },
   {
-    name: "Adhik Joshi",
-    role: " Co-Founder",
-    bio: "Founder of ModelsLab & Stable Diffusion API, generating 800M+ images with 350K users and $1.2M ARR. 5+ years in AI/ML product development, full-stack engineering, and scalable API integrations",
-    image: "/co-founder.png",
-    social: {
-      linkedin: "https://www.linkedin.com/in/adhikjoshi/",
-    },
-  },
-  {
     name: "Gokul Ravindran",
     role: "Chief Technology Officer",
     bio: "With 9+ years in blockchain and cryptography, I've built smart contracts, exchange engines, and authored key whitepapers.Expert in zk-proofs, Layer 2, and privacy tech, with on-chain analysis for 10+ major projects",
@@ -89,7 +80,7 @@ const teamMembers = [
   },
   {
     name: "Ramesh Sharma ",
-    role: "Business Analyst ",
+    role: "Head of Strategy & Growth",
     bio: "Leads Neurolov's business growth, strategic roadmap, and ecosystem expansion. With deep expertise in AI, Web3, and DePIN markets, RK oversees token strategy, User and market research, and go-to-market execution",
     image: "/rk.png",
     social: {
