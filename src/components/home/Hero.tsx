@@ -48,9 +48,9 @@ export default function Hero() {
       >
         <div className="max-w-3xl mx-auto text-center">
           {/* Subtitle tag */}
-          <div className="inline-flex items-center rounded-full bg-[#0361DA]/10 px-3 py-1 text-sm font-medium mb-6 reveal reveal-delay-1">
+          <div className="inline-flex items-center rounded-full bg-[#0361DA]/10 px-3 py-1 text-sm font-medium mb-6 reveal reveal-delay-1 shadow-[0_0_10px_rgba(3,97,218,0.7)] transition-shadow duration-300 hover:shadow-[0_0_20px_rgba(3,97,218,0.9)]">
             <span className="text-[#0361DA]">
-              Presale Coming Soon • Limited Allocation
+              Worlds First Decentralised AI Ecosystem
             </span>
           </div>
 
@@ -62,8 +62,7 @@ export default function Hero() {
 
           {/* Subheadline */}
           <p className="text-lg sm:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto reveal reveal-delay-3">
-            Join the revolution: Rent GPUs, generate AI content, and earn $NLOV
-            tokens on Solana.
+            <b>Join the revolution: Share Compute and earn $NLOV</b>
           </p>
 
           {/* CTA buttons */}

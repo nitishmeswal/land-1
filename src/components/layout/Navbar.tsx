@@ -400,7 +400,7 @@ export default function Navbar() {
                 </DialogContent>
               </Dialog>
               <Button
-                className="w-full rounded-full bg-[#0361DA] hover:bg-[#0255c1] text-white"
+                className="w-full rounded-full bg-gradient-to-r from-[#0361DA] to-[#4F8EF7] px-5 py-2 text-white font-semibold shadow-[0_0_10px_rgba(3,97,218,0.6)] hover:shadow-[0_0_20px_rgba(3,97,218,0.8)] hover:brightness-110 transition-all duration-300"
                 onClick={closeMenu}
               >
                 Try Testnet

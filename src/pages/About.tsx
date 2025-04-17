@@ -142,7 +142,7 @@ const advisors = [
   {
     name: "Peter Yeo",
     role: " Business  Advisor ",
-    bio: "Seasoned venture capitalist with over 20 years of experience. Partner at Sequoia Capital with focus on AI and blockchain investments.",
+    bio: "Led $1T Toyota Project & $4B Dentsu-Aegis M&A integration.Mined 1,000 BTC in 2009; founded CloudminingSG powering 10% of global LTC/DOGE hashrate.Co-founded XinFin (XDC), raised $20M ICO—now $7B valuation.Mentored Sparrow Exchange (acquired by Temasek-backed Amber Group).Launched RWA-DAO & world’s 1st fractional NFT luxury watch via Encrypto.cc.",
     image: "/business.png",
     social: {
       linkedin: "https://www.linkedin.com/in/peteryeo/",
