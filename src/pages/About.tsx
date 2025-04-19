@@ -33,7 +33,7 @@ import { PatternBackground } from "@/components/common/Highlight";
 const teamMembers = [
   {
     name: "Dhruv Panchal",
-    role: "CEO & Co-Founder",
+    role: "CEO & Founder",
     bio: "Visionary CEO of Neurolov, leading AI for global brands . Impacted 50K+ lives in 40+ countries. Signed $13M AI MOU with Govt. of Gujarat. UN-recognized humanitarian and innovation leader",
     image: "/ceo.png",
     social: {
