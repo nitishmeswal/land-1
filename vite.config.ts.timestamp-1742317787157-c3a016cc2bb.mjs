@@ -2,7 +2,6 @@
 import { defineConfig } from "file:///C:/Users/neohe/Desktop/neurolov-compute-cloud/node_modules/vite/dist/node/index.js";
 import react from "file:///C:/Users/neohe/Desktop/neurolov-compute-cloud/node_modules/@vitejs/plugin-react-swc/index.mjs";
 import path from "path";
-import { componentTagger } from "file:///C:/Users/neohe/Desktop/neurolov-compute-cloud/node_modules/lovable-tagger/dist/index.js";
 var __vite_injected_original_dirname = "C:\\Users\\neohe\\Desktop\\neurolov-compute-cloud";
 var vite_config_default = defineConfig(({ mode }) => ({
   server: {
