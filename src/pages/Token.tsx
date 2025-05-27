@@ -225,29 +225,69 @@ const pricePredictionData = [
 
 const faqData = [
   {
-    question: "What is the NLOV token?",
+    question: "What is Neurolov?",
     answer:
-      "NLOV is the native utility token that powers the entire Neurolov ecosystem. It's used for paying for services, governance voting, staking, and earning rewards from contributing resources to the network.",
+      "Neurolov, operated by Orlov Innovation Private Limited, is a browser-based platform providing decentralized GPU computing for AI, machine learning, and Web3 applications. Powered by the NLOV Token, it enables users to access high-performance computing resources efficiently and affordably.",
   },
   {
-    question: "How can I purchase NLOV tokens?",
+    question: "What is the NLOV Token?",
     answer:
-      "NLOV tokens will initially be available through our presale events. After the presale period, NLOV will be listed on major decentralized and centralized exchanges. Join our whitelist to get early access.",
+      "• Paying for GPU computing services\n• Staking to earn rewards and access premium features\n• Participating in governance voting\n• Contributing resources to the network for rewards\n\nThe NLOV Token is the native utility token of the Neurolov ecosystem, built on the Solana blockchain as an SPL token. It is not a security or investment product.",
   },
   {
-    question: "What is the total supply of NLOV?",
+    question: "What is the total supply of NLOV Tokens?",
     answer:
-      "The total supply of NLOV is capped at 500 million tokens. No additional tokens will be minted after reaching this cap, making NLOV a deflationary asset over time.",
+      "The total supply is capped at 500 million NLOV Tokens. No additional tokens will be minted, ensuring a deflationary model over time through usage and potential burning mechanisms.",
+  },
+  {
+    question: "How can I purchase NLOV Tokens?",
+    answer:
+      "• Presale: NLOV Tokens are available through our private presale, accessible via our partner launchpad, Kommunitas. Join the whitelist on www.neurolov.ai for early access and potential bonuses.\n\n• Post-Presale: After the presale, NLOV Tokens will be listed on major decentralized (e.g., Raydium) and centralized exchanges.\n\n• Payment Methods: Accepted cryptocurrencies include SOL, USDT, and fiat via approved gateways, subject to KYC/AML verification.",
+  },
+  {
+    question: "Who can participate in the presale?",
+    answer:
+      "• Participants must be 18+ and complete KYC/AML verification.\n\n• Participation is restricted in jurisdictions where token sales are prohibited, including the United States, China, North Korea, Iran, Syria, Cuba, Sudan, Venezuela, Russia, Crimea, Donetsk, Luhansk, Sevastopol, Bolivia, Egypt, Nepal, Morocco, Iraq, Algeria, Tunisia, Bangladesh, Qatar, and Saudi Arabia.\n\n• Check www.neurolov.ai for eligibility and comply with local laws.",
   },
   {
     question: "Is NLOV compatible with existing wallets?",
     answer:
-      "Yes, NLOV is built on the Solana blockchain as an SPL token, making it compatible with most Solana-compatible wallets like Phantom, Solflare, and others.",
+      "Yes, NLOV is an SPL token on the Solana blockchain, compatible with Solana wallets like Phantom, Solflare, Trust Wallet, and others. Ensure your wallet is secure and backed up.",
   },
   {
-    question: "How can I stake NLOV tokens?",
+    question: "How can I stake NLOV Tokens?",
     answer:
-      "You can stake your NLOV tokens through our platform to earn rewards, contribute to network security, and participate in governance. Stakers receive additional benefits like fee discounts and premium features.",
+      "• Stake NLOV Tokens via the Neurolov platform to earn rewards, contribute to network security, and participate in governance.\n\n• Benefits include fee discounts, access to premium features, and staking rewards.\n\n• Visit the staking dashboard on swarm.neurolov.ai for instructions after the presale.",
+  },
+  {
+    question: "Are NLOV Token purchases refundable?",
+    answer:
+      "• Presale purchases are non-refundable, except if the presale is canceled before token distribution, per our Refund Policy.\n\n• Refunds are not provided for user errors (e.g., incorrect wallet addresses) or market changes.",
+  },
+  {
+    question: "What is the utility of NLOV Tokens on the platform?",
+    answer:
+      "• Compute Payments: Pay for GPU computing resources for AI/ML tasks.\n• Governance: Vote on platform upgrades and policies.\n• Staking: Earn rewards and access premium features.\n• Resource Contribution: Earn tokens by contributing computing resources to the network.",
+  },
+  {
+    question: "How does Neurolov comply with regulations?",
+    answer:
+      "• Neurolov complies with India's laws, including the Companies Act, 2013, and the Digital Personal Data Protection Act, 2023.\n\n• KYC/AML verification ensures adherence to the Prevention of Money Laundering Act, 2002.\n\n• The NLOV Token is a utility token, not a security, and is not marketed as an investment.",
+  },
+  {
+    question: "What happens if the presale doesn't meet the soft cap?",
+    answer:
+      "If the soft cap is not reached, the presale may be canceled, and funds will be refunded per the Refund Policy, subject to transaction fees.",
+  },
+  {
+    question: "Can I use NLOV Tokens outside the Neurolov platform?",
+    answer:
+      "NLOV Tokens are primarily for use within the Neurolov ecosystem. Post-presale, they may be traded on listed exchanges, subject to market availability and local laws.",
+  },
+  {
+    question: "How can I contact Neurolov?",
+    answer:
+      "• Email: support@neurolov.ai\n• Website: www.neurolov.ai",
   },
 ];
 
@@ -1014,19 +1054,30 @@ export default function TokenPage() {
                 />
 
                 <div className="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
-                  {faqData.map((item, index) => (
-                    <Card
-                      key={index}
-                      className="glass-card border border-neuro-500/10"
-                    >
+                  {faqData.map((faq, index) => (
+                    <Card key={index} className="glass-card border border-neuro-500/10">
                       <CardHeader>
                         <CardTitle className="flex items-start">
                           <HelpCircle className="h-5 w-5 text-neuro-500 mr-3 mt-0.5 flex-shrink-0" />
-                          <span>{item.question}</span>
+                          <span>{faq.question}</span>
                         </CardTitle>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-muted-foreground">{item.answer}</p>
+                        {faq.answer.includes("•") ? (
+                          <ul className="text-muted-foreground list-none space-y-2">
+                            {faq.answer
+                              .split("•")
+                              .filter((item) => item.trim() !== "")
+                              .map((item, i) => (
+                                <li key={i} className="flex items-start">
+                                  <span className="mr-2">•</span>
+                                  <span>{item.trim()}</span>
+                                </li>
+                              ))}
+                          </ul>
+                        ) : (
+                          <p className="text-muted-foreground">{faq.answer}</p>
+                        )}
                       </CardContent>
                     </Card>
                   ))}

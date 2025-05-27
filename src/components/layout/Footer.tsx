@@ -44,6 +44,15 @@ const footerLinks = [
       { label: "Mission", href: "/about/mission" },
     ],
   },
+  {
+    title: "Legal",
+    links: [
+      { label: "Privacy Policy", href: "/legal/privacy-policy" },
+      { label: "Terms & Conditions", href: "/legal/terms-and-conditions" },
+      { label: "Refund Policy", href: "/legal/refund-policy" },
+      { label: "Disclaimer", href: "/legal/disclaimer" },
+    ],
+  },
 ];
 
 export default function Footer() {

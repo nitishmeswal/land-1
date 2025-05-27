@@ -8,10 +8,7 @@ var vite_config_default = defineConfig(({ mode }) => ({
     host: "::",
     port: 8080
   },
-  plugins: [
-    react(),
-    mode === "development" && componentTagger()
-  ].filter(Boolean),
+  plugins:,
   resolve: {
     alias: {
       "@": path.resolve(__vite_injected_original_dirname, "./src")

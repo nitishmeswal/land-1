@@ -16,6 +16,13 @@ import AboutPage from "./pages/About";
 import WhitepaperPage from "./pages/Whitepaper";
 import PitchDeckPage from "./pages/pitch-deck";
 
+// Legal pages
+import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
+import TermsAndConditions from "./pages/legal/TermsAndConditions";
+import RefundPolicy from "./pages/legal/RefundPolicy";
+import Disclaimer from "./pages/legal/Disclaimer";
+import CookieConsent from "./components/common/CookieConsent";
+
 // GA4 ID
 const GA_ID = "G-K7EZKD532N";
 
@@ -102,6 +109,10 @@ const AppRoutes = () => {
       <Route path="/about/:tab" element={<AboutPage />} />
       <Route path="/whitepaper" element={<WhitepaperPage />} />
       <Route path="/pitch-deck" element={<PitchDeckPage />} />
+      <Route path="/legal/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/legal/terms-and-conditions" element={<TermsAndConditions />} />
+      <Route path="/legal/refund-policy" element={<RefundPolicy />} />
+      <Route path="/legal/disclaimer" element={<Disclaimer />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
@@ -116,6 +127,7 @@ const App = () => {
         <Sonner expand={true} closeButton richColors />
         <BrowserRouter>
           <AppRoutes />
+          <CookieConsent />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
