@@ -59,7 +59,7 @@ export default function Footer() {
   return (
     <footer className="bg-secondary/50 py-12 border-t border-border/60">
       <Container>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-8 sm:gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-7 gap-8">
           {/* Logo and description */}
           <div className="col-span-2 sm:col-span-3 lg:col-span-2 lg:pr-8 mb-6 lg:mb-0">
             <Link
@@ -121,23 +121,25 @@ export default function Footer() {
           </div>
 
           {/* Footer links */}
-          {footerLinks.map((group, idx) => (
-            <div key={idx} className="px-2">
-              <h3 className="text-sm font-semibold mb-3">{group.title}</h3>
-              <ul className="space-y-2.5">
-                {group.links.map((link, linkIdx) => (
-                  <li key={linkIdx}>
-                    <Link
-                      to={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors block"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <div className="col-span-2 sm:col-span-3 lg:col-span-5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-4">
+            {footerLinks.map((group, idx) => (
+              <div key={idx} className="px-2">
+                <h3 className="text-sm font-semibold mb-3">{group.title}</h3>
+                <ul className="space-y-2.5">
+                  {group.links.map((link, linkIdx) => (
+                    <li key={linkIdx}>
+                      <Link
+                        to={link.href}
+                        className="text-sm text-muted-foreground hover:text-foreground transition-colors block"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="mt-12 border-t border-border pt-6 text-center text-sm text-muted-foreground">
