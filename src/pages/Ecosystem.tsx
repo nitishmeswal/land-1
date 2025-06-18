@@ -63,7 +63,7 @@ const roadmapData = [
   },
   {
     title: "Q1 2025 - Extended AI Model Ecosystem",
-    status: "in-progress",
+    status: "completed",
     items: [
       "$NLOV Token Presale",
       "Token Generation Event (TGE)",
@@ -75,7 +75,7 @@ const roadmapData = [
   },
   {
     title: "Q2 2025 - Token Launch",
-    status: "upcoming",
+    status: "in-progress",
     items: [
       "Migration from testnet to mainnet",
       "Production-level infrastructure",
