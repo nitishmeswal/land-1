@@ -457,7 +457,6 @@ export default function ProductsPage() {
                       <Button
                         variant="neon"
                         size="lg"
-                        disabled
                         onClick={() => {
                           window.open(
                             "http://swarm.neurolov.ai",
