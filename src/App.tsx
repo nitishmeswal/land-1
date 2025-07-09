@@ -15,6 +15,7 @@ import ResourcesPage from "./pages/Resources";
 import AboutPage from "./pages/About";
 import WhitepaperPage from "./pages/Whitepaper";
 import PitchDeckPage from "./pages/pitch-deck";
+import BlogDetailPage from "./pages/BlogDetailPage";
 
 // Legal pages
 import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
@@ -109,6 +110,7 @@ const AppRoutes = () => {
       <Route path="/about/:tab" element={<AboutPage />} />
       <Route path="/whitepaper" element={<WhitepaperPage />} />
       <Route path="/pitch-deck" element={<PitchDeckPage />} />
+      <Route path="/blog/:slug" element={<BlogDetailPage />} />
       <Route path="/legal/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/legal/terms-and-conditions" element={<TermsAndConditions />} />
       <Route path="/legal/refund-policy" element={<RefundPolicy />} />

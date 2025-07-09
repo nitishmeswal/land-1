@@ -93,7 +93,7 @@ export default function Hero() {
           {/* CTA Button */}
           <div className="flex flex-row justify-center gap-4 mb-20 reveal reveal-delay-4 w-full mx-auto">
             <Button
-              onClick={() => window.open("https://app.neurolov.ai/", "_blank")}
+              onClick={() => window.open("https://swarm.neurolov.ai//", "_blank")}
               className="bg-[#0361DA] hover:bg-[#0361DA]/80 text-white w-[50%] md:w-[25%]"
             >
               Start Earning

@@ -580,7 +580,7 @@ export default function TokenPage() {
                       </div>
                       <div className="md:w-1/2 md:pl-16">
                         <div className="text-xl font-bold text-neuro-500">
-                          Q1 2025
+                          Q3 2025
                         </div>
                       </div>
                     </div>
@@ -605,7 +605,7 @@ export default function TokenPage() {
                       </div>
                       <div className="md:w-1/2 md:pl-16">
                         <div className="text-xl font-bold text-neuro-500">
-                          Q1 2025
+                          Q3 2025
                         </div>
                       </div>
                     </div>
@@ -631,7 +631,7 @@ export default function TokenPage() {
                       </div>
                       <div className="md:w-1/2 md:pl-16">
                         <div className="text-xl font-bold text-neuro-500">
-                          Q2 2025
+                          Q3 2025
                         </div>
                       </div>
                     </div>
@@ -656,7 +656,7 @@ export default function TokenPage() {
                       </div>
                       <div className="md:w-1/2 md:pl-16">
                         <div className="text-xl font-bold text-neuro-500">
-                          Q2 2025
+                          Q4 2025
                         </div>
                       </div>
                     </div>
@@ -681,7 +681,7 @@ export default function TokenPage() {
                       </div>
                       <div className="md:w-1/2 md:pl-16">
                         <div className="text-xl font-bold text-neuro-500">
-                          Q2 2025
+                          Q4 2025
                         </div>
                       </div>
                     </div>
@@ -707,7 +707,7 @@ export default function TokenPage() {
                       </div>
                       <div className="md:w-1/2 md:pl-16">
                         <div className="text-xl font-bold text-neuro-500">
-                          Q3 2025
+                          Q4 2025
                         </div>
                       </div>
                     </div>

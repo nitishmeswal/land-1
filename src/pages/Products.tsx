@@ -28,6 +28,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import AIModelCard from "@/components/common/AIModelCard";
 import { PatternBackground } from "@/components/common/Highlight";
 
+import { Helmet } from "react-helmet";
+
 export default function ProductsPage() {
   const { tab = "compute" } = useParams();
   const navigate = useNavigate();
@@ -299,179 +301,78 @@ export default function ProductsPage() {
                   </div>
                 </div>
 
-                <div className="glass-card p-8 rounded-xl border border-#0361DA/10">
-                  <h3 className="text-2xl font-bold mb-6">
-                    Model Specifications
-                  </h3>
-                  <div className="overflow-x-auto">
-                    <table className="w-full">
-                      <thead>
-                        <tr className="border-b">
-                          <th className="py-4 px-6 text-left">Model Name</th>
-                          <th className="py-4 px-6 text-left">Category</th>
-                          <th className="py-4 px-6 text-left">Cost ($NLOV)</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr className="border-b">
-                          <td className="py-4 px-6">Neuro-Image Gen</td>
-                          <td className="py-4 px-6">Text to Image</td>
-                          <td className="py-4 px-6">0.125 - 1.25 $NLOV</td>
-                        </tr>
-                        <tr className="border-b">
-                          <td className="py-4 px-6">Freedom AI</td>
-                          <td className="py-4 px-6">Uncensored Chat</td>
-                          <td className="py-4 px-6">0.025 - 0.125 $NLOV</td>
-                        </tr>
-                        <tr className="border-b">
-                          <td className="py-4 px-6">Coming Soon</td>
-                          <td className="py-4 px-6">
-                            {" "}
-                            Text to Music Generation
-                          </td>
-                          <td className="py-4 px-6">-</td>
-                        </tr>
-                        <tr className="border-b">
-                          <td className="py-4 px-6">Coming soon</td>
-                          <td className="py-4 px-6">
-                            Text to Video Generation
-                          </td>
-                          <td className="py-4 px-6">-</td>
-                        </tr>
-                        <tr className="border-b">
-                          <td className="py-4 px-6">Coming Soon</td>
-                          <td className="py-4 px-6">
-                            Text to 3D Model Generation
-                          </td>
-                          <td className="py-4 px-6">-</td>
-                        </tr>
-                        <tr>
-                          <td className="py-4 px-6">Coming soon</td>
-                          <td className="py-4 px-6">Deepfake</td>
-                          <td className="py-4 px-6">-</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
               </TabsContent>
 
               {/* Swarm Network Tab */}
-              <TabsContent value="swarm" className="space-y-4">
-                <div>
-                  <SectionHeading
-                    title="Decentralized Neuro Swarm"
-                    subtitle="Join our peer-to-peer network of compute providers and users"
-                  />
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <FeatureCard
-                      title="Distributed Processing"
-                      description="Break complex tasks into smaller units for parallel processing across the network, reducing time and cost."
-                      icon={<Server className="h-6 w-6" />}
-                      alwaysActive={true}
-                    />
-                    <FeatureCard
-                      title="Fault Tolerance"
-                      description="Automatic node failover and task reassignment ensures your jobs complete even if individual nodes go offline."
-                      icon={<Shield className="h-6 w-6" />}
-                      alwaysActive={true}
-                    />
-                    <FeatureCard
-                      title="Resource Optimization"
-                      description="Intelligent scheduling allocates tasks to the most suitable nodes based on hardware capabilities and load."
-                      icon={<Zap className="h-6 w-6" />}
-                      alwaysActive={true}
-                    />
-                  </div>
-                </div>
+              <TabsContent value="swarm" className="space-y-12">
+  {/* SEO META TAGS FOR SWARM TAB */}
 
-                <div className="relative py-16">
-                  <div className="absolute inset-0 flex items-center justify-center z-0">
-                    <div className="w-full max-w-4xl h-[500px] opacity-10">
-                      <svg
-                        viewBox="0 0 800 500"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g stroke="#6366f1" stroke-width="2" fill="none">
-                          <circle cx="400" cy="250" r="100" />
-                          <circle cx="200" cy="150" r="50" />
-                          <circle cx="600" cy="150" r="50" />
-                          <circle cx="200" cy="350" r="50" />
-                          <circle cx="600" cy="350" r="50" />
-                          <line x1="400" y1="250" x2="200" y2="150" />
-                          <line x1="400" y1="250" x2="600" y2="150" />
-                          <line x1="400" y1="250" x2="200" y2="350" />
-                          <line x1="400" y1="250" x2="600" y2="350" />
-                          <line x1="200" y1="150" x2="600" y2="150" />
-                          <line x1="200" y1="350" x2="600" y2="350" />
-                        </g>
-                      </svg>
-                    </div>
-                  </div>
+  <div>
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+      <FeatureCard
+        title="Plug & Earn"
+        description="Run the Swarm node app on your PC, Mac, or mobile. Start earning $NLOV instantly—no crypto or coding skills required."
+        icon={<Zap className="h-6 w-6" aria-label="Plug and Earn icon" />}
+        alwaysActive={true}
+      />
+      <FeatureCard
+        title="Solana-Powered Rewards"
+        description="All rewards and payouts are on-chain, fast, and transparent. Withdraw your $NLOV anytime."
+        icon={<Server className="h-6 w-6" aria-label="Solana Rewards icon" />}
+        alwaysActive={true}
+      />
+      <FeatureCard
+        title="Leaderboard & Bonuses"
+        description="Compete globally. Top contributors win bonus rewards—track your stats live."
+        icon={<Network className="h-6 w-6" aria-label="Leaderboard icon" />}
+        alwaysActive={true}
+      />
+      <FeatureCard
+        title="Secure & Private"
+        description="No personal data required. All compute jobs are sandboxed and encrypted for your safety."
+        icon={<Shield className="h-6 w-6" aria-label="Security icon" />}
+        alwaysActive={true}
+      />
+    </div>
+  </div>
 
-                  <div className="relative z-10 glass-card p-8 rounded-xl border border-#0361DA/10 max-w-lg mx-auto">
-                    <h3 className="text-2xl font-bold mb-4">
-                      Monetize Your Hardware
-                    </h3>
-                    <p className="text-muted-foreground mb-6">
-                      Turn your idle computing resources into a passive income
-                      stream. Join our swarm network as a provider and earn NLOV
-                      tokens.
-                    </p>
-                    <div className="space-y-4 mb-6">
-                      <div className="flex items-center gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 bg-#0361DA/10 rounded-full flex items-center justify-center text-#0361DA">
-                          1
-                        </div>
-                        <div>
-                          <h4 className="font-medium">Install Node Software</h4>
-                          <p className="text-sm text-muted-foreground">
-                            Simple setup on Windows, Mac, or Linux
-                          </p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 bg-#0361DA/10 rounded-full flex items-center justify-center text-#0361DA">
-                          2
-                        </div>
-                        <div>
-                          <h4 className="font-medium">Configure Resources</h4>
-                          <p className="text-sm text-muted-foreground">
-                            Choose what to share and when
-                          </p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 bg-#0361DA/10 rounded-full flex items-center justify-center text-#0361DA">
-                          3
-                        </div>
-                        <div>
-                          <h4 className="font-medium">Earn NLOV Tokens</h4>
-                          <p className="text-sm text-muted-foreground">
-                            Get paid automatically as you contribute
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="mt-8 text-center">
-                      <Button
-                        variant="neon"
-                        size="lg"
-                        disabled
-                        onClick={() => {
-                          window.open(
-                            "http://swarm.neurolov.ai",
-                            "_blank",
-                            "noopener,noreferrer"
-                          );
-                        }}
-                      >
-                        Join the Swarm
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </TabsContent>
+  <div className="relative py-12">
+    <div className="relative z-10 glass-card p-8 rounded-xl border border-#0361DA/10 max-w-2xl mx-auto" aria-labelledby="how-to-join-heading">
+  <h2 id="how-to-join-heading" className="text-2xl font-bold mb-4 text-center">
+    How to Join the Swarm
+  </h2>
+ 
+  <ol className="space-y-6 mb-8 list-decimal list-inside">
+    <li>
+      <span className="font-medium">Register in Your Browser:</span> Go to <a href="https://swarm.neurolov.ai" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">swarm.neurolov.ai</a> and sign up with your email. No downloads required—works on all devices and browsers.
+    </li>
+    <li>
+      <span className="font-medium">Connect Your Wallet:</span> After registration, link your Solana wallet to receive $NLOV rewards.
+    </li>
+    <li>
+      <span className="font-medium">Scan Your Device:</span> The app will automatically scan your device to gather configuration details for optimal participation.
+    </li>
+    <li>
+      <span className="font-medium">Add & Register Device:</span> Register one or more devices to your account for swarming.
+    </li>
+    <li>
+      <span className="font-medium">Start Swarming:</span> Keep your browser open and start contributing compute power. Earn $NLOV in real time and track your progress live. Works on any device, any browser!
+    </li>
+  </ol>
+  <div className="mt-8 text-center">
+    <Button
+      variant="neon"
+      size="lg"
+      onClick={() => {
+        window.open("https://swarm.neurolov.ai", "_blank", "noopener,noreferrer");
+      }}
+    >
+      Join the Swarm
+    </Button>
+  </div>
+</div>
+  </div>
+</TabsContent>
 
               {/* AI Agents Tab */}
               <TabsContent value="agents" className="space-y-16">

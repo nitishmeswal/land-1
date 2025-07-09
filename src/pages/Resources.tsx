@@ -28,6 +28,7 @@ import {
   IndieHackersIcon,
 } from "@/components/icons/social-icons";
 import { PatternBackground } from "@/components/common/Highlight";
+import { getAllBlogs } from '@/utils/blogLoader';
 
 const resources = [
   {
@@ -109,6 +110,7 @@ export default function ResourcesPage() {
         <SectionContainer className="pb-16">
           {/* Featured Resources */}
           <div className="mb-16">
+    
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 z-[100]">
               {resources.map((resource, index) => (
                 <Card
@@ -152,9 +154,44 @@ export default function ResourcesPage() {
                   </CardContent>
                 </Card>
               ))}
+              {/* Blog Cards */}
+              {getAllBlogs().slice(0, 10).map((blog) => (
+                <Card key={blog.slug} className="group hover:border-[#0361DA]/50 transition-colors">
+                  <CardHeader>
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="p-2 rounded-lg bg-[#0361DA]/10 text-[#0361DA]">
+                        <Newspaper className="h-6 w-6" />
+                      </div>
+                      <CardTitle className="text-lg mb-1 group-hover:text-[#0361DA] transition-colors">{blog.title}</CardTitle>
+                    </div>
+                    <CardDescription className="mb-2 text-xs text-muted-foreground">
+                      {new Date(blog.date).toLocaleDateString()}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-col gap-3">
+                      <img
+                        src={blog.image}
+                        alt={blog.title}
+                        className="w-full h-32 object-cover object-center rounded-lg"
+                        loading="lazy"
+                      />
+                      <p className="mb-2 text-sm text-muted-foreground">{blog.summary}</p>
+                      <Button asChild variant="ghost" className="w-full justify-between group/link">
+                        <a href={`/blog/${blog.slug}`} className="group/link flex items-center gap-2">
+                          <span className="font-medium text-[#0361DA]">Read More</span>
+                          <ArrowUpRight className="h-4 w-4 opacity-0 group-hover/link:opacity-100 transition-opacity" />
+                        </a>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </SectionContainer>
+
+
       </PageLayout>
     </PatternBackground>
   );

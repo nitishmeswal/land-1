@@ -34,15 +34,6 @@ export default function AIModelCard({
         className
       )}
     >
-      {/* Coming Soon Overlay */}
-      {isComingSoon && (
-        <div className="absolute inset-0 bg-[#0361DA]/80 backdrop-blur-sm flex items-center justify-center z-20">
-          <div className="text-center">
-            <p className="text-2xl font-bold text-white mb-2">Coming Soon</p>
-            <p className="text-sm text-gray-200">Stay tuned for updates!</p>
-          </div>
-        </div>
-      )}
 
       {/* Image container with gradient overlay */}
       <div className="relative h-48 overflow-hidden">
