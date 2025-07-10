@@ -83,7 +83,7 @@ export default function ProductHighlights() {
     {
       title: "GPU Compute",
       description:
-        "Rent GPUs for AI training and inference. Affordable, scalable compute power for all.",
+        "Rent GPUs for AI training and inference. Affordable, scalable compute power for all.\n\nWhy it matters: Access high-performance GPUs on demand—no need to own expensive hardware. Ideal for researchers, startups, and creators who need flexible, affordable compute resources.",
       icon: <Cpu className="h-6 w-6" />,
       delay: "reveal-delay-1",
       url: "/products/compute",
@@ -91,7 +91,7 @@ export default function ProductHighlights() {
     {
       title: "AI Models",
       description:
-        "Generate images, text, audio, code, and video with ease. Unleash creativity with Neurolov.",
+        "Generate images, text, audio, code, and video with ease. Unleash creativity with Neurolov.\n\nWho it’s for: Artists, developers, and businesses looking to integrate state-of-the-art AI into their workflows—no technical barriers, just results.",
       icon: <Code className="h-6 w-6" />,
       delay: "reveal-delay-2",
       url: "/products/ai-models",
@@ -99,7 +99,7 @@ export default function ProductHighlights() {
     {
       title: "Swarm Network",
       description:
-        "Connect devices, solve compute tasks, and earn NLOV. Turn idle hardware into income.",
+        "Connect devices, solve compute tasks, and earn NLOV. Turn idle hardware into income.\n\nWhy it matters: Anyone can contribute their device’s unused power to the network and earn rewards, making advanced AI accessible and affordable for all.",
       icon: <Network className="h-6 w-6" />,
       delay: "reveal-delay-3",
       url: "/products/swarm",
@@ -107,7 +107,7 @@ export default function ProductHighlights() {
     {
       title: "AI Agents",
       description:
-        "Autonomous AI solutions for decentralized apps. The future of blockchain automation.",
+        "Autonomous AI solutions for decentralized apps. The future of blockchain automation.\n\nWho it’s for: Web3 builders and enterprises seeking autonomous, intelligent agents to power next-gen dApps and automate complex workflows.",
       icon: <Bot className="h-6 w-6" />,
       delay: "reveal-delay-4",
       url: "/products/agents",

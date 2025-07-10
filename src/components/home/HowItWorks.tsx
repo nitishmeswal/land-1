@@ -237,29 +237,7 @@ export default function HowItWorks() {
         </div>
       </div>
 
-      <div className="flex flex-col items-center justify-center gap-4 mt-16">
-        {walletAddress ? (
-          <div className="flex items-center gap-2 text-[#0361DA]">
-            <Wallet className="h-5 w-5" />
-            <span className="font-medium">
-              {walletAddress.slice(0, 6)}...{walletAddress.slice(-4)}
-            </span>
-          </div>
-        ) : (
-          <>
-            <Button
-              variant="neon"
-              size="lg"
-              className="group relative overflow-hidden reveal reveal-delay-4"
-              onClick={handleWalletConnect}
-            >
-              <span className="absolute inset-0 w-full h-full bg-white/10 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500"></span>
-              <Rocket className="mr-2 h-5 w-5 transition-all group-hover:rotate-12" />
-              <span className="relative">Connect Wallet</span>
-            </Button>
-          </>
-        )}
-      </div>
+ 
     </SectionContainer>
   );
 }
