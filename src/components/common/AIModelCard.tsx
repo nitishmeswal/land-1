@@ -37,25 +37,48 @@ export default function AIModelCard({
 
       {/* Image container with gradient overlay */}
       <div className="relative h-48 overflow-hidden">
-        <img
-          src={`/ai-models/${
-            id === "neurolov-image"
-              ? "neuro image"
-              : id === "text-to-video" || id === "video"
-              ? "text to video"
-              : id === "music-ai"
-              ? "text to music"
-              : id === "freedom-ai"
-              ? "freedom ai"
-              : id === "text-to-3d"
-              ? "text to 3d"
-              : id === "deepfake"
-              ? "deepfake"
-              : "neuro image"
-          }.png`}
-          alt={name}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-        />
+        <picture>
+          <source
+            srcSet={`/ai-models/${
+              id === "neurolov-image"
+                ? "neuro image.webp"
+                : id === "deepfake"
+                ? "deepfake.webp"
+                : id === "freedom-ai"
+                ? "freedom ai.webp"
+                : id === "text-to-video"
+                ? "text to video.webp"
+                : id === "music-ai"
+                ? "text to music.webp"
+                : id === "text-to-3d"
+                ? "text to 3d.webp"
+                : "neuro image.webp"
+            }`}
+            type="image/webp"
+          />
+          <img
+            src={`/ai-models/${
+              id === "neurolov-image"
+                ? "neuro image.png"
+                : id === "deepfake"
+                ? "deepfake.png"
+                : id === "freedom-ai"
+                ? "freedom ai.png"
+                : id === "text-to-video"
+                ? "text to video.png"
+                : id === "music-ai"
+                ? "text to music.png"
+                : id === "text-to-3d"
+                ? "text to 3d.png"
+                : "neuro image.png"
+            }`}
+            alt={`AI Model: ${name}`}
+            width="384"
+            height="192"
+            className="w-full h-48 object-cover object-center rounded-t-xl"
+            loading="lazy"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
 
         {/* Badges */}

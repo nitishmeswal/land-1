@@ -3,6 +3,7 @@ import { SectionContainer } from "@/components/ui/Container";
 import { Button } from "@/components/ui/button";
 import { Wallet, Cpu, Coins, Rocket } from "lucide-react";
 import { toast } from "sonner";
+import { Helmet } from "react-helmet";
 
 type StepProps = {
   number: number;
@@ -172,77 +173,86 @@ export default function HowItWorks() {
   ];
 
   return (
-    <SectionContainer className="py-24 relative overflow-hidden">
-      {/* Gradient background */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-secondary/50 to-secondary/30"></div>
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0361DA]/20 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0361DA]/20 to-transparent"></div>
+    <>
+      <Helmet>
+        <title>How Neurolov Works – Decentralized AI Compute</title>
+        <meta
+          name="description"
+          content="Learn how Neurolov’s decentralized platform connects GPU providers and AI users for seamless, scalable compute."
+        />
+      </Helmet>
+      <SectionContainer className="py-24 relative overflow-hidden">
+        {/* Gradient background */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-secondary/50 to-secondary/30"></div>
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0361DA]/20 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0361DA]/20 to-transparent"></div>
 
-        {/* Animated particles */}
-        <div className="absolute top-20 left-1/4 w-3 h-3 bg-[#0361DA]/20 rounded-full animate-float"></div>
-        <div className="absolute top-40 right-1/4 w-2 h-2 bg-blue-400/20 rounded-full animate-float animation-delay-700"></div>
-        <div className="absolute bottom-20 left-1/3 w-4 h-4 bg-[#0361DA]/20 rounded-full animate-float animation-delay-1500"></div>
-      </div>
+          {/* Animated particles */}
+          <div className="absolute top-20 left-1/4 w-3 h-3 bg-[#0361DA]/20 rounded-full animate-float"></div>
+          <div className="absolute top-40 right-1/4 w-2 h-2 bg-blue-400/20 rounded-full animate-float animation-delay-700"></div>
+          <div className="absolute bottom-20 left-1/3 w-4 h-4 bg-[#0361DA]/20 rounded-full animate-float animation-delay-1500"></div>
+        </div>
 
-      <div className="text-center mb-16">
-        <div className="mb-8">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#0361DA]/10 text-[#0361DA] text-sm font-medium reveal reveal-delay-1">
-            <span className="mr-1">🚀</span>
-            <span>Getting Started</span>
+        <div className="text-center mb-16">
+          <div className="mb-8">
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#0361DA]/10 text-[#0361DA] text-sm font-medium reveal reveal-delay-1">
+              <span className="mr-1">🚀</span>
+              <span>Getting Started</span>
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-4xl font-bold mb-6 reveal reveal-delay-1 relative inline-block">
+              Begin Your Journey in Three Simple Steps
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-[#0361DA] to-blue-500 rounded-full"></div>
+            </h2>
+          </div>
+
+          <div>
+            <p className="text-muted-foreground max-w-2xl mx-auto reveal reveal-delay-2">
+              Joining the Neurolov ecosystem is simple and straightforward. Follow
+              these steps to begin your journey.
+            </p>
           </div>
         </div>
 
-        <div>
-          <h2 className="text-4xl font-bold mb-6 reveal reveal-delay-1 relative inline-block">
-            Begin Your Journey in Three Simple Steps
-            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-[#0361DA] to-blue-500 rounded-full"></div>
-          </h2>
-        </div>
+        <div className="relative">
+          {/* Connecting line between steps */}
+          <div className="absolute top-16 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#0361DA]/40 to-transparent hidden md:block">
+            {/* Animated dot moving along the line */}
+            <div
+              className={`absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#0361DA] shadow-neon transition-all duration-1000 ease-in-out`}
+              style={{
+                left: `${activeLine * 50}%`,
+                transform: `translateX(${
+                  activeLine === 0 ? "0" : "-50%"
+                }) translateY(-50%)`,
+              }}
+            ></div>
+          </div>
 
-        <div>
-          <p className="text-muted-foreground max-w-2xl mx-auto reveal reveal-delay-2">
-            Joining the Neurolov ecosystem is simple and straightforward. Follow
-            these steps to begin your journey.
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {steps.map((step, index) => (
+              <Step
+                key={index}
+                number={step.number}
+                title={step.title}
+                description={step.description}
+                icon={step.icon}
+                delay={step.delay}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-
-      <div className="relative">
-        {/* Connecting line between steps */}
-        <div className="absolute top-16 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#0361DA]/40 to-transparent hidden md:block">
-          {/* Animated dot moving along the line */}
-          <div
-            className={`absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#0361DA] shadow-neon transition-all duration-1000 ease-in-out`}
-            style={{
-              left: `${activeLine * 50}%`,
-              transform: `translateX(${
-                activeLine === 0 ? "0" : "-50%"
-              }) translateY(-50%)`,
-            }}
-          ></div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {steps.map((step, index) => (
-            <Step
-              key={index}
-              number={step.number}
-              title={step.title}
-              description={step.description}
-              icon={step.icon}
-              delay={step.delay}
-            />
-          ))}
-        </div>
-      </div>
-
- 
-    </SectionContainer>
+      </SectionContainer>
+    </>
   );
 }
 
 // Add TypeScript declarations for wallet providers
+export {}; // Ensures this file is a module for global augmentation
+
 declare global {
   interface Window {
     solana?: {

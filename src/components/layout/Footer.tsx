@@ -66,7 +66,10 @@ export default function Footer() {
               to="/"
               className="flex items-center space-x-2 text-lg font-bold"
             >
-              <img src="/og-image.png" alt="Neurolov" className="h-7 w-auto" />
+              <picture>
+  <source srcSet="/og-image.webp" type="image/webp" />
+  <img src="/og-image.png" alt="Neurolov" width="120" height="28" className="h-7 w-auto" loading="lazy" />
+</picture>
               <span className="hero-text-gradient">Neurolov</span>
             </Link>
             <p className="mt-3 text-sm text-muted-foreground max-w-xs">

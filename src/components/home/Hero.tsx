@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { Helmet } from "react-helmet";
 
 // Types for SplitText component
 type SplitTextProps = {
@@ -64,6 +65,18 @@ export default function Hero() {
 
   return (
     <>
+      <Helmet>
+        <title>Neurolov – Decentralized AI Compute Marketplace</title>
+        <meta name="description" content="Neurolov is the decentralized AI compute marketplace and GPU rental platform for the future of open, community-driven AI." />
+        <meta property="og:title" content="Neurolov – Decentralized AI Compute Marketplace" />
+        <meta property="og:description" content="Neurolov is the decentralized AI compute marketplace and GPU rental platform for the future of open, community-driven AI." />
+        <meta property="og:image" content="/og-image.png" />
+        <meta property="og:url" content="https://neurolov.ai/" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Neurolov – Decentralized AI Compute Marketplace" />
+        <meta name="twitter:description" content="Neurolov is the decentralized AI compute marketplace and GPU rental platform for the future of open, community-driven AI." />
+        <meta name="twitter:image" content="/og-image.png" />
+      </Helmet>
       <div className="relative min-h-screen pt-20 flex items-center">
         <Container
           className={`relative pb-20 transition-all duration-1000 ${
@@ -76,93 +89,74 @@ export default function Hero() {
               <span className="text-[#0361DA]">
                 Worlds First Decentralised AI Ecosystem
               </span>
+            </div>
+            {/* Animated headline */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight mb-6 reveal reveal-delay-2">
+              <SplitText text="Neurolov" delay={0.5} />
+              <span className="text-[#0361DA]">
+                <SplitText text=".ai" delay={1.2} />
+              </span>
+            </h1>
+            {/* Subheadline */}
+            <p className="text-lg sm:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto reveal reveal-delay-3">
+              <b>Join the revolution: Share Compute and earn $NLOV</b>
+            </p>
+            {/* CTA Button */}
+            <div className="flex flex-row justify-center gap-4 mb-20 reveal reveal-delay-4 w-full mx-auto">
+              <Button
+                onClick={() => window.open("https://swarm.neurolov.ai//", "_blank")}
+                className="bg-[#0361DA] hover:bg-[#0361DA]/80 text-white w-[50%] md:w-[25%]"
+              >
+                Start Earning
+              </Button>
+            </div>
           </div>
-
-          {/* Animated headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight mb-6 reveal reveal-delay-2">
-            <SplitText text="Neurolov" delay={0.5} />
-            <span className="text-[#0361DA]">
-              <SplitText text=".ai" delay={1.2} />
-            </span>
-          </h1>
-
-          {/* Subheadline */}
-          <p className="text-lg sm:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto reveal reveal-delay-3">
-            <b>Join the revolution: Share Compute and earn $NLOV</b>
-          </p>
-
-          {/* CTA Button */}
-          <div className="flex flex-row justify-center gap-4 mb-20 reveal reveal-delay-4 w-full mx-auto">
-            <Button
-              onClick={() => window.open("https://swarm.neurolov.ai//", "_blank")}
-              className="bg-[#0361DA] hover:bg-[#0361DA]/80 text-white w-[50%] md:w-[25%]"
-            >
-              Start Earning
-            </Button>
-          </div>
-
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 reveal reveal-delay-5">
             <div className="glass-card p-6 rounded-xl border border-[#0361DA]/10 bg-blue-500/10 backdrop-blur-sm hover:border-[#0361DA]/30 transition-all duration-300 hover:-translate-y-1">
               <div className="text-5xl font-bold text-[#0361DA] mb-3">10000+</div>
               <div className="text-muted-foreground text-sm">Nodes</div>
             </div>
-
             <div className="glass-card p-6 rounded-xl border border-[#0361DA]/10 bg-blue-500/10 backdrop-blur-sm hover:border-[#0361DA]/30 transition-all duration-300 hover:-translate-y-1">
               <div className="text-5xl font-bold text-[#0361DA] mb-3">2M+</div>
               <div className="text-muted-foreground text-sm">
                 AI Content Made
               </div>
             </div>
-
             <div className="glass-card p-6 rounded-xl border border-[#0361DA]/10 bg-blue-500/10 backdrop-blur-sm hover:border-[#0361DA]/30 transition-all duration-300 hover:-translate-y-1">
-              <div className="flex justify-center">
-                <div className="text-5xl font-bold text-[#0361DA] mb-3 whitespace-nowrap overflow-visible">
-                45000+
-                </div>
+              <div className="text-5xl font-bold text-[#0361DA] mb-3 whitespace-nowrap overflow-visible">
+                5M+
               </div>
               <div className="text-muted-foreground text-sm">
-                Community Members
+                TFLOPS
               </div>
             </div>
           </div>
-        </div>
-      </Container>
-    </div>
-
-    {/* Why Neurolov Section */}
-    <section className="py-20 bg-white/80 dark:bg-[#0f172a] border-t border-b border-[#0361DA]/10">
-      <Container>
-        <div className="max-w-3xl mx-auto text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#0361DA]">Why Neurolov?</h2>
-          <p className="text-lg text-muted-foreground mb-6">Empowering a new era of decentralized AI for everyone. Neurolov combines cutting-edge technology, community, and rewards to create a truly open ecosystem.</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-          <div className="flex flex-col items-center text-center p-6 rounded-xl bg-gradient-to-br from-[#0361DA]/10 to-blue-500/5 border border-[#0361DA]/10">
-            <span className="mb-3"><svg width='36' height='36' fill='none' viewBox='0 0 24 24'><circle cx='12' cy='12' r='10' fill='#0361DA' fillOpacity='0.12'/><path d='M8 12l2 2 4-4' stroke='#0361DA' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'/></svg></span>
-            <h3 className="font-semibold mb-2">Truly Decentralized</h3>
-            <p className="text-sm text-muted-foreground">No central authority. Power and rewards are distributed to the community.</p>
+          {/* Why Neurolov Section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto mt-16">
+            <div className="flex flex-col items-center text-center p-6 rounded-xl bg-gradient-to-br from-[#0361DA]/10 to-blue-500/5 border border-[#0361DA]/10">
+              <span className="mb-3"><svg width='36' height='36' fill='none' viewBox='0 0 24 24'><circle cx='12' cy='12' r='10' fill='#0361DA' fillOpacity='0.12'/><path d='M8 12l2 2 4-4' stroke='#0361DA' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'/></svg></span>
+              <h3 className="font-semibold mb-2">Truly Decentralized</h3>
+              <p className="text-sm text-muted-foreground">No central authority. Power and rewards are distributed to the community.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 rounded-xl bg-gradient-to-br from-[#0361DA]/10 to-blue-500/5 border border-[#0361DA]/10">
+              <span className="mb-3"><svg width='36' height='36' fill='none' viewBox='0 0 24 24'><circle cx='12' cy='12' r='10' fill='#0361DA' fillOpacity='0.12'/><path d='M16 12a4 4 0 11-8 0 4 4 0 018 0z' stroke='#0361DA' strokeWidth='2'/></svg></span>
+              <h3 className="font-semibold mb-2">AI for All</h3>
+              <p className="text-sm text-muted-foreground">Open access to powerful AI models and compute for creators, builders, and dreamers.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 rounded-xl bg-gradient-to-br from-[#0361DA]/10 to-blue-500/5 border border-[#0361DA]/10">
+              <span className="mb-3"><svg width='36' height='36' fill='none' viewBox='0 0 24 24'><circle cx='12' cy='12' r='10' fill='#0361DA' fillOpacity='0.12'/><path d='M12 8v4l3 3' stroke='#0361DA' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'/></svg></span>
+              <h3 className="font-semibold mb-2">Earn While You Contribute</h3>
+              <p className="text-sm text-muted-foreground">Share your compute, participate in the network, and earn $NLOV rewards.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 rounded-xl bg-gradient-to-br from-[#0361DA]/10 to-blue-500/5 border border-[#0361DA]/10">
+              <span className="mb-3"><svg width='36' height='36' fill='none' viewBox='0 0 24 24'><circle cx='12' cy='12' r='10' fill='#0361DA' fillOpacity='0.12'/><path d='M9 12l2 2 4-4' stroke='#0361DA' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'/></svg></span>
+              <h3 className="font-semibold mb-2">Secure & Transparent</h3>
+              <p className="text-sm text-muted-foreground">Blockchain-backed, open-source, and fully auditable for maximum trust.</p>
+            </div>
           </div>
-          <div className="flex flex-col items-center text-center p-6 rounded-xl bg-gradient-to-br from-[#0361DA]/10 to-blue-500/5 border border-[#0361DA]/10">
-            <span className="mb-3"><svg width='36' height='36' fill='none' viewBox='0 0 24 24'><circle cx='12' cy='12' r='10' fill='#0361DA' fillOpacity='0.12'/><path d='M16 12a4 4 0 11-8 0 4 4 0 018 0z' stroke='#0361DA' strokeWidth='2'/></svg></span>
-            <h3 className="font-semibold mb-2">AI for All</h3>
-            <p className="text-sm text-muted-foreground">Open access to powerful AI models and compute for creators, builders, and dreamers.</p>
-          </div>
-          <div className="flex flex-col items-center text-center p-6 rounded-xl bg-gradient-to-br from-[#0361DA]/10 to-blue-500/5 border border-[#0361DA]/10">
-            <span className="mb-3"><svg width='36' height='36' fill='none' viewBox='0 0 24 24'><circle cx='12' cy='12' r='10' fill='#0361DA' fillOpacity='0.12'/><path d='M12 8v4l3 3' stroke='#0361DA' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'/></svg></span>
-            <h3 className="font-semibold mb-2">Earn While You Contribute</h3>
-            <p className="text-sm text-muted-foreground">Share your compute, participate in the network, and earn $NLOV rewards.</p>
-          </div>
-          <div className="flex flex-col items-center text-center p-6 rounded-xl bg-gradient-to-br from-[#0361DA]/10 to-blue-500/5 border border-[#0361DA]/10">
-            <span className="mb-3"><svg width='36' height='36' fill='none' viewBox='0 0 24 24'><circle cx='12' cy='12' r='10' fill='#0361DA' fillOpacity='0.12'/><path d='M9 12l2 2 4-4' stroke='#0361DA' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'/></svg></span>
-            <h3 className="font-semibold mb-2">Secure & Transparent</h3>
-            <p className="text-sm text-muted-foreground">Blockchain-backed, open-source, and fully auditable for maximum trust.</p>
-          </div>
-        </div>
-      </Container>
-    </section>
-  </>
+        </Container>
+      </div>
+    </>
   );
 }
-
-
