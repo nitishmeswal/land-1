@@ -133,18 +133,10 @@ export default function ProductHighlights() {
           <div className="absolute inset-0 bg-dots-light bg-[size:20px_20px] opacity-20"></div>
           <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0361DA]/20 to-transparent"></div>
         </div>
-        <div>
-          <h2 className="text-4xl font-bold mb-6 reveal reveal-delay-1 relative inline-block">
-            Discover the Neurolov Advantage
-            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-[#0361DA] to-blue-500 rounded-full"></div>
-          </h2>
-        </div>
-        <div>
-          <p className="text-muted-foreground max-w-2xl mx-auto reveal reveal-delay-2">
-            A comprehensive ecosystem combining AI, decentralized computing, and
-            blockchain rewards.
-          </p>
-        </div>
+   
+        <p className="text-muted-foreground max-w-2xl mx-auto text-center mt-4 reveal reveal-delay-2">
+          A comprehensive ecosystem combining AI, decentralized computing, and crypto rewards.
+        </p><br></br>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
           {/* Connecting lines between cards (desktop only) */}
           <div className="absolute top-1/2 left-0 right-0 h-px bg-[#0361DA]/10 hidden lg:block"></div>
