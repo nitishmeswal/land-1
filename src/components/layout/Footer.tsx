@@ -44,15 +44,7 @@ const footerLinks = [
       { label: "Mission", href: "/about/mission" },
     ],
   },
-  {
-    title: "Legal",
-    links: [
-      { label: "Privacy Policy", href: "/legal/privacy-policy" },
-      { label: "Terms & Conditions", href: "/legal/terms-and-conditions" },
-      { label: "Refund Policy", href: "/legal/refund-policy" },
-      { label: "Disclaimer", href: "/legal/disclaimer" },
-    ],
-  },
+ 
 ];
 
 export default function Footer() {
@@ -153,7 +145,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-border pt-6 text-center text-sm text-muted-foreground">
+        {/* Legal links row above copyright */}
+        <div className="mt-12 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
+          <Link to="/legal/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</Link>
+          <Link to="/legal/terms-and-conditions" className="hover:text-foreground transition-colors">Terms & Conditions</Link>
+          <Link to="/legal/refund-policy" className="hover:text-foreground transition-colors">Refund Policy</Link>
+          <Link to="/legal/disclaimer" className="hover:text-foreground transition-colors">Disclaimer</Link>
+        </div>
+        <div className="mt-4 border-t border-border pt-6 text-center text-sm text-muted-foreground">
           <p> {new Date().getFullYear()} Neurolov.ai. All rights reserved.</p>
         </div>
       </Container>
