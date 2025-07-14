@@ -38,24 +38,6 @@ export default function AIModelCard({
       {/* Image container with gradient overlay */}
       <div className="relative h-48 overflow-hidden">
         <picture>
-          <source
-            srcSet={`/ai-models/${
-              id === "neurolov-image"
-                ? "neuro image.webp"
-                : id === "deepfake"
-                ? "deepfake.webp"
-                : id === "freedom-ai"
-                ? "freedom ai.webp"
-                : id === "text-to-video"
-                ? "text to video.webp"
-                : id === "music-ai"
-                ? "text to music.webp"
-                : id === "text-to-3d"
-                ? "text to 3d.webp"
-                : "neuro image.webp"
-            }`}
-            type="image/webp"
-          />
           <img
             src={`/ai-models/${
               id === "neurolov-image"

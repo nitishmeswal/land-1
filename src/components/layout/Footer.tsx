@@ -67,7 +67,6 @@ export default function Footer() {
               className="flex items-center space-x-2 text-lg font-bold"
             >
               <picture>
-  <source srcSet="/og-image.webp" type="image/webp" />
   <img src="/og-image.png" alt="Neurolov" width="120" height="28" className="h-7 w-auto" loading="lazy" />
 </picture>
               <span className="hero-text-gradient">Neurolov</span>
@@ -126,22 +125,31 @@ export default function Footer() {
           {/* Footer links */}
           <div className="col-span-2 sm:col-span-3 lg:col-span-5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-4">
             {footerLinks.map((group, idx) => (
-              <div key={idx} className="px-2">
-                <h3 className="text-sm font-semibold mb-3">{group.title}</h3>
-                <ul className="space-y-2.5">
-                  {group.links.map((link, linkIdx) => (
-                    <li key={linkIdx}>
-                      <Link
-                        to={link.href}
-                        className="text-sm text-muted-foreground hover:text-foreground transition-colors block"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+  <div
+    key={idx}
+    className={`px-2 ${group.title === "Legal" ? "col-span-2 sm:col-span-1 flex flex-col items-start" : ""}`}
+  >
+    <h3 className="text-sm font-semibold mb-3">{group.title}</h3>
+    <ul
+      className={
+        group.title === "Legal"
+          ? "flex flex-col space-y-2.5 w-full"
+          : "space-y-2.5"
+      }
+    >
+      {group.links.map((link, linkIdx) => (
+        <li key={linkIdx} className="w-full">
+          <Link
+            to={link.href}
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors block w-full"
+          >
+            {link.label}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </div>
+))}
           </div>
         </div>
 
