@@ -4,6 +4,7 @@ import { SectionContainer } from "@/components/ui/Container";
 import { Cpu, Code, Network, Bot, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { Helmet } from "react-helmet";
 
 type ProductCardProps = {
   title: string;
@@ -83,7 +84,7 @@ export default function ProductHighlights() {
     {
       title: "GPU Compute",
       description:
-        "Rent GPUs for AI training and inference. Affordable, scalable compute power for all.",
+        "Rent GPUs for AI training and inference. Affordable, scalable compute power for all.\n\nWhy it matters: Access high-performance GPUs on demand—no need to own expensive hardware. Ideal for researchers, startups, and creators who need flexible, affordable compute resources.",
       icon: <Cpu className="h-6 w-6" />,
       delay: "reveal-delay-1",
       url: "/products/compute",
@@ -91,7 +92,7 @@ export default function ProductHighlights() {
     {
       title: "AI Models",
       description:
-        "Generate images, text, audio, code, and video with ease. Unleash creativity with Neurolov.",
+        "Generate images, text, audio, code, and video with ease. Unleash creativity with Neurolov.\n\nWho it’s for: Artists, developers, and businesses looking to integrate state-of-the-art AI into their workflows—no technical barriers, just results.",
       icon: <Code className="h-6 w-6" />,
       delay: "reveal-delay-2",
       url: "/products/ai-models",
@@ -99,7 +100,7 @@ export default function ProductHighlights() {
     {
       title: "Swarm Network",
       description:
-        "Connect devices, solve compute tasks, and earn NLOV. Turn idle hardware into income.",
+        "Connect devices, solve compute tasks, and earn NLOV. Turn idle hardware into income.\n\nWhy it matters: Anyone can contribute their device’s unused power to the network and earn rewards, making advanced AI accessible and affordable for all.",
       icon: <Network className="h-6 w-6" />,
       delay: "reveal-delay-3",
       url: "/products/swarm",
@@ -107,7 +108,7 @@ export default function ProductHighlights() {
     {
       title: "AI Agents",
       description:
-        "Autonomous AI solutions for decentralized apps. The future of blockchain automation.",
+        "Autonomous AI solutions for decentralized apps. The future of blockchain automation.\n\nWho it’s for: Web3 builders and enterprises seeking autonomous, intelligent agents to power next-gen dApps and automate complex workflows.",
       icon: <Bot className="h-6 w-6" />,
       delay: "reveal-delay-4",
       url: "/products/agents",
@@ -115,61 +116,58 @@ export default function ProductHighlights() {
   ];
 
   return (
-    <SectionContainer className="py-24 relative overflow-hidden">
-      {/* Background patterns */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-dots-light bg-[size:20px_20px] opacity-20"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0361DA]/20 to-transparent"></div>
-      </div>
-
-      <div className="text-center mb-16">
-        <div>
-          <h2 className="text-4xl font-bold mb-6 reveal reveal-delay-1 relative inline-block">
-            Discover the Neurolov Advantage
-            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-[#0361DA] to-blue-500 rounded-full"></div>
-          </h2>
+    <>
+      <Helmet>
+        <title>Neurolov Product Highlights – GPU, AI, Swarm & Agents</title>
+        <meta
+          name="description"
+          content="Explore Neurolov’s decentralized GPU compute, AI models, Swarm network, and AI agents. Flexible, scalable solutions for everyone."
+        />
+      </Helmet>
+      <SectionContainer className="pb-16">
+        <h1 className="text-3xl md:text-4xl font-bold text-center mb-12 hero-text-gradient">
+          Product Highlights
+        </h1>
+        {/* Background patterns */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute inset-0 bg-dots-light bg-[size:20px_20px] opacity-20"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0361DA]/20 to-transparent"></div>
         </div>
-
-        <div>
-          <p className="text-muted-foreground max-w-2xl mx-auto reveal reveal-delay-2">
-            A comprehensive ecosystem combining AI, decentralized computing, and
-            blockchain rewards.
-          </p>
+   
+        <p className="text-muted-foreground max-w-2xl mx-auto text-center mt-4 reveal reveal-delay-2">
+          A comprehensive ecosystem combining AI, decentralized computing, and crypto rewards.
+        </p><br></br>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+          {/* Connecting lines between cards (desktop only) */}
+          <div className="absolute top-1/2 left-0 right-0 h-px bg-[#0361DA]/10 hidden lg:block"></div>
+          {products.map((product, index) => (
+            <ProductCard
+              key={index}
+              index={index}
+              title={product.title}
+              description={product.description}
+              icon={product.icon}
+              delay={product.delay}
+              url={product.url}
+            />
+          ))}
         </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-        {/* Connecting lines between cards (desktop only) */}
-        <div className="absolute top-1/2 left-0 right-0 h-px bg-[#0361DA]/10 hidden lg:block"></div>
-
-        {products.map((product, index) => (
-          <ProductCard
-            key={index}
-            index={index}
-            title={product.title}
-            description={product.description}
-            icon={product.icon}
-            delay={product.delay}
-            url={product.url}
-          />
-        ))}
-      </div>
-
-      {/* Call to action */}
-      <div className="mt-16 text-center reveal reveal-delay-5">
-        <a
-          href="https://app.neurolov.ai"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button className="bg-[#0361DA] hover:bg-[#0361DA]/80 text-white group">
-            <span className="flex items-center">
-              Explore All Products
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </span>
-          </Button>
-        </a>
-      </div>
-    </SectionContainer>
+        {/* Call to action */}
+        <div className="mt-16 text-center reveal reveal-delay-5">
+          <a
+            href="https://app.neurolov.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className="bg-[#0361DA] hover:bg-[#0361DA]/80 text-white group">
+              <span className="flex items-center">
+                Explore All Products
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </span>
+            </Button>
+          </a>
+        </div>
+      </SectionContainer>
+    </>
   );
 }

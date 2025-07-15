@@ -34,37 +34,33 @@ export default function AIModelCard({
         className
       )}
     >
-      {/* Coming Soon Overlay */}
-      {isComingSoon && (
-        <div className="absolute inset-0 bg-[#0361DA]/80 backdrop-blur-sm flex items-center justify-center z-20">
-          <div className="text-center">
-            <p className="text-2xl font-bold text-white mb-2">Coming Soon</p>
-            <p className="text-sm text-gray-200">Stay tuned for updates!</p>
-          </div>
-        </div>
-      )}
 
       {/* Image container with gradient overlay */}
       <div className="relative h-48 overflow-hidden">
-        <img
-          src={`/ai-models/${
-            id === "neurolov-image"
-              ? "neuro image"
-              : id === "text-to-video" || id === "video"
-              ? "text to video"
-              : id === "music-ai"
-              ? "text to music"
-              : id === "freedom-ai"
-              ? "freedom ai"
-              : id === "text-to-3d"
-              ? "text to 3d"
-              : id === "deepfake"
-              ? "deepfake"
-              : "neuro image"
-          }.png`}
-          alt={name}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-        />
+        <picture>
+          <img
+            src={`/ai-models/${
+              id === "neurolov-image"
+                ? "neuro image.png"
+                : id === "deepfake"
+                ? "deepfake.png"
+                : id === "freedom-ai"
+                ? "freedom ai.png"
+                : id === "text-to-video"
+                ? "text to video.png"
+                : id === "music-ai"
+                ? "text to music.png"
+                : id === "text-to-3d"
+                ? "text to 3d.png"
+                : "neuro image.png"
+            }`}
+            alt={`AI Model: ${name}`}
+            width="384"
+            height="192"
+            className="w-full h-48 object-cover object-center rounded-t-xl"
+            loading="lazy"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
 
         {/* Badges */}

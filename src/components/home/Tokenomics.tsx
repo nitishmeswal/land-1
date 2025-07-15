@@ -8,7 +8,7 @@ const TokenAllocation = () => {
   return (
     <div className="relative w-full max-w-[600px] mx-auto">
       <ResponsiveImage
-        src="/nlov-chart.svg"
+        src="/pie.jpg"
         alt="NLOV Token Allocation Chart"
         desktopSize={{ width: 600, height: 450 }}
         tabletRatio={0.75}

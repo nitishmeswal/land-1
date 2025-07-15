@@ -262,9 +262,16 @@ export default function Navbar() {
             {/* Desktop Action Buttons */}
             <div className="hidden md:flex items-center space-x-4">
               
-              <Button className="rounded-full bg-[#0361DA] hover:bg-[#0255c1] text-white">
-                Try Testnet
-              </Button>
+              <a
+                href="https://swarm.neurolov.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full"
+              >
+                <Button className="rounded-full bg-[#0361DA] hover:bg-[#0255c1] text-white">
+                  Earn Now
+                </Button>
+              </a>
             </div>
 
             {/* Mobile menu button */}
@@ -399,12 +406,19 @@ export default function Navbar() {
                   </div>
                 </DialogContent>
               </Dialog>
-              <Button
-                className="w-full rounded-full bg-gradient-to-r from-[#0361DA] to-[#4F8EF7] px-5 py-2 text-white font-semibold shadow-[0_0_10px_rgba(3,97,218,0.6)] hover:shadow-[0_0_20px_rgba(3,97,218,0.8)] hover:brightness-110 transition-all duration-300"
+              <a
+                href="https://swarm.neurolov.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
                 onClick={closeMenu}
               >
-                Try Testnet
-              </Button>
+                <Button
+                  className="w-full rounded-full bg-gradient-to-r from-[#0361DA] to-[#4F8EF7] px-5 py-2 text-white font-semibold shadow-[0_0_10px_rgba(3,97,218,0.6)] hover:shadow-[0_0_20px_rgba(3,97,218,0.8)] hover:brightness-110 transition-all duration-300"
+                >
+                  Earn Now
+                </Button>
+              </a>
             </div>
           </div>
         </div>

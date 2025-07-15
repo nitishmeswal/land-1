@@ -51,76 +51,87 @@ import { PatternBackground } from "@/components/common/Highlight";
 // Roadmap data
 const roadmapData = [
   {
-    title: "Q4 2024 - Project Ideation & Foundation",
+    title: "Q3 2024 - Project Ideation & Foundation",
     status: "completed",
     items: [
       "Beta version launched (app.neurolov.ai)",
       "Initial GPU Network Live with 200 GPUs onboarded",
-      "Multiple AI Models Rolled Out",
       "Community Growth: 2,500+ registered users",
       "36,000+ total followers across social platforms",
     ],
   },
   {
-    title: "Q1 2025 - Extended AI Model Ecosystem",
+    title: "Q4 2024 - Extended AI Model Ecosystem",
     status: "completed",
     items: [
-      "$NLOV Token Presale",
-      "Token Generation Event (TGE)",
+      "Multiple AI Models Rolled Out",
+      "Seed Round conculed for $200k",
       "New models: text-to-video, 3D, music generation",
       "Enhanced app performance and stability",
-      "Swarm Network Testnet launch",
+      "Swarm Network Developement started",
       "Early platform utility for BETA testnet users",
     ],
   },
   {
-    title: "Q2 2025 - Token Launch",
-    status: "in-progress",
+    title: "Q1 2025 -Technical Expansion ",
+    status: "completed",
     items: [
-      "Migration from testnet to mainnet",
+      "All AI models live",
+      "250+ GPUs Onboarded",
+      
       "Production-level infrastructure",
-      "DEX listings and liquidity pool setup",
-      "Token allocation and vesting begins",
+    
       "Strategic marketing campaign",
     ],
   },
   {
-    title: "Q3 2025 - Mainnet & Governance",
-    status: "upcoming",
+    title: "Q2 2025 - Swarm",
+    status: "completed",
+    items: [
+      "Swarm Launched beta",
+      "Community members reaches 50k"
+     
+    ],
+  },
+  {
+    title: "Q3 2025 -Token Launch ",
+    status: "in-progress",
     items: [
       "Governance system launch for NLov holders",
       "On-chain forum proposals",
       "Core feature voting system",
+      "$NLOV Token Presale",
+      "Token Generation Event (TGE)",
+      "Migration from testnet to mainnet"
     ],
   },
   {
-    title: "Q4 2025 - Technical Expansion",
+    title: "Q4 2025 - Global Network Growth",
     status: "upcoming",
     items: [
+      "DEX listings and liquidity pool setup",
+      "Token allocation and vesting begins",
       "Cross-chain interoperability",
       "Advanced neural network deployment",
       "Distributed training optimization",
-      "Enhanced privacy features",
+      "Enhanced privacy features"
+   
     ],
   },
   {
-    title: "H1 2026 - Global Network Growth",
+    title: "Q1 2026 - DAO & Ecosystem",
     status: "upcoming",
     items: [
+         
       "Scale to 10,000+ GPU contributors",
       "Launch of self-operating AI agents",
       "Expanded community and partner network",
       "Agentic AI infrastructure deployment",
-    ],
-  },
-  {
-    title: "H2 2026 - DAO & Ecosystem",
-    status: "upcoming",
-    items: [
       "Autonomous trading bots and AI workers",
       "Revenue-based token buyback & burn",
       "Decentralized community treasury",
-      "$NLOV DAO ecosystem grants program",
+      "$NLOV DAO ecosystem grants program"
+
     ],
   },
 ];
