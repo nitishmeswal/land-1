@@ -46,11 +46,17 @@ const resources = [
         url: "/resources/Tokonomics.pdf",
         icon: <FileText className="h-4 w-4" />,
       },
-      // {
-      //   text: "Pitch Deck",
-      //   url: "/resources/pitchdeck.pdf",
-      //   icon: <FileText className="h-4 w-4" />
-      // },
+      {
+        text: "Pitch Deck",
+        url: "https://drive.google.com/drive/folders/180NDE65yPcvFnBfuuZ8dM-Gu3PQvHH_Y",
+        icon: <FileText className="h-4 w-4" />,
+        external: true
+      },
+      {
+        text: "Elevator Pitch",
+        url: "/resources/ev.pdf",
+        icon: <FileText className="h-4 w-4" />
+      },
     ],
   },
 
@@ -100,6 +106,7 @@ const resources = [
   },
 ];
 
+console.log('DEBUG: Loaded blogs:', getAllBlogs().map(b => ({ slug: b.slug, title: b.title, date: b.date })));
 export default function ResourcesPage() {
   return (
     <PatternBackground>
