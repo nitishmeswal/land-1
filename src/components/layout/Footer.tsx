@@ -111,6 +111,18 @@ export default function Footer() {
               >
                 <img src="/icons/mail.svg" alt="Email" className="h-5 w-5" />
               </a>
+              <a
+                href="https://github.com/neurolov"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-white transition-colors"
+              >
+                <img
+                  src="/icons/github.svg"
+                  alt="GitHub"
+                  className="h-5 w-5"
+                />
+              </a>
             </div>
           </div>
 
