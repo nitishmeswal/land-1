@@ -29,6 +29,7 @@ import {
 } from "@/components/icons/social-icons";
 import { PatternBackground } from "@/components/common/Highlight";
 import { getAllBlogs } from '@/utils/blogLoader';
+import { useState } from 'react';
 
 const resources = [
   {
@@ -108,6 +109,15 @@ const resources = [
 
 console.log('DEBUG: Loaded blogs:', getAllBlogs().map(b => ({ slug: b.slug, title: b.title, date: b.date })));
 export default function ResourcesPage() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const blogsPerPage = 6;
+  const allBlogs = getAllBlogs();
+  const totalPages = Math.ceil(allBlogs.length / blogsPerPage);
+  const currentBlogs = allBlogs.slice(
+    (currentPage - 1) * blogsPerPage,
+    currentPage * blogsPerPage
+  );
+
   return (
     <PatternBackground>
       <PageLayout
@@ -162,7 +172,7 @@ export default function ResourcesPage() {
                 </Card>
               ))}
               {/* Blog Cards */}
-              {getAllBlogs().slice(0, 10).map((blog) => (
+              {currentBlogs.map((blog) => (
                 <Card key={blog.slug} className="group hover:border-[#0361DA]/50 transition-colors">
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-2">
@@ -195,10 +205,31 @@ export default function ResourcesPage() {
                 </Card>
               ))}
             </div>
+            
+            {/* Pagination */}
+            {totalPages > 1 && (
+              <div className="flex justify-center mt-8 gap-2">
+                <Button
+                  variant="outline"
+                  onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                  disabled={currentPage === 1}
+                >
+                  Previous
+                </Button>
+                <div className="flex items-center px-4">
+                  Page {currentPage} of {totalPages}
+                </div>
+                <Button
+                  variant="outline"
+                  onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                  disabled={currentPage === totalPages}
+                >
+                  Next
+                </Button>
+              </div>
+            )}
           </div>
         </SectionContainer>
-
-
       </PageLayout>
     </PatternBackground>
   );
