@@ -99,4 +99,4 @@ By combining WebGPU’s browser-native parallel compute with Solana’s real-tim
 
 ---
 
-[Written by Neurolov](https://neurolov.medium.com/)
+
