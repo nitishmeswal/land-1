@@ -26,9 +26,7 @@ const AIModelsSection: React.FC = () => {
                 <div className="flex items-center gap-3 md:gap-4">
                   <div className="w-8 h-8 md:w-9 md:h-9 bg-[#17297c] rounded-md flex items-center justify-center flex-shrink-0">
                     <svg
-                      width="24"
-                      height="24"
-                      className="md:w-[30px] md:h-[30px]"
+                      className="w-5 h-5 text-white"
                       viewBox="0 0 30 30"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
