@@ -1,6 +1,5 @@
 import React from "react";
 
-// Small presentational Card
 type CardProps = {
   title: string;
   subtitle: string;
@@ -17,7 +16,6 @@ const Card: React.FC<CardProps> = ({ title, subtitle, img, className }) => {
         className || "",
       ].join(" ")}
     >
-      {/* Skin image */}
       <img
         src={`/${img}`}
         alt={title}
@@ -30,9 +28,7 @@ const Card: React.FC<CardProps> = ({ title, subtitle, img, className }) => {
 const TokenShowcase: React.FC = () => {
   return (
     <section className="relative w-[85vw] mx-auto bg-[url('/token/bg.png')] bg-fill">
-      {/* Safe side space */}
       <div className="relative mx-auto max-w-7xl px-10">
-        {/* Header */}
         <div className="text-center space-y-4">
           <h1 className="text-5xl font-semibold text-[#ACD2FF]">$NLOV Token</h1>
           <div className="max-w-5xl mx-auto text-sm md:text-base font-normal text-gray-300 leading-relaxed tracking-wide">
@@ -54,14 +50,12 @@ const TokenShowcase: React.FC = () => {
           </button>
         </div>
 
-        {/* Canvas */}
         <div
           className="
             relative mx-auto h-[760px]
             w-full max-w-[1100px]
           "
         >
-          {/* Lines behind (z-0) */}
           <img
             src="/token/ring.png"
             alt="center glow lines"
@@ -73,7 +67,6 @@ const TokenShowcase: React.FC = () => {
             "
           />
 
-          {/* Center coin above lines (z-20) */}
           <img
             src="/token/coin.png"
             alt="coin"
@@ -88,9 +81,7 @@ const TokenShowcase: React.FC = () => {
             }}
           />
 
-          {/* Cards around coin — absolute on md+, stacked on small */}
           <div className="hidden md:block">
-            {/* Top (Subscriptions) */}
             <div className="absolute left-1/2 top-[14%] -translate-x-1/2 z-10">
               <Card
                 title="Subscriptions"
@@ -99,7 +90,6 @@ const TokenShowcase: React.FC = () => {
               />
             </div>
 
-            {/* Left (Governance) */}
             <div className="absolute left-[6%] top-[40%] z-10">
               <Card
                 title="Governance"
@@ -109,7 +99,6 @@ const TokenShowcase: React.FC = () => {
               />
             </div>
 
-            {/* Right (Staking) */}
             <div className="absolute right-[6%] top-[40%] z-10">
               <Card
                 title="Staking"
@@ -119,7 +108,6 @@ const TokenShowcase: React.FC = () => {
               />
             </div>
 
-            {/* Bottom-left (Marketplace) */}
             <div className="absolute left-[18%] bottom-[14%] z-10">
               <Card
                 title="Marketplace"
@@ -128,7 +116,6 @@ const TokenShowcase: React.FC = () => {
               />
             </div>
 
-            {/* Bottom-right (Swarm Rewards) */}
             <div className="absolute right-[18%] bottom-[14%] z-10">
               <Card
                 title="Swarm Rewards"
@@ -139,6 +126,8 @@ const TokenShowcase: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <div></div>
     </section>
   );
 };
