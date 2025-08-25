@@ -9,6 +9,7 @@ import Tokenomics from "@/components/home/Tokenomics";
 import CallToAction from "@/components/home/CallToAction";
 import { PatternBackground } from "@/components/common/Highlight";
 import AIModelsSection from "@/components/common/AIModelsSection";
+import NlovTokenDashboard from "@/components/common/NlovTokenDashboard";
 
 const Index = () => {
   useEffect(() => {
@@ -21,7 +22,9 @@ const Index = () => {
       <main>
         <Hero />
 
-        <AIModelsSection />
+        {/* <AIModelsSection /> */}
+
+        <NlovTokenDashboard />
 
         <ProductHighlights />
         <HowItWorks />
