@@ -112,7 +112,10 @@ const AppRoutes = () => {
       <Route path="/pitch-deck" element={<PitchDeckPage />} />
       <Route path="/blog/:slug" element={<BlogDetailPage />} />
       <Route path="/legal/privacy-policy" element={<PrivacyPolicy />} />
-      <Route path="/legal/terms-and-conditions" element={<TermsAndConditions />} />
+      <Route
+        path="/legal/terms-and-conditions"
+        element={<TermsAndConditions />}
+      />
       <Route path="/legal/refund-policy" element={<RefundPolicy />} />
       <Route path="/legal/disclaimer" element={<Disclaimer />} />
       <Route path="*" element={<NotFound />} />

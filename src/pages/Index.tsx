@@ -7,8 +7,8 @@ import ProductHighlights from "@/components/home/ProductHighlights";
 import HowItWorks from "@/components/home/HowItWorks";
 import Tokenomics from "@/components/home/Tokenomics";
 import CallToAction from "@/components/home/CallToAction";
-
 import { PatternBackground } from "@/components/common/Highlight";
+import AIModelsSection from "@/components/common/AIModelsSection";
 
 const Index = () => {
   useEffect(() => {
@@ -20,6 +20,9 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
+
+        <AIModelsSection />
+
         <ProductHighlights />
         <HowItWorks />
         <Tokenomics />

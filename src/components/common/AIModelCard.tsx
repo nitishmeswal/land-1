@@ -34,7 +34,6 @@ export default function AIModelCard({
         className
       )}
     >
-
       {/* Image container with gradient overlay */}
       <div className="relative h-48 overflow-hidden">
         <picture>
