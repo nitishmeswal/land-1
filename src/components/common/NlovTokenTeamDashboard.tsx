@@ -47,7 +47,7 @@ const TokenShowcase: React.FC = () => {
             skyrocket at launch
           </div>
 
-          <button className="w-full max-w-[230px] relative px-6 md:px-8 py-3 md:py-4 rounded-xl text-black font-semibold text-base md:text-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+          <button className="w-full max-w-[230px] relative px-6 md:px-8 py-3 md:py-4 rounded-xl text-black font-semibold text-base md:text-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(137,189,255,0.8)]">
             <div className="absolute inset-0">
               <img
                 src="/landing-ai-model/button-bg.png"
@@ -185,13 +185,26 @@ const TokenShowcase: React.FC = () => {
                 </div>
 
                 <div className="mt-4">
-                  <button className=" relative px-4 py-3 rounded-xl text-black font-semibold text-sm md:text-base overflow-hidden transition-transform duration-300 hover:scale-105">
+                  <button className="relative px-4 py-3 rounded-xl text-black font-semibold text-sm md:text-base overflow-hidden">
                     <div className="absolute inset-0">
                       <img
                         src="/landing-ai-model/button-bg.png"
                         alt="Button Background"
                         className="w-full h-full object-cover rounded-xl"
                       />
+                    </div>
+                    {/* Shine effect */}
+                    <div className="absolute inset-0 rounded-xl overflow-hidden">
+                      <div
+                        className="absolute inset-0 w-[269.5px] h-[194px] bg-gradient-to-r from-transparent via-white to-transparent opacity-44 animate-shine"
+                        style={{
+                          background:
+                            "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.44) 50%, rgba(255,255,255,0.1) 75%, transparent 100%)",
+                          transform: "skewX(-15deg)",
+                          width: "269.5px",
+                          height: "194px",
+                        }}
+                      ></div>
                     </div>
                     <span className="relative z-10">Detailed Tokenomics</span>
                   </button>
@@ -235,7 +248,7 @@ const TokenShowcase: React.FC = () => {
         </div>
       </div>
       <div className="flex justify-center items-center mt-12">
-        <button className=" relative px-4 py-3 rounded-xl text-black font-semibold text-sm md:text-base overflow-hidden transition-transform duration-300 hover:scale-105">
+        <button className="relative px-4 py-3 rounded-xl text-black font-semibold text-sm md:text-base overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(137,189,255,0.8)]">
           <div className="absolute inset-0">
             <img
               src="/landing-ai-model/button-bg.png"

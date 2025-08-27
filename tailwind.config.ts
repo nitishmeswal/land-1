@@ -202,6 +202,14 @@ export default {
 						opacity: "0.3"
 					},
 				},
+				"shine": {
+					"0%": {
+						transform: "translateX(-100%) skewX(-15deg)"
+					},
+					"100%": {
+						transform: "translateX(200%) skewX(-15deg)"
+					},
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -229,6 +237,7 @@ export default {
 				"float-diagonal": "float-diagonal 6s ease-in-out infinite",
 				"shadow-pulse": "shadow-pulse 3s ease-in-out infinite",
 				"shadow-stretch": "shadow-stretch 3s ease-in-out infinite",
+				"shine": "shine 3s ease-in-out infinite",
 			},
 			backdropBlur: {
 				xs: '2px',

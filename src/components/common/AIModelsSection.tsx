@@ -149,7 +149,7 @@ const AIModelsSection: React.FC = () => {
               </div>
 
               <div className="mt-6 md:mt-8 mb-4">
-                <button className="w-full max-w-[250px] md:max-w-[280px] relative px-6 md:px-8 py-3 md:py-4 rounded-xl text-black font-semibold text-base md:text-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                <button className="w-full max-w-[250px] md:max-w-[280px] relative px-6 md:px-8 py-3 md:py-4 rounded-xl text-black font-semibold text-base md:text-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(137,189,255,0.8)]">
                   <div className="absolute inset-0">
                     <img
                       src="/landing-ai-model/button-bg.png"
