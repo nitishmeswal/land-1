@@ -17,14 +17,16 @@ const Index = () => {
   }, []);
 
   return (
-    <PatternBackground>
+    <div className="bg-[#030924]">
       <Navbar />
       <main>
         <Hero />
 
         <AIModelsSection />
 
-        <NlovTokenDashboard />
+        <div className="mt-20 bg-[url('/token/bg.png')] bg-fill">
+          <NlovTokenDashboard />
+        </div>
 
         <ProductHighlights />
         <HowItWorks />
@@ -32,7 +34,7 @@ const Index = () => {
         <CallToAction />
       </main>
       <Footer />
-    </PatternBackground>
+    </div>
   );
 };
 

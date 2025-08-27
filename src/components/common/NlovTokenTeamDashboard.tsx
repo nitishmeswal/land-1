@@ -36,7 +36,7 @@ const Card: React.FC<CardProps> = ({ title, subtitle, img, className }) => {
 
 const TokenShowcase: React.FC = () => {
   return (
-    <section className="relative w-[85vw] mx-auto bg-[url('/token/bg.png')] bg-fill">
+    <section className="relative w-[85vw] mx-auto">
       <div className="relative mx-auto max-w-7xl px-10">
         <div className="text-center space-y-4">
           <h1 className="text-5xl font-semibold text-[#ACD2FF]">$NLOV Token</h1>
