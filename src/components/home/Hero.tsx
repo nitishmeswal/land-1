@@ -132,22 +132,48 @@ export default function Hero() {
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
               <div>
-                <div className="inline-flex items-center rounded-full bg-[#0361DA]/10 px-3 py-1 text-sm font-medium mb-6 reveal reveal-delay-1 shadow-[0_0_10px_rgba(3,97,218,0.7)] transition-shadow duration-300 hover:shadow-[0_0_20px_rgba(3,97,218,0.9)]">
-                  <span className="text-[#0361DA]">
-                    World’s First Decentralised AI Ecosystem
-                  </span>
-                </div>
-
                 <h1 className="text-left font-extrabold tracking-tight leading-tight mb-4 reveal reveal-delay-2">
-                  <div className="block text-lg font-normal sm:text-4xl md:text-5xl text-white">
+                  <div className="block pl-4 font-sans text-lg font-normal sm:text-4xl md:text-5xl text-white">
                     The WORLD'S FIRST
                   </div>
-                  <span className="block text-lg sm:text-4xl md:text-5xl text-[#0B2C59]">
-                    <SplitText text="BROWSER BASED" delay={0.3} />
-                  </span>
-                  <span className="block text-lg sm:text-4xl md:text-5xl text-[#0B2C59]">
-                    <SplitText text="COMPUTE PLATFORM." delay={0.9} />
-                  </span>
+                  <div className="inline-block relative">
+                    {/* Top-left corner */}
+                    <div className="absolute top-1 -left-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
+                    {/* Top-right corner */}
+                    <div className="absolute top-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
+                    {/* Bottom-left corner */}
+                    <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
+                    {/* Bottom-right corner */}
+                    <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
+
+                    <span className="block font-sans space-x-2 text-lg p-2 border-2 border-b-0 border-[#265CA8] mt-2 sm:text-4xl md:text-5xl text-[#318AF3] relative">
+                      <span
+                        className="absolute inset-0 bg-gradient-to-r from-black to-[#00377E] -z-10"
+                        style={{ width: "100%" }}
+                      />
+                      <SplitText text="BROWSER" delay={0.3} />
+                      <SplitText text="BASED" delay={0.3} />
+                    </span>
+                  </div>
+                  <div className="inline-block relative">
+                    {/* Top-left corner */}
+                    <div className="absolute top-1 -left-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
+                    {/* Top-right corner */}
+                    <div className="absolute top-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
+                    {/* Bottom-left corner */}
+                    <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
+                    {/* Bottom-right corner */}
+                    <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
+
+                    <span className="block font-sans space-x-2 text-lg p-2 border-2 border-[#265CA8] sm:text-4xl md:text-5xl text-[#318AF3] relative">
+                      <span
+                        className="absolute inset-0 bg-gradient-to-r from-black to-[#00377E] -z-10"
+                        style={{ width: "100%" }}
+                      />
+                      <SplitText text="COMPUTE" delay={0.9} />
+                      <SplitText text="PLATFORM." delay={0.9} />
+                    </span>
+                  </div>
                 </h1>
 
                 <div className="flex flex-wrap gap-4 mb-10 reveal reveal-delay-3">
