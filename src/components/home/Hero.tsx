@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
 
-/* Lightweight Container + Button (replace with project components if desired) */
 function Container(props: React.HTMLAttributes<HTMLDivElement>) {
   const { className = "", ...rest } = props;
   return (
@@ -24,7 +23,6 @@ function Button(props: React.ButtonHTMLAttributes<HTMLButtonElement>) {
   );
 }
 
-/* SplitText */
 type SplitTextProps = { text: string; className?: string; delay?: number };
 const SplitText: React.FC<SplitTextProps> = ({
   text,
@@ -50,7 +48,6 @@ const SplitText: React.FC<SplitTextProps> = ({
   );
 };
 
-/* Optional: simple mobile hook */
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -114,7 +111,7 @@ export default function Hero() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Neurolov – Decentralized AI Compute Marketplace"
+          content="Neurolov - Decentralized AI Compute Marketplace"
         />
         <meta
           name="twitter:description"
@@ -123,11 +120,8 @@ export default function Hero() {
         <meta name="twitter:image" content="/og-image.png" />
       </Helmet>
 
-      {/* SECTION WITH HERO BACKGROUND */}
       <section className="relative">
-        {/* Background Image */}
         <div className="absolute inset-0 " />
-        {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-black/20" />
 
         <div
@@ -137,26 +131,25 @@ export default function Hero() {
         >
           <Container>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-              {/* Left */}
               <div>
-                {/* Tagline */}
                 <div className="inline-flex items-center rounded-full bg-[#0361DA]/10 px-3 py-1 text-sm font-medium mb-6 reveal reveal-delay-1 shadow-[0_0_10px_rgba(3,97,218,0.7)] transition-shadow duration-300 hover:shadow-[0_0_20px_rgba(3,97,218,0.9)]">
                   <span className="text-[#0361DA]">
                     World’s First Decentralised AI Ecosystem
                   </span>
                 </div>
 
-                {/* Headline */}
                 <h1 className="text-left font-extrabold tracking-tight leading-tight mb-4 reveal reveal-delay-2">
-                  <span className="block text-4xl sm:text-5xl md:text-6xl text-[#0B2C59]">
+                  <div className="block text-lg font-normal sm:text-4xl md:text-5xl text-white">
+                    The WORLD'S FIRST
+                  </div>
+                  <span className="block text-lg sm:text-4xl md:text-5xl text-[#0B2C59]">
                     <SplitText text="BROWSER BASED" delay={0.3} />
                   </span>
-                  <span className="block text-4xl sm:text-5xl md:text-6xl text-[#0B2C59]">
+                  <span className="block text-lg sm:text-4xl md:text-5xl text-[#0B2C59]">
                     <SplitText text="COMPUTE PLATFORM." delay={0.9} />
                   </span>
                 </h1>
 
-                {/* Primary/Secondary CTAs (no page bg) */}
                 <div className="flex flex-wrap gap-4 mb-10 reveal reveal-delay-3">
                   <Button
                     onClick={openPresale}
@@ -169,39 +162,15 @@ export default function Hero() {
                   </Button>
                 </div>
 
-                {/* Stats */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-3xl reveal reveal-delay-4">
-                  <div className="p-5 rounded-xl border border-[#0361DA]/15 bg-white backdrop-blur-md shadow-sm hover:shadow-md transition">
-                    <div className="text-4xl font-bold text-[#0B2C59] mb-1">
-                      95,000+
-                    </div>
-                    <div className="text-sm text-[#274b87]">
-                      Nodes Connected
-                    </div>
-                  </div>
-                  <div className="p-5 rounded-xl border border-[#0361DA]/15 bg-white backdrop-blur-md shadow-sm hover:shadow-md transition">
-                    <div className="text-4xl font-bold text-[#0B2C59] mb-1">
-                      7M+
-                    </div>
-                    <div className="text-sm text-[#274b87]">
-                      AI Content Generated
-                    </div>
-                  </div>
-                  <div className="p-5 rounded-xl border border-[#0361DA]/15 bg-white backdrop-blur-md shadow-sm hover:shadow-md transition">
-                    <div className="text-4xl font-bold text-[#0B2C59] mb-1">
-                      10M+
-                    </div>
-                    <div className="text-sm text-[#274b87]">
-                      TFLOPS Cumulative Compute
-                    </div>
-                  </div>
+                  <img src="/hero/stat-1.png" alt="" />
+                  <img src="/hero/stat-2.png" alt="" />
+                  <img src="/hero/stat-3.png" alt="" />
                 </div>
               </div>
 
-              {/* Right: Presale Card */}
               <div className="relative">
                 <div className="mx-auto w-full max-w-md rounded-2xl overflow-hidden bg-[#0E1E3A] text-white border border-white/10 shadow-xl reveal reveal-delay-5">
-                  {/* small folded corner accent */}
                   <div className="absolute top-0 right-0 h-10 w-10 bg-white/5 rotate-45 translate-x-5 -translate-y-5 pointer-events-none" />
                   <div className="p-6 sm:p-7">
                     <div className="flex items-center justify-between">
@@ -227,7 +196,6 @@ export default function Hero() {
                       </div>
                     </div>
 
-                    {/* Progress */}
                     <div className="mt-4">
                       <div className="h-4 w-full rounded-full bg-white/10 overflow-hidden">
                         <div
@@ -285,7 +253,6 @@ export default function Hero() {
         </div>
       </section>
 
-      {/* Animations */}
       <style>{`
         .animate-fade-in { animation: fade-in .5s ease forwards; }
         @keyframes fade-in { from { opacity: 0; transform: translateY(2px); } to { opacity: 1; transform: none; } }
