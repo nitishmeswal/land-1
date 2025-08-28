@@ -10,6 +10,7 @@ import CallToAction from "@/components/home/CallToAction";
 import { PatternBackground } from "@/components/common/Highlight";
 import AIModelsSection from "@/components/common/AIModelsSection";
 import NlovTokenDashboard from "@/components/common/NlovTokenTeamDashboard";
+import WhyNeurolov from "@/components/common/poweredby";
 
 const Index = () => {
   useEffect(() => {
@@ -27,6 +28,10 @@ const Index = () => {
           <Hero />
         </div>
 
+        <div>
+          <WhyNeurolov />
+        </div>
+
         <div className="mt-20">
           <AIModelsSection />
         </div>
@@ -35,12 +40,12 @@ const Index = () => {
           <NlovTokenDashboard />
         </div>
 
-        <ProductHighlights />
+        {/* <ProductHighlights />
         <HowItWorks />
         <Tokenomics />
-        <CallToAction />
+        <CallToAction /> */}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

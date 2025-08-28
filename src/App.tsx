@@ -22,7 +22,6 @@ import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
 import TermsAndConditions from "./pages/legal/TermsAndConditions";
 import RefundPolicy from "./pages/legal/RefundPolicy";
 import Disclaimer from "./pages/legal/Disclaimer";
-import CookieConsent from "./components/common/CookieConsent";
 
 // GA4 ID
 const GA_ID = "G-K7EZKD532N";
@@ -132,7 +131,6 @@ const App = () => {
         <Sonner expand={true} closeButton richColors />
         <BrowserRouter>
           <AppRoutes />
-          <CookieConsent />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>

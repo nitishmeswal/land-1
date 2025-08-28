@@ -59,6 +59,127 @@ function useIsMobile() {
   return isMobile;
 }
 
+// Presale Card Component
+function PresaleCard() {
+  const openPresale = () => window.open("https://swarm.neurolov.ai/", "_blank");
+
+  return (
+    <div className="relative">
+      {/* Background Glow Effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-white/20 rounded-3xl blur-3xl"></div>
+
+      {/* Main Card */}
+      <div className="relative bg-gradient-to-br from-blue-900/90 to-blue-800/90 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 shadow-2xl">
+        {/* Header */}
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-3">
+            <div className="bg-green-500 text-white text-xs px-2 py-1 rounded-md font-semibold">
+              • LIVE
+            </div>
+            <h3 className="text-white text-xl font-bold">$NLOV Presale</h3>
+          </div>
+          <div className="text-white text-sm font-semibold">600% to TGE</div>
+        </div>
+
+        {/* Price Information */}
+        <div className="flex justify-between mb-4">
+          <div className="text-white text-sm">
+            Actual Price: <span className="font-semibold">$0.025</span>
+          </div>
+          <div className="text-white text-sm">
+            Listing Price: <span className="font-semibold">$0.55</span>
+          </div>
+        </div>
+
+        {/* Progress Bar */}
+        <div className="mb-4">
+          <div className="w-full bg-blue-900/50 rounded-full h-3">
+            <div
+              className="bg-gradient-to-r from-blue-400 to-blue-300 h-3 rounded-full relative"
+              style={{ width: "66%" }}
+            >
+              <div className="absolute right-0 top-0 w-4 h-4 bg-blue-300 rounded-full transform translate-x-1/2 -translate-y-0.5"></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Funds Raised */}
+        <div className="flex justify-between items-center mb-6">
+          <span className="text-white text-sm">USD Raised:</span>
+          <span className="text-white text-lg font-bold">$9,923 / $15,000</span>
+        </div>
+
+        {/* Buy Now Button */}
+        <button
+          onClick={openPresale}
+          className="w-full bg-gradient-to-r from-blue-400 to-blue-300 text-white font-bold py-3 px-6 rounded-xl mb-6 hover:from-blue-300 hover:to-blue-200 transition-all duration-300 transform hover:scale-105"
+        >
+          BUY NOW
+        </button>
+
+        {/* Community & Support */}
+        <div className="mb-4">
+          <h4 className="text-white text-sm font-semibold mb-3">
+            COMMUNITY & SUPPORT
+          </h4>
+          <div className="flex gap-4">
+            <div className="w-8 h-8 border border-blue-400 rounded-full flex items-center justify-center">
+              <span className="text-blue-400 text-sm font-bold">X</span>
+            </div>
+            <div className="w-8 h-8 border border-blue-400 rounded-full flex items-center justify-center">
+              <svg
+                className="w-4 h-4 text-blue-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                />
+              </svg>
+            </div>
+            <div className="w-8 h-8 border border-blue-400 rounded-full flex items-center justify-center">
+              <svg
+                className="w-4 h-4 text-blue-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        {/* Subscribe Section */}
+        <div>
+          <h4 className="text-white text-sm font-semibold mb-3">
+            SUBSCRIBE FOR UPDATE
+          </h4>
+          <div className="flex gap-2">
+            <input
+              type="email"
+              placeholder="example@gmail.com"
+              className="flex-1 bg-blue-900/50 border border-blue-400/30 rounded-lg px-3 py-2 text-white placeholder-gray-400 text-sm focus:outline-none focus:border-blue-400"
+            />
+            <button className="bg-blue-900 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-800 transition-colors">
+              SUBSCRIBE
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Hero() {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -137,13 +258,12 @@ export default function Hero() {
                     The WORLD'S FIRST
                   </div>
                   <div className="inline-block relative">
-                    {/* Top-left corner */}
                     <div className="absolute top-1 -left-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
-                    {/* Top-right corner */}
+
                     <div className="absolute top-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
-                    {/* Bottom-left corner */}
+
                     <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
-                    {/* Bottom-right corner */}
+
                     <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
 
                     <span className="block font-sans space-x-2 text-lg p-2 border-2 border-b-0 border-[#265CA8] mt-2 sm:text-4xl md:text-5xl text-[#318AF3] relative">
@@ -156,13 +276,10 @@ export default function Hero() {
                     </span>
                   </div>
                   <div className="inline-block relative">
-                    {/* Top-left corner */}
-                    <div className="absolute top-1 -left-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
-                    {/* Top-right corner */}
-                    <div className="absolute top-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
-                    {/* Bottom-left corner */}
+                    <div className="absolute -top-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
+
                     <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
-                    {/* Bottom-right corner */}
+
                     <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
 
                     <span className="block font-sans space-x-2 text-lg p-2 border-2 border-[#265CA8] sm:text-4xl md:text-5xl text-[#318AF3] relative">
@@ -176,16 +293,11 @@ export default function Hero() {
                   </div>
                 </h1>
 
-                <div className="flex flex-wrap gap-4 mb-10 reveal reveal-delay-3">
-                  <Button
-                    onClick={openPresale}
-                    className="bg-[#0361DA] hover:bg-[#0361DA]/90 text-white shadow-md shadow-[#0361DA]/30"
-                  >
-                    Start Earning
-                  </Button>
-                  <Button className="bg-white hover:bg-white/90 text-[#0B2C59] border border-[#0361DA]/20">
-                    Read Whitepaper
-                  </Button>
+                <div className="text-white font-sans text-sm my-10  ">
+                  Neurolov turns idle phones, laptops, and PCs into GPU power.
+                  Together, we build a community supercomputer that speeds up
+                  AI, supports developers, creates smart agents, and boosts
+                  gaming and research.
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-3xl reveal reveal-delay-4">
@@ -193,86 +305,30 @@ export default function Hero() {
                   <img src="/hero/stat-2.png" alt="" />
                   <img src="/hero/stat-3.png" alt="" />
                 </div>
+                <div className="flex justify-start mt-4 reveal reveal-delay-3">
+                  <button
+                    onClick={openPresale}
+                    className="p-0 border-none bg-transparent hover:bg-transparent"
+                  >
+                    <img
+                      src="/hero/button-1.png"
+                      alt="Start Earning"
+                      className="h-12 w-auto"
+                    />
+                  </button>
+                  <button className="p-0 border-none bg-transparent hover:bg-transparent">
+                    <img
+                      src="/hero/button-2.png"
+                      alt="Read Whitepaper"
+                      className="h-12 w-auto"
+                    />
+                  </button>
+                </div>
               </div>
 
-              <div className="relative">
-                <div className="mx-auto w-full max-w-md rounded-2xl overflow-hidden bg-[#0E1E3A] text-white border border-white/10 shadow-xl reveal reveal-delay-5">
-                  <div className="absolute top-0 right-0 h-10 w-10 bg-white/5 rotate-45 translate-x-5 -translate-y-5 pointer-events-none" />
-                  <div className="p-6 sm:p-7">
-                    <div className="flex items-center justify-between">
-                      <span className="inline-flex items-center gap-2 text-xs font-semibold text-green-300">
-                        <span className="inline-block h-2 w-2 rounded-full bg-green-400" />
-                        LIVE
-                      </span>
-                      <span className="text-xs text-white/70">600% to TGE</span>
-                    </div>
-
-                    <h3 className="mt-2 text-2xl font-semibold">
-                      $NLOV Presale
-                    </h3>
-
-                    <div className="mt-3 grid grid-cols-2 gap-3 text-xs text-white/80">
-                      <div className="space-y-1">
-                        <div className="text-white/60">Actual Price</div>
-                        <div className="font-semibold">$0.025</div>
-                      </div>
-                      <div className="space-y-1 text-right">
-                        <div className="text-white/60">Listing Price</div>
-                        <div className="font-semibold">$0.55</div>
-                      </div>
-                    </div>
-
-                    <div className="mt-4">
-                      <div className="h-4 w-full rounded-full bg-white/10 overflow-hidden">
-                        <div
-                          className="h-full bg-gradient-to-r from-[#244CFF] to-[#69A1FF] rounded-full"
-                          style={{ width: "66%" }}
-                        />
-                      </div>
-                      <div className="mt-2 text-sm text-white/80">
-                        <span className="font-semibold">$9,923</span> / $15,000
-                      </div>
-                    </div>
-
-                    <Button
-                      onClick={openPresale}
-                      className="mt-4 w-full bg-[#65B5FF] hover:bg-[#7cc2ff] text-[#0B2C59] font-bold"
-                    >
-                      BUY NOW
-                    </Button>
-
-                    <div className="mt-5">
-                      <div className="text-[10px] tracking-wide text-white/50 text-center">
-                        COMMUNITY & SUPPORT
-                      </div>
-                      <div className="mt-2 flex justify-center gap-4 text-xl">
-                        <span className="opacity-80 hover:opacity-100 cursor-pointer">
-                          𝕏
-                        </span>
-                        <span className="opacity-80 hover:opacity-100 cursor-pointer">
-                          ↗
-                        </span>
-                        <span className="opacity-80 hover:opacity-100 cursor-pointer">
-                          ✉
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="mt-5">
-                      <label className="sr-only">Email</label>
-                      <div className="flex gap-2">
-                        <input
-                          type="email"
-                          placeholder="example@gmail.com"
-                          className="w-full rounded-md bg-white/10 placeholder-white/50 text-white px-3 py-2 outline-none focus:ring-2 focus:ring-[#65B5FF]"
-                        />
-                        <Button className="bg-white/15 hover:bg-white/25 border border-white/20">
-                          SUBSCRIBE
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              {/* Right side - Presale Card */}
+              <div className="flex justify-center lg:justify-end lg:mr-20 items-start pt-10 lg:pt-0">
+                <PresaleCard />
               </div>
             </div>
           </Container>
