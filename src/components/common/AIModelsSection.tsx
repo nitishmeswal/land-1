@@ -2,7 +2,7 @@ import React from "react";
 
 const AIModelsSection: React.FC = () => {
   return (
-    <section className="relative w-full mx-2 bg-transparent">
+    <section className="relative w-full px-2 bg-transparent">
       <div className="relative h-[450px] md:h-[450px] w-full md:w-[80%] mx-auto rounded-sm overflow-hidden">
         <img
           src="/landing-ai-model/ai-model-header.png"

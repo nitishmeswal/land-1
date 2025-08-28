@@ -12,7 +12,11 @@ type SplitTextProps = {
 };
 
 // SplitText component for character-by-character animation
-const SplitText: React.FC<SplitTextProps> = ({ text, className = "", delay = 0 }) => {
+const SplitText: React.FC<SplitTextProps> = ({
+  text,
+  className = "",
+  delay = 0,
+}) => {
   return (
     <span className={className}>
       {text.split("").map((char, i) => (
@@ -67,14 +71,29 @@ export default function Hero() {
     <>
       <Helmet>
         <title>Neurolov – Decentralized AI Compute Marketplace</title>
-        <meta name="description" content="Neurolov is the decentralized AI compute marketplace and GPU rental platform for the future of open, community-driven AI." />
-        <meta property="og:title" content="Neurolov – Decentralized AI Compute Marketplace" />
-        <meta property="og:description" content="Neurolov is the decentralized AI compute marketplace and GPU rental platform for the future of open, community-driven AI." />
+        <meta
+          name="description"
+          content="Neurolov is the decentralized AI compute marketplace and GPU rental platform for the future of open, community-driven AI."
+        />
+        <meta
+          property="og:title"
+          content="Neurolov – Decentralized AI Compute Marketplace"
+        />
+        <meta
+          property="og:description"
+          content="Neurolov is the decentralized AI compute marketplace and GPU rental platform for the future of open, community-driven AI."
+        />
         <meta property="og:image" content="/og-image.png" />
         <meta property="og:url" content="https://neurolov.ai/" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Neurolov – Decentralized AI Compute Marketplace" />
-        <meta name="twitter:description" content="Neurolov is the decentralized AI compute marketplace and GPU rental platform for the future of open, community-driven AI." />
+        <meta
+          name="twitter:title"
+          content="Neurolov – Decentralized AI Compute Marketplace"
+        />
+        <meta
+          name="twitter:description"
+          content="Neurolov is the decentralized AI compute marketplace and GPU rental platform for the future of open, community-driven AI."
+        />
         <meta name="twitter:image" content="/og-image.png" />
       </Helmet>
       <div className="relative min-h-screen pt-20 flex items-center">
@@ -104,7 +123,9 @@ export default function Hero() {
             {/* CTA Button */}
             <div className="flex flex-row justify-center gap-4 mb-20 reveal reveal-delay-4 w-full mx-auto">
               <Button
-                onClick={() => window.open("https://swarm.neurolov.ai//", "_blank")}
+                onClick={() =>
+                  window.open("https://swarm.neurolov.ai//", "_blank")
+                }
                 className="bg-[#0361DA] hover:bg-[#0361DA]/80 text-white w-[50%] md:w-[25%]"
               >
                 Start Earning
@@ -114,8 +135,12 @@ export default function Hero() {
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 reveal reveal-delay-5">
             <div className="glass-card p-6 rounded-xl border border-[#0361DA]/10 bg-blue-500/10 backdrop-blur-sm hover:border-[#0361DA]/30 transition-all duration-300 hover:-translate-y-1">
-              <div className="text-5xl font-bold text-[#0361DA] mb-3">10,000+</div>
-              <div className="text-muted-foreground text-sm">Nodes Connected</div>
+              <div className="text-5xl font-bold text-[#0361DA] mb-3">
+                10,000+
+              </div>
+              <div className="text-muted-foreground text-sm">
+                Nodes Connected
+              </div>
             </div>
             <div className="glass-card p-6 rounded-xl border border-[#0361DA]/10 bg-blue-500/10 backdrop-blur-sm hover:border-[#0361DA]/30 transition-all duration-300 hover:-translate-y-1">
               <div className="text-5xl font-bold text-[#0361DA] mb-3">2M+</div>
@@ -128,7 +153,7 @@ export default function Hero() {
                 5M+
               </div>
               <div className="text-muted-foreground text-sm">
-                TFLOPS Cumilative Compute 
+                TFLOPS Cumilative Compute
               </div>
             </div>
           </div>
@@ -139,11 +164,13 @@ export default function Hero() {
               <div className="bg-green-500/20 p-3 rounded-full mb-4">
                 <span className="text-green-400 text-2xl">✅</span>
               </div>
-              <h3 className="font-semibold text-lg mb-3">$13M Compute Deal Secured</h3>
+              <h3 className="font-semibold text-lg mb-3">
+                $13M Compute Deal Secured
+              </h3>
               <p className="text-sm text-muted-foreground">
-              Historic partnership with government & institutions
-Delivering decentralized compute power to startups and universities at scale.
-
+                Historic partnership with government & institutions Delivering
+                decentralized compute power to startups and universities at
+                scale.
               </p>
             </div>
 
@@ -152,12 +179,12 @@ Delivering decentralized compute power to startups and universities at scale.
               <div className="bg-purple-500/20 p-3 rounded-full mb-4">
                 <span className="text-purple-400 text-2xl">✅</span>
               </div>
-              <h3 className="font-semibold text-lg mb-3">Backed by Mario Nawfal & Victus Global</h3>
+              <h3 className="font-semibold text-lg mb-3">
+                Backed by Mario Nawfal & Victus Global
+              </h3>
               <p className="text-sm text-muted-foreground">
-              Endorsed by top Web3 voices
-Supported by the world’s top crypto influencer and a leading global VC.
-
-
+                Endorsed by top Web3 voices Supported by the world’s top crypto
+                influencer and a leading global VC.
               </p>
             </div>
 
@@ -166,10 +193,13 @@ Supported by the world’s top crypto influencer and a leading global VC.
               <div className="bg-blue-500/20 p-3 rounded-full mb-4">
                 <span className="text-blue-400 text-2xl">✅</span>
               </div>
-              <h3 className="font-semibold text-lg mb-3">World's First Browser-Based Compute Network</h3>
+              <h3 className="font-semibold text-lg mb-3">
+                World's First Browser-Based Compute Network
+              </h3>
               <p className="text-sm text-muted-foreground">
-              Contribute via browser, no setup needed
-              Built on WebGPU/WebGL — earn $NLOV by sharing idle device power.  </p>
+                Contribute via browser, no setup needed Built on WebGPU/WebGL —
+                earn $NLOV by sharing idle device power.{" "}
+              </p>
             </div>
           </div>
         </Container>
