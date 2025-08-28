@@ -20,9 +20,16 @@ const Index = () => {
     <div className="bg-[#030924]">
       <Navbar />
       <main>
-        <Hero />
+        <div
+          className="bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url(/hero/bg.png)" }}
+        >
+          <Hero />
+        </div>
 
-        <AIModelsSection />
+        <div className="mt-20">
+          <AIModelsSection />
+        </div>
 
         <div className="mt-20 bg-[url('/token/bg.png')] bg-fill">
           <NlovTokenDashboard />

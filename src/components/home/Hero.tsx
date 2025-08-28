@@ -1,24 +1,38 @@
 import { useEffect, useRef, useState } from "react";
-import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/button";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { Helmet } from "react-helmet";
 
-// Types for SplitText component
-type SplitTextProps = {
-  text: string;
-  className?: string;
-  delay?: number;
-};
+/* Lightweight Container + Button (replace with project components if desired) */
+function Container(props: React.HTMLAttributes<HTMLDivElement>) {
+  const { className = "", ...rest } = props;
+  return (
+    <div
+      className={`mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 ${className}`}
+      {...rest}
+    />
+  );
+}
 
-// SplitText component for character-by-character animation
+function Button(props: React.ButtonHTMLAttributes<HTMLButtonElement>) {
+  const { className = "", children, ...rest } = props;
+  return (
+    <button
+      className={`inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 transition ${className}`}
+      {...rest}
+    >
+      {children}
+    </button>
+  );
+}
+
+/* SplitText */
+type SplitTextProps = { text: string; className?: string; delay?: number };
 const SplitText: React.FC<SplitTextProps> = ({
   text,
   className = "",
   delay = 0,
 }) => {
   return (
-    <span className={className}>
+    <span className={className} aria-label={text}>
       {text.split("").map((char, i) => (
         <span
           key={i}
@@ -35,6 +49,18 @@ const SplitText: React.FC<SplitTextProps> = ({
     </span>
   );
 };
+
+/* Optional: simple mobile hook */
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handler = () => setIsMobile(window.innerWidth < 768);
+    handler();
+    window.addEventListener("resize", handler);
+    return () => window.removeEventListener("resize", handler);
+  }, []);
+  return isMobile;
+}
 
 export default function Hero() {
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -57,15 +83,15 @@ export default function Hero() {
     );
 
     const elements = document.querySelectorAll(".reveal");
-    elements.forEach((el) => {
-      observerRef.current?.observe(el);
-    });
+    elements.forEach((el) => observerRef.current?.observe(el));
 
     return () => {
       observerRef.current?.disconnect();
       clearTimeout(timer);
     };
   }, []);
+
+  const openPresale = () => window.open("https://swarm.neurolov.ai/", "_blank");
 
   return (
     <>
@@ -96,114 +122,182 @@ export default function Hero() {
         />
         <meta name="twitter:image" content="/og-image.png" />
       </Helmet>
-      <div className="relative min-h-screen pt-20 flex items-center">
-        <Container
-          className={`relative pb-20 transition-all duration-1000 ${
-            isLoaded ? "opacity-100 transform-none" : "opacity-0 translate-y-12"
-          }`}
+
+      {/* SECTION WITH HERO BACKGROUND */}
+      <section className="relative">
+        {/* Background Image */}
+        <div className="absolute inset-0 " />
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/20" />
+
+        <div
+          className={`relative min-h-screen pt-24 flex items-center ${
+            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          } transition-all duration-700`}
         >
-          <div className="max-w-3xl mx-auto text-center">
-            {/* Tagline */}
-            <div className="inline-flex items-center rounded-full bg-[#0361DA]/10 px-3 py-1 text-sm font-medium mb-6 reveal reveal-delay-1 shadow-[0_0_10px_rgba(3,97,218,0.7)] transition-shadow duration-300 hover:shadow-[0_0_20px_rgba(3,97,218,0.9)]">
-              <span className="text-[#0361DA]">
-                Worlds First Decentralised AI Ecosystem
-              </span>
-            </div>
-            {/* Animated headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight mb-6 reveal reveal-delay-2">
-              <SplitText text="Neurolov" delay={0.5} />
-              <span className="text-[#0361DA]">
-                <SplitText text=".ai" delay={1.2} />
-              </span>
-            </h1>
-            {/* Subheadline */}
-            <p className="text-lg sm:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto reveal reveal-delay-3">
-              <b>Join the revolution: Share Compute and earn $NLOV</b>
-            </p>
-            {/* CTA Button */}
-            <div className="flex flex-row justify-center gap-4 mb-20 reveal reveal-delay-4 w-full mx-auto">
-              <Button
-                onClick={() =>
-                  window.open("https://swarm.neurolov.ai//", "_blank")
-                }
-                className="bg-[#0361DA] hover:bg-[#0361DA]/80 text-white w-[50%] md:w-[25%]"
-              >
-                Start Earning
-              </Button>
-            </div>
-          </div>
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 reveal reveal-delay-5">
-            <div className="glass-card p-6 rounded-xl border border-[#0361DA]/10 bg-blue-500/10 backdrop-blur-sm hover:border-[#0361DA]/30 transition-all duration-300 hover:-translate-y-1">
-              <div className="text-5xl font-bold text-[#0361DA] mb-3">
-                10,000+
-              </div>
-              <div className="text-muted-foreground text-sm">
-                Nodes Connected
-              </div>
-            </div>
-            <div className="glass-card p-6 rounded-xl border border-[#0361DA]/10 bg-blue-500/10 backdrop-blur-sm hover:border-[#0361DA]/30 transition-all duration-300 hover:-translate-y-1">
-              <div className="text-5xl font-bold text-[#0361DA] mb-3">2M+</div>
-              <div className="text-muted-foreground text-sm">
-                AI Content Made
-              </div>
-            </div>
-            <div className="glass-card p-6 rounded-xl border border-[#0361DA]/10 bg-blue-500/10 backdrop-blur-sm hover:border-[#0361DA]/30 transition-all duration-300 hover:-translate-y-1">
-              <div className="text-5xl font-bold text-[#0361DA] mb-3 whitespace-nowrap overflow-visible">
-                5M+
-              </div>
-              <div className="text-muted-foreground text-sm">
-                TFLOPS Cumilative Compute
-              </div>
-            </div>
-          </div>
-          {/* Key Highlights Section */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-16">
-            {/* $11M Compute Deal */}
-            <div className="flex flex-col items-center text-center p-8 rounded-xl bg-gradient-to-br from-[#0361DA]/10 to-blue-500/5 border border-[#0361DA]/10 hover:shadow-lg hover:shadow-[#0361DA]/10 transition-all duration-300">
-              <div className="bg-green-500/20 p-3 rounded-full mb-4">
-                <span className="text-green-400 text-2xl">✅</span>
-              </div>
-              <h3 className="font-semibold text-lg mb-3">
-                $13M Compute Deal Secured
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Historic partnership with government & institutions Delivering
-                decentralized compute power to startups and universities at
-                scale.
-              </p>
-            </div>
+          <Container>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+              {/* Left */}
+              <div>
+                {/* Tagline */}
+                <div className="inline-flex items-center rounded-full bg-[#0361DA]/10 px-3 py-1 text-sm font-medium mb-6 reveal reveal-delay-1 shadow-[0_0_10px_rgba(3,97,218,0.7)] transition-shadow duration-300 hover:shadow-[0_0_20px_rgba(3,97,218,0.9)]">
+                  <span className="text-[#0361DA]">
+                    World’s First Decentralised AI Ecosystem
+                  </span>
+                </div>
 
-            {/* Backed by Investors */}
-            <div className="flex flex-col items-center text-center p-8 rounded-xl bg-gradient-to-br from-[#0361DA]/10 to-blue-500/5 border border-[#0361DA]/10 hover:shadow-lg hover:shadow-[#0361DA]/10 transition-all duration-300">
-              <div className="bg-purple-500/20 p-3 rounded-full mb-4">
-                <span className="text-purple-400 text-2xl">✅</span>
-              </div>
-              <h3 className="font-semibold text-lg mb-3">
-                Backed by Mario Nawfal & Victus Global
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Endorsed by top Web3 voices Supported by the world’s top crypto
-                influencer and a leading global VC.
-              </p>
-            </div>
+                {/* Headline */}
+                <h1 className="text-left font-extrabold tracking-tight leading-tight mb-4 reveal reveal-delay-2">
+                  <span className="block text-4xl sm:text-5xl md:text-6xl text-[#0B2C59]">
+                    <SplitText text="BROWSER BASED" delay={0.3} />
+                  </span>
+                  <span className="block text-4xl sm:text-5xl md:text-6xl text-[#0B2C59]">
+                    <SplitText text="COMPUTE PLATFORM." delay={0.9} />
+                  </span>
+                </h1>
 
-            {/* Browser-Based Compute */}
-            <div className="flex flex-col items-center text-center p-8 rounded-xl bg-gradient-to-br from-[#0361DA]/10 to-blue-500/5 border border-[#0361DA]/10 hover:shadow-lg hover:shadow-[#0361DA]/10 transition-all duration-300">
-              <div className="bg-blue-500/20 p-3 rounded-full mb-4">
-                <span className="text-blue-400 text-2xl">✅</span>
+                {/* Primary/Secondary CTAs (no page bg) */}
+                <div className="flex flex-wrap gap-4 mb-10 reveal reveal-delay-3">
+                  <Button
+                    onClick={openPresale}
+                    className="bg-[#0361DA] hover:bg-[#0361DA]/90 text-white shadow-md shadow-[#0361DA]/30"
+                  >
+                    Start Earning
+                  </Button>
+                  <Button className="bg-white hover:bg-white/90 text-[#0B2C59] border border-[#0361DA]/20">
+                    Read Whitepaper
+                  </Button>
+                </div>
+
+                {/* Stats */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-3xl reveal reveal-delay-4">
+                  <div className="p-5 rounded-xl border border-[#0361DA]/15 bg-white backdrop-blur-md shadow-sm hover:shadow-md transition">
+                    <div className="text-4xl font-bold text-[#0B2C59] mb-1">
+                      95,000+
+                    </div>
+                    <div className="text-sm text-[#274b87]">
+                      Nodes Connected
+                    </div>
+                  </div>
+                  <div className="p-5 rounded-xl border border-[#0361DA]/15 bg-white backdrop-blur-md shadow-sm hover:shadow-md transition">
+                    <div className="text-4xl font-bold text-[#0B2C59] mb-1">
+                      7M+
+                    </div>
+                    <div className="text-sm text-[#274b87]">
+                      AI Content Generated
+                    </div>
+                  </div>
+                  <div className="p-5 rounded-xl border border-[#0361DA]/15 bg-white backdrop-blur-md shadow-sm hover:shadow-md transition">
+                    <div className="text-4xl font-bold text-[#0B2C59] mb-1">
+                      10M+
+                    </div>
+                    <div className="text-sm text-[#274b87]">
+                      TFLOPS Cumulative Compute
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h3 className="font-semibold text-lg mb-3">
-                World's First Browser-Based Compute Network
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Contribute via browser, no setup needed Built on WebGPU/WebGL —
-                earn $NLOV by sharing idle device power.{" "}
-              </p>
+
+              {/* Right: Presale Card */}
+              <div className="relative">
+                <div className="mx-auto w-full max-w-md rounded-2xl overflow-hidden bg-[#0E1E3A] text-white border border-white/10 shadow-xl reveal reveal-delay-5">
+                  {/* small folded corner accent */}
+                  <div className="absolute top-0 right-0 h-10 w-10 bg-white/5 rotate-45 translate-x-5 -translate-y-5 pointer-events-none" />
+                  <div className="p-6 sm:p-7">
+                    <div className="flex items-center justify-between">
+                      <span className="inline-flex items-center gap-2 text-xs font-semibold text-green-300">
+                        <span className="inline-block h-2 w-2 rounded-full bg-green-400" />
+                        LIVE
+                      </span>
+                      <span className="text-xs text-white/70">600% to TGE</span>
+                    </div>
+
+                    <h3 className="mt-2 text-2xl font-semibold">
+                      $NLOV Presale
+                    </h3>
+
+                    <div className="mt-3 grid grid-cols-2 gap-3 text-xs text-white/80">
+                      <div className="space-y-1">
+                        <div className="text-white/60">Actual Price</div>
+                        <div className="font-semibold">$0.025</div>
+                      </div>
+                      <div className="space-y-1 text-right">
+                        <div className="text-white/60">Listing Price</div>
+                        <div className="font-semibold">$0.55</div>
+                      </div>
+                    </div>
+
+                    {/* Progress */}
+                    <div className="mt-4">
+                      <div className="h-4 w-full rounded-full bg-white/10 overflow-hidden">
+                        <div
+                          className="h-full bg-gradient-to-r from-[#244CFF] to-[#69A1FF] rounded-full"
+                          style={{ width: "66%" }}
+                        />
+                      </div>
+                      <div className="mt-2 text-sm text-white/80">
+                        <span className="font-semibold">$9,923</span> / $15,000
+                      </div>
+                    </div>
+
+                    <Button
+                      onClick={openPresale}
+                      className="mt-4 w-full bg-[#65B5FF] hover:bg-[#7cc2ff] text-[#0B2C59] font-bold"
+                    >
+                      BUY NOW
+                    </Button>
+
+                    <div className="mt-5">
+                      <div className="text-[10px] tracking-wide text-white/50 text-center">
+                        COMMUNITY & SUPPORT
+                      </div>
+                      <div className="mt-2 flex justify-center gap-4 text-xl">
+                        <span className="opacity-80 hover:opacity-100 cursor-pointer">
+                          𝕏
+                        </span>
+                        <span className="opacity-80 hover:opacity-100 cursor-pointer">
+                          ↗
+                        </span>
+                        <span className="opacity-80 hover:opacity-100 cursor-pointer">
+                          ✉
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="mt-5">
+                      <label className="sr-only">Email</label>
+                      <div className="flex gap-2">
+                        <input
+                          type="email"
+                          placeholder="example@gmail.com"
+                          className="w-full rounded-md bg-white/10 placeholder-white/50 text-white px-3 py-2 outline-none focus:ring-2 focus:ring-[#65B5FF]"
+                        />
+                        <Button className="bg-white/15 hover:bg-white/25 border border-white/20">
+                          SUBSCRIBE
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </Container>
-      </div>
+          </Container>
+        </div>
+      </section>
+
+      {/* Animations */}
+      <style>{`
+        .animate-fade-in { animation: fade-in .5s ease forwards; }
+        @keyframes fade-in { from { opacity: 0; transform: translateY(2px); } to { opacity: 1; transform: none; } }
+        .reveal { opacity: 0; transform: translateY(10px); transition: all .6s ease; }
+        .reveal-visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: .1s; }
+        .reveal-delay-2 { transition-delay: .2s; }
+        .reveal-delay-3 { transition-delay: .3s; }
+        .reveal-delay-4 { transition-delay: .4s; }
+        .reveal-delay-5 { transition-delay: .5s; }
+        .reveal-delay-6 { transition-delay: .6s; }
+      `}</style>
     </>
   );
 }
