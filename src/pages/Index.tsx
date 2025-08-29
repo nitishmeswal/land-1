@@ -1,7 +1,6 @@
 "use client";
 import { useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import Hero from "@/components/home/Hero";
 import AIModelsSection from "@/components/common/AIModelsSection";
 import NlovTokenDashboard from "@/components/common/NlovTokenTeamDashboard";
