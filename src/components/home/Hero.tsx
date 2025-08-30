@@ -122,11 +122,9 @@ function PresaleCard() {
           </div>
         </div>
 
-        {/* Progress bar: fixed 200px window with infinite sliding track */}
         <div className="relative h-8 my-2 w-full bg-[#010726] rounded-2xl">
           <div className="progress-window w-[200px] h-full overflow-hidden rounded-2xl">
             <div className="progress-track">
-              {/* Duplicate segments for seamless loop */}
               <img
                 src="/hero/progress-bar.png"
                 alt="Progress bar segment"
@@ -384,7 +382,6 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Right side - Presale Card */}
               <div className="flex justify-center lg:justify-end lg:mr-20 items-start pt-10 lg:pt-0">
                 <PresaleCard />
               </div>
@@ -439,11 +436,11 @@ export default function Hero() {
           100% { transform: translateX(150%); }
         }
 
-        /* Progress marquee (fixed 200px window with seamless infinite scroll) */
+        
         .progress-window {
           position: relative;
           overflow: hidden;
-          width: 200px; /* ensure the viewport is exactly 200px wide */
+          width: 200px; 
           height: 100%;
           border-radius: 16px;
         }
@@ -459,10 +456,9 @@ export default function Hero() {
         }
         @keyframes progressMarquee {
           from { transform: translateX(0); }
-          to   { transform: translateX(-200px); } /* shift by one segment width */
+          to   { transform: translateX(-200px); }
         }
 
-        /* Optional: reduce motion respect */
         @media (prefers-reduced-motion: reduce) {
           .progress-track {
             animation: none;
