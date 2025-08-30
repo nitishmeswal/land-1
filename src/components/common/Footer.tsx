@@ -44,33 +44,17 @@ const NeurolovFooter: React.FC = () => {
 
               {/* Social Icons */}
               <div className="flex space-x-4">
-                <div className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                  <img
-                    src="/twitter-icon.svg"
-                    alt="Twitter"
-                    className="w-5 h-5"
-                  />
+                <div className="w-10 h-10 flex items-center justify-center">
+                  <img src="/footer/x.png" alt="x" />
                 </div>
-                <div className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                  <img
-                    src="/telegram-icon.svg"
-                    alt="Telegram"
-                    className="w-5 h-5"
-                  />
+                <div className="w-10 h-10 flex items-center justify-center">
+                  <img src="/footer/telegram.png" alt="Telegram" />
                 </div>
-                <div className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                  <img
-                    src="/discord-icon.svg"
-                    alt="Discord"
-                    className="w-5 h-5"
-                  />
+                <div className="w-10 h-10  flex items-center justify-center">
+                  <img src="/footer/discord.png" alt="Discord" />
                 </div>
-                <div className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                  <img
-                    src="/github-icon.svg"
-                    alt="GitHub"
-                    className="w-5 h-5"
-                  />
+                <div className="w-10 h-10  flex items-center justify-center">
+                  <img src="/footer/github.png" alt="GitHub" />
                 </div>
               </div>
 

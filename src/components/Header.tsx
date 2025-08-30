@@ -37,12 +37,9 @@ const Header: React.FC<Props> = ({
     >
       <div className="header-outer">
         <div className="header-inner">
-          {/* Left: Logo fixed at start */}
           <a className="brand" href="/" aria-label="Homepage">
             <img className="brand-logo" src={logoSrc} alt="" />
           </a>
-
-          {/* Right group: Nav + CTA aligned to end */}
           <div className="end-group">
             <nav className="nav" aria-label="Primary">
               <ul className="nav-list">
@@ -55,15 +52,12 @@ const Header: React.FC<Props> = ({
                 ))}
               </ul>
             </nav>
-
-            {/* CTA uses image background */}
             <a className="cta cta-image no-hover" href={ctaHref}>
               <span className="visually-hidden">{ctaLabel}</span>
             </a>
           </div>
         </div>
       </div>
-
       <style>{`
         .header-root {
           position: fixed;
@@ -73,7 +67,6 @@ const Header: React.FC<Props> = ({
           z-index: 2147483647;
           pointer-events: none;
         }
-
         .header-outer {
           display: flex;
           justify-content: center;
@@ -81,7 +74,6 @@ const Header: React.FC<Props> = ({
           padding-bottom: 12px;
           pointer-events: none;
         }
-
         .header-inner {
           width: 82%;
           max-width: 1400px;
@@ -101,7 +93,6 @@ const Header: React.FC<Props> = ({
           -webkit-backdrop-filter: saturate(120%) blur(6px);
           pointer-events: auto;
         }
-
         .brand {
           display: inline-flex;
           align-items: center;
@@ -114,7 +105,6 @@ const Header: React.FC<Props> = ({
           user-select: none;
           pointer-events: none;
         }
-
         .end-group {
           display: flex;
           align-items: center;
@@ -122,7 +112,6 @@ const Header: React.FC<Props> = ({
           gap: 28px;
           min-width: 0;
         }
-
         .nav { overflow: hidden; }
         .nav-list {
           display: flex;
@@ -140,8 +129,7 @@ const Header: React.FC<Props> = ({
           opacity: 0.95;
           white-space: nowrap;
         }
-
-        /* CTA background image button */
+        
         .cta {
           position: relative;
           display: inline-block;
@@ -158,8 +146,32 @@ const Header: React.FC<Props> = ({
           background-position: center center;
           background-size: contain;
         }
-
-        /* Remove all hover effects on nav links and CTA by overriding */
+        
+        .cta::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          border: 2px solid #A8CEFF;
+          border-radius: 50%;
+          transform: translate(-50%, -50%) scale(0);
+          animation: pulseRing 2s ease-out infinite;
+          pointer-events: none;
+        }
+        
+        @keyframes pulseRing {
+          0% {
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 1;
+          }
+          100% {
+            transform: translate(-50%, -50%) scale(4);
+            opacity: 0;
+          }
+        }
+        
         .no-hover:hover,
         .no-hover:focus-visible {
           opacity: inherit;
@@ -167,7 +179,6 @@ const Header: React.FC<Props> = ({
           box-shadow: none;
           outline: none;
         }
-
         .visually-hidden {
           position: absolute !important;
           width: 1px; height: 1px;
@@ -175,10 +186,9 @@ const Header: React.FC<Props> = ({
           overflow: hidden; clip: rect(0 0 0 0);
           white-space: nowrap; border: 0;
         }
-
         :root { --header-offset: 122px; }
         body { scroll-padding-top: var(--header-offset); }
-
+        
         @media (max-width: 1280px) {
           .header-inner { width: 78%; }
           .nav-list { gap: 24px; }
@@ -206,6 +216,55 @@ const Header: React.FC<Props> = ({
           .nav { display: none; }
           .cta { width: 168px; height: 44px; }
         }
+.cta {
+  position: relative;
+  display: inline-block;
+  height: 52px;
+  width: 190px;
+  border-radius: 999px;
+  overflow: hidden;
+  flex: 0 0 auto;
+  text-decoration: none;
+  isolation: isolate;
+}
+
+.cta::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  width: min(100%, 100%);
+  --btn-h: 52px;
+  width: var(--btn-h);
+  height: var(--btn-h);
+  transform: translate(-50%, -50%) scale(0.05);
+  transform-origin: center center;
+  border-radius: 999px;
+  border: 2px solid #A8CEFF;
+  box-sizing: border-box;
+  pointer-events: none;
+  opacity: 0;
+  animation: ring-fill 1.8s ease-out infinite;
+}
+
+.cta { --btn-h: 52px; }
+@media (max-width: 1280px) { .cta { --btn-h: 50px; } }
+@media (max-width: 1100px) { .cta { --btn-h: 48px; } }
+@media (max-width: 992px)  { .cta { --btn-h: 46px; } }
+@media (max-width: 768px)  { .cta { --btn-h: 44px; } }
+
+@keyframes ring-fill {
+  0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.05); }
+  10%  { opacity: 1; }
+  70%  { opacity: 1; }
+  100% {
+    transform: translate(-50%, -50%) scale(4.8);
+    opacity: 0;
+  }
+}
+
       `}</style>
     </header>
   );
