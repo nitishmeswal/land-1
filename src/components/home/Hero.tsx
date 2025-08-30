@@ -59,13 +59,29 @@ function useIsMobile() {
   return isMobile;
 }
 
+/**
+ * StatGlow: a small wrapper that places an animated glow behind its children.
+ * - stat-glow-wrap controls clipping, radius, and border
+ * - ::before (stat-glow-pass) is the animated light sweep
+ * - stat-glow-inner holds the image content above the glow
+ */
+const StatGlow: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  className = "",
+  children,
+  ...rest
+}) => {
+  return (
+    <div className={`stat-glow-wrap ${className}`} {...rest}>
+      <div className="stat-glow-inner">{children}</div>
+    </div>
+  );
+};
+
 function PresaleCard() {
   const openPresale = () => window.open("https://swarm.neurolov.ai/", "_blank");
-
   return (
     <div className="relative">
       <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-white/20 rounded-3xl blur-3xl"></div>
-
       <div className="relative bg-gradient-to-br from-blue-900/90 to-blue-800/90 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 shadow-2xl">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
@@ -76,7 +92,6 @@ function PresaleCard() {
           </div>
           <div className="text-white text-sm font-semibold">600% to TGE</div>
         </div>
-
         <div className="flex justify-between mb-4">
           <div className="text-white text-sm">
             Actual Price: <span className="font-semibold">$0.025</span>
@@ -85,7 +100,6 @@ function PresaleCard() {
             Listing Price: <span className="font-semibold">$0.55</span>
           </div>
         </div>
-
         <div className="mb-4">
           <div className="w-full bg-blue-900/50 rounded-full h-3">
             <div
@@ -96,19 +110,16 @@ function PresaleCard() {
             </div>
           </div>
         </div>
-
         <div className="flex justify-between items-center mb-6">
           <span className="text-white text-sm">USD Raised:</span>
           <span className="text-white text-lg font-bold">$9,923 / $15,000</span>
         </div>
-
         <button
           onClick={openPresale}
           className="w-full bg-gradient-to-r from-blue-400 to-blue-300 text-white font-bold py-3 px-6 rounded-xl mb-6 hover:from-blue-300 hover:to-blue-200 transition-all duration-300 transform hover:scale-105"
         >
           BUY NOW
         </button>
-
         <div className="mb-4">
           <h4 className="text-white text-sm font-semibold mb-3">
             COMMUNITY & SUPPORT
@@ -149,7 +160,6 @@ function PresaleCard() {
             </div>
           </div>
         </div>
-
         <div>
           <h4 className="text-white text-sm font-semibold mb-3">
             SUBSCRIBE FOR UPDATE
@@ -234,7 +244,6 @@ export default function Hero() {
       <section className="relative">
         <div className="absolute inset-0 " />
         <div className="absolute inset-0 bg-black/20" />
-
         <div
           className={`relative min-h-screen pt-24 flex items-center ${
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
@@ -249,13 +258,9 @@ export default function Hero() {
                   </div>
                   <div className="inline-block relative">
                     <div className="absolute top-1 -left-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
-
                     <div className="absolute top-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
-
                     <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
-
                     <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
-
                     <span className="block font-sans space-x-2 text-lg p-2 border-2 border-b-0 border-[#265CA8] mt-2 sm:text-4xl md:text-5xl text-[#318AF3] relative">
                       <span
                         className="absolute inset-0 bg-gradient-to-r from-black to-[#00377E] -z-10"
@@ -267,11 +272,8 @@ export default function Hero() {
                   </div>
                   <div className="inline-block relative">
                     <div className="absolute -top-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
-
                     <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
-
                     <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
-
                     <span className="block font-sans space-x-2 text-lg p-2 border-2 border-[#265CA8] sm:text-4xl md:text-5xl text-[#318AF3] relative">
                       <span
                         className="absolute inset-0 bg-gradient-to-r from-black to-[#00377E] -z-10"
@@ -283,18 +285,38 @@ export default function Hero() {
                   </div>
                 </h1>
 
-                <div className="text-white font-sans text-sm my-10  ">
+                <div className="text-white font-sans text-sm my-10">
                   Neurolov turns idle phones, laptops, and PCs into GPU power.
                   Together, we build a community supercomputer that speeds up
                   AI, supports developers, creates smart agents, and boosts
                   gaming and research.
                 </div>
 
+                {/* Stats with glow behind each image */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-3xl reveal reveal-delay-4">
-                  <img src="/hero/stat-1.png" alt="" />
-                  <img src="/hero/stat-2.png" alt="" />
-                  <img src="/hero/stat-3.png" alt="" />
+                  <StatGlow>
+                    <img
+                      src="/hero/stat-1.png"
+                      alt=""
+                      className="block w-full h-auto"
+                    />
+                  </StatGlow>
+                  <StatGlow>
+                    <img
+                      src="/hero/stat-2.png"
+                      alt=""
+                      className="block w-full h-auto"
+                    />
+                  </StatGlow>
+                  <StatGlow>
+                    <img
+                      src="/hero/stat-3.png"
+                      alt=""
+                      className="block w-full h-auto"
+                    />
+                  </StatGlow>
                 </div>
+
                 <div className="flex justify-start mt-4 reveal reveal-delay-3">
                   <button
                     onClick={openPresale}
@@ -336,6 +358,43 @@ export default function Hero() {
         .reveal-delay-4 { transition-delay: .4s; }
         .reveal-delay-5 { transition-delay: .5s; }
         .reveal-delay-6 { transition-delay: .6s; }
+
+        .stat-glow-wrap {
+          position: relative;
+          overflow: hidden;
+          border-bottom-right-radius: 28px;
+
+          border: 1px solid #002554;
+          background: #002554;
+          isolation: isolate;
+        }
+
+        .stat-glow-wrap::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          width: 55%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, #0361DA, transparent);
+          animation: statGlowSweep 2.6s linear infinite;
+          z-index: 1;
+          border-radius: 10px;
+          filter: blur(10px);
+          transform: translateX(-150%);
+        }
+
+        .stat-glow-inner {
+          position: relative;
+          z-index: 2;
+          border-radius: 0px;
+          overflow: hidden;
+          background: transparent;
+        }
+
+        @keyframes statGlowSweep {
+          0%   { transform: translateX(-150%); }
+          100% { transform: translateX(150%); }
+        }
       `}</style>
     </>
   );
