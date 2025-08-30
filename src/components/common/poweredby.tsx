@@ -1,114 +1,42 @@
 import React from "react";
 
 type Partner = {
-  name: string;
-  logo: React.ReactNode;
+  image: string;
 };
 
-const partners: Partner[] = [
+const partners_1: Partner[] = [
   {
-    name: "BINANCE",
-    logo: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-sky-300" aria-hidden>
-        <path
-          fill="currentColor"
-          d="M12 2 7.5 6.5 9 8l3-3 3 3 1.5-1.5L12 2Zm-7 7L2 12l3 3 1.5-1.5L5 12l1.5-1.5L5 9Zm14 0L17.5 10.5 19 12l-1.5 1.5L21 15l3-3-3-3Zm-7 1-3 3 3 3 3-3-3-3Z"
-        />
-      </svg>
-    ),
+    image: "/powered/1.png",
   },
   {
-    name: "BYBIT",
-    logo: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-sky-300" aria-hidden>
-        <circle cx="12" cy="12" r="9" fill="currentColor" />
-      </svg>
-    ),
+    image: "/powered/2.png",
   },
   {
-    name: "NVIDIA",
-    logo: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-sky-300" aria-hidden>
-        <path
-          fill="currentColor"
-          d="M4 12c4-6 12-6 16 0-4 6-12 6-16 0Zm8 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
-        />
-      </svg>
-    ),
+    image: "/powered/3.png",
   },
   {
-    name: "Grok",
-    logo: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-sky-300" aria-hidden>
-        <path fill="currentColor" d="M12 3 4 9l8 12 8-12-8-6Z" />
-      </svg>
-    ),
+    image: "/powered/4.png",
   },
   {
-    name: "Gemini",
-    logo: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-sky-300" aria-hidden>
-        <path
-          fill="currentColor"
-          d="M7 5h10v2H7V5Zm-2 6h14v2H5v-2Zm2 6h10v2H7v-2Z"
-        />
-      </svg>
-    ),
+    image: "/powered/5.png",
+  },
+];
+
+const partners_2: Partner[] = [
+  {
+    image: "/powered/5.png",
   },
   {
-    name: "SOLANA",
-    logo: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-sky-300" aria-hidden>
-        <path
-          fill="currentColor"
-          d="M3 7h14l4-3H7l-4 3Zm0 10h14l4-3H7l-4 3Zm0-5h14l4-3H7l-4 3Z"
-        />
-      </svg>
-    ),
+    image: "/powered/4.png",
   },
   {
-    name: "Gate",
-    logo: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-sky-300" aria-hidden>
-        <path
-          fill="currentColor"
-          d="M12 2 2 12l10 10 10-10L12 2Zm0 4 6 6-6 6-6-6 6-6Z"
-        />
-      </svg>
-    ),
+    image: "/powered/3.png",
   },
   {
-    name: "AMD",
-    logo: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-sky-300" aria-hidden>
-        <path
-          fill="currentColor"
-          d="M3 3h8v8H3V3Zm10 0h8v8h-8V3Zm0 10h8v8h-8v-8Zm-10 0h8v8H3v-8Z"
-        />
-      </svg>
-    ),
+    image: "/powered/2.png",
   },
   {
-    name: "KUCOIN",
-    logo: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-sky-300" aria-hidden>
-        <path
-          fill="currentColor"
-          d="M5 5h2l12 12v2h-2L5 7V5Zm0 12 12-12h2v2L9 19H7v-2Z"
-        />
-      </svg>
-    ),
-  },
-  {
-    name: "Bitget",
-    logo: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 text-sky-300" aria-hidden>
-        <path
-          fill="currentColor"
-          d="M4 12 12 4l8 8-8 8-8-8Zm4 0 4 4 4-4-4-4-4 4Z"
-        />
-      </svg>
-    ),
+    image: "/powered/1.png",
   },
 ];
 
@@ -135,7 +63,7 @@ const whyItems = [
       </svg>
     ),
     title: "Backed by Mario Nawfal & Victus Global",
-    body: "Endorsed by top Web3 voices. Supported by the world’s top crypto influencer and a leading global VC.",
+    body: "Endorsed by top Web3 voices. Supported by the world's top crypto influencer and a leading global VC.",
   },
   {
     icon: (
@@ -146,72 +74,105 @@ const whyItems = [
         />
       </svg>
     ),
-    title: "World’s First Browser‑Based Compute Network",
+    title: "World's First Browser‑Based Compute Network",
     body: "Contribute via browser—no setup needed. Built on WebGPU/WebGL; earn $ENLOV by sharing idle device power with institutions at scale.",
   },
 ];
 
+const PartnerCard = ({ partner }: { partner: Partner }) => (
+  <div className="group relative  min-w-[250px] mx-3">
+    <img src={partner.image} alt="Partner logo" className=" object-cover" />
+  </div>
+);
+
 export default function PoweredAndWhy() {
+  // Create duplicated arrays for seamless infinite scroll
+  const duplicatedPartners_1 = [...partners_1, ...partners_1, ...partners_1];
+  const duplicatedPartners_2 = [...partners_2, ...partners_2, ...partners_2];
+
   return (
     <section className="relative w-full overflow-hidden bg-[url('/powered/star-bg.png')] bg-top bg-cover bg-no-repeat">
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(6,12,28,0.25),rgba(6,12,28,0.7)_60%,rgba(6,12,28,0.85))] pointer-events-none" />
 
+      <style>{`
+        @keyframes slide-left-to-right {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(0%);
+          }
+        }
+
+        @keyframes slide-right-to-left {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+
+        .slide-left-to-right {
+          animation: slide-left-to-right 10s linear infinite;
+        }
+
+        .slide-right-to-left {
+          animation: slide-right-to-left 10s linear infinite;
+        }
+      `}</style>
+
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16">
         <header className="text-center">
-          <h2 className="text-[40px] sm:text-5xl font-extrabold tracking-tight text-sky-200">
+          <h2 className="text-[40px] sm:text-5xl font-medium font-sans tracking-tight text-[#ACD2FF]">
             Powered By
           </h2>
         </header>
+      </div>
 
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
-          {partners.map((p) => (
-            <div
-              key={p.name}
-              className="group relative flex items-center justify-center gap-3 rounded-md bg-[#0a1b44] px-6 py-5 text-sky-200 shadow-md ring-1 ring-white/10"
-            >
-              <span className="absolute inset-0 pointer-events-none">
-                <span className="absolute left-2 top-2 h-4 w-4 border-t-2 border-l-2 border-sky-300/60 rounded-tl-sm" />
-                <span className="absolute right-2 top-2 h-4 w-4 border-t-2 border-r-2 border-sky-300/60 rounded-tr-sm" />
-                <span className="absolute left-2 bottom-2 h-4 w-4 border-b-2 border-l-2 border-sky-300/60 rounded-bl-sm" />
-                <span className="absolute right-2 bottom-2 h-4 w-4 border-b-2 border-r-2 border-sky-300/60 rounded-br-sm" />
-              </span>
-
-              {p.logo}
-              <span className="text-lg font-semibold tracking-wide text-sky-200">
-                {p.name}
-              </span>
-            </div>
+      {/* First sliding row - Left to Right */}
+      <div className=" w-full overflow-hidden">
+        <div className="flex slide-left-to-right">
+          {duplicatedPartners_1.map((partner, index) => (
+            <PartnerCard key={`ltr-${index}`} partner={partner} />
           ))}
         </div>
+      </div>
 
-        <div className="mt-16 sm:mt-20">
-          <h3 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-            <span className="text-white/80">WHY </span>
-            <span className="text-sky-300">NEUROLOV?</span>
-          </h3>
+      {/* Second sliding row - Right to Left */}
+      <div className="mt-6 w-full overflow-hidden">
+        <div className="flex slide-right-to-left">
+          {duplicatedPartners_2.map((partner, index) => (
+            <PartnerCard key={`rtl-${index}`} partner={partner} />
+          ))}
+        </div>
+      </div>
 
-          <div className="mt-8 grid grid-cols-1 gap-6">
-            {whyItems.map((it, idx) => (
-              <div key={idx} className="flex items-stretch gap-4">
-                <div className="flex w-20 shrink-0 items-center justify-center rounded-md bg-[#0a1b44] ring-1 ring-white/10">
-                  {it.icon}
-                </div>
-
-                <div className="relative flex-1">
-                  <div className="neu-card">
-                    <div className="p-5 sm:p-6">
-                      <h4 className="text-white text-lg sm:text-xl font-semibold">
-                        {it.title}
-                      </h4>
-                      <p className="mt-2 text-sm sm:text-base text-white/70 leading-relaxed">
-                        {it.body}
-                      </p>
-                    </div>
+      <div className="mt-16 sm:mt-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h3 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+          <span className="text-white/80">WHY </span>
+          <span className="text-sky-300">NEUROLOV?</span>
+        </h3>
+        <div className="mt-8 grid grid-cols-1 gap-6">
+          {whyItems.map((it, idx) => (
+            <div key={idx} className="flex items-stretch gap-4">
+              <div className="flex w-20 shrink-0 items-center justify-center rounded-md bg-[#0a1b44] ring-1 ring-white/10">
+                {it.icon}
+              </div>
+              <div className="relative flex-1">
+                <div className="neu-card">
+                  <div className="p-5 sm:p-6">
+                    <h4 className="text-white text-lg sm:text-xl font-semibold">
+                      {it.title}
+                    </h4>
+                    <p className="mt-2 text-sm sm:text-base text-white/70 leading-relaxed">
+                      {it.body}
+                    </p>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
