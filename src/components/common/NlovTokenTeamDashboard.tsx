@@ -78,19 +78,41 @@ const TokenShowcase: React.FC = () => {
             "
           />
 
+          {/* Base coin image */}
           <img
-            src={isHovered ? "/token/coin-new.png" : "/token/coin.png"}
+            src="/token/coin.png"
             alt="coin"
-            className="
+            className={`
               absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
               w-[380px] 
               z-20
               cursor-pointer
-              transition-all duration-300
-            "
+              transition-opacity duration-500 ease-in-out
+            `}
             style={{
               filter:
                 "drop-shadow(0 10px 25px rgba(0,0,0,0.35)) drop-shadow(0 0 40px rgba(88,160,255,0.55))",
+              opacity: isHovered ? 0 : 1,
+            }}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          />
+
+          {/* Hover coin image */}
+          <img
+            src="/token/coin-new.png"
+            alt="coin hover"
+            className={`
+              absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+              w-[380px] 
+              z-20
+              cursor-pointer
+              transition-opacity duration-500 ease-in-out
+            `}
+            style={{
+              filter:
+                "drop-shadow(0 10px 25px rgba(0,0,0,0.35)) drop-shadow(0 0 40px rgba(88,160,255,0.55))",
+              opacity: isHovered ? 1 : 0,
             }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -219,51 +241,6 @@ const TokenShowcase: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="text-center mb-6 mt-10">
-        <h1 className="text-5xl font-semibold text-[#ACD2FF]">Meet Our Team</h1>
-      </div>
-
-      <div className="relative flex flex-col md:flex-row items-center md:items-start gap-6">
-        <img
-          src="/token/glow.png"
-          alt="spotlight"
-          className="absolute inset-0 w-full h-full object-cover z-0 mt-24"
-        />
-        <div className="w-full md:w-1/2 relative z-10">
-          <img
-            src="/token/team-1.png"
-            alt="Team"
-            className="w-full h-full object-contain"
-          />
-        </div>
-        <div className="w-full md:w-1/2 relative z-10">
-          <img
-            src="/token/team-2.png"
-            alt="Team"
-            className="w-full h-full object-contain"
-          />
-        </div>
-        <div className="w-full md:w-1/2 relative z-10">
-          <img
-            src="/token/team-3.png"
-            alt="Team"
-            className="w-full h-full object-contain"
-          />
-        </div>
-      </div>
-      <div className="flex justify-center items-center mt-12">
-        <button className="relative px-4 py-3 rounded-xl text-black font-semibold text-sm md:text-base overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(137,189,255,0.8)]">
-          <div className="absolute inset-0">
-            <img
-              src="/landing-ai-model/button-bg.png"
-              alt="Button Background"
-              className="w-full h-full object-cover rounded-xl"
-            />
-          </div>
-          <span className="relative z-10 px-6">View Full Team</span>
-        </button>
       </div>
     </section>
   );

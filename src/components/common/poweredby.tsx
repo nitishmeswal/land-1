@@ -154,11 +154,9 @@ const whyItems = [
 export default function PoweredAndWhy() {
   return (
     <section className="relative w-full overflow-hidden bg-[url('/powered/star-bg.png')] bg-top bg-cover bg-no-repeat">
-      {/* Soft overlay for readability */}
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(6,12,28,0.25),rgba(6,12,28,0.7)_60%,rgba(6,12,28,0.85))] pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16">
-        {/* Powered By */}
         <header className="text-center">
           <h2 className="text-[40px] sm:text-5xl font-extrabold tracking-tight text-sky-200">
             Powered By
@@ -171,7 +169,6 @@ export default function PoweredAndWhy() {
               key={p.name}
               className="group relative flex items-center justify-center gap-3 rounded-md bg-[#0a1b44] px-6 py-5 text-sky-200 shadow-md ring-1 ring-white/10"
             >
-              {/* Corner brackets */}
               <span className="absolute inset-0 pointer-events-none">
                 <span className="absolute left-2 top-2 h-4 w-4 border-t-2 border-l-2 border-sky-300/60 rounded-tl-sm" />
                 <span className="absolute right-2 top-2 h-4 w-4 border-t-2 border-r-2 border-sky-300/60 rounded-tr-sm" />
@@ -187,7 +184,6 @@ export default function PoweredAndWhy() {
           ))}
         </div>
 
-        {/* Why Neurolov */}
         <div className="mt-16 sm:mt-20">
           <h3 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
             <span className="text-white/80">WHY </span>
@@ -197,12 +193,10 @@ export default function PoweredAndWhy() {
           <div className="mt-8 grid grid-cols-1 gap-6">
             {whyItems.map((it, idx) => (
               <div key={idx} className="flex items-stretch gap-4">
-                {/* Icon column */}
                 <div className="flex w-20 shrink-0 items-center justify-center rounded-md bg-[#0a1b44] ring-1 ring-white/10">
                   {it.icon}
                 </div>
 
-                {/* Content card with angled right edge */}
                 <div className="relative flex-1">
                   <div className="neu-card">
                     <div className="p-5 sm:p-6">

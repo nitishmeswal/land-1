@@ -10,6 +10,8 @@ import LandingWithMarquee from "@/components/InfiniteSlidingHeader";
 import Header from "@/components/Header";
 import BottomLineFix from "@/components/BottomLineFix";
 import NeurolovFooter from "@/components/common/Footer";
+import LatestUpdates from "@/components/common/LatestUpdates";
+import Team from "@/components/common/Team";
 
 const Index = () => {
   useEffect(() => {
@@ -50,10 +52,10 @@ const Index = () => {
           <NlovTokenDashboard />
         </div>
 
-        {/* <ProductHighlights />
-        <HowItWorks />
-        <Tokenomics />
-        <CallToAction /> */}
+        <div className="mt-20 bg-[url('/updates/star-bg.png')] bg-cover bg-center bg-no-repeat">
+          <Team />
+          <LatestUpdates />
+        </div>
       </main>
       <div className="py-10">
         {" "}

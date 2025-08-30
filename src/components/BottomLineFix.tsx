@@ -14,7 +14,7 @@ const BottomLineFix: React.FC<Props> = ({ onJoin }) => {
         width: "60vw",
         maxWidth: "959.9749755859375px",
         minWidth: "320px",
-        height: "65px", // Reduced from 75px
+        height: "65px",
         zIndex: 9999,
         pointerEvents: "none",
       }}
@@ -71,20 +71,19 @@ const BottomLineFix: React.FC<Props> = ({ onJoin }) => {
             "inset 0 0 0 1px rgba(128,186,255,0.18), 0 8px 24px rgba(0,0,0,0.35)",
           display: "flex",
           alignItems: "stretch",
-          padding: "8px", // Reduced from 10px
+          padding: "8px",
           gap: "12px",
           pointerEvents: "auto",
           backdropFilter: "blur(2px)",
         }}
       >
-        {/* COLUMN 1: Current price block */}
         <div
           style={{
             flex: "1 1 0",
             display: "flex",
             alignItems: "center",
             gap: "14px",
-            padding: "8px 14px", // Reduced vertical padding
+            padding: "8px 14px",
             borderRadius: "20px",
             background: "#101D5866",
             minWidth: 0,
@@ -136,7 +135,7 @@ const BottomLineFix: React.FC<Props> = ({ onJoin }) => {
           <div
             style={{
               marginLeft: "auto",
-              padding: "8px 16px", // Reduced padding
+              padding: "8px 16px",
               borderRadius: "10px",
               border: "1.5px solid #80BAFF",
               color: "#80BAFF",
@@ -150,14 +149,13 @@ const BottomLineFix: React.FC<Props> = ({ onJoin }) => {
           </div>
         </div>
 
-        {/* COLUMN 2: ROI + button inside */}
         <div
           style={{
             flex: "1 1 0",
             display: "flex",
             alignItems: "center",
             gap: "12px",
-            padding: "8px 12px", // Reduced vertical padding
+            padding: "8px 12px",
             borderRadius: "20px",
             background: "#101D5866",
             minWidth: 0,
@@ -186,7 +184,6 @@ const BottomLineFix: React.FC<Props> = ({ onJoin }) => {
             600%
           </span>
 
-          {/* Glow Container */}
           <div
             className="glow-container"
             style={{

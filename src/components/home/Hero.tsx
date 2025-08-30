@@ -59,18 +59,14 @@ function useIsMobile() {
   return isMobile;
 }
 
-// Presale Card Component
 function PresaleCard() {
   const openPresale = () => window.open("https://swarm.neurolov.ai/", "_blank");
 
   return (
     <div className="relative">
-      {/* Background Glow Effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-white/20 rounded-3xl blur-3xl"></div>
 
-      {/* Main Card */}
       <div className="relative bg-gradient-to-br from-blue-900/90 to-blue-800/90 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 shadow-2xl">
-        {/* Header */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
             <div className="bg-green-500 text-white text-xs px-2 py-1 rounded-md font-semibold">
@@ -81,7 +77,6 @@ function PresaleCard() {
           <div className="text-white text-sm font-semibold">600% to TGE</div>
         </div>
 
-        {/* Price Information */}
         <div className="flex justify-between mb-4">
           <div className="text-white text-sm">
             Actual Price: <span className="font-semibold">$0.025</span>
@@ -91,7 +86,6 @@ function PresaleCard() {
           </div>
         </div>
 
-        {/* Progress Bar */}
         <div className="mb-4">
           <div className="w-full bg-blue-900/50 rounded-full h-3">
             <div
@@ -103,13 +97,11 @@ function PresaleCard() {
           </div>
         </div>
 
-        {/* Funds Raised */}
         <div className="flex justify-between items-center mb-6">
           <span className="text-white text-sm">USD Raised:</span>
           <span className="text-white text-lg font-bold">$9,923 / $15,000</span>
         </div>
 
-        {/* Buy Now Button */}
         <button
           onClick={openPresale}
           className="w-full bg-gradient-to-r from-blue-400 to-blue-300 text-white font-bold py-3 px-6 rounded-xl mb-6 hover:from-blue-300 hover:to-blue-200 transition-all duration-300 transform hover:scale-105"
@@ -117,7 +109,6 @@ function PresaleCard() {
           BUY NOW
         </button>
 
-        {/* Community & Support */}
         <div className="mb-4">
           <h4 className="text-white text-sm font-semibold mb-3">
             COMMUNITY & SUPPORT
@@ -159,7 +150,6 @@ function PresaleCard() {
           </div>
         </div>
 
-        {/* Subscribe Section */}
         <div>
           <h4 className="text-white text-sm font-semibold mb-3">
             SUBSCRIBE FOR UPDATE

@@ -3,12 +3,9 @@ import React from "react";
 const NeurolovFooter: React.FC = () => {
   return (
     <>
-      {/* Main Footer */}
       <footer className="relative overflow-hidden rounded-3xl mx-4 mb-8">
-        {/* Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#80B8FF] to-[#0361DA]"></div>
 
-        {/* Large Background Text - Positioned lower and extending below */}
         <div className="absolute inset-0 flex items-end justify-center pb-[-1rem] ">
           <h1
             className="text-[18rem] font-bold leading-none select-none pointer-events-none opacity-30 translate-y-16"
@@ -24,11 +21,8 @@ const NeurolovFooter: React.FC = () => {
           </h1>
         </div>
 
-        {/* Content */}
         <div className="relative z-10 px-8 py-12">
-          {/* Top Section */}
           <div className="grid grid-cols-1 lg:grid-cols-6 gap-8 mb-12">
-            {/* Left Column - Logo and Description with left padding */}
             <div className="lg:col-span-1 pl-6">
               <div className="flex items-center mb-6">
                 <img
@@ -42,7 +36,6 @@ const NeurolovFooter: React.FC = () => {
                 generation, and blockchain rewards.
               </p>
 
-              {/* Social Icons */}
               <div className="flex space-x-4">
                 <div className="w-10 h-10 flex items-center justify-center">
                   <img src="/footer/x.png" alt="x" />
@@ -65,10 +58,8 @@ const NeurolovFooter: React.FC = () => {
               </div>
             </div>
 
-            {/* Navigation Columns - All in One Row */}
             <div className="lg:col-span-5 flex justify-start px-16">
               <div className="grid grid-cols-2 md:grid-cols-5 gap-20">
-                {/* Products Column */}
                 <div>
                   <h3 className="text-[#002B62] font-semibold text-sm mb-4 uppercase tracking-wider">
                     PRODUCTS
@@ -109,7 +100,6 @@ const NeurolovFooter: React.FC = () => {
                   </ul>
                 </div>
 
-                {/* Token Column */}
                 <div>
                   <h3 className="text-[#002B62] font-semibold text-sm mb-4 uppercase tracking-wider">
                     TOKEN
@@ -150,7 +140,6 @@ const NeurolovFooter: React.FC = () => {
                   </ul>
                 </div>
 
-                {/* Ecosystem Column */}
                 <div>
                   <h3 className="text-[#002B62] font-semibold text-sm mb-4 uppercase tracking-wider">
                     ECOSYSTEM
@@ -175,7 +164,6 @@ const NeurolovFooter: React.FC = () => {
                   </ul>
                 </div>
 
-                {/* Resources Column */}
                 <div>
                   <h3 className="text-[#002B62] font-semibold text-sm mb-4 uppercase tracking-wider">
                     RESOURCES
@@ -208,7 +196,6 @@ const NeurolovFooter: React.FC = () => {
                   </ul>
                 </div>
 
-                {/* About Column */}
                 <div>
                   <h3 className="text-[#002B62] font-semibold text-sm mb-4 uppercase tracking-wider">
                     ABOUT
@@ -236,7 +223,6 @@ const NeurolovFooter: React.FC = () => {
             </div>
           </div>
 
-          {/* Footer Links - Positioned above background text */}
           <div className="relative z-20 mb-28">
             <div className="flex flex-wrap ml-96 gap-2 text-sm">
               <a
@@ -270,7 +256,6 @@ const NeurolovFooter: React.FC = () => {
           </div>
         </div>
 
-        {/* Copyright - At the very bottom outside content div */}
         <div className="absolute bottom-4 left-0 right-0 z-20 text-center">
           <p className="text-[#9DC8FF] text-sm">
             2025 Neurolov.ai. All rights reserved.
@@ -278,7 +263,6 @@ const NeurolovFooter: React.FC = () => {
         </div>
       </footer>
 
-      {/* Bottom Spacing */}
       <div className="h-8"></div>
     </>
   );
