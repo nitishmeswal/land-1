@@ -6,6 +6,9 @@ import AIModelsSection from "@/components/common/AIModelsSection";
 import NlovTokenDashboard from "@/components/common/NlovTokenTeamDashboard";
 import WhyNeurolov from "@/components/common/poweredby";
 import ComputePowerSharing from "@/components/ComputePowerSharing";
+import LandingWithMarquee from "@/components/InfiniteSlidingHeader";
+import Header from "@/components/Header";
+import BottomLineFix from "@/components/BottomLineFix";
 
 const Index = () => {
   useEffect(() => {
@@ -14,7 +17,11 @@ const Index = () => {
 
   return (
     <div className="bg-[#030924]">
-      <Navbar />
+      {/* <Navbar /> */}
+
+      <LandingWithMarquee />
+      <Header logoSrc="header/logo.png" />
+      <BottomLineFix />
       <main>
         <div
           className="bg-cover bg-center bg-no-repeat"
