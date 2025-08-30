@@ -19,7 +19,6 @@ const Index = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // Set up interval to toggle second background every 2 seconds
     const interval = setInterval(() => {
       setShowBg2((prev) => !prev);
     }, 2000);
@@ -29,7 +28,6 @@ const Index = () => {
 
   return (
     <div className="bg-[#030924]">
-      {/* <Navbar /> */}
       <LandingWithMarquee />
       <Header logoSrc="header/logo.png" />
       <BottomLineFix />
@@ -38,7 +36,6 @@ const Index = () => {
           className="bg-cover bg-center bg-no-repeat relative overflow-hidden"
           style={{ backgroundImage: "url(/hero/bg.png)" }}
         >
-          {/* Second background overlay positioned at bottom with gradient fade */}
           <div
             className="absolute bottom-0 left-0 right-0 h-full bg-contain bg-bottom bg-no-repeat transition-opacity duration-1000 ease-in-out"
             style={{
@@ -51,7 +48,6 @@ const Index = () => {
             }}
           />
 
-          {/* Third background overlay positioned at bottom with gradient fade */}
           <div
             className="absolute rotate-180 top-0 left-0 right-0 h-full bg-contain bg-bottom bg-no-repeat transition-opacity duration-1000 ease-in-out"
             style={{
