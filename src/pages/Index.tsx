@@ -12,6 +12,7 @@ import BottomLineFix from "@/components/BottomLineFix";
 import NeurolovFooter from "@/components/common/Footer";
 import LatestUpdates from "@/components/common/LatestUpdates";
 import Team from "@/components/common/Team";
+import Highlight from "@/components/Highlight";
 
 const Index = () => {
   const [showBg2, setShowBg2] = useState(false);
@@ -66,6 +67,9 @@ const Index = () => {
         </div>
         <div className="mt-20 ">
           <ComputePowerSharing />
+        </div>
+        <div className="mt-20">
+          <Highlight />
         </div>
         <div className="mt-20 ">
           <AIModelsSection />
