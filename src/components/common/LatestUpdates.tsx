@@ -27,8 +27,8 @@ export default function LatestUpdates() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-        <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-white/90 text-center">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-15">
+        <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-[#ACD2FF] text-center">
           Latest Updates
         </h2>
 
