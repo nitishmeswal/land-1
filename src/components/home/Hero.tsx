@@ -24,6 +24,7 @@ function Button(props: React.ButtonHTMLAttributes<HTMLButtonElement>) {
 }
 
 type SplitTextProps = { text: string; className?: string; delay?: number };
+
 const SplitText: React.FC<SplitTextProps> = ({
   text,
   className = "",
@@ -59,12 +60,6 @@ function useIsMobile() {
   return isMobile;
 }
 
-/**
- * StatGlow: a small wrapper that places an animated glow behind its children.
- * - stat-glow-wrap controls clipping, radius, and border
- * - ::before (stat-glow-pass) is the animated light sweep
- * - stat-glow-inner holds the image content above the glow
- */
 const StatGlow: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   className = "",
   children,
@@ -79,98 +74,153 @@ const StatGlow: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
 
 function PresaleCard() {
   const openPresale = () => window.open("https://swarm.neurolov.ai/", "_blank");
+  const [useAltSlider, setUseAltSlider] = useState(false);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setUseAltSlider((prev) => !prev);
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
-    <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-white/20 rounded-3xl blur-3xl"></div>
-      <div className="relative bg-gradient-to-br from-blue-900/90 to-blue-800/90 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 shadow-2xl">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-3">
-            <div className="bg-green-500 text-white text-xs px-2 py-1 rounded-md font-semibold">
-              • LIVE
+    <div className="relative w-[380px] h-[550px]">
+      <img
+        src="/hero/right-glow.png"
+        alt="Glow"
+        className="absolute inset-0 w-full h-full z-0"
+      />
+      <img
+        src="/hero/right-bg.png"
+        alt="Presale background"
+        className="absolute inset-0 w-full h-[500px] z-0"
+      />
+      <img
+        src="/hero/glow-card.png"
+        alt="Card glow"
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-auto "
+      />
+
+      <div className="absolute inset-0 p-8 flex flex-col text-white z-20">
+        <div className="flex items-center justify-between ">
+          <div className="flex items-center">
+            <img src="/hero/nlov.png" alt="Presale" className=" w-56" />
+          </div>
+          <div className="text-xs font-semibold top-0 pb-14 text-[#82FFEA]">
+            600% to TGE
+          </div>
+        </div>
+
+        <div className="flex justify-between my-4 text-sm">
+          <div>
+            <span className="text-[#80B8FF]">Actual Price:</span>{" "}
+            <span className="font-semibold">$0.025</span>
+          </div>
+          <div>
+            <span className="text-[#80B8FF]">Listing Price:</span>{" "}
+            <span className="font-semibold">$0.55</span>
+          </div>
+        </div>
+
+        {/* Progress bar: fixed 200px window with infinite sliding track */}
+        <div className="relative h-8 my-2 w-full bg-[#010726] rounded-2xl">
+          <div className="progress-window w-[200px] h-full overflow-hidden rounded-2xl">
+            <div className="progress-track">
+              {/* Duplicate segments for seamless loop */}
+              <img
+                src="/hero/progress-bar.png"
+                alt="Progress bar segment"
+                className="h-full w-[200px] flex-shrink-0 "
+              />
+              <img
+                src="/hero/progress-bar.png"
+                alt="Progress bar segment"
+                className="h-full w-[200px] flex-shrink-0"
+              />
+              <img
+                src="/hero/progress-bar.png"
+                alt="Progress bar segment"
+                className="h-full w-[200px] flex-shrink-0"
+              />
             </div>
-            <h3 className="text-white text-xl font-bold">$NLOV Presale</h3>
           </div>
-          <div className="text-white text-sm font-semibold">600% to TGE</div>
-        </div>
-        <div className="flex justify-between mb-4">
-          <div className="text-white text-sm">
-            Actual Price: <span className="font-semibold">$0.025</span>
+
+          <div
+            className="absolute top-1/2 -translate-y-1/2 select-none pointer-events-none"
+            style={{ left: "45%" }}
+          >
+            <img
+              src="/hero/slider-button.png"
+              alt="Slider button"
+              className={`h-16 w-auto transition-opacity duration-500 ease-in-out ${
+                useAltSlider ? "opacity-50" : "opacity-100"
+              }`}
+            />
+            <img
+              src="/hero/slider-button-2.png"
+              alt="Slider button alt"
+              className={`h-16 w-auto transition-opacity duration-500 ease-in-out absolute inset-0 ${
+                useAltSlider ? "opacity-100" : "opacity-50"
+              }`}
+            />
           </div>
-          <div className="text-white text-sm">
-            Listing Price: <span className="font-semibold">$0.55</span>
+        </div>
+
+        <div className="flex justify-between items-center my-4">
+          <span className="text-sm text-[#80B8FF]">USD Raised:</span>
+          <span className="text-lg font-bold">
+            $9,923 /{" "}
+            <span className="text-[#80B8FF] font-semibold">$15,000</span>
+          </span>
+        </div>
+
+        <button className="relative px-4 py-3 rounded-xl text-black font-semibold text-sm md:text-base overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(137,189,255,0.8)]">
+          <div className="absolute inset-0">
+            <img
+              src="/hero/button-bg.png"
+              alt="Button Background"
+              className="w-full h-full object-cover rounded-xl"
+            />
           </div>
-        </div>
-        <div className="mb-4">
-          <div className="w-full bg-blue-900/50 rounded-full h-3">
-            <div
-              className="bg-gradient-to-r from-blue-400 to-blue-300 h-3 rounded-full relative"
-              style={{ width: "66%" }}
-            >
-              <div className="absolute right-0 top-0 w-4 h-4 bg-blue-300 rounded-full transform translate-x-1/2 -translate-y-0.5"></div>
-            </div>
-          </div>
-        </div>
-        <div className="flex justify-between items-center mb-6">
-          <span className="text-white text-sm">USD Raised:</span>
-          <span className="text-white text-lg font-bold">$9,923 / $15,000</span>
-        </div>
-        <button
-          onClick={openPresale}
-          className="w-full bg-gradient-to-r from-blue-400 to-blue-300 text-white font-bold py-3 px-6 rounded-xl mb-6 hover:from-blue-300 hover:to-blue-200 transition-all duration-300 transform hover:scale-105"
-        >
-          BUY NOW
+          <span className="relative z-10 px-6">Buy Now</span>
         </button>
-        <div className="mb-4">
-          <h4 className="text-white text-sm font-semibold mb-3">
+
+        <div className="mt-4 text-center">
+          <h4 className="text-sm font-semibold mb-3 text-[#7D8EE6]">
             COMMUNITY & SUPPORT
           </h4>
-          <div className="flex gap-4">
-            <div className="w-8 h-8 border border-blue-400 rounded-full flex items-center justify-center">
-              <span className="text-blue-400 text-sm font-bold">X</span>
-            </div>
-            <div className="w-8 h-8 border border-blue-400 rounded-full flex items-center justify-center">
-              <svg
-                className="w-4 h-4 text-blue-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                />
-              </svg>
-            </div>
-            <div className="w-8 h-8 border border-blue-400 rounded-full flex items-center justify-center">
-              <svg
-                className="w-4 h-4 text-blue-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
-            </div>
+          <div className="flex justify-center gap-4">
+            <a href="#" className="hover:opacity-80">
+              <img src="/hero/x.png" alt="X" className="w-8 h-8" />
+            </a>
+            <a href="#" className="hover:opacity-80">
+              <img
+                src="/hero/telegram.png"
+                alt="Telegram"
+                className="w-8 h-8"
+              />
+            </a>
+            <a href="#" className="hover:opacity-80">
+              <img src="/hero/mail.png" alt="Email" className="w-8 h-8" />
+            </a>
           </div>
         </div>
-        <div>
-          <h4 className="text-white text-sm font-semibold mb-3">
+
+        <div className="mt-4">
+          <h4 className="text-sm font-semibold mb-3 text-center">
             SUBSCRIBE FOR UPDATE
           </h4>
-          <div className="flex gap-2">
+          <div className="flex gap-2 bg-[#01092D] rounded-lg p-1">
             <input
               type="email"
               placeholder="example@gmail.com"
-              className="flex-1 bg-blue-900/50 border border-blue-400/30 rounded-lg px-3 py-2 text-white placeholder-gray-400 text-sm focus:outline-none focus:border-blue-400"
+              className="flex-1  rounded-lg px-3 py-2 text-[#2F4195] placeholder-[#2F4195] text-sm focus:outline-none focus:border-blue-400"
+              style={{ backgroundColor: "#01092D" }}
             />
-            <button className="bg-blue-900 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-800 transition-colors">
+            <button
+              className="text-white px-4 py-2 rounded-lg text-xs font-normal hover:opacity-90 transition-colors"
+              style={{ backgroundColor: "#0D1952" }}
+            >
               SUBSCRIBE
             </button>
           </div>
@@ -187,7 +237,6 @@ export default function Hero() {
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoaded(true), 300);
-
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -199,10 +248,8 @@ export default function Hero() {
       },
       { threshold: 0.1 }
     );
-
     const elements = document.querySelectorAll(".reveal");
     elements.forEach((el) => observerRef.current?.observe(el));
-
     return () => {
       observerRef.current?.disconnect();
       clearTimeout(timer);
@@ -214,14 +261,14 @@ export default function Hero() {
   return (
     <>
       <Helmet>
-        <title>Neurolov – Decentralized AI Compute Marketplace</title>
+        <title>Neurolov - Decentralized AI Compute Marketplace</title>
         <meta
           name="description"
           content="Neurolov is the decentralized AI compute marketplace and GPU rental platform for the future of open, community-driven AI."
         />
         <meta
           property="og:title"
-          content="Neurolov – Decentralized AI Compute Marketplace"
+          content="Neurolov - Decentralized AI Compute Marketplace"
         />
         <meta
           property="og:description"
@@ -250,7 +297,7 @@ export default function Hero() {
           } transition-all duration-700`}
         >
           <Container>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 my-24 items-start">
               <div>
                 <h1 className="text-left font-extrabold tracking-tight leading-tight mb-4 reveal reveal-delay-2">
                   <div className="block pl-4 font-sans text-lg font-normal sm:text-4xl md:text-5xl text-white">
@@ -292,7 +339,6 @@ export default function Hero() {
                   gaming and research.
                 </div>
 
-                {/* Stats with glow behind each image */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-3xl reveal reveal-delay-4">
                   <StatGlow>
                     <img
@@ -350,6 +396,7 @@ export default function Hero() {
       <style>{`
         .animate-fade-in { animation: fade-in .5s ease forwards; }
         @keyframes fade-in { from { opacity: 0; transform: translateY(2px); } to { opacity: 1; transform: none; } }
+
         .reveal { opacity: 0; transform: translateY(10px); transition: all .6s ease; }
         .reveal-visible { opacity: 1; transform: translateY(0); }
         .reveal-delay-1 { transition-delay: .1s; }
@@ -363,12 +410,10 @@ export default function Hero() {
           position: relative;
           overflow: hidden;
           border-bottom-right-radius: 28px;
-
           border: 1px solid #002554;
           background: #002554;
           isolation: isolate;
         }
-
         .stat-glow-wrap::before {
           content: '';
           position: absolute;
@@ -382,7 +427,6 @@ export default function Hero() {
           filter: blur(10px);
           transform: translateX(-150%);
         }
-
         .stat-glow-inner {
           position: relative;
           z-index: 2;
@@ -390,10 +434,39 @@ export default function Hero() {
           overflow: hidden;
           background: transparent;
         }
-
         @keyframes statGlowSweep {
           0%   { transform: translateX(-150%); }
           100% { transform: translateX(150%); }
+        }
+
+        /* Progress marquee (fixed 200px window with seamless infinite scroll) */
+        .progress-window {
+          position: relative;
+          overflow: hidden;
+          width: 200px; /* ensure the viewport is exactly 200px wide */
+          height: 100%;
+          border-radius: 16px;
+        }
+        .progress-track {
+          display: flex;
+          width: max-content;
+          animation: progressMarquee 3s linear infinite;
+        }
+        .progress-track img {
+          flex: 0 0 auto;
+          width: 200px;
+          height: 100%;
+        }
+        @keyframes progressMarquee {
+          from { transform: translateX(0); }
+          to   { transform: translateX(-200px); } /* shift by one segment width */
+        }
+
+        /* Optional: reduce motion respect */
+        @media (prefers-reduced-motion: reduce) {
+          .progress-track {
+            animation: none;
+          }
         }
       `}</style>
     </>
