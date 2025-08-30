@@ -64,10 +64,7 @@ const Index = () => {
         <div>
           <WhyNeurolov />
         </div>
-        <div
-          className="mt-20 bg-[url('/compute/wave.gif')] w-full bg-cover bg-center bg-no-repeat"
-          style={{ mixBlendMode: "color-dodge" }}
-        >
+        <div className="mt-20 ">
           <ComputePowerSharing />
         </div>
         <div className="mt-20 ">
