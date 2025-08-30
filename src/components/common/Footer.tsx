@@ -1,0 +1,303 @@
+import React from "react";
+
+const NeurolovFooter: React.FC = () => {
+  return (
+    <>
+      {/* Main Footer */}
+      <footer className="relative overflow-hidden rounded-3xl mx-4 mb-8">
+        {/* Background Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#80B8FF] to-[#0361DA]"></div>
+
+        {/* Large Background Text - Positioned lower and extending below */}
+        <div className="absolute inset-0 flex items-end justify-center pb-[-1rem] ">
+          <h1
+            className="text-[18rem] font-bold leading-none select-none pointer-events-none opacity-30 translate-y-16"
+            style={{
+              background:
+                "linear-gradient(to bottom, #002B62 0%, #6BA2E800 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
+            Neurolov
+          </h1>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 px-8 py-12">
+          {/* Top Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-6 gap-8 mb-12">
+            {/* Left Column - Logo and Description with left padding */}
+            <div className="lg:col-span-1 pl-6">
+              <div className="flex items-center mb-6">
+                <img
+                  src="/footer/logo.png"
+                  alt="Neurolov"
+                  className="w-[250px]"
+                />
+              </div>
+              <p className="text-[#002B62] text-xs leading-relaxed mb-4">
+                Empower your AI journey with decentralized computing, content
+                generation, and blockchain rewards.
+              </p>
+
+              {/* Social Icons */}
+              <div className="flex space-x-4">
+                <div className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                  <img
+                    src="/twitter-icon.svg"
+                    alt="Twitter"
+                    className="w-5 h-5"
+                  />
+                </div>
+                <div className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                  <img
+                    src="/telegram-icon.svg"
+                    alt="Telegram"
+                    className="w-5 h-5"
+                  />
+                </div>
+                <div className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                  <img
+                    src="/discord-icon.svg"
+                    alt="Discord"
+                    className="w-5 h-5"
+                  />
+                </div>
+                <div className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                  <img
+                    src="/github-icon.svg"
+                    alt="GitHub"
+                    className="w-5 h-5"
+                  />
+                </div>
+              </div>
+
+              <div className="mt-6 text-[#002B62] text-xs">
+                <p>For business inquiries & support,</p>
+                <p>contact us at:</p>
+                <p className="font-medium">support@neurolov.ai</p>
+              </div>
+            </div>
+
+            {/* Navigation Columns - All in One Row */}
+            <div className="lg:col-span-5 flex justify-start px-16">
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-20">
+                {/* Products Column */}
+                <div>
+                  <h3 className="text-[#002B62] font-semibold text-sm mb-4 uppercase tracking-wider">
+                    PRODUCTS
+                  </h3>
+                  <ul className="space-y-3">
+                    <li>
+                      <a
+                        href="#"
+                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
+                      >
+                        Compute
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
+                      >
+                        AI Models
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
+                      >
+                        Neuro Swarm
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
+                      >
+                        AI Agents
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Token Column */}
+                <div>
+                  <h3 className="text-[#002B62] font-semibold text-sm mb-4 uppercase tracking-wider">
+                    TOKEN
+                  </h3>
+                  <ul className="space-y-3">
+                    <li>
+                      <a
+                        href="#"
+                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
+                      >
+                        $NLOV
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
+                      >
+                        Tokenomics
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
+                      >
+                        Utility
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
+                      >
+                        FAQ
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Ecosystem Column */}
+                <div>
+                  <h3 className="text-[#002B62] font-semibold text-sm mb-4 uppercase tracking-wider">
+                    ECOSYSTEM
+                  </h3>
+                  <ul className="space-y-3">
+                    <li>
+                      <a
+                        href="#"
+                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
+                      >
+                        Roadmap
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
+                      >
+                        Partners
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Resources Column */}
+                <div>
+                  <h3 className="text-[#002B62] font-semibold text-sm mb-4 uppercase tracking-wider">
+                    RESOURCES
+                  </h3>
+                  <ul className="space-y-3">
+                    <li>
+                      <a
+                        href="#"
+                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
+                      >
+                        Technical Papers
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
+                      >
+                        Community
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
+                      >
+                        Blog & Updates
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* About Column */}
+                <div>
+                  <h3 className="text-[#002B62] font-semibold text-sm mb-4 uppercase tracking-wider">
+                    ABOUT
+                  </h3>
+                  <ul className="space-y-3">
+                    <li>
+                      <a
+                        href="#"
+                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
+                      >
+                        Team
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
+                      >
+                        Mission
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Footer Links - Positioned above background text */}
+          <div className="relative z-20 mb-28">
+            <div className="flex flex-wrap ml-96 gap-2 text-sm">
+              <a
+                href="#"
+                className="text-[#0862D6] hover:text-white transition-colors"
+              >
+                PRIVACY POLICY
+              </a>
+              <span className="text-[#0862D6]">|</span>
+              <a
+                href="#"
+                className="text-[#0862D6] hover:text-white transition-colors"
+              >
+                TERMS & CONDITIONS
+              </a>
+              <span className="text-[#0862D6]">|</span>
+              <a
+                href="#"
+                className="text-[#0862D6] hover:text-white transition-colors"
+              >
+                REFUND POLICY
+              </a>
+              <span className="text-[#0862D6]">|</span>
+              <a
+                href="#"
+                className="text-[#0862D6] hover:text-white transition-colors"
+              >
+                DISCLAIMER
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Copyright - At the very bottom outside content div */}
+        <div className="absolute bottom-4 left-0 right-0 z-20 text-center">
+          <p className="text-[#9DC8FF] text-sm">
+            2025 Neurolov.ai. All rights reserved.
+          </p>
+        </div>
+      </footer>
+
+      {/* Bottom Spacing */}
+      <div className="h-8"></div>
+    </>
+  );
+};
+
+export default NeurolovFooter;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 type CardProps = {
   title: string;
@@ -35,6 +35,8 @@ const Card: React.FC<CardProps> = ({ title, subtitle, img, className }) => {
 };
 
 const TokenShowcase: React.FC = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <section className="relative w-[85vw] mx-auto">
       <div className="relative mx-auto max-w-7xl px-10">
@@ -77,17 +79,21 @@ const TokenShowcase: React.FC = () => {
           />
 
           <img
-            src="/token/coin.png"
+            src={isHovered ? "/token/coin-new.png" : "/token/coin.png"}
             alt="coin"
             className="
               absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
               w-[380px] 
               z-20
+              cursor-pointer
+              transition-all duration-300
             "
             style={{
               filter:
                 "drop-shadow(0 10px 25px rgba(0,0,0,0.35)) drop-shadow(0 0 40px rgba(88,160,255,0.55))",
             }}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
           />
 
           <div className="hidden md:block">

@@ -125,7 +125,7 @@ const BottomLineFix: React.FC<Props> = ({ onJoin }) => {
               style={{
                 color: "rgba(128,153,204,0.55)",
                 fontSize: "clamp(14px, 1.6vw, 18px)",
-                fontWeight: 700,
+                fontWeight: 550,
                 letterSpacing: "0.2px",
                 whiteSpace: "nowrap",
               }}
@@ -199,13 +199,13 @@ const BottomLineFix: React.FC<Props> = ({ onJoin }) => {
               onClick={onJoin}
               className="button-inner"
               style={{
-                width: "190px",
+                width: "180px",
                 height: "30px",
                 border: 0,
                 outline: 0,
                 background: "#0E1A52",
                 backgroundImage: "url(/bottom-line/button.png)",
-                backgroundSize: "contain",
+                backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
                 cursor: "pointer",

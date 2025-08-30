@@ -9,6 +9,7 @@ import ComputePowerSharing from "@/components/ComputePowerSharing";
 import LandingWithMarquee from "@/components/InfiniteSlidingHeader";
 import Header from "@/components/Header";
 import BottomLineFix from "@/components/BottomLineFix";
+import NeurolovFooter from "@/components/common/Footer";
 
 const Index = () => {
   useEffect(() => {
@@ -54,7 +55,10 @@ const Index = () => {
         <Tokenomics />
         <CallToAction /> */}
       </main>
-      {/* <Footer /> */}
+      <div className="py-10">
+        {" "}
+        <NeurolovFooter />
+      </div>
     </div>
   );
 };
