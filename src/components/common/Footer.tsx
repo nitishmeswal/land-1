@@ -6,9 +6,9 @@ const NeurolovFooter: React.FC = () => {
       <footer className="relative overflow-hidden rounded-3xl mx-4 mb-8">
         <div className="absolute inset-0 bg-gradient-to-b from-[#80B8FF] to-[#0361DA]"></div>
 
-        <div className="absolute inset-0 flex items-end justify-center pb-[-1rem] ">
+        <div className="absolute inset-0 flex items-end justify-center ">
           <h1
-            className="text-[18rem] font-bold leading-none select-none pointer-events-none opacity-30 translate-y-16"
+            className="text-[19rem] w-full flex items-center justify-center font-bold leading-none select-none pointer-events-none opacity-30 translate-y-16"
             style={{
               background:
                 "linear-gradient(to bottom, #002B62 0%, #6BA2E800 100%)",
@@ -21,7 +21,7 @@ const NeurolovFooter: React.FC = () => {
           </h1>
         </div>
 
-        <div className="relative z-10 px-8 py-12">
+        <div className="relative z-10 px-8 py-12 pl-32">
           <div className="grid grid-cols-1 lg:grid-cols-6 gap-8 mb-12">
             <div className="lg:col-span-1 pl-6">
               <div className="flex items-center mb-6">
@@ -51,7 +51,7 @@ const NeurolovFooter: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-6 text-[#002B62] text-xs">
+              <div className="mt-6 font-bold text-[#002B62] text-xs">
                 <p>For business inquiries & support,</p>
                 <p>contact us at:</p>
                 <p className="font-medium">support@neurolov.ai</p>
@@ -223,33 +223,21 @@ const NeurolovFooter: React.FC = () => {
             </div>
           </div>
 
-          <div className="relative z-20 mb-28">
-            <div className="flex flex-wrap ml-96 gap-2 text-sm">
-              <a
-                href="#"
-                className="text-[#0862D6] hover:text-white transition-colors"
-              >
+          <div className="relative z-20 mb-32">
+            <div className="flex flex-wrap ml-64 gap-2 text-sm">
+              <a href="#" className="text-[#0862D6] transition-colors">
                 PRIVACY POLICY
               </a>
               <span className="text-[#0862D6]">|</span>
-              <a
-                href="#"
-                className="text-[#0862D6] hover:text-white transition-colors"
-              >
+              <a href="#" className="text-[#0862D6] transition-colors">
                 TERMS & CONDITIONS
               </a>
               <span className="text-[#0862D6]">|</span>
-              <a
-                href="#"
-                className="text-[#0862D6] hover:text-white transition-colors"
-              >
+              <a href="#" className="text-[#0862D6] transition-colors">
                 REFUND POLICY
               </a>
               <span className="text-[#0862D6]">|</span>
-              <a
-                href="#"
-                className="text-[#0862D6] hover:text-white transition-colors"
-              >
+              <a href="#" className="text-[#0862D6] transition-colors">
                 DISCLAIMER
               </a>
             </div>

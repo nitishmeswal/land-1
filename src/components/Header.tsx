@@ -14,12 +14,12 @@ type Props = {
 };
 
 const DEFAULT_NAV: NavItem[] = [
-  { label: "Products", href: "#products" },
-  { label: "Token", href: "#token" },
-  { label: "Ecosystem", href: "#ecosystem" },
-  { label: "Resources", href: "#resources" },
-  { label: "About", href: "#about" },
-  { label: "Compute App", href: "#compute" },
+  { label: "Products", href: "/products" },
+  { label: "Token", href: "/token" },
+  { label: "Ecosystem", href: "/ecosystem" },
+  { label: "Resources", href: "/resources" },
+  { label: "About", href: "/about" },
+  { label: "Compute App", href: "/compute" },
 ];
 
 const Header: React.FC<Props> = ({
@@ -45,7 +45,10 @@ const Header: React.FC<Props> = ({
               <ul className="nav-list">
                 {nav.map((item) => (
                   <li key={item.href} className="nav-li">
-                    <a href={item.href} className="nav-link no-hover">
+                    <a
+                      href={item.href}
+                      className=" text-white hover:text-white "
+                    >
                       {item.label}
                     </a>
                   </li>

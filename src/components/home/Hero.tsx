@@ -85,6 +85,21 @@ function PresaleCard() {
 
   return (
     <div className="relative w-[380px] h-[550px]">
+      {/* Glow background behind the card */}
+      <div
+        className="absolute inset-0 w-[510px] h-[510px] rounded-full"
+        style={{
+          background: "radial-gradient(circle, #73B0FF 0%, transparent 70%)",
+          filter: "blur(4px)",
+          opacity: 0.45,
+          mixBlendMode: "color-dodge",
+
+          top: "45%",
+          left: "45%",
+          transform: "translate(-45%, -45%) scale(1.2)",
+        }}
+      />
+
       <img
         src="/hero/right-glow.png"
         alt="Glow"
