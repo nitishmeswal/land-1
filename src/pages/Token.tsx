@@ -48,7 +48,6 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { useParams, useNavigate } from "react-router-dom";
 import { PatternBackground } from "@/components/common/Highlight";
 
-// Tokenomics data
 const tokenDistributionData = [
   { name: "Seed Investors", value: 2.95, color: "#6366f1" },
   { name: "Pre-sale Investors", value: 2.95, color: "#f43f5e" },
@@ -60,128 +59,6 @@ const tokenDistributionData = [
   { name: "Strategic Reserve", value: 5.45, color: "#3b82f6" },
   { name: "DAO Treasury", value: 4.45, color: "#6366f1" },
   { name: "Foundation", value: 5.45, color: "#f43f5e" },
-];
-
-const tokenReleaseData = [
-  {
-    month: "TGE (May 2025)",
-    "Seed Investors": 368.75,
-    "Pre-sale Investors": 737.5,
-    "Liquidity Pool": 5073.062,
-    "Team and Development": 0,
-    "Ecosystem and Rewards": 4612.5,
-    "Community and Marketing": 2112,
-    "Buyback and Burn": 0,
-    "Strategic Reserve": 0,
-    "DAO Treasury": 1112.5,
-    Foundation: 0,
-  },
-  {
-    month: "Jun 2025",
-    "Seed Investors": 14381.25,
-    "Pre-sale Investors": 14612.5,
-    "Liquidity Pool": 147178.937,
-    "Team and Development": 1779.47,
-    "Ecosystem and Rewards": 87637.5,
-    "Community and Marketing": 40137.5,
-    "Buyback and Burn": "Dynamic",
-    "Strategic Reserve": 0,
-    "DAO Treasury": 21137.5,
-    Foundation: 757.639,
-  },
-];
-
-const vestingScheduleData = [
-  {
-    category: "Seed Investors",
-    allocation: "14,750,000 NLOV (2.95%)",
-    tgeUnlock: "368,750 (2.5%)",
-    lockPeriod: "24 months",
-    vestingStart: "June 20, 2025",
-    monthlyVesting: "598,485/month",
-    details: "Rewards early backers",
-  },
-  {
-    category: "Pre-sale Investors",
-    allocation: "14,750,000 NLOV (2.95%)",
-    tgeUnlock: "737,500 (5%)",
-    lockPeriod: "18 months",
-    vestingStart: "June 20, 2025",
-    monthlyVesting: "778,472/month",
-    details: "Soft/hard cap range",
-  },
-  {
-    category: "Liquidity Pool (DEX)",
-    allocation: "152,250,000 NLOV (30.45%)",
-    tgeUnlock: "5,071,062.5 (3.33%)",
-    lockPeriod: "12 months",
-    vestingStart: "June 20, 2025",
-    monthlyVesting: "6,132,456/month",
-    details: "DEX liquidity",
-  },
-  {
-    category: "Team and Development",
-    allocation: "62,250,000 NLOV (12.45%)",
-    tgeUnlock: "0 NLOV",
-    lockPeriod: "18 months cliff, 36 months vesting",
-    vestingStart: "Dec 20, 2026",
-    monthlyVesting: "1,779,470/month",
-    details: "Long-term alignment",
-  },
-  {
-    category: "Ecosystem and Rewards",
-    allocation: "92,250,000 NLOV (18.45%)",
-    tgeUnlock: "4,612,500 (5%)",
-    lockPeriod: "36 months",
-    vestingStart: "June 20, 2025",
-    monthlyVesting: "2,434,375/month",
-    details: "Connect to Earn, airdrops, rewards",
-  },
-  {
-    category: "Community and Marketing",
-    allocation: "42,250,000 NLOV (8.45%)",
-    tgeUnlock: "2,112,500 (5%)",
-    lockPeriod: "24 months",
-    vestingStart: "June 20, 2025",
-    monthlyVesting: "1,672,396/month",
-    details: "Airdrops, partnerships, web growth",
-  },
-  {
-    category: "Buyback and Burn Reserve",
-    allocation: "44,750,000 NLOV (8.95%)",
-    tgeUnlock: "0 NLOV",
-    lockPeriod: "Dynamic",
-    vestingStart: "Post-TGE",
-    monthlyVesting: "Dynamic buyback (0-25% revenue)",
-    details: "Reduces supply to enhance value",
-  },
-  {
-    category: "Strategic Reserve",
-    allocation: "27,250,000 NLOV (5.45%)",
-    tgeUnlock: "0 NLOV",
-    lockPeriod: "24-month lock, released for stabilization",
-    vestingStart: "May 20, 2027",
-    monthlyVesting: "Dynamic",
-    details: "Market volatility buffer",
-  },
-  {
-    category: "DAO Treasury",
-    allocation: "22,250,000 NLOV (4.45%)",
-    tgeUnlock: "1,112,500 (5%)",
-    lockPeriod: "36 months",
-    vestingStart: "June 20, 2025",
-    monthlyVesting: "587,153/month",
-    details: "Community-driven development, governance",
-  },
-  {
-    category: "Foundation",
-    allocation: "27,250,000 NLOV (5.45%)",
-    tgeUnlock: "0 NLOV",
-    lockPeriod: "12-month cliff, 36-month vesting",
-    vestingStart: "June 20, 2026",
-    monthlyVesting: "757,639/month",
-    details: "Backup for unsold presale, strategic support",
-  },
 ];
 
 const utilityData = [
@@ -209,18 +86,6 @@ const utilityData = [
       "Earn NLOV rewards for contributing compute resources, participating in network validation, and engaging in ecosystem activities. Dynamic reward mechanisms ensure sustainable token economics.",
     icon: <BadgeDollarSign className="h-6 w-6" />,
   },
-];
-
-const pricePredictionData = [
-  { month: "Launch", price: 0.1 },
-  { month: "Month 3", price: 0.15 },
-  { month: "Month 6", price: 0.25 },
-  { month: "Month 9", price: 0.4 },
-  { month: "Month 12", price: 0.6 },
-  { month: "Month 15", price: 0.85 },
-  { month: "Month 18", price: 1.2 },
-  { month: "Month 21", price: 1.6 },
-  { month: "Month 24", price: 2.0 },
 ];
 
 const faqData = [
@@ -286,8 +151,7 @@ const faqData = [
   },
   {
     question: "How can I contact Neurolov?",
-    answer:
-      "• Email: support@neurolov.ai\n• Website: www.neurolov.ai",
+    answer: "• Email: support@neurolov.ai\n• Website: www.neurolov.ai",
   },
 ];
 
@@ -403,706 +267,688 @@ export default function TokenPage() {
   };
 
   return (
-    <PatternBackground>
-      <PageLayout
-        title="$NLOV Token"
-        subtitle="The utility token powering the Neurolov ecosystem"
-      >
-        <SectionContainer className="pb-8">
-          <Tabs value={tab} onValueChange={handleTabChange} className="w-full">
-            <div className="flex justify-center mb-20 md:mb-10">
-              <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-5 h-auto p-3 md:p-0 border border-[#0361DA] hover:border-[#0361DA]/50 shadow-md transition-all duration-300  hover:shadow-lg">
-                <TabsTrigger
-                  value="overview"
-                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
-                >
-                  <BarChart3 className="mr-2 h-4 w-4" /> Overview
-                </TabsTrigger>
-                <TabsTrigger
-                  value="tokenomics"
-                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
-                >
-                  <Coins className="mr-2 h-4 w-4" /> Tokenomics
-                </TabsTrigger>
-                <TabsTrigger
-                  value="utility"
-                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
-                >
-                  <Share2 className="mr-2 h-4 w-4" /> Utility
-                </TabsTrigger>
-                <TabsTrigger
-                  value="faq"
-                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
-                >
-                  <HelpCircle className="mr-2 h-4 w-4" /> FAQ
-                </TabsTrigger>
-              </TabsList>
-            </div>
+    <PageLayout
+      title="$NLOV Token"
+      subtitle="The utility token powering the Neurolov ecosystem"
+    >
+      <SectionContainer className="pb-8 bg-[#030924]">
+        <Tabs value={tab} onValueChange={handleTabChange} className="w-full">
+          <div className="flex justify-center mb-20 md:mb-10">
+            <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-5 h-auto p-3 md:p-0 border border-[#0361DA] hover:border-[#0361DA]/50 shadow-md transition-all duration-300  hover:shadow-lg">
+              <TabsTrigger
+                value="overview"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+              >
+                <BarChart3 className="mr-2 h-4 w-4" /> Overview
+              </TabsTrigger>
+              <TabsTrigger
+                value="tokenomics"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+              >
+                <Coins className="mr-2 h-4 w-4" /> Tokenomics
+              </TabsTrigger>
+              <TabsTrigger
+                value="utility"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+              >
+                <Share2 className="mr-2 h-4 w-4" /> Utility
+              </TabsTrigger>
+              <TabsTrigger
+                value="faq"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow"
+              >
+                <HelpCircle className="mr-2 h-4 w-4" /> FAQ
+              </TabsTrigger>
+            </TabsList>
+          </div>
 
-            {/* Overview Tab */}
-            <TabsContent value="overview" className="space-y-20">
-              <div className="flex flex-col md:flex-row gap-16 items-center  my-12">
-                <div className="md:w-1/2 flex flex-col items-center justify-center">
-                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-neuro-500/10 text-neuro-500 text-sm font-medium mb-4">
-                    <Coins className="mr-2 h-4 w-4" />
-                    <span>NLOV Token</span>
-                  </div>
-                  <SectionHeading
-                    title={"The Fuel for Decentralized AI Computing"}
-                    subtitle="NLOV is the native utility token that powers the entire
+          {/* Overview Tab */}
+          <TabsContent value="overview" className="space-y-20">
+            <div className="flex flex-col md:flex-row gap-16 items-center  my-12">
+              <div className="md:w-1/2 flex flex-col items-center justify-center">
+                <div className="inline-flex items-center px-3 py-1 rounded-full text-neuro-500 text-sm font-medium mb-4">
+                  <Coins className="mr-2 h-4 w-4" />
+                  <span>NLOV Token</span>
+                </div>
+                <SectionHeading
+                  title={"The Fuel for Decentralized AI Computing"}
+                  subtitle="NLOV is the native utility token that powers the entire
                   Neurolov ecosystem. It enables a seamless experience across
                   our decentralized compute infrastructure, AI services, and
                   community governance."
-                  />
-
-                  <div className="space-y-4 mb-8 ml-4">
-                    <div className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
-                      <div>
-                        <h4 className="font-medium">Network Access</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Pay for compute resources, AI services, and other
-                          network capabilities
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
-                      <div>
-                        <h4 className="font-medium">Provider Rewards</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Earn tokens by contributing compute resources to the
-                          network
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
-                      <div>
-                        <h4 className="font-medium">Governance Rights</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Shape the future of the platform through DAO voting
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
-                      <div>
-                        <h4 className="font-medium">Staking Benefits</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Stake tokens to secure the network and earn passive
-                          income
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap gap-4">
-                    <Button variant="neon">Pre Sale Coming Soon</Button>
-                  </div>
-                </div>
-                <div className="md:w-1/2 flex justify-center relative">
-                  {/* Floating coin with shadow and glow */}
-                  <div className="animate-float-coin relative">
-                    {/* Shadow - moves with the coin */}
-                    <div className="absolute left-1/2 -translate-x-1/2 bottom-[-35px] w-64 h-20 bg-black/60 rounded-full blur-3xl animate-shadow-stretch"></div>
-
-                    {/* Tight golden glow around coin */}
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(250,204,21,0.3)_30%,transparent_70%)] rounded-full blur-md"></div>
-
-                    {/* Coin image */}
-                    <ResponsiveImage
-                      src="/nlov-coin.png"
-                      alt="NLOV Token"
-                      desktopSize={{ width: 500, height: 500 }}
-                      tabletRatio={0.75}
-                      mobileRatio={0.5}
-                      className="relative z-10"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <SectionHeading
-                  title="Token Launch Timeline"
-                  subtitle="Key milestones in the NLOV token journey"
-                  className="mb-12"
                 />
 
-                <div className="relative">
-                  {/* Timeline line */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-neuro-500/20"></div>
-
-                  {/* Timeline items */}
-                  <div className="space-y-16">
-                    <div className="flex flex-col md:flex-row items-center gap-8 relative">
-                      <div className="md:w-1/2 md:text-right md:pr-16">
-                        <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-500/10 text-green-500 text-sm font-medium mb-2">
-                          <CheckCircle2 className="mr-2 h-4 w-4" />
-                          <span>Completed</span>
-                        </div>
-                        <h3 className="text-xl font-bold mb-2">Seed Round</h3>
-                        <p className="text-muted-foreground">
-                          Initial funding round with strategic partners and
-                          early supporters
-                        </p>
-                      </div>
-                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center border-4 border-background z-10">
-                          <CheckCircle2 className="h-6 w-6 text-green-500" />
-                        </div>
-                      </div>
-                      <div className="md:w-1/2 md:pl-16">
-                        <div className="text-xl font-bold text-neuro-500">
-                          Q4 2024
-                        </div>
-                      </div>
+                <div className="space-y-4 mb-8 ml-4">
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
+                    <div>
+                      <h4 className="font-medium">Network Access</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Pay for compute resources, AI services, and other
+                        network capabilities
+                      </p>
                     </div>
-
-                    <div className="flex flex-col md:flex-row items-center gap-8 relative">
-                      <div className="md:w-1/2 md:text-right md:pr-16">
-                        <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-500/10 text-green-500 text-sm font-medium mb-2">
-                          <CheckCircle2 className="mr-2 h-4 w-4" />
-                          <span>Completed</span>
-                        </div>
-                        <h3 className="text-xl font-bold mb-2">
-                          Testnet Launch
-                        </h3>
-                        <p className="text-muted-foreground">
-                          Public testnet deployment with initial network
-                          features
-                        </p>
-                      </div>
-                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center border-4 border-background z-10">
-                          <CheckCircle2 className="h-6 w-6 text-green-500" />
-                        </div>
-                      </div>
-                      <div className="md:w-1/2 md:pl-16">
-                        <div className="text-xl font-bold text-neuro-500">
-                          Q3 2025
-                        </div>
-                      </div>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
+                    <div>
+                      <h4 className="font-medium">Provider Rewards</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Earn tokens by contributing compute resources to the
+                        network
+                      </p>
                     </div>
-
-                    <div className="flex flex-col md:flex-row items-center gap-8 relative">
-                      <div className="md:w-1/2 md:text-right md:pr-16">
-                        <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-sm font-medium mb-2">
-                          <Clock className="mr-2 h-4 w-4" />
-                          <span>In Progress</span>
-                        </div>
-                        <h3 className="text-xl font-bold mb-2">
-                          Public Presale
-                        </h3>
-                        <p className="text-muted-foreground">
-                          Community token sale with tiered allocation system
-                        </p>
-                      </div>
-                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center border-4 border-background z-10">
-                          <Clock className="h-6 w-6 text-amber-500" />
-                        </div>
-                      </div>
-                      <div className="md:w-1/2 md:pl-16">
-                        <div className="text-xl font-bold text-neuro-500">
-                          Q3 2025
-                        </div>
-                      </div>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
+                    <div>
+                      <h4 className="font-medium">Governance Rights</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Shape the future of the platform through DAO voting
+                      </p>
                     </div>
-
-                    <div className="flex flex-col md:flex-row items-center gap-8 relative">
-                      <div className="md:w-1/2 md:text-right md:pr-16">
-                        <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-sm font-medium mb-2">
-                          <Clock className="mr-2 h-4 w-4" />
-                          <span>Coming Soon</span>
-                        </div>
-                        <h3 className="text-xl font-bold mb-2">
-                          Token Generation Event
-                        </h3>
-                        <p className="text-muted-foreground">
-                          Official $NLOV token launch and distribution to
-                          participants
-                        </p>
-                      </div>
-                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center border-4 border-background z-10">
-                          <Clock className="h-6 w-6 text-amber-500" />
-                        </div>
-                      </div>
-                      <div className="md:w-1/2 md:pl-16">
-                        <div className="text-xl font-bold text-neuro-500">
-                          Q3 2025
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col md:flex-row items-center gap-8 relative">
-                      <div className="md:w-1/2 md:text-right md:pr-16">
-                        <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-sm font-medium mb-2">
-                          <Clock className="mr-2 h-4 w-4" />
-                          <span>Coming Soon</span>
-                        </div>
-                        <h3 className="text-xl font-bold mb-2">
-                          Staking Launch
-                        </h3>
-                        <p className="text-muted-foreground">
-                          Staking program activation with rewards distribution
-                        </p>
-                      </div>
-                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center border-4 border-background z-10">
-                          <Clock className="h-6 w-6 text-amber-500" />
-                        </div>
-                      </div>
-                      <div className="md:w-1/2 md:pl-16">
-                        <div className="text-xl font-bold text-neuro-500">
-                          Q4 2025
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col md:flex-row items-center gap-8 relative">
-                      <div className="md:w-1/2 md:text-right md:pr-16">
-                        <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-sm font-medium mb-2">
-                          <Clock className="mr-2 h-4 w-4" />
-                          <span>Coming Soon</span>
-                        </div>
-                        <h3 className="text-xl font-bold mb-2">
-                          DEX Liquidity
-                        </h3>
-                        <p className="text-muted-foreground">
-                          Liquidity provision on major decentralized exchanges
-                        </p>
-                      </div>
-                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center border-4 border-background z-10">
-                          <Clock className="h-6 w-6 text-amber-500" />
-                        </div>
-                      </div>
-                      <div className="md:w-1/2 md:pl-16">
-                        <div className="text-xl font-bold text-neuro-500">
-                          Q4 2025
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col md:flex-row items-center gap-8 relative">
-                      <div className="md:w-1/2 md:text-right md:pr-16">
-                        <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-sm font-medium mb-2">
-                          <Clock className="mr-2 h-4 w-4" />
-                          <span>Coming Soon</span>
-                        </div>
-                        <h3 className="text-xl font-bold mb-2">
-                          Governance Launch
-                        </h3>
-                        <p className="text-muted-foreground">
-                          Community governance system activation with proposal
-                          voting
-                        </p>
-                      </div>
-                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center border-4 border-background z-10">
-                          <Clock className="h-6 w-6 text-amber-500" />
-                        </div>
-                      </div>
-                      <div className="md:w-1/2 md:pl-16">
-                        <div className="text-xl font-bold text-neuro-500">
-                          Q4 2025
-                        </div>
-                      </div>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
+                    <div>
+                      <h4 className="font-medium">Staking Benefits</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Stake tokens to secure the network and earn passive
+                        income
+                      </p>
                     </div>
                   </div>
                 </div>
+                <div className="flex flex-wrap gap-4">
+                  <Button variant="neon">Pre Sale Coming Soon</Button>
+                </div>
               </div>
-            </TabsContent>
+              <div className="md:w-1/2 flex justify-center relative">
+                {/* Floating coin with shadow and glow */}
+                <div className="animate-float-coin relative">
+                  {/* Shadow - moves with the coin */}
+                  <div className="absolute left-1/2 -translate-x-1/2 bottom-[-35px] w-64 h-20  rounded-full blur-3xl animate-shadow-stretch"></div>
 
-            {/* Tokenomics Tab */}
-            <TabsContent value="tokenomics" className="space-y-20">
-              <div className="flex flex-col md:flex-row gap-16 items-start">
-                <div className="md:w-[40%] w-full">
-                  <SectionHeading
-                    title="NLOV Tokenomics"
-                    subtitle="A sustainable and fair token economy designed for long-term growth"
-                    align={isMobile ? "center" : "left"}
+                  {/* Tight golden glow around coin */}
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(250,204,21,0.3)_30%,transparent_70%)] rounded-full blur-md"></div>
+
+                  {/* Coin image */}
+                  <ResponsiveImage
+                    src="/nlov-coin.png"
+                    alt="NLOV Token"
+                    desktopSize={{ width: 500, height: 500 }}
+                    tabletRatio={0.75}
+                    mobileRatio={0.5}
+                    className="relative z-10"
                   />
-                  <div className="space-y-6 mb-8">
-                    <div className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
-                      <div>
-                        <h4 className="font-medium">
-                          Total Supply: 500,000,000 NLOV
-                        </h4>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <SectionHeading
+                title="Token Launch Timeline"
+                subtitle="Key milestones in the NLOV token journey"
+                className="mb-12"
+              />
+
+              <div className="relative">
+                {/* Timeline line */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-neuro-500/20"></div>
+
+                {/* Timeline items */}
+                <div className="space-y-16">
+                  <div className="flex flex-col md:flex-row items-center gap-8 relative">
+                    <div className="md:w-1/2 md:text-right md:pr-16">
+                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-500/10 text-green-500 text-sm font-medium mb-2">
+                        <CheckCircle2 className="mr-2 h-4 w-4" />
+                        <span>Completed</span>
+                      </div>
+                      <h3 className="text-xl font-bold mb-2">Seed Round</h3>
+                      <p className="text-muted-foreground">
+                        Initial funding round with strategic partners and early
+                        supporters
+                      </p>
+                    </div>
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                      <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center border-4 border-background z-10">
+                        <CheckCircle2 className="h-6 w-6 text-green-500" />
                       </div>
                     </div>
-                    <div className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
-                      <div>
-                        <h4 className="font-medium">
-                          Token Standard: Solana SPL
-                        </h4>
-                        <p className="text-sm text-muted-foreground">
-                          Built on Solana for fast and low-cost transactions
-                        </p>
+                    <div className="md:w-1/2 md:pl-16">
+                      <div className="text-xl font-bold text-neuro-500">
+                        Q4 2024
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col md:flex-row items-center gap-8 relative">
+                    <div className="md:w-1/2 md:text-right md:pr-16">
+                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-500/10 text-green-500 text-sm font-medium mb-2">
+                        <CheckCircle2 className="mr-2 h-4 w-4" />
+                        <span>Completed</span>
+                      </div>
+                      <h3 className="text-xl font-bold mb-2">Testnet Launch</h3>
+                      <p className="text-muted-foreground">
+                        Public testnet deployment with initial network features
+                      </p>
+                    </div>
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                      <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center border-4 border-background z-10">
+                        <CheckCircle2 className="h-6 w-6 text-green-500" />
+                      </div>
+                    </div>
+                    <div className="md:w-1/2 md:pl-16">
+                      <div className="text-xl font-bold text-neuro-500">
+                        Q3 2025
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col md:flex-row items-center gap-8 relative">
+                    <div className="md:w-1/2 md:text-right md:pr-16">
+                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-sm font-medium mb-2">
+                        <Clock className="mr-2 h-4 w-4" />
+                        <span>In Progress</span>
+                      </div>
+                      <h3 className="text-xl font-bold mb-2">Public Presale</h3>
+                      <p className="text-muted-foreground">
+                        Community token sale with tiered allocation system
+                      </p>
+                    </div>
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                      <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center border-4 border-background z-10">
+                        <Clock className="h-6 w-6 text-amber-500" />
+                      </div>
+                    </div>
+                    <div className="md:w-1/2 md:pl-16">
+                      <div className="text-xl font-bold text-neuro-500">
+                        Q3 2025
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col md:flex-row items-center gap-8 relative">
+                    <div className="md:w-1/2 md:text-right md:pr-16">
+                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-sm font-medium mb-2">
+                        <Clock className="mr-2 h-4 w-4" />
+                        <span>Coming Soon</span>
+                      </div>
+                      <h3 className="text-xl font-bold mb-2">
+                        Token Generation Event
+                      </h3>
+                      <p className="text-muted-foreground">
+                        Official $NLOV token launch and distribution to
+                        participants
+                      </p>
+                    </div>
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                      <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center border-4 border-background z-10">
+                        <Clock className="h-6 w-6 text-amber-500" />
+                      </div>
+                    </div>
+                    <div className="md:w-1/2 md:pl-16">
+                      <div className="text-xl font-bold text-neuro-500">
+                        Q3 2025
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col md:flex-row items-center gap-8 relative">
+                    <div className="md:w-1/2 md:text-right md:pr-16">
+                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-sm font-medium mb-2">
+                        <Clock className="mr-2 h-4 w-4" />
+                        <span>Coming Soon</span>
+                      </div>
+                      <h3 className="text-xl font-bold mb-2">Staking Launch</h3>
+                      <p className="text-muted-foreground">
+                        Staking program activation with rewards distribution
+                      </p>
+                    </div>
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                      <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center border-4 border-background z-10">
+                        <Clock className="h-6 w-6 text-amber-500" />
+                      </div>
+                    </div>
+                    <div className="md:w-1/2 md:pl-16">
+                      <div className="text-xl font-bold text-neuro-500">
+                        Q4 2025
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col md:flex-row items-center gap-8 relative">
+                    <div className="md:w-1/2 md:text-right md:pr-16">
+                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-sm font-medium mb-2">
+                        <Clock className="mr-2 h-4 w-4" />
+                        <span>Coming Soon</span>
+                      </div>
+                      <h3 className="text-xl font-bold mb-2">DEX Liquidity</h3>
+                      <p className="text-muted-foreground">
+                        Liquidity provision on major decentralized exchanges
+                      </p>
+                    </div>
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                      <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center border-4 border-background z-10">
+                        <Clock className="h-6 w-6 text-amber-500" />
+                      </div>
+                    </div>
+                    <div className="md:w-1/2 md:pl-16">
+                      <div className="text-xl font-bold text-neuro-500">
+                        Q4 2025
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col md:flex-row items-center gap-8 relative">
+                    <div className="md:w-1/2 md:text-right md:pr-16">
+                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-sm font-medium mb-2">
+                        <Clock className="mr-2 h-4 w-4" />
+                        <span>Coming Soon</span>
+                      </div>
+                      <h3 className="text-xl font-bold mb-2">
+                        Governance Launch
+                      </h3>
+                      <p className="text-muted-foreground">
+                        Community governance system activation with proposal
+                        voting
+                      </p>
+                    </div>
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                      <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center border-4 border-background z-10">
+                        <Clock className="h-6 w-6 text-amber-500" />
+                      </div>
+                    </div>
+                    <div className="md:w-1/2 md:pl-16">
+                      <div className="text-xl font-bold text-neuro-500">
+                        Q4 2025
                       </div>
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </TabsContent>
 
-                <div className="md:w-[60%] w-full">
-                  <div className="glass-card p-5 md:p- md:flex-none flex flex-col items-center justify-center rounded-xl border border-neuro-500/10 bg-gradient-to-br from-neuro-500/5 to-blue-500/5">
-                    <h3 className="text-xl font-bold mb-3">
-                      Token Distribution
-                    </h3>
-                    <div className="aspect-square md:aspect-video flex md:w-full w-[105%] justify-center mx-auto mb-3 md:mb-5">
-                      <ResponsiveContainer width={"100%"} height="100%">
-                        <PieChart>
-                          <Pie
-                            data={tokenDistributionData}
-                            cx="50%"
-                            cy="50%"
-                            innerRadius={useIsMobile() ? 40 : 50}
-                            outerRadius={useIsMobile() ? 50 : 80}
-                            fill="#8884d8"
-                            paddingAngle={2}
-                            fontSize={useIsMobile() ? 7 : 14}
-                            dataKey="value"
-                            label={({ name, value }) => {
-                              if (name === "Team and Development") {
-                                return `Team\n&\nDev: ${value}%`;
-                              }
-                              if (name === "Ecosystem and Rewards") {
-                                return `Eco\n&\nRewards: ${value}%`;
-                              }
-                              return `${name}: ${value}%`;
-                            }}
-                          >
-                            {tokenDistributionData.map((entry, index) => (
-                              <Cell key={`cell-${index}`} fill={entry.color} />
-                            ))}
-                          </Pie>
-                          <Tooltip formatter={(value) => `${value}%`} />
-                        </PieChart>
-                      </ResponsiveContainer>
+          {/* Tokenomics Tab */}
+          <TabsContent value="tokenomics" className="space-y-20">
+            <div className="flex flex-col md:flex-row gap-16 items-start">
+              <div className="md:w-[40%] w-full">
+                <SectionHeading
+                  title="NLOV Tokenomics"
+                  subtitle="A sustainable and fair token economy designed for long-term growth"
+                  align={isMobile ? "center" : "left"}
+                />
+                <div className="space-y-6 mb-8">
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
+                    <div>
+                      <h4 className="font-medium">
+                        Total Supply: 500,000,000 NLOV
+                      </h4>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
+                    <div>
+                      <h4 className="font-medium">
+                        Token Standard: Solana SPL
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        Built on Solana for fast and low-cost transactions
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-20">
-                <SectionHeading
-                  title="Token Release Schedule"
-                  subtitle="Structured vesting ensures market stability and long-term alignment"
-                  className="mb-12"
-                />
-
-                <div className="glass-card p-8 rounded-xl border border-#0361DA/10 mt-16">
-                  <h3 className="text-2xl font-bold mb-8">
-                    Token Distribution & Vesting Schedule
-                  </h3>
-                  <div className="relative">
-                    {/* Graph Container */}
-                    <div className="w-full h-[400px] mb-8">
-                      <ResponsiveContainer width="100%" height="100%">
-                        <AreaChart
-                          data={cumulativeVestingData}
-                          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+              <div className="md:w-[60%] w-full">
+                <div className="glass-card p-5 md:p- md:flex-none flex flex-col items-center justify-center rounded-xl border border-neuro-500/10 bg-gradient-to-br from-neuro-500/5 to-blue-500/5">
+                  <h3 className="text-xl font-bold mb-3">Token Distribution</h3>
+                  <div className="aspect-square md:aspect-video flex md:w-full w-[105%] justify-center mx-auto mb-3 md:mb-5">
+                    <ResponsiveContainer width={"100%"} height="100%">
+                      <PieChart>
+                        <Pie
+                          data={tokenDistributionData}
+                          cx="50%"
+                          cy="50%"
+                          innerRadius={useIsMobile() ? 40 : 50}
+                          outerRadius={useIsMobile() ? 50 : 80}
+                          fill="#8884d8"
+                          paddingAngle={2}
+                          fontSize={useIsMobile() ? 7 : 14}
+                          dataKey="value"
+                          label={({ name, value }) => {
+                            if (name === "Team and Development") {
+                              return `Team\n&\nDev: ${value}%`;
+                            }
+                            if (name === "Ecosystem and Rewards") {
+                              return `Eco\n&\nRewards: ${value}%`;
+                            }
+                            return `${name}: ${value}%`;
+                          }}
                         >
-                          <XAxis dataKey="month" />
-                          <YAxis
-                            domain={[0, 500]}
-                            ticks={[0, 100, 200, 300, 400, 500]}
-                            tickFormatter={(value) => `${value}M`}
-                          />
-                          <Tooltip
-                            formatter={(value, name) => [`${value}M`, name]}
-                          />
-                          <Area
-                            type="monotone"
-                            dataKey="Liquidity Pool (DEX)"
-                            stackId="1"
-                            stroke="#4F46E5"
-                            fill="#4F46E5"
-                          />
-                          <Area
-                            type="monotone"
-                            dataKey="Team & Advisors"
-                            stackId="1"
-                            stroke="#10B981"
-                            fill="#10B981"
-                          />
-                          <Area
-                            type="monotone"
-                            dataKey="Airdrops & Rewards"
-                            stackId="1"
-                            stroke="#8B5CF6"
-                            fill="#8B5CF6"
-                          />
-                          <Area
-                            type="monotone"
-                            dataKey="Marketing & KOLs"
-                            stackId="1"
-                            stroke="#F59E0B"
-                            fill="#F59E0B"
-                          />
-                          <Area
-                            type="monotone"
-                            dataKey="Foundation"
-                            stackId="1"
-                            stroke="#3B82F6"
-                            fill="#3B82F6"
-                          />
-                          <Area
-                            type="monotone"
-                            dataKey="Strategic Reserve"
-                            stackId="1"
-                            stroke="#60A5FA"
-                            fill="#60A5FA"
-                          />
-                          <Area
-                            type="monotone"
-                            dataKey="DAO Treasury"
-                            stackId="1"
-                            stroke="#93C5FD"
-                            fill="#93C5FD"
-                          />
-                          <Area
-                            type="monotone"
-                            dataKey="Buyback & Burn"
-                            stackId="1"
-                            stroke="#EF4444"
-                            fill="#EF4444"
-                          />
-                          <Area
-                            type="monotone"
-                            dataKey="Seed Investors"
-                            stackId="1"
-                            stroke="#F87171"
-                            fill="#F87171"
-                          />
-                          <Area
-                            type="monotone"
-                            dataKey="Pre-sale Investors"
-                            stackId="1"
-                            stroke="#FCA5A5"
-                            fill="#FCA5A5"
-                          />
-                        </AreaChart>
-                      </ResponsiveContainer>
-                    </div>
+                          {tokenDistributionData.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={entry.color} />
+                          ))}
+                        </Pie>
+                        <Tooltip formatter={(value) => `${value}%`} />
+                      </PieChart>
+                    </ResponsiveContainer>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                    {/* Legends Container */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
-                      <div className="flex items-center space-x-2">
-                        <div className="w-4 h-4 bg-[#4F46E5] rounded-sm"></div>
-                        <span className="text-sm">
-                          Liquidity Pool (DEX) - 152.25M
-                        </span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-4 h-4 bg-[#10B981] rounded-sm"></div>
-                        <span className="text-sm">
-                          Team & Advisors - 62.25M
-                        </span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-4 h-4 bg-[#8B5CF6] rounded-sm"></div>
-                        <span className="text-sm">
-                          Airdrops & Rewards - 92.25M
-                        </span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-4 h-4 bg-[#F59E0B] rounded-sm"></div>
-                        <span className="text-sm">
-                          Marketing & KOLs - 42.25M
-                        </span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-4 h-4 bg-[#3B82F6] rounded-sm"></div>
-                        <span className="text-sm">Foundation - 27.25M</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-4 h-4 bg-[#60A5FA] rounded-sm"></div>
-                        <span className="text-sm">
-                          Strategic Reserve - 27.25M
-                        </span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-4 h-4 bg-[#93C5FD] rounded-sm"></div>
-                        <span className="text-sm">DAO Treasury - 22.25M</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-4 h-4 bg-[#EF4444] rounded-sm"></div>
-                        <span className="text-sm">Buyback & Burn - 44.75M</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-4 h-4 bg-[#F87171] rounded-sm"></div>
-                        <span className="text-sm">Seed Investors - 14.75M</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-4 h-4 bg-[#FCA5A5] rounded-sm"></div>
-                        <span className="text-sm">
-                          Pre-sale Investors - 14.75M
-                        </span>
-                      </div>
+            <div className="mt-20">
+              <SectionHeading
+                title="Token Release Schedule"
+                subtitle="Structured vesting ensures market stability and long-term alignment"
+                className="mb-12"
+              />
+
+              <div className="glass-card p-8 rounded-xl border border-#0361DA/10 mt-16">
+                <h3 className="text-2xl font-bold mb-8">
+                  Token Distribution & Vesting Schedule
+                </h3>
+                <div className="relative">
+                  {/* Graph Container */}
+                  <div className="w-full h-[400px] mb-8">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <AreaChart
+                        data={cumulativeVestingData}
+                        margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+                      >
+                        <XAxis dataKey="month" />
+                        <YAxis
+                          domain={[0, 500]}
+                          ticks={[0, 100, 200, 300, 400, 500]}
+                          tickFormatter={(value) => `${value}M`}
+                        />
+                        <Tooltip
+                          formatter={(value, name) => [`${value}M`, name]}
+                        />
+                        <Area
+                          type="monotone"
+                          dataKey="Liquidity Pool (DEX)"
+                          stackId="1"
+                          stroke="#4F46E5"
+                          fill="#4F46E5"
+                        />
+                        <Area
+                          type="monotone"
+                          dataKey="Team & Advisors"
+                          stackId="1"
+                          stroke="#10B981"
+                          fill="#10B981"
+                        />
+                        <Area
+                          type="monotone"
+                          dataKey="Airdrops & Rewards"
+                          stackId="1"
+                          stroke="#8B5CF6"
+                          fill="#8B5CF6"
+                        />
+                        <Area
+                          type="monotone"
+                          dataKey="Marketing & KOLs"
+                          stackId="1"
+                          stroke="#F59E0B"
+                          fill="#F59E0B"
+                        />
+                        <Area
+                          type="monotone"
+                          dataKey="Foundation"
+                          stackId="1"
+                          stroke="#3B82F6"
+                          fill="#3B82F6"
+                        />
+                        <Area
+                          type="monotone"
+                          dataKey="Strategic Reserve"
+                          stackId="1"
+                          stroke="#60A5FA"
+                          fill="#60A5FA"
+                        />
+                        <Area
+                          type="monotone"
+                          dataKey="DAO Treasury"
+                          stackId="1"
+                          stroke="#93C5FD"
+                          fill="#93C5FD"
+                        />
+                        <Area
+                          type="monotone"
+                          dataKey="Buyback & Burn"
+                          stackId="1"
+                          stroke="#EF4444"
+                          fill="#EF4444"
+                        />
+                        <Area
+                          type="monotone"
+                          dataKey="Seed Investors"
+                          stackId="1"
+                          stroke="#F87171"
+                          fill="#F87171"
+                        />
+                        <Area
+                          type="monotone"
+                          dataKey="Pre-sale Investors"
+                          stackId="1"
+                          stroke="#FCA5A5"
+                          fill="#FCA5A5"
+                        />
+                      </AreaChart>
+                    </ResponsiveContainer>
+                  </div>
+
+                  {/* Legends Container */}
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-[#4F46E5] rounded-sm"></div>
+                      <span className="text-sm">
+                        Liquidity Pool (DEX) - 152.25M
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-[#10B981] rounded-sm"></div>
+                      <span className="text-sm">Team & Advisors - 62.25M</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-[#8B5CF6] rounded-sm"></div>
+                      <span className="text-sm">
+                        Airdrops & Rewards - 92.25M
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-[#F59E0B] rounded-sm"></div>
+                      <span className="text-sm">Marketing & KOLs - 42.25M</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-[#3B82F6] rounded-sm"></div>
+                      <span className="text-sm">Foundation - 27.25M</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-[#60A5FA] rounded-sm"></div>
+                      <span className="text-sm">
+                        Strategic Reserve - 27.25M
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-[#93C5FD] rounded-sm"></div>
+                      <span className="text-sm">DAO Treasury - 22.25M</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-[#EF4444] rounded-sm"></div>
+                      <span className="text-sm">Buyback & Burn - 44.75M</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-[#F87171] rounded-sm"></div>
+                      <span className="text-sm">Seed Investors - 14.75M</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-4 h-4 bg-[#FCA5A5] rounded-sm"></div>
+                      <span className="text-sm">
+                        Pre-sale Investors - 14.75M
+                      </span>
                     </div>
                   </div>
                 </div>
               </div>
-            </TabsContent>
+            </div>
+          </TabsContent>
 
-            {/* Utility Tab */}
-            <TabsContent value="utility" className="space-y-20">
-              <div>
-                <SectionHeading
-                  title="NLOV Token Utility"
-                  subtitle="A multi-purpose utility token powering the entire Neurolov ecosystem"
-                  className="mb-12"
-                  align="center"
-                />
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-                  {utilityData.map((item, index) => (
-                    <FeatureCard
-                      key={index}
-                      title={item.title}
-                      description={item.description}
-                      icon={item.icon}
-                      hideLearnMore={true}
-                    />
-                  ))}
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row gap-12 items-center">
-                <div className="md:w-1/2">
-                  <img
-                    src="/ai-bg.jpg"
-                    alt="Token Utility Visualization"
-                    className="rounded-xl shadow-xl"
+          {/* Utility Tab */}
+          <TabsContent value="utility" className="space-y-20">
+            <div>
+              <SectionHeading
+                title="NLOV Token Utility"
+                subtitle="A multi-purpose utility token powering the entire Neurolov ecosystem"
+                className="mb-12"
+                align="center"
+              />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+                {utilityData.map((item, index) => (
+                  <FeatureCard
+                    key={index}
+                    title={item.title}
+                    description={item.description}
+                    icon={item.icon}
+                    hideLearnMore={true}
                   />
-                </div>
+                ))}
+              </div>
+            </div>
 
-                <div className="md:w-1/2 w-full">
-                  <h3 className="text-2xl font-bold mb-4">
-                    Platform Fee Structure
-                  </h3>
-                  <p className="text-muted-foreground mb-6">
-                    NLOV tokens are used for all transactions on the Neurolov
-                    platform, creating consistent utility and demand.
-                  </p>
+            <div className="flex flex-col md:flex-row gap-12 items-center">
+              <div className="md:w-1/2">
+                <img
+                  src="/ai-bg.jpg"
+                  alt="Token Utility Visualization"
+                  className="rounded-xl shadow-xl"
+                />
+              </div>
 
-                  <div className="space-y-4 mb-8 w-full overflow-x-auto">
-                    <div className="flex justify-between pb-2 border-b border-neuro-500/10 min-w-[300px]">
-                      <div className="font-medium text-sm md:text-base">
-                        Service
-                      </div>
-                      <div className="font-medium text-sm md:text-base">
-                        Fee (NLOV)
-                      </div>
+              <div className="md:w-1/2 w-full">
+                <h3 className="text-2xl font-bold mb-4">
+                  Platform Fee Structure
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  NLOV tokens are used for all transactions on the Neurolov
+                  platform, creating consistent utility and demand.
+                </p>
+
+                <div className="space-y-4 mb-8 w-full overflow-x-auto">
+                  <div className="flex justify-between pb-2 border-b border-neuro-500/10 min-w-[300px]">
+                    <div className="font-medium text-sm md:text-base">
+                      Service
                     </div>
-                    <div className="flex justify-between min-w-[300px]">
-                      <div className="text-sm md:text-base">
-                        GPU Compute (per hour)
-                      </div>
-                      <div className="text-sm md:text-base">
-                        3.13 - 10 $NLOV
-                      </div>
+                    <div className="font-medium text-sm md:text-base">
+                      Fee (NLOV)
                     </div>
-                    <div className="flex justify-between min-w-[300px]">
-                      <div className="text-sm md:text-base">
-                        Text Generation (1K tokens)
-                      </div>
-                      <div className="text-sm md:text-base">
-                        0.025 - 0.125 $NLOV
-                      </div>
+                  </div>
+                  <div className="flex justify-between min-w-[300px]">
+                    <div className="text-sm md:text-base">
+                      GPU Compute (per hour)
                     </div>
-                    <div className="flex justify-between min-w-[300px]">
-                      <div className="text-sm md:text-base">
-                        Image Generation (per image)
-                      </div>
-                      <div className="text-sm md:text-base">
-                        0.125 - 1.25 $NLOV
-                      </div>
+                    <div className="text-sm md:text-base">3.13 - 10 $NLOV</div>
+                  </div>
+                  <div className="flex justify-between min-w-[300px]">
+                    <div className="text-sm md:text-base">
+                      Text Generation (1K tokens)
                     </div>
-                    <div className="flex justify-between min-w-[300px]">
-                      <div className="text-sm md:text-base">
-                        Video Generation (per second)
-                      </div>
-                      <div className="text-sm md:text-base">
-                        0.25 - 1.25 $NLOV
-                      </div>
+                    <div className="text-sm md:text-base">
+                      0.025 - 0.125 $NLOV
                     </div>
-                    <div className="flex justify-between min-w-[300px]">
-                      <div className="text-sm md:text-base">
-                        Agent Deployment (monthly)
-                      </div>
-                      <div className="text-sm md:text-base">
-                        125 - 1238 $NLOV
-                      </div>
+                  </div>
+                  <div className="flex justify-between min-w-[300px]">
+                    <div className="text-sm md:text-base">
+                      Image Generation (per image)
                     </div>
+                    <div className="text-sm md:text-base">
+                      0.125 - 1.25 $NLOV
+                    </div>
+                  </div>
+                  <div className="flex justify-between min-w-[300px]">
+                    <div className="text-sm md:text-base">
+                      Video Generation (per second)
+                    </div>
+                    <div className="text-sm md:text-base">
+                      0.25 - 1.25 $NLOV
+                    </div>
+                  </div>
+                  <div className="flex justify-between min-w-[300px]">
+                    <div className="text-sm md:text-base">
+                      Agent Deployment (monthly)
+                    </div>
+                    <div className="text-sm md:text-base">125 - 1238 $NLOV</div>
                   </div>
                 </div>
               </div>
-            </TabsContent>
+            </div>
+          </TabsContent>
 
-            {/* FAQ Tab */}
-            <TabsContent value="faq" className="space-y-20">
-              <div>
-                <SectionHeading
-                  title="Frequently Asked Questions"
-                  subtitle="Answers to common questions about the NLOV token"
-                  className="mb-12"
-                />
+          {/* FAQ Tab */}
+          <TabsContent value="faq" className="space-y-20">
+            <div>
+              <SectionHeading
+                title="Frequently Asked Questions"
+                subtitle="Answers to common questions about the NLOV token"
+                className="mb-12"
+              />
 
-                <div className="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
-                  {faqData.map((faq, index) => (
-                    <Card key={index} className="glass-card border border-neuro-500/10">
-                      <CardHeader>
-                        <CardTitle className="flex items-start">
-                          <HelpCircle className="h-5 w-5 text-neuro-500 mr-3 mt-0.5 flex-shrink-0" />
-                          <span>{faq.question}</span>
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        {faq.answer.includes("•") ? (
-                          <ul className="text-muted-foreground list-none space-y-2">
-                            {faq.answer
-                              .split("•")
-                              .filter((item) => item.trim() !== "")
-                              .map((item, i) => (
-                                <li key={i} className="flex items-start">
-                                  <span className="mr-2">•</span>
-                                  <span>{item.trim()}</span>
-                                </li>
-                              ))}
-                          </ul>
-                        ) : (
-                          <p className="text-muted-foreground">{faq.answer}</p>
-                        )}
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-
-              <div className="glass-card p-12 rounded-xl border border-neuro-500/10 max-w-3xl mx-auto">
-                <SectionHeading
-                  title="Still Have Questions?"
-                  subtitle="Our support team is here to help Or send an email to our dedicated support team:"
-                />
-                <div className="mt-8 text-center">
-                  <Button
-                    variant="outline"
-                    className="bg-[#0361DA] hover:bg-[#0361DA]/80 text-white hover:text-white"
-                    onClick={() => window.open("mailto:support@neurolov.ai")}
+              <div className="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
+                {faqData.map((faq, index) => (
+                  <Card
+                    key={index}
+                    className="glass-card border border-neuro-500/10"
                   >
-                    support@neurolov.ai
-                  </Button>
-                </div>
+                    <CardHeader>
+                      <CardTitle className="flex items-start">
+                        <HelpCircle className="h-5 w-5 text-neuro-500 mr-3 mt-0.5 flex-shrink-0" />
+                        <span>{faq.question}</span>
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      {faq.answer.includes("•") ? (
+                        <ul className="text-muted-foreground list-none space-y-2">
+                          {faq.answer
+                            .split("•")
+                            .filter((item) => item.trim() !== "")
+                            .map((item, i) => (
+                              <li key={i} className="flex items-start">
+                                <span className="mr-2">•</span>
+                                <span>{item.trim()}</span>
+                              </li>
+                            ))}
+                        </ul>
+                      ) : (
+                        <p className="text-muted-foreground">{faq.answer}</p>
+                      )}
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
-            </TabsContent>
-          </Tabs>
-        </SectionContainer>
-      </PageLayout>
-    </PatternBackground>
+            </div>
+
+            <div className="glass-card p-12 rounded-xl border border-neuro-500/10 max-w-3xl mx-auto">
+              <SectionHeading
+                title="Still Have Questions?"
+                subtitle="Our support team is here to help Or send an email to our dedicated support team:"
+              />
+              <div className="mt-8 text-center">
+                <Button
+                  variant="outline"
+                  className="bg-[#0361DA] hover:bg-[#0361DA]/80 text-white hover:text-white"
+                  onClick={() => window.open("mailto:support@neurolov.ai")}
+                >
+                  support@neurolov.ai
+                </Button>
+              </div>
+            </div>
+          </TabsContent>
+        </Tabs>
+      </SectionContainer>
+    </PageLayout>
   );
 }

@@ -28,14 +28,7 @@ export default function PageLayout({
       <Navbar />
       <main>
         {/* Page header */}
-        <SectionContainer className="pt-40 pb-16 relative">
-          {/* Background elements */}
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute inset-0 bg-dots-light bg-[size:20px_20px] opacity-20"></div>
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0361DA]/20 to-transparent"></div>
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0361DA]/20 to-transparent"></div>
-          </div>
-
+        <SectionContainer className="pt-40 pb-16 relative bg-[#030924]">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 hero-text-gradient">
               {title}
