@@ -1,18 +1,18 @@
-import React from 'react';
-import { SectionContainer } from '@/components/ui/Container';
-import PageLayout from '@/components/layout/PageLayout';
-import { Button } from '@/components/ui/button';
-import { Presentation, Download, ArrowUpRight, Lock } from 'lucide-react';
+import React from "react";
+import { SectionContainer } from "@/components/ui/Container";
+import PageLayout from "@/components/layout/PageLayout";
+import { Button } from "@/components/ui/button";
+import { Presentation, Download, ArrowUpRight, Lock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 
 export default function PitchDeckPage() {
   return (
-    <PageLayout 
-      title="Pitch Deck" 
+    <PageLayout
+      title="Pitch Deck"
       subtitle="Investment overview and business presentation"
     >
-      <SectionContainer className="pb-16">
+      <SectionContainer className="pb-16 bg-[#030924]">
         <div className="max-w-4xl mx-auto">
           {/* Access Card */}
           <Card className="mb-12 p-6 border-neuro-500/20">
@@ -22,8 +22,12 @@ export default function PitchDeckPage() {
                   <Presentation className="h-8 w-8 text-neuro-500" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-1">Neurolov Pitch Deck 2025</h3>
-                  <p className="text-sm text-muted-foreground">PowerPoint & PDF • 15 MB • Last updated March 2025</p>
+                  <h3 className="font-semibold mb-1">
+                    Neurolov Pitch Deck 2025
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    PowerPoint & PDF • 15 MB • Last updated March 2025
+                  </p>
                 </div>
               </div>
               <div className="flex gap-3">
@@ -43,8 +47,8 @@ export default function PitchDeckPage() {
           <Alert className="mb-12">
             <Lock className="h-4 w-4" />
             <AlertDescription>
-              This pitch deck contains confidential information. By accessing this document, 
-              you agree to our non-disclosure terms.
+              This pitch deck contains confidential information. By accessing
+              this document, you agree to our non-disclosure terms.
             </AlertDescription>
           </Alert>
 
@@ -54,7 +58,9 @@ export default function PitchDeckPage() {
               <h2 className="text-2xl font-bold mb-6">Investment Highlights</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card className="p-6">
-                  <h3 className="text-lg font-semibold mb-3">Market Opportunity</h3>
+                  <h3 className="text-lg font-semibold mb-3">
+                    Market Opportunity
+                  </h3>
                   <ul className="space-y-2 text-muted-foreground">
                     <li>$500B AI compute market by 2030</li>
                     <li>Growing demand for decentralized infrastructure</li>
@@ -62,7 +68,9 @@ export default function PitchDeckPage() {
                   </ul>
                 </Card>
                 <Card className="p-6">
-                  <h3 className="text-lg font-semibold mb-3">Competitive Edge</h3>
+                  <h3 className="text-lg font-semibold mb-3">
+                    Competitive Edge
+                  </h3>
                   <ul className="space-y-2 text-muted-foreground">
                     <li>Proprietary optimization technology</li>
                     <li>Strategic partnerships with key players</li>
@@ -97,21 +105,27 @@ export default function PitchDeckPage() {
                     <div className="h-4 bg-muted rounded-full overflow-hidden">
                       <div className="h-full bg-gradient-to-r from-neuro-500 to-blue-500 w-[85%]"></div>
                     </div>
-                    <p className="text-sm text-muted-foreground mt-1">Projected 8.5x growth in 2025</p>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      Projected 8.5x growth in 2025
+                    </p>
                   </div>
                   <div>
                     <h4 className="font-medium mb-2">User Acquisition</h4>
                     <div className="h-4 bg-muted rounded-full overflow-hidden">
                       <div className="h-full bg-gradient-to-r from-neuro-500 to-blue-500 w-[70%]"></div>
                     </div>
-                    <p className="text-sm text-muted-foreground mt-1">500k users by Q4 2025</p>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      500k users by Q4 2025
+                    </p>
                   </div>
                   <div>
                     <h4 className="font-medium mb-2">Network Growth</h4>
                     <div className="h-4 bg-muted rounded-full overflow-hidden">
                       <div className="h-full bg-gradient-to-r from-neuro-500 to-blue-500 w-[60%]"></div>
                     </div>
-                    <p className="text-sm text-muted-foreground mt-1">60% network utilization target</p>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      60% network utilization target
+                    </p>
                   </div>
                 </div>
               </Card>
@@ -122,7 +136,9 @@ export default function PitchDeckPage() {
               <Card className="p-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <h3 className="text-lg font-semibold mb-3">Round Details</h3>
+                    <h3 className="text-lg font-semibold mb-3">
+                      Round Details
+                    </h3>
                     <ul className="space-y-2 text-muted-foreground">
                       <li>Series A funding round</li>
                       <li>$50M target raise</li>

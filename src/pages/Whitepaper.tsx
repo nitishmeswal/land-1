@@ -1,17 +1,17 @@
-import React from 'react';
-import { SectionContainer } from '@/components/ui/Container';
-import PageLayout from '@/components/layout/PageLayout';
-import { Button } from '@/components/ui/button';
-import { FileText, Download, ArrowUpRight } from 'lucide-react';
+import React from "react";
+import { SectionContainer } from "@/components/ui/Container";
+import PageLayout from "@/components/layout/PageLayout";
+import { Button } from "@/components/ui/button";
+import { FileText, Download, ArrowUpRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function WhitepaperPage() {
   return (
-    <PageLayout 
-      title="Whitepaper" 
+    <PageLayout
+      title="Whitepaper"
       subtitle="Technical overview of the Neurolov platform"
     >
-      <SectionContainer className="pb-16">
+      <SectionContainer className="pb-16 bg-[#030924] ">
         <div className="max-w-4xl mx-auto">
           {/* Download Section */}
           <Card className="mb-12 p-6 border-neuro-500/20">
@@ -21,8 +21,12 @@ export default function WhitepaperPage() {
                   <FileText className="h-8 w-8 text-neuro-500" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-1">Neurolov Whitepaper v1.0</h3>
-                  <p className="text-sm text-muted-foreground">PDF • 2.5 MB • Last updated March 2025</p>
+                  <h3 className="font-semibold mb-1">
+                    Neurolov Whitepaper v1.0
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    PDF • 2.5 MB • Last updated March 2025
+                  </p>
                 </div>
               </div>
               <div className="flex gap-3">
@@ -98,10 +102,10 @@ export default function WhitepaperPage() {
             <div className="mt-12 p-6 rounded-xl bg-muted">
               <h3 className="text-lg font-semibold mb-4">Disclaimer</h3>
               <p className="text-sm text-muted-foreground">
-                This whitepaper is for informational purposes only and does not constitute 
-                investment advice. The information contained herein is subject to change 
-                as the project evolves. Please refer to our official channels for the 
-                most up-to-date information.
+                This whitepaper is for informational purposes only and does not
+                constitute investment advice. The information contained herein
+                is subject to change as the project evolves. Please refer to our
+                official channels for the most up-to-date information.
               </p>
             </div>
           </div>
