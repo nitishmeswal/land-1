@@ -15,7 +15,7 @@ type Props = {
 
 const DEFAULT_NAV: NavItem[] = [
   { label: "Products", href: "/products" },
-  { label: "Token", href: "/token" },
+  { label: "Token", href: "/token/overview" },
   { label: "Ecosystem", href: "/ecosystem" },
   { label: "Resources", href: "/resources" },
   { label: "About", href: "/about" },
