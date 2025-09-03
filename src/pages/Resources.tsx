@@ -126,7 +126,7 @@ export default function ResourcesPage() {
       title="Resources"
       subtitle="Everything you need to build on Neurolov"
     >
-      <SectionContainer className="pb-16 bg-[#030924]">
+      <SectionContainer className="pb-16 ">
         {/* Featured Resources */}
         <div className="mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 z-[100]">

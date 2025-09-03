@@ -19,7 +19,7 @@ const DEFAULT_NAV: NavItem[] = [
   { label: "Ecosystem", href: "/ecosystem" },
   { label: "Resources", href: "/resources" },
   { label: "About", href: "/about" },
-  { label: "Compute App", href: "/compute" },
+  { label: "Compute App", href: "https://app.neurolov.ai" },
 ];
 
 const Header: React.FC<Props> = ({

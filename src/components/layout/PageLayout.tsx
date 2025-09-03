@@ -2,6 +2,9 @@ import { useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { SectionContainer } from "@/components/ui/Container";
+import LandingWithMarquee from "../InfiniteSlidingHeader";
+import Header from "../Header";
+import NeurolovFooter from "../common/Footer";
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -24,11 +27,12 @@ export default function PageLayout({
   }, [title]);
 
   return (
-    <>
-      <Navbar />
+    <div className="bg-[#030924]">
+      <LandingWithMarquee />
+      <Header logoSrc="header/logo.png" />
       <main>
         {/* Page header */}
-        <SectionContainer className="pt-40 pb-16 relative bg-[#030924]">
+        <SectionContainer className="pt-40 pb-16 relative ">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 hero-text-gradient">
               {title}
@@ -42,7 +46,7 @@ export default function PageLayout({
         {/* Page content */}
         <div className={className}>{children}</div>
       </main>
-      <Footer />
-    </>
+      <NeurolovFooter />
+    </div>
   );
 }

@@ -7,6 +7,9 @@ import Footer from "@/components/layout/Footer";
 import { Container } from "@/components/ui/Container";
 import { ArrowLeft } from "lucide-react";
 import { PatternBackground } from "@/components/common/Highlight";
+import LandingWithMarquee from "@/components/InfiniteSlidingHeader";
+import Header from "@/components/Header";
+import NeurolovFooter from "@/components/common/Footer";
 
 const NotFound = () => {
   const location = useLocation();
@@ -19,8 +22,9 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <PatternBackground>
-      <Navbar />
+    <div className="bg-[#030924]">
+      <LandingWithMarquee />
+      <Header logoSrc="header/logo.png" />
       <main className="min-h-screen pt-24 pb-16 flex items-center">
         <Container className="py-16">
           <div className="max-w-lg mx-auto text-center">
@@ -44,8 +48,8 @@ const NotFound = () => {
           </div>
         </Container>
       </main>
-      <Footer />
-    </PatternBackground>
+      <NeurolovFooter />
+    </div>
   );
 };
 

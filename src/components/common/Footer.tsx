@@ -3,7 +3,7 @@ import React from "react";
 const NeurolovFooter: React.FC = () => {
   return (
     <>
-      <footer className="relative overflow-hidden rounded-3xl mx-4 mb-8">
+      <footer className="relative overflow-hidden rounded-3xl mx-4 mb-8 ">
         <div className="absolute inset-0 bg-gradient-to-b from-[#80B8FF] to-[#0361DA]"></div>
 
         <div className="absolute inset-0 flex items-end justify-center ">

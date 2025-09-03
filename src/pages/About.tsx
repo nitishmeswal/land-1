@@ -252,7 +252,7 @@ export default function AboutPage() {
         title="About Neurolov"
         subtitle="Our team, mission, and vision for the future of AI computing"
       >
-        <SectionContainer className="pb-8 bg-[#030924]">
+        <SectionContainer className="pb-8 ">
           <Tabs value={tab} onValueChange={handleTabChange} className="w-full">
             <div className="flex justify-center mb-20 md:mb-10">
               <TabsList className="grid grid-cols-2 md:grid-cols-3 gap-5 p-3 md:p-0 h-auto border border-[#0361DA] hover:border-[#0361DA]/50 shadow-md transition-all duration-300  hover:shadow-lg">

@@ -45,7 +45,7 @@ export default function BlogDetailPage() {
   return (
     <PageLayout title="Blog Detail" subtitle="Blog Detail">
       <Navbar />
-      <main className="min-h-screen pt-24 pb-16 bg-[#030924]">
+      <main className="min-h-screen pt-24 pb-16 ">
         <SectionContainer>
           <article className="max-w-3xl mx-auto  rounded-2xl shadow-card p-6 md:p-12 border border-gray-200 dark:border-blue-900/30">
             <img

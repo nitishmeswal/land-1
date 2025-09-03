@@ -31,7 +31,7 @@ export default function SectionHeading({
         </div>
       )}
 
-      <h2 className="text-3xl font-bold mb-4 relative inline-block">
+      <h2 className="text-3xl text-white font-bold mb-4 relative inline-block">
         {title}
         <div
           className={cn(
