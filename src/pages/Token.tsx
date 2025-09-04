@@ -92,66 +92,22 @@ const faqData = [
   {
     question: "What is Neurolov?",
     answer:
-      "Neurolov, operated by Orlov Innovation Private Limited, is a browser-based platform providing decentralized GPU computing for AI, machine learning, and Web3 applications. Powered by the NLOV Token, it enables users to access high-performance computing resources efficiently and affordably.",
-  },
-  {
-    question: "What is the NLOV Token?",
-    answer:
-      "• Paying for GPU computing services\n• Staking to earn rewards and access premium features\n• Participating in governance voting\n• Contributing resources to the network for rewards\n\nThe NLOV Token is the native utility token of the Neurolov ecosystem, built on the Solana blockchain as an SPL token. It is not a security or investment product.",
-  },
-  {
-    question: "What is the total supply of NLOV Tokens?",
-    answer:
-      "The total supply is capped at 500 million NLOV Tokens. No additional tokens will be minted, ensuring a deflationary model over time through usage and potential burning mechanisms.",
+      "Neurolov is a browser-based platform providing decentralized GPU computing for AI, machine learning, and Web3 applications. Powered by the NLOV Token, it enables users to access high-performance computing resources efficiently and affordably.",
   },
   {
     question: "How can I purchase NLOV Tokens?",
     answer:
-      "• Presale: NLOV Tokens are available through our private presale, accessible via our partner launchpad, Kommunitas. Join the whitelist on www.neurolov.ai for early access and potential bonuses.\n\n• Post-Presale: After the presale, NLOV Tokens will be listed on major decentralized (e.g., Raydium) and centralized exchanges.\n\n• Payment Methods: Accepted cryptocurrencies include SOL, USDT, and fiat via approved gateways, subject to KYC/AML verification.",
+      "Presale: NLOV Tokens are available through our private, presale & public sale accessible directly via our website & partner launchpad.\n\nPost-Presale: After the presale, NLOV Tokens will be listed on major decentralized (e.g., Raydium) and centralized exchanges.\n\nPayment Methods: Accepted cryptocurrencies include SOL, USDT, and fiat via approved gateways, subject to KYC/AML verification",
   },
   {
     question: "Who can participate in the presale?",
     answer:
-      "• Participants must be 18+ and complete KYC/AML verification.\n\n• Participation is restricted in jurisdictions where token sales are prohibited, including the United States, China, North Korea, Iran, Syria, Cuba, Sudan, Venezuela, Russia, Crimea, Donetsk, Luhansk, Sevastopol, Bolivia, Egypt, Nepal, Morocco, Iraq, Algeria, Tunisia, Bangladesh, Qatar, and Saudi Arabia.\n\n• Check www.neurolov.ai for eligibility and comply with local laws.",
-  },
-  {
-    question: "Is NLOV compatible with existing wallets?",
-    answer:
-      "Yes, NLOV is an SPL token on the Solana blockchain, compatible with Solana wallets like Phantom, Solflare, Trust Wallet, and others. Ensure your wallet is secure and backed up.",
-  },
-  {
-    question: "How can I stake NLOV Tokens?",
-    answer:
-      "• Stake NLOV Tokens via the Neurolov platform to earn rewards, contribute to network security, and participate in governance.\n\n• Benefits include fee discounts, access to premium features, and staking rewards.\n\n• Visit the staking dashboard on swarm.neurolov.ai for instructions after the presale.",
-  },
-  {
-    question: "Are NLOV Token purchases refundable?",
-    answer:
-      "• Presale purchases are non-refundable, except if the presale is canceled before token distribution, per our Refund Policy.\n\n• Refunds are not provided for user errors (e.g., incorrect wallet addresses) or market changes.",
-  },
-  {
-    question: "What is the utility of NLOV Tokens on the platform?",
-    answer:
-      "• Compute Payments: Pay for GPU computing resources for AI/ML tasks.\n• Governance: Vote on platform upgrades and policies.\n• Staking: Earn rewards and access premium features.\n• Resource Contribution: Earn tokens by contributing computing resources to the network.",
+      "• Participants must be 18+.\n\n• Participation is restricted in jurisdictions where token sales are prohibited, including the North Korea, Iran, Syria, Cuba, Sudan, Venezuela.\n\n• Check [www.neurolov.ai](https://www.neurolov.ai) for eligibility and comply with local laws.",
   },
   {
     question: "How does Neurolov comply with regulations?",
     answer:
-      "• Neurolov complies with India's laws, including the Companies Act, 2013, and the Digital Personal Data Protection Act, 2023.\n\n• KYC/AML verification ensures adherence to the Prevention of Money Laundering Act, 2002.\n\n• The NLOV Token is a utility token, not a security, and is not marketed as an investment.",
-  },
-  {
-    question: "What happens if the presale doesn't meet the soft cap?",
-    answer:
-      "If the soft cap is not reached, the presale may be canceled, and funds will be refunded per the Refund Policy, subject to transaction fees.",
-  },
-  {
-    question: "Can I use NLOV Tokens outside the Neurolov platform?",
-    answer:
-      "NLOV Tokens are primarily for use within the Neurolov ecosystem. Post-presale, they may be traded on listed exchanges, subject to market availability and local laws.",
-  },
-  {
-    question: "How can I contact Neurolov?",
-    answer: "• Email: support@neurolov.ai\n• Website: www.neurolov.ai",
+      "KYC/AML verification ensures adherence to the Prevention of Money Laundering Act.\n\nThe NLOV Token is a utility token, not a security, and is not marketed as an investment.",
   },
 ];
 
@@ -322,7 +278,7 @@ export default function TokenPage() {
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
                     <div>
-                      <h4 className="font-medium">Network Access</h4>
+                      <h4 className="font-medium text-white">Network Access</h4>
                       <p className="text-sm text-muted-foreground">
                         Pay for compute resources, AI services, and other
                         network capabilities
@@ -332,7 +288,9 @@ export default function TokenPage() {
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
                     <div>
-                      <h4 className="font-medium">Provider Rewards</h4>
+                      <h4 className="font-medium text-white">
+                        Provider Rewards
+                      </h4>
                       <p className="text-sm text-muted-foreground">
                         Earn tokens by contributing compute resources to the
                         network
@@ -342,7 +300,9 @@ export default function TokenPage() {
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
                     <div>
-                      <h4 className="font-medium">Governance Rights</h4>
+                      <h4 className="font-medium text-white">
+                        Governance Rights
+                      </h4>
                       <p className="text-sm text-muted-foreground">
                         Shape the future of the platform through DAO voting
                       </p>
@@ -351,7 +311,9 @@ export default function TokenPage() {
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
                     <div>
-                      <h4 className="font-medium">Staking Benefits</h4>
+                      <h4 className="font-medium text-white">
+                        Staking Benefits
+                      </h4>
                       <p className="text-sm text-muted-foreground">
                         Stake tokens to secure the network and earn passive
                         income
@@ -393,88 +355,164 @@ export default function TokenPage() {
               />
 
               <div className="relative">
-                {/* Timeline line */}
+                {/* Timeline line */}{" "}
                 <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-neuro-500/20"></div>
-
-                {/* Timeline items */}
+                {/* Timeline items */}{" "}
                 <div className="space-y-16">
+                  {/* Seed Round */}{" "}
                   <div className="flex flex-col md:flex-row items-center gap-8 relative">
                     <div className="md:w-1/2 md:text-right md:pr-16">
                       <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-500/10 text-green-500 text-sm font-medium mb-2">
                         <CheckCircle2 className="mr-2 h-4 w-4" />
                         <span>Completed</span>
                       </div>
-                      <h3 className="text-xl font-bold mb-2">Seed Round</h3>
+
+                      <h3 className="text-xl text-white font-bold mb-2">
+                        Seed Round
+                      </h3>
+
                       <p className="text-muted-foreground">
                         Initial funding round with strategic partners and early
                         supporters
                       </p>
                     </div>
+
                     <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                       <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center border-4 border-background z-10">
-                        <CheckCircle2 className="h-6 w-6 text-green-500" />
+                        <CheckCircle2 className="h-6 w-6 text-green-500" />     
+                         {" "}
                       </div>
                     </div>
+
                     <div className="md:w-1/2 md:pl-16">
                       <div className="text-xl font-bold text-neuro-500">
                         Q4 2024
                       </div>
                     </div>
                   </div>
-
+                  {/* NeuroSwarm Launch */}
                   <div className="flex flex-col md:flex-row items-center gap-8 relative">
                     <div className="md:w-1/2 md:text-right md:pr-16">
                       <div className="inline-flex items-center px-3 py-1 rounded-full bg-green-500/10 text-green-500 text-sm font-medium mb-2">
                         <CheckCircle2 className="mr-2 h-4 w-4" />
                         <span>Completed</span>
                       </div>
-                      <h3 className="text-xl font-bold mb-2">Testnet Launch</h3>
+
+                      <h3 className="text-xl text-white font-bold mb-2">
+                        NeuroSwarm Launch
+                      </h3>
+
                       <p className="text-muted-foreground">
                         Public testnet deployment with initial network features
                       </p>
                     </div>
+
                     <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                       <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center border-4 border-background z-10">
                         <CheckCircle2 className="h-6 w-6 text-green-500" />
                       </div>
                     </div>
+
                     <div className="md:w-1/2 md:pl-16">
                       <div className="text-xl font-bold text-neuro-500">
                         Q3 2025
                       </div>
                     </div>
                   </div>
-
-                  <div className="flex flex-col md:flex-row items-center gap-8 relative">
-                    <div className="md:w-1/2 md:text-right md:pr-16">
-                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-sm font-medium mb-2">
-                        <Clock className="mr-2 h-4 w-4" />
-                        <span>In Progress</span>
-                      </div>
-                      <h3 className="text-xl font-bold mb-2">Public Presale</h3>
-                      <p className="text-muted-foreground">
-                        Community token sale with tiered allocation system
-                      </p>
-                    </div>
-                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                      <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center border-4 border-background z-10">
-                        <Clock className="h-6 w-6 text-amber-500" />
-                      </div>
-                    </div>
-                    <div className="md:w-1/2 md:pl-16">
-                      <div className="text-xl font-bold text-neuro-500">
-                        Q3 2025
-                      </div>
-                    </div>
-                  </div>
-
+                  {/* Private Round */}
                   <div className="flex flex-col md:flex-row items-center gap-8 relative">
                     <div className="md:w-1/2 md:text-right md:pr-16">
                       <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-sm font-medium mb-2">
                         <Clock className="mr-2 h-4 w-4" />
                         <span>Coming Soon</span>
                       </div>
-                      <h3 className="text-xl font-bold mb-2">
+
+                      <h3 className="text-xl text-white font-bold mb-2">
+                        Private Round
+                      </h3>
+
+                      <p className="text-muted-foreground">
+                        Exclusive token sale for strategic partners and early
+                        backers
+                      </p>
+                    </div>
+
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                      <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center border-4 border-background z-10">
+                        <Clock className="h-6 w-6 text-amber-500" />
+                      </div>
+                    </div>
+
+                    <div className="md:w-1/2 md:pl-16">
+                      <div className="text-xl font-bold text-neuro-500">
+                        Q3 2025
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex flex-col md:flex-row items-center gap-8 relative">
+                    <div className="md:w-1/2 md:text-right md:pr-16">
+                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-sm font-medium mb-2">
+                        <Clock className="mr-2 h-4 w-4" />
+                        <span>Coming Soon</span>
+                      </div>
+
+                      <h3 className="text-xl text-white font-bold mb-2">
+                        Presale Round
+                      </h3>
+
+                      <p className="text-muted-foreground">
+                        Early access token sale with limited allocation before
+                        public launch
+                      </p>
+                    </div>
+
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                      <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center border-4 border-background z-10">
+                        <Clock className="h-6 w-6 text-amber-500" />
+                      </div>
+                    </div>
+
+                    <div className="md:w-1/2 md:pl-16">
+                      <div className="text-xl font-bold text-neuro-500">
+                        Q4 2025
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex flex-col md:flex-row items-center gap-8 relative">
+                    <div className="md:w-1/2 md:text-right md:pr-16">
+                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-sm font-medium mb-2">
+                        <Clock className="mr-2 h-4 w-4" />
+                        <span>Coming Soon</span>
+                      </div>
+
+                      <h3 className="text-xl text-white font-bold mb-2">
+                        Public Round
+                      </h3>
+
+                      <p className="text-muted-foreground">
+                        Community token sale with tiered allocation system
+                      </p>
+                    </div>
+
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                      <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center border-4 border-background z-10">
+                        <Clock className="h-6 w-6 text-amber-500" /> 
+                      </div>
+                    </div>
+
+                    <div className="md:w-1/2 md:pl-16">
+                      <div className="text-xl font-bold text-neuro-500">
+                        Q4 2025
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex flex-col md:flex-row items-center gap-8 relative">
+                    <div className="md:w-1/2 md:text-right md:pr-16">
+                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-sm font-medium mb-2">
+                        <Clock className="mr-2 h-4 w-4" />
+                        <span>Coming Soon</span>
+                      </div>
+                      <h3 className="text-xl text-white font-bold mb-2">
                         Token Generation Event
                       </h3>
                       <p className="text-muted-foreground">
@@ -482,71 +520,86 @@ export default function TokenPage() {
                         participants
                       </p>
                     </div>
+
                     <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                       <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center border-4 border-background z-10">
-                        <Clock className="h-6 w-6 text-amber-500" />
+                                  <Clock className="h-6 w-6 text-amber-500" /> 
                       </div>
                     </div>
+
                     <div className="md:w-1/2 md:pl-16">
                       <div className="text-xl font-bold text-neuro-500">
-                        Q3 2025
+                        Q1 2026
                       </div>
                     </div>
                   </div>
-
+                  {/* Staking Launch */}
                   <div className="flex flex-col md:flex-row items-center gap-8 relative">
                     <div className="md:w-1/2 md:text-right md:pr-16">
                       <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-sm font-medium mb-2">
                         <Clock className="mr-2 h-4 w-4" />
                         <span>Coming Soon</span>
                       </div>
-                      <h3 className="text-xl font-bold mb-2">Staking Launch</h3>
+
+                      <h3 className="text-xl text-white font-bold mb-2">
+                        Staking Launch
+                      </h3>
+
                       <p className="text-muted-foreground">
                         Staking program activation with rewards distribution
                       </p>
                     </div>
+
                     <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                       <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center border-4 border-background z-10">
                         <Clock className="h-6 w-6 text-amber-500" />
                       </div>
                     </div>
+
                     <div className="md:w-1/2 md:pl-16">
                       <div className="text-xl font-bold text-neuro-500">
-                        Q4 2025
+                        Q1 2026
                       </div>
                     </div>
                   </div>
-
+                  {/* Liquidity */}
                   <div className="flex flex-col md:flex-row items-center gap-8 relative">
                     <div className="md:w-1/2 md:text-right md:pr-16">
                       <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-sm font-medium mb-2">
                         <Clock className="mr-2 h-4 w-4" />
                         <span>Coming Soon</span>
                       </div>
-                      <h3 className="text-xl font-bold mb-2">DEX Liquidity</h3>
+
+                      <h3 className="text-xl text-white font-bold mb-2">
+                        Liquidity
+                      </h3>
+
                       <p className="text-muted-foreground">
                         Liquidity provision on major decentralized exchanges
                       </p>
                     </div>
+
                     <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                       <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center border-4 border-background z-10">
                         <Clock className="h-6 w-6 text-amber-500" />
                       </div>
                     </div>
+
                     <div className="md:w-1/2 md:pl-16">
                       <div className="text-xl font-bold text-neuro-500">
-                        Q4 2025
+                        Q1 2026
                       </div>
                     </div>
                   </div>
-
+                  {/* Governance Launch */}
                   <div className="flex flex-col md:flex-row items-center gap-8 relative">
                     <div className="md:w-1/2 md:text-right md:pr-16">
                       <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-sm font-medium mb-2">
                         <Clock className="mr-2 h-4 w-4" />
                         <span>Coming Soon</span>
                       </div>
-                      <h3 className="text-xl font-bold mb-2">
+
+                      <h3 className="text-xl text-white font-bold mb-2">
                         Governance Launch
                       </h3>
                       <p className="text-muted-foreground">
@@ -554,14 +607,16 @@ export default function TokenPage() {
                         voting
                       </p>
                     </div>
+
                     <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                       <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center border-4 border-background z-10">
                         <Clock className="h-6 w-6 text-amber-500" />
                       </div>
                     </div>
+
                     <div className="md:w-1/2 md:pl-16">
                       <div className="text-xl font-bold text-neuro-500">
-                        Q4 2025
+                        Q2 2026
                       </div>
                     </div>
                   </div>
@@ -583,7 +638,7 @@ export default function TokenPage() {
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
                     <div>
-                      <h4 className="font-medium">
+                      <h4 className="font-medium text-white">
                         Total Supply: 500,000,000 NLOV
                       </h4>
                     </div>
@@ -591,7 +646,7 @@ export default function TokenPage() {
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
                     <div>
-                      <h4 className="font-medium">
+                      <h4 className="font-medium text-white">
                         Token Standard: Solana SPL
                       </h4>
                       <p className="text-sm text-muted-foreground">
