@@ -248,254 +248,243 @@ export default function AboutPage() {
       title="About Neurolov"
       subtitle="Our team, mission, and vision for the future of AI computing"
     >
-      <PageLayout
-        title="About Neurolov"
-        subtitle="Our team, mission, and vision for the future of AI computing"
-      >
-        <SectionContainer className="pb-8 ">
-          <Tabs value={tab} onValueChange={handleTabChange} className="w-full">
-            <div className="flex justify-center mb-20 md:mb-10">
-              <TabsList className="grid grid-cols-2 md:grid-cols-3 gap-5 p-3 md:p-0 h-auto border border-[#0361DA] hover:border-[#0361DA]/50 shadow-md transition-all duration-300  hover:shadow-lg">
-                <TabsTrigger value="team" className="px-6">
-                  <Users className="mr-2 h-4 w-4" /> Team
-                </TabsTrigger>
-                <TabsTrigger value="mission" className="px-6">
-                  <BookOpen className="mr-2 h-4 w-4" /> Mission
-                </TabsTrigger>
-                <TabsTrigger value="contact" className="px-6">
-                  <Mail className="mr-2 h-4 w-4" /> Contact Us
-                </TabsTrigger>
-              </TabsList>
+      <SectionContainer className="pb-8 ">
+        <Tabs value={tab} onValueChange={handleTabChange} className="w-full">
+          <div className="flex justify-center mb-20 md:mb-10">
+            <TabsList className="grid grid-cols-2 md:grid-cols-3 gap-5 p-3 md:p-0 h-auto border border-[#0361DA] hover:border-[#0361DA]/50 shadow-md transition-all duration-300  hover:shadow-lg">
+              <TabsTrigger value="team" className="px-6">
+                <Users className="mr-2 h-4 w-4" /> Team
+              </TabsTrigger>
+              <TabsTrigger value="mission" className="px-6">
+                <BookOpen className="mr-2 h-4 w-4" /> Mission
+              </TabsTrigger>
+              <TabsTrigger value="contact" className="px-6">
+                <Mail className="mr-2 h-4 w-4" /> Contact Us
+              </TabsTrigger>
+            </TabsList>
+          </div>
+
+          {/* Team Tab */}
+          <TabsContent value="team" className="space-y-16">
+            <div>
+              <SectionHeading
+                title="Our Leadership Team"
+                subtitle="Meet the experts building the future of decentralized AI"
+              />
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {teamMembers.map((member, index) => (
+                  <div
+                    key={index}
+                    className="glass-card p-6 rounded-xl border border-#0361DA/10 hover:border-#0361DA/30 transition-all duration-300 relative min-h-[320px]"
+                  >
+                    <div className="flex items-center space-x-4 mb-4">
+                      <div className="w-24 h-24 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center">
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className={`w-full h-full object-cover object-top ${
+                            [
+                              "Sparsh",
+                              "Nitish Meswal",
+                              "Ramesh Sharma",
+                              "Charu Keswani",
+                              "Dhruvanshi",
+                              "Sanskar Lunawat",
+                              "Ruzaliya Gubaidullina",
+                              "Dhruv Panchal",
+                              "Adhik Joshi",
+                              "Gokul Ravindran",
+                              "Chandra S Katta",
+                              "Jesse Guglielmo",
+                              "Peter Yeo",
+                              "Umair Mirza",
+                            ].some((name) => member.name.trim() === name.trim())
+                              ? "grayscale"
+                              : ""
+                          }`}
+                        />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold">{member.name}</h3>
+                        <p className="text-sm text-blue-400">{member.role}</p>
+                      </div>
+                    </div>
+
+                    <p className="text-sm text-muted-foreground mb-12">
+                      {member.bio}
+                    </p>
+
+                    <div className="absolute bottom-6 left-6 flex items-center space-x-3">
+                      {member.social.linkedin && (
+                        <a
+                          href={member.social.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-blue-400 transition-colors"
+                        >
+                          <Linkedin className="h-5 w-5" />
+                        </a>
+                      )}
+                      {member.social.github && (
+                        <a
+                          href={member.social.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-blue-400 transition-colors"
+                        >
+                          <Github className="h-5 w-5" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Team Tab */}
-            <TabsContent value="team" className="space-y-16">
-              <div>
-                <SectionHeading
-                  title="Our Leadership Team"
-                  subtitle="Meet the experts building the future of decentralized AI"
-                />
+            <div>
+              <SectionHeading
+                title="Our Advisors"
+                subtitle="Industry experts guiding our strategic direction"
+              />
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {teamMembers.map((member, index) => (
-                    <div
-                      key={index}
-                      className="glass-card p-6 rounded-xl border border-#0361DA/10 hover:border-#0361DA/30 transition-all duration-300 relative min-h-[320px]"
-                    >
-                      <div className="flex items-center space-x-4 mb-4">
-                        <div className="w-24 h-24 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center">
-                          <img
-                            src={member.image}
-                            alt={member.name}
-                            className={`w-full h-full object-cover object-top ${
-                              [
-                                "Sparsh",
-                                "Nitish Meswal",
-                                "Ramesh Sharma",
-                                "Charu Keswani",
-                                "Dhruvanshi",
-                                "Sanskar Lunawat",
-                                "Ruzaliya Gubaidullina",
-                                "Dhruv Panchal",
-                                "Adhik Joshi",
-                                "Gokul Ravindran",
-                                "Chandra S Katta",
-                                "Jesse Guglielmo",
-                                "Peter Yeo",
-                                "Umair Mirza",
-                              ].some(
-                                (name) => member.name.trim() === name.trim()
-                              )
-                                ? "grayscale"
-                                : ""
-                            }`}
-                          />
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-semibold">
-                            {member.name}
-                          </h3>
-                          <p className="text-sm text-blue-400">{member.role}</p>
-                        </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                {advisors.map((advisor, index) => (
+                  <div
+                    key={index}
+                    className="glass-card p-6 rounded-xl border border-white/10 hover:border-#0361DA/20 transition-all duration-300 relative min-h-[320px]"
+                  >
+                    <div className="flex items-center space-x-4 mb-4">
+                      <div className="w-24 h-24 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center">
+                        <img
+                          src={advisor.image}
+                          alt={advisor.name}
+                          className={`w-full h-full object-cover object-top ${
+                            [
+                              "Chandra S Katta",
+                              "Jesse Guglielmo",
+                              "Peter Yeo",
+                              "Umair Mirza",
+                            ].some(
+                              (name) => advisor.name.trim() === name.trim()
+                            )
+                              ? "grayscale"
+                              : ""
+                          }`}
+                        />
                       </div>
-
-                      <p className="text-sm text-muted-foreground mb-12">
-                        {member.bio}
-                      </p>
-
-                      <div className="absolute bottom-6 left-6 flex items-center space-x-3">
-                        {member.social.linkedin && (
-                          <a
-                            href={member.social.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-muted-foreground hover:text-blue-400 transition-colors"
-                          >
-                            <Linkedin className="h-5 w-5" />
-                          </a>
-                        )}
-                        {member.social.github && (
-                          <a
-                            href={member.social.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-muted-foreground hover:text-blue-400 transition-colors"
-                          >
-                            <Github className="h-5 w-5" />
-                          </a>
-                        )}
+                      <div>
+                        <h3 className="text-lg font-semibold">
+                          {advisor.name}
+                        </h3>
+                        <p className="text-sm text-blue-400">{advisor.role}</p>
                       </div>
                     </div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <SectionHeading
-                  title="Our Advisors"
-                  subtitle="Industry experts guiding our strategic direction"
-                />
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-                  {advisors.map((advisor, index) => (
-                    <div
-                      key={index}
-                      className="glass-card p-6 rounded-xl border border-white/10 hover:border-#0361DA/20 transition-all duration-300 relative min-h-[320px]"
-                    >
-                      <div className="flex items-center space-x-4 mb-4">
-                        <div className="w-24 h-24 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center">
-                          <img
-                            src={advisor.image}
-                            alt={advisor.name}
-                            className={`w-full h-full object-cover object-top ${
-                              [
-                                "Chandra S Katta",
-                                "Jesse Guglielmo",
-                                "Peter Yeo",
-                                "Umair Mirza",
-                              ].some(
-                                (name) => advisor.name.trim() === name.trim()
-                              )
-                                ? "grayscale"
-                                : ""
-                            }`}
-                          />
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-semibold">
-                            {advisor.name}
-                          </h3>
-                          <p className="text-sm text-blue-400">
-                            {advisor.role}
-                          </p>
-                        </div>
-                      </div>
-                      <p className="text-sm text-muted-foreground mb-12">
-                        {advisor.bio}
-                      </p>
-                      <div className="absolute bottom-6 left-6 flex items-center space-x-3">
-                        {advisor.social.linkedin && (
-                          <a
-                            href={advisor.social.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-muted-foreground hover:text-blue-400 transition-colors"
-                          >
-                            <Linkedin className="h-5 w-5" />
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </TabsContent>
-
-            {/* Mission Tab */}
-            <TabsContent value="mission" className="space-y-16">
-              <div className="flex flex-col md:flex-row gap-10 items-center">
-                <div className="md:w-1/2">
-                  <SectionHeading
-                    title="Our Mission"
-                    subtitle="Democratizing access to AI compute and capabilities"
-                    align={useIsMobile() ? "center" : "left"}
-                  />
-
-                  <div className="glass-card p-6 rounded-xl border border-[#0361DA]/10 bg-gradient-to-br from-[#0361DA]/5 to-blue-500/5 mb-6">
-                    <p className="text-xl italic text-center">
-                      "To create a decentralized network that makes AI computing
-                      accessible to everyone, empowering innovation while
-                      maximizing efficiency of global compute resources."
+                    <p className="text-sm text-muted-foreground mb-12">
+                      {advisor.bio}
                     </p>
+                    <div className="absolute bottom-6 left-6 flex items-center space-x-3">
+                      {advisor.social.linkedin && (
+                        <a
+                          href={advisor.social.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-blue-400 transition-colors"
+                        >
+                          <Linkedin className="h-5 w-5" />
+                        </a>
+                      )}
+                    </div>
                   </div>
-
-                  <p className="text-muted-foreground mb-6 text-center md:text-left px-2 md:px-0">
-                    At Neurolov, we believe that the future of AI should be
-                    open, accessible, and equitable. Our mission is to break
-                    down the barriers that currently restrict access to AI
-                    compute resources and ensure that the benefits of artificial
-                    intelligence can be realized by innovators and creators of
-                    all sizes, not just large corporations.
-                  </p>
-                  {useIsMobile() && (
-                    <div className="h-px w-full bg-gradient-to-r from-transparent via-#0361DA/20 to-transparent my-5"></div>
-                  )}
-
-                  <p className="text-muted-foreground mb-6 text-center md:text-left px-2 md:px-0">
-                    By building a decentralized network that connects GPU
-                    providers with AI users, we're creating a more efficient
-                    ecosystem where unused compute resources can be shared and
-                    utilized to their full potential, reducing waste and
-                    democratizing access.
-                  </p>
-                  {useIsMobile() && (
-                    <div className="h-px w-full bg-gradient-to-r from-transparent via-#0361DA/20 to-transparent my-5"></div>
-                  )}
-                  <p className="text-muted-foreground text-center md:text-left px-2 md:px-0">
-                    We're committed to an open, transparent approach to
-                    development, with a strong focus on building a sustainable
-                    community-governed platform where all stakeholders have a
-                    voice.
-                  </p>
-                </div>
-
-                <div className="md:w-1/2">
-                  <div className="relative">
-                    <div className="absolute -top-10 -right-10 w-40 h-40 bg-#0361DA/30 rounded-full blur-3xl opacity-40"></div>
-                    <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/30 rounded-full blur-3xl opacity-40"></div>
-
-                    <img
-                      src="https://images.unsplash.com/photo-1552664730-d307ca884978"
-                      alt="Neurolov Team Collaboration"
-                      className="rounded-xl shadow-xl"
-                    />
-                  </div>
-                </div>
+                ))}
               </div>
-            </TabsContent>
+            </div>
+          </TabsContent>
 
-            {/* Contact Tab */}
-            <TabsContent value="contact" className="space-y-16">
-              <div className="max-w-md mx-auto">
-                <div className="bg-[#0361DA] p-8 rounded-xl">
-                  <h2 className="text-2xl font-semibold text-white mb-2">
-                    Contact Us
-                  </h2>
-                  <p className="text-white/80 mb-6">
-                    Send us a message and we'll get back to you soon.
+          {/* Mission Tab */}
+          <TabsContent value="mission" className="space-y-16">
+            <div className="flex flex-col md:flex-row gap-10 items-center">
+              <div className="md:w-1/2">
+                <SectionHeading
+                  title="Our Mission"
+                  subtitle="Democratizing access to AI compute and capabilities"
+                  align={useIsMobile() ? "center" : "left"}
+                />
+
+                <div className="glass-card p-6 rounded-xl border border-[#0361DA]/10 bg-gradient-to-br from-[#0361DA]/5 to-blue-500/5 mb-6">
+                  <p className="text-xl italic text-center">
+                    "To create a decentralized network that makes AI computing
+                    accessible to everyone, empowering innovation while
+                    maximizing efficiency of global compute resources."
                   </p>
+                </div>
 
-                  <ContactForm
-                    onSubmit={async (data: ContactFormData) => {
-                      console.log("Form submitted:", data);
-                    }}
+                <p className="text-muted-foreground mb-6 text-center md:text-left px-2 md:px-0">
+                  At Neurolov, we believe that the future of AI should be open,
+                  accessible, and equitable. Our mission is to break down the
+                  barriers that currently restrict access to AI compute
+                  resources and ensure that the benefits of artificial
+                  intelligence can be realized by innovators and creators of all
+                  sizes, not just large corporations.
+                </p>
+                {useIsMobile() && (
+                  <div className="h-px w-full bg-gradient-to-r from-transparent via-#0361DA/20 to-transparent my-5"></div>
+                )}
+
+                <p className="text-muted-foreground mb-6 text-center md:text-left px-2 md:px-0">
+                  By building a decentralized network that connects GPU
+                  providers with AI users, we're creating a more efficient
+                  ecosystem where unused compute resources can be shared and
+                  utilized to their full potential, reducing waste and
+                  democratizing access.
+                </p>
+                {useIsMobile() && (
+                  <div className="h-px w-full bg-gradient-to-r from-transparent via-#0361DA/20 to-transparent my-5"></div>
+                )}
+                <p className="text-muted-foreground text-center md:text-left px-2 md:px-0">
+                  We're committed to an open, transparent approach to
+                  development, with a strong focus on building a sustainable
+                  community-governed platform where all stakeholders have a
+                  voice.
+                </p>
+              </div>
+
+              <div className="md:w-1/2">
+                <div className="relative">
+                  <div className="absolute -top-10 -right-10 w-40 h-40 bg-#0361DA/30 rounded-full blur-3xl opacity-40"></div>
+                  <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/30 rounded-full blur-3xl opacity-40"></div>
+
+                  <img
+                    src="https://images.unsplash.com/photo-1552664730-d307ca884978"
+                    alt="Neurolov Team Collaboration"
+                    className="rounded-xl shadow-xl"
                   />
                 </div>
               </div>
-            </TabsContent>
-          </Tabs>
-        </SectionContainer>
-      </PageLayout>
+            </div>
+          </TabsContent>
+
+          {/* Contact Tab */}
+          <TabsContent value="contact" className="space-y-16">
+            <div className="max-w-md mx-auto">
+              <div className="bg-[#0361DA] p-8 rounded-xl">
+                <h2 className="text-2xl font-semibold text-white mb-2">
+                  Contact Us
+                </h2>
+                <p className="text-white/80 mb-6">
+                  Send us a message and we'll get back to you soon.
+                </p>
+
+                <ContactForm
+                  onSubmit={async (data: ContactFormData) => {
+                    console.log("Form submitted:", data);
+                  }}
+                />
+              </div>
+            </div>
+          </TabsContent>
+        </Tabs>
+      </SectionContainer>
     </PageLayout>
   );
 }
