@@ -1,4 +1,48 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+const footerLinks = [
+  {
+    title: "Products",
+    links: [
+      { label: "Compute", href: "/products/compute" },
+      { label: "AI Models", href: "/products/ai-models" },
+      { label: "Neuro Swarm", href: "/products/swarm" },
+      { label: "AI Agents", href: "/products/agents" },
+    ],
+  },
+  {
+    title: "Token",
+    links: [
+      { label: "$NLOV", href: "/token/overview" },
+      { label: "Tokenomics", href: "/token/tokenomics" },
+      { label: "Utility", href: "/token/utility" },
+      { label: "FAQ", href: "/token/faq" },
+    ],
+  },
+  {
+    title: "Ecosystem",
+    links: [
+      { label: "Roadmap", href: "/ecosystem/roadmap" },
+      { label: "Partners", href: "/ecosystem/partners" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { label: "Technical Papers", href: "/resources" },
+      { label: "Community", href: "/resources/docs" },
+      { label: "Blog & Updates", href: "/whitepaper" },
+    ],
+  },
+  {
+    title: "About",
+    links: [
+      { label: "Team", href: "/about/team" },
+      { label: "Mission", href: "/about/mission" },
+    ],
+  },
+];
 
 const NeurolovFooter: React.FC = () => {
   return (
@@ -60,186 +104,58 @@ const NeurolovFooter: React.FC = () => {
 
             <div className="lg:col-span-5 flex justify-start px-16">
               <div className="grid grid-cols-2 md:grid-cols-5 gap-20">
-                <div>
-                  <h3 className="text-[#002B62] font-semibold text-sm mb-4 uppercase tracking-wider">
-                    PRODUCTS
-                  </h3>
-                  <ul className="space-y-3">
-                    <li>
-                      <a
-                        href="#"
-                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
-                      >
-                        Compute
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
-                      >
-                        AI Models
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
-                      >
-                        Neuro Swarm
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
-                      >
-                        AI Agents
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h3 className="text-[#002B62] font-semibold text-sm mb-4 uppercase tracking-wider">
-                    TOKEN
-                  </h3>
-                  <ul className="space-y-3">
-                    <li>
-                      <a
-                        href="#"
-                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
-                      >
-                        $NLOV
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
-                      >
-                        Tokenomics
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
-                      >
-                        Utility
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
-                      >
-                        FAQ
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h3 className="text-[#002B62] font-semibold text-sm mb-4 uppercase tracking-wider">
-                    ECOSYSTEM
-                  </h3>
-                  <ul className="space-y-3">
-                    <li>
-                      <a
-                        href="#"
-                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
-                      >
-                        Roadmap
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
-                      >
-                        Partners
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h3 className="text-[#002B62] font-semibold text-sm mb-4 uppercase tracking-wider">
-                    RESOURCES
-                  </h3>
-                  <ul className="space-y-3">
-                    <li>
-                      <a
-                        href="#"
-                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
-                      >
-                        Technical Papers
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
-                      >
-                        Community
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
-                      >
-                        Blog & Updates
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h3 className="text-[#002B62] font-semibold text-sm mb-4 uppercase tracking-wider">
-                    ABOUT
-                  </h3>
-                  <ul className="space-y-3">
-                    <li>
-                      <a
-                        href="#"
-                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
-                      >
-                        Team
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="text-[#0862D6] text-sm hover:text-white transition-colors"
-                      >
-                        Mission
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                {footerLinks.map((section) => (
+                  <div key={section.title}>
+                    <h3 className="text-[#002B62] font-semibold text-sm mb-4 uppercase tracking-wider">
+                      {section.title.toUpperCase()}
+                    </h3>
+                    <ul className="space-y-3">
+                      {section.links.map((l) => (
+                        <li key={l.href}>
+                          <Link
+                            to={l.href}
+                            className="text-[#0862D6] text-sm hover:text-white transition-colors"
+                          >
+                            {l.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
           <div className="relative z-20 mb-32">
             <div className="flex flex-wrap ml-64 gap-2 text-sm">
-              <a href="#" className="text-[#0862D6] transition-colors">
+              <Link
+                to="/legal/privacy-policy"
+                className="text-[#0862D6] transition-colors"
+              >
                 PRIVACY POLICY
-              </a>
+              </Link>
               <span className="text-[#0862D6]">|</span>
-              <a href="#" className="text-[#0862D6] transition-colors">
+              <Link
+                to="/legal/terms-and-conditions"
+                className="text-[#0862D6] transition-colors"
+              >
                 TERMS & CONDITIONS
-              </a>
+              </Link>
               <span className="text-[#0862D6]">|</span>
-              <a href="#" className="text-[#0862D6] transition-colors">
+              <Link
+                to="/legal/refund-policy"
+                className="text-[#0862D6] transition-colors"
+              >
                 REFUND POLICY
-              </a>
+              </Link>
               <span className="text-[#0862D6]">|</span>
-              <a href="#" className="text-[#0862D6] transition-colors">
+              <Link
+                to="/legal/disclaimer"
+                className="text-[#0862D6] transition-colors"
+              >
                 DISCLAIMER
-              </a>
+              </Link>
             </div>
           </div>
         </div>

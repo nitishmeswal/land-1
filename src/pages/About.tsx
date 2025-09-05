@@ -419,7 +419,7 @@ export default function AboutPage() {
                   </p>
                 </div>
 
-                <p className="text-muted-foreground mb-6 text-center md:text-left px-2 md:px-0">
+                <p className="text-muted mb-6 text-center md:text-left px-2 md:px-0">
                   At Neurolov, we believe that the future of AI should be open,
                   accessible, and equitable. Our mission is to break down the
                   barriers that currently restrict access to AI compute
@@ -431,7 +431,7 @@ export default function AboutPage() {
                   <div className="h-px w-full bg-gradient-to-r from-transparent via-#0361DA/20 to-transparent my-5"></div>
                 )}
 
-                <p className="text-muted-foreground mb-6 text-center md:text-left px-2 md:px-0">
+                <p className="text-muted mb-6 text-center md:text-left px-2 md:px-0">
                   By building a decentralized network that connects GPU
                   providers with AI users, we're creating a more efficient
                   ecosystem where unused compute resources can be shared and
@@ -441,7 +441,7 @@ export default function AboutPage() {
                 {useIsMobile() && (
                   <div className="h-px w-full bg-gradient-to-r from-transparent via-#0361DA/20 to-transparent my-5"></div>
                 )}
-                <p className="text-muted-foreground text-center md:text-left px-2 md:px-0">
+                <p className="text-muted text-center md:text-left px-2 md:px-0">
                   We're committed to an open, transparent approach to
                   development, with a strong focus on building a sustainable
                   community-governed platform where all stakeholders have a

@@ -26,7 +26,6 @@ import {
 } from "lucide-react";
 import { useParams, useNavigate } from "react-router-dom";
 import AIModelCard from "@/components/common/AIModelCard";
-import { PatternBackground } from "@/components/common/Highlight";
 
 export default function ProductsPage() {
   const { tab = "compute" } = useParams();

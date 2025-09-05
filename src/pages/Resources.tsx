@@ -233,7 +233,7 @@ export default function ResourcesPage() {
               >
                 Previous
               </Button>
-              <div className="flex items-center px-4">
+              <div className="flex text-white items-center px-4">
                 Page {currentPage} of {totalPages}
               </div>
               <Button

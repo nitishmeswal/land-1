@@ -279,7 +279,7 @@ export default function TokenPage() {
                     <CheckCircle2 className="h-5 w-5 text-neuro-500 mr-3 mt-0.5" />
                     <div>
                       <h4 className="font-medium text-white">Network Access</h4>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm text-muted">
                         Pay for compute resources, AI services, and other
                         network capabilities
                       </p>
@@ -291,7 +291,7 @@ export default function TokenPage() {
                       <h4 className="font-medium text-white">
                         Provider Rewards
                       </h4>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm text-muted">
                         Earn tokens by contributing compute resources to the
                         network
                       </p>
@@ -303,7 +303,7 @@ export default function TokenPage() {
                       <h4 className="font-medium text-white">
                         Governance Rights
                       </h4>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm text-muted">
                         Shape the future of the platform through DAO voting
                       </p>
                     </div>
@@ -314,7 +314,7 @@ export default function TokenPage() {
                       <h4 className="font-medium text-white">
                         Staking Benefits
                       </h4>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm text-muted">
                         Stake tokens to secure the network and earn passive
                         income
                       </p>
@@ -371,7 +371,7 @@ export default function TokenPage() {
                         Seed Round
                       </h3>
 
-                      <p className="text-muted-foreground">
+                      <p className="text-muted">
                         Initial funding round with strategic partners and early
                         supporters
                       </p>
@@ -402,7 +402,7 @@ export default function TokenPage() {
                         NeuroSwarm Launch
                       </h3>
 
-                      <p className="text-muted-foreground">
+                      <p className="text-muted">
                         Public testnet deployment with initial network features
                       </p>
                     </div>
@@ -431,7 +431,7 @@ export default function TokenPage() {
                         Private Round
                       </h3>
 
-                      <p className="text-muted-foreground">
+                      <p className="text-muted">
                         Exclusive token sale for strategic partners and early
                         backers
                       </p>
@@ -460,7 +460,7 @@ export default function TokenPage() {
                         Presale Round
                       </h3>
 
-                      <p className="text-muted-foreground">
+                      <p className="text-muted">
                         Early access token sale with limited allocation before
                         public launch
                       </p>
@@ -489,7 +489,7 @@ export default function TokenPage() {
                         Public Round
                       </h3>
 
-                      <p className="text-muted-foreground">
+                      <p className="text-muted">
                         Community token sale with tiered allocation system
                       </p>
                     </div>
@@ -515,7 +515,7 @@ export default function TokenPage() {
                       <h3 className="text-xl text-white font-bold mb-2">
                         Token Generation Event
                       </h3>
-                      <p className="text-muted-foreground">
+                      <p className="text-muted">
                         Official $NLOV token launch and distribution to
                         participants
                       </p>
@@ -545,7 +545,7 @@ export default function TokenPage() {
                         Staking Launch
                       </h3>
 
-                      <p className="text-muted-foreground">
+                      <p className="text-muted">
                         Staking program activation with rewards distribution
                       </p>
                     </div>
@@ -574,7 +574,7 @@ export default function TokenPage() {
                         Liquidity
                       </h3>
 
-                      <p className="text-muted-foreground">
+                      <p className="text-muted">
                         Liquidity provision on major decentralized exchanges
                       </p>
                     </div>
@@ -602,7 +602,7 @@ export default function TokenPage() {
                       <h3 className="text-xl text-white font-bold mb-2">
                         Governance Launch
                       </h3>
-                      <p className="text-muted-foreground">
+                      <p className="text-muted">
                         Community governance system activation with proposal
                         voting
                       </p>
@@ -649,7 +649,7 @@ export default function TokenPage() {
                       <h4 className="font-medium text-white">
                         Token Standard: Solana SPL
                       </h4>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm text-muted">
                         Built on Solana for fast and low-cost transactions
                       </p>
                     </div>
@@ -884,11 +884,11 @@ export default function TokenPage() {
                 />
               </div>
 
-              <div className="md:w-1/2 w-full">
+              <div className="md:w-1/2 w-full text-white">
                 <h3 className="text-2xl font-bold mb-4">
                   Platform Fee Structure
                 </h3>
-                <p className="text-muted-foreground mb-6">
+                <p className="                                       mb-6">
                   NLOV tokens are used for all transactions on the Neurolov
                   platform, creating consistent utility and demand.
                 </p>
@@ -966,7 +966,7 @@ export default function TokenPage() {
                     </CardHeader>
                     <CardContent>
                       {faq.answer.includes("•") ? (
-                        <ul className="text-muted-foreground list-none space-y-2">
+                        <ul className="text-black list-none space-y-2">
                           {faq.answer
                             .split("•")
                             .filter((item) => item.trim() !== "")
@@ -978,7 +978,7 @@ export default function TokenPage() {
                             ))}
                         </ul>
                       ) : (
-                        <p className="text-muted-foreground">{faq.answer}</p>
+                        <p className="text-black">{faq.answer}</p>
                       )}
                     </CardContent>
                   </Card>

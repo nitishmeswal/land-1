@@ -29,7 +29,7 @@ const Index = () => {
   return (
     <div className="bg-[#030924]">
       <LandingWithMarquee />
-      <Header logoSrc="header/logo.png" />
+      <Header />
       <BottomLineFix />
       <main>
         <div

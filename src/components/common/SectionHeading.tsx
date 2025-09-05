@@ -43,9 +43,7 @@ export default function SectionHeading({
         ></div>
       </h2>
 
-      {subtitle && (
-        <p className="text-muted-foreground max-w-2xl mx-auto">{subtitle}</p>
-      )}
+      {subtitle && <p className="text-muted max-w-2xl mx-auto">{subtitle}</p>}
     </div>
   );
 }

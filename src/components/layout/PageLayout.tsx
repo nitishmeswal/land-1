@@ -1,6 +1,4 @@
 import { useEffect } from "react";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import { SectionContainer } from "@/components/ui/Container";
 import LandingWithMarquee from "../InfiniteSlidingHeader";
 import Header from "../Header";
@@ -29,7 +27,7 @@ export default function PageLayout({
   return (
     <div className="bg-[#030924]">
       <LandingWithMarquee />
-      <Header logoSrc="header/logo.png" />
+      <Header />
       <main>
         {/* Page header */}
         <SectionContainer className="pt-40 pb-16 relative ">
@@ -37,9 +35,7 @@ export default function PageLayout({
             <h1 className="text-4xl md:text-5xl font-bold mb-6 hero-text-gradient">
               {title}
             </h1>
-            {subtitle && (
-              <p className="text-xl text-muted-foreground">{subtitle}</p>
-            )}
+            {subtitle && <p className="text-xl text-muted">{subtitle}</p>}
           </div>
         </SectionContainer>
 

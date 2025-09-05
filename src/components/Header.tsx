@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 type NavItem = {
   label: string;
@@ -6,7 +7,6 @@ type NavItem = {
 };
 
 type Props = {
-  logoSrc: string;
   nav?: NavItem[];
   ctaLabel?: string;
   ctaHref?: string;
@@ -23,34 +23,30 @@ const DEFAULT_NAV: NavItem[] = [
 ];
 
 const Header: React.FC<Props> = ({
-  logoSrc,
   nav = DEFAULT_NAV,
   ctaLabel = "JOIN PRESALE",
   ctaHref = "#presale",
   className = "",
 }) => {
   return (
-    <header
-      className={`header-root ${className}`}
-      role="banner"
-      aria-label="Site header"
-    >
+    <header className={`header-root `} role="banner" aria-label="Site header">
       <div className="header-outer">
         <div className="header-inner">
-          <a className="brand" href="/" aria-label="Homepage">
-            <img className="brand-logo" src={logoSrc} alt="" />
-          </a>
+          <Link className="brand" to="/" aria-label="Homepage">
+            <img className="brand-logo" src="/header/logo.png" alt="" />
+          </Link>
+
           <div className="end-group">
             <nav className="nav" aria-label="Primary">
               <ul className="nav-list">
                 {nav.map((item) => (
                   <li key={item.href} className="nav-li">
-                    <a
-                      href={item.href}
+                    <Link
+                      to={item.href}
                       className=" text-white hover:text-white "
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
