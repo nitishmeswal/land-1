@@ -89,6 +89,9 @@ const ComputePowerSharing: React.FC = () => {
 
         <div className="mt-10 lg:mt-16 z-10 pb-6">
           <button
+            onClick={() => {
+              window.open("https://swarm.neurolov.ai", "_blank");
+            }}
             className="relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-black transition-all duration-300 hover:shadow-[0_0_20px_rgba(137,189,255,0.8)]"
             style={{
               backgroundImage: "url('/compute/button.png')",

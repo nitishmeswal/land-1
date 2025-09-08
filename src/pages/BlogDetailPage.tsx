@@ -2,9 +2,6 @@ import { useParams, Link } from "react-router-dom";
 import { getBlogBySlug } from "@/utils/blogLoader";
 import { useEffect } from "react";
 import { SectionContainer } from "@/components/ui/Container";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import { PatternBackground } from "@/components/common/Highlight";
 import { marked } from "marked";
 import PageLayout from "@/components/layout/PageLayout";
 
@@ -19,8 +16,7 @@ export default function BlogDetailPage() {
   if (!blog) {
     return (
       <PageLayout title="Blog Detail" subtitle="Blog Detail">
-        <Navbar />
-        <main className="min-h-screen pt-24 pb-16 flex items-center">
+        <main className=" pt-24 pb-16 flex items-center">
           <SectionContainer>
             <div className="max-w-lg mx-auto text-center">
               <div className="glass-card p-10 rounded-2xl shadow-card border border-white/20">
@@ -37,14 +33,12 @@ export default function BlogDetailPage() {
             </div>
           </SectionContainer>
         </main>
-        <Footer />
       </PageLayout>
     );
   }
 
   return (
     <PageLayout title="Blog Detail" subtitle="Blog Detail">
-      <Navbar />
       <main className="min-h-screen pt-24 pb-16 ">
         <SectionContainer>
           <article className="max-w-3xl mx-auto  rounded-2xl shadow-card p-6 md:p-12 border border-gray-200 dark:border-blue-900/30">
@@ -102,7 +96,6 @@ export default function BlogDetailPage() {
           </article>
         </SectionContainer>
       </main>
-      <Footer />
     </PageLayout>
   );
 }

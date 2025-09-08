@@ -153,7 +153,12 @@ const TokenShowcase: React.FC = () => {
         </div>
       </div>
       <div className="flex justify-center mb-16">
-        <button className="w-full max-w-[230px] relative px-6 md:px-8 py-3 md:py-4 rounded-xl text-black font-semibold text-base md:text-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(137,189,255,0.8)]">
+        <button
+          onClick={() => {
+            window.location.href = "/whitepaper";
+          }}
+          className="w-full max-w-[230px] relative px-6 md:px-8 py-3 md:py-4 rounded-xl text-black font-semibold text-base md:text-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(137,189,255,0.8)]"
+        >
           <div className="absolute inset-0">
             <img
               src="/landing-ai-model/button-bg.png"

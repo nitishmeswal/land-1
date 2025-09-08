@@ -81,18 +81,38 @@ const NeurolovFooter: React.FC = () => {
               </p>
 
               <div className="flex space-x-4">
-                <div className="w-10 h-10 flex items-center justify-center">
+                <a
+                  href="https://x.com/neurolov"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 flex items-center justify-center"
+                >
                   <img src="/footer/x.png" alt="x" />
-                </div>
-                <div className="w-10 h-10 flex items-center justify-center">
+                </a>
+                <a
+                  href="https://t.me/neurolovcommunity"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 flex items-center justify-center"
+                >
                   <img src="/footer/telegram.png" alt="Telegram" />
-                </div>
-                <div className="w-10 h-10  flex items-center justify-center">
+                </a>
+                <a
+                  href="https://discord.com/invite/RfBDQUarvv"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10  flex items-center justify-center"
+                >
                   <img src="/footer/discord.png" alt="Discord" />
-                </div>
-                <div className="w-10 h-10  flex items-center justify-center">
+                </a>
+                <a
+                  href="https://github.com/neuroIov"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10  flex items-center justify-center"
+                >
                   <img src="/footer/github.png" alt="GitHub" />
-                </div>
+                </a>
               </div>
 
               <div className="mt-6 font-bold text-[#002B62] text-xs">

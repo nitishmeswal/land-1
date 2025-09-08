@@ -13,10 +13,7 @@ export function Container({
 }: ContainerProps) {
   return (
     <Component
-      className={cn(
-        "mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8",
-        className
-      )}
+      className={cn("mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8", className)}
     >
       {children}
     </Component>
@@ -29,7 +26,7 @@ export function SectionContainer({
   as: Component = "section",
 }: ContainerProps) {
   return (
-    <Component className={cn("w-full bg-blue-900/5 dark:bg-blue-950/20", "section-spacing", className)}>
+    <Component className={cn("w-full ", "section-spacing", className)}>
       <Container>{children}</Container>
     </Component>
   );

@@ -36,7 +36,12 @@ export default function Team() {
         </div>
       </div>
       <div className="flex justify-center items-center mt-12">
-        <button className="relative px-4 py-3 rounded-xl text-black font-semibold text-sm md:text-base overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(137,189,255,0.8)]">
+        <button
+          onClick={() => {
+            window.location.href = "/about/team";
+          }}
+          className="relative px-4 py-3 rounded-xl text-black font-semibold text-sm md:text-base overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(137,189,255,0.8)]"
+        >
           <div className="absolute inset-0">
             <img
               src="/landing-ai-model/button-bg.png"
