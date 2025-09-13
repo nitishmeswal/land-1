@@ -20,14 +20,18 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    sourcemap: true,
+    sourcemap: false,
     minify: 'terser',
     emptyOutDir: true,
+    target: 'es2015',
     rollupOptions: {
       output: {
         manualChunks: {
           'vendor-react': ['react', 'react-dom'],
-          'vendor-chart': ['chart.js', 'react-chartjs-2']
+          'vendor-router': ['react-router-dom'],
+          'vendor-chart': ['chart.js', 'react-chartjs-2'],
+          'vendor-ui': ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-tabs'],
+          'vendor-utils': ['clsx', 'tailwind-merge', 'class-variance-authority']
         },
         format: 'es',
         entryFileNames: 'assets/js/[name]-[hash].js',
@@ -38,7 +42,8 @@ export default defineConfig(({ mode }) => ({
         if (warning.code === 'MODULE_LEVEL_DIRECTIVE' || 
             warning.code === 'CIRCULAR_DEPENDENCY' ||
             warning.code === 'MISSING_NODE_BUILTINS' ||
-            warning.code === 'CASE_SENSITIVE_IMPORT') {
+            warning.code === 'CASE_SENSITIVE_IMPORT' ||
+            warning.code === 'UNRESOLVED_IMPORT') {
           return;
         }
         warn(warning);
@@ -73,6 +78,10 @@ export default defineConfig(({ mode }) => ({
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom', 'chart.js', 'react-chartjs-2'],
-    exclude: []
+    exclude: [],
+    force: true
+  },
+  define: {
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
   }
 }));
