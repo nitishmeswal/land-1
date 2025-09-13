@@ -29,7 +29,6 @@ import {
 import ContactForm, { ContactFormData } from "@/components/common/ContactForm";
 import { PatternBackground } from "@/components/common/Highlight";
 
-// Team data
 const teamMembers = [
   {
     name: "Dhruv Panchal",
@@ -118,7 +117,6 @@ const teamMembers = [
   },
 ];
 
-// Advisor data
 const advisors = [
   {
     name: "Chandra S Katta",
@@ -142,7 +140,7 @@ const advisors = [
   {
     name: "Peter Yeo",
     role: " Business  Advisor ",
-    bio: "Led $1T Toyota Project & $4B Dentsu-Aegis M&A integration.Mined 1,000 BTC in 2009; founded CloudminingSG powering 10% of global LTC/DOGE hashrate.Co-founded XinFin (XDC), raised $20M ICO—now $7B valuation.Mentored Sparrow Exchange (acquired by Temasek-backed Amber Group).Launched RWA-DAO & world’s 1st fractional NFT luxury watch via Encrypto.cc.",
+    bio: "Led $1T Toyota Project & $4B Dentsu-Aegis M&A integration.Mined 1,000 BTC in 2009; founded CloudminingSG powering 10% of global LTC/DOGE hashrate.Co-founded XinFin (XDC), raised $20M ICO—now $7B valuation.Mentored Sparrow Exchange (acquired by Temasek-backed Amber Group).Launched RWA-DAO & world's 1st fractional NFT luxury watch via Encrypto.cc.",
     image: "/business.png",
     social: {
       linkedin: "https://www.linkedin.com/in/peteryeo/",
@@ -168,7 +166,6 @@ const advisors = [
   },
 ];
 
-// Company milestones
 const milestones = [
   {
     year: "2022",
@@ -201,7 +198,6 @@ const milestones = [
   },
 ];
 
-// Core values
 const coreValues = [
   {
     title: "Decentralization",
@@ -264,7 +260,6 @@ export default function AboutPage() {
             </TabsList>
           </div>
 
-          {/* Team Tab */}
           <TabsContent value="team" className="space-y-16">
             <div>
               <SectionHeading
@@ -276,10 +271,10 @@ export default function AboutPage() {
                 {teamMembers.map((member, index) => (
                   <div
                     key={index}
-                    className="glass-card p-6 rounded-xl border border-#0361DA/10 hover:border-#0361DA/30 transition-all duration-300 relative min-h-[320px]"
+                    className="glass-card p-6 rounded-xl border border-#0361DA/10 hover:border-#0361DA/30 transition-all duration-300 relative min-h-[320px] flex flex-col"
                   >
-                    <div className="flex items-center space-x-4 mb-4">
-                      <div className="w-24 h-24 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center">
+                    <div className="flex flex-col items-center text-center mb-4">
+                      <div className="w-24 h-24 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-3">
                         <img
                           src={member.image}
                           alt={member.name}
@@ -311,7 +306,7 @@ export default function AboutPage() {
                       </div>
                     </div>
 
-                    <p className="text-sm text-muted-foreground mb-12">
+                    <p className="text-sm text-muted-foreground mb-12 flex-grow">
                       {member.bio}
                     </p>
 
@@ -352,10 +347,10 @@ export default function AboutPage() {
                 {advisors.map((advisor, index) => (
                   <div
                     key={index}
-                    className="glass-card p-6 rounded-xl border border-white/10 hover:border-#0361DA/20 transition-all duration-300 relative min-h-[320px]"
+                    className="glass-card p-6 rounded-xl border border-white/10 hover:border-#0361DA/20 transition-all duration-300 relative min-h-[320px] flex flex-col"
                   >
-                    <div className="flex items-center space-x-4 mb-4">
-                      <div className="w-24 h-24 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center">
+                    <div className="flex flex-col items-center text-center mb-4">
+                      <div className="w-24 h-24 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center mb-3">
                         <img
                           src={advisor.image}
                           alt={advisor.name}
@@ -380,7 +375,7 @@ export default function AboutPage() {
                         <p className="text-sm text-blue-400">{advisor.role}</p>
                       </div>
                     </div>
-                    <p className="text-sm text-muted-foreground mb-12">
+                    <p className="text-sm text-muted-foreground mb-12 flex-grow">
                       {advisor.bio}
                     </p>
                     <div className="absolute bottom-6 left-6 flex items-center space-x-3">
@@ -401,7 +396,6 @@ export default function AboutPage() {
             </div>
           </TabsContent>
 
-          {/* Mission Tab */}
           <TabsContent value="mission" className="space-y-16">
             <div className="flex flex-col md:flex-row gap-10 items-center">
               <div className="md:w-1/2">
@@ -464,7 +458,6 @@ export default function AboutPage() {
             </div>
           </TabsContent>
 
-          {/* Contact Tab */}
           <TabsContent value="contact" className="space-y-16">
             <div className="max-w-md mx-auto">
               <div className="bg-[#0361DA] p-8 rounded-xl">
