@@ -32,13 +32,17 @@ const ComputePowerSharing: React.FC = () => {
 
         <div className="relative w-full max-w-7xl mx-auto z-10 px-4">
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full flex items-center justify-center">
-            <div className="glowing-line w-full h-auto max-w-6xl">
-              <img
-                src="/compute/line.png"
-                alt=""
-                className="w-full h-auto object-contain"
-              />
-            </div>
+            <img
+              src="/compute/line.png"
+              alt=""
+              className="w-full h-auto max-w-6xl object-contain"
+              aria-hidden="true"
+            />
+
+            <div
+              className="line-glow-overlay pointer-events-none absolute inset-0 mx-auto w-full max-w-6xl"
+              aria-hidden="true"
+            />
           </div>
 
           <div className="absolute left-4 sm:left-8 lg:left-16 top-1/2 -translate-y-1/2 hidden sm:block z-10">
@@ -108,40 +112,39 @@ const ComputePowerSharing: React.FC = () => {
       </div>
 
       <style>{`
-        .glowing-line {
-  position: relative;
-  overflow: hidden;
+.line-glow-overlay {
+  aspect-ratio: 2048 / 702;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  background:
+    linear-gradient(90deg,
+      rgba(172,210,255,0) 0%,
+      rgba(172,210,255,0.22) 35%,
+      rgba(172,210,255,0.85) 50%,
+      rgba(172,210,255,0.22) 65%,
+      rgba(172,210,255,0) 100%) center/300% 100% no-repeat;
+  animation: sweep-rtl 3s linear infinite;
+
+  -webkit-mask-image: url('/compute/line.png');
+  mask-image: url('/compute/line.png');
+  -webkit-mask-mode: alpha;
+  mask-mode: alpha;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: center;
+  mask-position: center;
+
 }
 
-.glowing-line::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(172, 210, 255, 0.3) 25%,
-    rgba(172, 210, 255, 0.8) 50%,
-    rgba(172, 210, 255, 0.3) 75%,
-    transparent 100%
-  );
-  animation: glowSweep 3s linear infinite;
-  z-index: 1;
+@keyframes sweep-rtl {
+  0%   { background-position: 100% 0%; }
+  100% { background-position: -100% 0%; }
 }
 
-@keyframes glowSweep {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 100%;
-  }
-}
-
-      `}</style>
+`}</style>
     </div>
   );
 };

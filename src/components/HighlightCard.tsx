@@ -46,7 +46,7 @@ export function HighlightCard({
     <motion.div
       className="rounded-3xl shadow-lg backdrop-blur-sm border border-blue-900/20 overflow-hidden relative card-contianer"
       style={{
-        top: `calc(35vh + ${index * 16}px)`,
+        top: `calc(25vh + ${index * 16}px)`,
         scale: progress ? scale : 1,
       }}
       initial={{ opacity: 0, y: 20 }}
