@@ -31,15 +31,12 @@ const ComputePowerSharing: React.FC = () => {
         </div>
 
         <div className="relative w-full max-w-7xl mx-auto z-10 px-4">
-          <div
-            className="pointer-events-none absolute inset-0 flex items-center justify-center"
-            aria-hidden="true"
-          >
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full flex items-center justify-center">
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full flex items-center justify-center">
+            <div className="glowing-line w-full h-auto max-w-6xl">
               <img
                 src="/compute/line.png"
                 alt=""
-                className="w-full h-auto max-w-6xl object-contain"
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>
@@ -109,6 +106,42 @@ const ComputePowerSharing: React.FC = () => {
           </button>
         </div>
       </div>
+
+      <style>{`
+        .glowing-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.glowing-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(172, 210, 255, 0.3) 25%,
+    rgba(172, 210, 255, 0.8) 50%,
+    rgba(172, 210, 255, 0.3) 75%,
+    transparent 100%
+  );
+  animation: glowSweep 3s linear infinite;
+  z-index: 1;
+}
+
+@keyframes glowSweep {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+      `}</style>
     </div>
   );
 };

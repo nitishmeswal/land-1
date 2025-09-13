@@ -7,34 +7,40 @@ export default function Team() {
         <h1 className="text-5xl font-semibold text-[#ACD2FF]">Meet Our Team</h1>
       </div>
 
-      <div className="relative flex flex-col md:flex-row items-center md:items-start gap-6">
+      <section className="relative  px-6 md:px-12 py-12 overflow-hidden">
         <img
           src="/token/glow.png"
           alt="spotlight"
-          className="absolute inset-0 w-full h-full object-cover z-0 mt-24"
+          className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
         />
-        <div className="w-full md:w-1/2 relative z-10">
-          <img
-            src="/token/team-1.png"
-            alt="Team"
-            className="w-full h-full object-contain"
-          />
+
+        <div className="relative z-10 flex flex-col md:flex-row md:items-start items-center gap-6">
+          <div className="w-full md:w-1/2">
+            <img
+              src="/token/team-1.png"
+              alt="Team"
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+          <div className="w-full md:w-1/2">
+            <img
+              src="/token/team-2.png"
+              alt="Team"
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+          <div className="w-full md:w-1/2">
+            <img
+              src="/token/team-3.png"
+              alt="Team"
+              className="w-full h-full object-contain"
+            />
+          </div>
         </div>
-        <div className="w-full md:w-1/2 relative z-10">
-          <img
-            src="/token/team-2.png"
-            alt="Team"
-            className="w-full h-full object-contain"
-          />
-        </div>
-        <div className="w-full md:w-1/2 relative z-10">
-          <img
-            src="/token/team-3.png"
-            alt="Team"
-            className="w-full h-full object-contain"
-          />
-        </div>
-      </div>
+      </section>
+
       <div className="flex justify-center items-center mt-12">
         <button
           onClick={() => {

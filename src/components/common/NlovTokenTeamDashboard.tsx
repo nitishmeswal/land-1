@@ -11,8 +11,8 @@ const tokenInfo = [
   { label: "Total supply", value: "500K" },
   { label: "Ticker", value: "$NLOV" },
   { label: "Chain", value: "SOL" },
-  { label: "Current Price", value: "0.03" },
-  { label: "TGE Price", value: "$0.55" },
+  { label: "Current Price", value: "0.02" },
+  { label: "TGE Price", value: "$0.08" },
   { label: "Fully Diluted Price", value: "0.23 $NLOV" },
 ];
 
@@ -208,10 +208,8 @@ const TokenShowcase: React.FC = () => {
                       key={item.label}
                       className="flex justify-between items-center py-1.5 border-b border-white/20 last:border-b-0"
                     >
-                      <span className="text-[#4b5ba1] text-xs">
-                        {item.label}
-                      </span>
-                      <span className="text-[#9AACF9] font-medium text-xs">
+                      <span className="text-white text-xs">{item.label}</span>
+                      <span className="text-white font-medium text-xs">
                         {item.value}
                       </span>
                     </div>
