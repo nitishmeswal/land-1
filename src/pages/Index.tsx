@@ -1,26 +1,17 @@
 "use client";
-import { useEffect, useState, Suspense, lazy } from "react";
+import { useEffect, useState } from "react";
 import Hero from "@/components/home/Hero";
+import AIModelsSection from "@/components/common/AIModelsSection";
+import NlovTokenDashboard from "@/components/common/NlovTokenTeamDashboard";
+import WhyNeurolov from "@/components/common/poweredby";
+import ComputePowerSharing from "@/components/ComputePowerSharing";
+import LandingWithMarquee from "@/components/InfiniteSlidingHeader";
 import Header from "@/components/Header";
 import BottomLineFix from "@/components/BottomLineFix";
-
-const AIModelsSection = lazy(
-  () => import("@/components/common/AIModelsSection")
-);
-const NlovTokenDashboard = lazy(
-  () => import("@/components/common/NlovTokenTeamDashboard")
-);
-const WhyNeurolov = lazy(() => import("@/components/common/poweredby"));
-const ComputePowerSharing = lazy(
-  () => import("@/components/ComputePowerSharing")
-);
-const LandingWithMarquee = lazy(
-  () => import("@/components/InfiniteSlidingHeader")
-);
-const NeurolovFooter = lazy(() => import("@/components/common/Footer"));
-const LatestUpdates = lazy(() => import("@/components/common/LatestUpdates"));
-const Team = lazy(() => import("@/components/common/Team"));
-const Highlight = lazy(() => import("@/components/Highlight"));
+import NeurolovFooter from "@/components/common/Footer";
+import LatestUpdates from "@/components/common/LatestUpdates";
+import Team from "@/components/common/Team";
+import Highlight from "@/components/Highlight";
 
 const Index = () => {
   const [showBg2, setShowBg2] = useState(false);
@@ -37,9 +28,7 @@ const Index = () => {
 
   return (
     <div className="bg-[#030924]">
-      <Suspense fallback={<div />}>
-        <LandingWithMarquee />
-      </Suspense>
+      <LandingWithMarquee />
       <Header />
       <BottomLineFix />
       <main>
@@ -73,43 +62,27 @@ const Index = () => {
           <Hero />
         </div>
         <div>
-          <Suspense fallback={<div />}>
-            <WhyNeurolov />
-          </Suspense>
+          <WhyNeurolov />
         </div>
         <div className="mt-20 ">
-          <Suspense fallback={<div />}>
-            <ComputePowerSharing />
-          </Suspense>
+          <ComputePowerSharing />
         </div>
         <div className="mt-20">
-          <Suspense fallback={<div />}>
-            <Highlight />
-          </Suspense>
+          <Highlight />
         </div>
         <div className="mt-20 ">
-          <Suspense fallback={<div />}>
-            <AIModelsSection />
-          </Suspense>
+          <AIModelsSection />
         </div>
         <div className="mt-20 bg-[url('/token/bg.png')] bg-fill">
-          <Suspense fallback={<div />}>
-            <NlovTokenDashboard />
-          </Suspense>
+          <NlovTokenDashboard />
         </div>
         <div className="mt-20 bg-[url('/updates/star-bg.png')] bg-cover bg-center bg-no-repeat">
-          <Suspense fallback={<div />}>
-            <Team />
-          </Suspense>
-          <Suspense fallback={<div />}>
-            <LatestUpdates />
-          </Suspense>
+          <Team />
+          <LatestUpdates />
         </div>
       </main>
       <div className="py-10">
-        <Suspense fallback={<div />}>
-          <NeurolovFooter />
-        </Suspense>
+        <NeurolovFooter />
       </div>
     </div>
   );
