@@ -91,7 +91,7 @@ const roadmapData = [
     ],
   },
   {
-    title: "Q3 2025 - Token Launch & Governance",
+    title: "Q3 2025 - Token Presale",
     status: "in-progress",
     items: [
       "$NLOV Token Presale Start – Initial presale rounds begin.",
