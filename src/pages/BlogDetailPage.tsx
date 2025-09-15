@@ -75,7 +75,7 @@ export default function BlogDetailPage() {
               </div>
               <p className="text-lg italic mb-2 text-white">{blog.summary}</p>
             </header>
-            <div className="prose prose-lg prose-blue dark:prose-invert max-w-none leading-relaxed text-white">
+            <div className="prose prose-lg max-w-none leading-relaxed prose-headings:text-white prose-p:text-white prose-strong:text-white prose-a:text-[#0361DA] prose-li:text-white prose-ol:text-white prose-ul:text-white dark:prose-invert">
               <div
                 dangerouslySetInnerHTML={{ __html: marked.parse(blog.content) }}
               />
