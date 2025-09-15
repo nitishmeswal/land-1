@@ -155,6 +155,14 @@ const partners = [
   { name: "", logo: "/partner/29.png" },
   { name: "", logo: "/partner/30.png" },
   { name: "", logo: "/partner/31.png" },
+  { name: "", logo: "/partner/32.webp" },
+  { name: "", logo: "/partner/33.png" },
+  { name: "", logo: "/partner/34.png" },
+  { name: "", logo: "/partner/35.png" },
+  { name: "", logo: "/partner/36.png" },
+  { name: "", logo: "/partner/37.png" },
+  { name: "", logo: "/partner/38.png" },
+  { name: "", logo: "/partner/39.png" },
 ];
 
 export default function EcosystemPage() {
