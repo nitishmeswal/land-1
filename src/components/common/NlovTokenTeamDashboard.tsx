@@ -8,12 +8,12 @@ type CardProps = {
 };
 
 const tokenInfo = [
-  { label: "Total supply", value: "500K" },
+  { label: "Total supply", value: "500M" },
   { label: "Ticker", value: "$NLOV" },
   { label: "Chain", value: "SOL" },
-  { label: "Current Price", value: "0.02" },
+  { label: "Current Price", value: "$0.02" },
   { label: "TGE Price", value: "$0.08" },
-  { label: "Fully Diluted Price", value: "0.23 $NLOV" },
+  { label: "Fully Diluted Value", value: "$40M" },
 ];
 
 const Card: React.FC<CardProps> = ({ title, subtitle, img, className }) => {
