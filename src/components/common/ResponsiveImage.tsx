@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 
 interface Size {
   width: number;
@@ -9,46 +9,65 @@ interface ResponsiveImageProps {
   src: string;
   alt: string;
   desktopSize: Size;
-  tabletRatio?: number;
-  mobileRatio?: number;
   className?: string;
 }
 
-export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
+const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
   src,
   alt,
   desktopSize,
-  tabletRatio = 0.75,
-  mobileRatio = 0.5,
-  className = '',
+  className = "",
 }) => {
-  const tabletWidth = Math.round(desktopSize.width * tabletRatio);
-  const tabletHeight = Math.round(desktopSize.height * tabletRatio);
-  const mobileWidth = Math.round(desktopSize.width * mobileRatio);
-  const mobileHeight = Math.round(desktopSize.height * mobileRatio);
+  const [size, setSize] = useState<Size>(desktopSize);
+
+  // Optional: Adjust size based on window width (basic responsiveness)
+  useEffect(() => {
+    const updateSize = () => {
+      const screenWidth = window.innerWidth;
+      const scale = screenWidth < 768 ? 0.6 : screenWidth < 1024 ? 0.8 : 1.1;
+      setSize({
+        width: desktopSize.width * scale,
+        height: desktopSize.height * scale,
+      });
+    };
+
+    updateSize();
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
+  }, [desktopSize]);
 
   return (
-    <img
-      src={src}
-      alt={alt}
-      className={`w-full h-auto ${className}`}
-      style={{
-        maxWidth: '100%',
-        height: 'auto',
-      }}
-      srcSet={`
-        ${src} ${desktopSize.width}w,
-        ${src} ${tabletWidth}w,
-        ${src} ${mobileWidth}w
-      `}
-      sizes={`
-        (min-width: 1024px) ${desktopSize.width}px,
-        (min-width: 768px) ${tabletWidth}px,
-        ${mobileWidth}px
-      `}
-      width={desktopSize.width}
-      height={desktopSize.height}
-    />
+    <div
+      className="flex justify-center items-center py-8 px-4"
+      style={{ position: "relative" }}
+    >
+      <div
+        className="absolute rounded-full blur-3xl opacity-50"
+        style={{
+          width: size.width * 1.2,
+          height: size.height * 1.2,
+          background: "radial-gradient(circle, #00f0ff, #0066ff)",
+          zIndex: 0,
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+        }}
+      />
+
+      {/* Main Image */}
+      <img
+        src={src}
+        alt={alt}
+        className={`relative z-10 transition-transform duration-300 hover:scale-105 `}
+        style={{
+          maxWidth: "100%",
+          height: "auto",
+          display: "block",
+        }}
+        width={size.width}
+        height={size.height}
+      />
+    </div>
   );
 };
 

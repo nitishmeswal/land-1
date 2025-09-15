@@ -321,8 +321,22 @@ export default function TokenPage() {
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-4">
-                  <Button variant="neon">Pre Sale Coming Soon</Button>
+                <div className="flex justify-center mb-16">
+                  <button
+                    onClick={() => {
+                      window.location.href = "/whitepaper";
+                    }}
+                    className="w-full max-w-[300px] relative px-6 md:px-8 py-3 md:py-4 rounded-xl text-black font-semibold text-base md:text-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(137,189,255,0.8)]"
+                  >
+                    <div className="absolute inset-0">
+                      <img
+                        src="/landing-ai-model/button-bg.png"
+                        alt="Button Background"
+                        className="w-full h-full object-cover rounded-xl"
+                      />
+                    </div>
+                    <span className="relative z-10">Pre Sale Coming Soon</span>
+                  </button>
                 </div>
               </div>
               <div className="md:w-1/2 flex justify-center relative">
@@ -331,16 +345,11 @@ export default function TokenPage() {
                   {/* Shadow - moves with the coin */}
                   <div className="absolute left-1/2 -translate-x-1/2 bottom-[-35px] w-64 h-20  rounded-full blur-3xl animate-shadow-stretch"></div>
 
-                  {/* Tight golden glow around coin */}
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(250,204,21,0.3)_30%,transparent_70%)] rounded-full blur-md"></div>
-
                   {/* Coin image */}
                   <ResponsiveImage
-                    src="/nlov-coin.png"
+                    src="/NeurolovCoin.png"
                     alt="NLOV Token"
-                    desktopSize={{ width: 500, height: 500 }}
-                    tabletRatio={0.75}
-                    mobileRatio={0.5}
+                    desktopSize={{ width: 300, height: 300 }}
                     className="relative z-10"
                   />
                 </div>
@@ -658,40 +667,7 @@ export default function TokenPage() {
               </div>
 
               <div className="md:w-[60%] w-full">
-                <div className="glass-card p-5 md:p- md:flex-none flex flex-col items-center justify-center rounded-xl border border-neuro-500/10 bg-gradient-to-br from-neuro-500/5 to-blue-500/5">
-                  <h3 className="text-xl font-bold mb-3">Token Distribution</h3>
-                  <div className="aspect-square md:aspect-video flex md:w-full w-[105%] justify-center mx-auto mb-3 md:mb-5">
-                    <ResponsiveContainer width={"100%"} height="100%">
-                      <PieChart>
-                        <Pie
-                          data={tokenDistributionData}
-                          cx="50%"
-                          cy="50%"
-                          innerRadius={useIsMobile() ? 40 : 50}
-                          outerRadius={useIsMobile() ? 50 : 80}
-                          fill="#8884d8"
-                          paddingAngle={2}
-                          fontSize={useIsMobile() ? 7 : 14}
-                          dataKey="value"
-                          label={({ name, value }) => {
-                            if (name === "Team and Development") {
-                              return `Team\n&\nDev: ${value}%`;
-                            }
-                            if (name === "Ecosystem and Rewards") {
-                              return `Eco\n&\nRewards: ${value}%`;
-                            }
-                            return `${name}: ${value}%`;
-                          }}
-                        >
-                          {tokenDistributionData.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={entry.color} />
-                          ))}
-                        </Pie>
-                        <Tooltip formatter={(value) => `${value}%`} />
-                      </PieChart>
-                    </ResponsiveContainer>
-                  </div>
-                </div>
+                <img src="/token/graph.png" alt="Token Allocation" />
               </div>
             </div>
 
