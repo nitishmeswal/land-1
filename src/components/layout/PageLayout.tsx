@@ -18,9 +18,8 @@ export default function PageLayout({
   className = "",
 }: PageLayoutProps) {
   useEffect(() => {
-    // Scroll to top on page load
     window.scrollTo(0, 0);
-    // Update document title
+
     document.title = `${title} | Neurolov`;
   }, [title]);
 
@@ -29,7 +28,6 @@ export default function PageLayout({
       <LandingWithMarquee />
       <Header />
       <main>
-        {/* Page header */}
         <SectionContainer className="pt-48 pb-0 relative ">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 pb-2 hero-text-gradient">
@@ -39,7 +37,6 @@ export default function PageLayout({
           </div>
         </SectionContainer>
 
-        {/* Page content */}
         <div className={className}>{children}</div>
       </main>
       <NeurolovFooter />

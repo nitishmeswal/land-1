@@ -16,14 +16,14 @@ export default function BlogDetailPage() {
   if (!blog) {
     return (
       <PageLayout title="Blog Detail" subtitle="Blog Detail">
-        <main className="  flex items-center">
+        <main className="flex items-center text-white">
           <SectionContainer>
             <div className="max-w-lg mx-auto text-center">
-              <div className="glass-card p-10 rounded-2xl shadow-card border border-white/20">
-                <h1 className="text-4xl font-bold mb-6 hero-text-gradient">
+              <div className="glass-card p-10 rounded-2xl shadow-card border border-white/20 text-white">
+                <h1 className="text-4xl font-bold mb-6 hero-text-gradient text-white">
                   Blog Not Found
                 </h1>
-                <p className="text-muted-foreground mb-8">
+                <p className="mb-8 text-white">
                   Sorry, this blog post does not exist.
                 </p>
                 <Link to="/" className="text-[#0361DA] underline">
@@ -39,20 +39,20 @@ export default function BlogDetailPage() {
 
   return (
     <PageLayout title="Blog Detail" subtitle="Blog Detail">
-      <main className="min-h-screen  ">
+      <main className="min-h-screen text-white">
         <SectionContainer>
-          <article className="max-w-3xl mx-auto  rounded-2xl shadow-card p-6 md:p-12 border border-gray-200 dark:border-blue-900/30">
+          <article className="max-w-3xl mx-auto rounded-2xl shadow-card p-6 md:p-12 border border-gray-200 dark:border-blue-900/30 text-white">
             <img
               src={blog.image}
               alt={blog.title}
               className="w-full h-64 object-cover rounded-xl mb-8 shadow-md border border-gray-100 dark:border-blue-900/40"
             />
-            <header className="mb-8">
-              <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-2 text-gray-900 dark:text-white drop-shadow-sm">
+            <header className="mb-8 text-white">
+              <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-2 drop-shadow-sm text-white">
                 {blog.title}
               </h1>
-              <div className="flex items-center gap-4 text-sm text-muted-foreground mb-2">
-                <span className="inline-flex items-center gap-1">
+              <div className="flex items-center gap-4 text-sm mb-2 text-white">
+                <span className="inline-flex items-center gap-1 text-white">
                   <svg
                     className="w-4 h-4 opacity-70"
                     fill="none"
@@ -72,26 +72,21 @@ export default function BlogDetailPage() {
                     day: "numeric",
                   })}
                 </span>
-                {/* Add author or tags here if needed */}
               </div>
-              <p className="text-lg text-gray-700 dark:text-gray-200 italic mb-2">
-                {blog.summary}
-              </p>
+              <p className="text-lg italic mb-2 text-white">{blog.summary}</p>
             </header>
-            <div className="prose prose-lg prose-blue dark:prose-invert max-w-none leading-relaxed">
-              {/* eslint-disable-next-line react/no-danger */}
+            <div className="prose prose-lg prose-blue dark:prose-invert max-w-none leading-relaxed text-white">
               <div
                 dangerouslySetInnerHTML={{ __html: marked.parse(blog.content) }}
               />
             </div>
-            <footer className="mt-10 flex justify-between items-center">
+            <footer className="mt-10 flex justify-between items-center text-white">
               <Link
                 to="/"
                 className="text-[#0361DA] underline font-medium hover:opacity-80 transition"
               >
                 ← Back to Home
               </Link>
-              {/* Add social sharing or related posts here if desired */}
             </footer>
           </article>
         </SectionContainer>

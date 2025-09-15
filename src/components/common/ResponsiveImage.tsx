@@ -54,7 +54,6 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
         }}
       />
 
-      {/* Main Image */}
       <img
         src={src}
         alt={alt}
