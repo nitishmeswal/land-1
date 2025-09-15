@@ -32,7 +32,7 @@ export default function PageLayout({
         {/* Page header */}
         <SectionContainer className="pt-48 pb-0 relative ">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 hero-text-gradient">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 pb-2 hero-text-gradient">
               {title}
             </h1>
             {subtitle && <p className="text-xl text-muted">{subtitle}</p>}

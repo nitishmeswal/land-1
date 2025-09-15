@@ -299,7 +299,7 @@ export default function EcosystemPage() {
               {filteredPartners.map((partner, index) => (
                 <div
                   key={`${partner.name}-${index}`}
-                  className="flex-shrink-0 w-full max-w-36 md:max-w-44 mt-10 aspect-square bg-[#0361DA]/90  rounded-lg p-4 border border-[#0361DA]/60 hover:border-[#0361DA]/70 transition-all duration-300 flex items-center justify-center"
+                  className="flex-shrink-0 w-full max-w-36 md:max-w-44 mt-10 aspect-square   rounded-lg  border-2 border-[#0361DA]/60 hover:border-[#0361DA]/70 transition-all duration-300 flex items-center justify-center"
                 >
                   <img
                     src={partner.logo}

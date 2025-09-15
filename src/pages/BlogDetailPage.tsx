@@ -16,7 +16,7 @@ export default function BlogDetailPage() {
   if (!blog) {
     return (
       <PageLayout title="Blog Detail" subtitle="Blog Detail">
-        <main className=" pt-24 pb-16 flex items-center">
+        <main className="  flex items-center">
           <SectionContainer>
             <div className="max-w-lg mx-auto text-center">
               <div className="glass-card p-10 rounded-2xl shadow-card border border-white/20">
@@ -39,7 +39,7 @@ export default function BlogDetailPage() {
 
   return (
     <PageLayout title="Blog Detail" subtitle="Blog Detail">
-      <main className="min-h-screen pt-24 pb-16 ">
+      <main className="min-h-screen  ">
         <SectionContainer>
           <article className="max-w-3xl mx-auto  rounded-2xl shadow-card p-6 md:p-12 border border-gray-200 dark:border-blue-900/30">
             <img
