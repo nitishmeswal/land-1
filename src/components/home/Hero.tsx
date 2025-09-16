@@ -316,36 +316,39 @@ export default function Hero() {
                   <div className="block text-center lg:text-start pl-4 font-sans text-lg font-normal sm:text-4xl md:text-5xl text-white">
                     The WORLD'S FIRST
                   </div>
-                  <div className="inline-block relative">
-                    <div className="absolute top-1 -left-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
-                    <div className="absolute top-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
-                    <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
-                    <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
-                    <span className="block font-sans space-x-2 text-lg p-2 border-2 border-b-0 border-[#265CA8] mt-2 sm:text-4xl md:text-5xl text-[#318AF3] relative">
-                      <span
-                        className="absolute inset-0 bg-gradient-to-r from-black to-[#00377E] -z-10"
-                        style={{ width: "100%" }}
-                      />
-                      <SplitText text="BROWSER" delay={0.3} />
-                      <SplitText text="BASED" delay={0.3} />
-                    </span>
-                  </div>
-                  <div className="inline-block relative">
-                    <div className="absolute -top-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
-                    <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
-                    <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
-                    <span className="block font-sans space-x-2 text-lg p-2 border-2 border-[#265CA8] sm:text-4xl md:text-5xl text-[#318AF3] relative">
-                      <span
-                        className="absolute inset-0 bg-gradient-to-r from-black to-[#00377E] -z-10"
-                        style={{ width: "100%" }}
-                      />
-                      <SplitText text="COMPUTE" delay={0.9} />
-                      <SplitText text="PLATFORM." delay={0.9} />
-                    </span>
+                  <div className="flex flex-col items-center lg:gap-2 lg:block">
+                    <div className="inline-block relative">
+                      <div className="absolute top-1 -left-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
+                      <div className="absolute top-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
+                      <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
+                      <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
+                      <span className="block font-sans space-x-2 text-lg p-2 border-2 border-b-0 border-[#265CA8] mt-2 sm:text-4xl md:text-5xl text-[#318AF3] relative">
+                        <span
+                          className="absolute inset-0 bg-gradient-to-r from-black to-[#00377E] -z-10"
+                          style={{ width: "100%" }}
+                        />
+                        <SplitText text="BROWSER" delay={0.3} />
+                        <SplitText text="BASED" delay={0.3} />
+                      </span>
+                    </div>
+
+                    <div className="inline-block relative">
+                      <div className="absolute -top-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
+                      <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
+                      <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
+                      <span className="block font-sans space-x-2 text-lg p-2 border-2 border-[#265CA8] sm:text-4xl md:text-5xl text-[#318AF3] relative">
+                        <span
+                          className="absolute inset-0 bg-gradient-to-r from-black to-[#00377E] -z-10"
+                          style={{ width: "100%" }}
+                        />
+                        <SplitText text="COMPUTE" delay={0.9} />
+                        <SplitText text="PLATFORM." delay={0.9} />
+                      </span>
+                    </div>
                   </div>
                 </h1>
 
-                <div className="text-white text-center lg:text-start font-sans text-sm my-10">
+                <div className="text-white text-center lg:text-start font-sans text-xs lg:text-sm my-10">
                   Neurolov turns idle phones, laptops, and PCs into GPU power.
                   Together, we build a community supercomputer that speeds up
                   AI, supports developers, creates smart agents, and boosts

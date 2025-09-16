@@ -48,7 +48,6 @@ import {
 import PartnerForm, { PartnerFormData } from "@/components/common/PartnerForm";
 import { PatternBackground } from "@/components/common/Highlight";
 
-// Roadmap data
 const roadmapData = [
   {
     title: "Q3 2024 - Project Ideation & Foundation",
@@ -122,47 +121,34 @@ const roadmapData = [
   },
 ];
 
-// Partner data
 const partners = [
-  { name: "", logo: "/partner/1.png" },
-  { name: "", logo: "/partner/2.png" },
-  { name: "", logo: "/partner/3.jpg" },
-  { name: "", logo: "/partner/4.png" },
-  { name: "", logo: "/partner/5.png" },
-  { name: "", logo: "/partner/6.png" },
-  { name: "", logo: "/partner/7.png" },
-  { name: "", logo: "/partner/8.jpg" },
-  { name: "", logo: "/partner/9.jpg" },
-  { name: "", logo: "/partner/10.png" },
-  { name: "", logo: "/partner/11.png" },
-  { name: "", logo: "/partner/12.jpg" },
-  { name: "", logo: "/partner/13.jpg" },
-  { name: "", logo: "/partner/14.jpg" },
-  { name: "", logo: "/partner/15.jpg" },
-  { name: "", logo: "/partner/16.jpg" },
-  { name: "", logo: "/partner/17.jpg" },
-  { name: "", logo: "/partner/18.webp" },
-  { name: "", logo: "/partner/19.png" },
-  { name: "", logo: "/partner/20.jpg" },
-  { name: "", logo: "/partner/21.png" },
-  { name: "", logo: "/partner/22.png" },
-  { name: "", logo: "/partner/23.png" },
-  { name: "", logo: "/partner/24.png" },
-  { name: "", logo: "/partner/25.webp" },
-  { name: "", logo: "/partner/26.png" },
-  { name: "", logo: "/partner/27.webp" },
-  { name: "", logo: "/partner/28.png" },
-  { name: "", logo: "/partner/29.png" },
-  { name: "", logo: "/partner/30.png" },
-  { name: "", logo: "/partner/31.png" },
-  { name: "", logo: "/partner/32.webp" },
-  { name: "", logo: "/partner/33.png" },
-  { name: "", logo: "/partner/34.png" },
-  { name: "", logo: "/partner/35.png" },
-  { name: "", logo: "/partner/36.png" },
-  { name: "", logo: "/partner/37.png" },
-  { name: "", logo: "/partner/38.png" },
-  { name: "", logo: "/partner/39.png" },
+  { name: "Binance", logo: "/partner/39.png" },
+  { name: "ByBit", logo: "/partner/35.png" },
+  { name: "MEXC", logo: "/partner/27.webp" },
+  { name: "KuCoin", logo: "/partner/34.png" },
+
+  { name: "Bitget", logo: "/partner/18.webp" },
+  { name: "Gate.io", logo: "/partner/38.png" },
+  { name: "Solana", logo: "/partner/12.jpg" },
+  { name: "LBank", logo: "/partner/36.png" },
+
+  { name: "Nvidia", logo: "/partner/13.jpg" },
+  { name: "Gork", logo: "/partner/14.jpg" },
+  { name: "Gemini", logo: "/partner/20.jpg" },
+  { name: "OpenAI", logo: "/partner/21.png" },
+
+  { name: "Meta", logo: "/partner/26.png" },
+  { name: "AMD", logo: "/partner/10.png" },
+  { name: "Victus Global", logo: "/partner/8.jpg" },
+  { name: "IBC", logo: "/partner/4.png" },
+
+  { name: "Catalyse Capital", logo: "/partner/2.png" },
+  { name: "Hercules Venture", logo: "/partner/3.jpg" },
+  { name: "Nova Capital", logo: "/partner/5.png" },
+  { name: "Quantum Ventures", logo: "/partner/6.png" },
+
+  { name: "SkyBridge", logo: "/partner/7.png" },
+  { name: "Blockforce Capital", logo: "/partner/1.png" },
 ];
 
 export default function EcosystemPage() {
