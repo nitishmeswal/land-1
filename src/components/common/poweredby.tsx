@@ -50,8 +50,20 @@ const whyItems = [
   },
 ];
 
+const whyItemsMob = [
+  {
+    image: "/why/mob-1.png",
+  },
+  {
+    image: "/why/mob-2.png",
+  },
+  {
+    image: "/why/mob-3.png",
+  },
+];
+
 const PartnerCard = ({ partner }: { partner: Partner }) => (
-  <div className="group relative  min-w-[250px] mx-3">
+  <div className="group relative min-w-[150px] lg:min-w-[250px] mx-3">
     <img src={partner.image} alt="Partner logo" className=" object-cover" />
   </div>
 );
@@ -108,13 +120,28 @@ export default function PoweredAndWhy() {
         </div>
       </div>
       <div className="mt-16 sm:mt-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h3 className="text-5xl  tracking-tight">
+        <h3 className=" hidden lg:block text-5xl tracking-tight">
           <div className="text-white/80">WHY </div>
           <div className="text-[#ACD2FF] font-bold">NEUROLOV?</div>
         </h3>
-        <div className="mt-8 grid grid-cols-1 gap-6">
+
+        <h3 className="lg:hidden text-4xl text-center tracking-tight">
+          <div className="flex justify-center">
+            <div className="text-white/80 pr-2">WHY</div>
+            <div className="text-[#ACD2FF] font-bold">NEUROLOV?</div>
+          </div>
+        </h3>
+
+        <div className="hidden lg:block mt-8 grid-cols-1 gap-6">
           {whyItems.map((item, idx) => (
-            <div key={idx} className="flex items-center justify-center">
+            <div key={idx} className="flex my-8 items-center justify-center">
+              <img src={item.image} alt="Why Neurolov" />
+            </div>
+          ))}
+        </div>
+        <div className="block lg:hidden mt-8 grid-cols-1 gap-6">
+          {whyItemsMob.map((item, idx) => (
+            <div key={idx} className="flex items-center my-6 justify-center">
               <img src={item.image} alt="Why Neurolov" />
             </div>
           ))}

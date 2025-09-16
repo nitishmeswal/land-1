@@ -27,7 +27,7 @@ export const LandingWithMarquee: React.FC<Props> = ({
   const direction = reverse ? "-1" : "1";
 
   return (
-    <div className={`app-root ${className}`}>
+    <div className={` ${className}`}>
       <div
         className="marquee-fixed"
         style={
@@ -110,7 +110,7 @@ export const LandingWithMarquee: React.FC<Props> = ({
         .marquee-img {
           height: calc(var(--bar-height) * 0.8);
           width: auto;
-          object-fit: contain;
+          object-fit: cover;
           image-rendering: auto;
           user-select: none;
           pointer-events: none;

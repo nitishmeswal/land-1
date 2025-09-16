@@ -22,6 +22,8 @@ const DEFAULT_NAV: NavItem[] = [
   { label: "Compute App", href: "https://app.neurolov.ai" },
 ];
 
+const isExternal = (href: string) => /^https?:\/\//i.test(href);
+
 const Header: React.FC<Props> = ({
   nav = DEFAULT_NAV,
   ctaLabel = "JOIN PRESALE",
@@ -29,11 +31,15 @@ const Header: React.FC<Props> = ({
   className = "",
 }) => {
   return (
-    <header className={`header-root `} role="banner" aria-label="Site header">
+    <header
+      className={`header-root ${className}`}
+      role="banner"
+      aria-label="Site header"
+    >
       <div className="header-outer">
         <div className="header-inner">
           <Link className="brand" to="/" aria-label="Homepage">
-            <img className="brand-logo" src="/header/logo.png" alt="" />
+            <img className="brand-logo" src="/header/logo.png" alt="Brand" />
           </Link>
 
           <div className="end-group">
@@ -41,22 +47,48 @@ const Header: React.FC<Props> = ({
               <ul className="nav-list">
                 {nav.map((item) => (
                   <li key={item.href} className="nav-li">
-                    <Link
-                      to={item.href}
-                      className=" text-white hover:text-white "
-                    >
-                      {item.label}
-                    </Link>
+                    {isExternal(item.href) ? (
+                      <a
+                        href={item.href}
+                        className="nav-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {item.label}
+                      </a>
+                    ) : (
+                      <Link to={item.href} className="nav-link">
+                        {item.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
             </nav>
-            <a className="cta cta-image no-hover" href={ctaHref}>
-              <span className="visually-hidden">{ctaLabel}</span>
-            </a>
+
+            <span className="cta-mobile-wrap">
+              <a
+                className="cta-mobile cta-image-mobile no-hover"
+                href={ctaHref}
+                aria-label={ctaLabel}
+              >
+                <span className="visually-hidden">{ctaLabel}</span>
+              </a>
+            </span>
+
+            <span className="cta-desktop-wrap">
+              <a
+                className="cta cta-image no-hover"
+                href={ctaHref}
+                aria-label={ctaLabel}
+              >
+                <span className="visually-hidden">{ctaLabel}</span>
+              </a>
+            </span>
           </div>
         </div>
       </div>
+
       <style>{`
         .header-root {
           position: fixed;
@@ -104,6 +136,7 @@ const Header: React.FC<Props> = ({
           user-select: none;
           pointer-events: none;
         }
+
         .end-group {
           display: flex;
           align-items: center;
@@ -120,6 +153,7 @@ const Header: React.FC<Props> = ({
           padding: 0;
           flex-wrap: nowrap;
         }
+        .nav-li { display: inline-flex; }
         .nav-link {
           color: #EDEFF8;
           text-decoration: none;
@@ -128,16 +162,21 @@ const Header: React.FC<Props> = ({
           opacity: 0.95;
           white-space: nowrap;
         }
-        
+
+        .cta-mobile-wrap { display: none; }
+        .cta-desktop-wrap { display: inline-block; }
+
         .cta {
           position: relative;
           display: inline-block;
           height: 52px;
-          width: 230px;
+          width: 190px;
           border-radius: 999px;
           overflow: hidden;
           flex: 0 0 auto;
           text-decoration: none;
+          isolation: isolate;
+          background: transparent;
         }
         .cta-image {
           background-image: url("/header/button.png");
@@ -145,32 +184,54 @@ const Header: React.FC<Props> = ({
           background-position: center center;
           background-size: contain;
         }
-        
-        .cta::before {
-          content: '';
+
+        .cta-mobile {
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 5px;
+          height: 45px;
+          width: 45px;
+          border-radius: 999px;
+          overflow: hidden;
+          flex: 0 0 auto;
+          text-decoration: none;
+          background: transparent;
+        }
+        .cta-image-mobile {
+          background-image: url("/header/menu.png");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: contain;
+        }
+
+        .cta::after {
+          content: "";
           position: absolute;
-          top: 50%;
           left: 50%;
-          width: 0;
-          height: 0;
+          top: 50%;
+          --btn-h: 52px;
+          width: var(--btn-h);
+          height: var(--btn-h);
+          transform: translate(-50%, -50%) scale(0.05);
+          transform-origin: center center;
+          border-radius: 999px;
           border: 2px solid #A8CEFF;
-          border-radius: 50%;
-          transform: translate(-50%, -50%) scale(0);
-          animation: pulseRing 2s ease-out infinite;
+          box-sizing: border-box;
           pointer-events: none;
+          opacity: 0;
+          animation: ring-fill 1.8s ease-out infinite;
         }
-        
-        @keyframes pulseRing {
-          0% {
-            transform: translate(-50%, -50%) scale(0);
-            opacity: 1;
-          }
-          100% {
-            transform: translate(-50%, -50%) scale(4);
-            opacity: 0;
-          }
+        .cta { --btn-h: 52px; }
+
+        @keyframes ring-fill {
+          0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.05); }
+          10%  { opacity: 1; }
+          70%  { opacity: 1; }
+          100% { transform: translate(-50%, -50%) scale(4.8); opacity: 0; }
         }
-        
+
         .no-hover:hover,
         .no-hover:focus-visible {
           opacity: inherit;
@@ -187,7 +248,7 @@ const Header: React.FC<Props> = ({
         }
         :root { --header-offset: 122px; }
         body { scroll-padding-top: var(--header-offset); }
-        
+
         @media (max-width: 1280px) {
           .header-inner { width: 78%; }
           .nav-list { gap: 24px; }
@@ -213,57 +274,15 @@ const Header: React.FC<Props> = ({
             height: 62px;
           }
           .nav { display: none; }
+          .cta-desktop-wrap { display: none; }
+          .cta-mobile-wrap { display: inline-block; }
           .cta { width: 168px; height: 44px; }
         }
-.cta {
-  position: relative;
-  display: inline-block;
-  height: 52px;
-  width: 190px;
-  border-radius: 999px;
-  overflow: hidden;
-  flex: 0 0 auto;
-  text-decoration: none;
-  isolation: isolate;
-}
 
-.cta::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 50%;
-  top: 50%;
-  width: min(100%, 100%);
-  --btn-h: 52px;
-  width: var(--btn-h);
-  height: var(--btn-h);
-  transform: translate(-50%, -50%) scale(0.05);
-  transform-origin: center center;
-  border-radius: 999px;
-  border: 2px solid #A8CEFF;
-  box-sizing: border-box;
-  pointer-events: none;
-  opacity: 0;
-  animation: ring-fill 1.8s ease-out infinite;
-}
-
-.cta { --btn-h: 52px; }
-@media (max-width: 1280px) { .cta { --btn-h: 50px; } }
-@media (max-width: 1100px) { .cta { --btn-h: 48px; } }
-@media (max-width: 992px)  { .cta { --btn-h: 46px; } }
-@media (max-width: 768px)  { .cta { --btn-h: 44px; } }
-
-@keyframes ring-fill {
-  0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.05); }
-  10%  { opacity: 1; }
-  70%  { opacity: 1; }
-  100% {
-    transform: translate(-50%, -50%) scale(4.8);
-    opacity: 0;
-  }
-}
-
+        @media (max-width: 1280px) { .cta { --btn-h: 50px; } }
+        @media (max-width: 1100px) { .cta { --btn-h: 48px; } }
+        @media (max-width: 992px)  { .cta { --btn-h: 46px; } }
+        @media (max-width: 768px)  { .cta { --btn-h: 44px; } }
       `}</style>
     </header>
   );

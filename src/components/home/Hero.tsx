@@ -313,7 +313,7 @@ export default function Hero() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 my-24 items-start">
               <div>
                 <h1 className="text-left font-extrabold tracking-tight leading-tight mb-4 reveal reveal-delay-2">
-                  <div className="block pl-4 font-sans text-lg font-normal sm:text-4xl md:text-5xl text-white">
+                  <div className="block text-center lg:text-start pl-4 font-sans text-lg font-normal sm:text-4xl md:text-5xl text-white">
                     The WORLD'S FIRST
                   </div>
                   <div className="inline-block relative">
@@ -345,14 +345,14 @@ export default function Hero() {
                   </div>
                 </h1>
 
-                <div className="text-white font-sans text-sm my-10">
+                <div className="text-white text-center lg:text-start font-sans text-sm my-10">
                   Neurolov turns idle phones, laptops, and PCs into GPU power.
                   Together, we build a community supercomputer that speeds up
                   AI, supports developers, creates smart agents, and boosts
                   gaming and research.
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-3xl reveal reveal-delay-4">
+                <div className="grid  mb-10 lg:mb-0 grid-cols-3 gap-2 lg:gap-5 max-w-3xl reveal reveal-delay-4">
                   <StatGlow>
                     <img
                       src="/hero/stat-1.png"
