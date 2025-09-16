@@ -313,7 +313,7 @@ export default function Hero() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 my-24 items-start">
               <div>
                 <h1 className="text-left font-extrabold tracking-tight leading-tight mb-4 reveal reveal-delay-2">
-                  <div className="block text-center lg:text-start pl-4 font-sans text-lg font-normal sm:text-4xl md:text-5xl text-white">
+                  <div className="block text-center lg:text-start pl-4 font-sans font-normal text-3xl lg:text-5xl text-white">
                     The WORLD'S FIRST
                   </div>
                   <div className="flex flex-col items-center lg:gap-2 lg:block">
@@ -322,7 +322,7 @@ export default function Hero() {
                       <div className="absolute top-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
                       <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
                       <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
-                      <span className="block font-sans space-x-2 text-lg p-2 border-2 border-b-0 border-[#265CA8] mt-2 sm:text-4xl md:text-5xl text-[#318AF3] relative">
+                      <span className="block font-sans space-x-2 p-2 border-2 border-b-0 border-[#265CA8] mt-2 text-3xl lg:text-5xl text-[#318AF3] relative">
                         <span
                           className="absolute inset-0 bg-gradient-to-r from-black to-[#00377E] -z-10"
                           style={{ width: "100%" }}
@@ -336,7 +336,7 @@ export default function Hero() {
                       <div className="absolute -top-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
                       <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
                       <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-[#D9D9D9] border border-[#318AF3] z-10" />
-                      <span className="block font-sans space-x-2 text-lg p-2 border-2 border-[#265CA8] sm:text-4xl md:text-5xl text-[#318AF3] relative">
+                      <span className="block font-sans space-x-2 p-2 border-2 border-[#265CA8] text-3xl lg:text-5xl text-[#318AF3] relative">
                         <span
                           className="absolute inset-0 bg-gradient-to-r from-black to-[#00377E] -z-10"
                           style={{ width: "100%" }}
