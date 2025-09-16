@@ -67,7 +67,6 @@ const TokenShowcase: React.FC = () => {
             "
           />
 
-          {/* Base coin image */}
           <img
             src="/token/coin.png"
             alt="coin"
@@ -217,7 +216,15 @@ const TokenShowcase: React.FC = () => {
                 </div>
 
                 <div className="mt-4">
-                  <button className="relative px-4 py-3 rounded-xl text-black font-semibold text-sm md:text-base overflow-hidden">
+                  <button
+                    className="relative px-4 py-3 rounded-xl text-black font-semibold text-sm md:text-base overflow-hidden"
+                    onClick={() => {
+                      window.open(
+                        "https://drive.google.com/file/d/1M18_lbY45yPDFhcr-WUMCaT6y6wKGZOL/view",
+                        "_blank"
+                      );
+                    }}
+                  >
                     <div className="absolute inset-0">
                       <img
                         src="/landing-ai-model/button-bg.png"

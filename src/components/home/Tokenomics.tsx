@@ -11,8 +11,6 @@ const TokenAllocation = () => {
         src="/pie.jpg"
         alt="NLOV Token Allocation Chart"
         desktopSize={{ width: 600, height: 450 }}
-        tabletRatio={0.75}
-        mobileRatio={0.5}
         className="rounded-2xl"
       />
     </div>
