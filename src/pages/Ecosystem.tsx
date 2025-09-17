@@ -129,26 +129,26 @@ const partners = [
 
   { name: "Bitget", logo: "/partner/18.webp" },
   { name: "Gate.io", logo: "/partner/38.png" },
-  { name: "Solana", logo: "/partner/12.jpg" },
+  { name: "Solana", logo: "/partner/12.svg" },
   { name: "LBank", logo: "/partner/36.png" },
 
-  { name: "Nvidia", logo: "/partner/13.jpg" },
-  { name: "Gork", logo: "/partner/14.jpg" },
-  { name: "Gemini", logo: "/partner/20.jpg" },
-  { name: "OpenAI", logo: "/partner/21.png" },
+  { name: "Nvidia", logo: "/partner/13.svg" },
+  { name: "Gork", logo: "/partner/14.svg" },
+  { name: "Gemini", logo: "/partner/20.svg" },
+  { name: "OpenAI", logo: "/partner/21.svg" },
 
-  { name: "Meta", logo: "/partner/26.png" },
-  { name: "AMD", logo: "/partner/10.png" },
-  { name: "Victus Global", logo: "/partner/8.jpg" },
-  { name: "IBC", logo: "/partner/4.png" },
+  { name: "Meta", logo: "/partner/26.svg" },
+  { name: "AMD", logo: "/partner/10.svg" },
+  { name: "Victus Global", logo: "/partner/8.svg" },
+  { name: "IBC", logo: "/partner/4.svg" },
 
-  { name: "Catalyse Capital", logo: "/partner/2.png" },
-  { name: "Hercules Venture", logo: "/partner/3.jpg" },
-  { name: "Nova Capital", logo: "/partner/5.png" },
-  { name: "Quantum Ventures", logo: "/partner/6.png" },
+  { name: "Catalyse Capital", logo: "/partner/2.svg" },
+  { name: "Hercules Venture", logo: "/partner/3.svg" },
+  { name: "Nova Capital", logo: "/partner/5.svg" },
+  { name: "Quantum Ventures", logo: "/partner/6.svg" },
 
-  { name: "SkyBridge", logo: "/partner/7.png" },
-  { name: "Blockforce Capital", logo: "/partner/1.png" },
+  { name: "SkyBridge", logo: "/partner/7.svg" },
+  { name: "Blockforce Capital", logo: "/partner/1.svg" },
 ];
 
 export default function EcosystemPage() {
