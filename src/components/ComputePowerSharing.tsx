@@ -1,5 +1,4 @@
 import React from "react";
-
 const ComputePowerSharing: React.FC = () => {
   return (
     <div className="w-full flex justify-center items-center">
@@ -27,70 +26,121 @@ const ComputePowerSharing: React.FC = () => {
             gaming, agentic infra, and research at unbeatable costs
           </p>
         </div>
-
         <div className="relative w-full max-w-7xl mx-auto z-10 px-4">
-          {/* Centered canvas for line + glow overlay */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full flex items-center justify-center">
-            {/* Box that defines the exact rect for the line and overlay */}
-            <div className="relative w-full max-w-6xl">
-              {/* Line image */}
+          <div className="sm:hidden relative flex flex-col items-center justify-center">
+            <img
+              src="/compute/top.png"
+              alt="Compute devices"
+              className="w-full h-auto mb-8"
+            />
+            <div className="relative flex items-center justify-center">
+              <div className="relative h-[34vh] w-auto">
+                <img
+                  src="/compute/line.png"
+                  alt=""
+                  className="h-full w-auto rotate-90 block"
+                  aria-hidden="true"
+                />
+
+                <div
+                  className="pointer-events-none absolute inset-0 h-[34vh] w-full rotate-90"
+                  style={{
+                    WebkitMaskImage: "url('/compute/line.png')",
+                    maskImage: "url('/compute/line.png')",
+                    WebkitMaskRepeat: "no-repeat",
+                    maskRepeat: "no-repeat",
+                    WebkitMaskSize: "100% 100%",
+                    maskSize: "100% 100%",
+                    WebkitMaskPosition: "center",
+                    maskPosition: "center",
+                    maskMode: "alpha",
+                    background:
+                      "linear-gradient(90deg, rgba(172,210,255,0) 0%, rgba(172,210,255,0.28) 32%, rgba(172,210,255,0.95) 50%, rgba(172,210,255,0.28) 68%, rgba(172,210,255,0) 100%) center/300% 100% no-repeat",
+                    animation: "sweep-rtl 3.2s linear infinite",
+                  }}
+                  aria-hidden="true"
+                />
+
+                <img
+                  src="/compute/logo.png"
+                  alt="Compute network logo"
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-auto drop-shadow-2xl"
+                />
+              </div>
+            </div>
+            <img
+              src="/compute/bottom.png"
+              alt="Compute consumers"
+              className="w-full h-auto mt-8"
+            />
+          </div>
+          <div className="hidden sm:block">
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full flex items-center justify-center">
+              <div className="relative w-full max-w-6xl">
+                <img
+                  src="/compute/line.png"
+                  alt=""
+                  className="w-full h-auto object-contain block"
+                  aria-hidden="true"
+                />
+                <div
+                  className="pointer-events-none absolute inset-0"
+                  style={{
+                    WebkitMaskImage: "url('/compute/line.png')",
+                    maskImage: "url('/compute/line.png')",
+                    WebkitMaskRepeat: "no-repeat",
+                    maskRepeat: "no-repeat",
+                    WebkitMaskSize: "contain",
+                    maskSize: "contain",
+                    WebkitMaskPosition: "center",
+                    maskPosition: "center",
+                    background:
+                      "linear-gradient(90deg, rgba(172,210,255,0) 0%, rgba(172,210,255,0.22) 35%, rgba(172,210,255,0.85) 50%, rgba(172,210,255,0.22) 65%, rgba(172,210,255,0) 100%) center/300% 100% no-repeat",
+                    animation: "sweep-rtl 3s linear infinite",
+                  }}
+                  aria-hidden="true"
+                />
+              </div>
+            </div>
+            <div className="absolute left-4 sm:left-8 lg:left-16 top-1/2 -translate-y-1/2 hidden sm:block z-10">
               <img
-                src="/compute/line.png"
-                alt=""
-                className="w-full h-auto object-contain block"
-                aria-hidden="true"
-              />
-              {/* Glow overlay masked to the line, perfectly aligned */}
-              <div
-                className="line-glow-overlay pointer-events-none absolute inset-0"
-                aria-hidden="true"
+                src="/compute/left.png"
+                alt="Left compute devices"
+                className="w-44 h-auto"
               />
             </div>
-          </div>
-
-          <div className="absolute left-4 sm:left-8 lg:left-16 top-1/2 -translate-y-1/2 hidden sm:block z-10">
-            <img
-              src="/compute/left.png"
-              alt="Left compute devices"
-              className="w-44 h-auto"
-            />
-          </div>
-
-          <div className="absolute left-64 top-1/2 -translate-y-1/2 block z-10">
-            <div className="flex flex-col space-y-24 text-white text-base">
-              <div className="text-left">GPU Cluster</div>
-              <div className="text-left">GPU</div>
-              <div className="text-left">Laptop</div>
-              <div className="text-left">Mobile</div>
+            <div className="absolute left-64 top-1/2 -translate-y-1/2 block z-10">
+              <div className="flex flex-col space-y-24 text-white text-base">
+                <div className="text-left">GPU Cluster</div>
+                <div className="text-left">GPU</div>
+                <div className="text-left">Laptop</div>
+                <div className="text-left">Mobile</div>
+              </div>
             </div>
-          </div>
-
-          <div className="relative flex items-center justify-center py-6 sm:py-8 z-20">
-            <img
-              src="/compute/logo.png"
-              alt="Compute network logo"
-              className="w-60 sm:w-72 lg:w-80 h-auto drop-shadow-2xl"
-            />
-          </div>
-
-          <div className="absolute right-4 sm:right-8 lg:right-16 top-1/2 -translate-y-1/2 hidden sm:block z-10">
-            <img
-              src="/compute/right.png"
-              alt="Right compute consumers"
-              className="w-40 h-auto"
-            />
-          </div>
-
-          <div className="absolute right-60 top-1/2 -translate-y-1/2 block z-10">
-            <div className="flex flex-col space-y-28 text-white text-sm lg:text-base">
-              <div className="text-right">AI Agents</div>
-              <div className="text-right">Training Gen. AI</div>
-              <div className="text-right">Blockchain Computing</div>
-              <div className="text-right">Autonomous Vehicle</div>
+            <div className="relative flex items-center justify-center py-6 sm:py-8 z-20">
+              <img
+                src="/compute/logo.png"
+                alt="Compute network logo"
+                className="w-60 sm:w-72 lg:w-80 h-auto drop-shadow-2xl"
+              />
+            </div>
+            <div className="absolute right-4 sm:right-8 lg:right-16 top-1/2 -translate-y-1/2 hidden sm:block z-10">
+              <img
+                src="/compute/right.png"
+                alt="Right compute consumers"
+                className="w-40 h-auto"
+              />
+            </div>
+            <div className="absolute right-60 top-1/2 -translate-y-1/2 block z-10">
+              <div className="flex flex-col space-y-28 text-white text-sm lg:text-base">
+                <div className="text-right">AI Agents</div>
+                <div className="text-right">Training Gen. AI</div>
+                <div className="text-right">Blockchain Computing</div>
+                <div className="text-right">Autonomous Vehicle</div>
+              </div>
             </div>
           </div>
         </div>
-
         <div className="mt-10 lg:mt-16 z-10 pb-6">
           <button
             onClick={() => {
@@ -107,48 +157,13 @@ const ComputePowerSharing: React.FC = () => {
               borderRadius: 14,
             }}
             type="button"
-            aria-label="CONNECT &amp; EARN"
+            aria-label="CONNECT & EARN"
           >
-            CONNECT &amp; EARN
+            CONNECT & EARN
           </button>
         </div>
       </div>
-
       <style>{`
-/* Keep overlay sized and centered exactly like line.png */
-.line-glow-overlay {
-  /* Match the intrinsic ratio of /compute/line.png for perfect containment */
-  aspect-ratio: 2048 / 702;
-
-  /* Fill the wrapper box that matches the image width */
-  width: 100%;
-  height: auto;
-
-  /* Sweeping highlight */
-  background:
-    linear-gradient(90deg,
-      rgba(172,210,255,0) 0%,
-      rgba(172,210,255,0.22) 35%,
-      rgba(172,210,255,0.85) 50%,
-      rgba(172,210,255,0.22) 65%,
-      rgba(172,210,255,0) 100%) center/300% 100% no-repeat;
-
-  animation: sweep-rtl 3s linear infinite;
-
-  /* Mask the sweep to the line graphic, aligned like object-contain center */
-  -webkit-mask-image: url('/compute/line.png');
-  mask-image: url('/compute/line.png');
-
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-
-  -webkit-mask-size: contain;
-  mask-size: contain;
-
-  -webkit-mask-position: center;
-  mask-position: center;
-}
-
 @keyframes sweep-rtl {
   0%   { background-position: 100% 0%; }
   100% { background-position: -100% 0%; }
@@ -157,5 +172,4 @@ const ComputePowerSharing: React.FC = () => {
     </div>
   );
 };
-
 export default ComputePowerSharing;
