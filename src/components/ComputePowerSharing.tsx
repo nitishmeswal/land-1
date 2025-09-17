@@ -13,12 +13,10 @@ const ComputePowerSharing: React.FC = () => {
           style={{ mixBlendMode: "color-dodge" }}
           aria-hidden="true"
         />
-
         <div
           className="pointer-events-none absolute inset-0 bg-black/20"
           aria-hidden="true"
         />
-
         <div className="w-full text-center mb-12 lg:mb-16 px-4 z-10">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4 lg:mb-6">
             Share <span className="text-[#ACD2FF]">Compute Power</span>
@@ -31,18 +29,23 @@ const ComputePowerSharing: React.FC = () => {
         </div>
 
         <div className="relative w-full max-w-7xl mx-auto z-10 px-4">
+          {/* Centered canvas for line + glow overlay */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full flex items-center justify-center">
-            <img
-              src="/compute/line.png"
-              alt=""
-              className="w-full h-auto max-w-6xl object-contain"
-              aria-hidden="true"
-            />
-
-            <div
-              className="line-glow-overlay pointer-events-none absolute inset-0 mx-auto w-full max-w-6xl"
-              aria-hidden="true"
-            />
+            {/* Box that defines the exact rect for the line and overlay */}
+            <div className="relative w-full max-w-6xl">
+              {/* Line image */}
+              <img
+                src="/compute/line.png"
+                alt=""
+                className="w-full h-auto object-contain block"
+                aria-hidden="true"
+              />
+              {/* Glow overlay masked to the line, perfectly aligned */}
+              <div
+                className="line-glow-overlay pointer-events-none absolute inset-0"
+                aria-hidden="true"
+              />
+            </div>
           </div>
 
           <div className="absolute left-4 sm:left-8 lg:left-16 top-1/2 -translate-y-1/2 hidden sm:block z-10">
@@ -112,11 +115,16 @@ const ComputePowerSharing: React.FC = () => {
       </div>
 
       <style>{`
+/* Keep overlay sized and centered exactly like line.png */
 .line-glow-overlay {
+  /* Match the intrinsic ratio of /compute/line.png for perfect containment */
   aspect-ratio: 2048 / 702;
-  left: 50%;
-  transform: translateX(-50%);
-  
+
+  /* Fill the wrapper box that matches the image width */
+  width: 100%;
+  height: auto;
+
+  /* Sweeping highlight */
   background:
     linear-gradient(90deg,
       rgba(172,210,255,0) 0%,
@@ -124,26 +132,27 @@ const ComputePowerSharing: React.FC = () => {
       rgba(172,210,255,0.85) 50%,
       rgba(172,210,255,0.22) 65%,
       rgba(172,210,255,0) 100%) center/300% 100% no-repeat;
+
   animation: sweep-rtl 3s linear infinite;
 
+  /* Mask the sweep to the line graphic, aligned like object-contain center */
   -webkit-mask-image: url('/compute/line.png');
   mask-image: url('/compute/line.png');
-  -webkit-mask-mode: alpha;
-  mask-mode: alpha;
+
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
+
   -webkit-mask-size: contain;
   mask-size: contain;
+
   -webkit-mask-position: center;
   mask-position: center;
-
 }
 
 @keyframes sweep-rtl {
   0%   { background-position: 100% 0%; }
   100% { background-position: -100% 0%; }
 }
-
 `}</style>
     </div>
   );
