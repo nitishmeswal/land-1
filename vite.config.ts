@@ -3,7 +3,6 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import componentTagger from "vite-plugin-component-tagger";
 
-
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   base: '/',
@@ -15,18 +14,24 @@ export default defineConfig(({ mode }) => ({
     allowedHosts: [
       'localhost',
       '127.0.0.1',
+      '78cdce76d20e.ngrok-free.app',
+      '.ngrok-free.app', // Allow any ngrok-free.app subdomain
+      '.ngrok.io', // Allow any ngrok.io subdomain
     ],
   },
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    sourcemap: true,
-    minify: 'terser',
+    sourcemap: false, // Disable for production performance
+    minify: 'esbuild', // Faster minification
     emptyOutDir: true,
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         manualChunks: {
           'vendor-react': ['react', 'react-dom'],
+          'vendor-motion': ['framer-motion'],
+          'vendor-supabase': ['@supabase/supabase-js'],
           'vendor-chart': ['chart.js', 'react-chartjs-2']
         },
         format: 'es',
@@ -72,7 +77,15 @@ export default defineConfig(({ mode }) => ({
     }
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom', 'chart.js', 'react-chartjs-2'],
-    exclude: []
+    include: [
+      'react', 
+      'react-dom', 
+      'react-router-dom', 
+      'framer-motion',
+      '@supabase/supabase-js',
+      'chart.js', 
+      'react-chartjs-2'
+    ],
+    exclude: ['@vite/client', '@vite/env']
   }
 }));

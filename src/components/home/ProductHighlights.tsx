@@ -39,16 +39,20 @@ const ProductCard = ({
       <h3 className="text-lg font-semibold mb-2">{title}</h3>
       <p className="text-muted-foreground text-sm mb-4">{description}</p>
 
-      <Button
-        variant="ghost"
-        className="group p-0 h-auto hover:bg-transparent"
-        onClick={() => (window.location.href = url)}
+      <button
+        className="group p-0 h-auto bg-transparent hover:bg-transparent border-none cursor-pointer relative z-10"
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          console.log('Button clicked, opening URL:', url);
+          window.open(url, '_blank', 'noopener,noreferrer');
+        }}
       >
-        <span className="flex items-center text-sm font-medium text-[#0361DA]">
+        <span className="flex items-center text-sm font-medium text-[#0361DA] hover:text-[#0361DA]/80 transition-colors">
           Learn more
           <ArrowRight className="ml-1 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
         </span>
-      </Button>
+      </button>
     </div>
   );
 };
@@ -87,7 +91,7 @@ export default function ProductHighlights() {
         "Rent GPUs for AI training and inference. Affordable, scalable compute power for all.\n\nWhy it matters: Access high-performance GPUs on demand—no need to own expensive hardware. Ideal for researchers, startups, and creators who need flexible, affordable compute resources.",
       icon: <Cpu className="h-6 w-6" />,
       delay: "reveal-delay-1",
-      url: "/products/compute",
+      url: "https://app.neurolov.ai/gpu-marketplace",
     },
     {
       title: "AI Models",
@@ -95,7 +99,7 @@ export default function ProductHighlights() {
         "Generate images, text, audio, code, and video with ease. Unleash creativity with Neurolov.\n\nWho it’s for: Artists, developers, and businesses looking to integrate state-of-the-art AI into their workflows—no technical barriers, just results.",
       icon: <Code className="h-6 w-6" />,
       delay: "reveal-delay-2",
-      url: "/products/ai-models",
+      url: "https://app.neurolov.ai/ai-models",
     },
     {
       title: "Swarm Network",
@@ -103,7 +107,7 @@ export default function ProductHighlights() {
         "Connect devices, solve compute tasks, and earn NLOV. Turn idle hardware into income.\n\nWhy it matters: Anyone can contribute their device’s unused power to the network and earn rewards, making advanced AI accessible and affordable for all.",
       icon: <Network className="h-6 w-6" />,
       delay: "reveal-delay-3",
-      url: "/products/swarm",
+      url: "https://swarm.neurolov.ai",
     },
     {
       title: "AI Agents",
@@ -111,7 +115,7 @@ export default function ProductHighlights() {
         "Autonomous AI solutions for decentralized apps. The future of blockchain automation.\n\nWho it’s for: Web3 builders and enterprises seeking autonomous, intelligent agents to power next-gen dApps and automate complex workflows.",
       icon: <Bot className="h-6 w-6" />,
       delay: "reveal-delay-4",
-      url: "/products/agents",
+      url: "https://app.neurolov.ai",
     },
   ];
 
@@ -139,7 +143,7 @@ export default function ProductHighlights() {
         </p><br></br>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
           {/* Connecting lines between cards (desktop only) */}
-          <div className="absolute top-1/2 left-0 right-0 h-px bg-[#0361DA]/10 hidden lg:block"></div>
+          <div className="absolute top-1/2 left-0 right-0 h-px bg-[#0361DA]/10 hidden lg:block pointer-events-none"></div>
           {products.map((product, index) => (
             <ProductCard
               key={index}

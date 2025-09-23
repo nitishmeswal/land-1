@@ -19,31 +19,31 @@ export function Highlight() {
       title: "GPU Compute",
       description:
         "Rent GPUs for AI training and inference. Affordable, scalable compute power for all. Why it matters: Access high- performance GPUs on demand, no need to own expensive hardware. Ideal for researchers, startups, and creators who need flexible, affordable compute resources.",
-      cta: { label: "LEARN MORE", href: "/" },
+      cta: { label: "LEARN MORE", href: "https://app.neurolov.ai/gpu-marketplace" },
       align: "start",
     },
     {
       img: "/highlight/2.png",
       title: "AI Models",
       description:
-        "Generate images, text, audio, code, and video with ease. Unleash creativity with Neurolov. Who it’s for: Artists, developers, and businesses looking to integrate state-of-the-art AI into their workflows, no technical barriers, just results.",
-      cta: { label: "LEARN MORE", href: "/" },
+        "Generate images, text, audio, code, and video with ease. Unleash creativity with Neurolov. Who it's for: Artists, developers, and businesses looking to integrate state-of-the-art AI into their workflows, no technical barriers, just results.",
+      cta: { label: "LEARN MORE", href: "https://app.neurolov.ai/ai-models" },
       align: "start",
     },
     {
       img: "/highlight/3.png",
       title: "Swarm Network",
       description:
-        "Connect devices, solve compute tasks, and earn NLOV. Turn idle hardware into income. Why it matters: Anyone can contribute their device’s unused power to the network and earn rewards, making advanced AI accessible and affordable for all.",
-      cta: { label: "LEARN MORE", href: "/" },
+        "Connect devices, solve compute tasks, and earn NLOV. Turn idle hardware into income. Why it matters: Anyone can contribute their device's unused power to the network and earn rewards, making advanced AI accessible and affordable for all.",
+      cta: { label: "LEARN MORE", href: "https://swarm.neurolov.ai" },
       align: "start",
     },
     {
       img: "/highlight/4.png",
       title: "AI Agents",
       description:
-        "Autonomous AI solutions for decentralized apps. The future of blockchain automation. Who it’s for: Web3 builders and enterprises seeking autonomous, intelligent agents to power next-gen dApps and automate complex workflows.",
-      cta: { label: "LEARN MORE", href: "/" },
+        "Autonomous AI solutions for decentralized apps. The future of blockchain automation. Who it's for: Web3 builders and enterprises seeking autonomous, intelligent agents to power next-gen dApps and automate complex workflows.",
+      cta: { label: "LEARN MORE", href: "https://app.neurolov.ai" },
       align: "start",
     },
   ];

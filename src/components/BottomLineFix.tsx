@@ -1,4 +1,47 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { toast } from "react-hot-toast";
+
+// Price animation component with glowing effect
+const AnimatedPrice = ({ label, value = "Revealed Soon", delay = 0 }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), delay);
+    return () => clearTimeout(timer);
+  }, [delay]);
+  
+  return (
+    <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', minWidth: 0, overflow: 'hidden' }}>
+      <span 
+        className={`inline-block transition-all duration-1000 ease-out transform ${
+          isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+        }`}
+        style={{
+          color: '#82FFEA',
+          fontSize: 'clamp(18px, 2vw, 22px)',
+          fontWeight: 800,
+          letterSpacing: '0.3px',
+          whiteSpace: 'nowrap',
+          position: 'relative',
+          animation: isVisible ? 'pulse 2s infinite' : 'none'
+        }}
+      >
+        {value}
+        <span 
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(90deg, #82FFEA, #80B8FF)',
+            filter: 'blur(4px)',
+            opacity: 0.3,
+            animation: isVisible ? 'ping 2s infinite' : 'none',
+            zIndex: -1
+          }}
+        />
+      </span>
+    </div>
+  );
+};
 
 type Props = { onJoin?: () => void };
 
@@ -58,6 +101,18 @@ const BottomLineFix: React.FC<Props> = ({ onJoin }) => {
             border-radius: 9px;
             overflow: hidden;
           }
+          
+          @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+          }
+          
+          @keyframes ping {
+            75%, 100% {
+              transform: scale(2);
+              opacity: 0;
+            }
+          }
         `}
       </style>
 
@@ -79,9 +134,10 @@ const BottomLineFix: React.FC<Props> = ({ onJoin }) => {
       >
         <div
           style={{
-            flex: "1 1 0",
+            flex: "1.2 1 0",
             display: "flex",
             alignItems: "center",
+            justifyContent: "center",
             gap: "14px",
             padding: "8px 14px",
             borderRadius: "20px",
@@ -100,60 +156,15 @@ const BottomLineFix: React.FC<Props> = ({ onJoin }) => {
           >
             Current price
           </span>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "baseline",
-              gap: "8px",
-              minWidth: 0,
-              overflow: "hidden",
-            }}
-          >
-            <span
-              style={{
-                color: "#FFFFFF",
-                fontSize: "clamp(18px, 2vw, 22px)",
-                fontWeight: 800,
-                letterSpacing: "0.3px",
-                whiteSpace: "nowrap",
-              }}
-            >
-              <b>1</b>$NLOV
-            </span>
-            <span
-              style={{
-                color: "rgba(128,153,204,0.55)",
-                fontSize: "clamp(14px, 1.6vw, 18px)",
-                fontWeight: 550,
-                letterSpacing: "0.2px",
-                whiteSpace: "nowrap",
-              }}
-            >
-              3.56$NLOV
-            </span>
-          </div>
-          <div
-            style={{
-              marginLeft: "auto",
-              padding: "8px 16px",
-              borderRadius: "10px",
-              border: "1.5px solid #80BAFF",
-              color: "#80BAFF",
-              fontSize: "clamp(16px, 1.8vw, 20px)",
-              fontWeight: 700,
-              lineHeight: 1,
-              whiteSpace: "nowrap",
-            }}
-          >
-            -52%
-          </div>
+          <AnimatedPrice label="Current price" value="Revealed Soon" delay={300} />
         </div>
 
         <div
           style={{
-            flex: "1 1 0",
+            flex: "1.8 1 0",
             display: "flex",
             alignItems: "center",
+            justifyContent: "space-between",
             gap: "12px",
             padding: "8px 12px",
             borderRadius: "20px",
@@ -161,39 +172,61 @@ const BottomLineFix: React.FC<Props> = ({ onJoin }) => {
             minWidth: 0,
           }}
         >
-          <span
-            style={{
-              color: "rgba(255,255,255,0.9)",
-              fontSize: "clamp(14px, 1.5vw, 18px)",
-              fontWeight: 500,
-              letterSpacing: "0.2px",
-              whiteSpace: "nowrap",
-            }}
-          >
-            ROI at TGE =
-          </span>
-          <span
-            style={{
-              color: "#80BAFF",
-              fontSize: "clamp(20px, 2.2vw, 26px)",
-              fontWeight: 800,
-              letterSpacing: "0.4px",
-              whiteSpace: "nowrap",
-            }}
-          >
-            600%
-          </span>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <span
+              style={{
+                color: "rgba(255,255,255,0.9)",
+                fontSize: "clamp(14px, 1.5vw, 18px)",
+                fontWeight: 500,
+                letterSpacing: "0.2px",
+                whiteSpace: "nowrap",
+              }}
+            >
+              ROI at TGE =
+            </span>
+            <span
+              style={{
+                color: "#80BAFF",
+                fontSize: "clamp(20px, 2.2vw, 26px)",
+                fontWeight: 800,
+                letterSpacing: "0.4px",
+                whiteSpace: "nowrap",
+              }}
+            >
+              600%
+            </span>
+          </div>
 
           <div
             className="glow-container"
             style={{
-              marginLeft: "auto",
               flexShrink: 0,
             }}
           >
             <button
               type="button"
-              onClick={onJoin}
+              onClick={() => {
+                // Open Google Form
+                window.open('https://forms.gle/awCVM6xa9hUFQv926', '_blank', 'noopener,noreferrer');
+                
+                // Show toast
+                toast('Opening waitlist form! Join for exclusive presale access!', {
+                  duration: 4000,
+                  style: {
+                    background: 'linear-gradient(135deg, #0361DA 0%, #4F8EF7 100%)',
+                    color: 'white',
+                    border: '1px solid rgba(255,255,255,0.2)',
+                    borderRadius: '12px',
+                    padding: '16px 20px',
+                    fontSize: '14px',
+                    fontWeight: '500',
+                    boxShadow: '0 10px 25px rgba(3, 97, 218, 0.3)',
+                  },
+                });
+                
+                // Call the original onJoin if provided
+                if (onJoin) onJoin();
+              }}
               className="button-inner"
               style={{
                 width: "180px",
@@ -209,6 +242,13 @@ const BottomLineFix: React.FC<Props> = ({ onJoin }) => {
                 display: "grid",
                 placeItems: "center",
                 position: "relative",
+                transition: "all 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                (e.target as HTMLElement).style.transform = 'scale(1.05)';
+              }}
+              onMouseLeave={(e) => {
+                (e.target as HTMLElement).style.transform = 'scale(1)';
               }}
             >
               <span

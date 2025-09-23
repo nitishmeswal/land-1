@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
+import { newsletterAPI } from "@/api/newsletter";
+import { toast } from "react-hot-toast";
 
 function Container(props: React.HTMLAttributes<HTMLDivElement>) {
   const { className = "", ...rest } = props;
@@ -72,9 +74,61 @@ const StatGlow: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   );
 };
 
+// Price animation component with glowing effect
+const AnimatedPrice = ({ label, value = "Soon", delay = 0 }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), delay);
+    return () => clearTimeout(timer);
+  }, [delay]);
+  
+  return (
+    <div className="relative">
+      <span className="text-[#80B8FF]">{label}:</span>{" "}
+      <span 
+        className={`inline-block transition-all duration-1000 ease-out transform ${
+          isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+        } relative`}
+      >
+        <span className="relative z-10 font-medium text-[#82FFEA] animate-pulse">
+          {value}
+        </span>
+        <span 
+          className="absolute inset-0 blur-sm bg-gradient-to-r from-[#82FFEA] to-[#80B8FF] opacity-50 animate-ping"
+          style={{ animationDuration: '2s' }}
+        />
+      </span>
+    </div>
+  );
+};
+
 function PresaleCard() {
   const openPresale = () => window.open("https://swarm.neurolov.ai/", "_blank");
   const [useAltSlider, setUseAltSlider] = useState(false);
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState('');
+  
+  const handleJoinWaitlist = () => {
+    // Open Google Form
+    window.open('https://forms.gle/awCVM6xa9hUFQv926', '_blank', 'noopener,noreferrer');
+    
+    // Show toast
+    toast('Opening waitlist form! Join for exclusive presale access and updates!', {
+      duration: 4000,
+      style: {
+        background: 'linear-gradient(135deg, #0361DA 0%, #4F8EF7 100%)',
+        color: 'white',
+        border: '1px solid rgba(255,255,255,0.2)',
+        borderRadius: '12px',
+        padding: '16px 20px',
+        fontSize: '14px',
+        fontWeight: '500',
+        boxShadow: '0 10px 25px rgba(3, 97, 218, 0.3)',
+      },
+    });
+  };
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -82,6 +136,29 @@ function PresaleCard() {
     }, 1000);
     return () => clearInterval(id);
   }, []);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setMessage('');
+
+    const result = await newsletterAPI.subscribe({ 
+      email, 
+      source: 'hero_form' 
+    });
+
+    if (result.success) {
+      setMessage('✅ ' + result.message);
+      setEmail('');
+    } else {
+      setMessage('❌ ' + (result.error || 'Subscription failed'));
+    }
+
+    setIsSubmitting(false);
+    
+    // Clear message after 5 seconds
+    setTimeout(() => setMessage(''), 5000);
+  };
 
   return (
     <div className="relative w-[380px] h-[550px]">
@@ -102,18 +179,24 @@ function PresaleCard() {
 
       <img
         src="/hero/right-glow.png"
-        alt="Glow"
+        alt=""
         className="absolute inset-0 w-full h-full z-0"
+        loading="eager"
+        decoding="async"
       />
       <img
         src="/hero/right-bg.png"
-        alt="Presale background"
+        alt=""
         className="absolute inset-0 w-full h-[500px] z-0"
+        loading="eager"
+        decoding="async"
       />
       <img
         src="/hero/glow-card.png"
-        alt="Card glow"
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-auto "
+        alt=""
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-auto"
+        loading="eager"
+        decoding="async"
       />
 
       <div className="absolute inset-0 p-8 flex flex-col text-white z-20">
@@ -127,14 +210,8 @@ function PresaleCard() {
         </div>
 
         <div className="flex justify-between my-4 text-sm">
-          <div>
-            <span className="text-[#80B8FF]">Actual Price:</span>{" "}
-            <span className="font-semibold">$0.025</span>
-          </div>
-          <div>
-            <span className="text-[#80B8FF]">Listing Price:</span>{" "}
-            <span className="font-semibold">$0.55</span>
-          </div>
+          <AnimatedPrice label="Actual Price" value="Revealed Soon" delay={300} />
+          <AnimatedPrice label="Listing Price" value="Revealed Soon" delay={600} />
         </div>
 
         <div className="relative h-8 my-2 w-full bg-[#010726] rounded-2xl">
@@ -179,15 +256,10 @@ function PresaleCard() {
           </div>
         </div>
 
-        <div className="flex justify-between items-center my-4">
-          <span className="text-sm text-[#80B8FF]">USD Raised:</span>
-          <span className="text-lg font-bold">
-            $9,923 /{" "}
-            <span className="text-[#80B8FF] font-semibold">$15,000</span>
-          </span>
-        </div>
-
-        <button className="relative px-4 py-3 rounded-xl text-black font-semibold text-sm md:text-base overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(137,189,255,0.8)]">
+        <button 
+          onClick={handleJoinWaitlist}
+          className="relative px-4 py-3 rounded-xl text-black font-semibold text-sm md:text-base overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(137,189,255,0.8)] hover:scale-105 active:scale-95"
+        >
           <div className="absolute inset-0">
             <img
               src="/hero/button-bg.png"
@@ -195,7 +267,7 @@ function PresaleCard() {
               className="w-full h-full object-cover rounded-xl"
             />
           </div>
-          <span className="relative z-10 px-6">Buy Now</span>
+          <span className="relative z-10 px-6">Join Waitlist</span>
         </button>
 
         <div className="mt-4 text-center">
@@ -203,17 +275,33 @@ function PresaleCard() {
             COMMUNITY & SUPPORT
           </h4>
           <div className="flex justify-center gap-4">
-            <a href="#" className="hover:opacity-80">
+            <a 
+              href="https://x.com/neurolov" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+              aria-label="Follow Neurolov on X (Twitter)"
+            >
               <img src="/hero/x.png" alt="X" className="w-8 h-8" />
             </a>
-            <a href="#" className="hover:opacity-80">
+            <a 
+              href="https://t.me/neurolovcommunity" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+              aria-label="Join Neurolov Telegram"
+            >
               <img
                 src="/hero/telegram.png"
                 alt="Telegram"
                 className="w-8 h-8"
               />
             </a>
-            <a href="#" className="hover:opacity-80">
+            <a 
+              href="mailto:support@neurolov.ai" 
+              className="hover:opacity-80 transition-opacity"
+              aria-label="Email Neurolov team"
+            >
               <img src="/hero/mail.png" alt="Email" className="w-8 h-8" />
             </a>
           </div>
@@ -223,20 +311,37 @@ function PresaleCard() {
           <h4 className="text-sm font-semibold mb-3 text-center">
             SUBSCRIBE FOR UPDATE
           </h4>
-          <div className="flex gap-2 bg-[#01092D] rounded-lg p-1">
+          <form onSubmit={handleSubscribe} className="flex gap-2 bg-[#01092D] rounded-lg p-1">
             <input
               type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="example@gmail.com"
-              className="flex-1  rounded-lg px-3 py-2 text-[#2F4195] placeholder-[#2F4195] text-sm focus:outline-none focus:border-blue-400"
+              className="flex-1 rounded-lg px-3 py-2 text-[#2F4195] placeholder-[#2F4195] text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 transition-all"
               style={{ backgroundColor: "#01092D" }}
+              disabled={isSubmitting}
+              aria-label="Enter your email address for newsletter updates"
+              aria-describedby="newsletter-description"
             />
             <button
-              className="text-white px-4 py-2 rounded-lg text-xs font-normal hover:opacity-90 transition-colors"
+              type="submit"
+              disabled={isSubmitting}
+              className="text-white px-4 py-2 rounded-lg text-xs font-normal hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               style={{ backgroundColor: "#0D1952" }}
+              aria-label="Subscribe to newsletter"
             >
-              SUBSCRIBE
+              {isSubmitting ? 'SUBSCRIBING...' : 'SUBSCRIBE'}
             </button>
+          </form>
+          <div id="newsletter-description" className="sr-only">
+            Get notified about Neurolov presale updates and product announcements
           </div>
+          {message && (
+            <div className={`mt-2 text-xs text-center ${message.includes('✅') ? 'text-green-400' : 'text-red-400'}`}>
+              {message}
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -273,6 +378,9 @@ export default function Hero() {
 
   return (
     <>
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <Helmet>
         <title>Neurolov - Decentralized AI Compute Marketplace</title>
         <meta
@@ -301,10 +409,11 @@ export default function Hero() {
         <meta name="twitter:image" content="/og-image.png" />
       </Helmet>
 
-      <section className="relative">
+      <section className="relative" role="main" aria-label="Hero section">
         <div className="absolute inset-0 " />
         <div className="absolute inset-0 bg-black/20" />
         <div
+          id="main-content"
           className={`relative min-h-screen pt-24 flex items-center ${
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           } transition-all duration-700`}
@@ -359,15 +468,19 @@ export default function Hero() {
                   <StatGlow>
                     <img
                       src="/hero/stat-1.png"
-                      alt=""
+                      alt="95,000+ Nodes Connected"
                       className="block w-full h-auto"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </StatGlow>
                   <StatGlow>
                     <img
                       src="/hero/stat-2.png"
-                      alt=""
+                      alt="7M+ AI Content Generated"
                       className="block w-full h-auto"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </StatGlow>
                   <StatGlow>
@@ -390,7 +503,10 @@ export default function Hero() {
                       className="h-12 w-auto"
                     />
                   </button>
-                  <button className="p-0 border-none bg-transparent hover:bg-transparent">
+                  <button 
+                    className="p-0 border-none bg-transparent hover:bg-transparent"
+                    onClick={() => window.open('https://docsend.com/view/b9rusjpnb3s8wdzq', '_blank', 'noopener,noreferrer')}
+                  >
                     <img
                       src="/hero/button-2.png"
                       alt="Read Whitepaper"

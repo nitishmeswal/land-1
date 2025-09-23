@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import { toast } from "react-hot-toast";
 import {
   Dialog,
   DialogContent,
@@ -168,6 +169,29 @@ export default function Navbar() {
   const [expandedCategory, setExpandedCategory] = useState(null);
   const menuRef = useRef(null);
   const menuButtonRef = useRef(null);
+  
+  const handleEarnNowClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    
+    // Open Google Form
+    window.open('https://forms.gle/awCVM6xa9hUFQv926', '_blank', 'noopener,noreferrer');
+    
+    // Show toast
+    toast('📧 Opening waitlist form! Join for exclusive presale updates and early access!', {
+      duration: 4500,
+      style: {
+        background: 'linear-gradient(135deg, #0361DA 0%, #4F8EF7 100%)',
+        color: 'white',
+        border: '1px solid rgba(255,255,255,0.2)',
+        borderRadius: '12px',
+        padding: '16px 20px',
+        fontSize: '14px',
+        fontWeight: '500',
+        boxShadow: '0 10px 25px rgba(3, 97, 218, 0.3)',
+        maxWidth: '400px',
+      },
+    });
+  };
 
   const closeMenu = () => {
     setIsMenuOpen(false);
@@ -262,16 +286,14 @@ export default function Navbar() {
             {/* Desktop Action Buttons */}
             <div className="hidden md:flex items-center space-x-4">
               
-              <a
-                href="https://swarm.neurolov.ai/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={handleEarnNowClick}
                 className="rounded-full"
               >
-                <Button className="rounded-full bg-[#0361DA] hover:bg-[#0255c1] text-white">
-                  Earn Now
+                <Button className="rounded-full bg-[#0361DA] hover:bg-[#0255c1] text-white transition-all duration-300 hover:scale-105 active:scale-95">
+                  Join Presale
                 </Button>
-              </a>
+              </button>
             </div>
 
             {/* Mobile menu button */}
@@ -406,19 +428,19 @@ export default function Navbar() {
                   </div>
                 </DialogContent>
               </Dialog>
-              <a
-                href="https://swarm.neurolov.ai/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-                onClick={closeMenu}
+              <button
+                onClick={(e) => {
+                  handleEarnNowClick(e);
+                  closeMenu();
+                }}
+                className="block w-full"
               >
                 <Button
-                  className="w-full rounded-full bg-gradient-to-r from-[#0361DA] to-[#4F8EF7] px-5 py-2 text-white font-semibold shadow-[0_0_10px_rgba(3,97,218,0.6)] hover:shadow-[0_0_20px_rgba(3,97,218,0.8)] hover:brightness-110 transition-all duration-300"
+                  className="w-full rounded-full bg-gradient-to-r from-[#0361DA] to-[#4F8EF7] px-5 py-2 text-white font-semibold shadow-[0_0_10px_rgba(3,97,218,0.6)] hover:shadow-[0_0_20px_rgba(3,97,218,0.8)] hover:brightness-110 transition-all duration-300 hover:scale-105 active:scale-95"
                 >
-                  Earn Now
+                  Join Presale
                 </Button>
-              </a>
+              </button>
             </div>
           </div>
         </div>

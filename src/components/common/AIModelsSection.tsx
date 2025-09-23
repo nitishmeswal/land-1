@@ -2,8 +2,8 @@ import React from "react";
 
 const AIModelsSection: React.FC = () => {
   return (
-    <section className="relative w-full px-2 bg-transparent">
-      <div className="relative h-[450px] md:h-[450px] w-full md:w-[80%] mx-auto rounded-sm overflow-hidden">
+    <section className="relative w-full px-2 md:px-4 bg-transparent">
+      <div className="relative h-[350px] md:h-[500px] lg:h-[550px] w-full md:w-[90%] lg:w-[85%] xl:w-[80%] mx-auto rounded-sm overflow-hidden">
         <img
           src="/landing-ai-model/ai-model-header.png"
           alt=""
@@ -21,7 +21,7 @@ const AIModelsSection: React.FC = () => {
 
         <div className="relative flex flex-col md:flex-row w-full h-full">
           <aside className="w-full md:w-[45%] h-full flex order-2 md:order-1">
-            <div className="flex-1 px-4 md:pl-14 md:pr-2 pt-[100px] md:pt-[120px]">
+            <div className="flex-1 px-3 md:px-6 lg:pl-14 lg:pr-2 pt-[80px] md:pt-[100px] lg:pt-[120px]">
               <div className="space-y-3 md:space-y-5">
                 <div className="flex items-center gap-3 md:gap-4">
                   <div className="w-8 h-8 md:w-9 md:h-9 bg-[#17297c] rounded-md flex items-center justify-center flex-shrink-0">
@@ -45,7 +45,7 @@ const AIModelsSection: React.FC = () => {
                       />
                     </svg>
                   </div>
-                  <span className="text-[16px] md:text-[22px] font-medium text-white">
+                  <span className="text-[14px] md:text-[18px] lg:text-[22px] font-medium text-white">
                     10M+ Images Generated
                   </span>
                 </div>
@@ -64,7 +64,7 @@ const AIModelsSection: React.FC = () => {
                       />
                     </svg>
                   </div>
-                  <span className="text-[16px] md:text-[22px] font-medium text-white">
+                  <span className="text-[14px] md:text-[18px] lg:text-[22px] font-medium text-white">
                     20,000+ Video Generated
                   </span>
                 </div>
@@ -107,7 +107,7 @@ const AIModelsSection: React.FC = () => {
                       />
                     </svg>
                   </div>
-                  <span className="text-[16px] md:text-[22px] font-medium text-white">
+                  <span className="text-[14px] md:text-[18px] lg:text-[22px] font-medium text-white">
                     20M+ Query solved
                   </span>
                 </div>
@@ -142,14 +142,17 @@ const AIModelsSection: React.FC = () => {
                       />
                     </svg>
                   </div>
-                  <span className="text-[16px] md:text-[22px] font-medium text-white">
+                  <span className="text-[14px] md:text-[18px] lg:text-[22px] font-medium text-white">
                     30,000+ Music Generated
                   </span>
                 </div>
               </div>
 
               <div className="mt-6 md:mt-8 mb-4">
-                <button className="w-full max-w-[250px] md:max-w-[280px] relative px-6 md:px-8 py-3 md:py-4 rounded-xl text-black font-semibold text-base md:text-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(137,189,255,0.8)]">
+                <button 
+                  className="w-full max-w-[250px] md:max-w-[280px] relative px-6 md:px-8 py-3 md:py-4 rounded-xl text-black font-semibold text-base md:text-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(137,189,255,0.8)]"
+                  onClick={() => window.open('https://app.neurolov.ai/ai-models', '_blank', 'noopener,noreferrer')}
+                >
                   <div className="absolute inset-0">
                     <img
                       src="/landing-ai-model/button-bg.png"
@@ -163,12 +166,12 @@ const AIModelsSection: React.FC = () => {
             </div>
           </aside>
 
-          <div className="relative w-full md:w-[55%] h-[200px] md:h-full flex items-center justify-center order-1 md:order-2">
+          <div className="relative w-full md:w-[55%] h-[120px] md:h-full flex items-center justify-center order-1 md:order-2">
             <div className="relative z-10 w-full h-full flex items-center justify-center">
               <img
                 src="/landing-ai-model/ai-model.gif"
                 alt="AI Model Visualization"
-                className="w-[60%] md:w-[55%] h-auto md:pl-20 md:rotate-90 object-contain"
+                className="w-[50%] md:w-[45%] lg:w-[55%] h-auto md:pl-8 lg:pl-20 md:rotate-90 object-contain"
               />
             </div>
           </div>

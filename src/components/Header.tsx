@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 type NavItem = {
   label: string;
@@ -30,6 +31,29 @@ const Header: React.FC<Props> = ({
   ctaHref = "#presale",
   className = "",
 }) => {
+  
+  const handlePresaleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    
+    // Open Google Form
+    window.open('https://forms.gle/awCVM6xa9hUFQv926', '_blank', 'noopener,noreferrer');
+    
+    // Show toast
+    toast('📧 Opening waitlist form! Join for exclusive presale updates and early access!', {
+      duration: 4500,
+      style: {
+        background: 'linear-gradient(135deg, #0361DA 0%, #4F8EF7 100%)',
+        color: 'white',
+        border: '1px solid rgba(255,255,255,0.2)',
+        borderRadius: '12px',
+        padding: '16px 20px',
+        fontSize: '14px',
+        fontWeight: '500',
+        boxShadow: '0 10px 25px rgba(3, 97, 218, 0.3)',
+        maxWidth: '400px',
+      },
+    });
+  };
   return (
     <header
       className={`header-root ${className}`}
@@ -67,23 +91,23 @@ const Header: React.FC<Props> = ({
             </nav>
 
             <span className="cta-mobile-wrap">
-              <a
+              <button
                 className="cta-mobile cta-image-mobile no-hover"
-                href={ctaHref}
+                onClick={handlePresaleClick}
                 aria-label={ctaLabel}
               >
                 <span className="visually-hidden">{ctaLabel}</span>
-              </a>
+              </button>
             </span>
 
             <span className="cta-desktop-wrap">
-              <a
+              <button
                 className="cta cta-image no-hover"
-                href={ctaHref}
+                onClick={handlePresaleClick}
                 aria-label={ctaLabel}
               >
                 <span className="visually-hidden">{ctaLabel}</span>
-              </a>
+              </button>
             </span>
           </div>
         </div>
@@ -177,6 +201,9 @@ const Header: React.FC<Props> = ({
           text-decoration: none;
           isolation: isolate;
           background: transparent;
+          border: none;
+          cursor: pointer;
+          padding: 0;
         }
         .cta-image {
           background-image: url("/header/button.png");
@@ -198,6 +225,9 @@ const Header: React.FC<Props> = ({
           flex: 0 0 auto;
           text-decoration: none;
           background: transparent;
+          border: none;
+          cursor: pointer;
+          padding: 0;
         }
         .cta-image-mobile {
           background-image: url("/header/menu.png");
