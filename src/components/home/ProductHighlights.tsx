@@ -6,6 +6,24 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Helmet } from "react-helmet";
 
+// Mobile detection hook
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  return isMobile;
+};
+
 type ProductCardProps = {
   title: string;
   description: string;
@@ -13,6 +31,14 @@ type ProductCardProps = {
   className?: string;
   delay?: string;
   index: number;
+  url: string;
+  iconImage?: string;
+};
+
+type MobileProductCardProps = {
+  title: string;
+  description: string;
+  iconImage: string;
   url: string;
 };
 
@@ -57,8 +83,60 @@ const ProductCard = ({
   );
 };
 
+const MobileProductCard = ({ title, description, iconImage, url }: MobileProductCardProps) => {
+  return (
+    <div className="min-w-[280px] flex-shrink-0 relative rounded-3xl overflow-hidden mx-3">
+      {/* Base Rectangle */}
+      <div className="relative w-full h-[400px]">
+        <img
+          src="/highlights/Rectangle42270.png"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        
+        {/* Subtract Overlay */}
+        <img
+          src="/highlights/Subtract.png"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        
+        {/* Content */}
+        <div className="absolute inset-0 p-6 flex flex-col">
+          {/* Header with icon */}
+          <div className="flex-1 flex flex-col items-center justify-center">
+            <div className="w-24 h-24 mb-6 flex items-center justify-center">
+              <img
+                src={`/highlights/${iconImage}.png`}
+                alt={title}
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+          
+          {/* Bottom content */}
+          <div className="space-y-4">
+            <h3 className="text-xl font-bold text-white">{title}</h3>
+            <p className="text-gray-200 text-sm leading-relaxed line-clamp-4">
+              {description.split('\n')[0]}
+            </p>
+            
+            <button
+              onClick={() => window.open(url, '_blank', 'noopener,noreferrer')}
+              className="w-full bg-[#4A69E2] hover:bg-[#4A69E2]/80 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 active:scale-95"
+            >
+              LEARN MORE
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default function ProductHighlights() {
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(
@@ -92,30 +170,34 @@ export default function ProductHighlights() {
       icon: <Cpu className="h-6 w-6" />,
       delay: "reveal-delay-1",
       url: "https://app.neurolov.ai/gpu-marketplace",
+      iconImage: "compute",
     },
     {
       title: "AI Models",
       description:
-        "Generate images, text, audio, code, and video with ease. Unleash creativity with Neurolov.\n\nWho it’s for: Artists, developers, and businesses looking to integrate state-of-the-art AI into their workflows—no technical barriers, just results.",
+        "Generate images, text, audio, code, and video with ease. Unleash creativity with Neurolov.\n\nWho it's for: Artists, developers, and businesses looking to integrate state-of-the-art AI into their workflows—no technical barriers, just results.",
       icon: <Code className="h-6 w-6" />,
       delay: "reveal-delay-2",
       url: "https://app.neurolov.ai/ai-models",
+      iconImage: "ai-models",
     },
     {
       title: "Swarm Network",
       description:
-        "Connect devices, solve compute tasks, and earn NLOV. Turn idle hardware into income.\n\nWhy it matters: Anyone can contribute their device’s unused power to the network and earn rewards, making advanced AI accessible and affordable for all.",
+        "Connect devices, solve compute tasks, and earn NLOV. Turn idle hardware into income.\n\nWhy it matters: Anyone can contribute their device's unused power to the network and earn rewards, making advanced AI accessible and affordable for all.",
       icon: <Network className="h-6 w-6" />,
       delay: "reveal-delay-3",
       url: "https://swarm.neurolov.ai",
+      iconImage: "swarm",
     },
     {
       title: "AI Agents",
       description:
-        "Autonomous AI solutions for decentralized apps. The future of blockchain automation.\n\nWho it’s for: Web3 builders and enterprises seeking autonomous, intelligent agents to power next-gen dApps and automate complex workflows.",
+        "Autonomous AI solutions for decentralized apps. The future of blockchain automation.\n\nWho it's for: Web3 builders and enterprises seeking autonomous, intelligent agents to power next-gen dApps and automate complex workflows.",
       icon: <Bot className="h-6 w-6" />,
       delay: "reveal-delay-4",
       url: "https://app.neurolov.ai",
+      iconImage: "ai-agents",
     },
   ];
 
@@ -141,21 +223,41 @@ export default function ProductHighlights() {
         <p className="text-muted-foreground max-w-2xl mx-auto text-center mt-4 reveal reveal-delay-2">
           A comprehensive ecosystem combining AI, decentralized computing, and crypto rewards.
         </p><br></br>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-          {/* Connecting lines between cards (desktop only) */}
-          <div className="absolute top-1/2 left-0 right-0 h-px bg-[#0361DA]/10 hidden lg:block pointer-events-none"></div>
-          {products.map((product, index) => (
-            <ProductCard
-              key={index}
-              index={index}
-              title={product.title}
-              description={product.description}
-              icon={product.icon}
-              delay={product.delay}
-              url={product.url}
-            />
-          ))}
-        </div>
+        
+        {/* Conditional rendering for mobile vs desktop */}
+        {isMobile ? (
+          /* Mobile: Horizontal scroll layout */
+          <div className="overflow-x-auto scrollbar-hide -mx-4">
+            <div className="flex px-4 py-4 space-x-0">
+              {products.map((product, index) => (
+                <MobileProductCard
+                  key={index}
+                  title={product.title}
+                  description={product.description}
+                  iconImage={product.iconImage}
+                  url={product.url}
+                />
+              ))}
+            </div>
+          </div>
+        ) : (
+          /* Desktop: Grid layout */
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+            {/* Connecting lines between cards (desktop only) */}
+            <div className="absolute top-1/2 left-0 right-0 h-px bg-[#0361DA]/10 hidden lg:block pointer-events-none"></div>
+            {products.map((product, index) => (
+              <ProductCard
+                key={index}
+                index={index}
+                title={product.title}
+                description={product.description}
+                icon={product.icon}
+                delay={product.delay}
+                url={product.url}
+              />
+            ))}
+          </div>
+        )}
         {/* Call to action */}
         <div className="mt-16 text-center reveal reveal-delay-5">
           <a
