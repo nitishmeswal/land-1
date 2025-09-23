@@ -27,6 +27,9 @@ export default defineConfig(({ mode }) => ({
     emptyOutDir: true,
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
+      external: (id) => {
+        return id.includes('@rollup/rollup') && !id.includes('virtual:');
+      },
       output: {
         manualChunks: {
           'vendor-react': ['react', 'react-dom'],
