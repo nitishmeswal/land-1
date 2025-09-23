@@ -5,6 +5,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster as HotToaster } from "react-hot-toast";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 // Page routes
 import Index from "./pages/Index";
@@ -126,25 +127,27 @@ const AppRoutes = () => {
 // Main App
 const App = () => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner expand={true} closeButton richColors />
-        <HotToaster 
-          position="bottom-right"
-          reverseOrder={false}
-          gutter={8}
-          containerStyle={{
-            bottom: 20,
-            right: 20,
-            zIndex: 9999,
-          }}
-        />
-        <BrowserRouter>
-          <AppRoutes />
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
+    <ErrorBoundary>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner expand={true} closeButton richColors />
+          <HotToaster 
+            position="bottom-right"
+            reverseOrder={false}
+            gutter={8}
+            containerStyle={{
+              bottom: 20,
+              right: 20,
+              zIndex: 9999,
+            }}
+          />
+          <BrowserRouter>
+            <AppRoutes />
+          </BrowserRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </ErrorBoundary>
   );
 };
 

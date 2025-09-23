@@ -8,6 +8,17 @@ export interface SubscriptionRequest {
 export const newsletterAPI = {
   async subscribe(data: SubscriptionRequest) {
     try {
+      // Check if Supabase is properly configured
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+      const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+      
+      if (!supabaseUrl || !supabaseKey) {
+        return {
+          success: false,
+          error: 'Newsletter service is currently unavailable. Please try again later.'
+        };
+      }
+      
       // First, try to insert - let the database handle uniqueness
       const { data: insertData, error: insertError } = await supabase
         .from('newsletter_subscriptions')
