@@ -5,7 +5,9 @@ import Hero from "@/components/home/Hero";
 import Header from "@/components/Header";
 import BottomLineFix from "@/components/BottomLineFix";
 import { Highlight } from "@/components/Highlight";
+import ProductHighlightsMobile from "@/components/home/ProductHighlightsMobile";
 import AIModelsSection from "@/components/common/AIModelsSection";
+import AIModelsSectionMobile from "@/components/common/AIModelsSectionMobile";
 import NlovTokenDashboard from "@/components/common/NlovTokenTeamDashboard";
 import WhyNeurolov from "@/components/common/poweredby";
 import ComputePowerSharing from "@/components/ComputePowerSharing";
@@ -13,9 +15,11 @@ import LandingWithMarquee from "@/components/InfiniteSlidingHeader";
 import NeurolovFooter from "@/components/common/Footer";
 import LatestUpdates from "@/components/common/LatestUpdates";
 import Team from "@/components/common/Team";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const Index = () => {
   const [showBg2, setShowBg2] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -72,11 +76,11 @@ const Index = () => {
         </div>
 
         <div className="mt-20">
-          <Highlight />
+          {isMobile ? <ProductHighlightsMobile /> : <Highlight />}
         </div>
 
         <div className="mt-20">
-          <AIModelsSection />
+          {isMobile ? <AIModelsSectionMobile /> : <AIModelsSection />}
         </div>
 
         <div className="mt-20 bg-[url('/token/bg.png')] bg-fill">
