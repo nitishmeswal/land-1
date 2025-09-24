@@ -204,9 +204,6 @@ function PresaleCard() {
           <div className="flex items-center">
             <img src="/hero/nlov.png" alt="Presale" className=" w-56" />
           </div>
-          <div className="text-xs font-semibold top-0 pb-14 text-[#82FFEA]">
-            600% to TGE
-          </div>
         </div>
 
         <div className="flex justify-between my-4 text-sm">
