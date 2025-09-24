@@ -671,15 +671,15 @@ export default function TokenPage() {
               </div>
             </div>
 
-            <div className="mt-20">
+            <div className="mt-20 mb-16">
               <SectionHeading
                 title="Token Release Schedule"
                 subtitle="Structured vesting ensures market stability and long-term alignment"
                 className="mb-12"
               />
 
-              <div className="glass-card p-8 rounded-xl border border-#0361DA/10 mt-16">
-                <h3 className="text-2xl font-bold mb-8">
+              <div className="glass-card p-8 bg-transparent rounded-xl border border-white/10 mt-16">
+                <h3 className="text-2xl font-bold mb-8 text-[#D4DFFF]">
                   Token Distribution & Vesting Schedule
                 </h3>
                 <div className="relative">
@@ -690,84 +690,98 @@ export default function TokenPage() {
                         data={cumulativeVestingData}
                         margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
                       >
-                        <XAxis dataKey="month" />
+                        <XAxis
+                          dataKey="month"
+                          stroke="#D4DFFF"
+                          tick={{ fill: "#D4DFFF" }}
+                        />
                         <YAxis
                           domain={[0, 500]}
                           ticks={[0, 100, 200, 300, 400, 500]}
                           tickFormatter={(value) => `${value}M`}
+                          stroke="#D4DFFF"
+                          tick={{ fill: "#D4DFFF" }}
                         />
                         <Tooltip
                           formatter={(value, name) => [`${value}M`, name]}
+                          wrapperStyle={{ outline: "none" }}
+                          contentStyle={{
+                            background: "#000E1E",
+                            border: "1px solid #D4DFFF",
+                            color: "#D4DFFF",
+                          }}
+                          labelStyle={{ color: "#D4DFFF" }}
+                          itemStyle={{ color: "#D4DFFF" }}
                         />
                         <Area
                           type="monotone"
                           dataKey="Liquidity Pool (DEX)"
                           stackId="1"
-                          stroke="#4F46E5"
-                          fill="#4F46E5"
+                          stroke="#1D4ED8"
+                          fill="#1D4ED8"
                         />
                         <Area
                           type="monotone"
                           dataKey="Team & Advisors"
                           stackId="1"
-                          stroke="#10B981"
-                          fill="#10B981"
+                          stroke="#091B42"
+                          fill="#091B42"
                         />
                         <Area
                           type="monotone"
                           dataKey="Airdrops & Rewards"
                           stackId="1"
-                          stroke="#8B5CF6"
-                          fill="#8B5CF6"
+                          stroke="#003385"
+                          fill="#003385"
                         />
                         <Area
                           type="monotone"
                           dataKey="Marketing & KOLs"
                           stackId="1"
-                          stroke="#F59E0B"
-                          fill="#F59E0B"
+                          stroke="#9CCBFF"
+                          fill="#9CCBFF"
                         />
                         <Area
                           type="monotone"
                           dataKey="Foundation"
                           stackId="1"
-                          stroke="#3B82F6"
-                          fill="#3B82F6"
+                          stroke="#0093AF"
+                          fill="#0093AF"
                         />
                         <Area
                           type="monotone"
                           dataKey="Strategic Reserve"
                           stackId="1"
-                          stroke="#60A5FA"
-                          fill="#60A5FA"
+                          stroke="#00D7D9"
+                          fill="#00D7D9"
                         />
                         <Area
                           type="monotone"
                           dataKey="DAO Treasury"
                           stackId="1"
-                          stroke="#93C5FD"
-                          fill="#93C5FD"
+                          stroke="#3D3D9F"
+                          fill="#3D3D9F"
                         />
                         <Area
                           type="monotone"
                           dataKey="Buyback & Burn"
                           stackId="1"
-                          stroke="#EF4444"
-                          fill="#EF4444"
+                          stroke="#FFFFFF"
+                          fill="#FFFFFF"
                         />
                         <Area
                           type="monotone"
                           dataKey="Seed Investors"
                           stackId="1"
-                          stroke="#F87171"
-                          fill="#F87171"
+                          stroke="#7285A5"
+                          fill="#7285A5"
                         />
                         <Area
                           type="monotone"
                           dataKey="Pre-sale Investors"
                           stackId="1"
-                          stroke="#FCA5A5"
-                          fill="#FCA5A5"
+                          stroke="#0016A2"
+                          fill="#0016A2"
                         />
                       </AreaChart>
                     </ResponsiveContainer>
@@ -776,50 +790,62 @@ export default function TokenPage() {
                   {/* Legends Container */}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
                     <div className="flex items-center space-x-2">
-                      <div className="w-4 h-4 bg-[#4F46E5] rounded-sm"></div>
-                      <span className="text-sm">
+                      <div className="w-4 h-4 bg-[#1D4ED8] rounded-sm"></div>
+                      <span className="text-sm text-[#D4DFFF]">
                         Liquidity Pool (DEX) - 152.25M
                       </span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <div className="w-4 h-4 bg-[#10B981] rounded-sm"></div>
-                      <span className="text-sm">Team & Advisors - 62.25M</span>
+                      <div className="w-4 h-4 bg-[#091B42] rounded-sm"></div>
+                      <span className="text-sm text-[#D4DFFF]">
+                        Team & Advisors - 62.25M
+                      </span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <div className="w-4 h-4 bg-[#8B5CF6] rounded-sm"></div>
-                      <span className="text-sm">
+                      <div className="w-4 h-4 bg-[#003385] rounded-sm"></div>
+                      <span className="text-sm text-[#D4DFFF]">
                         Airdrops & Rewards - 92.25M
                       </span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <div className="w-4 h-4 bg-[#F59E0B] rounded-sm"></div>
-                      <span className="text-sm">Marketing & KOLs - 42.25M</span>
+                      <div className="w-4 h-4 bg-[#9CCBFF] rounded-sm"></div>
+                      <span className="text-sm text-[#D4DFFF]">
+                        Marketing & KOLs - 42.25M
+                      </span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <div className="w-4 h-4 bg-[#3B82F6] rounded-sm"></div>
-                      <span className="text-sm">Foundation - 27.25M</span>
+                      <div className="w-4 h-4 bg-[#0093AF] rounded-sm"></div>
+                      <span className="text-sm text-[#D4DFFF]">
+                        Foundation - 27.25M
+                      </span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <div className="w-4 h-4 bg-[#60A5FA] rounded-sm"></div>
-                      <span className="text-sm">
+                      <div className="w-4 h-4 bg-[#00D7D9] rounded-sm"></div>
+                      <span className="text-sm text-[#D4DFFF]">
                         Strategic Reserve - 27.25M
                       </span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <div className="w-4 h-4 bg-[#93C5FD] rounded-sm"></div>
-                      <span className="text-sm">DAO Treasury - 22.25M</span>
+                      <div className="w-4 h-4 bg-[#3D3D9F] rounded-sm"></div>
+                      <span className="text-sm text-[#D4DFFF]">
+                        DAO Treasury - 22.25M
+                      </span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <div className="w-4 h-4 bg-[#EF4444] rounded-sm"></div>
-                      <span className="text-sm">Buyback & Burn - 44.75M</span>
+                      <div className="w-4 h-4 bg-[#FFFFFF] rounded-sm"></div>
+                      <span className="text-sm text-[#D4DFFF]">
+                        Buyback & Burn - 44.75M
+                      </span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <div className="w-4 h-4 bg-[#F87171] rounded-sm"></div>
-                      <span className="text-sm">Seed Investors - 14.75M</span>
+                      <div className="w-4 h-4 bg-[#7285A5] rounded-sm"></div>
+                      <span className="text-sm text-[#D4DFFF]">
+                        Seed Investors - 14.75M
+                      </span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <div className="w-4 h-4 bg-[#FCA5A5] rounded-sm"></div>
-                      <span className="text-sm">
+                      <div className="w-4 h-4 bg-[#0016A2] rounded-sm"></div>
+                      <span className="text-sm text-[#D4DFFF]">
                         Pre-sale Investors - 14.75M
                       </span>
                     </div>

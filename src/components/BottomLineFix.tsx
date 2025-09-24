@@ -18,9 +18,9 @@ const AnimatedPrice = ({ label, value = "Revealed Soon", delay = 0 }) => {
         }`}
         style={{
           color: '#82FFEA',
-          fontSize: 'clamp(18px, 2vw, 22px)',
+          fontSize: 'clamp(12px, 2.5vw, 16px)',
           fontWeight: 800,
-          letterSpacing: '0.3px',
+          letterSpacing: '0.2px',
           whiteSpace: 'nowrap',
           position: 'relative',
           animation: isVisible ? 'pulse 2s infinite' : 'none'
@@ -49,18 +49,7 @@ const BottomLineFix: React.FC<Props> = ({ onJoin }) => {
   return (
     <div
       aria-label="bottom-offer-bar"
-      style={{
-        position: "fixed",
-        left: "50%",
-        transform: "translateX(-50%)",
-        bottom: "18px",
-        width: "60vw",
-        maxWidth: "959.9749755859375px",
-        minWidth: "320px",
-        height: "65px",
-        zIndex: 9999,
-        pointerEvents: "none",
-      }}
+      className="fixed left-1/2 transform -translate-x-1/2 bottom-3 w-[92vw] max-w-[320px] min-w-[260px] h-[86px] z-[9999] pointer-events-none"
     >
       <style>
         {`
@@ -116,93 +105,19 @@ const BottomLineFix: React.FC<Props> = ({ onJoin }) => {
         `}
       </style>
 
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          borderRadius: "24px",
-          background: "#06124580",
-          boxShadow:
-            "inset 0 0 0 1px rgba(128,186,255,0.18), 0 8px 24px rgba(0,0,0,0.35)",
-          display: "flex",
-          alignItems: "stretch",
-          padding: "8px",
-          gap: "12px",
-          pointerEvents: "auto",
-          backdropFilter: "blur(2px)",
-        }}
-      >
-        <div
-          style={{
-            flex: "1.2 1 0",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "14px",
-            padding: "8px 14px",
-            borderRadius: "20px",
-            background: "#101D5866",
-            minWidth: 0,
-          }}
-        >
-          <span
-            style={{
-              color: "rgba(255,255,255,0.9)",
-              fontSize: "clamp(14px, 1.5vw, 18px)",
-              fontWeight: 500,
-              letterSpacing: "0.2px",
-              whiteSpace: "nowrap",
-            }}
-          >
+      <div className="w-full h-full rounded-2xl bg-[#06124580] shadow-[inset_0_0_0_1px_rgba(128,186,255,0.18),_0_8px_24px_rgba(0,0,0,0.35)] flex flex-col items-stretch p-1.5 gap-1.5 pointer-events-auto backdrop-blur-sm">
+        {/* Current Price Section */}
+        <div className="flex items-center justify-center gap-1.5 px-2 py-1 rounded-lg bg-[#101D5866]">
+          <span className="text-white/90 text-xs font-medium whitespace-nowrap">
             Current price
           </span>
           <AnimatedPrice label="Current price" value="Revealed Soon" delay={300} />
         </div>
 
-        <div
-          style={{
-            flex: "1.8 1 0",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: "12px",
-            padding: "8px 12px",
-            borderRadius: "20px",
-            background: "#101D5866",
-            minWidth: 0,
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <span
-              style={{
-                color: "rgba(255,255,255,0.9)",
-                fontSize: "clamp(14px, 1.5vw, 18px)",
-                fontWeight: 500,
-                letterSpacing: "0.2px",
-                whiteSpace: "nowrap",
-              }}
-            >
-              ROI at TGE =
-            </span>
-            <span
-              style={{
-                color: "#80BAFF",
-                fontSize: "clamp(20px, 2.2vw, 26px)",
-                fontWeight: 800,
-                letterSpacing: "0.4px",
-                whiteSpace: "nowrap",
-              }}
-            >
-              600%
-            </span>
-          </div>
+        {/* JOIN NOW Button Section */}
+        <div className="flex items-center justify-center">
 
-          <div
-            className="glow-container"
-            style={{
-              flexShrink: 0,
-            }}
-          >
+          <div className="glow-container flex-shrink-0">
             <button
               type="button"
               onClick={() => {
@@ -227,39 +142,12 @@ const BottomLineFix: React.FC<Props> = ({ onJoin }) => {
                 // Call the original onJoin if provided
                 if (onJoin) onJoin();
               }}
-              className="button-inner"
+              className="button-inner w-[120px] h-[28px] border-0 outline-0 bg-[#0E1A52] bg-cover bg-no-repeat bg-center cursor-pointer grid place-items-center relative transition-all duration-300 hover:scale-105"
               style={{
-                width: "180px",
-                height: "30px",
-                border: 0,
-                outline: 0,
-                background: "#0E1A52",
                 backgroundImage: "url(/bottom-line/button.png)",
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                cursor: "pointer",
-                display: "grid",
-                placeItems: "center",
-                position: "relative",
-                transition: "all 0.3s ease",
-              }}
-              onMouseEnter={(e) => {
-                (e.target as HTMLElement).style.transform = 'scale(1.05)';
-              }}
-              onMouseLeave={(e) => {
-                (e.target as HTMLElement).style.transform = 'scale(1)';
               }}
             >
-              <span
-                style={{
-                  color: "#FFFFFF",
-                  letterSpacing: "0.8px",
-                  textTransform: "uppercase",
-                  position: "relative",
-                  zIndex: 3,
-                }}
-              >
+              <span className="text-white text-xs font-semibold uppercase tracking-wide relative z-10">
                 JOIN NOW
               </span>
             </button>

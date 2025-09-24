@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-hot-toast";
+import MobileNavSlider from "@/components/common/MobileNavSlider";
 
 type NavItem = {
   label: string;
@@ -31,6 +32,7 @@ const Header: React.FC<Props> = ({
   ctaHref = "#presale",
   className = "",
 }) => {
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   
   const handlePresaleClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -93,7 +95,7 @@ const Header: React.FC<Props> = ({
             <span className="cta-mobile-wrap">
               <button
                 className="cta-mobile cta-image-mobile no-hover"
-                onClick={handlePresaleClick}
+                onClick={() => setIsMobileNavOpen(true)}
                 aria-label={ctaLabel}
               >
                 <span className="visually-hidden">{ctaLabel}</span>
@@ -314,6 +316,12 @@ const Header: React.FC<Props> = ({
         @media (max-width: 992px)  { .cta { --btn-h: 46px; } }
         @media (max-width: 768px)  { .cta { --btn-h: 44px; } }
       `}</style>
+      <MobileNavSlider
+        open={isMobileNavOpen}
+        onClose={() => setIsMobileNavOpen(false)}
+        links={nav}
+        title="Quick Navigation"
+      />
     </header>
   );
 };

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { toast } from "react-hot-toast";
+import MobileNavSlider from "@/components/common/MobileNavSlider";
 import {
   Dialog,
   DialogContent,
@@ -169,6 +170,13 @@ export default function Navbar() {
   const [expandedCategory, setExpandedCategory] = useState(null);
   const menuRef = useRef(null);
   const menuButtonRef = useRef(null);
+  const [isQuickNavOpen, setIsQuickNavOpen] = useState(false);
+  const flatLinks = [
+    // Flatten navItems
+    ...Object.values(navItems).flatMap(({ items }) => items),
+    // Extra external links
+    { label: "App", href: "https://app.neurolov.ai" },
+  ];
   
   const handleEarnNowClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -297,24 +305,31 @@ export default function Navbar() {
             </div>
 
             {/* Mobile menu button */}
-            <button
-              ref={menuButtonRef}
-              onClick={toggleMenu}
-              className="md:hidden p-2 text-white hover:text-white hover:bg-white/10 rounded-full z-20"
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </button>
+          <button
+            ref={menuButtonRef}
+            onClick={toggleMenu}
+            className="md:hidden p-2 text-white hover:text-white hover:bg-white/10 rounded-full z-20"
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
+
+          {/* Mobile quick nav slider trigger */}
+          <button
+            onClick={() => setIsQuickNavOpen(true)}
+            className="md:hidden ml-2 p-2 text-white hover:text-white hover:bg-white/10 rounded-full z-20"
+            aria-label="Open quick navigation"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+            </svg>
+          </button>
           </div>
-
-          {/* Mobile Navigation - Fixed to top of viewport regardless of scroll position */}
         </Container>
-
-        {/* Global animation styles */}
         <style>
           {`
           @keyframes fadeSlideIn {
@@ -327,9 +342,16 @@ export default function Navbar() {
               transform: translateY(0);
             }
           }
-        `}
+          `}
         </style>
       </nav>
+      {/* Mobile quick navigation slider */}
+      <MobileNavSlider
+        open={isQuickNavOpen}
+        onClose={() => setIsQuickNavOpen(false)}
+        links={flatLinks}
+        title="Quick Navigation"
+      />
       <div
         ref={menuRef}
         className={`md:hidden fixed inset-x-0 top-0 bottom-0 bg-[#0361DA] pt-16 z-[49] overflow-y-auto transition-all duration-500 ease ${
