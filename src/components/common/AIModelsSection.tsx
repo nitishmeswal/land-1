@@ -7,11 +7,11 @@ const AIModelsSection: React.FC = () => {
         <img
           src="/landing-ai-model/ai-model-header.png"
           alt=""
-          className="absolute top-0 left-0 w-full h-full object-cover object-center"
+          className="absolute top-0 left-[-4px] w-full h-full object-cover object-center z-10"
         />
 
         <div className="absolute bottom-0 left-0 w-full h-[4px] bg-[#14256f] rounded-t-md"></div>
-        <div className="absolute bottom-0 left-0 w-[4px] h-full bg-[#14256f] rounded-r-md"></div>
+        <div className="absolute bottom-0 left-[1px] w-[4px] h-full bg-[#14256f] rounded-r-md z-0"></div>
 
         <div className="absolute left-0 top-0 h-[80px] md:h-[110px] w-full md:w-[58%]">
           <h1 className="absolute left-4 md:left-12 top-4 md:top-8 text-white tracking-wider font text-[20px] md:text-[24px] leading-none">
@@ -23,7 +23,7 @@ const AIModelsSection: React.FC = () => {
           <aside className="w-full md:w-[45%] h-full flex order-2 md:order-1">
             <div className="flex-1 px-3 md:px-6 lg:pl-14 lg:pr-2 pt-[80px] md:pt-[100px] lg:pt-[120px]">
               <div className="space-y-3 md:space-y-5">
-                <div className="flex items-center gap-3 md:gap-4">
+                <div className="flex items-center gap-3 md:gap-4 mt-8">
                   <div className="w-8 h-8 md:w-9 md:h-9 bg-[#17297c] rounded-md flex items-center justify-center flex-shrink-0">
                     <svg
                       className="w-5 h-5 text-white"
@@ -149,9 +149,15 @@ const AIModelsSection: React.FC = () => {
               </div>
 
               <div className="mt-6 md:mt-8 mb-4">
-                <button 
+                <button
                   className="w-full max-w-[250px] md:max-w-[280px] relative px-6 md:px-8 py-3 md:py-4 rounded-xl text-black font-semibold text-base md:text-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(137,189,255,0.8)]"
-                  onClick={() => window.open('https://app.neurolov.ai/ai-models', '_blank', 'noopener,noreferrer')}
+                  onClick={() =>
+                    window.open(
+                      "https://app.neurolov.ai/ai-models",
+                      "_blank",
+                      "noopener,noreferrer"
+                    )
+                  }
                 >
                   <div className="absolute inset-0">
                     <img
