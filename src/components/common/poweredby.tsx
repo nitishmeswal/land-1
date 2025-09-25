@@ -13,22 +13,28 @@ const partners_1: Partner[] = [
     image: "/powered/3.png",
   },
   {
+    image: "/powered/4.png",
+  },
+  {
     image: "/powered/5.png",
   },
 ];
 
 const partners_2: Partner[] = [
   {
-    image: "/powered/5.png",
+    image: "/powered/6.png",
   },
   {
-    image: "/powered/3.png",
+    image: "/powered/7.png",
   },
   {
-    image: "/powered/2.png",
+    image: "/powered/8.png",
   },
   {
-    image: "/powered/1.png",
+    image: "/powered/9.png",
+  },
+  {
+    image: "/powered/10.png",
   },
 ];
 

@@ -324,7 +324,7 @@ export default function TokenPage() {
                 <div className="flex justify-center mb-16">
                   <button
                     onClick={() => {
-                      window.location.href = "/whitepaper";
+                      window.open('https://forms.gle/awCVM6xa9hUFQv926', '_blank', 'noopener,noreferrer');
                     }}
                     className="w-full max-w-[300px] relative px-6 md:px-8 py-3 md:py-4 rounded-xl text-black font-semibold text-base md:text-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(137,189,255,0.8)]"
                   >

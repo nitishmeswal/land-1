@@ -154,7 +154,7 @@ const TokenShowcase: React.FC = () => {
       <div className="flex justify-center mb-16">
         <button
           onClick={() => {
-            window.location.href = "/whitepaper";
+            window.location.href = "/resources";
           }}
           className="w-full max-w-[230px] relative px-6 md:px-8 py-3 md:py-4 rounded-xl text-black font-semibold text-base md:text-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(137,189,255,0.8)]"
         >
@@ -165,7 +165,7 @@ const TokenShowcase: React.FC = () => {
               className="w-full h-full object-cover rounded-xl"
             />
           </div>
-          <span className="relative z-10">Read Docs</span>
+          <span className="relative z-10">View Tokenomics</span>
         </button>
       </div>
 
@@ -220,7 +220,7 @@ const TokenShowcase: React.FC = () => {
                     className="relative px-4 py-3 rounded-xl text-black font-semibold text-sm md:text-base overflow-hidden"
                     onClick={() => {
                       window.open(
-                        "https://drive.google.com/file/d/1M18_lbY45yPDFhcr-WUMCaT6y6wKGZOL/view",
+                        "/resources/Tokenomics.pdf",
                         "_blank"
                       );
                     }}

@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export default function LatestUpdates() {
+  const navigate = useNavigate();
   const cards = [
     {
       imageSrc: "/updates/card-1.png",
@@ -47,6 +50,7 @@ export default function LatestUpdates() {
 
         <div className="mt-10 flex justify-center">
           <button
+            onClick={() => navigate('/resources')}
             className="relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-black transition-all duration-300 hover:shadow-[0_0_20px_rgba(137,189,255,0.8)]"
             style={{
               backgroundImage: "url('/updates/button.png')",

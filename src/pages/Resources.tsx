@@ -44,12 +44,12 @@ const resources = [
       },
       {
         text: "Tokenomics",
-        url: "/resources/Tokonomics.pdf",
+        url: "/resources/Tokenomics.pdf",
         icon: <FileText className="h-4 w-4" />,
       },
       {
         text: "Pitch Deck",
-        url: "https://drive.google.com/drive/folders/180NDE65yPcvFnBfuuZ8dM-Gu3PQvHH_Y",
+        url: "/resources/Pitch Deck.pdf",
         icon: <FileText className="h-4 w-4" />,
         external: true,
       },
