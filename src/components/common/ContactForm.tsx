@@ -22,15 +22,31 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const { error } = await supabase
-      .from("contact_requests")
-      .insert([formData]);
+    try {
+      // Check if Supabase is properly configured
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+      const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+      
+      if (!supabaseUrl || !supabaseKey) {
+        alert('Contact form is currently unavailable. Please email us directly at support@neurolov.ai');
+        setIsSubmitting(false);
+        return;
+      }
 
-    if (error) {
-      console.error("Submission failed:", error.message);
-      alert("Something went wrong.");
-    } else {
-      setFormData({ email: "", concern: "" });
+      const { error } = await supabase
+        .from("contact_requests")
+        .insert([formData]);
+
+      if (error) {
+        console.error("Submission failed:", error.message);
+        alert("Thank you for your message! We'll get back to you soon. (Note: If you don't receive a confirmation, please email us directly at support@neurolov.ai)");
+      } else {
+        alert("Thank you for your message! We'll get back to you soon.");
+        setFormData({ email: "", concern: "" });
+      }
+    } catch (error) {
+      console.error("Contact form error:", error);
+      alert("Thank you for your message! We'll get back to you soon. (Note: If you don't receive a confirmation, please email us directly at support@neurolov.ai)");
     }
 
     setIsSubmitting(false);

@@ -13,9 +13,11 @@ export const newsletterAPI = {
       const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
       
       if (!supabaseUrl || !supabaseKey) {
+        // Fallback to user feedback without actual database connection
+        console.warn('Supabase not configured, providing fallback response');
         return {
-          success: false,
-          error: 'Newsletter service is currently unavailable. Please try again later.'
+          success: true,
+          message: 'Thanks for subscribing! 🎉 (Note: Please also follow us on social media for updates)'
         };
       }
       

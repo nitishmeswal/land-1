@@ -135,7 +135,7 @@ const NeurolovFooter: React.FC = () => {
                         <li key={l.href}>
                           <Link
                             to={l.href}
-                            className="text-[#0862D6] text-xs md:text-sm hover:text-white transition-colors"
+                            className="text-[#003A85] text-xs md:text-sm hover:text-white transition-colors"
                           >
                             {l.label}
                           </Link>
@@ -152,28 +152,28 @@ const NeurolovFooter: React.FC = () => {
             <div className="flex flex-wrap justify-center md:ml-64 gap-2 text-xs md:text-sm">
               <Link
                 to="/legal/privacy-policy"
-                className="text-[#0862D6] transition-colors"
+                className="text-[#003A85] transition-colors"
               >
                 PRIVACY POLICY
               </Link>
-              <span className="text-[#0862D6]">|</span>
+              <span className="text-[#003A85]">|</span>
               <Link
                 to="/legal/terms-and-conditions"
-                className="text-[#0862D6] transition-colors"
+                className="text-[#003A85] transition-colors"
               >
                 TERMS & CONDITIONS
               </Link>
-              <span className="text-[#0862D6]">|</span>
+              <span className="text-[#003A85]">|</span>
               <Link
                 to="/legal/refund-policy"
-                className="text-[#0862D6] transition-colors"
+                className="text-[#003A85] transition-colors"
               >
                 REFUND POLICY
               </Link>
-              <span className="text-[#0862D6]">|</span>
+              <span className="text-[#003A85]">|</span>
               <Link
                 to="/legal/disclaimer"
-                className="text-[#0862D6] transition-colors"
+                className="text-[#003A85] transition-colors"
               >
                 DISCLAIMER
               </Link>

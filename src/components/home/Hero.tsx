@@ -151,7 +151,7 @@ function PresaleCard() {
       setMessage('✅ ' + result.message);
       setEmail('');
     } else {
-      setMessage('❌ ' + (result.error || 'Subscription failed'));
+      setMessage('❌ ' + (result.error || 'Subscription failed') + ' Please follow us on social media for updates!');
     }
 
     setIsSubmitting(false);
