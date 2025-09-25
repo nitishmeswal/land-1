@@ -95,7 +95,7 @@ export default function ProductHighlightsMobile() {
   const slides = [
     {
       title: "GPU Compute",
-      description: "Rent GPUs for AI training and inference. Affordable, scalable compute power for all. Why it matters: Access high-performance GPUs on demand, no need to own expensive hardware. Ideal for researchers, startups, and creators who need flexible, affordable compute resources.",
+      description: "Rent GPUs for AI training. Affordable, scalable compute power for all. Why it matters: Access high-performance GPUs on demand, no need to own expensive hardware. Ideal for researchers, startups, and creators who need flexible, affordable compute resources.",
       contentImage: "/highlight/compute.png",
       cardBackgroundImage: "/highlight/1.png",
       url: "https://app.neurolov.ai/gpu-compute",
