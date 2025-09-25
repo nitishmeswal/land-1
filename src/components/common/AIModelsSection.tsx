@@ -13,8 +13,8 @@ const AIModelsSection: React.FC = () => {
         <div className="absolute bottom-0 left-0 w-full h-[4px] bg-[#14256f] rounded-t-md"></div>
         <div className="absolute bottom-0 left-[1px] w-[4px] h-full bg-[#14256f] rounded-r-md z-0"></div>
 
-        <div className="absolute left-0 top-0 h-[80px] md:h-[110px] w-full md:w-[58%]">
-          <h1 className="absolute left-4 md:left-12 top-4 md:top-8 text-white tracking-wider font text-[20px] md:text-[24px] leading-none">
+        <div className="absolute left-0 top-0 h-[80px] md:h-[110px] w-full md:w-[58%] z-20">
+          <h1 className="absolute left-4 md:left-12 top-4 md:top-8 text-white tracking-wider font-bold text-[20px] md:text-[24px] leading-none z-20">
             AI MODELS
           </h1>
         </div>

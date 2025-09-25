@@ -39,7 +39,7 @@ const resources = [
     links: [
       {
         text: "Whitepaper",
-        url: "/resources/White Paper.pdf",
+        url: "https://docsend.com/view/rtzd2dzpw3v9ayxw",
         icon: <FileText className="h-4 w-4" />,
       },
       {
