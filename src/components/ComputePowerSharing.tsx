@@ -111,10 +111,12 @@ const ComputePowerSharing: React.FC = () => {
             </div>
             <div className="absolute left-64 top-1/2 -translate-y-1/2 block z-10">
               <div className="flex flex-col space-y-24 text-white text-base">
-                <div className="text-left">GPU Cluster</div>
-                <div className="text-left">GPU</div>
-                <div className="text-left">Laptop</div>
-                <div className="text-left">Mobile</div>
+                <div className="text-left relative top-[-10px]">
+                  GPU Cluster
+                </div>
+                <div className="text-left relative top-[-5px]">GPU</div>
+                <div className="text-left relative top-[2px]">Laptop</div>
+                <div className="text-left relative top-[10px]">Mobile</div>
               </div>
             </div>
             <div className="relative flex items-center justify-center py-6 sm:py-8 z-20">
@@ -133,10 +135,16 @@ const ComputePowerSharing: React.FC = () => {
             </div>
             <div className="absolute right-60 top-1/2 -translate-y-1/2 block z-10">
               <div className="flex flex-col space-y-28 text-white text-sm lg:text-base">
-                <div className="text-right">AI Agents</div>
-                <div className="text-right">Training Gen. AI</div>
-                <div className="text-right">Blockchain Computing</div>
-                <div className="text-right">Autonomous Vehicle</div>
+                <div className="text-right relative top-[11px]">AI Agents</div>
+                <div className="text-right relative top-[5px]">
+                  Training Gen. AI
+                </div>
+                <div className="text-right relative top-[-5px]">
+                  Blockchain Computing
+                </div>
+                <div className="text-right relative top-[-10px]">
+                  Autonomous Vehicle
+                </div>
               </div>
             </div>
           </div>
