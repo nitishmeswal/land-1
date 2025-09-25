@@ -502,7 +502,7 @@ export default function Hero() {
                   </button>
                   <button 
                     className="p-0 border-none bg-transparent hover:bg-transparent"
-                    onClick={() => window.open('https://docsend.com/view/b9rusjpnb3s8wdzq', '_blank', 'noopener,noreferrer')}
+                    onClick={() => window.open('/resources/White Paper.pdf', '_blank', 'noopener,noreferrer')}
                   >
                     <img
                       src="/hero/button-2.png"
