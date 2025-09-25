@@ -122,38 +122,40 @@ const roadmapData = [
 ];
 
 const partners = [
-  { name: "Binance", logo: "/partner/39.png" },
-  { name: "ByBit", logo: "/partner/35.png" },
-  { name: "MEXC", logo: "/partner/27.webp" },
-  { name: "KuCoin", logo: "/partner/34.png" },
+  { name: "Binance", logo: "/partner/8.png" },
+  { name: "ByBit", logo: "/partner/4.png" },
+  { name: "MEXC", logo: "/partner/6.png" },
+  { name: "KuCoin", logo: "/partner/3.png" },
 
-  { name: "Bitget", logo: "/partner/18.webp" },
-  { name: "Gate.io", logo: "/partner/38.png" },
-  { name: "Solana", logo: "/partner/12.svg" },
-  { name: "LBank", logo: "/partner/36.png" },
+  { name: "Bitget", logo: "/partner/2.png" },
+  { name: "Gate.io", logo: "/partner/7.png" },
+  { name: "Solana", logo: "/partner/22.png" },
+  { name: "LBank", logo: "/partner/5.png" },
 
-  { name: "Nvidia", logo: "/partner/13.svg" },
-  { name: "Gork", logo: "/partner/14.svg" },
-  { name: "Gemini", logo: "/partner/20.svg" },
-  { name: "OpenAI", logo: "/partner/21.svg" },
+  { name: "Nvidia", logo: "/partner/9.png" },
+  { name: "Grok", logo: "/partner/10.png" },
+  { name: "Gemini", logo: "/partner/17.png" },
+  { name: "OpenAI", logo: "/partner/20.png" },
 
-  { name: "Meta", logo: "/partner/26.svg" },
-  { name: "AMD", logo: "/partner/10.svg" },
-  { name: "Victus Global", logo: "/partner/8.svg" },
-  { name: "IBC", logo: "/partner/4.svg" },
+  { name: "Meta", logo: "/partner/16.png" },
+  { name: "AMD", logo: "/partner/11.png" },
+  { name: "Victus Global", logo: "/partner/12.png" },
+  { name: "IBC", logo: "/partner/1.png" },
 
-  { name: "Catalyse Capital", logo: "/partner/2.svg" },
-  { name: "Hercules Venture", logo: "/partner/3.svg" },
-  { name: "Nova Capital", logo: "/partner/5.svg" },
-  { name: "Quantum Ventures", logo: "/partner/6.svg" },
+  { name: "Catalyse Capital", logo: "/partner/14.png" },
+  { name: "Hercules Venture", logo: "/partner/18.png" },
+  { name: "Nova Capital", logo: "/partner/19.png" },
+  { name: "Quantum Ventures", logo: "/partner/15.png" },
 
-  { name: "SkyBridge", logo: "/partner/7.svg" },
-  { name: "Blockforce Capital", logo: "/partner/1.svg" },
+  { name: "SkyBridge", logo: "/partner/21.png" },
+  { name: "Blockforce Capital", logo: "/partner/13.png" },
 ];
 
 export default function EcosystemPage() {
   const { tab = "roadmap" } = useParams();
   const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState("roadmap");
+  const [partnerFilter, setPartnerFilter] = useState("all");
   const [highlightGetStarted, setHighlightGetStarted] = useState(false);
   const filteredPartners = partners;
   const getStartedButtonRef = useRef(null);
@@ -183,7 +185,7 @@ export default function EcosystemPage() {
     >
       <SectionContainer className="pb-8 ">
         <Tabs value={tab} onValueChange={handleTabChange} className="w-full">
-          <div className="flex justify-center mb-20 md:mb-10">
+        <div className="flex justify-center mb-20 md:mb-10">
             <TabsList className="grid grid-cols-2 md:grid-cols-2 gap-5 h-auto p-3 md:p-0 border border-[#0361DA] hover:border-[#0361DA]/50 shadow-md transition-all duration-300 hover:shadow-lg">
               <TabsTrigger value="roadmap" className="px-6">
                 <Calendar className="mr-2 h-4 w-4" /> Roadmap
