@@ -107,7 +107,7 @@ export default function ProductHighlightsMobile() {
       contentImage: "/highlight/ai-models.png",
       cardBackgroundImage: "/highlight/2.png",
       url: "https://app.neurolov.ai/ai-models",
-      buttonText: "EXPLORE MODELS"
+      buttonText: "LEARN MORE"
     },
     {
       title: "Swarm Network",
@@ -115,7 +115,7 @@ export default function ProductHighlightsMobile() {
       contentImage: "/highlight/swarm.png",
       cardBackgroundImage: "/highlight/3.png",
       url: "https://app.neurolov.ai/swarm",
-      buttonText: "JOIN SWARM"
+      buttonText: "LEARN MORE"
     },
     {
       title: "AI Agents",
@@ -123,7 +123,7 @@ export default function ProductHighlightsMobile() {
       contentImage: "/highlight/ai-agents.png",
       cardBackgroundImage: "/highlight/4.png", 
       url: "https://app.neurolov.ai/ai-agents",
-      buttonText: "CREATE AGENT"
+      buttonText: "LEARN MORE"
     }
   ];
 
