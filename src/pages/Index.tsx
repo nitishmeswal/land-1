@@ -73,23 +73,23 @@ const Index = () => {
           <WhyNeurolov />
         </div>
 
-        <div className="mt-20">
+        <div className="mt-8">
           <ComputePowerSharing />
         </div>
 
-        <div className="mt-20">
+        <div className="mt-12">
           {isMobile ? <ProductHighlightsMobile /> : <Highlight />}
         </div>
 
-        <div className="mt-20">
+        <div className="mt-12">
           {isMobile ? <AIModelsSectionMobile /> : <AIModelsSection />}
         </div>
 
-        <div className="mt-20 bg-[url('/token/bg.png')] bg-fill">
+        <div className="mt-12 bg-[url('/token/bg.png')] bg-fill">
           {isMobile ? <NlovTokenMobile /> : <NlovTokenDashboard />}
         </div>
 
-        <div className="mt-20">
+        <div className="mt-12">
           {isMobile ? <TeamMobile /> : <Team />}
           <LatestUpdates />
         </div>

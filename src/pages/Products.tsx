@@ -26,10 +26,13 @@ import {
 } from "lucide-react";
 import { useParams, useNavigate } from "react-router-dom";
 import AIModelCard from "@/components/common/AIModelCard";
+import { useIsMobile } from "@/hooks/use-mobile";
+import GPUSpecificationsMobile from "@/components/common/GPUSpecificationsMobile";
 
 export default function ProductsPage() {
   const { tab = "compute" } = useParams();
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
 
   const handleTabChange = (value: string) => {
     navigate(`/products/${value}`);
@@ -120,78 +123,80 @@ export default function ProductsPage() {
                       src="/compute.png"
                       alt="GPU Computing Infrastructure"
                       desktopSize={{ width: 600, height: 400 }}
-                      tabletRatio={0.75}
-                      mobileRatio={0.5}
                       className="rounded-lg shadow-lg"
                     />
                   </div>
                 </div>
               </div>
 
-              <div className="glass-card p-8 rounded-xl border border-#0361DA/10">
-                <h3 className="text-2xl font-bold mb-6">
-                  Available GPU Specifications
-                </h3>
-                <div className="overflow-x-auto">
-                  <table className="w-full">
-                    <thead>
-                      <tr className="border-b">
-                        <th className="py-4 px-6 text-left">GPU Model</th>
-                        <th className="py-4 px-6 text-left">Memory</th>
-                        <th className="py-4 px-6 text-left">CUDA Cores</th>
-                        <th className="py-4 px-6 text-left">Tensor Cores</th>
-                        <th className="py-4 px-6 text-left">
-                          Price ($NLOV/Hr)
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr className="border-b">
-                        <td className="py-4 px-6">NVIDIA H100</td>
-                        <td className="py-4 px-6">80GB HBM3</td>
-                        <td className="py-4 px-6">18,432</td>
-                        <td className="py-4 px-6">576</td>
-                        <td className="py-4 px-6">21 $NLOV</td>
-                      </tr>
-                      <tr className="border-b">
-                        <td className="py-4 px-6">NVIDIA GeForce RTX 4090</td>
-                        <td className="py-4 px-6">24GB GDDR6X</td>
-                        <td className="py-4 px-6">16,384</td>
-                        <td className="py-4 px-6">512</td>
-                        <td className="py-4 px-6">5 $NLOV</td>
-                      </tr>
-                      <tr className="border-b">
-                        <td className="py-4 px-6">NVIDIA RTX 3090 Ti</td>
-                        <td className="py-4 px-6">24GB GDDR6X</td>
-                        <td className="py-4 px-6">10,752</td>
-                        <td className="py-4 px-6">336</td>
-                        <td className="py-4 px-6">2 $NLOV</td>
-                      </tr>
-                      <tr className="border-b">
-                        <td className="py-4 px-6">NVIDIA A6000</td>
-                        <td className="py-4 px-6">48GB GDDR6</td>
-                        <td className="py-4 px-6">10,752</td>
-                        <td className="py-4 px-6">336</td>
-                        <td className="py-4 px-6">6 $NLOV</td>
-                      </tr>
-                      <tr className="border-b">
-                        <td className="py-4 px-6">NVIDIA A5000</td>
-                        <td className="py-4 px-6">24GB GDDR6</td>
-                        <td className="py-4 px-6">8,192</td>
-                        <td className="py-4 px-6">256</td>
-                        <td className="py-4 px-6">3 $NLOV</td>
-                      </tr>
-                      <tr>
-                        <td className="py-4 px-6">NVIDIA A4000</td>
-                        <td className="py-4 px-6">16GB GDDR6</td>
-                        <td className="py-4 px-6">6,144</td>
-                        <td className="py-4 px-6">192</td>
-                        <td className="py-4 px-6">2 $NLOV</td>
-                      </tr>
-                    </tbody>
-                  </table>
+              {isMobile ? (
+                <GPUSpecificationsMobile />
+              ) : (
+                <div className="glass-card p-8 rounded-xl border border-#0361DA/10">
+                  <h3 className="text-2xl font-bold mb-6">
+                    Available GPU Specifications
+                  </h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
+                      <thead>
+                        <tr className="border-b">
+                          <th className="py-4 px-6 text-left">GPU Model</th>
+                          <th className="py-4 px-6 text-left">Memory</th>
+                          <th className="py-4 px-6 text-left">CUDA Cores</th>
+                          <th className="py-4 px-6 text-left">Tensor Cores</th>
+                          <th className="py-4 px-6 text-left">
+                            Price ($NLOV/Hr)
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="border-b">
+                          <td className="py-4 px-6">NVIDIA H100</td>
+                          <td className="py-4 px-6">80GB HBM3</td>
+                          <td className="py-4 px-6">18,432</td>
+                          <td className="py-4 px-6">576</td>
+                          <td className="py-4 px-6">21 $NLOV</td>
+                        </tr>
+                        <tr className="border-b">
+                          <td className="py-4 px-6">NVIDIA GeForce RTX 4090</td>
+                          <td className="py-4 px-6">24GB GDDR6X</td>
+                          <td className="py-4 px-6">16,384</td>
+                          <td className="py-4 px-6">512</td>
+                          <td className="py-4 px-6">5 $NLOV</td>
+                        </tr>
+                        <tr className="border-b">
+                          <td className="py-4 px-6">NVIDIA RTX 3090 Ti</td>
+                          <td className="py-4 px-6">24GB GDDR6X</td>
+                          <td className="py-4 px-6">10,752</td>
+                          <td className="py-4 px-6">336</td>
+                          <td className="py-4 px-6">2 $NLOV</td>
+                        </tr>
+                        <tr className="border-b">
+                          <td className="py-4 px-6">NVIDIA A6000</td>
+                          <td className="py-4 px-6">48GB GDDR6</td>
+                          <td className="py-4 px-6">10,752</td>
+                          <td className="py-4 px-6">336</td>
+                          <td className="py-4 px-6">6 $NLOV</td>
+                        </tr>
+                        <tr className="border-b">
+                          <td className="py-4 px-6">NVIDIA A5000</td>
+                          <td className="py-4 px-6">24GB GDDR6</td>
+                          <td className="py-4 px-6">8,192</td>
+                          <td className="py-4 px-6">256</td>
+                          <td className="py-4 px-6">3 $NLOV</td>
+                        </tr>
+                        <tr>
+                          <td className="py-4 px-6">NVIDIA A4000</td>
+                          <td className="py-4 px-6">16GB GDDR6</td>
+                          <td className="py-4 px-6">6,144</td>
+                          <td className="py-4 px-6">192</td>
+                          <td className="py-4 px-6">2 $NLOV</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-              </div>
+              )}
             </TabsContent>
 
             {/* AI Models Tab */}
