@@ -90,20 +90,21 @@ const roadmapData = [
     ],
   },
   {
-    title: "Q3 2025 - Token Presale",
-    status: "in-progress",
+    title: "Q3 2025 - Token Launch & Governance",
+    status: "completed",
     items: [
-      "$NLOV Token Presale Start – Initial presale rounds begin.",
-      "Governance Launch – Voting rights for $NLOV holders.",
-      "NeuroSwarm Security – Stronger protection for nodes & rewards.",
-      "Crypto Payments – Pay with crypto to upgrade nodes.",
+      "$NLOV Token Private sale Start",
+       "Governance Launch – Voting rights for $NLOV holders",
+       "NeuroSwarm Security – Stronger protection for nodes & rewards",
+       "Crypto Payments – Pay with crypto to upgrade nodes",
+
     ],
   },
   {
     title: "Q4 2025 - Network Growth & Adoption",
-    status: "upcoming",
+    status: "in-progress",
     items: [
-      "Presale Stages Continue – Final $NLOV rounds.",
+      "Presale Starts – Final $NLOV rounds.",
       "50,000 New Contributors – Expand NeuroSwarm network.",
       "Partnership Expansion – Onboard startups & enterprises.",
       "Empowering Partners – Start Providing compute to partnered projects.",
